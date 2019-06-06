@@ -1,0 +1,164 @@
+# Import
+***
+
+## Create Data
+
+### Data Structures
+
+#### Atomic Vector
+
+`base`
+
+* `c()`: Combine values into a vector or list.
+* `factor()`: Create a factor variable.
+* `seq()`: Generate a sequence.
+* `vector()`: Create a vector.
+    + This function is preferable to `c()` when creating an empty vector, according to the DataCamp article ["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve).
+
+#### Matrix
+
+`base`
+
+* `matrix()`: Create a matrix.
+
+#### Array
+
+`base`
+
+* `array()`: Create an array.
+
+#### List
+
+`base`
+
+* `c()`: Combine values into a vector or list.
+* `list()`: Create a list.
+
+`tibble`
+
+* `tibble()`: Create a data frame or list.
+
+#### Data Frame
+
+`base`
+
+* `data.frame()`: Create a data frame.
+    + Prefer `tibble::tibble()` over `base::data.frame()`.
+* `list()`: Create a list.
+
+`tibble`
+
+* `tibble()`: Create a data frame or list.
+
+#### References
+
+* ["Vectors"](https://r4ds.had.co.nz/vectors.html) (Grolemund & Wickham, [*R for Data Science*](https://r4ds.had.co.nz/))
+* ["Data structures"](http://adv-r.had.co.nz/Data-structures.html) (Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
+
+### Other
+
+`stats`
+
+* `rnorm()`: Generate a random normal distribution.
+
+***
+## Import Data from a Local Drive
+
+`base`
+
+* `attach()`: Attach a set of R objects to the search path.
+    + Allows objects in the database to be accessed by giving their names (e.g., `height` rather than `women$height`).
+* `file.choose()`: Choose a file interactively.
+    + Use as `file = file.choose()` in `read.table()` and similar functions.
+* `load()`: Reload datasets saved with `save()`.
+* `readRDS()`: Restore an R object written with `saveRDS()`.
+
+`data.table`
+
+* `fread()`: Similar to `read.table()`, but faster and more convenient for large data sets.
+
+`foreign`
+
+* `read.spss()`: Read an SPSS data file.
+
+`haven`
+
+* `read_sas()`: Read and write SAS files.
+
+`readr`
+
+* `read_delim()`: Read a delimited (including csv and txv) file.
+    + Child functions: `read_csv()`, `read_csv2()`, `read_tsv()`.
+
+`readxl`
+
+* `excel_sheets()`: List all sheets in an Excel spreadsheet.
+* `read_excel()`: Read xls and xlsx files.
+    + Child functions: `read_xls()`, `read_xlsx()`
+
+`utils`
+
+* `data()`: Load specified data sets, or list the available data sets.
+    + Use this function to load the data sets that accompany R packages, such as `openintro`'s `hsb2` and `email50` and `gapminder`'s `gapminder`.
+* `read.table()`: Read a file in table format.
+    + Child functions: `read.csv()`, `read.csv2()`, `read.delim()`, `read.delim2()`.
+
+`XLConnect`
+
+* `readWorksheetFromFile()`: Read data from worksheets in an Excel file.
+
+***
+## Import Data from the Internet
+
+`httr`
+
+* `GET()`: Get a URL.
+
+`jsonlite`
+
+* `read_json()`: Read and write JSON.
+
+`readr`
+
+* `read_delim()`: Read a delimited file (including csv & tsv) into a tibble.
+    + Child functions: `read_csv()`, `read_csv2()`, `read_tsv()`.
+
+`rjson`
+
+* `fromJSON()`: Convert JSON to R.
+
+`utils`
+
+* `download.file()`: Download a file from the Internet.
+    + Example of multiple files in the same link:
+
+```{r, eval=FALSE}
+url_rdata <- 
+  "https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData"
+
+download.file(url_rdata, destfile = "datacamp.Rdata")
+
+load("datacamp.Rdata")
+```
+
+***
+## Import Data from a Database
+
+`DBI`
+
+* `dbBind()`: Bind values to a parameterized/prepared statement.
+* `dbClearResult()`: Free all resources (local and remote) associated with a result set.
+* `dbConnect()`: Connect to a DBMS.
+* `dbDataType()`: Determine the SQL data type of an object.
+* `dbDisconnect()`: Disconnect (close) a connection to a DBMS.
+* `dbFetch()`: Fetch records from a previously executed query.
+* `dbGetQuery()`: Send query, retrieve the results, and then clear result set.
+* `dbListTables()`: List remote tables.
+* `dbReadTable()`: Copy data frames to and from database tables.
+* `dbSendQuery()`: Execute a query on a given database connection.
+* `dbSendStatement()`: Execute a data manipulation statement on a given database connection.
+
+*** 
+## Reference Material
+
+The `openintro` package contains data sets useful for practicing and teaching.

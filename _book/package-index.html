@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>R Reference Manual</title>
+  <meta name="description" content="R Reference Manual">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="R Reference Manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R Reference Manual" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="program.html">
+<link rel="next" href="references.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Reference Manual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="import-data.html"><a href="import-data.html"><i class="fa fa-check"></i>Import Data</a><ul>
+<li class="chapter" data-level="" data-path="import-data.html"><a href="import-data.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
+<li class="chapter" data-level="" data-path="import-data.html"><a href="import-data.html#import-data-from-a-local-drive"><i class="fa fa-check"></i>Import Data from a Local Drive</a></li>
+<li class="chapter" data-level="" data-path="import-data.html"><a href="import-data.html#import-data-from-the-internet"><i class="fa fa-check"></i>Import Data from the Internet</a></li>
+<li class="chapter" data-level="" data-path="import-data.html"><a href="import-data.html#import-data-from-a-database"><i class="fa fa-check"></i>Import Data from a Database</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i>Tidy</a><ul>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#view-or-set-object-format"><i class="fa fa-check"></i>View or Set Object Format</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#to-sort"><i class="fa fa-check"></i>To Sort:</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#manipulate-data-format"><i class="fa fa-check"></i>Manipulate Data Format</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#dates-and-datetimes"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#selecting-subsetting"><i class="fa fa-check"></i>Selecting &amp; Subsetting</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#strings"><i class="fa fa-check"></i>Strings</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#view"><i class="fa fa-check"></i>View</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>Transform</a><ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#dates-and-datetimes-1"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#summarize-incl.-math-statistics"><i class="fa fa-check"></i>Summarize (incl. Math &amp; Statistics)</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#merging-modifying-and-adding-data"><i class="fa fa-check"></i>Merging, Modifying, and Adding Data</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#packages"><i class="fa fa-check"></i>Packages</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i>Visualize</a><ul>
+<li><a href="visualize.html#section"></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a><ul>
+<li><a href="model.html#section-1"></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a><ul>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#export"><i class="fa fa-check"></i>Export</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html"><i class="fa fa-check"></i>Program</a><ul>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#strings-1"><i class="fa fa-check"></i>Strings</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#general"><i class="fa fa-check"></i>General</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#get-help-or-learn-about-a-function"><i class="fa fa-check"></i>Get Help or Learn About a Function</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#view-or-manipulate-objects-perhaps-this-is-best-in-the-tidy-chapter"><i class="fa fa-check"></i>View or Manipulate Objects (perhaps this is best in the Tidy chapter)</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#version-control"><i class="fa fa-check"></i>Version Control</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#workspace"><i class="fa fa-check"></i>Workspace</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="package-index.html"><a href="package-index.html"><i class="fa fa-check"></i>Package Index</a><ul>
+<li class="chapter" data-level="" data-path="package-index.html"><a href="package-index.html#a-d"><i class="fa fa-check"></i>A-D</a></li>
+<li class="chapter" data-level="" data-path="package-index.html"><a href="package-index.html#e-h"><i class="fa fa-check"></i>E-H</a></li>
+<li class="chapter" data-level="" data-path="package-index.html"><a href="package-index.html#i-l"><i class="fa fa-check"></i>I-L</a></li>
+<li class="chapter" data-level="" data-path="package-index.html"><a href="package-index.html#m-p"><i class="fa fa-check"></i>M-P</a></li>
+<li class="chapter" data-level="" data-path="package-index.html"><a href="package-index.html#q-t"><i class="fa fa-check"></i>Q-T</a></li>
+<li class="chapter" data-level="" data-path="package-index.html"><a href="package-index.html#u-z"><i class="fa fa-check"></i>U-Z</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Reference Manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="package-index" class="section level1">
+<h1>Package Index</h1>
+<hr />
+<div id="a-d" class="section level2">
+<h2>A-D</h2>
+<p><a href="https://CRAN.R-project.org/package=anytime"><code>anytime</code></a>: Date converter.</p>
+<p><a href="https://www.rdocumentation.org/packages/base/versions/3.5.1"><code>base</code></a>: Base R functions.</p>
+<p><a href="https://CRAN.R-project.org/package=chron"><code>chron</code></a>: Chronological objects which can handle dates and times.</p>
+<p><a href="https://CRAN.R-project.org/package=data.table"><code>data.table</code></a>: For large data.</p>
+<p><a href="https://CRAN.R-project.org/package=DBI" id="DBI"><code>DBI</code></a>: Database interface.</p>
+<ul>
+<li><p>For MySQL documentation, see the <a href="https://dev.mysql.com/">MySQL Reference Manual</a>.</p></li>
+<li><p>Use with the <code>odbc</code> package.</p></li>
+</ul>
+<p><a href="https://CRAN.R-project.org/package=dplyr"><code>dplyr</code></a>: Data manipulation.</p>
+<ul>
+<li>See also <a href="https://dplyr.tidyverse.org/">dplyr.tidyverse.org</a>.</li>
+</ul>
+<hr />
+</div>
+<div id="e-h" class="section level2">
+<h2>E-H</h2>
+<p><a href="https://CRAN.R-project.org/package=forcats"><code>forcats</code></a>: Tools for working with categorical variables.</p>
+<p><a href="https://CRAN.R-project.org/package=gdata"><code>gdata</code></a>: Data manipulation.</p>
+<p><a href="https://CRAN.R-project.org/package=httr"><code>httr</code></a>: Tools for working with HTTP.</p>
+<hr />
+</div>
+<div id="i-l" class="section level2">
+<h2>I-L</h2>
+<p><a href="https://CRAN.R-project.org/package=jsonlite"><code>jsonlite</code></a>: A robust, high performance JSON parser and generator.</p>
+<p><a href="https://CRAN.R-project.org/package=lubridate"><code>lubridate</code></a>: Functions to work with date-times and time-spans.</p>
+<ul>
+<li><code>lubridate</code> uses character formatting similar to <code>strptime()</code>, though there are some differences. To see <code>lubridate</code>’s formatting, type <code>?parse_date_time</code> into the R Console.</li>
+</ul>
+<hr />
+</div>
+<div id="m-p" class="section level2">
+<h2>M-P</h2>
+<p><a href="https://www.rdocumentation.org/packages/methods/versions/3.5.1"><code>methods</code></a>: Formal methods and classes.</p>
+<p><a href="https://CRAN.R-project.org/package=odbc"><code>odbc</code></a>: Connect to ODBC compatible databases using the DBI Interface.</p>
+<p><a href="https://CRAN.R-project.org/package=packrat"><code>packrat</code></a>: Manage and document the versions of packages used in an R program.</p>
+<ul>
+<li><code>packrat</code> tends to cause more trouble than it prevents, so avoid using it unless necessary or until it is improved.</li>
+</ul>
+<p><a href="https://CRAN.R-project.org/package=pryr"><code>pryr</code></a>: Tools to pry back the covers of R and understand the language at a deeper level.</p>
+<p><a href="https://CRAN.R-project.org/package=purrr"><code>purrr</code></a>: Functional programming tools.</p>
+<ul>
+<li>See also <a href="https://purrr.tidyverse.org/">purr.tidyverse.org</a>.</li>
+</ul>
+<hr />
+</div>
+<div id="q-t" class="section level2">
+<h2>Q-T</h2>
+<p><a href="https://CRAN.R-project.org/package=readr"><code>readr</code></a>: Read rectangular text data.</p>
+<ul>
+<li>See also <a href="https://readr.tidyverse.org/">readr.tidyverse.org</a>.</li>
+</ul>
+<p><a href="https://CRAN.R-project.org/package=readxl"><code>readxl</code></a>: Read Excel files.</p>
+<p><a href="https://CRAN.R-project.org/package=rjson"><code>rjson</code></a>: Convert between R and JSON objects.</p>
+<p><a href="https://CRAN.R-project.org/package=splitstackshape"><code>splitstackshape</code></a>: Stack and reshape datasets after splitting concatenated values.</p>
+<p><a href="https://www.rdocumentation.org/packages/stats/versions/3.5.1"><code>stats</code></a>: Statistical functions.</p>
+<p><a href="https://CRAN.R-project.org/package=stringr"><code>stringr</code></a>: Working with strings.</p>
+<ul>
+<li>See also <a href="https://stringr.tidyverse.org/">stringr.tidyverse.org</a>).</li>
+</ul>
+<p><a href="https://CRAN.R-project.org/package=tibble"><code>tibble</code></a>: Simple data frames with stricter checking and better formatting than the traditional data frame.</p>
+<p><a href="https://CRAN.R-project.org/package=tidyr"><code>tidyr</code></a>: Tidy data.</p>
+<ul>
+<li>See also <a href="https://tidyr.tidyverse.org/">tidyr.tidyverse.org</a>.</li>
+</ul>
+<hr />
+</div>
+<div id="u-z" class="section level2">
+<h2>U-Z</h2>
+<p><a href="https://CRAN.R-project.org/package=R.utils"><code>utils</code></a>: Various programming utilities.</p>
+<p><a href="https://CRAN.R-project.org/package=XLConnect"><code>XLConnect</code></a>: Read, write, and format Excel data.</p>
+<p><a href="https://CRAN.R-project.org/package=xts"><code>xts</code></a>: Provide for uniform handling of R’s different time-based data classes by extending zoo.</p>
+<p><a href="https://CRAN.R-project.org/package=zoo"><code>zoo</code></a>: For regular and irregular time series.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="program.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["R_Reference_Manual.pdf", "R_Reference_Manual.epub"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+# Visualize
+
+***
+"Visualisation is a fundamentally human activity. A good visualisation will show you things that you did not expect, or raise new questions about the data. A good visualisation might also hint that you're asking the wrong question, or you need to collect different data. Visualisations can surprise you, but don't scale particularly well because they require a human to interpret them."  
+- Garrett Grolemund & Hadley Wickham, *R for Data Science*
+
+***
+## Flowcharts
+
+`diagram`
+
+`DiagrammeR`
+
+***
+## Interfaces
+
+`shiny`
+
+***
+## Plots
+
+`base`
+
+* `abline()`: Add straight lines to a plot.
+* `plot()`: Generic X-Y plotting.
+* `points()`: Add points to a plot.
+
+`ggplot2`
+
+* `aes()`: Construct aesthetic mappings.
+    + Arguments include `color`, `fill`, `size`, `labels`, `alpha`, `shape` (1-20 accept color attributes and 21-25 accept color and fill attributes), `linewidth`, `linetype`.
+    + Use `?pch` to see options for `shape`.
+    + The default shape for points does not have a `fill` attribute, which means that mapping a categorical variable onto `fill` won't result in multiple colors.
+* `geom_*()`: Create a geometry.
+    + `aes()` can be called within `geom_*()` rather than prior to.
+* `ggplot()`: Create a plot.
+* `facet_wrap()`: Wrap a 1D ribbon of panels into 2D (observe a variable, conditional on another variable).
+* `labs()`: Modify axis, legend, and plot labels.
+    + Child functions: `xlab()`, `ylab()`, `ggtitle()`.
+* `position_*()`:
+    + `position_identity()`: Don't adjust position.
+    + `position_dodge()`: Dodge overlapping objects side-to-side.
+    + `position_nudge()`: Nudge points a fixed distance.
+    + `position_stack()`: Stack overlapping objects on top of each other, as counts.
+    + `position_fill()`: Stack overlapping objects on top of each other, as densities.
+    + `position_jitter()`: Jitter points to avoid overplotting.
+    + `position_jitterdodge()`: Simultaneously dodge and jitter.
+* `scale_*_*()`:
+    + `scale_x_*()`
+    + `scale_y_*()`
+    + `scale_color_*()`
+    + `scale_fill_*()`
+    + `scale_shape_*()`
+    + `scale_linetype_*()`
+
+`graphics`
+
+* `boxplot()`: Create a box-and-whisker plot.
+* `hist()`: Create a histogram.
+* 'stripchart()`: One dimensional scatter plots.
+    + Preferable to `ggplot()` when creating one-dimensional plots.
+
+`grDevices`
+
+* `colorRamp()`: Color interpolation.
+    + `colorRampPalette()`
+
+`RColorBrewer`
+
+* `brewer.pal()`: Make the ColorBrewer color palettes available as R palattes.

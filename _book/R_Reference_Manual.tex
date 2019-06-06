@@ -1,0 +1,2410 @@
+\documentclass[]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={R Reference Manual},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{R Reference Manual}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{}
+    \preauthor{}\postauthor{}
+    \date{}
+    \predate{}\postdate{}
+  
+\usepackage{booktabs}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\chapter{Introduction}\label{introduction}
+
+The purpose of this manual is to increase my ability to use R well,
+which means that I must be able to get things done. My vision is that
+this manual will allow me to document the material I learn in a way that
+will help me work more effectively and efficiently. Most of the
+documentation here will link to existing online material so that my
+notes supplement rather than duplicate.
+
+In order to help me reference material in the context I would use it, I
+organized the material according to Garrett Grolemund and Hadley
+Wickham's conception of the tools needed to tackle about 80\% of the
+tasks required in a typical data science project
+(``\href{https://r4ds.had.co.nz/introduction.html}{Introduction}'',
+\emph{R for Data Science}). Those tools are: import, tidy, transform,
+visualize, model, communicate, and program.
+
+\hypertarget{htmlwidget-d25383c2133a96d5c930}{}
+
+\chapter{Import}\label{import}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Create Data}\label{create-data}
+
+\subsection{Data Structures}\label{data-structures}
+
+\subsubsection{Atomic Vector}\label{atomic-vector}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{c()}: Combine values into a vector or list.
+\item
+  \texttt{factor()}: Create a factor variable.
+\item
+  \texttt{seq()}: Generate a sequence.
+\item
+  \texttt{vector()}: Create a vector.
+\end{itemize}
+
+\subsubsection{Matrix}\label{matrix}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{matrix()}: Create a matrix.
+\end{itemize}
+
+\subsubsection{Array}\label{array}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{array()}: Create an array.
+\end{itemize}
+
+\subsubsection{List}\label{list}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{c()}: Combine values into a vector or list.
+\end{itemize}
+
+\texttt{tibble}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{tibble()}: Create a data frame or list.
+\end{itemize}
+
+\subsubsection{Data Frame}\label{data-frame}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{data.frame()}: Create a data frame.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Prefer \texttt{tibble::tibble()} over \texttt{base::data.frame()}.
+  \end{itemize}
+\item
+  \texttt{list()}: Create a list.
+\end{itemize}
+
+\texttt{tibble}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{tibble()}: Create a data frame or list.
+\end{itemize}
+
+\subsubsection{References}\label{references}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://r4ds.had.co.nz/vectors.html}{``Vectors''} (Grolemund \&
+  Wickham, \href{https://r4ds.had.co.nz/}{\emph{R for Data Science}})
+\item
+  \href{http://adv-r.had.co.nz/Data-structures.html}{``Data
+  structures''} (Wickham, \href{http://adv-r.had.co.nz/}{\emph{Advanced
+  R}})
+\end{itemize}
+
+\subsection{Other}\label{other}
+
+\texttt{stats}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{rnorm()}: Generate a random normal distribution.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Import Data from a Local
+Drive}\label{import-data-from-a-local-drive}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{attach()}: Attach a set of R objects to the search path.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Allows objects in the database to be accessed by giving their names
+    (e.g., \texttt{height} rather than \texttt{women\$height}).
+  \end{itemize}
+\item
+  \texttt{file.choose()}: Choose a file interactively.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Use as \texttt{file\ =\ file.choose()} in \texttt{read.table()} and
+    similar functions.
+  \end{itemize}
+\item
+  \texttt{load()}: Reload datasets saved with \texttt{save()}.
+\item
+  \texttt{readRDS()}: Restore an R object written with
+  \texttt{saveRDS()}.
+\end{itemize}
+
+\texttt{data.table}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{fread()}: Similar to \texttt{read.table()}, but faster and
+  more convenient for large data sets.
+\end{itemize}
+
+\texttt{foreign}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{read.spss()}: Read an SPSS data file.
+\end{itemize}
+
+\texttt{haven}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{read\_sas()}: Read and write SAS files.
+\end{itemize}
+
+\texttt{readr}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{read\_delim()}: Read a delimited (including csv and txv) file.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Child functions: \texttt{read\_csv()}, \texttt{read\_csv2()},
+    \texttt{read\_tsv()}.
+  \end{itemize}
+\end{itemize}
+
+\texttt{readxl}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{excel\_sheets()}: List all sheets in an Excel spreadsheet.
+\end{itemize}
+
+\texttt{utils}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{data()}: Load specified data sets, or list the available data
+  sets.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Use this function to load the data sets that accompany R packages,
+    such as \texttt{openintro}'s \texttt{hsb2} and \texttt{email50} and
+    \texttt{gapminder}'s \texttt{gapminder}.
+  \end{itemize}
+\item
+  \texttt{read.table()}: Read a file in table format.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Child functions: \texttt{read.csv()}, \texttt{read.csv2()},
+    \texttt{read.delim()}, \texttt{read.delim2()}.
+  \end{itemize}
+\end{itemize}
+
+\texttt{XLConnect}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{readWorksheetFromFile()}: Read data from worksheets in an
+  Excel file.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Import Data from the
+Internet}\label{import-data-from-the-internet}
+
+\texttt{httr}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{GET()}: Get a URL.
+\end{itemize}
+
+\texttt{jsonlite}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{read\_json()}: Read and write JSON.
+\end{itemize}
+
+\texttt{readr}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{read\_delim()}: Read a delimited file (including csv \& tsv)
+  into a tibble.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Child functions: \texttt{read\_csv()}, \texttt{read\_csv2()},
+    \texttt{read\_tsv()}.
+  \end{itemize}
+\end{itemize}
+
+\texttt{rjson}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{fromJSON()}: Convert JSON to R.
+\end{itemize}
+
+\texttt{utils}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{download.file()}: Download a file from the Internet.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Import Data from a Database}\label{import-data-from-a-database}
+
+\texttt{DBI}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{dbBind()}: Bind values to a parameterized/prepared statement.
+\item
+  \texttt{dbClearResult()}: Free all resources (local and remote)
+  associated with a result set.
+\item
+  \texttt{dbConnect()}: Connect to a DBMS.
+\item
+  \texttt{dbDataType()}: Determine the SQL data type of an object.
+\item
+  \texttt{dbDisconnect()}: Disconnect (close) a connection to a DBMS.
+\item
+  \texttt{dbFetch()}: Fetch records from a previously executed query.
+\item
+  \texttt{dbGetQuery()}: Send query, retrieve the results, and then
+  clear result set.
+\item
+  \texttt{dbListTables()}: List remote tables.
+\item
+  \texttt{dbReadTable()}: Copy data frames to and from database tables.
+\item
+  \texttt{dbSendQuery()}: Execute a query on a given database
+  connection.
+\item
+  \texttt{dbSendStatement()}: Execute a data manipulation statement on a
+  given database connection.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Reference Material}\label{reference-material}
+
+The \texttt{openintro} package contains data sets useful for practicing
+and teaching.
+
+\chapter{Tidy}\label{tidy}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+``Tidying your data means storing it in a consistent form that matches
+the semantics of the dataset with the way it is stored. In brief, when
+your data is tidy, each column is a variable and each row is an
+observation. Tidying data is important because the consistent structure
+lets you focus your struggle on questions about the data, not fighting
+to get the data into the right form for different functions.''\\
+- Garrett Grolemund \& Hadley Wickham, \emph{R for Data Science}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Explore Raw Data}\label{explore-raw-data}
+
+\subsection{Understand the Structure of the
+Data}\label{understand-the-structure-of-the-data}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{class()}: Get or set the class attribute of an object.
+\item
+  \texttt{colnames()}: Retrieve or set the column names of a matrix-like
+  object.
+\item
+  \texttt{dim()}: Retrieve or set the dimension of an object.
+\item
+  \texttt{dimnames()}: Retrieve or set the dimension names of an object.
+\item
+  \texttt{format()}: Format an R object.
+\item
+  \texttt{length()}: Get or set the length of an object.
+\item
+  \texttt{levels()}: Get or set the (factor) levels of a variable.
+\item
+  \texttt{mode()}: Get or set the storage mode attribute of an object.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Modes include logical, numeric (the mode equivalent of
+    \texttt{typeof()}'s integer and double), complex, character, raw,
+    and list.
+  \end{itemize}
+\item
+  \texttt{names()}: Get or set the names of an object.
+\item
+  \texttt{rownames()}: Retrieve or set the row names of a matrix-like
+  object.
+\item
+  \texttt{typeof()}: Display the R internal type of an object.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Types include logical, integer, double, complex, character, raw, and
+    list.
+  \end{itemize}
+\end{itemize}
+
+\texttt{tibble}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{glimpse()}: Get a glimpse of the data.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Similar to \texttt{utils::str()}.
+  \end{itemize}
+\end{itemize}
+
+\texttt{utils}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{str()}: Display the structure of an R object.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Similar to \texttt{tibble::glimpse()}.
+  \end{itemize}
+\end{itemize}
+
+\subsection{Look at the Data}\label{look-at-the-data}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{names()}: Get or set the names of an object.
+\item
+  \texttt{summary()}: Summarize the object.
+\end{itemize}
+
+\texttt{utils}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{head()}: View the first observations in a data frame.
+\item
+  \texttt{tail()}: View the last observations in a data frame.
+\end{itemize}
+
+\subsection{Visualize the Data}\label{visualize-the-data}
+
+\texttt{graphics}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{hist()}: Create a histogram.
+\item
+  \texttt{plot()}: Create an x-y plot.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Tidy Data}\label{tidy-data}
+
+\subsection{Manage Columns and
+Observations}\label{manage-columns-and-observations}
+
+\texttt{splitstackshape}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{cSplit()}: Split concatencated values into separate values.
+\end{itemize}
+
+\texttt{tidyr}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{gather()}: Gather columns.
+\item
+  \texttt{separate()}: Separate one column into multiple columns.
+\item
+  \texttt{spread()}: Spread across multiple columns.
+\item
+  \texttt{unite()}: Unite multiple columns into one.
+\end{itemize}
+
+\subsection{Transpose}\label{transpose}
+
+\texttt{purrr}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{transpose()}: Turn a list-of-lists inside-out.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Prepare Data for Analysis}\label{prepare-data-for-analysis}
+
+\subsection{Coerce Data}\label{coerce-data}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{as.*()} functions:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{as.array()}: Coerce to array.
+  \item
+    \texttt{as.data.frame()}: Coerce to data frame.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Prefer\texttt{tibble::as\_tibble()} to
+      \texttt{base::as.data.frame()}.
+    \end{itemize}
+  \item
+    \texttt{as.Date()}: Coerce to date.
+  \item
+    \texttt{as.factor()}: Coerce to factor.
+  \item
+    \texttt{as.list()}: Coerce to list.
+  \item
+    \texttt{as.matrix()}: Coerce to matrix.
+  \item
+    \texttt{as.POSIX*()}: Coerce to POSIXlt or POSIXct.
+  \end{itemize}
+\item
+  \texttt{unclass()}: Remove the class attribute of an object.
+\end{itemize}
+
+\texttt{methods}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{as()}: Force an object to belong to a class.
+\end{itemize}
+
+\texttt{tibble}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{as\_tibble()}: Coerce lists and matrices to data frames.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Preferable to \texttt{base::as.data.frame()}.
+  \end{itemize}
+\end{itemize}
+
+\subsection{Dates and Datetimes}\label{dates-and-datetimes}
+
+\texttt{anytime}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{anytime()}: Parse POSIXct or Date objects from input data.
+\end{itemize}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{as.Date()}: Date conversion to and from character.
+\item
+  \texttt{as.POSIX*()}: Date-time conversion for POSIXct and POSIXlt.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{as.POSIXct()}: Setting default for UTC and 1970.
+  \end{itemize}
+\item
+  \texttt{strptime()}: Date-time conversion to and from character.
+\item
+  \texttt{Sys.timezone()}: Return the name of the current time zone.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{OlsonNames()} displays available time zones.
+  \end{itemize}
+\end{itemize}
+
+\texttt{fasttime}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{fastPOSIXct()}: Convert strings into POSICct object (string
+  must be in year, month, day, hour, minute, second format.)
+\end{itemize}
+
+\texttt{hms}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{hms()}: Store time-of-day values as \texttt{hms} class.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Child functions: \texttt{as.hms()}, `is.hms().
+  \end{itemize}
+\end{itemize}
+
+\texttt{lubridate}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{parse\_date\_time()}: User friendly date-time parsing
+  functions that can accomodate parsing multiple dates in different
+  formats.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{fast\_strptime()}: Fast C parser of numeric formats only
+    that accepts explicit format arguments, just as
+    \texttt{base::strptime()}.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Note that the format argument must match the input exactly,
+      including any non-white space characters (such as ``T'' and
+      ``Z'').
+    \end{itemize}
+  \item
+    \texttt{make\_date()}: Create dates from numeric representations.
+  \item
+    \texttt{make\_datetime()}: Create date-times from numeric
+    representations.
+  \item
+    \texttt{parse\_date\_time2()}: Fast C parser of numeric orders.
+  \item
+    \texttt{parse\_date\_time()} can be slow because it is designed to
+    be forgiving and flexible. If the dates you are working with are in
+    a consistent format (ideally ISO 8601), use one of the following:
+    \texttt{fasttime::fastPOSIXct()}
+  \end{itemize}
+\item
+  \texttt{ymd()}: Parse dates with year, month, and day components. +
+  Related formats: \texttt{ydm()}, \texttt{mdy()}, \texttt{myd()},
+  \texttt{dmy()}, \texttt{dym()}, \texttt{yq()}.
+\item
+  \texttt{ymd\_hms()}: Parse date-times with year, month, day, hour,
+  minute, and second components. + Related formats: \texttt{ymd\_hm()},
+  \texttt{ymd\_h()}, \texttt{dmy\_hms()}, \texttt{dmy\_hm()},
+  \texttt{dmy\_h()}, \texttt{mdy\_hms()}, \texttt{mdy\_hm()},
+  \texttt{mdy\_h()}, \texttt{ydm\_hms()}, \texttt{ydm\_hm()},
+  \texttt{ydm\_h()}.
+\end{itemize}
+
+\subsection{Factors and Levels}\label{factors-and-levels}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{factor()}: Get and set factors.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Rearrange the order of factors by using the \texttt{levels}
+    argument. For example, rearrange the order of ``Bad,''Good," and
+    ``Neutral'' using `levels = c(``Bad'', ``Neutral'', ``Good'').
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsection{Filter and Remove Data}\label{filter-and-remove-data}
+
+\texttt{purrr}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{keep()}: Keep or discard elements using a predicate function.
+\end{itemize}
+
+\texttt{stats}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{na.omit()}: Remove rows with \texttt{NA} values.
+\end{itemize}
+
+\subsection{Strings}\label{strings}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{cat()}: Concatenate and print.
+\item
+  \texttt{chartr()}: Change certain characters.
+\item
+  \texttt{grep()}: Pattern matching and replacement.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{grep()} family functions: \texttt{grepl()}, \texttt{sub()},
+    \texttt{gsub()}, \texttt{regexpr()}, \texttt{gregexpr()}, and
+    \texttt{regexec()}.
+  \end{itemize}
+\item
+  \texttt{tolower()}: Convert to lowercase.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{stringr::str\_to\_lower()} is an alternative.
+  \end{itemize}
+\item
+  \texttt{toupper()}: Convert to uppercase.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{stringr::str\_to\_upper()} is an alternative.
+  \end{itemize}
+\end{itemize}
+
+\texttt{stringr}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{str\_detect()}: Detect the presence or absence of a pattern in
+  a string.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Control the \texttt{pattern} argument options with \texttt{regex()}
+    (i.e.,
+    \texttt{str\_detect(x,\ regex(pattern,\ ignore\_case\ =\ TRUE))}.
+  \end{itemize}
+\item
+  \texttt{str\_to\_lower()}: Convert to lower case.
+\item
+  \texttt{str\_to\_title()}: Capitalize the first letter.
+\item
+  \texttt{str\_to\_upper()}: Convert to upper case.
+\end{itemize}
+
+\subsection{Test Data}\label{test-data}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{all()}: Are all values true?
+\item
+  \texttt{any()}: Are any values true?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Use \texttt{any(is.na(data.frame))} to determine if there are any NA
+    values in a data frame.
+  \end{itemize}
+\item
+  \texttt{exists()}: Check whether an R object exists.
+\item
+  \texttt{is.*()} functions:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{is.array()}: Test whether an object is an array.
+  \item
+    \texttt{is.data.frame()}: Test whether an object is a data frame.
+  \item
+    \texttt{is.matrix()}: Test whether an object is a matrix.
+  \item
+    \texttt{is.vector()}: Test whether an object is a vector.
+  \end{itemize}
+\item
+  \texttt{setequal()}: Check two vectors for equality.
+\end{itemize}
+
+\texttt{purrr}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{every()}: Do every or some elements of a list satisfy a
+  predicate?
+\end{itemize}
+
+\texttt{stats}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{complete.cases()}: Find complete cases (i.e., rows without
+  \texttt{NA} values).
+\end{itemize}
+
+\texttt{tibble}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{is\_tibble()}: Test whether an object is a tibble.
+\end{itemize}
+
+\chapter{Transform}\label{transform}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+``Transformation includes narrowing in on observations of interest (like
+all people in one city, or all data from the last year), creating new
+variables that are functions of existing variables (like computing
+velocity from speed and time), and calculating a set of summary
+statistics (like counts or means).''\\
+- Garrett Grolemund \& Hadley Wickham, \emph{R for Data Science}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Arithmetic \& Summary
+Statistics}\label{arithmetic-summary-statistics}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{abs()}: Compute absolute value.
+\item
+  \texttt{colMeans()}: Compute the column mean.
+\item
+  \texttt{colSums()}: Compute the column sum.
+\item
+  Comparison Operators: Binary operators which allow the comparison of
+  values in atomic vectors.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{\textless{}}, \texttt{\textgreater{}},
+    \texttt{\textless{}=}, \texttt{\textgreater{}=}, \texttt{==},
+    \texttt{!=}.
+  \item
+    \texttt{identical()} and \texttt{all.equal()} rather than
+    \texttt{==} and \texttt{!=} should be used in tests where a single
+    \texttt{TRUE} or \texttt{FALSE} is required (such as \texttt{if}
+    expressions).
+  \end{itemize}
+\item
+  \texttt{diff()}: Compute the difference between two objects.
+\item
+  \texttt{max()}: Return the maximum value.
+\item
+  \texttt{mean()}: Compute the mean.
+\item
+  \texttt{min()}: Return the minimum value.
+\item
+  \texttt{round()}: Round numbers.
+\item
+  \texttt{rowMeans()}: Compute the row mean.
+\item
+  \texttt{rowSums()}: Compute the row sum.
+\item
+  \texttt{sqrt()}: Compute square root.
+\item
+  \texttt{sum()}: Sum elements.
+\end{itemize}
+
+\texttt{dplyr}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{count()}: Count/tally observations by group.
+\item
+  \texttt{group\_by()}: Group by one or more variables.
+\item
+  \texttt{n()}: Get the number of observations in a current group.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Must be used within \texttt{summarise()}, \texttt{mutate()}, or
+    \texttt{filter()}).
+  \end{itemize}
+\item
+  \texttt{n\_distinct()}: Count the number of unique values in a vector.
+\item
+  \texttt{summarise()}: Reduce multiple values to a single value.
+\item
+  \texttt{tally()}: An alternative to \texttt{count()}.
+\end{itemize}
+
+\texttt{stats}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{aggregate()}: Compute summary statistics of data subsets.
+\item
+  \texttt{cor()}: Correlation.
+\item
+  \texttt{cov()}: Covariance.
+\item
+  \texttt{rnorm()}: Generate a random normal distribution.
+\item
+  \texttt{var()}: Variance.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Create New Variables or Modify Existing
+Ones}\label{create-new-variables-or-modify-existing-ones}
+
+\texttt{dplyr}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{mutate()}: Add new variables.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{mutate()} can also be used to modify existing variables. To
+    change the case of a character variable, for example, do something
+    like:
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df <-}
+\StringTok{  }\NormalTok{df }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{var_name =} \KeywordTok{str_to_lower}\NormalTok{(var_name))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Dates and Datetimes}\label{dates-and-datetimes-1}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{date()}: Get the current system date and time.
+\item
+  \texttt{difftime()}: Time intervals and differences.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{difftime()} is the function behind the \texttt{-} operator
+    when used with dates and datetimes (e.g.,
+    \texttt{time\_1\ -\ time\_2} is equivalent to
+    \texttt{difftime(time\_1,\ time\_2)}). The advantage of using
+    \texttt{difftime()} over \texttt{-}, however, is the \texttt{units}
+    argument because it allows you to specify the unit of time in which
+    the difference is calculated.
+  \end{itemize}
+\item
+  \texttt{months()}: Extract the month names.
+\item
+  \texttt{quarters()}: Extract the calendar quarters.
+\item
+  \texttt{Sys.Date()}: Get the current date in the current time zone.
+\item
+  \texttt{Sys.time()}: Get the absolute date-time value (which can be
+  converted to various time zones and may return different days).
+\item
+  \texttt{weekdays()}: Extract weekday names.
+\end{itemize}
+
+\texttt{lubridate}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{date()}: Get or set the date component of a date-time.
+\item
+  \texttt{day()}: Get or set the day component of a datetime.
+\item
+  \texttt{month()}: Get or set the month component of a datetime.
+\item
+  \texttt{now()}: The current time (as a POSIXct object).
+\item
+  \texttt{quarter()}: Get or set the fiscal quarter or semester
+  component of a datetime.
+\item
+  \texttt{round\_date()}: Round the datetime to the nearest datetime.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Child functions: \texttt{ceiling\_date()}, \texttt{floor\_date()}.
+  \end{itemize}
+\item
+  Time spans: Duration:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{dseconds()}, \texttt{dminutes()}, \texttt{dhours()},
+    \texttt{ddays()}, \texttt{dweeks()}, \texttt{dyears()}.
+  \item
+    Use when you are interested in seconds elapsed.
+  \end{itemize}
+\item
+  Time spans: Interval:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{interval()}, \texttt{\%-\/-\%}, \texttt{is.interval()},
+    \texttt{int\_start()}, \texttt{int\_end()}, \texttt{int\_length()},
+    \texttt{int\_flip()}, \texttt{int\_shift()},
+    \texttt{int\_overlaps()}, \texttt{int\_standardize()},
+    \texttt{int\_aligns()}, \texttt{int\_diff()}.
+  \item
+    Use when you have a start and end.
+  \end{itemize}
+\item
+  Time spans: Period:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{seconds()}, \texttt{minutes()}, \texttt{hours()},
+    \texttt{days()}, \texttt{weeks()}, \texttt{months()},
+    \texttt{years()}.
+  \item
+    Use when you are interested in human units.
+  \end{itemize}
+\item
+  Time zones:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{force\_tz()}: Change the time zone without changing the
+    clock time.
+  \item
+    \texttt{tz()}: Extract the time zone from a datetime.
+  \item
+    \texttt{with\_tz()}: View the same instant in a different time zone.
+  \end{itemize}
+\item
+  \texttt{today()}: The current date (as a Date object).
+\item
+  \texttt{\%m+\%} \& \texttt{\%m-\%}: Add and subtract months to a date
+  without exceeding the last day of the new month.
+\item
+  \texttt{\%within\%}: Test whether a date or interval falls within an
+  interval.
+\item
+  \texttt{year()}: Get or set the year component of a datetime.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Merge or Append Data}\label{merge-or-append-data}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{append()}: Add elements to a vector.
+\item
+  \texttt{cbind()}: Combine objects by column.
+\item
+  \texttt{intersect()}: Combine data shared in common between two
+  datasets.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Similar to \texttt{dplyr::semi\_join()}.
+  \end{itemize}
+\item
+  \texttt{merge()}: Merge two data frames.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{dplyr::join} functions are an alternative to
+    \texttt{merge()}.
+  \end{itemize}
+\item
+  \texttt{rbind()}: Combine objects by row.
+\item
+  \texttt{setdiff()}: Find the difference between two vectors.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Similar to \texttt{dplyr::anti\_join()}.
+  \end{itemize}
+\item
+  \texttt{union()}: Combine two datasets without duplicating values.
+\end{itemize}
+
+\texttt{dplyr}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{bind()}: Bind multiple data frames by row and column.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Child functions: bind\_rows(), bind\_cols(), combine().
+  \end{itemize}
+\item
+  Join Functions: Join two tables.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Filtering Joins:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      anti\_join(): Return all rows from \texttt{x} where there are not
+      matching values in \texttt{y}, keeping just columns from
+      \texttt{x}.
+    \item
+      semi\_join(): Return all rows from \texttt{x} where there are
+      matching values in \texttt{y}, keeping just columns from
+      \texttt{x}. A semi join differs from an inner join because an
+      inner join will return one row of \texttt{x} for each matching row
+      of \texttt{y}, where a semi join will never duplicate rows of
+      \texttt{x}.
+    \end{itemize}
+  \item
+    Mutating Joins:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      full\_join(): Return all rows and all columns from both \texttt{x}
+      and \texttt{y}. Where there are not matching values, returns
+      \texttt{NA} for the one missing.
+    \item
+      inner\_join(): Return all rows from \texttt{x} where there are
+      matching values in \texttt{y}, and all columns from \texttt{x} and
+      \texttt{y}. If there are multiple matches between \texttt{x} and
+      \texttt{y}, all combination of the matches are returned.
+    \item
+      left\_join(): Return all rows from \texttt{x}, and all columns
+      from \texttt{x} and \texttt{y}. Rows in \texttt{x} with no match
+      in \texttt{y} will have \texttt{NA} values in the new columns. If
+      there are multiple matches between \texttt{x} and \texttt{y}, all
+      combinations of the matches are returned.
+    \item
+      right\_join(): Return all rows from \texttt{y}, and all columns
+      from \texttt{x} and \texttt{y}. Rows in \texttt{x} with no match
+      in \texttt{y} will have \texttt{NA} values in the new columns. If
+      there are multiple matches between \texttt{y} and \texttt{x}, all
+      combinations of the matches are returned.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\texttt{tibble}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{add\_column()}: Add columns to a data frame.
+\item
+  \texttt{add\_row()}: Add rows to a data frame.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Narrow in on Observations of
+Interest}\label{narrow-in-on-observations-of-interest}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{droplevels()}: Drop unused levels from factors.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This function will keep levels that have even 1 or 2 counts. If you
+    want to remove levels with low counts from a data set in order to
+    simplify your analysis, first \texttt{filter()} out those rows and
+    then use \texttt{droplevels()}.
+  \end{itemize}
+\item
+  \texttt{prop.table()}: Express table entries as proportions of the
+  marginal table.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The input is a table produced by \texttt{table()}.
+  \item
+    As these are proportions of the whole,
+    \texttt{sum(prop.table(table\_name))} = 1.
+  \item
+    Specify conditional proportions on rows or columns by using the
+    \texttt{margin} argument.
+  \end{itemize}
+\item
+  \texttt{table()}: Build a table of the counts at each combination of
+  factor levels.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Use \texttt{prop.table()} to see the table entries expressed as
+    proportions.
+  \end{itemize}
+\end{itemize}
+
+\texttt{dplyr}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{arrange()}: Arrange rows by variable, in ascending order.
+\item
+  \texttt{distinct()}: Select distinct rows.
+\item
+  \texttt{filter()}: Return rows with matching conditions.
+\item
+  \texttt{rename()}: Rename variables by name (a modification of
+  \texttt{select()}).
+\item
+  \texttt{sample\_n()}: Sample n rows from a table.
+\item
+  \texttt{select()}: Select/rename variables.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Helper functions include: \texttt{starts\_with()},
+    \texttt{ends\_with()}, \texttt{contains()}, \texttt{matches()},
+    \texttt{num\_range()}, and \texttt{one\_of()}.
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Test}\label{test}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{setequal()}: Check two vectors for equality.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\chapter{Visualize}\label{visualize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+``Visualisation is a fundamentally human activity. A good visualisation
+will show you things that you did not expect, or raise new questions
+about the data. A good visualisation might also hint that you're asking
+the wrong question, or you need to collect different data.
+Visualisations can surprise you, but don't scale particularly well
+because they require a human to interpret them.''\\
+- Garrett Grolemund \& Hadley Wickham, \emph{R for Data Science}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Flowcharts}\label{flowcharts}
+
+\texttt{diagram}
+
+\texttt{DiagrammeR}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Charts}\label{charts}
+
+\texttt{ggplot2}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ggplot()}: Create a plot.
+\item
+  \texttt{facet\_wrap()}: Wrap a 1D ribbon of panels into 2D (observe a
+  variable, conditional on another variable).
+\end{itemize}
+
+\texttt{graphics}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{boxplot()}: Create a box-and-whisker plot.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Interfaces}\label{interfaces}
+
+\texttt{shiny}
+
+\chapter{Model}\label{model}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+``Models are complementary tools to visualisation. Once you have made
+your questions sufficiently precise, you can use a model to answer them.
+Models are a fundamentally mathematical or computational tool, so they
+generally scale well. \ldots{} But every model makes assumptions, and by
+its very nature a model cannot question its own assumptions. That means
+a model cannot fundamentally surprise you. - Garrett Grolemund \& Hadley
+Wickham, \emph{R for Data Science}''
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{}\label{section}
+
+\texttt{broom}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{tidy()}: Construct a data frame that summarizes the model's
+  statistical findings.
+\end{itemize}
+
+\texttt{dplyr}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{sample\_n()}: Sample n rows from a table.
+\end{itemize}
+
+\texttt{stats}: Statistical functions.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{coef()}: Extract model coefficients.
+\end{itemize}
+
+\chapter{Communicate}\label{communicate}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+``The last step of data science is communication, an absolutely critical
+part of any data analysis project. It doesn't matter how well your
+models and visualisation have led you to understand the data unless you
+can also communicate your results to others.''\\
+- Garrett Grolemund \& Hadley Wickham, \emph{R for Data Science}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Format Output}\label{format-output}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{format()}: Format an object for pretty printing.
+\end{itemize}
+
+\texttt{lubridate}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{stamp()}: Format dates and times based on human-friendly
+  templates.
+\end{itemize}
+
+\texttt{scales}: Scale functions for visualization.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{dollar()}: Round to the nearest cent and display dollar sign.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Export}\label{export}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{file.path()}: Construct a file path.
+\item
+  \texttt{save()}: Save R objects.
+\item
+  \texttt{saveRDS()}: Save a single R object.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    See
+    \href{https://www.fromthebottomoftheheap.net/2012/04/01/saving-and-loading-r-objects/}{``A
+    better way of saving and loading objects in R''} to understand the
+    differences between \texttt{save()} and \texttt{saveRDS()}.
+  \end{itemize}
+\end{itemize}
+
+\texttt{readr}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{write\_delim()}: Write a data frame to a delimited file.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    About twice as fast as \texttt{write.csv()} and never writes row
+    names.
+  \item
+    Child functions: \texttt{write\_csv()},
+    \texttt{write\_excel\_csv()}, \texttt{write\_tsv()}.
+  \end{itemize}
+\end{itemize}
+
+\texttt{utils}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{write.table()}: Data output.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Prefer \texttt{readr::write\_delim()} to
+    \texttt{utils::write.table()}.
+  \item
+    Child functions: \texttt{write.csv()}, \texttt{write.csv2()}.
+  \end{itemize}
+\end{itemize}
+
+\texttt{XLConnect}: Read, write, and format Excel data.
+
+\chapter{Program}\label{program}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+``Surrounding {[}the tools for importing, tidying, transforming,
+visualising, modeling, and communicating data{]} is programming.
+Programming is a cross-cutting tool that you use in every part of a
+project. You don't need to be an expert programmer to be a data
+scientist, but learning more about programming pays off because becoming
+a better programmer allows you to automate common tasks, and solve new
+problems with greater ease.''\\
+- Garrett Grolemund \& Hadley Wickham, \emph{R for Data Science}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Conditionals}\label{conditionals}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  'ifelse()`: Conditional element selection.
+\end{itemize}
+
+\texttt{dplyr}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{case\_when()}: A general vectorized if.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Environment and Workspace}\label{environment-and-workspace}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{dir()}: List the files in a directory/folder.
+\item
+  Environments
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{baseenv()}: The environment of the \texttt{base} package,
+    it's enclosing environment (``parent environment'') is the empty
+    environment.
+  \item
+    \texttt{emptyenv()}: The empty environment, which is the ancestor of
+    all environments and the only environment without an enclosing
+    environment.
+  \item
+    \texttt{environment()}: The current environment.
+  \item
+    \texttt{globalenv()}: The environment in which you normally work,
+    it's enclosing environment is the last package attached with
+    \texttt{library()} or \texttt{require()}.
+  \item
+    \texttt{new.env()}: Create a new environment.
+  \end{itemize}
+\item
+  \texttt{exists()}: Look for an R object of the given name and possibly
+  return it.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Must use quotations to name the object.
+  \end{itemize}
+\item
+  \texttt{getwd()}: Get the working directory.\\
+\item
+  \texttt{list.files()}: List the files in a directory/folder.
+\item
+  \texttt{ls()}: List objects in the specified environment.
+\item
+  \texttt{options()}: Set and examine global options.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{getOption()}: Set and examine global options.
+  \end{itemize}
+\item
+  \texttt{rm()}: Remove objects from a specified environment.
+\item
+  \texttt{search()}: Return a list of attached packages and R objects.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{searchpaths()}: Return the path to attached packages.
+  \end{itemize}
+\end{itemize}
+
+\texttt{gdata}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{object.size()}: Report the space allocated for an object.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    See also \texttt{utils::object.size()}.
+  \end{itemize}
+\end{itemize}
+
+\texttt{installr}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{updateR()}: Check for the latest R version; downloads and
+  installs new R versions.
+\end{itemize}
+
+\texttt{pryr}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{where()}: Find where a name is defined.
+\end{itemize}
+
+\texttt{utils}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{object.size()}: Report the space allocated for an object.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    See also \texttt{gdata::object.size()}.
+  \end{itemize}
+\end{itemize}
+
+References:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{http://adv-r.had.co.nz/Environments.html\#environments}{``Environments''}
+  (Hadley Wickham, \href{http://adv-r.had.co.nz/}{\emph{Advanced R}})
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Evaluation (Standard and
+Non-standard)}\label{evaluation-standard-and-non-standard}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{cat()}: Concatenate and print.
+\item
+  \texttt{quote()}: Return the argument, unevaluated.
+\item
+  \texttt{writeLines()}: Display quotes and backslashes as they would be
+  read, rather than as R stores them (i.e., see the raw contents of the
+  string, as the \texttt{print()} representation is not the same as the
+  string itself).
+\end{itemize}
+
+\texttt{rlang}
+
+\begin{itemize}
+\tightlist
+\item
+  Quosures
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{enquo()}, \texttt{new\_quosure()}, \texttt{quo()}.
+  \end{itemize}
+\end{itemize}
+
+References:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{http://adv-r.had.co.nz/Computing-on-the-language.html}{``Non-standard
+  evaluation''} (Hadley Wickham,
+  \href{http://adv-r.had.co.nz/}{\emph{Advanced R}})
+\item
+  \href{https://cran.r-project.org/web/packages/lazyeval/vignettes/lazyeval.html}{``Non-standard
+  evaluation''} (Hadley Wickham, \texttt{lazyeval} package vignette)
+\item
+  \href{https://dplyr.tidyverse.org/articles/programming.html}{``Programming
+  with dplyr''} (dplyr.tidyverse.org)
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Functionals}\label{functionals}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  Apply Functions
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{apply()}: Apply functions over array margins.
+  \item
+    \texttt{lapply()}: Apply a function over a list or vector.
+  \item
+    \texttt{sapply()}: Apply a function over a list or vector and return
+    a vector or matrix.
+  \item
+    \texttt{vapply()}: A safer version of \texttt{sapply()}, as it
+    requires the output type to be predetermined.
+  \item
+    \texttt{mapply()}: Apply a function to multiple list or vector
+    arguments.
+  \item
+    \texttt{rapply()}: Recursively apply a function to a list.
+  \item
+    \texttt{tapply()}: Apply a function over a ragged array.
+  \end{itemize}
+\end{itemize}
+
+\texttt{purrr}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{map()}: Apply a function to each element of a vector.
+\item
+  \texttt{map2()}: Map over multiple inputs simultaneously.
+\item
+  \texttt{safely()}: Capture side effects.
+\item
+  \texttt{transpose()}: Transpose a list (turn a list-of-lists
+  inside-out).
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Functions}\label{functions}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{do.call()}): Execute a function call from a name or a function
+  and a list of arguments to be passed to the function.
+\item
+  \texttt{message()}: Generage a diagnostic message.
+\item
+  \texttt{unlist()}: Flatten lists.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Useful when using \texttt{purrr}'s \texttt{map()} functions, which
+    return objects as type \texttt{list}.
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Learn About an Object}\label{learn-about-an-object}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{args()}: Display the argument names and default values of a
+  function.
+\item
+  \texttt{attributes()}: View or assign an objects attributes (e.g.,
+  \texttt{class()}, \texttt{dim()}, \texttt{dimnames()},
+  \texttt{names()}, \texttt{row.names()}).
+\item
+  \texttt{body()}: Get or set the body of a function.
+\item
+  \texttt{colnames()}: Retrieve or set column names.
+\item
+  \texttt{dim()}: Retrieve or set the dimnames of an object.
+\item
+  \texttt{dimnames()}: Retrieve or set the dimension names of an object.
+\item
+  \texttt{formals()}: Get or set the formal arguments of a function.
+\item
+  \texttt{help()}: Get the topic documentation.
+\item
+  \texttt{vignette()}: View a specified package vignette.
+\item
+  ?object\_name
+\item
+  ??object\_name
+\item
+  \texttt{rownames()}: Retrieve or set row names.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Optimization}\label{optimization}
+
+\texttt{microbenchmark}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{microbenchmark()}: Sub-millisecond accurate timing of
+  expression evaluations.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A more accurate replacement of
+    \texttt{system.time(replicate(1000,\ expr))}.
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Pipes}\label{pipes}
+
+\texttt{magrittr}: Forward-pipe operator for R.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{freduce()}: Apply a list of functions sequentially.
+\item
+  \texttt{\%\textless{}\textgreater{}\%}: Compound assignment-pipe
+  operator.
+\item
+  \texttt{\%\textgreater{}\%}: Forward-pipe operator.
+\item
+  \texttt{\%\$\%}: Expositions-pipe operator.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Selecting \& Subsetting}\label{selecting-subsetting}
+
+\texttt{base}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{subset()}: Subset vectors, matrices, and data frames.
+\end{itemize}
+
+\texttt{dplyr}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{first()}: Extract the first element of a vector.
+\item
+  \texttt{last()}: Extract the last element of a vector.
+\item
+  `nth(): Extract the nth element of a vector.
+\item
+  \texttt{select()}: Select/rename variables.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Helper functions include: \texttt{starts\_with()},
+    \texttt{ends\_with()}, \texttt{contains()}, \texttt{matches()},
+    \texttt{num\_range()}, and \texttt{one\_of()}.
+  \item
+    A closely-related function is \texttt{dplyr::rename()}.
+  \end{itemize}
+\end{itemize}
+
+References:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://twitter.com/hadleywickham/status/643381054758363136}{``Indexing
+  lists in \#rstats. Inspired by Residence Inn''} (Hadley Wickham,
+  Twitter, 14 September 2015)
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Version Control}\label{version-control}
+
+Git
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://git-scm.com/}{Git}
+\item
+  \href{https://git-scm.com/book/en/v2}{\emph{Pro Git}} by Scott Chacon
+  and Ben Straub
+\item
+  \href{http://r-pkgs.had.co.nz/git.html\#git-learning}{\emph{Git and
+  GitHub}} by Hadley Wickham
+\item
+  \href{http://happygitwithr.com/}{\emph{Happy Git and GitHub for the
+  useR}} by Jenny Bryan
+\end{itemize}
+
+\texttt{packrat}
+
+\begin{itemize}
+\tightlist
+\item
+  See note on the \texttt{packrat} package in the ``Referenced
+  Packages'' section.
+\item
+  \texttt{snapshot()}: Capture and store the packages and versions in
+  use.
+\item
+  \texttt{restore()}: Load the most recent snapshot to the project's
+  private library.
+\end{itemize}
+
+\chapter{Referenced Packages}\label{referenced-packages}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{A-D}\label{a-d}
+
+\href{https://CRAN.R-project.org/package=anytime}{\texttt{anytime}}:
+Date converter.
+
+\href{https://www.rdocumentation.org/packages/base/versions/3.5.1}{\texttt{base}}:
+Base R functions.
+
+\href{https://CRAN.R-project.org/package=bookdown}{\texttt{bookdown}}:
+Author books and technical documents with R Markdown. + See Yihui Xie's
+\href{https://bookdown.org/yihui/bookdown/}{\emph{bookdown: Authoring
+Books and Technical Documents with R Markdown}}.
+
+\href{https://CRAN.R-project.org/package=broom}{\texttt{broom}}: Convert
+statistical analysis objects into tidy data frames.
+
+\href{https://CRAN.R-project.org/package=chron}{\texttt{chron}}:
+Chronological objects which can handle dates and times.
+
+\href{https://CRAN.R-project.org/package=data.table}{\texttt{data.table}}:
+For large data.
+
+\href{https://CRAN.R-project.org/package=DBI}{\texttt{DBI}}: Database
+interface.
+
+\begin{itemize}
+\item
+  For MySQL documentation, see the \href{https://dev.mysql.com/}{MySQL
+  Reference Manual}.
+\item
+  Use with the \texttt{odbc} package.
+\end{itemize}
+
+\href{https://CRAN.R-project.org/package=diagram}{\texttt{diagram}}:
+Visualize simple graphs (networks); create plot flow diagrams.
+
+\href{https://CRAN.R-project.org/package=DiagrammeR}{\texttt{DiagrammeR}}:
+Graph/network visualization. + DiagrammeR uses the
+\href{https://www.graphviz.org/}{GraphViz} language.
+
+\href{https://CRAN.R-project.org/package=dplyr}{\texttt{dplyr}}: Data
+manipulation.
+
+\begin{itemize}
+\tightlist
+\item
+  See also \href{https://dplyr.tidyverse.org/}{dplyr.tidyverse.org}.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{E-H}\label{e-h}
+
+\href{https://CRAN.R-project.org/package=fasttime}{\texttt{fasttime}}:
+Fast utilit function for time parsing and conversion.
+
+\href{https://CRAN.R-project.org/package=forcats}{\texttt{forcats}}:
+Tools for working with categorical variables.
+
+\href{https://CRAN.R-project.org/package=gdata}{\texttt{gdata}}: Data
+manipulation.
+
+\href{https://CRAN.R-project.org/package=ggplot2}{\texttt{ggplot2}}:
+Create elegant data visualizations.
+
+\href{https://www.rdocumentation.org/packages/graphics/versions/3.5.1}{\texttt{graphics}}:
+R functions for base graphics.
+
+\href{https://CRAN.R-project.org/package=hms}{\texttt{hms}}: Times
+without dates.
+
+\href{https://CRAN.R-project.org/package=httr}{\texttt{httr}}: Tools for
+working with HTTP.
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{I-L}\label{i-l}
+
+\href{https://CRAN.R-project.org/package=installr}{\texttt{installr}}:
+Install and update stuff (such as R, Rtools, Rstudio, Git).
+
+\href{https://CRAN.R-project.org/package=jsonlite}{\texttt{jsonlite}}: A
+robust, high performance JSON parser and generator.
+
+\href{https://CRAN.R-project.org/package=knitr}{\texttt{knitr}}: Dynamic
+report generation in R using Literate Programming techniques. + See
+Yihui Xie's \href{http://yihui.name/knitr/}{\emph{knitr}}.
+
+\href{https://CRAN.R-project.org/package=lubridate}{\texttt{lubridate}}:
+Functions to work with date-times and time-spans.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{lubridate} uses character formatting similar to
+  \texttt{strptime()}, though there are some differences. To see
+  \texttt{lubridate}'s formatting, type \texttt{?parse\_date\_time} into
+  the R Console.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{M-P}\label{m-p}
+
+\href{https://CRAN.R-project.org/package=magrittr}{\texttt{magrittr}}:
+Forward-pipe operator for R.
+
+\href{https://www.rdocumentation.org/packages/methods/versions/3.5.1}{\texttt{methods}}:
+Formal methods and classes.
+
+\href{https://CRAN.R-project.org/package=microbenchmark}{\texttt{microbenchmark}}:
+Measure and compare the execution time of R expressions.
+
+\href{https://CRAN.R-project.org/package=odbc}{\texttt{odbc}}: Connect
+to ODBC compatible databases using the DBI Interface.
+
+\href{https://CRAN.R-project.org/package=packrat}{\texttt{packrat}}:
+Manage and document the versions of packages used in an R program.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{packrat} tends to cause more trouble than it prevents, so
+  avoid using it unless necessary or until it is improved.
+\end{itemize}
+
+\href{https://CRAN.R-project.org/package=pryr}{\texttt{pryr}}: Tools to
+pry back the covers of R and understand the language at a deeper level.
+
+\href{https://CRAN.R-project.org/package=purrr}{\texttt{purrr}}:
+Functional programming tools.
+
+\begin{itemize}
+\tightlist
+\item
+  See also \href{https://purrr.tidyverse.org/}{purr.tidyverse.org}.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{Q-T}\label{q-t}
+
+\href{https://CRAN.R-project.org/package=readr}{\texttt{readr}}: Read
+rectangular text data.
+
+\begin{itemize}
+\tightlist
+\item
+  See also \href{https://readr.tidyverse.org/}{readr.tidyverse.org}.
+\end{itemize}
+
+\href{https://CRAN.R-project.org/package=readxl}{\texttt{readxl}}: Read
+Excel files.
+
+\href{https://CRAN.R-project.org/package=rjson}{\texttt{rjson}}: Convert
+between R and JSON objects.
+
+\href{https://CRAN.R-project.org/package=rlang}{\texttt{rlang}}:
+Functions for base types and Core R and Tidyverse features.
+
+\href{https://CRAN.R-project.org/package=rmarkdown}{\texttt{RMarkdown}}:
+Save and execute code; generate high quality reports.
+
+\begin{itemize}
+\tightlist
+\item
+  See also \href{https://bookdown.org/yihui/rmarkdown/}{``R Markdown:
+  The Definitive Guide''}).
+\end{itemize}
+
+\href{https://CRAN.R-project.org/package=scales}{\texttt{scales}}: Scale
+functions for visualization.
+
+\href{https://CRAN.R-project.org/package=shiny}{\texttt{shiny}}: Web
+application framework.
+
+\href{https://CRAN.R-project.org/package=splitstackshape}{\texttt{splitstackshape}}:
+Stack and reshape datasets after splitting concatenated values.
+
+\href{https://www.rdocumentation.org/packages/stats/versions/3.5.1}{\texttt{stats}}:
+Statistical functions.
+
+\href{https://CRAN.R-project.org/package=stringr}{\texttt{stringr}}:
+Working with strings.
+
+\begin{itemize}
+\tightlist
+\item
+  See also
+  \href{https://stringr.tidyverse.org/}{stringr.tidyverse.org}).
+\end{itemize}
+
+\href{https://CRAN.R-project.org/package=tibble}{\texttt{tibble}}:
+Simple data frames with stricter checking and better formatting than the
+traditional data frame.
+
+\href{https://CRAN.R-project.org/package=tidyr}{\texttt{tidyr}}: Tidy
+data.
+
+\begin{itemize}
+\tightlist
+\item
+  See also \href{https://tidyr.tidyverse.org/}{tidyr.tidyverse.org}.
+\end{itemize}
+
+\href{https://CRAN.R-project.org/package=tinytex}{\texttt{tinytex}}:
+Compile LaTeX Documents. + Required to compile and build a
+\texttt{bookdown} book. + See \url{https://yihui.name/tinytex/}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section{U-Z}\label{u-z}
+
+\href{https://CRAN.R-project.org/package=R.utils}{\texttt{utils}}:
+Various programming utilities.
+
+\href{https://CRAN.R-project.org/package=XLConnect}{\texttt{XLConnect}}:
+Read, write, and format Excel data.
+
+\href{https://CRAN.R-project.org/package=xts}{\texttt{xts}}: Provide for
+uniform handling of R's different time-based data classes by extending
+zoo.
+
+\href{https://CRAN.R-project.org/package=zoo}{\texttt{zoo}}: For regular
+and irregular time series.
+
+\chapter{References \& Resources}\label{references-resources}
+
+\begin{itemize}
+\item
+  For an introduction to the R programming language, see the R Project
+  for Statistical Computing's
+  \href{https://www.r-project.org/about.html}{``What is R?''} and
+  Wikipedia's
+  \href{https://en.wikipedia.org/wiki/R_(programming_language)}{``R
+  (programming language).''}
+\item
+  To download R, go to \href{https://www.r-project.org/}{r-project.org}
+  and choose the cloud CRAN Mirror option.
+\item
+  To program in the R language on a user-friendly platform, download the
+  \href{https://www.rstudio.com/}{RStudio} IDE.
+\item
+  \href{https://www.r-project.org/}{The R Project for Statistical
+  Computing}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{https://cran.r-project.org/web/packages/}{Library of R
+    Packages}
+  \item
+    \href{https://www.r-project.org/help.html}{\emph{Getting Help with
+    R}}
+  \item
+    \href{https://cran.r-project.org/manuals.html}{\emph{The R Manuals}}
+  \item
+    \href{https://cran.r-project.org/faqs.html}{\emph{Frequently Asked
+    Questions}}
+  \item
+    \href{https://www.r-project.org/doc/bib/R-books.html}{\emph{Books
+    Related to R}}
+  \item
+    \href{https://www.r-project.org/other-docs.html}{\emph{Documentation}}
+  \end{itemize}
+\item
+  \href{https://www.rstudio.com/}{RStudio}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{https://www.rstudio.com/resources/cheatsheets/}{\emph{RStudio
+    Cheat Sheets}}
+  \item
+    \href{https://www.rstudio.com/resources/webinars/}{\emph{Webinars
+    and Videos On Demand}}
+  \item
+    \href{https://www.rstudio.com/online-learning/}{\emph{Online
+    learning}}
+  \item
+    \href{https://blog.rstudio.com/}{\emph{RStudio Blog}}
+  \end{itemize}
+\item
+  Online Manuals
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{http://r4ds.had.co.nz/}{\emph{R for Data Science}}
+  \item
+    \href{http://adv-r.had.co.nz/}{\emph{Advanced R}} by Hadley Wickham
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Hadley's second edition draft is available
+      \href{https://adv-r.hadley.nz/}{here}.
+    \end{itemize}
+  \item
+    \href{http://r-pkgs.had.co.nz/}{\emph{R Packages}} by Hadley Wickham
+  \item
+    \href{http://style.tidyverse.org/}{\emph{The tidyverse style guide}}
+  \item
+    \href{https://bookdown.org/csgillespie/efficientR/}{\emph{Efficient
+    R Programming}}
+  \end{itemize}
+\item
+  Other Online Resources
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{https://www.datacamp.com/}{DataCamp}
+  \item
+    \href{https://www.rdocumentation.org/}{RDocumentation}
+  \item
+    \href{https://www.r-bloggers.com/how-to-learn-r-2/}{R Bloggers}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \href{https://www.r-bloggers.com/how-to-learn-r-2/}{``Tutorials
+      for learning R''}
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\bibliography{book.bib,packages.bib}
+
+
+\end{document}

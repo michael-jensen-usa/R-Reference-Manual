@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>R Reference Manual</title>
+  <meta name="description" content="R Reference Manual">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="R Reference Manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R Reference Manual" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="communicate.html">
+<link rel="next" href="referenced-packages.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Reference Manual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html"><i class="fa fa-check"></i>Import</a><ul>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#create-data"><i class="fa fa-check"></i>Create Data</a><ul>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#data-structures"><i class="fa fa-check"></i>Data Structures</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#other"><i class="fa fa-check"></i>Other</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-a-local-drive"><i class="fa fa-check"></i>Import Data from a Local Drive</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-the-internet"><i class="fa fa-check"></i>Import Data from the Internet</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-a-database"><i class="fa fa-check"></i>Import Data from a Database</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#reference-material"><i class="fa fa-check"></i>Reference Material</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i>Tidy</a><ul>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a><ul>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#understand-the-structure-of-the-data"><i class="fa fa-check"></i>Understand the Structure of the Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#look-at-the-data"><i class="fa fa-check"></i>Look at the Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#visualize-the-data"><i class="fa fa-check"></i>Visualize the Data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#tidy-data"><i class="fa fa-check"></i>Tidy Data</a><ul>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#manage-columns-and-observations"><i class="fa fa-check"></i>Manage Columns and Observations</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#transpose"><i class="fa fa-check"></i>Transpose</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#prepare-data-for-analysis"><i class="fa fa-check"></i>Prepare Data for Analysis</a><ul>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#coerce-data"><i class="fa fa-check"></i>Coerce Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#dates-and-datetimes"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#factors-and-levels"><i class="fa fa-check"></i>Factors and Levels</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#filter-and-remove-data"><i class="fa fa-check"></i>Filter and Remove Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#strings"><i class="fa fa-check"></i>Strings</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#test-data"><i class="fa fa-check"></i>Test Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>Transform</a><ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#arithmetic-summary-statistics"><i class="fa fa-check"></i>Arithmetic &amp; Summary Statistics</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#create-new-variables-or-modify-existing-ones"><i class="fa fa-check"></i>Create New Variables or Modify Existing Ones</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#dates-and-datetimes-1"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#merge-or-append-data"><i class="fa fa-check"></i>Merge or Append Data</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#narrow-in-on-observations-of-interest"><i class="fa fa-check"></i>Narrow in on Observations of Interest</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test"><i class="fa fa-check"></i>Test</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i>Visualize</a><ul>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#flowcharts"><i class="fa fa-check"></i>Flowcharts</a></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#interfaces"><i class="fa fa-check"></i>Interfaces</a></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#plots"><i class="fa fa-check"></i>Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a><ul>
+<li><a href="model.html#section"></a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#simulation"><i class="fa fa-check"></i>Simulation</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a><ul>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#format-output"><i class="fa fa-check"></i>Format Output</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#export"><i class="fa fa-check"></i>Export</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html"><i class="fa fa-check"></i>Program</a><ul>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#conditionals"><i class="fa fa-check"></i>Conditionals</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#environment-and-workspace"><i class="fa fa-check"></i>Environment and Workspace</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#evaluation-standard-and-non-standard"><i class="fa fa-check"></i>Evaluation (Standard and Non-standard)</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#functionals"><i class="fa fa-check"></i>Functionals</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#functions"><i class="fa fa-check"></i>Functions</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#learn-about-an-object"><i class="fa fa-check"></i>Learn About an Object</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#loops"><i class="fa fa-check"></i>Loops</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#optimization"><i class="fa fa-check"></i>Optimization</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#pipes"><i class="fa fa-check"></i>Pipes</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#selecting-subsetting"><i class="fa fa-check"></i>Selecting &amp; Subsetting</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#version-control"><i class="fa fa-check"></i>Version Control</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html"><i class="fa fa-check"></i>Referenced Packages</a><ul>
+<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#a-d"><i class="fa fa-check"></i>A-D</a></li>
+<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#e-h"><i class="fa fa-check"></i>E-H</a></li>
+<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#i-l"><i class="fa fa-check"></i>I-L</a></li>
+<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#m-p"><i class="fa fa-check"></i>M-P</a></li>
+<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#q-t"><i class="fa fa-check"></i>Q-T</a></li>
+<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#u-z"><i class="fa fa-check"></i>U-Z</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references-resources.html"><a href="references-resources.html"><i class="fa fa-check"></i>References &amp; Resources</a></li>
+<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Reference Manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="program" class="section level1">
+<h1>Program</h1>
+<hr />
+<p>“Surrounding [the tools for importing, tidying, transforming, visualising, modeling, and communicating data] is programming. Programming is a cross-cutting tool that you use in every part of a project. You don’t need to be an expert programmer to be a data scientist, but learning more about programming pays off because becoming a better programmer allows you to automate common tasks, and solve new problems with greater ease.”<br />
+- Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em></p>
+<hr />
+<div id="conditionals" class="section level2">
+<h2>Conditionals</h2>
+<p><code>base</code></p>
+<ul>
+<li>’ifelse()<code>: Conditional element selection. +</code>dplyr::if_else()` is more strict by checking the object type.</li>
+<li><code>stop()</code>: Stop execution of the expression and execute an error action.
+<ul>
+<li>Useful in combination with an <code>if</code> statement when you want to generate helpful error messages.</li>
+</ul></li>
+<li><code>stopifnot()</code>: Ensure the truth of an R expression.
+<ul>
+<li>Prefer <code>base::stop()</code> to <code>base::stopifnot()</code>.</li>
+</ul></li>
+</ul>
+<p><code>dplyr</code></p>
+<ul>
+<li><code>case_when()</code>: A general vectorized if.</li>
+<li><code>if_else()</code>: Vectorized if.</li>
+</ul>
+<hr />
+</div>
+<div id="environment-and-workspace" class="section level2">
+<h2>Environment and Workspace</h2>
+<p><code>base</code></p>
+<ul>
+<li><code>dir()</code>: List the files in a directory/folder.</li>
+<li>Environments
+<ul>
+<li><code>baseenv()</code>: The environment of the <code>base</code> package, it’s enclosing environment (“parent environment”) is the empty environment.</li>
+<li><code>emptyenv()</code>: The empty environment, which is the ancestor of all environments and the only environment without an enclosing environment.</li>
+<li><code>environment()</code>: The current environment.</li>
+<li><code>globalenv()</code>: The environment in which you normally work, it’s enclosing environment is the last package attached with <code>library()</code> or <code>require()</code>.</li>
+<li><code>new.env()</code>: Create a new environment.</li>
+</ul></li>
+<li><code>exists()</code>: Look for an R object of the given name and possibly return it.
+<ul>
+<li>Must use quotations to name the object.</li>
+</ul></li>
+<li><code>getwd()</code>: Get the working directory.</li>
+<li><code>history()</code>: Display the previous 25 commands.</li>
+<li><code>install.packages()</code>: Install packages from repositories or local files.</li>
+<li><code>library()</code>: Load and attach an R package.
+<ul>
+<li>Child function: <code>require()</code>.</li>
+</ul></li>
+<li><code>list.files()</code>: List the files in a directory/folder.</li>
+<li><code>loadhistory()</code>: Recall command history.</li>
+<li><code>ls()</code>: List objects in the specified environment.</li>
+<li><code>options()</code>: Set and examine global options.
+<ul>
+<li><code>getOption()</code>: Set and examine global options.</li>
+</ul></li>
+<li><code>q()</code>: Terminate an R session.</li>
+<li><code>rm()</code>: Remove objects from a specified environment.</li>
+<li><code>savehistory()</code>: Save command history (default value is “.Rhistory”).</li>
+<li><code>save.image()</code>: Save the current workspace.</li>
+<li><code>search()</code>: Return a list of attached packages and R objects.
+<ul>
+<li><code>searchpaths()</code>: Return the path to attached packages.</li>
+</ul></li>
+<li><code>setwd()</code>: Set the working directory file path.
+<ul>
+<li>When using Windows, use “/” instead of “&quot;.</li>
+</ul></li>
+</ul>
+<p><code>gdata</code></p>
+<ul>
+<li><code>object.size()</code>: Report the space allocated for an object.
+<ul>
+<li>See also <code>utils::object.size()</code>.</li>
+</ul></li>
+</ul>
+<p><code>installr</code></p>
+<ul>
+<li><code>updateR()</code>: Check for the latest R version; downloads and installs new R versions.</li>
+</ul>
+<p><code>pryr</code></p>
+<ul>
+<li><code>where()</code>: Find where a name is defined.</li>
+</ul>
+<p><code>utils</code></p>
+<ul>
+<li><code>object.size()</code>: Report the space allocated for an object.
+<ul>
+<li>See also <code>gdata::object.size()</code>.</li>
+</ul></li>
+</ul>
+<p>References:</p>
+<ul>
+<li><a href="http://adv-r.had.co.nz/Environments.html#environments">“Environments”</a> (Hadley Wickham, <a href="http://adv-r.had.co.nz/"><em>Advanced R</em></a>)</li>
+</ul>
+<hr />
+</div>
+<div id="evaluation-standard-and-non-standard" class="section level2">
+<h2>Evaluation (Standard and Non-standard)</h2>
+<p><code>base</code></p>
+<ul>
+<li><code>cat()</code>: Concatenate and print.</li>
+<li>`print(): Print the argument to the Console.</li>
+<li><code>quote()</code>: Return the argument, unevaluated.</li>
+<li><code>writeLines()</code>: Display quotes and backslashes as they would be read, rather than as R stores them (i.e., see the raw contents of the string, as the <code>print()</code> representation is not the same as the string itself).</li>
+</ul>
+<p><code>rlang</code></p>
+<ul>
+<li>Quosures
+<ul>
+<li><code>enquo()</code>, <code>new_quosure()</code>, <code>quo()</code>.</li>
+</ul></li>
+</ul>
+<p>References:</p>
+<ul>
+<li><a href="http://adv-r.had.co.nz/Computing-on-the-language.html">“Non-standard evaluation”</a> (Hadley Wickham, <a href="http://adv-r.had.co.nz/"><em>Advanced R</em></a>)</li>
+<li><a href="https://cran.r-project.org/web/packages/lazyeval/vignettes/lazyeval.html">“Non-standard evaluation”</a> (Hadley Wickham, <code>lazyeval</code> package vignette)</li>
+<li><a href="https://dplyr.tidyverse.org/articles/programming.html">“Programming with dplyr”</a> (dplyr.tidyverse.org)</li>
+</ul>
+<hr />
+</div>
+<div id="functionals" class="section level2">
+<h2>Functionals</h2>
+<p><code>base</code></p>
+<ul>
+<li>Apply Functions
+<ul>
+<li><code>apply()</code>: Apply functions over array margins.</li>
+<li><code>lapply()</code>: Apply a function over a list or vector.</li>
+<li><code>sapply()</code>: Apply a function over a list or vector and return a vector or matrix.</li>
+<li><code>vapply()</code>: A safer version of <code>sapply()</code>, as it requires the output type to be predetermined.</li>
+<li><code>mapply()</code>: Apply a function to multiple list or vector arguments.</li>
+<li><code>rapply()</code>: Recursively apply a function to a list.</li>
+<li><code>tapply()</code>: Apply a function over a ragged array.</li>
+</ul></li>
+</ul>
+<p><code>purrr</code></p>
+<ul>
+<li><code>map()</code>: Apply a function to each element of a vector.</li>
+<li><code>map2()</code>: Map over multiple inputs simultaneously.</li>
+<li><code>safely()</code>: Capture side effects.
+<ul>
+<li>Child functions: <code>possibly()</code>, <code>quietly()</code>.</li>
+</ul></li>
+<li><code>transpose()</code>: Transpose a list (turn a list-of-lists inside-out).</li>
+</ul>
+<hr />
+</div>
+<div id="functions" class="section level2">
+<h2>Functions</h2>
+<p><code>base</code></p>
+<ul>
+<li><code>do.call()</code>): Execute a function call from a name or a function and a list of arguments to be passed to the function.</li>
+<li><code>invisible()</code>: Return a (temporarily) invisible copy of an object.</li>
+<li><code>message()</code>: Generage a diagnostic message.
+<ul>
+<li>Preferable to generating a message using <code>cat()</code>.</li>
+</ul></li>
+<li><code>stop()</code>: Stop execution of the expression and execute an error action.
+<ul>
+<li>Useful in combination with an <code>if</code> statement when you want to generate helpful error messages.</li>
+</ul></li>
+<li><code>stopifnot()</code>: Ensure the truth of an R expression.
+<ul>
+<li>Prefer <code>base::stop()</code> to <code>base::stopifnot()</code>.</li>
+</ul></li>
+<li><code>unlist()</code>: Flatten lists.
+<ul>
+<li>Useful when using <code>purrr</code>’s <code>map()</code> functions, which return objects as type <code>list</code>.</li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="learn-about-an-object" class="section level2">
+<h2>Learn About an Object</h2>
+<p><code>base</code></p>
+<ul>
+<li><code>args()</code>: Display the argument names and default values of a function.</li>
+<li><code>attributes()</code>: View or assign an objects attributes (e.g., <code>class()</code>, <code>dim()</code>, <code>dimnames()</code>, <code>names()</code>, <code>row.names()</code>).</li>
+<li><code>body()</code>: Get or set the body of a function.</li>
+<li><code>colnames()</code>: Retrieve or set column names.</li>
+<li><code>dim()</code>: Retrieve or set the dimnames of an object.</li>
+<li><code>dimnames()</code>: Retrieve or set the dimension names of an object.</li>
+<li><code>formals()</code>: Get or set the formal arguments of a function.</li>
+<li><code>help()</code>: Get the topic documentation.</li>
+<li><code>help.search()</code>: Search the help system for documentation matching a given character string.</li>
+<li><code>vignette()</code>: View a specified package vignette.</li>
+<li>?object_name</li>
+<li>??object_name</li>
+<li><code>rownames()</code>: Retrieve or set row names.</li>
+</ul>
+<hr />
+</div>
+<div id="loops" class="section level2">
+<h2>Loops</h2>
+<p><code>base</code></p>
+<ul>
+<li><code>seq()</code>: Sequence generation.
+<ul>
+<li>This functions makes <code>length()</code> unnecessary.</li>
+<li>Child function: <code>seq_along()</code>
+<ul>
+<li>In <code>for</code> loops, safer than using <code>ncol()</code> or <code>nrow()</code>.</li>
+</ul></li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="optimization" class="section level2">
+<h2>Optimization</h2>
+<p><code>microbenchmark</code></p>
+<ul>
+<li><code>microbenchmark()</code>: Sub-millisecond accurate timing of expression evaluations.
+<ul>
+<li>A more accurate replacement of <code>system.time(replicate(1000, expr))</code>.</li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="pipes" class="section level2">
+<h2>Pipes</h2>
+<p><code>magrittr</code>: Forward-pipe operator for R.</p>
+<ul>
+<li><code>freduce()</code>: Apply a list of functions sequentially.</li>
+<li><code>%&lt;&gt;%</code>: Compound assignment-pipe operator.</li>
+<li><code>%&gt;%</code>: Forward-pipe operator.</li>
+<li><code>%$%</code>: Expositions-pipe operator.</li>
+</ul>
+<hr />
+</div>
+<div id="selecting-subsetting" class="section level2">
+<h2>Selecting &amp; Subsetting</h2>
+<p><code>base</code></p>
+<ul>
+<li><code>subset()</code>: Subset vectors, matrices, and data frames.</li>
+</ul>
+<p><code>dplyr</code></p>
+<ul>
+<li><code>first()</code>: Extract the first element of a vector.</li>
+<li><code>last()</code>: Extract the last element of a vector.</li>
+<li>`nth(): Extract the nth element of a vector.</li>
+<li><code>select()</code>: Select/rename variables.
+<ul>
+<li>Helper functions include: <code>starts_with()</code>, <code>ends_with()</code>, <code>contains()</code>, <code>matches()</code>, <code>num_range()</code>, and <code>one_of()</code>.</li>
+<li>A closely-related function is <code>dplyr::rename()</code>.</li>
+</ul></li>
+</ul>
+<p>References:</p>
+<ul>
+<li><a href="https://twitter.com/hadleywickham/status/643381054758363136">“Indexing lists in #rstats. Inspired by Residence Inn”</a> (Hadley Wickham, Twitter, 14 September 2015)</li>
+</ul>
+<hr />
+</div>
+<div id="version-control" class="section level2">
+<h2>Version Control</h2>
+<p>Git</p>
+<ul>
+<li><a href="https://git-scm.com/">Git</a></li>
+<li><a href="https://git-scm.com/book/en/v2"><em>Pro Git</em></a> by Scott Chacon and Ben Straub</li>
+<li><a href="http://r-pkgs.had.co.nz/git.html#git-learning"><em>Git and GitHub</em></a> by Hadley Wickham</li>
+<li><p><a href="http://happygitwithr.com/"><em>Happy Git and GitHub for the useR</em></a> by Jenny Bryan</p></li>
+<li><code>git branch</code>: List, create, or delete branches.
+<ul>
+<li><code>git branch -d &lt;branch_name&gt;</code>: Delete a local branch.
+<ul>
+<li>See <a href="https://community.rstudio.com/t/delete-branch-in-rstudio-pop-up/15465">“Delete branch in RStudio pop-up”</a> for help removing branches in RStudio after removing them from Git.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><code>packrat</code></p>
+<ul>
+<li>See note on the <code>packrat</code> package in the “Referenced Packages” section.</li>
+<li><code>snapshot()</code>: Capture and store the packages and versions in use.</li>
+<li><code>restore()</code>: Load the most recent snapshot to the project’s private library.</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="communicate.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="referenced-packages.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["R_Reference_Manual.pdf", "R_Reference_Manual.epub"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

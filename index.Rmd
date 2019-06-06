@@ -1,0 +1,58 @@
+--- 
+title: "R Reference Manual"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+always_allow_html: yes
+---
+# Introduction
+
+The purpose of this manual is to increase my ability to use R well, which means that I must be able to get things done. My vision is that this manual will allow me to document the material I learn in a way that will help me work more effectively and efficiently. Most of the documentation here will link to existing online material so that my notes supplement rather than duplicate.
+
+In order to help me reference material in the context I would use it, I organized the material according to Garrett Grolemund and Hadley Wickham's conception of the tools needed to tackle about 80% of the tasks required in a typical data science project ("[Introduction](https://r4ds.had.co.nz/introduction.html)", *R for Data Science*). Those tools are: import, tidy, transform, visualize, model, communicate, and program.
+
+```{r, echo=FALSE}
+library(DiagrammeR)
+
+grViz(" digraph {
+
+graph [rankdir = LR;
+       compound = TRUE;
+       nodesep = 1]
+
+subgraph cluster0 {
+  style = rounded;
+  label = Program;
+  labeljust = center;
+  node [color = white];
+
+  Import; Tidy; Communicate
+
+  subgraph cluster1 {
+    style = rounded;
+    bgcolor = lightgrey;
+    label = Understand;
+    labeljust = center;
+    node [color = lightgrey];
+
+    Transform -> Visualize -> Model -> Transform;
+
+    {rank = same; Model; Visualize}
+  }
+  
+  Import -> Tidy -> Transform;
+
+  edge [headport = w]
+  {Model; Visualize} -> Communicate [ltail = cluster1]
+}
+}")
+```
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```

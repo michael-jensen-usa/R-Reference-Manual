@@ -1,0 +1,271 @@
+# Program
+
+***
+"Surrounding [the tools for importing, tidying, transforming, visualising, modeling, and communicating data] is programming. Programming is a cross-cutting tool that you use in every part of a project. You don't need to be an expert programmer to be a data scientist, but learning more about programming pays off because becoming a better programmer allows you to automate common tasks, and solve new problems with greater ease."  
+- Garrett Grolemund & Hadley Wickham, *R for Data Science*
+
+***
+## Conditionals & Control Flows
+
+`base`
+
+* Control (access documentation using "?Control")
+    + `if (cond) expr`
+        + The key difference between `if (cond) expr` and `ifelse` is that `if (cond) expr` will evaluate only the first element of an object with `length > 1`. See the documentation for each function and the ateucher's GitHub example titled ["R: if vs ifelse"](https://gist.github.com/ateucher/c7359f566eded9fcd4a255f4cbd4fe67) to learn more.
+    + `for (var in seq) expr`
+    + `while (cond) expr`
+    + `repeat expr`
+    + `break`
+    + `next`
+* `identical()`: Test objects for exact equality.
+    + Use `identical()` rather than `==` and `!=` in `if` and `while` statements to test for equality.
+* 'ifelse()`: Conditional element selection.
+    + `dplyr::if_else()` is more strict by checking the object type.
+* `stop()`: Stop execution of the expression and execute an error action.
+    + Useful in combination with an `if` statement when you want to generate helpful error messages.
+* `stopifnot()`: Ensure the truth of an R expression.
+    + Prefer `base::stop()` to `base::stopifnot()`.
+
+`dplyr`
+
+* `case_when()`: A general vectorized `if`.
+* `if_else()`: Vectorized `if`.
+
+***
+## Environment and Workspace
+
+`base`
+
+* `dir()`: List the files in a directory/folder.
+* Environments
+    + `baseenv()`: The environment of the `base` package, it's enclosing environment ("parent environment") is the empty environment.
+    + `emptyenv()`: The empty environment, which is the ancestor of all environments and the only environment without an enclosing environment.
+    + `environment()`: The current environment.
+    + `globalenv()`: The environment in which you normally work, it's enclosing environment is the last package attached with `library()` or `require()`.
+    + `new.env()`: Create a new environment.
+* `exists()`: Look for an R object of the given name and possibly return it.
+    + Must use quotations to name the object.
+* `getwd()`: Get the working directory.
+* `history()`: Display the previous 25 commands.
+* `install.packages()`: Install packages from repositories or local files.
+* `library()`: Load and attach an R package.
+    + Child function: `require()`.
+* `list.files()`: List the files in a directory/folder.
+* `loadhistory()`: Recall command history.
+* `ls()`: List objects in the specified environment.
+* `options()`: Set and examine global options.
+    + `getOption()`: Set and examine global options.
+* `q()`: Terminate an R session.
+* `rm()`: Remove objects from a specified environment.
+* `savehistory()`: Save command history (default value is ".Rhistory").
+* `save.image()`: Save the current workspace.
+* `search()`: Return a list of attached packages and R objects.
+    + `searchpaths()`: Return the path to attached packages.
+* `setwd()`: Set the working directory file path.
+     + When using Windows, use "/" instead of "\".
+    
+`gdata`
+
+* `object.size()`: Report the space allocated for an object.
+    + See also `utils::object.size()`.
+
+`installr`
+
+* `updateR()`: Check for the latest R version; downloads and installs new R versions.
+
+`pryr`
+
+* `where()`: Find where a name is defined.
+
+`utils`
+
+* `object.size()`: Report the space allocated for an object.
+    + See also `gdata::object.size()`.
+    
+References:
+
+* ["Environments"](http://adv-r.had.co.nz/Environments.html#environments) (Hadley Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
+
+***
+## Evaluation (Standard and Non-standard)
+
+`base`
+
+* `cat()`: Concatenate and print.
+* `print(): Print the argument to the Console.
+    + A shortcut to `print()` is to place the code you want printed inside parentheses.
+* `quote()`: Return the argument, unevaluated.
+* `writeLines()`: Display quotes and backslashes as they would be read, rather than as R stores them (i.e., see the raw contents of the string, as the `print()` representation is not the same as the string itself).
+
+`rlang`
+
+* Quosures
+    + `enquo()`, `new_quosure()`, `quo()`.
+    
+References:
+
+* ["Non-standard evaluation"](http://adv-r.had.co.nz/Computing-on-the-language.html) (Hadley Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
+* ["Non-standard evaluation"](https://cran.r-project.org/web/packages/lazyeval/vignettes/lazyeval.html) (Hadley Wickham, `lazyeval` package vignette)
+* ["Programming with dplyr"](https://dplyr.tidyverse.org/articles/programming.html) (dplyr.tidyverse.org)
+
+***
+## Functionals
+
+`base`
+
+* Apply Functions
+    + `apply()`: Apply functions over array margins.
+    + `lapply()`: Apply a function over a list or vector.
+    + `sapply()`: Apply a function over a list or vector and return a vector or matrix.
+    + `vapply()`: A safer version of `sapply()`, as it requires the output type to be predetermined.
+    + `mapply()`: Apply a function to multiple list or vector arguments.
+    + `rapply()`: Recursively apply a function to a list. 
+    + `tapply()`: Apply a function over a ragged array.
+
+`purrr`
+
+* `map()`: Apply a function to each element of a vector.
+    * `tidyr::unnest()` is useful in changing the list-column output of `map()` into rows.
+* `map2()`: Map over multiple inputs simultaneously.
+* `safely()`: Capture side effects.
+    + Child functions: `possibly()`, `quietly()`.
+* `transpose()`: Transpose a list (turn a list-of-lists inside-out).
+
+***
+## Functions
+
+`base`
+
+* `do.call()`): Execute a function call from a name or a function and a list of arguments to be passed to the function.
+* `invisible()`: Return a (temporarily) invisible copy of an object.
+* `message()`: Generage a diagnostic message.
+    + Preferable to generating a message using `cat()`.
+* `return()`: Return a value from a function.
+    + Useful in `if` statements where one condition is simple and the other is complex (see section 19.6.1 "Explicit return statements" in Hadley Wickham's [*R for Data Science*](https://r4ds.had.co.nz/functions.html).
+* `stop()`: Stop execution of the expression and execute an error action.
+    + Useful in combination with an `if` statement when you want to generate helpful error messages.
+* `stopifnot()`: Ensure the truth of an R expression.
+    + See section 19.5.2 "Checking values" in Hadley Wickham's [*R for Data Science*](https://r4ds.had.co.nz/functions.html) for a discussion of `stop()` versus `stopifnot()`.
+* `unlist()`: Flatten lists.
+    + Useful when using `purrr`'s `map()` functions, which return objects as type `list`.
+
+***
+## Learn About an Object
+
+`base`
+
+* `args()`: Display the argument names and default values of a function.
+* `attributes()`: View or assign an objects attributes (e.g., `class()`, `dim()`, `dimnames()`, `names()`, `row.names()`). 
+* `body()`: Get or set the body of a function.
+* `colnames()`: Retrieve or set column names.
+* `dim()`: Retrieve or set the dimnames of an object.
+* `dimnames()`: Retrieve or set the dimension names of an object.
+* `formals()`: Get or set the formal arguments of a function.
+* `help()`: Get the topic documentation.
+* `help.search()`: Search the help system for documentation matching a given character string.
+* `vignette()`: View a specified package vignette.
+* ?object_name
+* ??object_name
+* `rownames()`: Retrieve or set row names.
+
+***
+## Loops
+
+`base`
+
+* `seq()`: Sequence generation.
+    + This functions makes `length()` unnecessary.
+    + Child function: `seq_along()`
+        + In `for` loops, safer than using `ncol()` or `nrow()`.
+
+***
+## Optimization
+
+`microbenchmark`
+
+* `microbenchmark()`: Sub-millisecond accurate timing of expression evaluations.
+    + A more accurate replacement of `system.time(replicate(1000, expr))`.
+
+***
+## Pipes
+
+`magrittr`: Forward-pipe operator for R.
+
+* `freduce()`: Apply a list of functions sequentially.
+* `%<>%`: Compound assignment-pipe operator.
+* `%>%`: Forward-pipe operator.
+* `%$%`: Expositions-pipe operator.
+
+***
+## Popups
+
+`svDialogs`
+
+* `dlg_message`: Display a modal message box (works in Windows, MacOS, and Linux).
+
+`tcltk`
+
+* `tk_messageBox`: Display a generic message box using Tk (Windows-specific).
+
+## Selecting & Subsetting
+
+`base`
+
+* `subset()`: Subset vectors, matrices, and data frames.
+
+`dplyr`
+
+* `first()`: Extract the first element of a vector.
+* `last()`: Extract the last element of a vector.
+* `nth(): Extract the nth element of a vector.
+* `select()`: Select/rename variables. 
+    + Helper functions include: `starts_with()`, `ends_with()`, `contains()`, `matches()`, `num_range()`, and `one_of()`.
+    + A closely-related function is `dplyr::rename()`.
+* `.$variable_name`: Select a variable from a data frame in a pipe.
+    + Example:
+```{r, eval=FALSE}
+ui_summary_table <- 
+  aws_vendors %>% 
+  filter(str_detect(vendor_name, "UTAH INTERACTIVE")) %>% 
+  .$vendor_id %>% 
+  map(query_summary_table) %>% 
+  bind_rows()
+```
+* `.[["variable_name"]]`: Select a vairable from a data frame in a pipe.
+    + Example:
+```{r, eval=FALSE}
+  odbc_aws %>% 
+    dbGetQuery(
+      paste("
+            SELECT id
+            FROM batch
+            WHERE entity_id = ", t_id, "
+            AND status IN ('PROCESSED', 'PROCESSING')")) %>% 
+    .[["id"]] %>% 
+  as.double()
+```
+
+References:
+
+* ["Indexing lists in #rstats. Inspired by Residence Inn"](https://twitter.com/hadleywickham/status/643381054758363136) (Hadley Wickham, Twitter, 14 September 2015)
+
+***
+## Version Control
+
+Git
+
+* [Git](https://git-scm.com/)
+* [*Pro Git*](https://git-scm.com/book/en/v2) by Scott Chacon and Ben Straub
+* [*Git and GitHub*](http://r-pkgs.had.co.nz/git.html#git-learning) by Hadley Wickham
+* [*Happy Git and GitHub for the useR*](http://happygitwithr.com/) by Jenny Bryan
+
+* `git branch`: List, create, or delete branches.
+    + `git branch -d <branch_name>`: Delete a local branch.
+        + See ["Delete branch in RStudio pop-up"](https://community.rstudio.com/t/delete-branch-in-rstudio-pop-up/15465) for help removing branches in RStudio after removing them from Git.
+
+
+`packrat`
+
+* See note on the `packrat` package in the "Referenced Packages" section.
+* `snapshot()`: Capture and store the packages and versions in use.
+* `restore()`: Load the most recent snapshot to the project's private library.

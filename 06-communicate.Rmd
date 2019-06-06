@@ -1,0 +1,56 @@
+# Communicate
+
+***
+"The last step of data science is communication, an absolutely critical part of any data analysis project. It doesn't matter how well your models and visualisation have led you to understand the data unless you can also communicate your results to others."  
+- Garrett Grolemund & Hadley Wickham, *R for Data Science*
+
+***
+## Export
+
+`base`
+
+* `file.path()`: Construct a file path.
+* `print()`: Print values.
+    + Use the `include.rownames = FALSE` argument to remove row numbers (or names) from the output.
+* `save()`: Save R objects.
+* `saveRDS()`: Save a single R object.
+    + See ["A better way of saving and loading objects in R"](https://www.fromthebottomoftheheap.net/2012/04/01/saving-and-loading-r-objects/) to understand the differences between `save()` and `saveRDS()`.
+
+`readr`
+
+* `write_delim()`: Write a data frame to a delimited file.
+    + About twice as fast as `write.csv()` and never writes row names.
+    + Child functions: `write_csv()`, `write_excel_csv()`, `write_tsv()`.
+
+`utils`
+
+* `write.table()`: Data output.
+    + Prefer `readr::write_delim()` to `utils::write.table()`.
+    + Child functions: `write.csv()`, `write.csv2()`.
+    
+`XLConnect`: Read, write, and format Excel data.
+## Format Output
+
+`base`
+
+* `format()`: Format an object for pretty printing.
+
+`knitr`
+
+* `kable()`: Create tables in LaTex, HTML, Markdown, and reStructuredText.
+
+`lubridate`
+
+* `stamp()`: Format dates and times based on human-friendly templates.
+
+`scales`: Scale functions for visualization.
+
+* `dollar()`: Round to the nearest cent and display dollar sign. 
+
+***
+## Graphics
+
+'knitr'
+
+* `include_graphics()`: Embed external images in 'knitr' documents.
+    + Preferable to the `![alt text or image title](path/to/image)` Markdown syntax for embedding an external image, as `include_graphics()` offers more control over the attributes of the image.

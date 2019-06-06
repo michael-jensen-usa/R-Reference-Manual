@@ -1,0 +1,186 @@
+# Transform
+
+***
+ "Transformation includes narrowing in on observations of interest (like all people in one city, or all data from the last year), creating new variables that are functions of existing variables (like computing velocity from speed and time), and calculating a set of summary statistics (like counts or means)."  
+- Garrett Grolemund & Hadley Wickham, *R for Data Science*
+
+***
+## Arithmetic & Summary Statistics
+
+`base`
+
+* `abs()`: Compute absolute value.
+* `colMeans()`: Compute the column mean.
+* `colSums()`: Compute the column sum.
+* Comparison Operators: Binary operators which allow the comparison of values in atomic vectors.
+    + `<`, `>`, `<=`, `>=`, `==`, `!=`.
+    + `identical()` and `all.equal()` rather than `==` and `!=` should be used in tests where a single `TRUE` or `FALSE` is required (such as `if` expressions).
+* `diff()`: Compute the difference between two objects.
+* `IQR()`: Compute the inter-quartile range.
+* `max()`: Return the maximum value.
+* `mean()`: Compute the mean value..
+* `median()`: Compute the median value.
+* `min()`: Return the minimum value.
+* Mode: Use `table()` to view the mode of a data set.
+* `range()`: Return a vector containing the minimum and maximum values.
+    + Use `diff(range())` to get the range as a measure of variability.
+* `round()`: Round values to a specified number of decimal places.
+    + `signif()`: Round values to a specified number of significant digits.
+* `rowMeans()`: Compute the row mean.
+* `rowSums()`: Compute the row sum.
+* `sd()`: Compute the standard deviation.
+* `sqrt()`: Compute square root.
+* `sum()`: Sum elements.
+* `summary()`: Compute summary statistics.
+* `var()`: Compute the variance.
+
+`dplyr`
+
+* `count()`: Count/tally observations by group.
+* `group_by()`: Group by one or more variables.
+* `n()`: Get the number of observations in a current group.
+    + Must be used within `summarise()`, `mutate()`, or `filter()`).
+* `n_distinct()`: Count the number of unique values in a vector.
+* `summarize()`: Reduce multiple values to a single value.
+* `tally()`: An alternative to `count()`.
+
+`stats`
+
+* `aggregate()`: Compute summary statistics of data subsets.
+* `cor()`: Correlation.
+* `cov()`: Covariance.
+* `rnorm()`: Generate a random normal distribution.
+* `var()`: Variance.
+
+***
+## Create New Variables or Modify Existing Ones
+
+`dplyr`
+
+* `mutate()`: Add new variables.
+    + `mutate()` can also be used to modify existing variables. To change the case of a character variable, for example, do something like:
+    
+```{r, eval=FALSE}
+df <-
+  df %>%
+  mutate(var_name = str_to_lower(var_name))
+```
+
+    + Child function: `transmute()` (drops existing variables).
+    
+***
+## Dates and Datetimes
+
+`base`
+
+* `date()`: Get the current system date and time.
+* `difftime()`: Time intervals and differences.
+    + `difftime()` is the function behind the `-` operator when used with dates and datetimes (e.g., `time_1 - time_2` is equivalent to `difftime(time_1, time_2)`). The advantage of using  `difftime()` over `-`, however, is the `units` argument because it allows you to specify the unit of time in which the difference is calculated.
+* `months()`: Extract the month names.
+* `quarters()`: Extract the calendar quarters.
+* `Sys.Date()`: Get the current date in the current time zone.
+* `Sys.time()`: Get the absolute date-time value (which can be converted to various time zones and may return different days).
+* `weekdays()`: Extract weekday names.
+
+`lubridate`
+
+* `date()`: Get or set the date component of a date-time.
+* `day()`: Get or set the day component of a datetime.
+* `month()`: Get or set the month component of a datetime.
+* `now()`: The current time (as a POSIXct object).
+* `quarter()`: Get or set the fiscal quarter or semester component of a datetime.
+* `round_date()`: Round the datetime to the nearest datetime.
+    + Child functions: `ceiling_date()`, `floor_date()`.
+* Time spans: Duration: 
+    + `dseconds()`, `dminutes()`, `dhours()`, `ddays()`, `dweeks()`, `dyears()`.
+    + Use when you are interested in seconds elapsed.
+* Time spans: Interval:
+    + `interval()`, `%--%`, `is.interval()`, `int_start()`, `int_end()`, `int_length()`, `int_flip()`, `int_shift()`, `int_overlaps()`, `int_standardize()`, `int_aligns()`, `int_diff()`.
+    + Use when you have a start and end.
+* Time spans: Period:
+    + `seconds()`, `minutes()`, `hours()`, `days()`, `weeks()`, `months()`, `years()`. 
+    + Use when you are interested in human units.
+* Time zones:
+    + `force_tz()`: Change the time zone without changing the clock time.
+    + `tz()`: Extract the time zone from a datetime.
+    + `with_tz()`: View the same instant in a different time zone.
+* `today()`: The current date (as a Date object).
+* `%m+%` & `%m-%`: Add and subtract months to a date without exceeding the last day of the new month.
+* `%within%`: Test whether a date or interval falls within an interval.
+* `year()`: Get or set the year component of a datetime.
+
+***
+## Merge or Append Data
+
+`base`
+
+* `append()`: Add elements to a vector.
+* `cbind()`: Combine objects by column.
+* `intersect()`: Combine data shared in common between two datasets.
+    + Similar to `dplyr::semi_join()`.
+* `merge()`: Merge two data frames.
+    + `dplyr::join` functions are an alternative to `merge()`.
+* `rbind()`: Combine objects by row.
+* `setdiff()`: Find the difference between two vectors.
+    + Similar to `dplyr::anti_join()`.
+* `union()`: Combine two datasets without duplicating values.
+
+`dplyr`
+
+* `bind()`: Bind multiple data frames by row and column.
+    + Child functions: bind_rows(), bind_cols(), combine().
+* Join Functions: Join two tables.
+    + Filtering Joins:
+        + anti_join(): Return all rows from `x` where there are not matching values in `y`, keeping just columns from `x`.
+        + semi_join(): Return all rows from `x` where there are matching values in `y`, keeping just columns from `x`. A semi join differs from an inner join because an inner join will return one row of `x` for each matching row of `y`, where a semi join will never duplicate rows of `x`.
+    + Mutating Joins:
+        + full_join(): Return all rows and all columns from both `x` and `y`. Where there are not matching values, returns `NA` for the one missing.
+        + inner_join(): Return all rows from `x` where there are matching values in `y`, and all columns from `x` and `y`. If there are multiple matches between `x` and `y`, all combination of the matches are returned.
+        + left_join(): Return all rows from `x`, and all columns from `x` and `y`. Rows in `x` with no match in `y` will have `NA` values in the new columns. If there are multiple matches between `x` and `y`, all combinations of the matches are returned.
+        + right_join(): Return all rows from `y`, and all columns from `x` and `y`. Rows in `x` with no match in `y` will have `NA` values in the new columns. If there are multiple matches between `y` and `x`, all combinations of the matches are returned.
+
+`tibble`
+
+* `add_column()`: Add columns to a data frame.
+* `add_row()`: Add rows to a data frame.
+
+***
+## Narrow in on Observations of Interest
+
+`base`
+
+* `droplevels()`: Drop unused levels from factors.
+    + This function will keep levels that have even 1 or 2 counts. If you want to remove levels with low counts from a data set in order to simplify your analysis, first `filter()` out those rows and then use `droplevels()`.
+* `order()`: Arrange in ascending or descending order.
+    + Alternative: `dplyr::arrange()`.
+* `prop.table()`: Express table entries as proportions of the marginal table.
+    + The input is a table produced by `table()`.
+    + As these are proportions of the whole, `sum(prop.table(table_name))` = 1.
+    + Specify conditional proportions on rows or columns by using the `margin` argument.
+* `table()`: Build a table of the counts at each combination of factor levels.
+    + Use `prop.table()` to see the table entries expressed as proportions.
+
+`dplyr`
+
+* `arrange()`: Arrange rows by variable, in ascending order.
+* `distinct()`: Select distinct rows.
+* `filter()`: Return rows with matching conditions.
+* `rename()`: Rename variables by name (a modification of `select()`).
+* `sample_n()`: Sample n rows from a table.
+* `select()`: Select/rename variables. 
+    + Helper functions include: `starts_with()`, `ends_with()`, `contains()`, `matches()`, `num_range()`, and `one_of()`.
+* `transmute()`: Drop existing variables.
+
+***
+## Test
+
+`base`
+
+* `identical()`: Test objects for exact equality.
+* `match()`: Value matching.
+    + `%in%` is the more intuitive binary operator.
+* `setequal()`: Check two vectors for equality.
+* `which()`: Determine which indices are `TRUE`.
+    + This function is often unnecessary, according to the DataCamp article ["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve).
+* `which.min()`/`which.max()`: Where is the `min()`/`max()` or first `TRUE`/`FALSE`?
+* `%in%`: See `match()`.
