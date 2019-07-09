@@ -5,7 +5,7 @@
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*"
 
 ***
-## 
+## General
 
 `broom`
 
@@ -15,14 +15,23 @@
 
 * `sample_n()`: Sample n rows from a table.
     
-`stats`: Statistical functions.
+`stats`
 
 * `coef()`: Extract model coefficients.
 * `cor()`: Correlation, variance, and covariance (matrices).
     + Child functions: `var()`, `cov()`, and `cov2cor()`.
 
 ***
-## Simulation
+## Regression
+
+`stats`
+
+* `df.residual()`: Get the residual degrees of freedom.
+* `lm()`: Fit linear models.
+* `residuals()`: Extract model residuals.
+
+***
+## Simulation & Prediction
 
 `base`
 
@@ -30,4 +39,6 @@
 
 `stats`
 
+* `predict()`: Model prediction.
+    + Use with "lm" class objects and new data to predict new values (e.g., `predict(model, newdata)`).
 * `rnorm()`: Generate a normal distribution.
