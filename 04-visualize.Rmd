@@ -33,6 +33,8 @@
     + The default shape for points does not have a `fill` attribute, which means that mapping a categorical variable onto `fill` won't result in multiple colors.
 * `geom_*()`: Create a geometry.
     + `aes()` can be called within `geom_*()` rather than prior to.
+    + `geom_abline()`: Add reference lines to a plot.
+    + `geom_smooth()`: Smoothed conditional means; aids the eye in seeing patterns in the presence of overplotting.
 * `ggplot()`: Create a plot.
 * `facet_wrap()`: Wrap a 1D ribbon of panels into 2D (observe a variable, conditional on another variable).
 * `labs()`: Modify axis, legend, and plot labels.
