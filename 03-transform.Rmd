@@ -163,12 +163,14 @@ df <-
 `dplyr`
 
 * `arrange()`: Arrange rows by variable, in ascending order.
+    + Related functions: `arrange_all()`, `arrange_at()`, `arrange_if()`.
 * `distinct()`: Select distinct rows.
 * `filter()`: Return rows with matching conditions.
 * `rename()`: Rename variables by name (a modification of `select()`).
 * `sample_n()`: Sample n rows from a table.
 * `select()`: Select/rename variables. 
     + Helper functions include: `starts_with()`, `ends_with()`, `contains()`, `matches()`, `num_range()`, and `one_of()`.
+* `slice()`: Choose rows by position.
 * `transmute()`: Drop existing variables.
 
 ***
