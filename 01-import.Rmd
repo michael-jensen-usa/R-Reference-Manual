@@ -131,7 +131,6 @@
 
 * `download.file()`: Download a file from the Internet.
     + Example of multiple files in the same link:
-
 ```{r, eval=FALSE}
 url_rdata <- 
   "https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData"
@@ -139,6 +138,17 @@ url_rdata <-
 download.file(url_rdata, destfile = "datacamp.Rdata")
 
 load("datacamp.Rdata")
+```
+
+* `unzip()`: Extract or list zip archives.
+    + Example:
+```{r, eval=FALSE}
+download.file(
+  "https://assets.datacamp.com/production/repositories/1069/datasets/578834f5908e3b2fa575429a287586d1eaeb2e54/countries2.zip",
+  destfile = "Data Sets/Countries",
+  mode = "wb")
+
+unzip("Data Sets/Countries", exdir = "Data Sets")
 ```
 
 ***
