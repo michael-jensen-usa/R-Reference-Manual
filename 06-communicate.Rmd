@@ -54,3 +54,11 @@
 
 * `include_graphics()`: Embed external images in 'knitr' documents.
     + Preferable to the `![alt text or image title](path/to/image)` Markdown syntax for embedding an external image, as `include_graphics()` offers more control over the attributes of the image.
+
+***
+## Plots
+
+`ggplot2`
+
+* `labs()`: Modify axis, legend, and plot labels.
+    + Child functions: `xlab()`, `ylab()`, `ggtitle()`
