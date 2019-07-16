@@ -166,6 +166,15 @@ df <-
     + Related functions: `arrange_all()`, `arrange_at()`, `arrange_if()`.
 * `distinct()`: Select distinct rows.
 * `filter()`: Return rows with matching conditions.
+    + Use `%in%` when using multiple `|` conditions. The following two commands, for example, are equivalent:
+```{r, eval=FALSE}
+ilo_data %>% 
+  filter(country %in% c("Sweden", "Switzerland"))
+
+ilo_data %>% 
+  filter(country == "Sweden" | country == "Switzerland")
+```
+    
 * `rename()`: Rename variables by name (a modification of `select()`).
 * `sample_n()`: Sample n rows from a table.
 * `select()`: Select/rename variables. 
