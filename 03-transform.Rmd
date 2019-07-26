@@ -110,6 +110,14 @@ df <-
 * `year()`: Get or set the year component of a datetime.
 
 ***
+## Factors
+
+`forcats`
+
+* `fct_drop()`: Drop levels.
+* `fct_reorder()`: Reorder levels, based on the value of another variable.
+* `fct_rev()`: Reverse levels.
+
 ## Merge or Append Data
 
 `base`
