@@ -34,8 +34,12 @@
 * `geom_*()`: Create a geometry.
     + `aes()` can be called within `geom_*()` rather than prior to.
     + `geom_abline()`: Add reference lines to a plot.
+    + `geom_dotplot()`: Create a histogram out of dots.
+    + `geom_path()`: Connect observations in the order in which they appear.
     + `geom_smooth()`: Smoothed conditional means; aids the eye in seeing patterns in the presence of overplotting.
+    + `geom_text()`: Add text directly to the plot.
 * `ggplot()`: Create a plot.
+* `facet_grid()`: Lay out panels in a grid.
 * `facet_wrap()`: Wrap a 1D ribbon of panels into 2D (observe a variable, conditional on another variable).
 * `labs()`: Modify axis, legend, and plot labels.
     + Child functions: `xlab()`, `ylab()`, `ggtitle()`.
