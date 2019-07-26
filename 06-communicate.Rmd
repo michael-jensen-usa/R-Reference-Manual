@@ -60,5 +60,22 @@
 
 `ggplot2`
 
+* `element_*()`: Specify the display of how non-data components of a plot are drawn.
 * `labs()`: Modify axis, legend, and plot labels.
     + Child functions: `xlab()`, `ylab()`, `ggtitle()`
+* `theme()`: Customize the non-data components of a plot.
+```{r, eval=FALSE}
+ggplot(plot_data_2006) +
+  geom_histogram(aes(x = working_hours)) +
+  labs(x = "Working hours per week",
+       y = "Number of countries") +
+  theme(
+    text = element_text(family = "Bookman", color = "gray25"))
+```
+    + child Functions: `theme_*()` are predefined themes, including `theme_classic()` and `theme_minimal()`.
+    
+***
+## RMarkdown
+
+* See [RMarkdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+* See [Mozzila Developer Network](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) for CSS help.
