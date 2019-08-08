@@ -25,19 +25,42 @@
 * `plot()`: Generic X-Y plotting.
 * `points()`: Add points to a plot.
 
+`ggbeeswarm`
+
+* `geom_beeswarm()`: Create a beeswarm plot.
+
 `ggplot2`
 
 * `aes()`: Construct aesthetic mappings.
     + Arguments include `color`, `fill`, `size`, `labels`, `alpha`, `shape` (1-20 accept color attributes and 21-25 accept color and fill attributes), `linewidth`, `linetype`.
     + Use `?pch` to see options for `shape`.
     + The default shape for points does not have a `fill` attribute, which means that mapping a categorical variable onto `fill` won't result in multiple colors.
+    + Helper functions to include in the call when needing to modify the data include: `stats::reorder()`.
+* `coord_*()`
+    + `coord_cartesian()`: Zoom a plot in or out without changing the underlying data.
+    + `coord_flip()`: Flip the x and y axes.
+    + `coord_polar()`: Used to convert a stacked bar chart to a pie chart.
 * `geom_*()`: Create a geometry.
-    + `aes()` can be called within `geom_*()` rather than prior to.
+    + Note that `aes()` can be called within `geom_*()` rather than prior to.
     + `geom_abline()`: Add reference lines to a plot.
+        + Child functions: `geom_hline()`, `geom_vline()`.
+    + `geom_bar()`: Create a bar chart, where the height of the bar is proportional to the number of cases in each group.
+    + `geom_boxplot()`: Create a boxplot.
+    + `geom_col()`: Create a bar chart, where the height of the bar represents values in the data.
+    + `geom_density()`: Create a kernal density estimate (a smoothed version of a histogram).
+        + Consider using `geom_rug()` with `geom_density()` in order to be transparent about smoothed data.
     + `geom_dotplot()`: Create a histogram out of dots.
+    + `geom_histogram()`: Create a histogram.
+        + Use `y = stat(density)` to rescale the y-axis from counts to a probability estimate.
+    + `geom_jitter()`: Jitter points.
+        + Useful with `geom_boxplot()`.
     + `geom_path()`: Connect observations in the order in which they appear.
+    + `geom_point()`: Create a scatterplot (a.k.a. point chart or dot plot).
+    + `geom_rug()`: Create a ruge plot in the margin.
+        + Useful with `geom_density()`.
     + `geom_smooth()`: Smoothed conditional means; aids the eye in seeing patterns in the presence of overplotting.
     + `geom_text()`: Add text directly to the plot.
+    + `geom_violin()`: Create a violin plot.
 * `ggplot()`: Create a plot.
 * `facet_grid()`: Lay out panels in a grid.
 * `facet_wrap()`: Wrap a 1D ribbon of panels into 2D (observe a variable, conditional on another variable).
@@ -58,6 +81,10 @@
     + `scale_fill_*()`
     + `scale_shape_*()`
     + `scale_linetype_*()`
+
+`ggridges`
+
+* `geom_density_ridges()`: Create a ridgeline plot.
 
 `graphics`
 

@@ -57,7 +57,7 @@
 
 `countrycode`
 
-* `()`
+* `countrycode()`: Convert country codes into country names.
 
 `dplyr`
 

@@ -72,7 +72,7 @@ ggplot(plot_data_2006) +
   theme(
     text = element_text(family = "Bookman", color = "gray25"))
 ```
-    + child Functions: `theme_*()` are predefined themes, including `theme_classic()` and `theme_minimal()`.
+    + child Functions: `theme_*()` are predefined themes, including `theme_classic()` and `theme_minimal()`. See `?theme_classic` for a list of predefined themes.
     
 ***
 ## RMarkdown

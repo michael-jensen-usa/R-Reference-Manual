@@ -13,6 +13,8 @@
 
 [`chron`](https://CRAN.R-project.org/package=chron): Chronological objects which can handle dates and times.
 
+[`countrycode`](https://CRAN.R-project.org/package=countrycode): Convert country names and country codes.
+
 [`data.table`](https://CRAN.R-project.org/package=data.table): For large data.
 
 [`DBI`](https://CRAN.R-project.org/package=DBI){#DBI}: Database interface.
