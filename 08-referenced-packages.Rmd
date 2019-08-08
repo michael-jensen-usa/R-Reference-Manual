@@ -39,7 +39,11 @@
 
 [`gdata`](https://CRAN.R-project.org/package=gdata): Data manipulation.
 
+[`ggbeeswarm`](https://CRAN.R-project.org/package=ggbeeswarm): Categorical scatter plots (violin and beeswarm).
+
 [`ggplot2`](https://CRAN.R-project.org/package=ggplot2): Create elegant data visualizations.
+
+[`ggridges`](https://CRAN.R-project.org/package=ggridges): Ridgeline plots in `ggplot2`.
 
 [`graphics`](https://www.rdocumentation.org/packages/graphics/versions/3.5.1): R functions for base graphics.
 
