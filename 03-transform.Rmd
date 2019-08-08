@@ -55,6 +55,10 @@
 ***
 ## Create New Variables or Modify Existing Ones
 
+`countrycode`
+
+* `()`
+
 `dplyr`
 
 * `mutate()`: Add new variables.
@@ -117,6 +121,11 @@ df <-
 * `fct_drop()`: Drop levels.
 * `fct_reorder()`: Reorder levels, based on the value of another variable.
 * `fct_rev()`: Reverse levels.
+
+`stats`
+
+* `reorder()`: Reorder levels of a factor.
+    + Useful within the `aes()` argument in a `ggplot()` call.
 
 ## Merge or Append Data
 
