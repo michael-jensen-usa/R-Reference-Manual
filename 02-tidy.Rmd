@@ -63,6 +63,11 @@
 
 ### Manage Columns and Observations
 
+`data.table`
+
+* `duplicated()`: Indicate which rows are duplicates of another row.
+* `unique()`: Remove duplicated rows.
+
 `splitstackshape`
 
 * `cSplit()`: Split concatencated values into separate values.
@@ -70,6 +75,8 @@
 `tidyr`
 
 * `gather()`: Gather columns.
+* `nest()`: Nest repeated values in a list-variable.
+    + Helpful when separating a data frame in preparation to model the data for each grouping.
 * `separate()`: Separate one column into multiple columns.
 * `spread()`: Spread across multiple columns.
 * `unite()`: Unite multiple columns into one.
