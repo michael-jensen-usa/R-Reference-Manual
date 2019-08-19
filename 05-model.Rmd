@@ -30,6 +30,11 @@
 * `lm()`: Fit linear models.
 * `residuals()`: Extract model residuals.
 
+`tidyr`
+
+* `nest()`: Nest repeated values in a list-variable.
+    + Helpful when separating a data frame in preparation to model the data for each grouping.
+
 ***
 ## Simulation & Prediction
 
