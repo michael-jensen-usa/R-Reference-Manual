@@ -68,9 +68,19 @@
 * `duplicated()`: Indicate which rows are duplicates of another row.
 * `unique()`: Remove duplicated rows.
 
+`janitor`
+
+* `remove_empty()`: Remove empty rows and/or columns from a data.frame or matrix.
+
 `splitstackshape`
 
 * `cSplit()`: Split concatencated values into separate values.
+
+`tibble`
+
+* `rownames`: Tools for working with row names.
+        + `rowid_to_column()`: Add a column with row IDs.
+            + This is useful when an separate ID is needed to manipulating rows or columns.
 
 `tidyr`
 

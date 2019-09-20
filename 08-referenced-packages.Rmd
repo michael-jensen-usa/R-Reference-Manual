@@ -60,6 +60,8 @@
 
 [`installr`](https://CRAN.R-project.org/package=installr): Install and update stuff (such as R, Rtools, Rstudio, Git).
 
+[`janitor`](https://CRAN.R-project.org/package=janitor): Simple tools for examining and cleaning dirty data.
+
 [`jsonlite`](https://CRAN.R-project.org/package=jsonlite): A robust, high performance JSON parser and generator.
 
 [`knitr`](https://CRAN.R-project.org/package=knitr): Dynamic report generation in R using Literate Programming techniques.
