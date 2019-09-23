@@ -48,3 +48,19 @@
 * `predict()`: Model prediction.
     + Use with "lm" class objects and new data to predict new values (e.g., `predict(model, newdata)`).
 * `rnorm()`: Generate a normal distribution.
+
+***
+## Strings
+
+`base`
+
+* `agrep()`: Approximate string matching (fuzzy matching).
+
+`fuzzyjoin`
+
+* `FuzzMatcher()`: Fuzzy character string matching (ratios).
+
+`fuzzywuzzyR`
+
+* `stringdist_join()`: Join two tables based on fuzzy string matching of their columns.
+    + Child functions: `stringdist_inner_join()`, `stringdist_left_join()`, `stringdist_right_join()`, `stringdist_full_join()`, `stringdist_semi_join()`, `stringdist_anti_join()`.

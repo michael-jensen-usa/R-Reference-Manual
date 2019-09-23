@@ -39,6 +39,10 @@
 
 [`forcats`](https://CRAN.R-project.org/package=forcats): Tools for working with categorical variables.
 
+[`fuzzyjoin`](https://CRAN.R-project.org/package=fuzzyjoin): Join tables together on inexact matching.
+
+[`fuzzywuzzyR`](https://CRAN.R-project.org/package=fuzzywuzzyR): Fuzzy string matching.
+
 [`gdata`](https://CRAN.R-project.org/package=gdata): Data manipulation.
 
 [`ggbeeswarm`](https://CRAN.R-project.org/package=ggbeeswarm): Categorical scatter plots (violin and beeswarm).
