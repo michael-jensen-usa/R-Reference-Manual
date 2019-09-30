@@ -58,9 +58,9 @@
 
 `fuzzyjoin`
 
-* `FuzzMatcher()`: Fuzzy character string matching (ratios).
+* `stringdist_join()`: Join two tables based on fuzzy string matching of their columns.
+    + Child functions: `stringdist_inner_join()`, `stringdist_left_join()`, `stringdist_right_join()`, `stringdist_full_join()`, `stringdist_semi_join()`, `stringdist_anti_join()`.
 
 `fuzzywuzzyR`
 
-* `stringdist_join()`: Join two tables based on fuzzy string matching of their columns.
-    + Child functions: `stringdist_inner_join()`, `stringdist_left_join()`, `stringdist_right_join()`, `stringdist_full_join()`, `stringdist_semi_join()`, `stringdist_anti_join()`.
+* `FuzzMatcher()`: Fuzzy character string matching (ratios).
