@@ -18,7 +18,16 @@
 * `diff()`: Compute the difference between two objects.
 * `IQR()`: Compute the inter-quartile range.
 * `max()`: Return the maximum value.
-* `mean()`: Compute the mean value..
+* `mean()`: Compute the mean value.
+  + Note that `mean()` can be used to calculate a percentage when used in `summarize()`, as follows:
+```{r, eval=FALSE}
+by_country <- 
+  votes %>% 
+  group_by(country) %>% 
+  summarize(total = n(),
+            percent_yes = mean(vote == 1))
+```
+  
 * `median()`: Compute the median value.
 * `min()`: Return the minimum value.
 * Mode: Use `table()` to view the mode of a data set.
@@ -42,6 +51,7 @@
     + Must be used within `summarise()`, `mutate()`, or `filter()`).
 * `n_distinct()`: Count the number of unique values in a vector.
 * `summarize()`: Reduce multiple values to a single value.
+  + Use `mean(variable == value)` to get a percentage (see the above example for `mean()`.)
 * `tally()`: An alternative to `count()`.
 
 `stats`
@@ -71,6 +81,7 @@ df <-
 ```
 
     + Child function: `transmute()` (drops existing variables).
+* `recode()`: Recode values (the numeric alternative to using `if_else` or `case_when()`).
     
 ***
 ## Dates and Datetimes
