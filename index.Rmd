@@ -9,9 +9,9 @@ always_allow_html: yes
 ---
 # Introduction
 
-The purpose of this manual is to increase my ability to use R well, which means that I must be able to get things done. My vision is that this manual will allow me to document the material I learn in a way that will help me work more effectively and efficiently. Most of the documentation here will link to existing online material so that my notes supplement rather than duplicate.
+My purpose for creating this manual is to document my `R`-related knowledge so that I am able to use `R` more effectively. I want this document to supplement rather than duplicate existing documentation, so I won't make time to extensively write about something that is addressed elsewhere.
 
-In order to help me reference material in the context I would use it, I organized the material according to Garrett Grolemund and Hadley Wickham's conception of the tools needed to tackle about 80% of the tasks required in a typical data science project ("[Introduction](https://r4ds.had.co.nz/introduction.html)", *R for Data Science*). Those tools are: import, tidy, transform, visualize, model, communicate, and program.
+In order to help me reference material in the context I expect to use it, I organized this manual according to Garrett Grolemund and Hadley Wickham's conception of the tools needed to tackle about 80% of the tasks required in a typical data science project ("[Introduction](https://r4ds.had.co.nz/introduction.html)", *R for Data Science*). Those tools are: import, tidy, transform, visualize, model, communicate, and program.
 
 ```{r, echo=FALSE}
 library(DiagrammeR)

@@ -19,25 +19,26 @@
 * `format()`: Format an R object.
 * `length()`: Get or set the length of an object.
 * `levels()`: Get or set the (factor) levels of a variable.
-    + Levels default to alphabetical order, so be careful when renaming them (i.e., don't accidentally set the "F" level equal to "Male" rather than "Female").
+  * Levels default to alphabetical order, so be careful when renaming them (i.e., don't accidentally set the "F" level equal to "Male" rather than "Female").
 * `mode()`: Get or set the storage mode attribute of an object.
-    + Modes include logical, numeric (the mode equivalent of `typeof()`'s integer and double), complex, character, raw, and list.
+  * Modes include logical, numeric (the mode equivalent of `typeof()`'s integer and double), complex, character, raw, and list.
 * `names()`: Get or set the names of an object.
 * `nchar()`: Count the number of characters (or bytes or width).
 * `rownames()`: Retrieve or set the row names of a matrix-like object.
 * `typeof()`: Display the R internal type of an object.
-    + Types include logical, integer, double, complex, character, raw, and list.
+  *  Types include logical, integer, double, complex, character, raw, and list.
 
 `tibble`
 
 * `glimpse()`: Get a glimpse of the data.
-    + Similar to `utils::str()`.
+  * Similar to `utils::str()`.
     
 `utils`
 
 * `str()`: Display the structure of an R object.
-    + Similar to `tibble::glimpse()`.
+  *  Similar to `tibble::glimpse()`.
 
+  
 ### Look at the Data
 
 `base`
@@ -63,34 +64,44 @@
 
 ### Manage Columns and Observations
 
-`data.table`
+`{base}`
 
-* `duplicated()`: Indicate which rows are duplicates of another row.
-* `unique()`: Remove duplicated rows.
+* `duplicated`: Determine duplicate elements.
+  * See also `data.table::duplicated`.
+* `unique`: Extract unique elements.
+  * See also `data.table::unique`.
 
-`janitor`
+`{data.table}`
 
-* `remove_empty()`: Remove empty rows and/or columns from a data.frame or matrix.
+* `anyDuplicated`: Indicate the index of the first duplicate entry.
+* `duplicated`: Return a logical vector indicating whether a row is a duplicate.
+  * See also `base::duplicated`.
+* `unique`: Remove duplicate rows.
+  * See also `base::unique`.
 
-`splitstackshape`
+`{janitor}`
 
-* `cSplit()`: Split concatencated values into separate values.
+* `remove_empty`: Remove empty rows and/or columns from a data.frame or matrix.
 
-`tibble`
+`{splitstackshape}`
+
+* `cSplit`: Split concatencated values into separate values.
+
+`{tibble}`
 
 * `rownames`: Tools for working with row names.
-        + `rowid_to_column()`: Add a column with row IDs.
-            + This is useful when an separate ID is needed to manipulating rows or columns.
+  * `rowid_to_column`: Add a column of sequential row IDs.
+    * Useful when a separate ID is required to manipulate rows or columns, such as when using `tidyr::gather`.
 
-`tidyr`
+`{tidyr}`
 
-* `gather()`: Gather columns.
-* `nest()`: Nest repeated values in a list-variable.
-    + Helpful when separating a data frame in preparation to model the data for each grouping.
-* `separate()`: Separate one column into multiple columns.
-* `spread()`: Spread across multiple columns.
-* `unite()`: Unite multiple columns into one.
-* `unnest()`: Unnest a list-column.
+* `gather`: Gather columns into key-value pairs.
+* `nest`: Nest repeated values in a list-variable.
+  * Helpful when separating a data frame in preparation to model the data for each grouping.
+* `separate`: Separate one column into multiple columns.
+* `spread`: Spread across multiple columns.
+* `unite`: Unite multiple columns into one.
+* `unnest`: Unnest a list-column.
 
 ### Transpose
 

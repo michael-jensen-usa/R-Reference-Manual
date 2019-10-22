@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>R Reference Manual</title>
-  <meta name="description" content="R Reference Manual">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Tidy | R Reference Manual</title>
+  <meta name="description" content="Tidy | R Reference Manual" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="R Reference Manual" />
+  <meta property="og:title" content="Tidy | R Reference Manual" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R Reference Manual" />
+  <meta name="twitter:title" content="Tidy | R Reference Manual" />
   
   
   
@@ -25,15 +24,16 @@
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="import.html">
-<link rel="next" href="transform.html">
+<link rel="prev" href="import.html"/>
+<link rel="next" href="transform.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -45,49 +45,8 @@
 
 
 
-<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
-<script src="libs/viz-0.3/viz.js"></script>
-<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.0/grViz.js"></script>
 
 
-<style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -139,31 +98,40 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#arithmetic-summary-statistics"><i class="fa fa-check"></i>Arithmetic &amp; Summary Statistics</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#create-new-variables-or-modify-existing-ones"><i class="fa fa-check"></i>Create New Variables or Modify Existing Ones</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#dates-and-datetimes-1"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#factors"><i class="fa fa-check"></i>Factors</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#merge-or-append-data"><i class="fa fa-check"></i>Merge or Append Data</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#narrow-in-on-observations-of-interest"><i class="fa fa-check"></i>Narrow in on Observations of Interest</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test"><i class="fa fa-check"></i>Test</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i>Visualize</a><ul>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#flowcharts"><i class="fa fa-check"></i>Flowcharts</a></li>
-<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#charts"><i class="fa fa-check"></i>Charts</a></li>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#interfaces"><i class="fa fa-check"></i>Interfaces</a></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#plots"><i class="fa fa-check"></i>Plots</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a><ul>
-<li><a href="model.html#section"></a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#general"><i class="fa fa-check"></i>General</a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#regression"><i class="fa fa-check"></i>Regression</a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#simulation-prediction"><i class="fa fa-check"></i>Simulation &amp; Prediction</a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#strings-1"><i class="fa fa-check"></i>Strings</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a><ul>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#format-output"><i class="fa fa-check"></i>Format Output</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#export"><i class="fa fa-check"></i>Export</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#format-output"><i class="fa fa-check"></i>Format Output</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#graphics"><i class="fa fa-check"></i>Graphics</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots-1"><i class="fa fa-check"></i>Plots</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html"><i class="fa fa-check"></i>Program</a><ul>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#conditionals"><i class="fa fa-check"></i>Conditionals</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#conditionals-control-flows"><i class="fa fa-check"></i>Conditionals &amp; Control Flows</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#environment-and-workspace"><i class="fa fa-check"></i>Environment and Workspace</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#evaluation-standard-and-non-standard"><i class="fa fa-check"></i>Evaluation (Standard and Non-standard)</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#functionals"><i class="fa fa-check"></i>Functionals</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#functions"><i class="fa fa-check"></i>Functions</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#learn-about-an-object"><i class="fa fa-check"></i>Learn About an Object</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#loops"><i class="fa fa-check"></i>Loops</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#optimization"><i class="fa fa-check"></i>Optimization</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#pipes"><i class="fa fa-check"></i>Pipes</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#popups"><i class="fa fa-check"></i>Popups</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#selecting-subsetting"><i class="fa fa-check"></i>Selecting &amp; Subsetting</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#version-control"><i class="fa fa-check"></i>Version Control</a></li>
 </ul></li>
@@ -209,18 +177,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3>Understand the Structure of the Data</h3>
 <p><code>base</code></p>
 <ul>
+<li><code>attributes()</code>: Object attribute lists.</li>
 <li><code>class()</code>: Get or set the class attribute of an object.</li>
 <li><code>colnames()</code>: Retrieve or set the column names of a matrix-like object.</li>
 <li><code>dim()</code>: Retrieve or set the dimension of an object.</li>
 <li><code>dimnames()</code>: Retrieve or set the dimension names of an object.</li>
 <li><code>format()</code>: Format an R object.</li>
 <li><code>length()</code>: Get or set the length of an object.</li>
-<li><code>levels()</code>: Get or set the (factor) levels of a variable.</li>
+<li><code>levels()</code>: Get or set the (factor) levels of a variable.
+<ul>
+<li>Levels default to alphabetical order, so be careful when renaming them (i.e., don’t accidentally set the “F” level equal to “Male” rather than “Female”).</li>
+</ul></li>
 <li><code>mode()</code>: Get or set the storage mode attribute of an object.
 <ul>
 <li>Modes include logical, numeric (the mode equivalent of <code>typeof()</code>’s integer and double), complex, character, raw, and list.</li>
 </ul></li>
 <li><code>names()</code>: Get or set the names of an object.</li>
+<li><code>nchar()</code>: Count the number of characters (or bytes or width).</li>
 <li><code>rownames()</code>: Retrieve or set the row names of a matrix-like object.</li>
 <li><code>typeof()</code>: Display the R internal type of an object.
 <ul>
@@ -247,6 +220,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><code>base</code></p>
 <ul>
 <li><code>names()</code>: Get or set the names of an object.</li>
+<li><code>order()</code>: Rearrange in ascending or descending order.</li>
 <li><code>summary()</code>: Summarize the object.</li>
 </ul>
 <p><code>utils</code></p>
@@ -269,16 +243,58 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2>Tidy Data</h2>
 <div id="manage-columns-and-observations" class="section level3">
 <h3>Manage Columns and Observations</h3>
-<p><code>splitstackshape</code></p>
+<p><code>{base}</code></p>
 <ul>
-<li><code>cSplit()</code>: Split concatencated values into separate values.</li>
+<li><code>duplicated</code>: Determine duplicate elements.
+<ul>
+<li>See also <code>data.table::duplicated</code>.</li>
+</ul></li>
+<li><code>unique</code>: Extract unique elements.
+<ul>
+<li>See also <code>data.table::unique</code>.</li>
+</ul></li>
 </ul>
-<p><code>tidyr</code></p>
+<p><code>{data.table}</code></p>
 <ul>
-<li><code>gather()</code>: Gather columns.</li>
-<li><code>separate()</code>: Separate one column into multiple columns.</li>
-<li><code>spread()</code>: Spread across multiple columns.</li>
-<li><code>unite()</code>: Unite multiple columns into one.</li>
+<li><code>anyDuplicated</code>: Indicate the index of the first duplicate entry.</li>
+<li><code>duplicated</code>: Return a logical vector indicating whether a row is a duplicate.
+<ul>
+<li>See also <code>base::duplicated</code>.</li>
+</ul></li>
+<li><code>unique</code>: Remove duplicate rows.
+<ul>
+<li>See also <code>base::unique</code>.</li>
+</ul></li>
+</ul>
+<p><code>{janitor}</code></p>
+<ul>
+<li><code>remove_empty</code>: Remove empty rows and/or columns from a data.frame or matrix.</li>
+</ul>
+<p><code>{splitstackshape}</code></p>
+<ul>
+<li><code>cSplit</code>: Split concatencated values into separate values.</li>
+</ul>
+<p><code>{tibble}</code></p>
+<ul>
+<li><code>rownames</code>: Tools for working with row names.
+<ul>
+<li><code>rowid_to_column</code>: Add a column of sequential row IDs.
+<ul>
+<li>Useful when a separate ID is required to manipulate rows or columns, such as when using <code>tidyr::gather</code>.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><code>{tidyr}</code></p>
+<ul>
+<li><code>gather</code>: Gather columns into key-value pairs.</li>
+<li><code>nest</code>: Nest repeated values in a list-variable.
+<ul>
+<li>Helpful when separating a data frame in preparation to model the data for each grouping.</li>
+</ul></li>
+<li><code>separate</code>: Separate one column into multiple columns.</li>
+<li><code>spread</code>: Spread across multiple columns.</li>
+<li><code>unite</code>: Unite multiple columns into one.</li>
+<li><code>unnest</code>: Unnest a list-column.</li>
 </ul>
 </div>
 <div id="transpose" class="section level3">
@@ -321,6 +337,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li>Preferable to <code>base::as.data.frame()</code>.</li>
 </ul></li>
+<li><code>enframe()</code>: Convert vectors to data frames, and vice versa.
+<ul>
+<li>Preferable to using <code>as_tibble()</code> to coerce a vector to a data frame.</li>
+</ul></li>
 </ul>
 </div>
 <div id="dates-and-datetimes" class="section level3">
@@ -355,6 +375,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <p><code>lubridate</code></p>
 <ul>
+<li><code>as_date()</code>: Convert an object to a date or date-time.</li>
 <li><code>parse_date_time()</code>: User friendly date-time parsing functions that can accomodate parsing multiple dates in different formats.
 <ul>
 <li><code>fast_strptime()</code>: Fast C parser of numeric formats only that accepts explicit format arguments, just as <code>base::strptime()</code>.
@@ -366,8 +387,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><code>parse_date_time2()</code>: Fast C parser of numeric orders.</li>
 <li><code>parse_date_time()</code> can be slow because it is designed to be forgiving and flexible. If the dates you are working with are in a consistent format (ideally ISO 8601), use one of the following: <code>fasttime::fastPOSIXct()</code></li>
 </ul></li>
-<li><code>ymd()</code>: Parse dates with year, month, and day components. + Related formats: <code>ydm()</code>, <code>mdy()</code>, <code>myd()</code>, <code>dmy()</code>, <code>dym()</code>, <code>yq()</code>.</li>
-<li><code>ymd_hms()</code>: Parse date-times with year, month, day, hour, minute, and second components. + Related formats: <code>ymd_hm()</code>, <code>ymd_h()</code>, <code>dmy_hms()</code>, <code>dmy_hm()</code>, <code>dmy_h()</code>, <code>mdy_hms()</code>, <code>mdy_hm()</code>, <code>mdy_h()</code>, <code>ydm_hms()</code>, <code>ydm_hm()</code>, <code>ydm_h()</code>.</li>
+<li><code>ymd()</code>: Parse dates with year, month, and day components.
++ Related formats: <code>ydm()</code>, <code>mdy()</code>, <code>myd()</code>, <code>dmy()</code>, <code>dym()</code>, <code>yq()</code>.</li>
+<li><code>ymd_hms()</code>: Parse date-times with year, month, day, hour, minute, and second components.
++ Related formats: <code>ymd_hm()</code>, <code>ymd_h()</code>, <code>dmy_hms()</code>, <code>dmy_hm()</code>, <code>dmy_h()</code>, <code>mdy_hms()</code>, <code>mdy_hm()</code>, <code>mdy_h()</code>, <code>ydm_hms()</code>, <code>ydm_hm()</code>, <code>ydm_h()</code>.</li>
 </ul>
 </div>
 <div id="factors-and-levels" class="section level3">
@@ -376,7 +399,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li><code>factor()</code>: Get and set factors.
 <ul>
-<li>Rearrange the order of factors by using the <code>levels</code> argument. For example, rearrange the order of “Bad,”Good,&quot; and “Neutral” using `levels = c(“Bad”, “Neutral”, “Good”).</li>
+<li>Rearrange the order of factors by using the <code>levels</code> argument. For example, rearrange the order of “Bad,”Good," and “Neutral” using `levels = c(“Bad”, “Neutral”, “Good”).</li>
 </ul></li>
 </ul>
 <hr />
@@ -411,6 +434,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><code>stringr::str_to_upper()</code> is an alternative.</li>
 </ul></li>
 </ul>
+<p><code>qdap</code></p>
+<ul>
+<li></li>
+</ul>
+<p><code>qdapDictionaries</code></p>
+<ul>
+<li><code>DICTIONARY</code>: Nettalk Corpus syllable data set.</li>
+<li><code>GradyAugmented</code>: Augmented list of Grady Ward’s <em>English Words</em> and Mark Kantrowitz’s <em>Names</em> List.
+<ul>
+<li>Mark Kantrowitz’s <em>Names</em> list is available in full <a href="http://www.cs.cmu.edu/afs/cs/project/ai-repository/ai/areas/nlp/corpora/names/">here</a>.</li>
+</ul></li>
+</ul>
 <p><code>stringr</code></p>
 <ul>
 <li><code>str_detect()</code>: Detect the presence or absence of a pattern in a string.
@@ -419,6 +454,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li><code>str_to_lower()</code>: Convert to lower case.</li>
 <li><code>str_to_title()</code>: Capitalize the first letter.</li>
+<li><code>str_trim()</code>: Trim whitespace from a string.</li>
 <li><code>str_to_upper()</code>: Convert to upper case.</li>
 </ul>
 </div>
@@ -440,6 +476,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><code>is.vector()</code>: Test whether an object is a vector.</li>
 </ul></li>
 <li><code>setequal()</code>: Check two vectors for equality.</li>
+<li><code>sum()</code>: Sum vector elements.
+<ul>
+<li>To test whether all elements of a vector do or do not meet a certain condition, use as follows: <code>sum(email$num_char &lt; 0)</code>.</li>
+</ul></li>
 </ul>
 <p><code>purrr</code></p>
 <ul>
@@ -483,7 +523,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -493,6 +533,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
