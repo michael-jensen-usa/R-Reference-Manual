@@ -1,5 +1,4 @@
 # Import
-***
 
 ## Create Data
 
@@ -61,76 +60,91 @@
 
 * `rnorm()`: Generate a random normal distribution.
 
-***
 ## Import Data from a Local Drive
 
-`base`
+`{base}`
 
-* `attach()`: Attach a set of R objects to the search path.
-    + Allows objects in the database to be accessed by giving their names (e.g., `height` rather than `women$height`).
-* `file.choose()`: Choose a file interactively.
-    + Use as `file = file.choose()` in `read.table()` and similar functions.
-* `load()`: Reload datasets saved with `save()`.
-* `readRDS()`: Restore an R object written with `saveRDS()`.
+* `attach`: Attach a set of R objects to the search path.
+  * Allows objects in the database to be accessed by giving their names (e.g., `height` rather than `women$height`).
+* `file.choose`: Choose a file interactively.
+  * Use as `file = file.choose()` inside a data import function (such as `read_csv` and `readRDS`).
+* `load`: Reload datasets saved with `save()`.
+* `readRDS`: Restore an R object written with `saveRDS()`.
 
-`data.table`
+`{data.table}`
 
-* `fread()`: Similar to `read.table()`, but faster and more convenient for large data sets.
+* `fread`: Similar to `read.table`, but faster and more convenient for large data sets.
 
-`foreign`
+`{foreign}`
 
-* `read.spss()`: Read an SPSS data file.
+* `read.spss`: Read an SPSS data file.
 
-`haven`
+`{haven}`
 
-* `read_sas()`: Read and write SAS files.
+* `read_sas`: Read and write SAS files.
 
-`readr`
+`{readr}`
 
-* `read_delim()`: Read a delimited (including csv and txv) file.
-    + Child functions: `read_csv()`, `read_csv2()`, `read_tsv()`.
+* `read_csv`: Read a comma separated value file into a tibble.
+* `read_csv2`: Read a semi-colon separated value file into a tibble.
+* `read_delim`: Read a delimited file into a tibble.
+* `read_tsv`: Read a tab separated value file into a tibble.
 
-`readxl`
+`{readxl}`
 
-* `excel_sheets()`: List all sheets in an Excel spreadsheet.
-* `read_excel()`: Read xls and xlsx files.
-    + Child functions: `read_xls()`, `read_xlsx()`
+* `excel_sheets`: List all sheets in an Excel spreadsheet.
+* `read_excel`: Read xls and xlsx files.
+* `read_xls`: Read a .xls file.
+* `read_xlsx`: Read a .xlsx file.
 
-`utils`
+`{utils}`
 
-* `data()`: Load specified data sets, or list the available data sets.
-    + Use this function to load the data sets that accompany R packages, such as `openintro`'s `hsb2` and `email50` and `gapminder`'s `gapminder`.
-* `read.table()`: Read a file in table format.
-    + Child functions: `read.csv()`, `read.csv2()`, `read.delim()`, `read.delim2()`.
+* `data`: Load specified data sets, or list the available data sets.
+  * Use this function to load the data sets that accompany R packages, such as `openintro`'s `hsb2` and `email50` and `gapminder`'s `gapminder`.
+* `read.csv`: Read a .csv file.
+* `read.csv2`: Read semi-colon separated value file.
+* `read.delim`: Read a delimited file.
+* `read.delim2`: Read a delimited file where the decimal point is a comma.
+* `read.table`: Read a file in table format.
 
-`XLConnect`
+`{XLConnect}`
 
-* `readWorksheetFromFile()`: Read data from worksheets in an Excel file.
+* `readWorksheetFromFile`: Read data from worksheets in an Excel file.
 
-***
 ## Import Data from the Internet
 
-`httr`
+`{httr}`
 
-* `GET()`: Get a URL.
+* `GET`: Get a URL.
 
-`jsonlite`
+`{jsonlite}`
 
-* `read_json()`: Read and write JSON.
+* `read_json`: Read and write JSON.
 
-`readr`
+`{readr}`
 
-* `read_delim()`: Read a delimited file (including csv & tsv) into a tibble.
-    + Child functions: `read_csv()`, `read_csv2()`, `read_tsv()`.
+* `read_csv`: Read a comma separated value file into a tibble.
+* `read_csv2`: Read a semi-colon separated value file into a tibble.
+* `read_delim`: Read a delimited file into a tibble.
+* `read_tsv`: Read a tab separated value file into a tibble.
 
-`rjson`
+`{rjson}`
 
-* `fromJSON()`: Convert JSON to R.
+* `fromJSON`: Convert JSON to R.
 
-`utils`
+`{utils}`
 
-* `download.file()`: Download a file from the Internet.
-    + Example of multiple files in the same link:
+* `download.file`: Download a file from the Internet.
+  * Example:
+```{r, eval=FALSE}
+download.file(
+  "https://assets.datacamp.com/production/repositories/5028/datasets/a55843f83746968c7f118d82ed727db9c71e891f/snake_river_visits.rds",
+  destfile = paste0(getwd(), "/Snake River Visits.rds"))
+
+snake_river_visits <- readRDS(file.choose())
+```
+
+  * Example: Multiple files in the same link
 ```{r, eval=FALSE}
 url_rdata <- 
   "https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData"
@@ -140,8 +154,8 @@ download.file(url_rdata, destfile = "datacamp.Rdata")
 load("datacamp.Rdata")
 ```
 
-* `unzip()`: Extract or list zip archives.
-    + Example:
+* `unzip`: Extract or list zip archives.
+  * Example:
 ```{r, eval=FALSE}
 download.file(
   "https://assets.datacamp.com/production/repositories/1069/datasets/578834f5908e3b2fa575429a287586d1eaeb2e54/countries2.zip",
@@ -151,7 +165,6 @@ download.file(
 unzip("Data Sets/Countries", exdir = "Data Sets")
 ```
 
-***
 ## Import Data from a Database
 
 `DBI`
@@ -168,7 +181,6 @@ unzip("Data Sets/Countries", exdir = "Data Sets")
 * `dbSendQuery()`: Execute a query on a given database connection.
 * `dbSendStatement()`: Execute a data manipulation statement on a given database connection.
 
-*** 
 ## Reference Material
 
 The `openintro` package contains data sets useful for practicing and teaching.
