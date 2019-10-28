@@ -7,19 +7,25 @@
 ***
 ## General
 
-`broom`
+`{base}`
 
-* `tidy()`: Construct a data frame that summarizes the model's statistical findings.
+* `sample`: Random samples and permutations.
+
+`{broom}`
+
+* `tidy`: Construct a data frame that summarizes the model's statistical findings.
     
-`dplyr`
+`{dplyr}`
 
-* `sample_n()`: Sample n rows from a table.
+* `sample_n`: Sample n rows from a table.
     
-`stats`
+`{stats}`
 
-* `coef()`: Extract model coefficients.
-* `cor()`: Correlation, variance, and covariance (matrices).
-    + Child functions: `var()`, `cov()`, and `cov2cor()`.
+* `coef`: Extract model coefficients.
+* `cor`: Correlation.
+* `cov`: Covariance.
+* `cov2cor`: Scale a covariance matrix into a correlation matrix.
+* `var`: Variance.
 
 ***
 ## Regression
