@@ -139,6 +139,17 @@ References:
 
 * `do.call()`): Execute a function call from a name or a function and a list of arguments to be passed to the function.
 * `invisible()`: Return a (temporarily) invisible copy of an object.
+* `match.arg`: Argument verification.
+  * Useful when matching a character argument specified in the function signature. For example, 
+
+```{r}
+args(prop.test)
+
+# The body of `prop.test` contains the following line of code:
+# `alternative <- match.arg(alternative), which reassigns it to the selected
+# character vector.
+```
+  
 * `message()`: Generage a diagnostic message.
     + Preferable to generating a message using `cat()`.
 * `return()`: Return a value from a function.
