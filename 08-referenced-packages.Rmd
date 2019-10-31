@@ -4,6 +4,8 @@
 
 [`anytime`](https://CRAN.R-project.org/package=anytime): Date converter.
 
+[`assertive`](https://CRAN.R-project.org/package=assertive): Check functions to ensure code integrity.
+
 [`base`](https://www.rdocumentation.org/packages/base/versions/3.5.1): Base R functions.
 
 [`bookdown`](https://CRAN.R-project.org/package=bookdown): Author books and technical documents with R Markdown.

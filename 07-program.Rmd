@@ -135,7 +135,14 @@ References:
 ***
 ## Functions
 
-`base`
+`{assertive}`
+
+* `assert_*`: Check whether the input is `*` (e..g, `assert_is_numeric`) and throw and error if the input does not meet the condition.
+* `coerce_to`: Coerce the input to a different class, with a warning.
+* `is_*`: Checks whether the input matches the condition specified by `*` (e.g., `is_non_positive`).
+* `use_first`: Use only the first element of a vector.
+
+`{base}`
 
 * `do.call()`): Execute a function call from a name or a function and a list of arguments to be passed to the function.
 * `invisible()`: Return a (temporarily) invisible copy of an object.
