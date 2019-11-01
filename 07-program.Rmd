@@ -112,25 +112,27 @@ References:
 ***
 ## Functionals
 
-`base`
+`{base}`
 
 * Apply Functions
-    + `apply()`: Apply functions over array margins.
-    + `lapply()`: Apply a function over a list or vector.
-    + `sapply()`: Apply a function over a list or vector and return a vector or matrix.
-    + `vapply()`: A safer version of `sapply()`, as it requires the output type to be predetermined.
-    + `mapply()`: Apply a function to multiple list or vector arguments.
-    + `rapply()`: Recursively apply a function to a list. 
-    + `tapply()`: Apply a function over a ragged array.
+  * `apply`: Apply functions over array margins.
+  * `lapply`: Apply a function over a list or vector.
+  * `sapply`: Apply a function over a list or vector and return a vector or matrix.
+  * `vapply`: A safer version of `sapply`, as it requires the output type to be predetermined.
+  * `mapply`: Apply a function to multiple list or vector arguments.
+  * `rapply`: Recursively apply a function to a list. 
+  * `tapply`: Apply a function over a ragged array.
 
-`purrr`
+`{purrr}`
 
-* `map()`: Apply a function to each element of a vector.
-    * `tidyr::unnest()` is useful in changing the list-column output of `map()` into rows.
-* `map2()`: Map over multiple inputs simultaneously.
-* `safely()`: Capture side effects.
-    + Child functions: `possibly()`, `quietly()`.
-* `transpose()`: Transpose a list (turn a list-of-lists inside-out).
+* `map`: Apply a function to each element of a vector.
+  * `tidyr::unnest` is useful in changing the list-column output of `map` into rows.
+* `map2`: Map over multiple inputs simultaneously.
+* `map_if`: Apply a function to elements of that match a condition.
+* `possibly`: Usese a default value whenever an error occurs.
+* `quietly`: Capture side effects in a list with components `result`, `output`, `messages`, and `warnings`.
+* `safely`: Capture side effects in a list with components `result` and `error`.
+* `transpose`: Transpose a list (turn a list-of-lists inside-out).
 
 ***
 ## Functions
