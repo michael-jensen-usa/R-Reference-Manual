@@ -144,8 +144,8 @@ References:
 
 `{base}`
 
-* `do.call()`): Execute a function call from a name or a function and a list of arguments to be passed to the function.
-* `invisible()`: Return a (temporarily) invisible copy of an object.
+* `do.call`: Execute a function call from a name or a function and a list of arguments to be passed to the function.
+* `invisible`: Return a (temporarily) invisible copy of an object.
 * `match.arg`: Argument verification.
   * Useful when matching a character argument specified in the function signature. For example, 
 
@@ -157,16 +157,19 @@ args(prop.test)
 # character vector.
 ```
   
-* `message()`: Generage a diagnostic message.
-    + Preferable to generating a message using `cat()`.
-* `return()`: Return a value from a function.
-    + Useful in `if` statements where one condition is simple and the other is complex (see section 19.6.1 "Explicit return statements" in Hadley Wickham's [*R for Data Science*](https://r4ds.had.co.nz/functions.html).
-* `stop()`: Stop execution of the expression and execute an error action.
-    + Useful in combination with an `if` statement when you want to generate helpful error messages.
-* `stopifnot()`: Ensure the truth of an R expression.
-    + See section 19.5.2 "Checking values" in Hadley Wickham's [*R for Data Science*](https://r4ds.had.co.nz/functions.html) for a discussion of `stop()` versus `stopifnot()`.
-* `unlist()`: Flatten lists.
-    + Useful when using `purrr`'s `map()` functions, which return objects as type `list`.
+* `message`: Generage a diagnostic message.
+  * Preferable to generating a message using `cat`.
+* `return`: Return a value from a function.
+  * Useful in `if` statements where one condition is simple and the other is complex (see section 19.6.1 "Explicit return statements" in Hadley Wickham's [*R for Data Science*](https://r4ds.had.co.nz/functions.html).
+* `setNames`: Set the names in an object.
+  * Useful in function writing; see documentation.
+* `stop`: Stop execution of the expression and execute an error action.
+  * Useful in combination with an `if` statement when you want to generate helpful error messages.
+* `stopifnot`: Ensure the truth of an R expression.
+  * See section 19.5.2 "Checking values" in Hadley Wickham's [*R for Data Science*](https://r4ds.had.co.nz/functions.html) for a discussion of `stop` versus `stopifnot`.
+  * Consider functions from `{assertive}` as an alternative to `stopifnot` and `stop`.
+* `unlist`: Flatten lists.
+  * Useful when using `purrr`'s `map` functions, which return objects as type `list`.
 
 ***
 ## Learn About an Object
