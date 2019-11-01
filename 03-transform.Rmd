@@ -7,19 +7,21 @@
 ***
 ## Arithmetic & Summary Statistics
 
-`base`
+`{assertive}`
 
-* `abs()`: Compute absolute value.
-* `colMeans()`: Compute the column mean.
-* `colSums()`: Compute the column sum.
-* Comparison Operators: Binary operators which allow the comparison of values in atomic vectors.
-    + `<`, `>`, `<=`, `>=`, `==`, `!=`.
-    + `identical()` and `all.equal()` rather than `==` and `!=` should be used in tests where a single `TRUE` or `FALSE` is required (such as `if` expressions).
-* `diff()`: Compute the difference between two objects.
-* `IQR()`: Compute the inter-quartile range.
-* `max()`: Return the maximum value.
-* `mean()`: Compute the mean value.
-  + Note that `mean()` can be used to calculate a percentage when used in `summarize()`, as follows:
+* `is_divisible_by`: Is the input divisible by a number?
+
+`{base}`
+
+* `abs`: Compute absolute value.
+* `colMeans`: Compute the column mean.
+* `colSums`: Compute the column sum.
+* `diff`: Compute the difference between two objects.
+* `IQR`: Compute the inter-quartile range.
+* `max`: Return the maximum value.
+* `mean`: Compute the mean value.
+  * Note that `mean` can be used to calculate a percentage when used in `summarize`, as follows:
+  
 ```{r, eval=FALSE}
 by_country <- 
   votes %>% 
@@ -28,39 +30,43 @@ by_country <-
             percent_yes = mean(vote == 1))
 ```
   
-* `median()`: Compute the median value.
-* `min()`: Return the minimum value.
-* Mode: Use `table()` to view the mode of a data set.
-* `range()`: Return a vector containing the minimum and maximum values.
-    + Use `diff(range())` to get the range as a measure of variability.
-* `round()`: Round values to a specified number of decimal places.
-    + `signif()`: Round values to a specified number of significant digits.
-* `rowMeans()`: Compute the row mean.
-* `rowSums()`: Compute the row sum.
-* `sd()`: Compute the standard deviation.
-* `sqrt()`: Compute square root.
-* `sum()`: Sum elements.
-* `summary()`: Compute summary statistics.
-* `var()`: Compute the variance.
+* `median`: Compute the median value.
+* `min`: Return the minimum value.
+* Mode: Use `table` to view the mode of a data set.
+* Operators:
+  * Arithmetic Operators: `+`, `-`, `*`, `/`, `%%`
+  * Comparison Operators: `<`, `>`, `<=`, `>=`, `==`, `!=`.
+    * Use `identical` and `all.equal` rather than `==` and `!=` in tests where a single `TRUE` or `FALSE` is required (such as `if` expressions).
+* `range`: Return a vector containing the minimum and maximum values.
+  * Use `diff(range())` to get the range as a measure of variability.
+* `round`: Round values to a specified number of decimal places.
+* `rowMeans`: Compute the row mean.
+* `rowSums`: Compute the row sum.
+* `sd`: Compute the standard deviation.
+* `signif`: Round values to a specified number of significant digits.
+* `sqrt`: Compute square root.
+* `sum`: Sum elements.
+* `summary`: Compute summary statistics.
+* `var`: Compute the variance.
 
-`dplyr`
+`{dplyr}`
 
-* `count()`: Count/tally observations by group.
-* `group_by()`: Group by one or more variables.
-* `n()`: Get the number of observations in a current group.
-    + Must be used within `summarise()`, `mutate()`, or `filter()`).
-* `n_distinct()`: Count the number of unique values in a vector.
-* `summarize()`: Reduce multiple values to a single value.
-  + Use `mean(variable == value)` to get a percentage (see the above example for `mean()`.)
-* `tally()`: An alternative to `count()`.
+* `count`: Count/tally observations by group.
+* `group_by`: Group by one or more variables.
+* `n`: Get the number of observations in a current group.
+  * Must be used within `summarise`, `mutate`, or `filter`.
+* `n_distinct`: Count the number of unique values in a vector.
+* `summarize`: Reduce multiple values to a single value.
+  * Use `mean(variable == value)` to get a percentage (see the above example for `mean`.)
+* `tally`: An alternative to `count`.
 
-`stats`
+`{stats}`
 
-* `aggregate()`: Compute summary statistics of data subsets.
-* `cor()`: Correlation.
-* `cov()`: Covariance.
-* `rnorm()`: Generate a random normal distribution.
-* `var()`: Variance.
+* `aggregate`: Compute summary statistics of data subsets.
+* `cor`: Correlation.
+* `cov`: Covariance.
+* `rnorm`: Generate a random normal distribution.
+* `var`: Variance.
 
 ***
 ## Create New Variables or Modify Existing Ones
