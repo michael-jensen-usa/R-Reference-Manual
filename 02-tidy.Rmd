@@ -9,36 +9,38 @@
 
 ### Understand the Structure of the Data
 
-`base`
+`{base}`
 
-* `attributes()`: Object attribute lists.
-* `class()`: Get or set the class attribute of an object.
-* `colnames()`: Retrieve or set the column names of a matrix-like object.
-* `dim()`: Retrieve or set the dimension of an object.
-* `dimnames()`: Retrieve or set the dimension names of an object.
-* `format()`: Format an R object.
-* `length()`: Get or set the length of an object.
-* `levels()`: Get or set the (factor) levels of a variable.
+* `attr`: Get or set attributes of an object.
+  * `attr(x, "names")` is the same as `names(x)`.
+  * Use `attr(x, "names") <- value` to set attribute values.
+* `attributes`: Object attribute lists.
+* `class`: Get or set the class attribute of an object.
+* `colnames`: Retrieve or set the column names of a matrix-like object.
+* `dim`: Retrieve or set the dimension of an object.
+* `dimnames`: Retrieve or set the dimension names of an object.
+* `format`: Format an R object.
+* `length`: Get or set the length of an object.
+* `levels`: Get or set the (factor) levels of a variable.
   * Levels default to alphabetical order, so be careful when renaming them (i.e., don't accidentally set the "F" level equal to "Male" rather than "Female").
-* `mode()`: Get or set the storage mode attribute of an object.
-  * Modes include logical, numeric (the mode equivalent of `typeof()`'s integer and double), complex, character, raw, and list.
-* `names()`: Get or set the names of an object.
-* `nchar()`: Count the number of characters (or bytes or width).
-* `rownames()`: Retrieve or set the row names of a matrix-like object.
-* `typeof()`: Display the R internal type of an object.
+* `mode`: Get or set the storage mode attribute of an object.
+  * Modes include logical, numeric (the mode equivalent of `typeof`'s integer and double types), complex, character, raw, and list.
+* `names`: Get or set the names of an object.
+* `nchar`: Count the number of characters (or bytes or width).
+* `rownames`: Retrieve or set the row names of a matrix-like object.
+* `typeof`: Display the R internal type of an object.
   *  Types include logical, integer, double, complex, character, raw, and list.
 
-`tibble`
+`{tibble}`
 
-* `glimpse()`: Get a glimpse of the data.
-  * Similar to `utils::str()`.
+* `glimpse`: Get a glimpse of the data.
+  * Similar to `utils::str`.
     
-`utils`
+`{utils}`
 
 * `str()`: Display the structure of an R object.
-  *  Similar to `tibble::glimpse()`.
+  *  Similar to `tibble::glimpse`.
 
-  
 ### Look at the Data
 
 `base`
@@ -105,38 +107,41 @@
 
 ### Transpose
 
-`purrr`
+`{purrr}`
 
-* `transpose()`: Turn a list-of-lists inside-out.
+* `transpose`: Turn a list-of-lists inside-out.
 
 ***
 ## Prepare Data for Analysis
 
 ### Coerce Data
 
-`base`
+`{base}`
 
-* `as.*()` functions:
-    + `as.array()`: Coerce to array.
-    + `as.data.frame()`: Coerce to data frame.
-        + Prefer`tibble::as_tibble()` to `base::as.data.frame()`.
-    + `as.Date()`: Coerce to date.
-    + `as.factor()`: Coerce to factor.
-    + `as.list()`: Coerce to list.
-    + `as.matrix()`: Coerce to matrix.
-    + `as.POSIX*()`: Coerce to POSIXlt or POSIXct.
-* `unclass()`: Remove the class attribute of an object.
+* `anyNA`: Possibly faster implementation of `any(is.na(x))`.
+* `as.*`
+  * `as.array`: Coerce to array.
+  * `as.data.frame`: Coerce to data frame.
+    * Prefer`tibble::as_tibble` to `base::as.data.frame`.
+  * `as.Date`: Coerce to date.
+  * `as.factor`: Coerce to factor.
+  * `as.list`: Coerce to list.
+  * `as.matrix`: Coerce to matrix.
+  * `as.POSIX*`: Coerce to POSIXlt or POSIXct.
+* `is.na`: Indicate which elements are missing.
+  * Use `is.na <-` to set elements to `NA`.
+* `unclass`: Remove the class attribute of an object.
 
-`methods`
+`{methods}`
 
-* `as()`: Force an object to belong to a class.
+* `as`: Force an object to belong to a class.
 
-`tibble`
+`{tibble}`
 
-* `as_tibble()`: Coerce lists and matrices to data frames.
-    + Preferable to `base::as.data.frame()`.
-* `enframe()`: Convert vectors to data frames, and vice versa.
-    + Preferable to using `as_tibble()` to coerce a vector to a data frame.
+* `as_tibble`: Coerce lists and matrices to data frames.
+  * Preferable to `base::as.data.frame`.
+* `enframe`: Convert vectors to data frames, and vice versa.
+  * Preferable to using `as_tibble` to coerce a vector to a data frame.
 
 ### Dates and Datetimes
 
