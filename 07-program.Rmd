@@ -34,54 +34,60 @@
 ***
 ## Environment and Workspace
 
-`base`
+`{base}`
 
-* `dir()`: List the files in a directory/folder.
+* `dir`: List the files in a directory/folder.
 * Environments
-    + `baseenv()`: The environment of the `base` package, it's enclosing environment ("parent environment") is the empty environment.
-    + `emptyenv()`: The empty environment, which is the ancestor of all environments and the only environment without an enclosing environment.
-    + `environment()`: The current environment.
-    + `globalenv()`: The environment in which you normally work, it's enclosing environment is the last package attached with `library()` or `require()`.
-    + `new.env()`: Create a new environment.
-* `exists()`: Look for an R object of the given name and possibly return it.
+    + `baseenv`: The environment of the `base` package, it's enclosing environment ("parent environment") is the empty environment.
+    + `emptyenv`: The empty environment, which is the ancestor of all environments and the only environment without an enclosing environment.
+    + `environment`: The current environment.
+    + `globalenv`: The environment in which you normally work, it's enclosing environment is the last package attached with `library` or `require`.
+    + `new.env`: Create a new environment.
+* `exists`: Look for an R object of the given name and possibly return it.
     + Must use quotations to name the object.
-* `getwd()`: Get the working directory.
-* `history()`: Display the previous 25 commands.
-* `install.packages()`: Install packages from repositories or local files.
-* `library()`: Load and attach an R package.
-    + Child function: `require()`.
-* `list.files()`: List the files in a directory/folder.
-* `loadhistory()`: Recall command history.
-* `ls()`: List objects in the specified environment.
-* `options()`: Set and examine global options.
-    + `getOption()`: Set and examine global options.
-* `q()`: Terminate an R session.
-* `rm()`: Remove objects from a specified environment.
-* `savehistory()`: Save command history (default value is ".Rhistory").
-* `save.image()`: Save the current workspace.
-* `search()`: Return a list of attached packages and R objects.
-    + `searchpaths()`: Return the path to attached packages.
+* `getOption`: Set and examine global options.
+* `getwd`: Get the working directory.
+* `history`: Display the previous 25 commands.
+* `install.packages`: Install packages from repositories or local files.
+* `library`: Load and attach packages, returning an error if the packages does not exist.
+* `list.files`: List the files in a directory/folder.
+* `loadedNamespaces: Return the loaded name spaces.
+* `loadhistory`: Recall command history.
+* `ls`: List objects in the specified environment.
+* `options`: Set and examine global options.
+* `q`: Terminate an R session.
+* `R.version`: Version information.
+* `R.version.string`: Version information. 
+  * Same call as `R.version$version.string`.
+* `require`: Load and attach packages, returning `FALSE` if the package does not exist.
+* `rm`: Remove objects from a specified environment.
+* `savehistory`: Save command history (default value is ".Rhistory").
+* `save.image`: Save the current workspace.
+* `search`: Return a list of attached packages and R objects.
+* `searchpaths`: Return the path to attached packages.
 * `setwd()`: Set the working directory file path.
-     + When using Windows, use "/" instead of "\".
+  * When using Windows, use "/" instead of "\".
+* `Sys.info`: Extract system and user information.
+  * Example: `Sys.info()[c("sysname", "release")]`.
     
-`gdata`
+`{gdata}`
 
-* `object.size()`: Report the space allocated for an object.
-    + See also `utils::object.size()`.
+* `object.size`: Report the space allocated for an object.
+  * See also `utils::object.size`.
 
-`installr`
+`{installr}`
 
-* `updateR()`: Check for the latest R version; downloads and installs new R versions.
+* `updateR`: Check for the latest R version; downloads and installs new R versions.
 
-`pryr`
+`{pryr}`
 
-* `where()`: Find where a name is defined.
+* `where`: Find where a name is defined.
 
-`utils`
+`{utils}`
 
-* `object.size()`: Report the space allocated for an object.
-    + See also `gdata::object.size()`.
-* `sessionInfo()`: Collect information about the current R session.
+* `object.size`: Report the space allocated for an object.
+  * See also `gdata::object.size`.
+* `sessionInfo`: Collect information about the current R session.
     
 References:
 
@@ -172,6 +178,24 @@ args(prop.test)
   * Consider functions from `{assertive}` as an alternative to `stopifnot` and `stop`.
 * `unlist`: Flatten lists.
   * Useful when using `purrr`'s `map` functions, which return objects as type `list`.
+
+`{zeallot}`
+
+* `%<-%`: Multiple assignment operator.
+  * Useful when you want to return multiple output from a function. For example:
+  
+```{r, eval=FALSE}
+session <- function() {
+  
+  list(
+    r_version = R.version.string,
+    operating_system = Sys.info()[c("sysname", "release")],
+    loaded_pkgs = loadedNamespaces()
+  )
+}
+
+c(vrsn, os, pkgs) %<-% session() 
+```
 
 ***
 ## Learn About an Object
@@ -287,9 +311,8 @@ Git
     + `git branch -d <branch_name>`: Delete a local branch.
         + See ["Delete branch in RStudio pop-up"](https://community.rstudio.com/t/delete-branch-in-rstudio-pop-up/15465) for help removing branches in RStudio after removing them from Git.
 
-
-`packrat`
+`{packrat}`
 
 * See note on the `packrat` package in the "Referenced Packages" section.
-* `snapshot()`: Capture and store the packages and versions in use.
-* `restore()`: Load the most recent snapshot to the project's private library.
+* `snapshot`: Capture and store the packages and versions in use.
+* `restore`: Load the most recent snapshot to the project's private library.
