@@ -158,4 +158,6 @@
 
 [`xts`](https://CRAN.R-project.org/package=xts): Provide for uniform handling of R's different time-based data classes by extending zoo.
 
+[`zeallot`](https://CRAN.R-project.org/package=zeallot): Multiple, unpacking, and destructuring assignment.
+
 [`zoo`](https://CRAN.R-project.org/package=zoo): For regular and irregular time series.
