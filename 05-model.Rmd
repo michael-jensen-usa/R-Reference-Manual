@@ -11,10 +11,6 @@
 
 * `sample`: Random samples and permutations.
 
-`{broom}`
-
-* `tidy`: Construct a data frame that summarizes the model's statistical findings.
-    
 `{dplyr}`
 
 * `sample_n`: Sample n rows from a table.
@@ -30,17 +26,23 @@
 ***
 ## Regression
 
-`stats`
+`{broom}`
 
-* `df.residual()`: Get the residual degrees of freedom.
-* `lm()`: Fit linear models.
-* `p.adjust()`: Adjust p-values for multiple comparisons.
-* `residuals()`: Extract model residuals.
+* `augment`: Augment data with information from an object.
+* `glance`: Construct a single row summary of a model, fit, or other object.
+* `tidy`: Turn an object into a tidy tibble.
 
-`tidyr`
+`{stats}`
 
-* `nest()`: Nest repeated values in a list-variable.
-    + Helpful when separating a data frame in preparation to model the data for each grouping.
+* `df.residual`: Get the residual degrees of freedom.
+* `lm`: Fit linear models.
+* `p.adjust`: Adjust p-values for multiple comparisons.
+* `residuals`: Extract model residuals.
+
+`{tidyr}`
+
+* `nest`: Nest repeated values in a list-variable.
+  * Helpful when separating a data frame in preparation to model the data for each grouping.
 
 ***
 ## Simulation & Prediction
