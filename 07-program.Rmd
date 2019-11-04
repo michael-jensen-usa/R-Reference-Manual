@@ -38,13 +38,13 @@
 
 * `dir`: List the files in a directory/folder.
 * Environments
-    + `baseenv`: The environment of the `base` package, it's enclosing environment ("parent environment") is the empty environment.
-    + `emptyenv`: The empty environment, which is the ancestor of all environments and the only environment without an enclosing environment.
-    + `environment`: The current environment.
-    + `globalenv`: The environment in which you normally work, it's enclosing environment is the last package attached with `library` or `require`.
-    + `new.env`: Create a new environment.
+  * `baseenv`: The environment of the `base` package, it's enclosing environment ("parent environment") is the empty environment.
+  * `emptyenv`: The empty environment, which is the ancestor of all environments and the only environment without an enclosing environment.
+  * `environment`: The current environment.
+  * `globalenv`: The environment in which you normally work, it's enclosing environment is the last package attached with `library` or `require`.
+  * `new.env`: Create a new environment.
 * `exists`: Look for an R object of the given name and possibly return it.
-    + Must use quotations to name the object.
+  * Must use quotations to name the object.
 * `getOption`: Set and examine global options.
 * `getwd`: Get the working directory.
 * `history`: Display the previous 25 commands.
