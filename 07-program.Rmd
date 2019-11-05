@@ -43,6 +43,7 @@
   * `environment`: The current environment.
   * `globalenv`: The environment in which you normally work, it's enclosing environment is the last package attached with `library` or `require`.
   * `new.env`: Create a new environment.
+* `environmentName`: Return the name of the environment, as a character string.
 * `exists`: Look for an R object of the given name and possibly return it.
   * Must use quotations to name the object.
 * `getOption`: Set and examine global options.
@@ -56,6 +57,8 @@
 * `ls`: List objects in the specified environment.
 * `list2env`: From a list, build or add to an environment.
 * `options`: Set and examine global options.
+* `parent.env`: Return the enclosing environment of the environment listed as an argument.
+  * `parent.env` returns information that can be unhelpful, so use with `environmentName`, as follows: `parent.env(environment_name) %>% environmentName`.
 * `q`: Terminate an R session.
 * `R.version`: Version information.
 * `R.version.string`: Version information. 
