@@ -46,6 +46,7 @@
 * `environmentName`: Return the name of the environment, as a character string.
 * `exists`: Look for an R object of the given name and possibly return it.
   * Must use quotations to name the object.
+  * Remember that `R` will look for an object in parent environments until it reaches the empty environment, so use `inherits = FALSE` to limit the search to only the current environment.
 * `getOption`: Set and examine global options.
 * `getwd`: Get the working directory.
 * `history`: Display the previous 25 commands.
