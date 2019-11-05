@@ -54,6 +54,7 @@
 * `loadedNamespaces: Return the loaded name spaces.
 * `loadhistory`: Recall command history.
 * `ls`: List objects in the specified environment.
+* `list2env`: From a list, build or add to an environment.
 * `options`: Set and examine global options.
 * `q`: Terminate an R session.
 * `R.version`: Version information.
