@@ -85,6 +85,7 @@
 
 `{utils}`
 
+* `ls.str`: List objects and  their structure.
 * `object.size`: Report the space allocated for an object.
   * See also `gdata::object.size`.
 * `sessionInfo`: Collect information about the current R session.
