@@ -243,12 +243,21 @@ c(vrsn, os, pkgs) %<-% session()
 ***
 ## Pipes
 
-`magrittr`: Forward-pipe operator for R.
+`magrittr`
 
-* `freduce()`: Apply a list of functions sequentially.
 * `%<>%`: Compound assignment-pipe operator.
 * `%>%`: Forward-pipe operator.
 * `%$%`: Expositions-pipe operator.
+* `add`: `+`, for pipes.
+* `and`: `&`, for pipes.
+* `extract`:`[`, for pipes.
+* `extract2`: `[[`, for pipes.
+* `freduce`: Apply a list of functions sequentially.
+* `is_in`: `%in%`, for pipes.
+* `multiply_by`: `*`, for pipes.
+* `or`: `|`, for pipes.
+* `raise_to_power`: `^`, for pipes.
+* `subtract`: `-`, for pipes.
 
 ***
 ## Popups
