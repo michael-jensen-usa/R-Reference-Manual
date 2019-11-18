@@ -204,33 +204,38 @@
 
 `base`
 
-* `cat()`: Concatenate and print. 
-* `chartr()`: Change certain characters.
-* `grep()`: Pattern matching and replacement.
-    + `grep()` family functions: `grepl()`, `sub()`, `gsub()`, `regexpr()`, `gregexpr()`, and `regexec()`.
-* `tolower()`: Convert to lowercase.
-    + `stringr::str_to_lower()` is an alternative.
-* `toupper()`: Convert to uppercase.
-    + `stringr::str_to_upper()` is an alternative.
+* `cat`: Concatenate and print. 
+* `chartr`: Change certain characters.
+* `gregexpr`:
+* `grep`: Pattern matching and replacement.
+* `grepl`:
+* `gsub`:
+* `regexec`:
+* `regexpr`:
+* `sub`:
+* `tolower`: Convert to lowercase.
+  * `stringr::str_to_lower` is an alternative.
+* `toupper`: Convert to uppercase.
+  * `stringr::str_to_upper` is an alternative.
 
 `qdap`
 
-* 
+* `check_spelling`
 
 `qdapDictionaries`
 
 * `DICTIONARY`: Nettalk Corpus syllable data set.
 * `GradyAugmented`: Augmented list of Grady Ward's *English Words* and Mark Kantrowitz's *Names* List.
-    + Mark Kantrowitz's *Names* list is available in full [here](http://www.cs.cmu.edu/afs/cs/project/ai-repository/ai/areas/nlp/corpora/names/).
+  * Mark Kantrowitz's *Names* list is available in full [here](http://www.cs.cmu.edu/afs/cs/project/ai-repository/ai/areas/nlp/corpora/names/).
 
 `stringr`
 
-* `str_detect()`: Detect the presence or absence of a pattern in a string.
-    + Control the `pattern` argument options with `regex()` (i.e., `str_detect(x, regex(pattern, ignore_case = TRUE))`.
-* `str_to_lower()`: Convert to lower case.
-* `str_to_title()`: Capitalize the first letter.
-* `str_trim()`: Trim whitespace from a string.
-* `str_to_upper()`: Convert to upper case.
+* `str_detect`: Detect the presence or absence of a pattern in a string.
+  * Control the `pattern` argument options with `regex` (e.g., `str_detect(x, regex(pattern, ignore_case = TRUE))`.
+* `str_to_lower`: Convert to lower case.
+* `str_to_title`: Capitalize the first letter.
+* `str_trim`: Trim whitespace from a string.
+* `str_to_upper`: Convert to upper case.
 
 ### Test Data
 
