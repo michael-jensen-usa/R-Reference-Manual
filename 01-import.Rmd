@@ -41,13 +41,14 @@
 
 `base`
 
-* `data.frame()`: Create a data frame.
-    + Prefer `tibble::tibble()` over `base::data.frame()`.
-* `list()`: Create a list.
+* `data.frame`: Create a data frame.
+    + Prefer `tibble::tibble` over `base::data.frame`.
+* `list`: Create a list.
 
 `tibble`
 
-* `tibble()`: Create a data frame or list.
+* `add_row`: Add rows to a data frame.
+* `tibble`: Create a data frame or list.
 
 #### References
 
