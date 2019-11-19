@@ -232,6 +232,7 @@
 
 * `str_detect`: Detect the presence or absence of a pattern in a string.
   * Control the `pattern` argument options with `regex` (e.g., `str_detect(x, regex(pattern, ignore_case = TRUE))`.
+* `str_remove`: Remove matched patterns in a string.
 * `str_to_lower`: Convert to lower case.
 * `str_to_title`: Capitalize the first letter.
 * `str_trim`: Trim whitespace from a string.
