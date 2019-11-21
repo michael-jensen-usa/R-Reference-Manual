@@ -84,6 +84,8 @@
 
 [`methods`](https://www.rdocumentation.org/packages/methods/versions/3.5.1): Formal methods and classes.
 
+[`mgcv`](https://CRAN.R-project.org/package=mgcv): Mixed GAM computational vehicle with automatic smoothness estimation.
+
 [`microbenchmark`](https://CRAN.R-project.org/package=microbenchmark): Measure and compare the execution time of R expressions.
 
 [`odbc`](https://CRAN.R-project.org/package=odbc): Connect to ODBC compatible databases using the DBI Interface.
