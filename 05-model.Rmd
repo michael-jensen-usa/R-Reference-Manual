@@ -41,6 +41,7 @@
 * `df.residual`: Get the residual degrees of freedom.
 * `lm`: Fit linear models.
 * `p.adjust`: Adjust p-values for multiple comparisons.
+* `predict`: Model predictions.
 * `residuals`: Extract model residuals.
 
 `{tidyr}`
