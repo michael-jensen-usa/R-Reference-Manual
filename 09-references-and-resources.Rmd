@@ -7,29 +7,30 @@
 * To program in the R language on a user-friendly platform, download the [RStudio](https://www.rstudio.com/) IDE.
 
 * [The R Project for Statistical Computing](https://www.r-project.org/)
-    + [Library of R Packages](https://cran.r-project.org/web/packages/)
-    + [*Getting Help with R*](https://www.r-project.org/help.html)
-    + [*The R Manuals*](https://cran.r-project.org/manuals.html)
-    + [*Frequently Asked Questions*](https://cran.r-project.org/faqs.html)
-    + [*Books Related to R*](https://www.r-project.org/doc/bib/R-books.html)
-    + [*Documentation*](https://www.r-project.org/other-docs.html)
+  * [Library of R Packages](https://cran.r-project.org/web/packages/)
+  * [*Getting Help with R*](https://www.r-project.org/help.html)
+  * [*The R Manuals*](https://cran.r-project.org/manuals.html)
+  * [*Frequently Asked Questions*](https://cran.r-project.org/faqs.html)
+  * [*Books Related to R*](https://www.r-project.org/doc/bib/R-books.html)
+  * [*Documentation*](https://www.r-project.org/other-docs.html)
 
 * [RStudio](https://www.rstudio.com/)
-    + [*RStudio Cheat Sheets*](https://www.rstudio.com/resources/cheatsheets/)
-    + [*Webinars and Videos On Demand*](https://www.rstudio.com/resources/webinars/)
-    + [*Online learning*](https://www.rstudio.com/online-learning/)
-    + [*RStudio Blog*](https://blog.rstudio.com/)
+  * [*RStudio Cheat Sheets*](https://www.rstudio.com/resources/cheatsheets/)
+  * [*Webinars and Videos On Demand*](https://www.rstudio.com/resources/webinars/)
+  * [*Online learning*](https://www.rstudio.com/online-learning/)
+  * [*RStudio Blog*](https://blog.rstudio.com/)
 
 * Online Manuals
-    + [*R for Data Science*](http://r4ds.had.co.nz/)
-    + [*Advanced R*](http://adv-r.had.co.nz/) by Hadley Wickham
+  * [*R for Data Science*](http://r4ds.had.co.nz/)
+  * [*Advanced R*](http://adv-r.had.co.nz/) by Hadley Wickham
         + Hadley's second edition draft is available [here](https://adv-r.hadley.nz/).
-    + [*R Packages*](http://r-pkgs.had.co.nz/) by Hadley Wickham
-    + [*The tidyverse style guide*](http://style.tidyverse.org/)
-    + [*Efficient R Programming*](https://bookdown.org/csgillespie/efficientR/)
+  * [*R Packages*](http://r-pkgs.had.co.nz/) by Hadley Wickham
+  * [*The tidyverse style guide*](http://style.tidyverse.org/)
+  * [*Efficient R Programming*](https://bookdown.org/csgillespie/efficientR/)
 
 * Other Online Resources
-    + [DataCamp](https://www.datacamp.com/)
-    + [RDocumentation](https://www.rdocumentation.org/)
-    + [R Bloggers](https://www.r-bloggers.com/how-to-learn-r-2/)
-        - ["Tutorials for learning R"](https://www.r-bloggers.com/how-to-learn-r-2/)
+  * [DataCamp](https://www.datacamp.com/)
+  * [RDocumentation](https://www.rdocumentation.org/)
+  * [R Bloggers](https://www.r-bloggers.com/how-to-learn-r-2/)
+    * ["Tutorials for learning R"](https://www.r-bloggers.com/how-to-learn-r-2/)
+  * [Regular Expressions 101](https://regex101.com/)
