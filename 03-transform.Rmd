@@ -59,6 +59,7 @@ by_country <-
 * `summarize`: Reduce multiple values to a single value.
   * Use `mean(variable == value)` to get a percentage (see the above example for `mean`.)
 * `tally`: An alternative to `count`.
+* `top_n`: Select top (or bottom) n rows (by value).
 
 `{magrittr}`
 
