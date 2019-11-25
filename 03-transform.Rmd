@@ -75,6 +75,7 @@ by_country <-
 * `aggregate`: Compute summary statistics of data subsets.
 * `cor`: Correlation.
 * `cov`: Covariance.
+* `lag`: Lag a time series.
 * `rnorm`: Generate a random normal distribution.
 * `var`: Variance.
 
@@ -191,26 +192,26 @@ df <-
 ***
 ## Narrow in on Observations of Interest
 
-`base`
+`{base}`
 
-* `droplevels()`: Drop unused levels from factors.
-    + This function will keep levels that have even 1 or 2 counts. If you want to remove levels with low counts from a data set in order to simplify your analysis, first `filter()` out those rows and then use `droplevels()`.
-* `order()`: Arrange in ascending or descending order.
-    + Alternative: `dplyr::arrange()`.
-* `prop.table()`: Express table entries as proportions of the marginal table.
-    + The input is a table produced by `table()`.
-    + As these are proportions of the whole, `sum(prop.table(table_name))` = 1.
-    + Specify conditional proportions on rows or columns by using the `margin` argument.
-* `table()`: Build a table of the counts at each combination of factor levels.
-    + Use `prop.table()` to see the table entries expressed as proportions.
+* `droplevels`: Drop unused levels from factors.
+  * This function will keep levels that have even 1 or 2 counts. If you want to remove levels with low counts from a data set in order to simplify your analysis, first `filter` out those rows and then use `droplevels`.
+* `order`: Arrange in ascending or descending order.
+  * Alternative: `dplyr::arrange`.
+* `prop.table`: Express table entries as proportions of the marginal table.
+  * The input is a table produced by `table`.
+  * As these are proportions of the whole, `sum(prop.table(table_name))` = 1.
+  * Specify conditional proportions on rows or columns by using the `margin` argument.
+* `table`: Build a table of the counts at each combination of factor levels.
+  * Use `prop.table` to see the table entries expressed as proportions.
 
-`dplyr`
+`{dplyr}`
 
-* `arrange()`: Arrange rows by variable, in ascending order.
-    + Related functions: `arrange_all()`, `arrange_at()`, `arrange_if()`.
-* `distinct()`: Select distinct rows.
-* `filter()`: Return rows with matching conditions.
-    + Use `%in%` when using multiple `|` conditions. The following two commands, for example, are equivalent:
+* `arrange`: Arrange rows by variable, in ascending order.
+    + Related functions: `arrange_all`, `arrange_at`, `arrange_if`.
+* `distinct`: Select distinct rows.
+* `filter`: Return rows with matching conditions.
+  * Use `%in%` when using multiple `|` conditions. The following two commands, for example, are equivalent:
 ```{r, eval=FALSE}
 ilo_data %>% 
   filter(country %in% c("Sweden", "Switzerland"))
@@ -219,12 +220,14 @@ ilo_data %>%
   filter(country == "Sweden" | country == "Switzerland")
 ```
     
-* `rename()`: Rename variables by name (a modification of `select()`).
-* `sample_n()`: Sample n rows from a table.
-* `select()`: Select/rename variables. 
-    + Helper functions include: `starts_with()`, `ends_with()`, `contains()`, `matches()`, `num_range()`, and `one_of()`.
-* `slice()`: Choose rows by position.
-* `transmute()`: Drop existing variables.
+* `renam`: Rename variables by name (a modification of `select`).
+* `sample_n`: Sample n rows from a table.
+* `select`: Select/rename variables. 
+  * Helper functions include: `starts_wit`, `ends_with`, `contains`, `matches`, `num_range`, and `one_of`. See `?dplyr::select_helpers`.
+  * Helper functions take strings (e.g., `contains("work")` rather than `contains(work)`).
+* `slice`: Choose rows by position.
+* `transmute`: Create or transform variables.
+  * Like a combination of `select` and `mutate`.
 
 ***
 ## Test
