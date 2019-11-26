@@ -143,6 +143,9 @@ download.file(
   destfile = paste0(getwd(), "/Snake River Visits.rds"))
 
 snake_river_visits <- readRDS(file.choose())
+# or
+path <- paste0(getwd(), "/Snake River Visits.rds")
+snake_river_visits <- readRDS(path)
 ```
 
   * Example: Multiple files in the same link
