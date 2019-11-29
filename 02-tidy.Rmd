@@ -100,6 +100,7 @@
 * `gather`: Gather columns into key-value pairs.
 * `nest`: Nest repeated values in a list-variable.
   * Helpful when separating a data frame in preparation to model the data for each grouping.
+* `replace_na`: Replace missing values.
 * `separate`: Separate one column into multiple columns.
 * `spread`: Spread across multiple columns.
 * `unite`: Unite multiple columns into one.
