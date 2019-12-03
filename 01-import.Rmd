@@ -148,7 +148,7 @@ path <- paste0(getwd(), "/Snake River Visits.rds")
 snake_river_visits <- readRDS(path)
 ```
 
-  * Example: Multiple files in the same link
+  * Example: Rdata files
 ```{r, eval=FALSE}
 url_rdata <- 
   "https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData"
