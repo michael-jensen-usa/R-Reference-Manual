@@ -27,6 +27,7 @@
   * [*R Packages*](http://r-pkgs.had.co.nz/) by Hadley Wickham
   * [*The tidyverse style guide*](http://style.tidyverse.org/)
   * [*Efficient R Programming*](https://bookdown.org/csgillespie/efficientR/)
+  * [*Free R Reading Material*](https://committedtotape.shinyapps.io/freeR/)
 
 * Other Online Resources
   * [DataCamp](https://www.datacamp.com/)
