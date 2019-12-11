@@ -32,7 +32,7 @@
 `ggplot2`
 
 * `aes`: Construct aesthetic mappings.
-  * Arguments include `color`, `fill`, `size`, `labels`, `alpha`, `shape` (1-20 accept color attributes and 21-25 accept color and fill attributes), `linewidth`, `linetype`.
+  * Arguments include `color`, `fill`, `size`, `labels`, `alpha`, `shape` (1-20 accept color attributes and 21-25 accept color and fill attributes), `linewidth`, `linetype`, and `group`.
   * Use `?pch` to see options for `shape`.
   * The default shape for points does not have a `fill` attribute, which means that mapping a categorical variable onto `fill` won't result in multiple colors.
   * Helper functions to include in the call when needing to modify the data include: `stats::reorder`.
@@ -40,6 +40,9 @@
   * `coord_cartesian`: Zoom a plot in or out without changing the underlying data.
   * `coord_flip`: Flip the x and y axes.
   * `coord_polar`: Used to convert a stacked bar chart to a pie chart.
+* `facet_*`
+  * `facet_grid`: Lay out panels in a grid.
+  * `facet_wrap`: Wrap a 1D ribbon of panels into 2D (observe a variable, conditional on another variable).
 * `geom_*`: Create a geometry.
   * Note that `aes` can be called within `geom_*` rather than prior to.
   * `geom_abline`: Add reference lines to a plot.
@@ -64,9 +67,8 @@
   * `geom_vline`: Add a vertical reference line to the plot.
 * `ggplot`: Create a plot.
 * `ggtitle`: Modify the plot title.
-* `facet_*`
-  * `facet_grid`: Lay out panels in a grid.
-  * `facet_wrap`: Wrap a 1D ribbon of panels into 2D (observe a variable, conditional on another variable).
+* `group`: Specify groupings.
+  * Used within `aes`. Note that `group` is usually unnecessary when specifying `color`, `shape`, `fill`, or `linetype` within `aes`, or when using facets. See ["Aesthetics: grouping"](https://ggplot2.tidyverse.org/reference/aes_group_order.html) for more information.
 * `labs`: Modify axis, legend, and plot labels.
 * `position_*`:
   * `position_identity`: Don't adjust position.
