@@ -150,12 +150,11 @@ snake_river_visits <- readRDS(path)
 
   * Example: Rdata files
 ```{r, eval=FALSE}
-url_rdata <- 
-  "https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData"
+download.file(
+  "https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData", 
+  destfile = "datacamp_iris_dataset.Rdata")
 
-download.file(url_rdata, destfile = "datacamp.Rdata")
-
-load("datacamp.Rdata")
+load("datacamp_iris_dataset.Rdata")
 ```
 
 * `unzip`: Extract or list zip archives.
