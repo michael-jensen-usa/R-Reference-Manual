@@ -150,11 +150,23 @@ snake_river_visits <- readRDS(path)
 
   * Example: Rdata files
 ```{r, eval=FALSE}
+# Example 1:
 download.file(
   "https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData", 
   destfile = "datacamp_iris_dataset.Rdata")
 
 load("datacamp_iris_dataset.Rdata")
+
+# Example 2:
+download.file(
+  "https://assets.datacamp.com/production/repositories/235/datasets/3b6fc2923b599058584b57d8c605c6bef454d273/CHIS2009_reduced_2.Rdata",
+  destfile = "chis_2009.Rdata",
+  # The documentation for `download.file` indicates that the function will
+  # automatically include `mode = "wb"` for .Rdata files. That may have happened
+  # in Example 1, but didn't happen in Example 2, which is why I've included it.
+  mode = "wb")
+
+load("chis_2009.Rdata")
 ```
 
 * `unzip`: Extract or list zip archives.
