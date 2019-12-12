@@ -25,6 +25,7 @@
   * [*Advanced R*](http://adv-r.had.co.nz/) by Hadley Wickham
         + Hadley's second edition draft is available [here](https://adv-r.hadley.nz/).
   * [*R Packages*](http://r-pkgs.had.co.nz/) by Hadley Wickham
+  * [*The R Inferno*](http://www.burns-stat.com/pages/Tutor/R_inferno.pdf) by Patrick Burns
   * [*The tidyverse style guide*](http://style.tidyverse.org/)
   * [*Efficient R Programming*](https://bookdown.org/csgillespie/efficientR/)
   * [*Free R Reading Material*](https://committedtotape.shinyapps.io/freeR/)
