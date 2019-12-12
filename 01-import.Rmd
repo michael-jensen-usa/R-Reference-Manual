@@ -57,9 +57,9 @@
 
 ### Other
 
-`stats`
+`{stats}`
 
-* `rnorm()`: Generate a random normal distribution.
+* `rnorm`: Generate a random normal distribution.
 
 ## Import Data from a Local Drive
 
