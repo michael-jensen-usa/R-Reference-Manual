@@ -13,6 +13,8 @@
 
 [`broom`](https://CRAN.R-project.org/package=broom): Convert statistical analysis objects into tidy data frames.
 
+[`car`](https://CRAN.R-project.org/package=car): Companion to applied regression.
+
 [`chron`](https://CRAN.R-project.org/package=chron): Chronological objects which can handle dates and times.
 
 [`countrycode`](https://CRAN.R-project.org/package=countrycode): Convert country names and country codes.
