@@ -84,6 +84,7 @@
   * `scale_color_*`
   * `scale_fill_*`
   * `scale_shape_*`
+  * `scale_size`
   * `scale_linetype_*`
 * `stat_*`: Statistic layers (sometimes called by `geom_` layers).
   * `stat_bin`
