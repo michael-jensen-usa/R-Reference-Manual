@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Tidy | R Reference Manual</title>
   <meta name="description" content="Tidy | R Reference Manual" />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Tidy | R Reference Manual" />
   <meta property="og:type" content="book" />
@@ -38,6 +38,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -175,43 +178,48 @@
 <h2>Explore Raw Data</h2>
 <div id="understand-the-structure-of-the-data" class="section level3">
 <h3>Understand the Structure of the Data</h3>
-<p><code>base</code></p>
+<p><code>{base}</code></p>
 <ul>
-<li><code>attributes()</code>: Object attribute lists.</li>
-<li><code>class()</code>: Get or set the class attribute of an object.</li>
-<li><code>colnames()</code>: Retrieve or set the column names of a matrix-like object.</li>
-<li><code>dim()</code>: Retrieve or set the dimension of an object.</li>
-<li><code>dimnames()</code>: Retrieve or set the dimension names of an object.</li>
-<li><code>format()</code>: Format an R object.</li>
-<li><code>length()</code>: Get or set the length of an object.</li>
-<li><code>levels()</code>: Get or set the (factor) levels of a variable.
+<li><code>attr</code>: Get or set attributes of an object.
+<ul>
+<li><code>attr(x, "names")</code> is the same as <code>names(x)</code>.</li>
+<li>Use <code>attr(x, "names") &lt;- value</code> to set attribute values.</li>
+</ul></li>
+<li><code>attributes</code>: Object attribute lists.</li>
+<li><code>class</code>: Get or set the class attribute of an object.</li>
+<li><code>colnames</code>: Retrieve or set the column names of a matrix-like object.</li>
+<li><code>dim</code>: Retrieve or set the dimension of an object.</li>
+<li><code>dimnames</code>: Retrieve or set the dimension names of an object.</li>
+<li><code>format</code>: Format an R object.</li>
+<li><code>length</code>: Get or set the length of an object.</li>
+<li><code>levels</code>: Get or set the (factor) levels of a variable.
 <ul>
 <li>Levels default to alphabetical order, so be careful when renaming them (i.e., don’t accidentally set the “F” level equal to “Male” rather than “Female”).</li>
 </ul></li>
-<li><code>mode()</code>: Get or set the storage mode attribute of an object.
+<li><code>mode</code>: Get or set the storage mode attribute of an object.
 <ul>
-<li>Modes include logical, numeric (the mode equivalent of <code>typeof()</code>’s integer and double), complex, character, raw, and list.</li>
+<li>Modes include logical, numeric (the mode equivalent of <code>typeof</code>’s integer and double types), complex, character, raw, and list.</li>
 </ul></li>
-<li><code>names()</code>: Get or set the names of an object.</li>
-<li><code>nchar()</code>: Count the number of characters (or bytes or width).</li>
-<li><code>rownames()</code>: Retrieve or set the row names of a matrix-like object.</li>
-<li><code>typeof()</code>: Display the R internal type of an object.
+<li><code>names</code>: Get or set the names of an object.</li>
+<li><code>nchar</code>: Count the number of characters (or bytes or width).</li>
+<li><code>rownames</code>: Retrieve or set the row names of a matrix-like object.</li>
+<li><code>typeof</code>: Display the R internal type of an object.
 <ul>
 <li>Types include logical, integer, double, complex, character, raw, and list.</li>
 </ul></li>
 </ul>
-<p><code>tibble</code></p>
+<p><code>{tibble}</code></p>
 <ul>
-<li><code>glimpse()</code>: Get a glimpse of the data.
+<li><code>glimpse</code>: Get a glimpse of the data.
 <ul>
-<li>Similar to <code>utils::str()</code>.</li>
+<li>Similar to <code>utils::str</code>.</li>
 </ul></li>
 </ul>
-<p><code>utils</code></p>
+<p><code>{utils}</code></p>
 <ul>
 <li><code>str()</code>: Display the structure of an R object.
 <ul>
-<li>Similar to <code>tibble::glimpse()</code>.</li>
+<li>Similar to <code>tibble::glimpse</code>.</li>
 </ul></li>
 </ul>
 </div>
@@ -291,6 +299,7 @@
 <ul>
 <li>Helpful when separating a data frame in preparation to model the data for each grouping.</li>
 </ul></li>
+<li><code>replace_na</code>: Replace missing values.</li>
 <li><code>separate</code>: Separate one column into multiple columns.</li>
 <li><code>spread</code>: Spread across multiple columns.</li>
 <li><code>unite</code>: Unite multiple columns into one.</li>
@@ -299,9 +308,9 @@
 </div>
 <div id="transpose" class="section level3">
 <h3>Transpose</h3>
-<p><code>purrr</code></p>
+<p><code>{purrr}</code></p>
 <ul>
-<li><code>transpose()</code>: Turn a list-of-lists inside-out.</li>
+<li><code>transpose</code>: Turn a list-of-lists inside-out.</li>
 </ul>
 <hr />
 </div>
@@ -310,36 +319,41 @@
 <h2>Prepare Data for Analysis</h2>
 <div id="coerce-data" class="section level3">
 <h3>Coerce Data</h3>
-<p><code>base</code></p>
+<p><code>{base}</code></p>
 <ul>
-<li><code>as.*()</code> functions:
+<li><code>anyNA</code>: Possibly faster implementation of <code>any(is.na(x))</code>.</li>
+<li><code>as.*</code>
 <ul>
-<li><code>as.array()</code>: Coerce to array.</li>
-<li><code>as.data.frame()</code>: Coerce to data frame.
+<li><code>as.array</code>: Coerce to array.</li>
+<li><code>as.data.frame</code>: Coerce to data frame.
 <ul>
-<li>Prefer<code>tibble::as_tibble()</code> to <code>base::as.data.frame()</code>.</li>
+<li>Prefer<code>tibble::as_tibble</code> to <code>base::as.data.frame</code>.</li>
 </ul></li>
-<li><code>as.Date()</code>: Coerce to date.</li>
-<li><code>as.factor()</code>: Coerce to factor.</li>
-<li><code>as.list()</code>: Coerce to list.</li>
-<li><code>as.matrix()</code>: Coerce to matrix.</li>
-<li><code>as.POSIX*()</code>: Coerce to POSIXlt or POSIXct.</li>
+<li><code>as.Date</code>: Coerce to date.</li>
+<li><code>as.factor</code>: Coerce to factor.</li>
+<li><code>as.list</code>: Coerce to list.</li>
+<li><code>as.matrix</code>: Coerce to matrix.</li>
+<li><code>as.POSIX*</code>: Coerce to POSIXlt or POSIXct.</li>
 </ul></li>
-<li><code>unclass()</code>: Remove the class attribute of an object.</li>
+<li><code>is.na</code>: Indicate which elements are missing.
+<ul>
+<li>Use <code>is.na &lt;-</code> to set elements to <code>NA</code>.</li>
+</ul></li>
+<li><code>unclass</code>: Remove the class attribute of an object.</li>
 </ul>
-<p><code>methods</code></p>
+<p><code>{methods}</code></p>
 <ul>
-<li><code>as()</code>: Force an object to belong to a class.</li>
+<li><code>as</code>: Force an object to belong to a class.</li>
 </ul>
-<p><code>tibble</code></p>
+<p><code>{tibble}</code></p>
 <ul>
-<li><code>as_tibble()</code>: Coerce lists and matrices to data frames.
+<li><code>as_tibble</code>: Coerce lists and matrices to data frames.
 <ul>
-<li>Preferable to <code>base::as.data.frame()</code>.</li>
+<li>Preferable to <code>base::as.data.frame</code>.</li>
 </ul></li>
-<li><code>enframe()</code>: Convert vectors to data frames, and vice versa.
+<li><code>enframe</code>: Convert vectors to data frames, and vice versa.
 <ul>
-<li>Preferable to using <code>as_tibble()</code> to coerce a vector to a data frame.</li>
+<li>Preferable to using <code>as_tibble</code> to coerce a vector to a data frame.</li>
 </ul></li>
 </ul>
 </div>
@@ -419,24 +433,27 @@
 <h3>Strings</h3>
 <p><code>base</code></p>
 <ul>
-<li><code>cat()</code>: Concatenate and print.</li>
-<li><code>chartr()</code>: Change certain characters.</li>
-<li><code>grep()</code>: Pattern matching and replacement.
+<li><code>cat</code>: Concatenate and print.</li>
+<li><code>chartr</code>: Change certain characters.</li>
+<li><code>gregexpr</code>:</li>
+<li><code>grep</code>: Pattern matching and replacement.</li>
+<li><code>grepl</code>:</li>
+<li><code>gsub</code>:</li>
+<li><code>regexec</code>:</li>
+<li><code>regexpr</code>:</li>
+<li><code>sub</code>:</li>
+<li><code>tolower</code>: Convert to lowercase.
 <ul>
-<li><code>grep()</code> family functions: <code>grepl()</code>, <code>sub()</code>, <code>gsub()</code>, <code>regexpr()</code>, <code>gregexpr()</code>, and <code>regexec()</code>.</li>
+<li><code>stringr::str_to_lower</code> is an alternative.</li>
 </ul></li>
-<li><code>tolower()</code>: Convert to lowercase.
+<li><code>toupper</code>: Convert to uppercase.
 <ul>
-<li><code>stringr::str_to_lower()</code> is an alternative.</li>
-</ul></li>
-<li><code>toupper()</code>: Convert to uppercase.
-<ul>
-<li><code>stringr::str_to_upper()</code> is an alternative.</li>
+<li><code>stringr::str_to_upper</code> is an alternative.</li>
 </ul></li>
 </ul>
 <p><code>qdap</code></p>
 <ul>
-<li></li>
+<li><code>check_spelling</code></li>
 </ul>
 <p><code>qdapDictionaries</code></p>
 <ul>
@@ -448,14 +465,15 @@
 </ul>
 <p><code>stringr</code></p>
 <ul>
-<li><code>str_detect()</code>: Detect the presence or absence of a pattern in a string.
+<li><code>str_detect</code>: Detect the presence or absence of a pattern in a string.
 <ul>
-<li>Control the <code>pattern</code> argument options with <code>regex()</code> (i.e., <code>str_detect(x, regex(pattern, ignore_case = TRUE))</code>.</li>
+<li>Control the <code>pattern</code> argument options with <code>regex</code> (e.g., <code>str_detect(x, regex(pattern, ignore_case = TRUE))</code>.</li>
 </ul></li>
-<li><code>str_to_lower()</code>: Convert to lower case.</li>
-<li><code>str_to_title()</code>: Capitalize the first letter.</li>
-<li><code>str_trim()</code>: Trim whitespace from a string.</li>
-<li><code>str_to_upper()</code>: Convert to upper case.</li>
+<li><code>str_remove</code>: Remove matched patterns in a string.</li>
+<li><code>str_to_lower</code>: Convert to lower case.</li>
+<li><code>str_to_title</code>: Capitalize the first letter.</li>
+<li><code>str_trim</code>: Trim whitespace from a string.</li>
+<li><code>str_to_upper</code>: Convert to upper case.</li>
 </ul>
 </div>
 <div id="test-data" class="section level3">
@@ -508,24 +526,24 @@
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
