@@ -59,6 +59,8 @@
 
 [`grDevices`](https://www.rdocumentation.org/packages/grDevices/versions/3.5.2): Grahpics devices and support for base and grid graphics.
 
+[`Hmisc`](https://CRAN.R-project.org/package=Hmisc): Harrell miscellaneous.
+
 [`hms`](https://CRAN.R-project.org/package=hms): Times without dates.
 
 [`httr`](https://CRAN.R-project.org/package=httr): Tools for working with HTTP.
