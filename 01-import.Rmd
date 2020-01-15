@@ -1,65 +1,25 @@
-# Import
+# Import or Create Data
+***
+## Notes & References
+
+* ["Data structures"](http://adv-r.had.co.nz/Data-structures.html) (Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
+* `{open_intro}` contains data sets useful for practicing and teaching.
+* ["Vectors"](https://r4ds.had.co.nz/vectors.html) (Grolemund & Wickham, [*R for Data Science*](https://r4ds.had.co.nz/))
 
 ## Create Data
 
-### Data Structures
-
-#### Atomic Vector
-
-`base`
-
-* `c()`: Combine values into a vector or list.
-* `factor()`: Create a factor variable.
-* `seq()`: Generate a sequence.
-* `vector()`: Create a vector.
-    + This function is preferable to `c()` when creating an empty vector, according to the DataCamp article ["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve).
-
-#### Matrix
-
-`base`
-
-* `matrix()`: Create a matrix.
-
-#### Array
-
-`base`
-
-* `array()`: Create an array.
-
-#### List
-
-`base`
-
-* `c()`: Combine values into a vector or list.
-* `list()`: Create a list.
-
-`tibble`
-
-* `tibble()`: Create a data frame or list.
-
-#### Data Frame
-
-`base`
-
-* `data.frame`: Create a data frame.
-    + Prefer `tibble::tibble` over `base::data.frame`.
-* `list`: Create a list.
-
-`tibble`
-
-* `add_row`: Add rows to a data frame.
-* `tibble`: Create a data frame or list.
-
-#### References
-
-* ["Vectors"](https://r4ds.had.co.nz/vectors.html) (Grolemund & Wickham, [*R for Data Science*](https://r4ds.had.co.nz/))
-* ["Data structures"](http://adv-r.had.co.nz/Data-structures.html) (Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
-
-### Other
-
-`{stats}`
-
-* `rnorm`: Generate a random normal distribution.
+* `base::array`
+* `base::c`
+* `base::data.frame`
+* `base::factor`
+* `base::list`
+* `base::matrix`
+* `base::seq`
+* `base::vector`
+  * Preferable to `base::c` when creating an empty vector, according to ["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve).
+* `stats::rnorm`
+* `tibble::add_row`
+* `tibble::tibble`
 
 ## Import Data from a Local Drive
 

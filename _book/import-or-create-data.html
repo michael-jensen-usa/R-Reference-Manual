@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Import or Create Data | R Reference Manual</title>
+  <meta name="description" content="Import or Create Data | R Reference Manual" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Import or Create Data | R Reference Manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Import or Create Data | R Reference Manual" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="tidy.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Reference Manual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html"><i class="fa fa-check"></i>Import or Create Data</a><ul>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#import-data-from-a-local-drive"><i class="fa fa-check"></i>Import Data from a Local Drive</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#import-data-from-the-internet"><i class="fa fa-check"></i>Import Data from the Internet</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#import-data-from-a-database"><i class="fa fa-check"></i>Import Data from a Database</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#reference-material"><i class="fa fa-check"></i>Reference Material</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i>Tidy</a><ul>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a><ul>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#understand-the-structure-of-the-data"><i class="fa fa-check"></i>Understand the Structure of the Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#look-at-the-data"><i class="fa fa-check"></i>Look at the Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#visualize-the-data"><i class="fa fa-check"></i>Visualize the Data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#tidy-data"><i class="fa fa-check"></i>Tidy Data</a><ul>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#manage-columns-and-observations"><i class="fa fa-check"></i>Manage Columns and Observations</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#transpose"><i class="fa fa-check"></i>Transpose</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#prepare-data-for-analysis"><i class="fa fa-check"></i>Prepare Data for Analysis</a><ul>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#coerce-data"><i class="fa fa-check"></i>Coerce Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#dates-and-datetimes"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#factors-and-levels"><i class="fa fa-check"></i>Factors and Levels</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#filter-and-remove-data"><i class="fa fa-check"></i>Filter and Remove Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#strings"><i class="fa fa-check"></i>Strings</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#test-data"><i class="fa fa-check"></i>Test Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>Transform</a><ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#arithmetic-summary-statistics"><i class="fa fa-check"></i>Arithmetic &amp; Summary Statistics</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#create-new-variables-or-modify-existing-ones"><i class="fa fa-check"></i>Create New Variables or Modify Existing Ones</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#dates-and-datetimes-1"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#factors"><i class="fa fa-check"></i>Factors</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#merge-or-append-data"><i class="fa fa-check"></i>Merge or Append Data</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#narrow-in-on-observations-of-interest"><i class="fa fa-check"></i>Narrow in on Observations of Interest</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test"><i class="fa fa-check"></i>Test</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i>Visualize</a><ul>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#flowcharts"><i class="fa fa-check"></i>Flowcharts</a></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#interfaces"><i class="fa fa-check"></i>Interfaces</a></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#plots"><i class="fa fa-check"></i>Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a><ul>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#general"><i class="fa fa-check"></i>General</a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#regression"><i class="fa fa-check"></i>Regression</a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#simulation-prediction"><i class="fa fa-check"></i>Simulation &amp; Prediction</a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#strings-1"><i class="fa fa-check"></i>Strings</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a><ul>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#export"><i class="fa fa-check"></i>Export</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#format-output"><i class="fa fa-check"></i>Format Output</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#graphics"><i class="fa fa-check"></i>Graphics</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots-1"><i class="fa fa-check"></i>Plots</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html"><i class="fa fa-check"></i>Program</a><ul>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#conditionals-control-flows"><i class="fa fa-check"></i>Conditionals &amp; Control Flows</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#environment-and-workspace"><i class="fa fa-check"></i>Environment and Workspace</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#evaluation-standard-and-non-standard"><i class="fa fa-check"></i>Evaluation (Standard and Non-standard)</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#functionals"><i class="fa fa-check"></i>Functionals</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#functions"><i class="fa fa-check"></i>Functions</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#learn-about-an-object"><i class="fa fa-check"></i>Learn About an Object</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#loops"><i class="fa fa-check"></i>Loops</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#optimization"><i class="fa fa-check"></i>Optimization</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#pipes"><i class="fa fa-check"></i>Pipes</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#popups"><i class="fa fa-check"></i>Popups</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#selecting-subsetting"><i class="fa fa-check"></i>Selecting &amp; Subsetting</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#version-control"><i class="fa fa-check"></i>Version Control</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html"><i class="fa fa-check"></i>Referenced Packages</a><ul>
+<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#a-d"><i class="fa fa-check"></i>A-D</a></li>
+<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#e-h"><i class="fa fa-check"></i>E-H</a></li>
+<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#i-l"><i class="fa fa-check"></i>I-L</a></li>
+<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#m-p"><i class="fa fa-check"></i>M-P</a></li>
+<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#q-t"><i class="fa fa-check"></i>Q-T</a></li>
+<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#u-z"><i class="fa fa-check"></i>U-Z</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references-resources.html"><a href="references-resources.html"><i class="fa fa-check"></i>References &amp; Resources</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Reference Manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="import-or-create-data" class="section level1">
+<h1>Import or Create Data</h1>
+<hr />
+<div id="notes-references" class="section level2">
+<h2>Notes &amp; References</h2>
+<ul>
+<li><a href="http://adv-r.had.co.nz/Data-structures.html">“Data structures”</a> (Wickham, <a href="http://adv-r.had.co.nz/"><em>Advanced R</em></a>)</li>
+<li><code>{open_intro}</code> contains data sets useful for practicing and teaching.</li>
+<li><a href="https://r4ds.had.co.nz/vectors.html">“Vectors”</a> (Grolemund &amp; Wickham, <a href="https://r4ds.had.co.nz/"><em>R for Data Science</em></a>)</li>
+</ul>
+</div>
+<div id="create-data" class="section level2">
+<h2>Create Data</h2>
+<ul>
+<li><code>base::array</code></li>
+<li><code>base::c</code></li>
+<li><code>base::data.frame</code></li>
+<li><code>base::factor</code></li>
+<li><code>base::list</code></li>
+<li><code>base::matrix</code></li>
+<li><code>base::seq</code></li>
+<li><code>base::vector</code>
+<ul>
+<li>Preferable to <code>base::c</code> when creating an empty vector, according to <a href="https://www.datacamp.com/community/tutorials/five-tips-r-code-improve">“Five Tips to Improve Your R Code”</a>.</li>
+</ul></li>
+<li><code>stats::rnorm</code></li>
+<li><code>tibble::add_row</code></li>
+<li><code>tibble::tibble</code></li>
+</ul>
+</div>
+<div id="import-data-from-a-local-drive" class="section level2">
+<h2>Import Data from a Local Drive</h2>
+<p><code>{base}</code></p>
+<ul>
+<li><code>attach</code>: Attach a set of R objects to the search path.
+<ul>
+<li>Allows objects in the database to be accessed by giving their names (e.g., <code>height</code> rather than <code>women$height</code>).</li>
+</ul></li>
+<li><code>file.choose</code>: Choose a file interactively.
+<ul>
+<li>Use as <code>file = file.choose()</code> inside a data import function (such as <code>read_csv</code> and <code>readRDS</code>).</li>
+</ul></li>
+<li><code>load</code>: Reload datasets saved with <code>save()</code>.</li>
+<li><code>readRDS</code>: Restore an R object written with <code>saveRDS()</code>.</li>
+</ul>
+<p><code>{data.table}</code></p>
+<ul>
+<li><code>fread</code>: Similar to <code>read.table</code>, but faster and more convenient for large data sets.</li>
+</ul>
+<p><code>{foreign}</code></p>
+<ul>
+<li><code>read.spss</code>: Read an SPSS data file.</li>
+</ul>
+<p><code>{haven}</code></p>
+<ul>
+<li><code>read_sas</code>: Read and write SAS files.</li>
+</ul>
+<p><code>{readr}</code></p>
+<ul>
+<li><code>read_csv</code>: Read a comma separated value file into a tibble.</li>
+<li><code>read_csv2</code>: Read a semi-colon separated value file into a tibble.</li>
+<li><code>read_delim</code>: Read a delimited file into a tibble.</li>
+<li><code>read_tsv</code>: Read a tab separated value file into a tibble.</li>
+</ul>
+<p><code>{readxl}</code></p>
+<ul>
+<li><code>excel_sheets</code>: List all sheets in an Excel spreadsheet.</li>
+<li><code>read_excel</code>: Read xls and xlsx files.</li>
+<li><code>read_xls</code>: Read a .xls file.</li>
+<li><code>read_xlsx</code>: Read a .xlsx file.</li>
+</ul>
+<p><code>{utils}</code></p>
+<ul>
+<li><code>data</code>: Load specified data sets, or list the available data sets.
+<ul>
+<li>Use this function to load the data sets that accompany R packages, such as <code>openintro</code>’s <code>hsb2</code> and <code>email50</code> and <code>gapminder</code>’s <code>gapminder</code>.</li>
+</ul></li>
+<li><code>read.csv</code>: Read a .csv file.</li>
+<li><code>read.csv2</code>: Read semi-colon separated value file.</li>
+<li><code>read.delim</code>: Read a delimited file.</li>
+<li><code>read.delim2</code>: Read a delimited file where the decimal point is a comma.</li>
+<li><code>read.table</code>: Read a file in table format.</li>
+</ul>
+<p><code>{XLConnect}</code></p>
+<ul>
+<li><code>readWorksheetFromFile</code>: Read data from worksheets in an Excel file.</li>
+</ul>
+</div>
+<div id="import-data-from-the-internet" class="section level2">
+<h2>Import Data from the Internet</h2>
+<p><code>{httr}</code></p>
+<ul>
+<li><code>GET</code>: Get a URL.</li>
+</ul>
+<p><code>{jsonlite}</code></p>
+<ul>
+<li><code>read_json</code>: Read and write JSON.</li>
+</ul>
+<p><code>{readr}</code></p>
+<ul>
+<li><code>read_csv</code>: Read a comma separated value file into a tibble.</li>
+<li><code>read_csv2</code>: Read a semi-colon separated value file into a tibble.</li>
+<li><code>read_delim</code>: Read a delimited file into a tibble.</li>
+<li><code>read_tsv</code>: Read a tab separated value file into a tibble.</li>
+</ul>
+<p><code>{rjson}</code></p>
+<ul>
+<li><code>fromJSON</code>: Convert JSON to R.</li>
+</ul>
+<p><code>{utils}</code></p>
+<ul>
+<li><code>download.file</code>: Download a file from the Internet.
+<ul>
+<li>Example:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">download.file</span>(</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">  <span class="st">&quot;https://assets.datacamp.com/production/repositories/5028/datasets/a55843f83746968c7f118d82ed727db9c71e891f/snake_river_visits.rds&quot;</span>,</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">  <span class="dt">destfile =</span> <span class="kw">paste0</span>(<span class="kw">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>))</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">snake_river_visits &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="kw">file.choose</span>())</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co"># or</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">path &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="kw">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>)</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">snake_river_visits &lt;-<span class="st"> </span><span class="kw">readRDS</span>(path)</a></code></pre></div>
+<ul>
+<li>Example: Rdata files</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># Example 1:</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">download.file</span>(</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">  <span class="st">&quot;https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData&quot;</span>, </a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">  <span class="dt">destfile =</span> <span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span>)</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="kw">load</span>(<span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span>)</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co"># Example 2:</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="kw">download.file</span>(</a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">  <span class="st">&quot;https://assets.datacamp.com/production/repositories/235/datasets/3b6fc2923b599058584b57d8c605c6bef454d273/CHIS2009_reduced_2.Rdata&quot;</span>,</a>
+<a class="sourceLine" id="cb2-11" data-line-number="11">  <span class="dt">destfile =</span> <span class="st">&quot;chis_2009.Rdata&quot;</span>,</a>
+<a class="sourceLine" id="cb2-12" data-line-number="12">  <span class="co"># The documentation for `download.file` indicates that the function will</span></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13">  <span class="co"># automatically include `mode = &quot;wb&quot;` for .Rdata files. That may have happened</span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14">  <span class="co"># in Example 1, but didn&#39;t happen in Example 2, which is why I&#39;ve included it.</span></a>
+<a class="sourceLine" id="cb2-15" data-line-number="15">  <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span>)</a>
+<a class="sourceLine" id="cb2-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb2-17" data-line-number="17"><span class="kw">load</span>(<span class="st">&quot;chis_2009.Rdata&quot;</span>)</a></code></pre></div>
+<ul>
+<li><code>unzip</code>: Extract or list zip archives.
+<ul>
+<li>Example:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">download.file</span>(</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">  <span class="st">&quot;https://assets.datacamp.com/production/repositories/1069/datasets/578834f5908e3b2fa575429a287586d1eaeb2e54/countries2.zip&quot;</span>,</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">  <span class="dt">destfile =</span> <span class="st">&quot;Data Sets/Countries&quot;</span>,</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">  <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span>)</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="kw">unzip</span>(<span class="st">&quot;Data Sets/Countries&quot;</span>, <span class="dt">exdir =</span> <span class="st">&quot;Data Sets&quot;</span>)</a></code></pre></div>
+</div>
+<div id="import-data-from-a-database" class="section level2">
+<h2>Import Data from a Database</h2>
+<p><code>DBI</code></p>
+<ul>
+<li><code>dbBind()</code>: Bind values to a parameterized/prepared statement.</li>
+<li><code>dbClearResult()</code>: Free all resources (local and remote) associated with a result set.</li>
+<li><code>dbConnect()</code>: Connect to a DBMS.</li>
+<li><code>dbDataType()</code>: Determine the SQL data type of an object.</li>
+<li><code>dbDisconnect()</code>: Disconnect (close) a connection to a DBMS.</li>
+<li><code>dbFetch()</code>: Fetch records from a previously executed query.</li>
+<li><code>dbGetQuery()</code>: Send query, retrieve the results, and then clear result set.</li>
+<li><code>dbListTables()</code>: List remote tables.</li>
+<li><code>dbReadTable()</code>: Copy data frames to and from database tables.</li>
+<li><code>dbSendQuery()</code>: Execute a query on a given database connection.</li>
+<li><code>dbSendStatement()</code>: Execute a data manipulation statement on a given database connection.</li>
+</ul>
+</div>
+<div id="reference-material" class="section level2">
+<h2>Reference Material</h2>
+<p>The <code>openintro</code> package contains data sets useful for practicing and teaching.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tidy.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["R_Reference_Manual.pdf", "R_Reference_Manual.epub"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
