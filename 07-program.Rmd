@@ -272,20 +272,21 @@ c(vrsn, os, pkgs) %<-% session()
 
 ## Selecting & Subsetting
 
-`base`
+* `.$variable_name`
+  * See example below.
+* `.[["variable_name"]]`
+  * See example below.
+* `base::subset`
+* `dplyr::first`
+* `dplyr::last`
+* `dplyr::nth`
+* `dplyr::rename`
+* `dplyr::select`
+  * Helper functions: `contains`, `ends_with`, `matches`, `num_range`, `one_of`, `starts_with`.
+* `dplyr::rena
 
-* `subset()`: Subset vectors, matrices, and data frames.
+**Example:** `.$variable_name`
 
-`dplyr`
-
-* `first()`: Extract the first element of a vector.
-* `last()`: Extract the last element of a vector.
-* `nth(): Extract the nth element of a vector.
-* `select()`: Select/rename variables. 
-    + Helper functions include: `starts_with()`, `ends_with()`, `contains()`, `matches()`, `num_range()`, and `one_of()`.
-    + A closely-related function is `dplyr::rename()`.
-* `.$variable_name`: Select a variable from a data frame in a pipe.
-    + Example:
 ```{r, eval=FALSE}
 ui_summary_table <- 
   aws_vendors %>% 
@@ -294,8 +295,9 @@ ui_summary_table <-
   map(query_summary_table) %>% 
   bind_rows()
 ```
-* `.[["variable_name"]]`: Select a vairable from a data frame in a pipe.
-    + Example:
+
+**Example:** `.[["variable_name"]]`
+
 ```{r, eval=FALSE}
   odbc_aws %>% 
     dbGetQuery(
@@ -308,7 +310,7 @@ ui_summary_table <-
   as.double()
 ```
 
-References:
+**References:**
 
 * ["Indexing lists in #rstats. Inspired by Residence Inn"](https://twitter.com/hadleywickham/status/643381054758363136) (Hadley Wickham, Twitter, 14 September 2015)
 
