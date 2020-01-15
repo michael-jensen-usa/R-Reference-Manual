@@ -9,8 +9,15 @@ always_allow_html: yes
 ---
 # Introduction
 
-I organized this manual according to Garrett Grolemund and Handley Wickham's conception of the tools needed to tackle about 80% of the tasks required in a typical data science project ("[Introduction](https://r4ds.had.co.nz/introduction.html)", *R for Data Science*). Those tools are: import, tidy, transform, visualize, model, communicate, and program.
+I organized this manual according to Garrett Grolemund and Handley Wickham's conception of the tools needed to tackle about 80% of the tasks required in a typical data science project ("[Introduction](https://r4ds.had.co.nz/introduction.html)", *R for Data Science*). Those tools are: 
 
+* Import
+* Tidy
+* Transform
+* Visualize
+* Model
+* Communicate
+* Program.
 ```{r, echo=FALSE}
 library(DiagrammeR)
 
