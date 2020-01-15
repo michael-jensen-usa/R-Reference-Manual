@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html >
-
+<html lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>R Reference Manual</title>
-  <meta name="description" content="R Reference Manual">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Visualize | R Reference Manual</title>
+  <meta name="description" content="Visualize | R Reference Manual" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="R Reference Manual" />
+  <meta property="og:title" content="Visualize | R Reference Manual" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R Reference Manual" />
+  <meta name="twitter:title" content="Visualize | R Reference Manual" />
   
   
   
@@ -25,19 +24,21 @@
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="transform.html">
-<link rel="next" href="model.html">
+<link rel="prev" href="transform.html"/>
+<link rel="next" href="model.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -47,6 +48,74 @@
 
 
 
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/viz-0.3/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.1/grViz.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -65,15 +134,13 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html"><i class="fa fa-check"></i>Import</a><ul>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#create-data"><i class="fa fa-check"></i>Create Data</a><ul>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#data-structures"><i class="fa fa-check"></i>Data Structures</a></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#other"><i class="fa fa-check"></i>Other</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-a-local-drive"><i class="fa fa-check"></i>Import Data from a Local Drive</a></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-the-internet"><i class="fa fa-check"></i>Import Data from the Internet</a></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-a-database"><i class="fa fa-check"></i>Import Data from a Database</a></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#reference-material"><i class="fa fa-check"></i>Reference Material</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html"><i class="fa fa-check"></i>Import or Create Data</a><ul>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#import-data-from-a-local-drive"><i class="fa fa-check"></i>Import Data from a Local Drive</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#import-data-from-the-internet"><i class="fa fa-check"></i>Import Data from the Internet</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#import-data-from-a-database"><i class="fa fa-check"></i>Import Data from a Database</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#reference-material"><i class="fa fa-check"></i>Reference Material</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i>Tidy</a><ul>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a><ul>
@@ -98,6 +165,7 @@
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#arithmetic-summary-statistics"><i class="fa fa-check"></i>Arithmetic &amp; Summary Statistics</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#create-new-variables-or-modify-existing-ones"><i class="fa fa-check"></i>Create New Variables or Modify Existing Ones</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#dates-and-datetimes-1"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#factors"><i class="fa fa-check"></i>Factors</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#merge-or-append-data"><i class="fa fa-check"></i>Merge or Append Data</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#narrow-in-on-observations-of-interest"><i class="fa fa-check"></i>Narrow in on Observations of Interest</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test"><i class="fa fa-check"></i>Test</a></li>
@@ -108,15 +176,19 @@
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#plots"><i class="fa fa-check"></i>Plots</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a><ul>
-<li><a href="model.html#section"></a></li>
-<li class="chapter" data-level="" data-path="model.html"><a href="model.html#simulation"><i class="fa fa-check"></i>Simulation</a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#general"><i class="fa fa-check"></i>General</a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#regression"><i class="fa fa-check"></i>Regression</a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#simulation-prediction"><i class="fa fa-check"></i>Simulation &amp; Prediction</a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#strings-1"><i class="fa fa-check"></i>Strings</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a><ul>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#format-output"><i class="fa fa-check"></i>Format Output</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#export"><i class="fa fa-check"></i>Export</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#graphics"><i class="fa fa-check"></i>Graphics</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots-1"><i class="fa fa-check"></i>Plots</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html"><i class="fa fa-check"></i>Program</a><ul>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#conditionals"><i class="fa fa-check"></i>Conditionals</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#conditionals-control-flows"><i class="fa fa-check"></i>Conditionals &amp; Control Flows</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#environment-and-workspace"><i class="fa fa-check"></i>Environment and Workspace</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#evaluation-standard-and-non-standard"><i class="fa fa-check"></i>Evaluation (Standard and Non-standard)</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#functionals"><i class="fa fa-check"></i>Functionals</a></li>
@@ -125,6 +197,7 @@
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#loops"><i class="fa fa-check"></i>Loops</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#optimization"><i class="fa fa-check"></i>Optimization</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#pipes"><i class="fa fa-check"></i>Pipes</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#popups"><i class="fa fa-check"></i>Popups</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#selecting-subsetting"><i class="fa fa-check"></i>Selecting &amp; Subsetting</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#version-control"><i class="fa fa-check"></i>Version Control</a></li>
 </ul></li>
@@ -137,7 +210,7 @@
 <li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#u-z"><i class="fa fa-check"></i>U-Z</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references-resources.html"><a href="references-resources.html"><i class="fa fa-check"></i>References &amp; Resources</a></li>
-<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -177,23 +250,131 @@
 </div>
 <div id="plots" class="section level2">
 <h2>Plots</h2>
+<p><code>{base}</code></p>
+<ul>
+<li><code>abline</code>: Add straight lines to a plot.</li>
+<li><code>plot</code>: Generic X-Y plotting.</li>
+<li><code>points</code>: Add points to a plot.</li>
+</ul>
+<p><code>{ggbeeswarm}</code></p>
+<ul>
+<li><code>geom_beeswarm</code>: Create a beeswarm plot.</li>
+</ul>
 <p><code>ggplot2</code></p>
 <ul>
-<li><code>aes()</code>: Construct aesthetic mappings.
+<li><code>aes</code>: Construct aesthetic mappings.
 <ul>
-<li>Arguments include color, fill, size, labels, alpha, shape, line width, line type.</li>
+<li>Arguments include <code>color</code>, <code>fill</code>, <code>size</code>, <code>labels</code>, <code>alpha</code>, <code>shape</code> (1-20 accept color attributes and 21-25 accept color and fill attributes), <code>linewidth</code>, <code>linetype</code>, and <code>group</code>.</li>
+<li>Use <code>?pch</code> to see options for <code>shape</code>.</li>
+<li>The default shape for points does not have a <code>fill</code> attribute, which means that mapping a categorical variable onto <code>fill</code> won’t result in multiple colors.</li>
+<li>Helper functions to include in the call when needing to modify the data include: <code>stats::reorder</code>.</li>
 </ul></li>
-<li><code>geom_*()</code>: Create a geometry.
+<li><code>coord_*</code>
 <ul>
-<li><code>aes()</code> can be called within <code>geom_*()</code> rather than prior to.</li>
+<li><code>coord_cartesian</code>: Zoom a plot in or out without changing the underlying data.</li>
+<li><code>coord_flip</code>: Flip the x and y axes.</li>
+<li><code>coord_polar</code>: Used to convert a stacked bar chart to a pie chart.</li>
 </ul></li>
-<li><code>ggplot()</code>: Create a plot.</li>
-<li><code>facet_wrap()</code>: Wrap a 1D ribbon of panels into 2D (observe a variable, conditional on another variable).</li>
+<li><code>facet_*</code>
+<ul>
+<li><code>facet_grid</code>: Lay out panels in a grid.</li>
+<li><code>facet_wrap</code>: Wrap a 1D ribbon of panels into 2D (observe a variable, conditional on another variable).</li>
+</ul></li>
+<li><code>geom_*</code>: Create a geometry.
+<ul>
+<li>Note that <code>aes</code> can be called within <code>geom_*</code> rather than prior to.</li>
+<li><code>geom_abline</code>: Add reference lines to a plot.</li>
+<li><code>geom_bar</code>: Create a bar chart, where the height of the bar is proportional to the number of cases in each group.</li>
+<li><code>geom_boxplot</code>: Create a boxplot.</li>
+<li><code>geom_col</code>: Create a bar chart, where the height of the bar represents values in the data.</li>
+<li><code>geom_density</code>: Create a kernal density estimate (a smoothed version of a histogram).
+<ul>
+<li>Consider using <code>geom_rug</code> with <code>geom_density</code> in order to be transparent about smoothed data.</li>
+</ul></li>
+<li><code>geom_dotplot</code>: Create a histogram out of dots.</li>
+<li><code>geom_histogram</code>: Create a histogram.
+<ul>
+<li>Use <code>y = stat(density)</code> to rescale the y-axis from counts to a probability estimate.</li>
+</ul></li>
+<li><code>geom_hline</code>: Add a horizontal reference line to the plot.
+*<code>geom_jitter</code>: Jitter points.
+<ul>
+<li>Useful with <code>geom_boxplot</code>.</li>
+</ul></li>
+<li><code>geom_path</code>: Connect observations in the order in which they appear.</li>
+<li><code>geom_point</code>: Create a scatterplot (a.k.a. point chart or dot plot).</li>
+<li><code>geom_rug</code>: Create a ruge plot in the margin.
+<ul>
+<li>Useful with <code>geom_density</code>.</li>
+</ul></li>
+<li><code>geom_smooth</code>: Smoothed conditional means; aids the eye in seeing patterns in the presence of overplotting.</li>
+<li><code>geom_text</code>: Add text directly to the plot.</li>
+<li><code>geom_violin</code>: Create a violin plot.</li>
+<li><code>geom_vline</code>: Add a vertical reference line to the plot.</li>
+</ul></li>
+<li><code>ggplot</code>: Create a plot.</li>
+<li><code>ggtitle</code>: Modify the plot title.</li>
+<li><code>group</code>: Specify groupings.
+<ul>
+<li>Used within <code>aes</code>. Note that <code>group</code> is usually unnecessary when specifying <code>color</code>, <code>shape</code>, <code>fill</code>, or <code>linetype</code> within <code>aes</code>, or when using facets. See <a href="https://ggplot2.tidyverse.org/reference/aes_group_order.html">“Aesthetics: grouping”</a> for more information.</li>
+</ul></li>
+<li><code>labs</code>: Modify axis, legend, and plot labels.</li>
+<li><code>position_*</code>:
+<ul>
+<li><code>position_identity</code>: Don’t adjust position.</li>
+<li><code>position_dodge</code>: Dodge overlapping objects side-to-side.</li>
+<li><code>position_nudge</code>: Nudge points a fixed distance.</li>
+<li><code>position_stack</code>: Stack overlapping objects on top of each other, as counts.</li>
+<li><code>position_fill</code>: Stack overlapping objects on top of each other, as densities.</li>
+<li><code>position_jitter</code>: Jitter points to avoid overplotting.</li>
+<li><code>position_jitterdodge</code>: Simultaneously dodge and jitter.</li>
+</ul></li>
+<li><code>scale_*_*</code>:
+<ul>
+<li><code>scale_x_*</code></li>
+<li><code>scale_y_*</code></li>
+<li><code>scale_color_*</code></li>
+<li><code>scale_fill_*</code></li>
+<li><code>scale_shape_*</code></li>
+<li><code>scale_size</code></li>
+<li><code>scale_linetype_*</code></li>
+</ul></li>
+<li><code>stat_*</code>: Statistic layers (sometimes called by <code>geom_</code> layers).
+<ul>
+<li><code>stat_bin</code></li>
+<li><code>stat_bin2d</code></li>
+<li><code>stat_bindot</code></li>
+<li><code>stat_binhex</code></li>
+<li><code>stat_boxplot</code></li>
+<li><code>stat_contour</code></li>
+<li><code>stat_quantile</code></li>
+<li><code>stat_smooth</code></li>
+<li><code>stat_sum</code></li>
+</ul></li>
+<li><code>xlab</code>: Modify the label of the x-axis.</li>
+<li><code>ylab</code>: Modify the label of the y-axis.</li>
 </ul>
-<p><code>graphics</code></p>
+<p><code>{ggridges}</code></p>
 <ul>
-<li><code>boxplot()</code>: Create a box-and-whisker plot.</li>
-<li><code>hist()</code>: Create a histogram.</li>
+<li><code>geom_density_ridges</code>: Create a ridgeline plot.</li>
+</ul>
+<p><code>{graphics}</code></p>
+<ul>
+<li><code>boxplot</code>: Create a box-and-whisker plot.</li>
+<li><code>hist</code>: Create a histogram.</li>
+<li><code>stripchart</code>: One dimensional scatter plots.
+<ul>
+<li>Preferable to <code>ggplot</code> when creating one-dimensional plots.</li>
+</ul></li>
+</ul>
+<p><code>{grDevices}</code></p>
+<ul>
+<li><code>colorRamp</code>: Color interpolation.</li>
+<li><code>colorRampPalette</code>: Color interpolation.</li>
+</ul>
+<p><code>{RColorBrewer}</code></p>
+<ul>
+<li><code>brewer.pal</code>: Make the ColorBrewer color palettes available as R palattes.</li>
 </ul>
 
 </div>
@@ -209,11 +390,13 @@
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -221,12 +404,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -234,6 +416,14 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },

@@ -251,6 +251,7 @@ c(vrsn, os, pkgs) %<-% session()
 * `add`: `+`, for pipes.
 * `and`: `&`, for pipes.
 * `extract`:`[`, for pipes.
+  * See also `purrr::pluck`.
 * `extract2`: `[[`, for pipes.
 * `freduce`: Apply a list of functions sequentially.
 * `is_in`: `%in%`, for pipes.
@@ -283,7 +284,7 @@ c(vrsn, os, pkgs) %<-% session()
 * `dplyr::rename`
 * `dplyr::select`
   * Helper functions: `contains`, `ends_with`, `matches`, `num_range`, `one_of`, `starts_with`.
-* `dplyr::rena
+* `purrr:pluck`
 
 **Example:** `.$variable_name`
 
