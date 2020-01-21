@@ -34,66 +34,83 @@
 ***
 ## Environment and Workspace
 
-`{base}`
-
-* `dir`: List the files in a directory/folder.
-* Environments
-  * `baseenv`: The environment of the `base` package, it's enclosing environment ("parent environment") is the empty environment.
-  * `emptyenv`: The empty environment, which is the ancestor of all environments and the only environment without an enclosing environment.
-  * `environment`: The current environment.
-  * `globalenv`: The environment in which you normally work, it's enclosing environment is the last package attached with `library` or `require`.
-  * `new.env`: Create a new environment.
-* `environmentName`: Return the name of the environment, as a character string.
-* `exists`: Look for an R object of the given name and possibly return it.
-  * Must use quotations to name the object.
+* `base::baseenve`
+  * The environment of the `base` package; it's enclosing environment ("parent environment") is the empty environment.
+* `base::dir`
+  * List the files in a directory.
+* `base::dir.create`
+  * Create a file path in the computer's file system.
+* `base::emptyenv`
+  * The empty environment, which is the ancestor of all environments and the only environment without an enclosing environment.
+* `base::environment`
+  * The current environment.
+* `base::environmentName`
+* `base::exists`
   * Remember that `R` will look for an object in parent environments until it reaches the empty environment, so use `inherits = FALSE` to limit the search to only the current environment.
-* `getOption`: Set and examine global options.
-* `getwd`: Get the working directory.
-* `history`: Display the previous 25 commands.
-* `install.packages`: Install packages from repositories or local files.
-* `library`: Load and attach packages, returning an error if the packages does not exist.
-* `list.files`: List the files in a directory/folder.
-* `loadedNamespaces: Return the loaded name spaces.
-* `loadhistory`: Recall command history.
-* `ls`: List objects in the specified environment.
-* `list2env`: From a list, build or add to an environment.
-* `options`: Set and examine global options.
-* `parent.env`: Return the enclosing environment of the environment listed as an argument.
-  * `parent.env` returns information that can be unhelpful, so use with `environmentName`, as follows: `parent.env(environment_name) %>% environmentName`.
-* `q`: Terminate an R session.
-* `R.version`: Version information.
-* `R.version.string`: Version information. 
+* `base::getOption`
+  * Set and examine global options.
+* `base::getwd`
+  * Get the working directory.
+* `base::globalenv`
+  * The environment in which you normally work, it's enclosing environment is the last package attached with `library` or `require`.
+* `base::history`
+  * Display the previous 25 commands.
+* `base::install.packages`
+  * Install packages from repositories or local files.
+* `base::library`
+  * Load and attach packages, returning an error if the packages does not exist.
+* `base::list.files`
+  * List the files in a directory/folder.
+* `base::loadedNamespaces`
+  * Return the loaded name spaces.
+* `base::loadhistory`
+  * Recall command history.
+* `base::ls`
+  * List objects in the specified environment.
+* `base::list2env`
+  * From a list, build or add to an environment.
+* `base::new.env`
+  * Create a new environment.
+* `base::options`
+  * Set and examine global options.
+* `base::parent.env`
+  * Return the enclosing environment of the environment listed as an argument.
+  * `base::parent.env` returns information that can be unhelpful, so use with `base::environmentName`, as follows: `parent.env(environment_name) %>% environmentName`.
+* `base::q`
+  * Terminate an R session.
+* `base::R.version`
+  * Version information.
+* `base::R.version.string`
+  * Version information. 
   * Same call as `R.version$version.string`.
-* `require`: Load and attach packages, returning `FALSE` if the package does not exist.
-* `rm`: Remove objects from a specified environment.
-* `savehistory`: Save command history (default value is ".Rhistory").
-* `save.image`: Save the current workspace.
-* `search`: Return a list of attached packages and R objects.
-* `searchpaths`: Return the path to attached packages.
-* `setwd()`: Set the working directory file path.
+* `base::require`
+  * Load and attach packages, returning `FALSE` if the package does not exist.
+* `base::rm`
+  * Remove objects from a specified environment.
+* `base::savehistory`
+  * Save command history (default value is ".Rhistory").
+* `base::save.image`
+  * Save the current workspace.
+* `base::search`
+  * Return a list of attached packages and R objects.
+* `base::searchpaths`
+  * Return the path to attached packages.
+* `base::setwd`
+  * Set the working directory file path.
   * When using Windows, use "/" instead of "\".
-* `Sys.info`: Extract system and user information.
+* `base::Sys.info`
+  * Extract system and user information.
   * Example: `Sys.info()[c("sysname", "release")]`.
-    
-`{gdata}`
-
-* `object.size`: Report the space allocated for an object.
+* `gdata::object.size`
+  * Report the space allocated for an object.
   * See also `utils::object.size`.
-
-`{installr}`
-
-* `updateR`: Check for the latest R version; downloads and installs new R versions.
-
-`{pryr}`
-
-* `where`: Find where a name is defined.
-
-`{utils}`
-
-* `ls.str`: List objects and  their structure.
-* `object.size`: Report the space allocated for an object.
+* `installr::updateR`
+  * Check for the latest R version; downloads and installs new R versions.
+* `pryr::where`: Find where a name is defined.
+* `utils::ls.str`: List objects and  their structure.
+* `utils::object.size`: Report the space allocated for an object.
   * See also `gdata::object.size`.
-* `sessionInfo`: Collect information about the current R session.
+* `utils::sessionInfo`: Collect information about the current R session.
     
 References:
 
@@ -316,6 +333,13 @@ ui_summary_table <-
 * ["Indexing lists in #rstats. Inspired by Residence Inn"](https://twitter.com/hadleywickham/status/643381054758363136) (Hadley Wickham, Twitter, 14 September 2015)
 
 ***
+## System Commands
+
+* `base::system`
+* `base::system2`
+* `sys::exec`
+* `sys::exec_r`
+
 ## Version Control
 
 Git

@@ -11,6 +11,8 @@
 * `base::array`
 * `base::c`
 * `base::data.frame`
+* `base::dir.create`
+  * Create a file path in the computer's file system.
 * `base::factor`
 * `base::list`
 * `base::matrix`

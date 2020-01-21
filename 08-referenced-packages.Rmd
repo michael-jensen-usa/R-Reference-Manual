@@ -143,6 +143,8 @@
 
 [`svDialogs`](https://CRAN.R-project.org/package=svDialogs): Dialog boxes for Windows, MacOS, and Linuxes.
 
+[`sys`](https://CRAN.R-project.org/package=sys): Powerful and reliable tools for running system commands in R.
+
 [`tcltk`](https://www.rdocumentation.org/packages/tcltk/versions/3.5.2): Interface and languate bindings to Tcl/Tk GUI elements.
 
 [`tibble`](https://CRAN.R-project.org/package=tibble): Simple data frames with stricter checking and better formatting than the traditional data frame.
