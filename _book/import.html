@@ -67,7 +67,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -131,14 +131,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="" data-path="import.html"><a href="import.html"><i class="fa fa-check"></i>Import</a><ul>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#create-data"><i class="fa fa-check"></i>Create Data</a><ul>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#data-structures"><i class="fa fa-check"></i>Data Structures</a></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#other"><i class="fa fa-check"></i>Other</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
 <li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-a-local-drive"><i class="fa fa-check"></i>Import Data from a Local Drive</a></li>
 <li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-the-internet"><i class="fa fa-check"></i>Import Data from the Internet</a></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-a-database"><i class="fa fa-check"></i>Import Data from a Database</a></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#reference-material"><i class="fa fa-check"></i>Reference Material</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-from-or-create-data-in-a-database"><i class="fa fa-check"></i>Import from or Create Data in a Database</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i>Tidy</a><ul>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a><ul>
@@ -198,6 +195,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#pipes"><i class="fa fa-check"></i>Pipes</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#popups"><i class="fa fa-check"></i>Popups</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#selecting-subsetting"><i class="fa fa-check"></i>Selecting &amp; Subsetting</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#system-commands"><i class="fa fa-check"></i>System Commands</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#version-control"><i class="fa fa-check"></i>Version Control</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html"><i class="fa fa-check"></i>Referenced Packages</a><ul>
@@ -209,7 +207,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#u-z"><i class="fa fa-check"></i>U-Z</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references-resources.html"><a href="references-resources.html"><i class="fa fa-check"></i>References &amp; Resources</a></li>
-<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -232,228 +230,166 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="import" class="section level1">
 <h1>Import</h1>
+<hr />
 <div id="create-data" class="section level2">
 <h2>Create Data</h2>
-<div id="data-structures" class="section level3">
-<h3>Data Structures</h3>
-<div id="atomic-vector" class="section level4">
-<h4>Atomic Vector</h4>
-<p><code>base</code></p>
+<hr />
 <ul>
-<li><code>c()</code>: Combine values into a vector or list.</li>
-<li><code>factor()</code>: Create a factor variable.</li>
-<li><code>seq()</code>: Generate a sequence.</li>
-<li><code>vector()</code>: Create a vector.
+<li><code>base::array</code></li>
+<li><code>base::c</code></li>
+<li><code>base::data.frame</code></li>
+<li><code>base::dir.create</code>
 <ul>
-<li>This function is preferable to <code>c()</code> when creating an empty vector, according to the DataCamp article <a href="https://www.datacamp.com/community/tutorials/five-tips-r-code-improve">“Five Tips to Improve Your R Code”</a>.</li>
+<li>Create a file path in the computer’s file system.</li>
 </ul></li>
-</ul>
-</div>
-<div id="matrix" class="section level4">
-<h4>Matrix</h4>
-<p><code>base</code></p>
+<li><code>base::factor</code></li>
+<li><code>base::list</code></li>
+<li><code>base::matrix</code></li>
+<li><code>base::seq</code></li>
+<li><code>base::vector</code>
 <ul>
-<li><code>matrix()</code>: Create a matrix.</li>
-</ul>
-</div>
-<div id="array" class="section level4">
-<h4>Array</h4>
-<p><code>base</code></p>
-<ul>
-<li><code>array()</code>: Create an array.</li>
-</ul>
-</div>
-<div id="list" class="section level4">
-<h4>List</h4>
-<p><code>base</code></p>
-<ul>
-<li><code>c()</code>: Combine values into a vector or list.</li>
-<li><code>list()</code>: Create a list.</li>
-</ul>
-<p><code>tibble</code></p>
-<ul>
-<li><code>tibble()</code>: Create a data frame or list.</li>
-</ul>
-</div>
-<div id="data-frame" class="section level4">
-<h4>Data Frame</h4>
-<p><code>base</code></p>
-<ul>
-<li><code>data.frame</code>: Create a data frame.
-<ul>
-<li>Prefer <code>tibble::tibble</code> over <code>base::data.frame</code>.</li>
+<li>Preferable to <code>base::c</code> when creating an empty vector (<a href="https://www.datacamp.com/community/tutorials/five-tips-r-code-improve">“Five Tips to Improve Your R Code”</a>).</li>
 </ul></li>
-<li><code>list</code>: Create a list.</li>
+<li><code>stats::rnorm</code></li>
+<li><code>tibble::add_row</code></li>
+<li><code>tibble::tibble</code></li>
 </ul>
-<p><code>tibble</code></p>
-<ul>
-<li><code>add_row</code>: Add rows to a data frame.</li>
-<li><code>tibble</code>: Create a data frame or list.</li>
-</ul>
-</div>
-<div id="references" class="section level4">
-<h4>References</h4>
-<ul>
-<li><a href="https://r4ds.had.co.nz/vectors.html">“Vectors”</a> (Grolemund &amp; Wickham, <a href="https://r4ds.had.co.nz/"><em>R for Data Science</em></a>)</li>
-<li><a href="http://adv-r.had.co.nz/Data-structures.html">“Data structures”</a> (Wickham, <a href="http://adv-r.had.co.nz/"><em>Advanced R</em></a>)</li>
-</ul>
-</div>
-</div>
-<div id="other" class="section level3">
-<h3>Other</h3>
-<p><code>{stats}</code></p>
-<ul>
-<li><code>rnorm</code>: Generate a random normal distribution.</li>
-</ul>
-</div>
 </div>
 <div id="import-data-from-a-local-drive" class="section level2">
 <h2>Import Data from a Local Drive</h2>
-<p><code>{base}</code></p>
+<hr />
 <ul>
-<li><code>attach</code>: Attach a set of R objects to the search path.
+<li><code>base::attach</code>
 <ul>
+<li>Attach a set of R objects to the search path.</li>
 <li>Allows objects in the database to be accessed by giving their names (e.g., <code>height</code> rather than <code>women$height</code>).</li>
 </ul></li>
-<li><code>file.choose</code>: Choose a file interactively.
+<li><code>base::file.choose</code>
 <ul>
 <li>Use as <code>file = file.choose()</code> inside a data import function (such as <code>read_csv</code> and <code>readRDS</code>).</li>
 </ul></li>
-<li><code>load</code>: Reload datasets saved with <code>save()</code>.</li>
-<li><code>readRDS</code>: Restore an R object written with <code>saveRDS()</code>.</li>
-</ul>
-<p><code>{data.table}</code></p>
+<li><code>base::load</code>
 <ul>
-<li><code>fread</code>: Similar to <code>read.table</code>, but faster and more convenient for large data sets.</li>
-</ul>
-<p><code>{foreign}</code></p>
-<ul>
-<li><code>read.spss</code>: Read an SPSS data file.</li>
-</ul>
-<p><code>{haven}</code></p>
-<ul>
-<li><code>read_sas</code>: Read and write SAS files.</li>
-</ul>
-<p><code>{readr}</code></p>
-<ul>
-<li><code>read_csv</code>: Read a comma separated value file into a tibble.</li>
-<li><code>read_csv2</code>: Read a semi-colon separated value file into a tibble.</li>
-<li><code>read_delim</code>: Read a delimited file into a tibble.</li>
-<li><code>read_tsv</code>: Read a tab separated value file into a tibble.</li>
-</ul>
-<p><code>{readxl}</code></p>
-<ul>
-<li><code>excel_sheets</code>: List all sheets in an Excel spreadsheet.</li>
-<li><code>read_excel</code>: Read xls and xlsx files.</li>
-<li><code>read_xls</code>: Read a .xls file.</li>
-<li><code>read_xlsx</code>: Read a .xlsx file.</li>
-</ul>
-<p><code>{utils}</code></p>
-<ul>
-<li><code>data</code>: Load specified data sets, or list the available data sets.
-<ul>
-<li>Use this function to load the data sets that accompany R packages, such as <code>openintro</code>’s <code>hsb2</code> and <code>email50</code> and <code>gapminder</code>’s <code>gapminder</code>.</li>
+<li>Reload datasets saved with <code>base::save</code>.</li>
 </ul></li>
-<li><code>read.csv</code>: Read a .csv file.</li>
-<li><code>read.csv2</code>: Read semi-colon separated value file.</li>
-<li><code>read.delim</code>: Read a delimited file.</li>
-<li><code>read.delim2</code>: Read a delimited file where the decimal point is a comma.</li>
-<li><code>read.table</code>: Read a file in table format.</li>
-</ul>
-<p><code>{XLConnect}</code></p>
+<li><code>base::readRDS</code>
 <ul>
-<li><code>readWorksheetFromFile</code>: Read data from worksheets in an Excel file.</li>
+<li>Restore an R object written with <code>base::saveRDS</code>.</li>
+</ul></li>
+<li><code>data.table::fread</code>
+<ul>
+<li>Similar to <code>utils::read.table</code>, but faster and more convenient for large data sets.</li>
+</ul></li>
+<li><code>foreign::read.spss</code></li>
+<li><code>haven::read_sas</code></li>
+<li><code>readr::read_csv</code></li>
+<li><code>readr::read_csv2</code></li>
+<li><code>readr::read_delim</code></li>
+<li><code>readr::read_tsv</code></li>
+<li><code>readxl::excel_sheets</code></li>
+<li><code>readxl::read_excel</code></li>
+<li><code>readxl::read_xls</code></li>
+<li><code>readxl::read_xlsx</code></li>
+<li><code>utils::data</code>
+<ul>
+<li>Load specified data sets, or list the available data sets.</li>
+<li>Use this function to load the data sets that accompany R packages, such as <code>openintro::hsb2</code>, <code>openintro::email50</code>,and <code>gapminder::gapminder</code>.</li>
+</ul></li>
+<li><code>utils::read.csv</code></li>
+<li><code>utils::read.csv2</code></li>
+<li><code>utils::read.delim</code></li>
+<li><code>utils::read.delim2</code></li>
+<li><code>utils::read.table</code>
+<ul>
+<li>Read a file in table format.</li>
+</ul></li>
+<li><code>XLConnect::readWorksheetFromFile</code>
+<ul>
+<li>Read data from worksheets in an Excel file.</li>
+</ul></li>
 </ul>
 </div>
 <div id="import-data-from-the-internet" class="section level2">
 <h2>Import Data from the Internet</h2>
-<p><code>{httr}</code></p>
+<hr />
 <ul>
-<li><code>GET</code>: Get a URL.</li>
-</ul>
-<p><code>{jsonlite}</code></p>
+<li><code>httr::GET</code>: Get a URL.</li>
+<li><code>jsonlite::read_json</code>: Read and write JSON.</li>
+<li><code>readr::read_csv</code></li>
+<li><code>readr::read_csv2</code></li>
+<li><code>readr::read_delim</code></li>
+<li><code>readr::read_tsv</code></li>
+<li><code>rjson::fromJSON</code>: Convert JSON to R.</li>
+<li><code>utils::download.file</code>
 <ul>
-<li><code>read_json</code>: Read and write JSON.</li>
-</ul>
-<p><code>{readr}</code></p>
+<li>See example below.</li>
+</ul></li>
+<li><code>utils::unzip</code>
 <ul>
-<li><code>read_csv</code>: Read a comma separated value file into a tibble.</li>
-<li><code>read_csv2</code>: Read a semi-colon separated value file into a tibble.</li>
-<li><code>read_delim</code>: Read a delimited file into a tibble.</li>
-<li><code>read_tsv</code>: Read a tab separated value file into a tibble.</li>
-</ul>
-<p><code>{rjson}</code></p>
-<ul>
-<li><code>fromJSON</code>: Convert JSON to R.</li>
-</ul>
-<p><code>{utils}</code></p>
-<ul>
-<li><code>download.file</code>: Download a file from the Internet.
-<ul>
-<li>Example:</li>
+<li>See example below.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">download.file</span>(</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">  <span class="st">&quot;https://assets.datacamp.com/production/repositories/5028/datasets/a55843f83746968c7f118d82ed727db9c71e891f/snake_river_visits.rds&quot;</span>,</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">  <span class="dt">destfile =</span> <span class="kw">paste0</span>(<span class="kw">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>))</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">snake_river_visits &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="kw">file.choose</span>())</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co"># or</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">path &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="kw">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>)</a>
-<a class="sourceLine" id="cb1-8" data-line-number="8">snake_river_visits &lt;-<span class="st"> </span><span class="kw">readRDS</span>(path)</a></code></pre></div>
-<ul>
-<li>Example: Rdata files</li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># Example 1:</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">download.file</span>(</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">  <span class="st">&quot;https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData&quot;</span>, </a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">  <span class="dt">destfile =</span> <span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span>)</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="kw">load</span>(<span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span>)</a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co"># Example 2:</span></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="kw">download.file</span>(</a>
-<a class="sourceLine" id="cb2-10" data-line-number="10">  <span class="st">&quot;https://assets.datacamp.com/production/repositories/235/datasets/3b6fc2923b599058584b57d8c605c6bef454d273/CHIS2009_reduced_2.Rdata&quot;</span>,</a>
-<a class="sourceLine" id="cb2-11" data-line-number="11">  <span class="dt">destfile =</span> <span class="st">&quot;chis_2009.Rdata&quot;</span>,</a>
-<a class="sourceLine" id="cb2-12" data-line-number="12">  <span class="co"># The documentation for `download.file` indicates that the function will</span></a>
-<a class="sourceLine" id="cb2-13" data-line-number="13">  <span class="co"># automatically include `mode = &quot;wb&quot;` for .Rdata files. That may have happened</span></a>
-<a class="sourceLine" id="cb2-14" data-line-number="14">  <span class="co"># in Example 1, but didn&#39;t happen in Example 2, which is why I&#39;ve included it.</span></a>
-<a class="sourceLine" id="cb2-15" data-line-number="15">  <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span>)</a>
-<a class="sourceLine" id="cb2-16" data-line-number="16"></a>
-<a class="sourceLine" id="cb2-17" data-line-number="17"><span class="kw">load</span>(<span class="st">&quot;chis_2009.Rdata&quot;</span>)</a></code></pre></div>
-<ul>
-<li><code>unzip</code>: Extract or list zip archives.
-<ul>
-<li>Example:</li>
-</ul></li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">download.file</span>(</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">  <span class="st">&quot;https://assets.datacamp.com/production/repositories/1069/datasets/578834f5908e3b2fa575429a287586d1eaeb2e54/countries2.zip&quot;</span>,</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">  <span class="dt">destfile =</span> <span class="st">&quot;Data Sets/Countries&quot;</span>,</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4">  <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span>)</a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="kw">unzip</span>(<span class="st">&quot;Data Sets/Countries&quot;</span>, <span class="dt">exdir =</span> <span class="st">&quot;Data Sets&quot;</span>)</a></code></pre></div>
+<p><strong>Example:</strong> <code>utils::download.file</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">download.file</span>(</a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="st">&quot;https://assets.datacamp.com/production/repositories/5028/datasets/a55843f83746968c7f118d82ed727db9c71e891f/snake_river_visits.rds&quot;</span>,</a>
+<a class="sourceLine" id="cb1-3" title="3">  <span class="dt">destfile =</span> <span class="kw">paste0</span>(<span class="kw">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>))</a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5">snake_river_visits &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="kw">file.choose</span>())</a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="co"># or</span></a>
+<a class="sourceLine" id="cb1-7" title="7">path &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="kw">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>)</a>
+<a class="sourceLine" id="cb1-8" title="8">snake_river_visits &lt;-<span class="st"> </span><span class="kw">readRDS</span>(path)</a></code></pre></div>
+<p><strong>Example:</strong> Download <code>.Rdata</code> files</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># Example 1:</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">download.file</span>(</a>
+<a class="sourceLine" id="cb2-3" title="3">  <span class="st">&quot;https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData&quot;</span>, </a>
+<a class="sourceLine" id="cb2-4" title="4">  <span class="dt">destfile =</span> <span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span>)</a>
+<a class="sourceLine" id="cb2-5" title="5"></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="kw">load</span>(<span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span>)</a>
+<a class="sourceLine" id="cb2-7" title="7"></a>
+<a class="sourceLine" id="cb2-8" title="8"><span class="co"># Example 2:</span></a>
+<a class="sourceLine" id="cb2-9" title="9"><span class="kw">download.file</span>(</a>
+<a class="sourceLine" id="cb2-10" title="10">  <span class="st">&quot;https://assets.datacamp.com/production/repositories/235/datasets/3b6fc2923b599058584b57d8c605c6bef454d273/CHIS2009_reduced_2.Rdata&quot;</span>,</a>
+<a class="sourceLine" id="cb2-11" title="11">  <span class="dt">destfile =</span> <span class="st">&quot;chis_2009.Rdata&quot;</span>,</a>
+<a class="sourceLine" id="cb2-12" title="12">  <span class="co"># The documentation for `download.file` indicates that the function will</span></a>
+<a class="sourceLine" id="cb2-13" title="13">  <span class="co"># automatically include `mode = &quot;wb&quot;` for .Rdata files. That may have happened</span></a>
+<a class="sourceLine" id="cb2-14" title="14">  <span class="co"># in Example 1, but didn&#39;t happen in Example 2, which is why I&#39;ve included it.</span></a>
+<a class="sourceLine" id="cb2-15" title="15">  <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span>)</a>
+<a class="sourceLine" id="cb2-16" title="16"></a>
+<a class="sourceLine" id="cb2-17" title="17"><span class="kw">load</span>(<span class="st">&quot;chis_2009.Rdata&quot;</span>)</a></code></pre></div>
+<p><strong>Example:</strong> <code>utils::unzip</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">download.file</span>(</a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="st">&quot;https://assets.datacamp.com/production/repositories/1069/datasets/578834f5908e3b2fa575429a287586d1eaeb2e54/countries2.zip&quot;</span>,</a>
+<a class="sourceLine" id="cb3-3" title="3">  <span class="dt">destfile =</span> <span class="st">&quot;Data Sets/Countries&quot;</span>,</a>
+<a class="sourceLine" id="cb3-4" title="4">  <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span>)</a>
+<a class="sourceLine" id="cb3-5" title="5"></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="kw">unzip</span>(<span class="st">&quot;Data Sets/Countries&quot;</span>, <span class="dt">exdir =</span> <span class="st">&quot;Data Sets&quot;</span>)</a></code></pre></div>
 </div>
-<div id="import-data-from-a-database" class="section level2">
-<h2>Import Data from a Database</h2>
-<p><code>DBI</code></p>
+<div id="import-from-or-create-data-in-a-database" class="section level2">
+<h2>Import from or Create Data in a Database</h2>
+<hr />
 <ul>
-<li><code>dbBind()</code>: Bind values to a parameterized/prepared statement.</li>
-<li><code>dbClearResult()</code>: Free all resources (local and remote) associated with a result set.</li>
-<li><code>dbConnect()</code>: Connect to a DBMS.</li>
-<li><code>dbDataType()</code>: Determine the SQL data type of an object.</li>
-<li><code>dbDisconnect()</code>: Disconnect (close) a connection to a DBMS.</li>
-<li><code>dbFetch()</code>: Fetch records from a previously executed query.</li>
-<li><code>dbGetQuery()</code>: Send query, retrieve the results, and then clear result set.</li>
-<li><code>dbListTables()</code>: List remote tables.</li>
-<li><code>dbReadTable()</code>: Copy data frames to and from database tables.</li>
-<li><code>dbSendQuery()</code>: Execute a query on a given database connection.</li>
-<li><code>dbSendStatement()</code>: Execute a data manipulation statement on a given database connection.</li>
+<li><code>DBI::dbBind</code></li>
+<li><code>DBI::dbClearResult</code></li>
+<li><code>DBI::dbConnect</code></li>
+<li><code>DBI::dbDataType</code></li>
+<li><code>DBI::dbDisconnect</code></li>
+<li><code>DBI::dbExecute</code></li>
+<li><code>DBI::dbFetch</code></li>
+<li><code>DBI::dbGetQuery</code></li>
+<li><code>DBI::dbListTables</code></li>
+<li><code>DBI::dbReadTable</code></li>
+<li><code>DBI::dbSendQuery</code></li>
+<li><code>DBI::dbSendStatement</code></li>
 </ul>
 </div>
-<div id="reference-material" class="section level2">
-<h2>Reference Material</h2>
-<p>The <code>openintro</code> package contains data sets useful for practicing and teaching.</p>
+<div id="notes-references" class="section level2">
+<h2>Notes &amp; References</h2>
+<hr />
+<ul>
+<li><a href="http://adv-r.had.co.nz/Data-structures.html">“Data structures”</a> (Wickham, <a href="http://adv-r.had.co.nz/"><em>Advanced R</em></a>)</li>
+<li><code>{openintro}</code> contains data sets useful for practicing and teaching.</li>
+<li><a href="https://r4ds.had.co.nz/vectors.html">“Vectors”</a> (Grolemund &amp; Wickham, <a href="https://r4ds.had.co.nz/"><em>R for Data Science</em></a>)</li>
+</ul>
 
 </div>
 </div>
