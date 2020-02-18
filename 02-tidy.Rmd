@@ -1,269 +1,184 @@
 # Tidy
-
 ***
+
 "Tidying your data means storing it in a consistent form that matches the semantics of the dataset with the way it is stored. In brief, when your data is tidy, each column is a variable and each row is an observation. Tidying data is important because the consistent structure lets you focus your struggle on questions about the data, not fighting to get the data into the right form for different functions."  
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*
 
-***
 ## Explore Raw Data
+***
 
-### Understand the Structure of the Data
-
-`{base}`
-
-* `attr`: Get or set attributes of an object.
-  * `attr(x, "names")` is the same as `names(x)`.
+* `base::attr`
+  * `attr(x, "names")` is the same as `base::names(x)`.
   * Use `attr(x, "names") <- value` to set attribute values.
-* `attributes`: Object attribute lists.
-* `class`: Get or set the class attribute of an object.
-* `colnames`: Retrieve or set the column names of a matrix-like object.
-* `dim`: Retrieve or set the dimension of an object.
-* `dimnames`: Retrieve or set the dimension names of an object.
-* `format`: Format an R object.
-* `length`: Get or set the length of an object.
-* `levels`: Get or set the (factor) levels of a variable.
+* `base::attributes`
+* `base::class`
+* `base::colnames`
+* `base::dim`
+* `base::dimnames`
+* `base::format`
+* `base::length`
+* `base::levels`
   * Levels default to alphabetical order, so be careful when renaming them (i.e., don't accidentally set the "F" level equal to "Male" rather than "Female").
-* `mode`: Get or set the storage mode attribute of an object.
-  * Modes include logical, numeric (the mode equivalent of `typeof`'s integer and double types), complex, character, raw, and list.
-* `names`: Get or set the names of an object.
-* `nchar`: Count the number of characters (or bytes or width).
-* `rownames`: Retrieve or set the row names of a matrix-like object.
-* `typeof`: Display the R internal type of an object.
-  *  Types include logical, integer, double, complex, character, raw, and list.
-
-`{tibble}`
-
-* `glimpse`: Get a glimpse of the data.
+* `base::mode`
+* `base::names`
+* `base::nchar`
+* `base::order`
+* `base::rownames`
+* `base::summary`
+* `base::typeof`
+* `graphics::hist`
+* `graphics::plot`
+* `tibble::glimpse`
   * Similar to `utils::str`.
-    
-`{utils}`
+* `utils::head`
+* `utils::str`
+  * Similar to `tibble::glimpse`.
+* `utils::tail`
 
-* `str()`: Display the structure of an R object.
-  *  Similar to `tibble::glimpse`.
-
-### Look at the Data
-
-`base`
-
-* `names()`: Get or set the names of an object.
-* `order()`: Rearrange in ascending or descending order.
-* `summary()`: Summarize the object.
-
-`utils`
-
-* `head()`: View the first observations in a data frame.
-* `tail()`: View the last observations in a data frame.
-
-### Visualize the Data
-
-`graphics`
-
-* `hist()`: Create a histogram.
-* `plot()`: Create an x-y plot.
-
-***
 ## Tidy Data
-
-### Manage Columns and Observations
-
-`{base}`
-
-* `duplicated`: Determine duplicate elements.
-  * See also `data.table::duplicated`.
-* `unique`: Extract unique elements.
-  * See also `data.table::unique`.
-
-`{data.table}`
-
-* `anyDuplicated`: Indicate the index of the first duplicate entry.
-* `duplicated`: Return a logical vector indicating whether a row is a duplicate.
-  * See also `base::duplicated`.
-* `unique`: Remove duplicate rows.
-  * See also `base::unique`.
-
-`{janitor}`
-
-* `remove_empty`: Remove empty rows and/or columns from a data.frame or matrix.
-
-`{splitstackshape}`
-
-* `cSplit`: Split concatencated values into separate values.
-
-`{tibble}`
-
-* `rownames`: Tools for working with row names.
-  * `rowid_to_column`: Add a column of sequential row IDs.
-    * Useful when a separate ID is required to manipulate rows or columns, such as when using `tidyr::gather`.
-
-`{tidyr}`
-
-* `gather`: Gather columns into key-value pairs.
-* `nest`: Nest repeated values in a list-variable.
-  * Helpful when separating a data frame in preparation to model the data for each grouping.
-* `replace_na`: Replace missing values.
-* `separate`: Separate one column into multiple columns.
-* `spread`: Spread across multiple columns.
-* `unite`: Unite multiple columns into one.
-* `unnest`: Unnest a list-column.
-
-### Transpose
-
-`{purrr}`
-
-* `transpose`: Turn a list-of-lists inside-out.
-
 ***
+
+* `base::duplicated`
+  * See also `data.table::duplicated`
+* `base::unique`
+  * See also `data.table::unique`
+* `data.table::anyDuplicated`
+* `data.table::duplicated`
+  * See also `base::duplicated`
+* `data.table::unique`
+  * See also `base::unique`
+* `janitor::remove_empty`
+* `purrr::transpose`
+  * Turn a list-of-lists inside-out.
+* `splitstackshape::cSplit`
+  * See also `tidyr::separate`
+* `tibble::rowid_to_column`
+  * Add a column of sequential row IDs.
+  * Useful when a separate ID is required to manipulate rows or columns, such as when using `tidyr::pivot_longer`
+* `tibble::rownames`
+* `tidyr::nest`
+  * Nest repeated values in a list-variable.
+  * Helpful when separating a data frame in preparation to model the data for each grouping.
+* `tidyr::replace_na`
+* `tidyr::separate`
+* `tidyr::pivot_longer`
+* `tidyr::pivot_wider`
+* `tidyr::unite`
+* `tidyr::unnest`
+
 ## Prepare Data for Analysis
+***
 
-### Coerce Data
+### Coerce
 
-`{base}`
-
-* `anyNA`: Possibly faster implementation of `any(is.na(x))`.
-* `as.*`
-  * `as.array`: Coerce to array.
-  * `as.data.frame`: Coerce to data frame.
-    * Prefer`tibble::as_tibble` to `base::as.data.frame`.
-  * `as.Date`: Coerce to date.
-  * `as.factor`: Coerce to factor.
-  * `as.list`: Coerce to list.
-  * `as.matrix`: Coerce to matrix.
-  * `as.POSIX*`: Coerce to POSIXlt or POSIXct.
-* `is.na`: Indicate which elements are missing.
+* `base::as.array`
+* `base::as.data.frame`
+  * See also`tibble::as_tibble`.
+* `base::as.Date`
+* `base::as.factor`
+* `base::as.list`
+* `base::as.matrix`
+* `base::as.POSIX*`
+* `base::factor`
+  * Rearrange the order of factors by using the `levels` argument. For example, rearrange the order of "Bad, "Good," and "Neutral" using `levels = c("Bad", "Neutral", "Good").
+* `base::is.na`
   * Use `is.na <-` to set elements to `NA`.
-* `unclass`: Remove the class attribute of an object.
-
-`{methods}`
-
-* `as`: Force an object to belong to a class.
-
-`{tibble}`
-
-* `as_tibble`: Coerce lists and matrices to data frames.
+* `base::unclass`
+* `methods::as`
+* `tibble::as_tibble`
   * Preferable to `base::as.data.frame`.
-* `enframe`: Convert vectors to data frames, and vice versa.
-  * Preferable to using `as_tibble` to coerce a vector to a data frame.
+* `tibble::enframe`
+  * Preferable to using `tibble::as_tibble` to coerce a vector to a data frame.
 
 ### Dates and Datetimes
 
-`anytime`
-
-* `anytime()`: Parse POSIXct or Date objects from input data.
-
-`base`
-
-* `as.Date()`: Date conversion to and from character.
-* `as.POSIX*()`: Date-time conversion for POSIXct and POSIXlt.
-    + `as.POSIXct()`: Setting default for UTC and 1970.
-* `strptime()`: Date-time conversion to and from character.
-* `Sys.timezone()`: Return the name of the current time zone.
-    + `OlsonNames()` displays available time zones.
-
-`fasttime`
-
-* `fastPOSIXct()`: Convert strings into POSICct object (string must be in year, month, day, hour, minute, second format.)
-
-`hms`
-
-* `hms()`: Store time-of-day values as `hms` class.
-    + Child functions: `as.hms()`, `is.hms().
-
-`lubridate`
-
-* `as_date()`: Convert an object to a date or date-time.
-* `parse_date_time()`: User friendly date-time parsing functions that can accomodate parsing multiple dates in different formats.
-    + `fast_strptime()`: Fast C parser of numeric formats only that accepts explicit format arguments, just as `base::strptime()`.
-        + Note that the format argument must match the input exactly, including any non-white space characters (such as "T" and "Z").
-    + `make_date()`: Create dates from numeric representations.
-    + `make_datetime()`: Create date-times from numeric representations.
-    + `parse_date_time2()`: Fast C parser of numeric orders.
-    + `parse_date_time()` can be slow because it is designed to be forgiving and flexible. If the dates you are working with are in a consistent format (ideally ISO 8601), use one of the following: `fasttime::fastPOSIXct()`
-* `ymd()`: Parse dates with year, month, and day components.
-        + Related formats: `ydm()`, `mdy()`, `myd()`, `dmy()`, `dym()`, `yq()`.
-* `ymd_hms()`: Parse date-times with year, month, day, hour, minute, and second components.
-        + Related formats: `ymd_hm()`, `ymd_h()`, `dmy_hms()`, `dmy_hm()`, `dmy_h()`, `mdy_hms()`, `mdy_hm()`, `mdy_h()`, `ydm_hms()`, `ydm_hm()`, `ydm_h()`.
+* `anytime::anytime`: Parse POSIXct or Date objects from input data.
+* `base::as.Date()`
+* `base::OlsonNames()` 
+  * Displays available time zones.
+* `base::as.POSIX*()`
+* `base::as.POSIXct()`
+* `base::strptime()`
+  * Date-time conversion to and from character.
+* `base::Sys.timezone()`
+  * See also `base::OlsonNames`.
+* `fasttime::fastPOSIXct`
+  * Convert strings into `POSIXct` object (string must be in year, month, day, hour, minute, second format.)
+* `hms:as.hms`
+* `hms::hms`
+  * Store time-of-day values as `hms` class.
+* `hms::is.hms`
+* `lubridate::as_date`
+* `lubridate::fast_strptime`
+  * Fast C parser of numeric formats only that accepts explicit format arguments (just as `base::strptime`).
+  * Note that the format argument must match the input exactly, including any non-white space characters (such as "T" and "Z").
+* `lubridate::make_date`
+  * Create dates from numeric representations.
+* `lubridate::make_datetime`
+  * Create date-times from numeric representations.
+* `lubridate::parse_date_time`
+  * This function can be slow, because it is designed to be forgiving and flexible. If the dates you are working with are in a consistent format (ideally ISO 8601), use one of the following: `fasttime::fastPOSIXct` or `lubridate::parse_date_time2`.
+* `lubridate::parse_date_time2`
+  * Fast C parser of numeric orders.
+* `lubridate::ymd`: Parse dates with year, month, and day components.
+  * Related formats: `ydm`, `mdy`, `myd`, `dmy`, `dym`, `yq`.
+* `lubridate::ymd_hms`: Parse date-times with year, month, day, hour, minute, and second components.
+  * Related formats: `ymd_hm`, `ymd_h`, `dmy_hms`, `dmy_hm`, `dmy_h`, `mdy_hms`, `mdy_hm`, `mdy_h`, `ydm_hms`, `ydm_hm`, `ydm_h`.
         
-### Factors and Levels
+### Filter
 
-`base`
-
-* `factor()`: Get and set factors.
-    + Rearrange the order of factors by using the `levels` argument. For example, rearrange the order of "Bad, "Good," and "Neutral" using `levels = c("Bad", "Neutral", "Good").
-
-***
-### Filter and Remove Data
-
-`purrr`
-
-* `keep()`: Keep or discard elements using a predicate function.
-
-`stats`
-
-* `na.omit()`: Remove rows with `NA` values.
+* `dplyr::filter`
+* `purrr::keep`
+* `stats::na.omit`
 
 ### Strings
 
-`base`
-
-* `cat`: Concatenate and print. 
-* `chartr`: Change certain characters.
-* `gregexpr`:
-* `grep`: Pattern matching and replacement.
-* `grepl`:
-* `gsub`:
-* `regexec`:
-* `regexpr`:
-* `sub`:
-* `tolower`: Convert to lowercase.
-  * `stringr::str_to_lower` is an alternative.
-* `toupper`: Convert to uppercase.
-  * `stringr::str_to_upper` is an alternative.
-
-`qdap`
-
-* `check_spelling`
-
-`qdapDictionaries`
-
-* `DICTIONARY`: Nettalk Corpus syllable data set.
-* `GradyAugmented`: Augmented list of Grady Ward's *English Words* and Mark Kantrowitz's *Names* List.
+* `base::cat`
+  * Concatenate and print. 
+* `base::chartr`
+  * Change certain characters.
+* `base::gregexpr`
+* `base::grep`
+* `base::grepl`
+* `base::gsub`
+* `base::regexec`
+* `base::regexpr`
+* `base::sub`
+* `base::tolower`
+  * See also `stringr::str_to_lower`.
+* `base::toupper`: Convert to uppercase.
+  * See also `stringr::str_to_upper`.
+* `qdap::check_spelling`
+* `qdapDictionaries::DICTIONARY`
+  * Nettalk Corpus syllable data set.
+* `qdapDictionaries::GradyAugmented`
+  * Augmented list of Grady Ward's *English Words* and Mark Kantrowitz's *Names* List.
   * Mark Kantrowitz's *Names* list is available in full [here](http://www.cs.cmu.edu/afs/cs/project/ai-repository/ai/areas/nlp/corpora/names/).
-
-`stringr`
-
-* `str_detect`: Detect the presence or absence of a pattern in a string.
+* `stringr::str_detect`
   * Control the `pattern` argument options with `regex` (e.g., `str_detect(x, regex(pattern, ignore_case = TRUE))`.
-* `str_remove`: Remove matched patterns in a string.
-* `str_to_lower`: Convert to lower case.
-* `str_to_title`: Capitalize the first letter.
-* `str_trim`: Trim whitespace from a string.
-* `str_to_upper`: Convert to upper case.
+* `stringr::str_remove`
+* `stringr::str_to_lower`
+* `stringr::str_to_title`
+* `stringr::str_trim`
+* `stringr::str_to_upper`
 
-### Test Data
+### Test
 
-`base`
-
-* `all()`: Are all values true?
-* `any()`: Are any values true?
-    + Use `any(is.na(data.frame))` to determine if there are any NA values in a data frame.
-* `exists()`: Check whether an R object exists.
-* `is.*()` functions:
-    + `is.array()`: Test whether an object is an array.
-    + `is.data.frame()`: Test whether an object is a data frame.
-    + `is.matrix()`: Test whether an object is a matrix.
-    + `is.vector()`: Test whether an object is a vector.
-* `setequal()`: Check two vectors for equality.
-* `sum()`: Sum vector elements.
-    + To test whether all elements of a vector do or do not meet a certain condition, use as follows: `sum(email$num_char < 0)`.
-
-`purrr`
-
-* `every()`: Do every or some elements of a list satisfy a predicate?
-
-`stats`
-
-* `complete.cases()`: Find complete cases (i.e., rows without `NA` values).
-
-`tibble`
-
-* `is_tibble()`: Test whether an object is a tibble.
+* `base::all()`
+* `base::any`
+  * Use `any(is.na(data.frame))` to determine if there are any NA values in a data frame.
+* `base::anyNA`
+  * Possibly faster implementation of `any(is.na(x))`.
+* `base::exists`
+* `base::is.array`
+* `base::is.data.frame`
+* `base::is.matrix`
+* `base::is.vector`
+* `base::setequal`
+  * Check two vectors for equality.
+* `base::sum`
+  * Test whether all elements of a vector do or do not meet a certain condition, use as follows: `sum(email$num_char < 0)`.
+* `purrr::every`
+* `stats::complete.cases`
+  * Find complete cases (i.e., rows without `NA` values).
+* `tibble::is_tibble`
