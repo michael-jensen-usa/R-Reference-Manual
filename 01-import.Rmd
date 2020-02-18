@@ -1,12 +1,8 @@
-# Import or Create Data
+# Import
 ***
-## Notes & References
-
-* ["Data structures"](http://adv-r.had.co.nz/Data-structures.html) (Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
-* `{openintro}` contains data sets useful for practicing and teaching.
-* ["Vectors"](https://r4ds.had.co.nz/vectors.html) (Grolemund & Wickham, [*R for Data Science*](https://r4ds.had.co.nz/))
 
 ## Create Data
+***
 
 * `base::array`
 * `base::c`
@@ -18,12 +14,13 @@
 * `base::matrix`
 * `base::seq`
 * `base::vector`
-  * Preferable to `base::c` when creating an empty vector, according to ["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve).
+  * Preferable to `base::c` when creating an empty vector (["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve)).
 * `stats::rnorm`
 * `tibble::add_row`
 * `tibble::tibble`
 
 ## Import Data from a Local Drive
+***
 
 * `base::attach`
   * Attach a set of R objects to the search path.
@@ -59,6 +56,7 @@
   * Read data from worksheets in an Excel file.
 
 ## Import Data from the Internet
+***
 
 * `httr::GET`: Get a URL.
 * `jsonlite::read_json`: Read and write JSON.
@@ -119,6 +117,7 @@ unzip("Data Sets/Countries", exdir = "Data Sets")
 ```
 
 ## Import from or Create Data in a Database
+***
 
 * `DBI::dbBind`
 * `DBI::dbClearResult`
@@ -132,3 +131,10 @@ unzip("Data Sets/Countries", exdir = "Data Sets")
 * `DBI::dbReadTable`
 * `DBI::dbSendQuery`
 * `DBI::dbSendStatement`
+
+## Notes & References
+***
+
+* ["Data structures"](http://adv-r.had.co.nz/Data-structures.html) (Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
+* `{openintro}` contains data sets useful for practicing and teaching.
+* ["Vectors"](https://r4ds.had.co.nz/vectors.html) (Grolemund & Wickham, [*R for Data Science*](https://r4ds.had.co.nz/))
