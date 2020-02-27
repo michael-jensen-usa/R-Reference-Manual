@@ -17,7 +17,8 @@ I organized this manual according to Garrett Grolemund and Handley Wickham's con
 * Visualize
 * Model
 * Communicate
-* Program.
+* Program
+
 ```{r, echo=FALSE}
 library(DiagrammeR)
 
