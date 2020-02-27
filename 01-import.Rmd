@@ -131,6 +131,7 @@ unzip("Data Sets/Countries", exdir = "Data Sets")
 * `DBI::dbReadTable`
 * `DBI::dbSendQuery`
 * `DBI::dbSendStatement`
+* `dbplyr::tbl`
 
 ## Notes & References
 ***
