@@ -1,11 +1,11 @@
 # Transform
-
 ***
- "Transformation includes narrowing in on observations of interest (like all people in one city, or all data from the last year), creating new variables that are functions of existing variables (like computing velocity from speed and time), and calculating a set of summary statistics (like counts or means)."  
+
+"Transformation includes narrowing in on observations of interest (like all people in one city, or all data from the last year), creating new variables that are functions of existing variables (like computing velocity from speed and time), and calculating a set of summary statistics (like counts or means)."  
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*
 
-***
 ## Arithmetic & Summary Statistics
+***
 
 `{assertive}`
 
@@ -103,43 +103,79 @@ df <-
 ***
 ## Dates and Datetimes
 
-`base`
-
-* `date()`: Get the current system date and time.
-* `difftime()`: Time intervals and differences.
-    + `difftime()` is the function behind the `-` operator when used with dates and datetimes (e.g., `time_1 - time_2` is equivalent to `difftime(time_1, time_2)`). The advantage of using  `difftime()` over `-`, however, is the `units` argument because it allows you to specify the unit of time in which the difference is calculated.
-* `months()`: Extract the month names.
-* `quarters()`: Extract the calendar quarters.
-* `Sys.Date()`: Get the current date in the current time zone.
-* `Sys.time()`: Get the absolute date-time value (which can be converted to various time zones and may return different days).
-* `weekdays()`: Extract weekday names.
-
-`lubridate`
-
-* `date()`: Get or set the date component of a date-time.
-* `day()`: Get or set the day component of a datetime.
-* `month()`: Get or set the month component of a datetime.
-* `now()`: The current time (as a POSIXct object).
-* `quarter()`: Get or set the fiscal quarter or semester component of a datetime.
-* `round_date()`: Round the datetime to the nearest datetime.
-    + Child functions: `ceiling_date()`, `floor_date()`.
-* Time spans: Duration: 
-    + `dseconds()`, `dminutes()`, `dhours()`, `ddays()`, `dweeks()`, `dyears()`.
-    + Use when you are interested in seconds elapsed.
-* Time spans: Interval:
-    + `interval()`, `%--%`, `is.interval()`, `int_start()`, `int_end()`, `int_length()`, `int_flip()`, `int_shift()`, `int_overlaps()`, `int_standardize()`, `int_aligns()`, `int_diff()`.
-    + Use when you have a start and end.
-* Time spans: Period:
-    + `seconds()`, `minutes()`, `hours()`, `days()`, `weeks()`, `months()`, `years()`. 
-    + Use when you are interested in human units.
+* `base::date`
+  * Get the current system date and time.
+* `base::difftime`
+  * Time intervals and differences.
+  * `base::difftime` is the function behind the `-` operator when used with dates and datetimes (e.g., `time_1 - time_2` is equivalent to `difftime(time_1, time_2)`). The advantage of using  `difftime` over `-`, however, is the `units` argument because it allows you to specify the unit of time in which the difference is calculated.
+* `base::months`
+  * Extract the month names.
+* `base::quarters`
+  * Extract the calendar quarters.
+* `base::Sys.Date`
+  * Get the current date in the current time zone.
+* `base::Sys.time`
+  * Get the absolute date-time value (which can be converted to various time zones and may return different days).
+* `base::weekdays`
+  * Extract weekday names.
+* `lubridate::ceiling_date`
+* `lubridate::date`
+  * Get or set the date component of a date-time.
+* `lubridate::day`
+  * Get or set the day component of a datetime.
+* `lubridate::floor_date`
+* `lubridate::month`
+  * Get or set the month component of a datetime.
+* `lubridate::now`
+  * The current time (as a POSIXct object).
+* `lubridate::quarter`
+  * Get or set the fiscal quarter or semester component of a datetime.
+* `lubridate::round_date`
+* Time spans: Duration
+  * Use when you are interested in seconds elapsed.
+  * `lubridate::ddays`
+  * `lubridate::dhours`
+  * `lubridate::dminutes`
+  * `lubridate::dseconds`
+  * `lubridate::dweeks`
+  * `lubridate::dyears`
+* Time spans: Interval
+  * Use when you have a start and end.
+  * `%--%`
+  * `int_aligns`
+  * `int_diff`
+  * `int_end`
+  * `int_flip`
+  * `int_length`
+  * `int_overlaps`
+  * `int_shift`
+  * `int_standardize`
+  * `int_start`
+  * `interval`
+  * `is.interval`
+* Time spans: Period
+  * Use when you are interested in human units.
+  * `lubridate::days`
+  * `lubridate::hours`
+  * `lubridate::minutes`
+  * `lubridate::months`
+  * `lubridate::seconds`
+  * `lubridate::weeks`
+  * `lubridate::years` 
 * Time zones:
-    + `force_tz()`: Change the time zone without changing the clock time.
-    + `tz()`: Extract the time zone from a datetime.
-    + `with_tz()`: View the same instant in a different time zone.
-* `today()`: The current date (as a Date object).
-* `%m+%` & `%m-%`: Add and subtract months to a date without exceeding the last day of the new month.
-* `%within%`: Test whether a date or interval falls within an interval.
-* `year()`: Get or set the year component of a datetime.
+  * `lubridate::force_tz`
+    * Change the time zone without changing the clock time.
+  * `lubridate::tz`
+    * Extract the time zone from a datetime.
+  * `lubridate::with_tz`
+    * View the same instant in a different time zone.
+* `lubridate::today`
+* `lubridate::%m+%` & `%m-%`
+  * Add and subtract months to a date without exceeding the last day of the new month.
+* `lubridate::%within%`
+  * Test whether a date or interval falls within an interval.
+* `lubridate::year`
+  * Get or set the year component of a datetime.
 
 ***
 ## Factors
