@@ -18,6 +18,8 @@
 * `stats::rnorm`
 * `tibble::add_row`
 * `tibble::tibble`
+* `tibble::tribble`
+  * Row-wise tibble creation.
 
 ## Import Data from a Local Drive
 ***

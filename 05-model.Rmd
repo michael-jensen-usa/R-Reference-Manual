@@ -1,79 +1,66 @@
 # Model
-
 ***
+
 "Models are complementary tools to visualisation. Once you have made your questions sufficiently precise, you can use a model to answer them. Models are a fundamentally mathematical or computational tool, so they generally scale well. ... But every model makes assumptions, and by its very nature a model cannot question its own assumptions. That means a model cannot fundamentally surprise you. 
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*"
-
 ***
+
 ## General
 
-`{base}`
-
-* `sample`: Random samples and permutations.
-
-`{dplyr}`
-
-* `sample_n`: Sample n rows from a table.
-    
-`{stats}`
-
-* `coef`: Extract model coefficients.
-* `cor`: Correlation.
-* `cov`: Covariance.
-* `cov2cor`: Scale a covariance matrix into a correlation matrix.
-* `var`: Variance.
+* `base::sample`
+* `dplyr::sample_n`
+* `stats::coef`
+  * Extract model coefficients.
+* `stats::cor`
+* `stats::cov`
+* `stats::cov2cor`
+  * Scale a covariance matrix into a correlation matrix.
+* `stats::var`
 
 ***
 ## Regression
 
-`{broom}`
-
-* `augment`: Augment data with information from an object.
-* `glance`: Construct a single row summary of a model, fit, or other object.
-* `tidy`: Turn an object into a tidy tibble.
-
-`{mgcv}`
-
-* `gam`: Generalized additive models (GAMs) with integrated smoothness estimation.
-
-`{stats}`
-
-* `df.residual`: Get the residual degrees of freedom.
-* `lm`: Fit linear models.
-* `p.adjust`: Adjust p-values for multiple comparisons.
-* `predict`: Model predictions.
-* `residuals`: Extract model residuals.
-
-`{tidyr}`
-
-* `nest`: Nest repeated values in a list-variable.
+* `broom::augment`
+  * Augment data with information from an object.
+* `broom::glance`
+  * Construct a single row summary of a model, fit, or other object.
+* `broom::tidy`
+  * Turn an object into a tidy tibble.
+* `{mgcv::gam`
+  * Generalized additive models (GAMs) with integrated smoothness estimation.
+* `mixtools::`
+* `stats::df.residual`
+  * Get the residual degrees of freedom.
+* `stats::lm`
+  * Fit linear models.
+* `stats::p.adjust`
+  * Adjust p-values for multiple comparisons.
+* `stats::predict`
+  * Model predictions.
+* `stats::residuals`
+  * Extract model residuals.
+* `tidyr::nest`
+  * Nest repeated values in a list-variable.
   * Helpful when separating a data frame in preparation to model the data for each grouping.
 
 ***
 ## Simulation & Prediction
 
-`base`
+* `base::set.seed`
+* `stats::predict`
+  * Model prediction.
+  * Use with `lm` class objects and new data to predict new values (e.g., `predict(model, newdata)`).
+* `stats::rnorm`
 
-* `set.seed()`: Random number generation.
-
-`stats`
-
-* `predict()`: Model prediction.
-    + Use with "lm" class objects and new data to predict new values (e.g., `predict(model, newdata)`).
-* `rnorm()`: Generate a normal distribution.
-
-***
 ## Strings
+***
 
-`base`
-
-* `agrep()`: Approximate string matching (fuzzy matching).
-
-`fuzzyjoin`
-
-* `stringdist_join()`: Join two tables based on fuzzy string matching of their columns.
-    + Child functions: `stringdist_inner_join()`, `stringdist_left_join()`, `stringdist_right_join()`, `stringdist_full_join()`, `stringdist_semi_join()`, `stringdist_anti_join()`.
-
-`fuzzywuzzyR`
-
-* `FuzzMatcher()`: Fuzzy character string matching (ratios).
+* `base::agrep`
+* `fuzzyjoin::stringdist_join`
+* `fuzzyjoin::stringdist_anti_join`
+* `fuzzyjoin::stringdist_full_join`
+* `fuzzyjoin::stringdist_inner_join`
+* `fuzzyjoin::stringdist_left_join` 
+* `fuzzyjoin::stringdist_right_join`
+* `fuzzyjoin::stringdist_semi_join`
+* `fuzzywuzzyR::FuzzMatcher`

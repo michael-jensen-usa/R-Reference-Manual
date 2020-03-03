@@ -1,10 +1,10 @@
 # Communicate
-
 ***
+
 "The last step of data science is communication, an absolutely critical part of any data analysis project. It doesn't matter how well your models and visualisation have led you to understand the data unless you can also communicate your results to others."  
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*
-
 ***
+
 ## Export
 
 `base`
