@@ -1,11 +1,12 @@
 # Program
-
 ***
+
 "Surrounding [the tools for importing, tidying, transforming, visualising, modeling, and communicating data] is programming. Programming is a cross-cutting tool that you use in every part of a project. You don't need to be an expert programmer to be a data scientist, but learning more about programming pays off because becoming a better programmer allows you to automate common tasks, and solve new problems with greater ease."  
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*
-
 ***
+
 ## Conditionals & Control Flows
+***
 
 `base`
 
@@ -301,6 +302,8 @@ c(vrsn, os, pkgs) %<-% session()
 * `dplyr::rename`
 * `dplyr::select`
   * Helper functions: `contains`, `ends_with`, `matches`, `num_range`, `one_of`, `starts_with`.
+* `magrittr::extract`
+* `magrittr::extract2`
 * `purrr:pluck`
 
 **Example:** `.$variable_name`
