@@ -6,76 +6,67 @@
 ***
 
 ## Export
+***
 
-`base`
-
-* `file.path()`: Construct a file path.
-* `print()`: Print values.
-    + Use the `include.rownames = FALSE` argument to remove row numbers (or names) from the output.
-* `save()`: Save R objects.
-* `saveRDS()`: Save a single R object.
-    + See ["A better way of saving and loading objects in R"](https://www.fromthebottomoftheheap.net/2012/04/01/saving-and-loading-r-objects/) to understand the differences between `save()` and `saveRDS()`.
-
-`readr`
-
-* `write_delim()`: Write a data frame to a delimited file.
-    + About twice as fast as `write.csv()` and never writes row names.
-    + Child functions: `write_csv()`, `write_excel_csv()`, `write_tsv()`.
-
-`utils`
-
-* `write.table()`: Data output.
-    + Prefer `readr::write_delim()` to `utils::write.table()`.
-    + Child functions: `write.csv()`, `write.csv2()`.
+* `base::file.path`
+* `base::print`
+  * Use the `include.rownames = FALSE` argument to remove row numbers (or names) from the output.
+* `base::save`
+* `base::saveRDS`
+  * See ["A better way of saving and loading objects in R"](https://www.fromthebottomoftheheap.net/2012/04/01/saving-and-loading-r-objects/) to understand the differences between `save` and `saveRDS`.
+* `readr::write_csv`
+* `readr::write_delim`
+  * About twice as fast as `utils::write.csv`, and never writes row names.
+* `readr::write_excel_csv`
+* `readr::write_tsv`
+* `utils::write.csv`
+* `utils::write.csv2`
+* `utils::write.table`
+  * Prefer `readr::write_delim` to `utils::write.table`.
     
 `XLConnect`: Read, write, and format Excel data.
 ## Format Output
-
-`base`
-
-* `format()`: Format an object for pretty printing.
-
-`knitr`
-
-* `kable()`: Create tables in LaTex, HTML, Markdown, and reStructuredText.
-
-`lubridate`
-
-* `stamp()`: Format dates and times based on human-friendly templates.
-
-`scales`: Scale functions for visualization.
-
-* `dollar()`: Round to the nearest cent and display dollar sign. 
-
 ***
+
+* `base::format`
+* `DT::datatable`
+  * Use the `options = list(dom = 't')` argument to remove the search bar.
+* `knitr::kable`
+* `lubridate::stamp`
+  * Format dates and times based on human-friendly templates.
+* `scales::dollar`
+
 ## Graphics
+**
 
-'knitr'
+* `knitr::include_graphics`
+  * Embed external images in 'knitr' documents.
+  * Preferable to the `![alt text or image title](path/to/image)` Markdown syntax for embedding an external image, as `include_graphics` offers more control over the attributes of the image.
 
-* `include_graphics()`: Embed external images in 'knitr' documents.
-    + Preferable to the `![alt text or image title](path/to/image)` Markdown syntax for embedding an external image, as `include_graphics()` offers more control over the attributes of the image.
-
-***
 ## Plots
+***
 
-`ggplot2`
+* `ggplot2::element_*`: Specify the display of how non-data components of a plot are drawn.
+* `ggplot2::labs`: Modify axis, legend, and plot labels.
+    + Child functions: `xlab`, `ylab`, `ggtitle`
+* `ggplot2::theme`: Customize the non-data components of a plot.
+  * See example below.
+  * See `?theme_classic` for a list of predefined themes.
 
-* `element_*()`: Specify the display of how non-data components of a plot are drawn.
-* `labs()`: Modify axis, legend, and plot labels.
-    + Child functions: `xlab()`, `ylab()`, `ggtitle()`
-* `theme()`: Customize the non-data components of a plot.
+**Example: `ggplot2::theme`**
+
 ```{r, eval=FALSE}
 ggplot(plot_data_2006) +
   geom_histogram(aes(x = working_hours)) +
-  labs(x = "Working hours per week",
-       y = "Number of countries") +
+  labs(
+    x = "Working hours per week",
+    y = "Number of countries") +
   theme(
     text = element_text(family = "Bookman", color = "gray25"))
 ```
-    + child Functions: `theme_*()` are predefined themes, including `theme_classic()` and `theme_minimal()`. See `?theme_classic` for a list of predefined themes.
     
-***
 ## RMarkdown
+***
 
 * See [RMarkdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
 * See [Mozzila Developer Network](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) for CSS help.
