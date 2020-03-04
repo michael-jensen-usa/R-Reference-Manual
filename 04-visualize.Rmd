@@ -5,116 +5,156 @@
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*
 ***
 
-## Flowcharts
-
-`diagram`
-
-`DiagrammeR`
-
-***
 ## Interfaces
-
-`shiny`
-
 ***
-## Plots
 
-`{base}`
+* `shiny`
 
-* `abline`: Add straight lines to a plot.
-* `plot`: Generic X-Y plotting.
-* `points`: Add points to a plot.
+## Graphs, Charts, and Plots
+***
 
-`{ggbeeswarm}`
-
-* `geom_beeswarm`: Create a beeswarm plot.
-
-`ggplot2`
-
-* `aes`: Construct aesthetic mappings.
+* `base::abline`
+  * Add straight lines to a plot.
+* `base::plot`
+* `base::points`
+  * Add points to a plot.
+* `diagram`
+* `DiagrammeR`
+* `ggbeeswarm::geom_beeswarm`
+* `ggplot2::aes`
   * Arguments include `color`, `fill`, `size`, `labels`, `alpha`, `shape` (1-20 accept color attributes and 21-25 accept color and fill attributes), `linewidth`, `linetype`, and `group`.
   * Use `?pch` to see options for `shape`.
+  * Note that `aes` can be called within `geom_*` rather than prior to.
   * The default shape for points does not have a `fill` attribute, which means that mapping a categorical variable onto `fill` won't result in multiple colors.
   * Helper functions to include in the call when needing to modify the data include: `stats::reorder`.
-* `coord_*`
-  * `coord_cartesian`: Zoom a plot in or out without changing the underlying data.
-  * `coord_flip`: Flip the x and y axes.
-  * `coord_polar`: Used to convert a stacked bar chart to a pie chart.
-* `facet_*`
-  * `facet_grid`: Lay out panels in a grid.
-  * `facet_wrap`: Wrap a 1D ribbon of panels into 2D (observe a variable, conditional on another variable).
-* `geom_*`: Create a geometry.
-  * Note that `aes` can be called within `geom_*` rather than prior to.
-  * `geom_abline`: Add reference lines to a plot.
-  * `geom_bar`: Create a bar chart, where the height of the bar is proportional to the number of cases in each group.
-  * `geom_boxplot`: Create a boxplot.
-  * `geom_col`: Create a bar chart, where the height of the bar represents values in the data.
-  * `geom_density`: Create a kernal density estimate (a smoothed version of a histogram).
-    *  Consider using `geom_rug` with `geom_density` in order to be transparent about smoothed data.
-  * `geom_dotplot`: Create a histogram out of dots.
-  * `geom_histogram`: Create a histogram.
-    *  Use `y = stat(density)` to rescale the y-axis from counts to a probability estimate.
-  * `geom_hline`: Add a horizontal reference line to the plot.
-  *`geom_jitter`: Jitter points.
-    * Useful with `geom_boxplot`.
-  * `geom_path`: Connect observations in the order in which they appear.
-  * `geom_point`: Create a scatterplot (a.k.a. point chart or dot plot).
-  * `geom_rug`: Create a ruge plot in the margin.
-    * Useful with `geom_density`.
-  * `geom_smooth`: Smoothed conditional means; aids the eye in seeing patterns in the presence of overplotting.
-  * `geom_text`: Add text directly to the plot.
-  * `geom_violin`: Create a violin plot.
-  * `geom_vline`: Add a vertical reference line to the plot.
-* `ggplot`: Create a plot.
-* `ggtitle`: Modify the plot title.
-* `group`: Specify groupings.
-  * Used within `aes`. Note that `group` is usually unnecessary when specifying `color`, `shape`, `fill`, or `linetype` within `aes`, or when using facets. See ["Aesthetics: grouping"](https://ggplot2.tidyverse.org/reference/aes_group_order.html) for more information.
-* `labs`: Modify axis, legend, and plot labels.
-* `position_*`:
-  * `position_identity`: Don't adjust position.
-  * `position_dodge`: Dodge overlapping objects side-to-side.
-  * `position_nudge`: Nudge points a fixed distance.
-  * `position_stack`: Stack overlapping objects on top of each other, as counts.
-  * `position_fill`: Stack overlapping objects on top of each other, as densities.
-  * `position_jitter`: Jitter points to avoid overplotting.
-  * `position_jitterdodge`: Simultaneously dodge and jitter.
-* `scale_*_*`:
-  * `scale_x_*`
-  * `scale_y_*`
-  * `scale_color_*`
-  * `scale_fill_*`
-  * `scale_shape_*`
-  * `scale_size`
-  * `scale_linetype_*`
-* `stat_*`: Statistic layers (sometimes called by `geom_` layers).
-  * `stat_bin`
-  * `stat_bin2d`
-  * `stat_bindot`
-  * `stat_binhex`
-  * `stat_boxplot`
-  * `stat_contour`
-  * `stat_quantile`
-  * `stat_smooth`
-  * `stat_sum`
- * `xlab`: Modify the label of the x-axis.
- * `ylab`: Modify the label of the y-axis.
+* `ggplot2::coord_cartesian`
+  * Zoom a plot in or out without changing the underlying data.
+* `ggplot2::coord_flip`
+  * Flip the x and y axes.
+* `ggplot2::coord_polar`
+  * Use to convert a stacked bar chart to a pie chart.
+* `ggplot2::element_blank`
+* `ggplot2::element_line`
+* `ggplot2::element_rect`
+* `ggplot2::element_text`
+* `ggplot2::facet_grid`
+  * Lay out panels in a grid.
+  * When using a tilde function, the variable on the left specifies the rows and the variable on the right specifies the columns (when faceting in only one direction; i.e., only rows or only columns). Use `.` to specify nothing for the unused direction (e.g. `facet_grid(cyl ~ .)`).
+* `ggplot2::facet_wrap`
+  * Wrap a 1D ribbon of panels into 2D (observe a variable, conditional on another variable).
+* `ggplot2::geom_abline`
+  * Add reference lines to a plot.
+* `ggplot2::geom_bar`
+  * Create a bar chart, where the height of the bar is proportional to the number of cases in each group.
+* `ggplot2::geom_boxplot`
+* `ggplot2::geom_col`
+  * Create a bar chart, where the height of the bar represents values in the data.
+* `ggplot2::geom_density`
+  * Create a kernal density estimate (a smoothed version of a histogram).
+  *  Consider using `ggplot2::geom_rug` with `ggplot2::geom_density` in order to be transparent about smoothed data.
+* `ggplot2::geom_dotplot`
+  * Create a histogram out of dots.
+* `ggplot2::geom_errorbar`
+  * Shortcut for `geom_bar(stat = "identity")`.
+* `ggplot2::geom_histogram`
+  *  Use `y = stat(density)` to rescale the y-axis from counts to a probability estimate.
+* `ggplot2::geom_hline`
+*`ggplot2::geom_jitter`
+  * Useful with `ggplot2::geom_boxplot`.
+* `ggplot2::geom_path`
+  * Connect observations in the order in which they appear.
+* `ggplot2::geom_point`
+* `ggplot2::geom_rug`
+  * Useful with `ggplot2::geom_density`.
+* `ggplot2::geom_smooth`
+  * Smoothed conditional means; aids the eye in seeing patterns in the presence of overplotting.
+* `ggplot2::geom_text`
+* `ggplot2::geom_violin`
+* `ggplot2::geom_vline`
+* `ggplot2::ggplot`
+* `ggplot2::ggtitle`
+* `ggplot2::group`
+  * Used within `aes`. 
+  * Note that `group` is usually unnecessary when specifying `color`, `shape`, `fill`, or `linetype` within `aes`, or when using facets. See ["Aesthetics: grouping"](https://ggplot2.tidyverse.org/reference/aes_group_order.html) for more information.
+* `ggplot2::labs`
+  * Modify axis, legend, and plot labels.
+* `ggplot2::position_identity`
+  * Don't adjust position.
+* `ggplot2::position_dodge`
+  * Dodge overlapping objects side-to-side.
+* `ggplot2::position_nudge`
+  * Nudge points a fixed distance.
+* `ggplot2::position_stack`
+  * Stack overlapping objects on top of each other, as counts.
+* `ggplot2::position_fill`
+  * Stack overlapping objects on top of each other, as densities.
+* `ggplot2::position_jitter`
+* `ggplot2::position_jitterdodge`
+* `ggplot2::scale_x_continuous`
+* `ggplot2::scale_y_*`
+* `ggplot2::scale_color_manual`
+* `ggplot2::scale_fill_*`
+* `ggplot2::scale_shape_*`
+* `ggplot2::scale_size`
+* `ggplot2::scale_linetype_*`
+* `ggplot2::stat_bin`
+* `ggplot2::stat_bin2d`
+* `ggplot2::stat_bindot`
+* `ggplot2::stat_binhex`
+* `ggplot2::stat_boxplot`
+* `ggplot2::stat_contour`
+* `ggplot2::stat_quantile`
+* `ggplot2::stat_smooth`
+* `ggplot2::stat_sum`
+* `ggplot2::theme`
+  * See example for `grid::unit`.
+* `ggplot2::theme_get`
+* `ggplot2::theme_set`
+* `ggplot2::theme_update`
+  * "When you call 'theme_update' and assign it to an object (e.g., called `old`), that object stores the *current* default theme, and the arguments *update* the default theme. If you want to restore the previous default theme, you can get it back by using `theme_update` again." -DataCamp
+* `ggplot2::xlab`
+* `ggplot2::xlim`
+* `ggplot2::ylab`
+* `ggridges::geom_density_ridges`
+  * Create a ridgeline plot.
+* `graphics::boxplot`
+  * Create a box-and-whisker plot.
+* `graphics::hist`
+* `graphics::stripchart`
+  * One dimensional scatter plots.
+  * Prefer over `ggplot` when creating one-dimensional plots.
+* `grDevices::colorRamp`
+  * Color interpolation.
+* `grDevices::colorRampPalette`
+  * Color interpolation.
+* `grid::unit`
+  * Create a `unit` object, to specify locations and dimensions in a coordinate system.
+  * See example below.
+* `RColorBrewer::brewer.pal`
+  * Make the ColorBrewer color palettes available as R palattes.
+  
+**Example: `grid::unit`
 
-`{ggridges}`
+```{r, eval=FALSE}
+# Increase spacing between facets in a `ggplot` object:
 
-* `geom_density_ridges`: Create a ridgeline plot.
+plot + 
+  theme(
+    panel.spacing.x = unit(2, "cm"),
+    panel.margin = unit(c(1, 2, 1, 1), "cm"))
+```
 
-`{graphics}`
+## Graphs, Charts, and Plots - Statistics
+***
 
-* `boxplot`: Create a box-and-whisker plot.
-* `hist`: Create a histogram.
-* `stripchart`: One dimensional scatter plots.
-  * Preferable to `ggplot` when creating one-dimensional plots.
-
-`{grDevices}`
-
-* `colorRamp`: Color interpolation.
-* `colorRampPalette`: Color interpolation.
-
-`{RColorBrewer}`
-
-* `brewer.pal`: Make the ColorBrewer color palettes available as R palattes.
+* `ggplot2::mean_cl_boot`
+* `ggplot2::mean_cl_normal`
+* `ggplot2::sdl`
+* `ggplot2::median_hilow`
+* `ggplot2::stat_function`
+  * Compute `y` values from a function of `x` values.
+* `ggplot2::qq`
+  * Perfrm calculations for a quantile-quantile plot.
+* `ggplot2::qq_line`
+* `ggplot2::summary`
+  * Summarize `y` values at distinct `x` values.
