@@ -31,6 +31,7 @@
 * `base::format`
 * `DT::datatable`
   * Use the `options = list(dom = 't')` argument to remove the search bar.
+  * Use the `options = list(columnDefs = list(list(className = "db-center", targets = (column_position))))` argument to center column values (where `0` indicates the first column).
 * `knitr::kable`
 * `lubridate::stamp`
   * Format dates and times based on human-friendly templates.
