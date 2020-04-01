@@ -23,8 +23,8 @@
 * `utils::write.csv2`
 * `utils::write.table`
   * Prefer `readr::write_delim` to `utils::write.table`.
-    
-`XLConnect`: Read, write, and format Excel data.
+* `XLConnect::loadWorkbook`
+
 ## Format Output
 ***
 
@@ -32,6 +32,8 @@
 * `DT::datatable`
   * Use the `options = list(dom = 't')` argument to remove the search bar.
   * Use the `options = list(columnDefs = list(list(className = "db-center", targets = (column_position))))` argument to center column values (where `0` indicates the first column).
+* `kableExtra::kable_styling`
+* `kableExtra::add_footnote`
 * `knitr::kable`
 * `lubridate::stamp`
   * Format dates and times based on human-friendly templates.
