@@ -5,6 +5,11 @@
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*
 ***
 
+## Characters
+
+References:
+* `?Quotes`
+
 ## Conditionals & Control Flows
 ***
 
