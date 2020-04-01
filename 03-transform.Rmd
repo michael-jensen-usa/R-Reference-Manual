@@ -8,20 +8,15 @@
 ## Arithmetic & Summary Statistics
 ***
 
-`{assertive}`
-
-* `is_divisible_by`: Is the input divisible by a number?
-
-`{base}`
-
-* `abs`: Compute absolute value.
-* `colMeans`: Compute the column mean.
-* `colSums`: Compute the column sum.
-* `diff`: Compute the difference between two objects.
-* `IQR`: Compute the inter-quartile range.
-* `max`: Return the maximum value.
-* `mean`: Compute the mean value.
-  * Note that `mean` can be used to calculate a percentage when used in `summarize`, as follows:
+* `assertive::is_divisible_by`
+* `base::abs`
+* `base::colMeans`
+* `base::colSums`
+* `base::diff`
+* `base::IQR`
+* `base::max`
+* `base::mean`
+  * Note that `base::mean` can be used to calculate a percentage when used in `dplyr::summarize`, as follows:
   
 ```{r, eval=FALSE}
 by_country <- 
@@ -31,54 +26,49 @@ by_country <-
             percent_yes = mean(vote == 1))
 ```
   
-* `median`: Compute the median value.
-* `min`: Return the minimum value.
+* `base::median`
+* `base::min`
 * Mode: Use `table` to view the mode of a data set.
 * Operators:
   * Arithmetic Operators: `+`, `-`, `*`, `/`, `%%`
   * Comparison Operators: `<`, `>`, `<=`, `>=`, `==`, `!=`.
     * Use `identical` and `all.equal` rather than `==` and `!=` in tests where a single `TRUE` or `FALSE` is required (such as `if` expressions).
-* `range`: Return a vector containing the minimum and maximum values.
+* `base::range`
   * Use `diff(range())` to get the range as a measure of variability.
-* `round`: Round values to a specified number of decimal places.
-* `rowMeans`: Compute the row mean.
-* `rowSums`: Compute the row sum.
-* `sd`: Compute the standard deviation.
-* `signif`: Round values to a specified number of significant digits.
-* `sqrt`: Compute square root.
-* `sum`: Sum elements.
-* `summary`: Compute summary statistics.
-* `var`: Compute the variance.
-
-`{dplyr}`
-
-* `count`: Count/tally observations by group.
-* `group_by`: Group by one or more variables.
-* `n`: Get the number of observations in a current group.
+* `base::round`
+* `base::rowMeans`
+* `base::rowSums`
+* `base::sd`
+* `base::signif`
+  * Round values to a specified number of significant digits.
+* `base::sqrt`
+* `base::sum`
+* `base::summary`
+* `base::var`
+* `dplyr::count`
+* `dplyr::group_by`
+* `dplyr::n`
   * Must be used within `summarise`, `mutate`, or `filter`.
-* `n_distinct`: Count the number of unique values in a vector.
-* `summarize`: Reduce multiple values to a single value.
+* `dplyr::n_distinct`
+* `dplyr::near`
+  * Compare two numeric vectors (safer than using `==`).
+* `dplyr::summarize`
   * Use `mean(variable == value)` to get a percentage (see the above example for `mean`.)
-* `tally`: An alternative to `count`.
-* `top_n`: Select top (or bottom) n rows (by value).
-
-`{magrittr}`
-
-* `extract`: Pipeable extraction operator.
+* `dplyr::tally`
+* `dplyr::top_n`
+* `magrittr::extract`
   * `x %>% extract(y)` is equivalent to `x[y]`. 
-* `multiply_by`: Pipeable multiplication operator.
+* `magrittr::multiply_by`
   * `x %>% multiply_by(y)` is equivalent to `x * y`.
-* `raise_to_power`: Pipeable exponent operator.
+* `magrittr::raise_to_power`
   * `x %>% raise_to_power(y)` is equivalent to `x^y`.
-
-`{stats}`
-
-* `aggregate`: Compute summary statistics of data subsets.
-* `cor`: Correlation.
-* `cov`: Covariance.
-* `lag`: Lag a time series.
-* `rnorm`: Generate a random normal distribution.
-* `var`: Variance.
+* `stats::aggregate`
+  * Compute summary statistics of data subsets.
+* `stats::cor`
+* `stats::cov`
+* `stats::lag`
+* `stats::rnorm`
+* `stats::var`
 
 ***
 ## Create New Variables or Modify Existing Ones
