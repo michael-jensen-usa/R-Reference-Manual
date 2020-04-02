@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Program | R Reference Manual</title>
   <meta name="description" content="Program | R Reference Manual" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Program | R Reference Manual" />
   <meta property="og:type" content="book" />
@@ -49,9 +49,9 @@
 
 
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<script src="libs/viz-0.3/viz.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.1/grViz.js"></script>
+<script src="libs/grViz-binding-1.0.5/grViz.js"></script>
 
 
 <style type="text/css">
@@ -71,7 +71,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -134,31 +134,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html"><i class="fa fa-check"></i>Import or Create Data</a><ul>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#import-data-from-a-local-drive"><i class="fa fa-check"></i>Import Data from a Local Drive</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#import-data-from-the-internet"><i class="fa fa-check"></i>Import Data from the Internet</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#import-data-from-a-database"><i class="fa fa-check"></i>Import Data from a Database</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#reference-material"><i class="fa fa-check"></i>Reference Material</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html"><i class="fa fa-check"></i>Import</a><ul>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-a-local-drive"><i class="fa fa-check"></i>Import Data from a Local Drive</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-the-internet"><i class="fa fa-check"></i>Import Data from the Internet</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-from-or-create-data-in-a-database"><i class="fa fa-check"></i>Import from or Create Data in a Database</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i>Tidy</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#understand-the-structure-of-the-data"><i class="fa fa-check"></i>Understand the Structure of the Data</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#look-at-the-data"><i class="fa fa-check"></i>Look at the Data</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#visualize-the-data"><i class="fa fa-check"></i>Visualize the Data</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#tidy-data"><i class="fa fa-check"></i>Tidy Data</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#manage-columns-and-observations"><i class="fa fa-check"></i>Manage Columns and Observations</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#transpose"><i class="fa fa-check"></i>Transpose</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#tidy-data"><i class="fa fa-check"></i>Tidy Data</a></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#prepare-data-for-analysis"><i class="fa fa-check"></i>Prepare Data for Analysis</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#coerce-data"><i class="fa fa-check"></i>Coerce Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#coerce"><i class="fa fa-check"></i>Coerce</a></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#dates-and-datetimes"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#factors-and-levels"><i class="fa fa-check"></i>Factors and Levels</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#filter-and-remove-data"><i class="fa fa-check"></i>Filter and Remove Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#filter"><i class="fa fa-check"></i>Filter</a></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#strings"><i class="fa fa-check"></i>Strings</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#test-data"><i class="fa fa-check"></i>Test Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#test"><i class="fa fa-check"></i>Test</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>Transform</a><ul>
@@ -168,12 +159,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#factors"><i class="fa fa-check"></i>Factors</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#merge-or-append-data"><i class="fa fa-check"></i>Merge or Append Data</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#narrow-in-on-observations-of-interest"><i class="fa fa-check"></i>Narrow in on Observations of Interest</a></li>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test-1"><i class="fa fa-check"></i>Test</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i>Visualize</a><ul>
-<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#flowcharts"><i class="fa fa-check"></i>Flowcharts</a></li>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#interfaces"><i class="fa fa-check"></i>Interfaces</a></li>
-<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#plots"><i class="fa fa-check"></i>Plots</a></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots"><i class="fa fa-check"></i>Graphs, Charts, and Plots</a></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots---statistics"><i class="fa fa-check"></i>Graphs, Charts, and Plots - Statistics</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a><ul>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#general"><i class="fa fa-check"></i>General</a></li>
@@ -184,10 +175,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a><ul>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#export"><i class="fa fa-check"></i>Export</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#graphics"><i class="fa fa-check"></i>Graphics</a></li>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots-1"><i class="fa fa-check"></i>Plots</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots"><i class="fa fa-check"></i>Plots</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html"><i class="fa fa-check"></i>Program</a><ul>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#characters"><i class="fa fa-check"></i>Characters</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#conditionals-control-flows"><i class="fa fa-check"></i>Conditionals &amp; Control Flows</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#environment-and-workspace"><i class="fa fa-check"></i>Environment and Workspace</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#evaluation-standard-and-non-standard"><i class="fa fa-check"></i>Evaluation (Standard and Non-standard)</a></li>
@@ -199,6 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#pipes"><i class="fa fa-check"></i>Pipes</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#popups"><i class="fa fa-check"></i>Popups</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#selecting-subsetting"><i class="fa fa-check"></i>Selecting &amp; Subsetting</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#system-commands"><i class="fa fa-check"></i>System Commands</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#version-control"><i class="fa fa-check"></i>Version Control</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html"><i class="fa fa-check"></i>Referenced Packages</a><ul>
@@ -235,10 +228,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Program</h1>
 <hr />
 <p>“Surrounding [the tools for importing, tidying, transforming, visualising, modeling, and communicating data] is programming. Programming is a cross-cutting tool that you use in every part of a project. You don’t need to be an expert programmer to be a data scientist, but learning more about programming pays off because becoming a better programmer allows you to automate common tasks, and solve new problems with greater ease.”<br />
-- Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em></p>
-<hr />
+- Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em>
+***</p>
+<div id="characters" class="section level2">
+<h2>Characters</h2>
+<p>References:
+* <code>?Quotes</code></p>
+</div>
 <div id="conditionals-control-flows" class="section level2">
 <h2>Conditionals &amp; Control Flows</h2>
+<hr />
 <p><code>base</code></p>
 <ul>
 <li>Control (access documentation using “?Control”)
@@ -276,82 +275,152 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="environment-and-workspace" class="section level2">
 <h2>Environment and Workspace</h2>
-<p><code>{base}</code></p>
 <ul>
-<li><code>dir</code>: List the files in a directory/folder.</li>
-<li>Environments
+<li><code>base::baseenve</code>
 <ul>
-<li><code>baseenv</code>: The environment of the <code>base</code> package, it’s enclosing environment (“parent environment”) is the empty environment.</li>
-<li><code>emptyenv</code>: The empty environment, which is the ancestor of all environments and the only environment without an enclosing environment.</li>
-<li><code>environment</code>: The current environment.</li>
-<li><code>globalenv</code>: The environment in which you normally work, it’s enclosing environment is the last package attached with <code>library</code> or <code>require</code>.</li>
-<li><code>new.env</code>: Create a new environment.</li>
+<li>The environment of the <code>base</code> package; it’s enclosing environment (“parent environment”) is the empty environment.</li>
 </ul></li>
-<li><code>environmentName</code>: Return the name of the environment, as a character string.</li>
-<li><code>exists</code>: Look for an R object of the given name and possibly return it.
+<li><code>base::dir</code>
 <ul>
-<li>Must use quotations to name the object.</li>
+<li>List the files in a directory.</li>
+</ul></li>
+<li><code>base::dir.create</code>
+<ul>
+<li>Create a file path in the computer’s file system.</li>
+</ul></li>
+<li><code>base::emptyenv</code>
+<ul>
+<li>The empty environment, which is the ancestor of all environments and the only environment without an enclosing environment.</li>
+</ul></li>
+<li><code>base::environment</code>
+<ul>
+<li>The current environment.</li>
+</ul></li>
+<li><code>base::environmentName</code></li>
+<li><code>base::exists</code>
+<ul>
 <li>Remember that <code>R</code> will look for an object in parent environments until it reaches the empty environment, so use <code>inherits = FALSE</code> to limit the search to only the current environment.</li>
 </ul></li>
-<li><code>getOption</code>: Set and examine global options.</li>
-<li><code>getwd</code>: Get the working directory.</li>
-<li><code>history</code>: Display the previous 25 commands.</li>
-<li><code>install.packages</code>: Install packages from repositories or local files.</li>
-<li><code>library</code>: Load and attach packages, returning an error if the packages does not exist.</li>
-<li><code>list.files</code>: List the files in a directory/folder.</li>
-<li>`loadedNamespaces: Return the loaded name spaces.</li>
-<li><code>loadhistory</code>: Recall command history.</li>
-<li><code>ls</code>: List objects in the specified environment.</li>
-<li><code>list2env</code>: From a list, build or add to an environment.</li>
-<li><code>options</code>: Set and examine global options.</li>
-<li><code>parent.env</code>: Return the enclosing environment of the environment listed as an argument.
+<li><code>base::getOption</code>
 <ul>
-<li><code>parent.env</code> returns information that can be unhelpful, so use with <code>environmentName</code>, as follows: <code>parent.env(environment_name) %&gt;% environmentName</code>.</li>
+<li>Set and examine global options.</li>
 </ul></li>
-<li><code>q</code>: Terminate an R session.</li>
-<li><code>R.version</code>: Version information.</li>
-<li><code>R.version.string</code>: Version information.
+<li><code>base::getwd</code>
 <ul>
+<li>Get the working directory.</li>
+</ul></li>
+<li><code>base::globalenv</code>
+<ul>
+<li>The environment in which you normally work, it’s enclosing environment is the last package attached with <code>library</code> or <code>require</code>.</li>
+</ul></li>
+<li><code>base::history</code>
+<ul>
+<li>Display the previous 25 commands.</li>
+</ul></li>
+<li><code>base::install.packages</code>
+<ul>
+<li>Install packages from repositories or local files.</li>
+</ul></li>
+<li><code>base::library</code>
+<ul>
+<li>Load and attach packages, returning an error if the packages does not exist.</li>
+</ul></li>
+<li><code>base::list.files</code>
+<ul>
+<li>List the files in a directory/folder.</li>
+</ul></li>
+<li><code>base::loadedNamespaces</code>
+<ul>
+<li>Return the loaded name spaces.</li>
+</ul></li>
+<li><code>base::loadhistory</code>
+<ul>
+<li>Recall command history.</li>
+</ul></li>
+<li><code>base::ls</code>
+<ul>
+<li>List objects in the specified environment.</li>
+</ul></li>
+<li><code>base::list2env</code>
+<ul>
+<li>From a list, build or add to an environment.</li>
+</ul></li>
+<li><code>base::new.env</code>
+<ul>
+<li>Create a new environment.</li>
+</ul></li>
+<li><code>base::options</code>
+<ul>
+<li>Set and examine global options.</li>
+</ul></li>
+<li><code>base::parent.env</code>
+<ul>
+<li>Return the enclosing environment of the environment listed as an argument.</li>
+<li><code>base::parent.env</code> returns information that can be unhelpful, so use with <code>base::environmentName</code>, as follows: <code>parent.env(environment_name) %&gt;% environmentName</code>.</li>
+</ul></li>
+<li><code>base::q</code>
+<ul>
+<li>Terminate an R session.</li>
+</ul></li>
+<li><code>base::R.version</code>
+<ul>
+<li>Version information.</li>
+</ul></li>
+<li><code>base::R.version.string</code>
+<ul>
+<li>Version information.</li>
 <li>Same call as <code>R.version$version.string</code>.</li>
 </ul></li>
-<li><code>require</code>: Load and attach packages, returning <code>FALSE</code> if the package does not exist.</li>
-<li><code>rm</code>: Remove objects from a specified environment.</li>
-<li><code>savehistory</code>: Save command history (default value is “.Rhistory”).</li>
-<li><code>save.image</code>: Save the current workspace.</li>
-<li><code>search</code>: Return a list of attached packages and R objects.</li>
-<li><code>searchpaths</code>: Return the path to attached packages.</li>
-<li><code>setwd()</code>: Set the working directory file path.
+<li><code>base::require</code>
 <ul>
-<li>When using Windows, use “/” instead of &quot;&quot;.</li>
+<li>Load and attach packages, returning <code>FALSE</code> if the package does not exist.</li>
 </ul></li>
-<li><code>Sys.info</code>: Extract system and user information.
+<li><code>base::rm</code>
 <ul>
-<li>Example: <code>Sys.info()[c(&quot;sysname&quot;, &quot;release&quot;)]</code>.</li>
+<li>Remove objects from a specified environment.</li>
 </ul></li>
-</ul>
-<p><code>{gdata}</code></p>
+<li><code>base::savehistory</code>
 <ul>
-<li><code>object.size</code>: Report the space allocated for an object.
+<li>Save command history (default value is “.Rhistory”).</li>
+</ul></li>
+<li><code>base::save.image</code>
 <ul>
+<li>Save the current workspace.</li>
+</ul></li>
+<li><code>base::search</code>
+<ul>
+<li>Return a list of attached packages and R objects.</li>
+</ul></li>
+<li><code>base::searchpaths</code>
+<ul>
+<li>Return the path to attached packages.</li>
+</ul></li>
+<li><code>base::setwd</code>
+<ul>
+<li>Set the working directory file path.</li>
+<li>When using Windows, use “/” instead of "".</li>
+</ul></li>
+<li><code>base::Sys.info</code>
+<ul>
+<li>Extract system and user information.</li>
+<li>Example: <code>Sys.info()[c("sysname", "release")]</code>.</li>
+</ul></li>
+<li><code>gdata::object.size</code>
+<ul>
+<li>Report the space allocated for an object.</li>
 <li>See also <code>utils::object.size</code>.</li>
 </ul></li>
-</ul>
-<p><code>{installr}</code></p>
+<li><code>installr::updateR</code>
 <ul>
-<li><code>updateR</code>: Check for the latest R version; downloads and installs new R versions.</li>
-</ul>
-<p><code>{pryr}</code></p>
-<ul>
-<li><code>where</code>: Find where a name is defined.</li>
-</ul>
-<p><code>{utils}</code></p>
-<ul>
-<li><code>ls.str</code>: List objects and their structure.</li>
-<li><code>object.size</code>: Report the space allocated for an object.
+<li>Check for the latest R version; downloads and installs new R versions.</li>
+</ul></li>
+<li><code>pryr::where</code>: Find where a name is defined.</li>
+<li><code>utils::ls.str</code>: List objects and their structure.</li>
+<li><code>utils::object.size</code>: Report the space allocated for an object.
 <ul>
 <li>See also <code>gdata::object.size</code>.</li>
 </ul></li>
-<li><code>sessionInfo</code>: Collect information about the current R session.</li>
+<li><code>utils::sessionInfo</code>: Collect information about the current R session.</li>
 </ul>
 <p>References:</p>
 <ul>
@@ -431,13 +500,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Useful when matching a character argument specified in the function signature. For example,</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">args</span>(prop.test)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">args</span>(prop.test)</a></code></pre></div>
 <pre><code>## function (x, n, p = NULL, alternative = c(&quot;two.sided&quot;, &quot;less&quot;, 
 ##     &quot;greater&quot;), conf.level = 0.95, correct = TRUE) 
 ## NULL</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="co"># The body of `prop.test` contains the following line of code:</span></a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="co"># `alternative &lt;- match.arg(alternative), which reassigns it to the selected</span></a>
-<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="co"># character vector.</span></a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="co"># The body of `prop.test` contains the following line of code:</span></a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="co"># `alternative &lt;- match.arg(alternative), which reassigns it to the selected</span></a>
+<a class="sourceLine" id="cb12-3" title="3"><span class="co"># character vector.</span></a></code></pre></div>
 <ul>
 <li><code>message</code>: Generage a diagnostic message.
 <ul>
@@ -472,16 +541,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Useful when you want to return multiple output from a function. For example:</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">session &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
-<a class="sourceLine" id="cb13-2" data-line-number="2">  </a>
-<a class="sourceLine" id="cb13-3" data-line-number="3">  <span class="kw">list</span>(</a>
-<a class="sourceLine" id="cb13-4" data-line-number="4">    <span class="dt">r_version =</span> R.version.string,</a>
-<a class="sourceLine" id="cb13-5" data-line-number="5">    <span class="dt">operating_system =</span> <span class="kw">Sys.info</span>()[<span class="kw">c</span>(<span class="st">&quot;sysname&quot;</span>, <span class="st">&quot;release&quot;</span>)],</a>
-<a class="sourceLine" id="cb13-6" data-line-number="6">    <span class="dt">loaded_pkgs =</span> <span class="kw">loadedNamespaces</span>()</a>
-<a class="sourceLine" id="cb13-7" data-line-number="7">  )</a>
-<a class="sourceLine" id="cb13-8" data-line-number="8">}</a>
-<a class="sourceLine" id="cb13-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb13-10" data-line-number="10"><span class="kw">c</span>(vrsn, os, pkgs) <span class="op">%&lt;-%</span><span class="st"> </span><span class="kw">session</span>() </a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1">session &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
+<a class="sourceLine" id="cb13-2" title="2">  </a>
+<a class="sourceLine" id="cb13-3" title="3">  <span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb13-4" title="4">    <span class="dt">r_version =</span> R.version.string,</a>
+<a class="sourceLine" id="cb13-5" title="5">    <span class="dt">operating_system =</span> <span class="kw">Sys.info</span>()[<span class="kw">c</span>(<span class="st">&quot;sysname&quot;</span>, <span class="st">&quot;release&quot;</span>)],</a>
+<a class="sourceLine" id="cb13-6" title="6">    <span class="dt">loaded_pkgs =</span> <span class="kw">loadedNamespaces</span>()</a>
+<a class="sourceLine" id="cb13-7" title="7">  )</a>
+<a class="sourceLine" id="cb13-8" title="8">}</a>
+<a class="sourceLine" id="cb13-9" title="9"></a>
+<a class="sourceLine" id="cb13-10" title="10"><span class="kw">c</span>(vrsn, os, pkgs) <span class="op">%&lt;-%</span><span class="st"> </span><span class="kw">session</span>() </a></code></pre></div>
 <hr />
 </div>
 <div id="learn-about-an-object" class="section level2">
@@ -539,7 +608,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>%$%</code>: Expositions-pipe operator.</li>
 <li><code>add</code>: <code>+</code>, for pipes.</li>
 <li><code>and</code>: <code>&amp;</code>, for pipes.</li>
-<li><code>extract</code>:<code>[</code>, for pipes.</li>
+<li><code>extract</code>:<code>[</code>, for pipes.
+<ul>
+<li>See also <code>purrr::pluck</code>.</li>
+</ul></li>
 <li><code>extract2</code>: <code>[[</code>, for pipes.</li>
 <li><code>freduce</code>: Apply a list of functions sequentially.</li>
 <li><code>is_in</code>: <code>%in%</code>, for pipes.</li>
@@ -568,7 +640,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>See example below.</li>
 </ul></li>
-<li><code>.[[&quot;variable_name&quot;]]</code>
+<li><code>.[["variable_name"]]</code>
 <ul>
 <li>See example below.</li>
 </ul></li>
@@ -581,40 +653,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Helper functions: <code>contains</code>, <code>ends_with</code>, <code>matches</code>, <code>num_range</code>, <code>one_of</code>, <code>starts_with</code>.</li>
 </ul></li>
-<li>`dplyr::rena</li>
+<li><code>magrittr::extract</code></li>
+<li><code>magrittr::extract2</code></li>
+<li><code>purrr:pluck</code></li>
 </ul>
 <p><strong>Example:</strong> <code>.$variable_name</code></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">ui_summary_table &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="st">  </span>aws_vendors <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="st">  </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(vendor_name, <span class="st">&quot;UTAH INTERACTIVE&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb14-4" data-line-number="4"><span class="st">  </span>.<span class="op">$</span>vendor_id <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="st">  </span><span class="kw">map</span>(query_summary_table) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb14-6" data-line-number="6"><span class="st">  </span><span class="kw">bind_rows</span>()</a></code></pre></div>
-<p><strong>Example:</strong> <code>.[[&quot;variable_name&quot;]]</code></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">  odbc_aws <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="st">    </span><span class="kw">dbGetQuery</span>(</a>
-<a class="sourceLine" id="cb15-3" data-line-number="3">      <span class="kw">paste</span>(<span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb15-4" data-line-number="4"><span class="st">            SELECT id</span></a>
-<a class="sourceLine" id="cb15-5" data-line-number="5"><span class="st">            FROM batch</span></a>
-<a class="sourceLine" id="cb15-6" data-line-number="6"><span class="st">            WHERE entity_id = &quot;</span>, t_id, <span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb15-7" data-line-number="7"><span class="st">            AND status IN (&#39;PROCESSED&#39;, &#39;PROCESSING&#39;)&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb15-8" data-line-number="8"><span class="st">    </span>.[[<span class="st">&quot;id&quot;</span>]] <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb15-9" data-line-number="9"><span class="st">  </span><span class="kw">as.double</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1">ui_summary_table &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="st">  </span>aws_vendors <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb14-3" title="3"><span class="st">  </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(vendor_name, <span class="st">&quot;UTAH INTERACTIVE&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb14-4" title="4"><span class="st">  </span>.<span class="op">$</span>vendor_id <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb14-5" title="5"><span class="st">  </span><span class="kw">map</span>(query_summary_table) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb14-6" title="6"><span class="st">  </span><span class="kw">bind_rows</span>()</a></code></pre></div>
+<p><strong>Example:</strong> <code>.[["variable_name"]]</code></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1">  odbc_aws <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb15-2" title="2"><span class="st">    </span><span class="kw">dbGetQuery</span>(</a>
+<a class="sourceLine" id="cb15-3" title="3">      <span class="kw">paste</span>(<span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb15-4" title="4"><span class="st">            SELECT id</span></a>
+<a class="sourceLine" id="cb15-5" title="5"><span class="st">            FROM batch</span></a>
+<a class="sourceLine" id="cb15-6" title="6"><span class="st">            WHERE entity_id = &quot;</span>, t_id, <span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb15-7" title="7"><span class="st">            AND status IN (&#39;PROCESSED&#39;, &#39;PROCESSING&#39;)&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb15-8" title="8"><span class="st">    </span>.[[<span class="st">&quot;id&quot;</span>]] <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb15-9" title="9"><span class="st">  </span><span class="kw">as.double</span>()</a></code></pre></div>
 <p><strong>References:</strong></p>
 <ul>
 <li><a href="https://twitter.com/hadleywickham/status/643381054758363136">“Indexing lists in #rstats. Inspired by Residence Inn”</a> (Hadley Wickham, Twitter, 14 September 2015)</li>
 </ul>
 <hr />
 </div>
+<div id="system-commands" class="section level2">
+<h2>System Commands</h2>
+<ul>
+<li><code>base::system</code></li>
+<li><code>base::system2</code></li>
+<li><code>sys::exec</code></li>
+<li><code>sys::exec_r</code></li>
+</ul>
+</div>
 <div id="version-control" class="section level2">
 <h2>Version Control</h2>
 <p>Git</p>
 <ul>
-<li><a href="https://git-scm.com/">Git</a></li>
-<li><a href="https://git-scm.com/book/en/v2"><em>Pro Git</em></a> by Scott Chacon and Ben Straub</li>
-<li><a href="http://r-pkgs.had.co.nz/git.html#git-learning"><em>Git and GitHub</em></a> by Hadley Wickham</li>
+<li><p><a href="https://git-scm.com/">Git</a></p></li>
+<li><p><a href="https://git-scm.com/book/en/v2"><em>Pro Git</em></a> by Scott Chacon and Ben Straub</p></li>
+<li><p><a href="http://r-pkgs.had.co.nz/git.html#git-learning"><em>Git and GitHub</em></a> by Hadley Wickham</p></li>
 <li><p><a href="http://happygitwithr.com/"><em>Happy Git and GitHub for the useR</em></a> by Jenny Bryan</p></li>
-<li><code>git branch</code>: List, create, or delete branches.
+<li><p><code>git branch</code>: List, create, or delete branches.</p>
 <ul>
 <li><code>git branch -d &lt;branch_name&gt;</code>: Delete a local branch.
 <ul>

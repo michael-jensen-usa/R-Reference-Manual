@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Import | R Reference Manual</title>
   <meta name="description" content="Import | R Reference Manual" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Import | R Reference Manual" />
   <meta property="og:type" content="book" />
@@ -48,6 +48,10 @@
 
 
 
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.5/grViz.js"></script>
 
 
 <style type="text/css">
@@ -138,22 +142,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="import.html"><a href="import.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i>Tidy</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#understand-the-structure-of-the-data"><i class="fa fa-check"></i>Understand the Structure of the Data</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#look-at-the-data"><i class="fa fa-check"></i>Look at the Data</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#visualize-the-data"><i class="fa fa-check"></i>Visualize the Data</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#tidy-data"><i class="fa fa-check"></i>Tidy Data</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#manage-columns-and-observations"><i class="fa fa-check"></i>Manage Columns and Observations</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#transpose"><i class="fa fa-check"></i>Transpose</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#tidy-data"><i class="fa fa-check"></i>Tidy Data</a></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#prepare-data-for-analysis"><i class="fa fa-check"></i>Prepare Data for Analysis</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#coerce-data"><i class="fa fa-check"></i>Coerce Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#coerce"><i class="fa fa-check"></i>Coerce</a></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#dates-and-datetimes"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#factors-and-levels"><i class="fa fa-check"></i>Factors and Levels</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#filter-and-remove-data"><i class="fa fa-check"></i>Filter and Remove Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#filter"><i class="fa fa-check"></i>Filter</a></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#strings"><i class="fa fa-check"></i>Strings</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#test-data"><i class="fa fa-check"></i>Test Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#test"><i class="fa fa-check"></i>Test</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>Transform</a><ul>
@@ -163,12 +159,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#factors"><i class="fa fa-check"></i>Factors</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#merge-or-append-data"><i class="fa fa-check"></i>Merge or Append Data</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#narrow-in-on-observations-of-interest"><i class="fa fa-check"></i>Narrow in on Observations of Interest</a></li>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test-1"><i class="fa fa-check"></i>Test</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i>Visualize</a><ul>
-<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#flowcharts"><i class="fa fa-check"></i>Flowcharts</a></li>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#interfaces"><i class="fa fa-check"></i>Interfaces</a></li>
-<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#plots"><i class="fa fa-check"></i>Plots</a></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots"><i class="fa fa-check"></i>Graphs, Charts, and Plots</a></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots---statistics"><i class="fa fa-check"></i>Graphs, Charts, and Plots - Statistics</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a><ul>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#general"><i class="fa fa-check"></i>General</a></li>
@@ -178,12 +174,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a><ul>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#export"><i class="fa fa-check"></i>Export</a></li>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#format-output"><i class="fa fa-check"></i>Format Output</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#graphics"><i class="fa fa-check"></i>Graphics</a></li>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots-1"><i class="fa fa-check"></i>Plots</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots"><i class="fa fa-check"></i>Plots</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html"><i class="fa fa-check"></i>Program</a><ul>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#characters"><i class="fa fa-check"></i>Characters</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#conditionals-control-flows"><i class="fa fa-check"></i>Conditionals &amp; Control Flows</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#environment-and-workspace"><i class="fa fa-check"></i>Environment and Workspace</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#evaluation-standard-and-non-standard"><i class="fa fa-check"></i>Evaluation (Standard and Non-standard)</a></li>
@@ -253,6 +249,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>stats::rnorm</code></li>
 <li><code>tibble::add_row</code></li>
 <li><code>tibble::tibble</code></li>
+<li><code>tibble::tribble</code>
+<ul>
+<li>Row-wise tibble creation.</li>
+</ul></li>
 </ul>
 </div>
 <div id="import-data-from-a-local-drive" class="section level2">
@@ -380,6 +380,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>DBI::dbReadTable</code></li>
 <li><code>DBI::dbSendQuery</code></li>
 <li><code>DBI::dbSendStatement</code></li>
+<li><code>dbplyr::tbl</code></li>
 </ul>
 </div>
 <div id="notes-references" class="section level2">

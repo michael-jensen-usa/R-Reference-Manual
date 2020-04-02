@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Communicate | R Reference Manual</title>
   <meta name="description" content="Communicate | R Reference Manual" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Communicate | R Reference Manual" />
   <meta property="og:type" content="book" />
@@ -49,9 +49,9 @@
 
 
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<script src="libs/viz-0.3/viz.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.1/grViz.js"></script>
+<script src="libs/grViz-binding-1.0.5/grViz.js"></script>
 
 
 <style type="text/css">
@@ -71,7 +71,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -134,31 +134,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html"><i class="fa fa-check"></i>Import or Create Data</a><ul>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#import-data-from-a-local-drive"><i class="fa fa-check"></i>Import Data from a Local Drive</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#import-data-from-the-internet"><i class="fa fa-check"></i>Import Data from the Internet</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#import-data-from-a-database"><i class="fa fa-check"></i>Import Data from a Database</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#reference-material"><i class="fa fa-check"></i>Reference Material</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html"><i class="fa fa-check"></i>Import</a><ul>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-a-local-drive"><i class="fa fa-check"></i>Import Data from a Local Drive</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-the-internet"><i class="fa fa-check"></i>Import Data from the Internet</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-from-or-create-data-in-a-database"><i class="fa fa-check"></i>Import from or Create Data in a Database</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i>Tidy</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#understand-the-structure-of-the-data"><i class="fa fa-check"></i>Understand the Structure of the Data</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#look-at-the-data"><i class="fa fa-check"></i>Look at the Data</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#visualize-the-data"><i class="fa fa-check"></i>Visualize the Data</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#tidy-data"><i class="fa fa-check"></i>Tidy Data</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#manage-columns-and-observations"><i class="fa fa-check"></i>Manage Columns and Observations</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#transpose"><i class="fa fa-check"></i>Transpose</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#tidy-data"><i class="fa fa-check"></i>Tidy Data</a></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#prepare-data-for-analysis"><i class="fa fa-check"></i>Prepare Data for Analysis</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#coerce-data"><i class="fa fa-check"></i>Coerce Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#coerce"><i class="fa fa-check"></i>Coerce</a></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#dates-and-datetimes"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#factors-and-levels"><i class="fa fa-check"></i>Factors and Levels</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#filter-and-remove-data"><i class="fa fa-check"></i>Filter and Remove Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#filter"><i class="fa fa-check"></i>Filter</a></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#strings"><i class="fa fa-check"></i>Strings</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#test-data"><i class="fa fa-check"></i>Test Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#test"><i class="fa fa-check"></i>Test</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>Transform</a><ul>
@@ -168,12 +159,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#factors"><i class="fa fa-check"></i>Factors</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#merge-or-append-data"><i class="fa fa-check"></i>Merge or Append Data</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#narrow-in-on-observations-of-interest"><i class="fa fa-check"></i>Narrow in on Observations of Interest</a></li>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test-1"><i class="fa fa-check"></i>Test</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i>Visualize</a><ul>
-<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#flowcharts"><i class="fa fa-check"></i>Flowcharts</a></li>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#interfaces"><i class="fa fa-check"></i>Interfaces</a></li>
-<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#plots"><i class="fa fa-check"></i>Plots</a></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots"><i class="fa fa-check"></i>Graphs, Charts, and Plots</a></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots---statistics"><i class="fa fa-check"></i>Graphs, Charts, and Plots - Statistics</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a><ul>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#general"><i class="fa fa-check"></i>General</a></li>
@@ -184,10 +175,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a><ul>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#export"><i class="fa fa-check"></i>Export</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#graphics"><i class="fa fa-check"></i>Graphics</a></li>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots-1"><i class="fa fa-check"></i>Plots</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots"><i class="fa fa-check"></i>Plots</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html"><i class="fa fa-check"></i>Program</a><ul>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#characters"><i class="fa fa-check"></i>Characters</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#conditionals-control-flows"><i class="fa fa-check"></i>Conditionals &amp; Control Flows</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#environment-and-workspace"><i class="fa fa-check"></i>Environment and Workspace</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#evaluation-standard-and-non-standard"><i class="fa fa-check"></i>Evaluation (Standard and Non-standard)</a></li>
@@ -199,6 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#pipes"><i class="fa fa-check"></i>Pipes</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#popups"><i class="fa fa-check"></i>Popups</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#selecting-subsetting"><i class="fa fa-check"></i>Selecting &amp; Subsetting</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#system-commands"><i class="fa fa-check"></i>System Commands</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#version-control"><i class="fa fa-check"></i>Version Control</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html"><i class="fa fa-check"></i>Referenced Packages</a><ul>
@@ -235,92 +228,92 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Communicate</h1>
 <hr />
 <p>“The last step of data science is communication, an absolutely critical part of any data analysis project. It doesn’t matter how well your models and visualisation have led you to understand the data unless you can also communicate your results to others.”<br />
-- Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em></p>
-<hr />
+- Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em>
+***</p>
 <div id="export" class="section level2">
 <h2>Export</h2>
-<p><code>base</code></p>
+<hr />
 <ul>
-<li><code>file.path()</code>: Construct a file path.</li>
-<li><code>print()</code>: Print values.
+<li><code>base::file.path</code></li>
+<li><code>base::print</code>
 <ul>
 <li>Use the <code>include.rownames = FALSE</code> argument to remove row numbers (or names) from the output.</li>
 </ul></li>
-<li><code>save()</code>: Save R objects.</li>
-<li><code>saveRDS()</code>: Save a single R object.
+<li><code>base::save</code></li>
+<li><code>base::saveRDS</code>
 <ul>
-<li>See <a href="https://www.fromthebottomoftheheap.net/2012/04/01/saving-and-loading-r-objects/">“A better way of saving and loading objects in R”</a> to understand the differences between <code>save()</code> and <code>saveRDS()</code>.</li>
+<li>See <a href="https://www.fromthebottomoftheheap.net/2012/04/01/saving-and-loading-r-objects/">“A better way of saving and loading objects in R”</a> to understand the differences between <code>save</code> and <code>saveRDS</code>.</li>
 </ul></li>
-</ul>
-<p><code>readr</code></p>
+<li><code>readr::write_csv</code></li>
+<li><code>readr::write_delim</code>
 <ul>
-<li><code>write_delim()</code>: Write a data frame to a delimited file.
-<ul>
-<li>About twice as fast as <code>write.csv()</code> and never writes row names.</li>
-<li>Child functions: <code>write_csv()</code>, <code>write_excel_csv()</code>, <code>write_tsv()</code>.</li>
+<li>About twice as fast as <code>utils::write.csv</code>, and never writes row names.</li>
 </ul></li>
-</ul>
-<p><code>utils</code></p>
+<li><code>readr::write_excel_csv</code></li>
+<li><code>readr::write_tsv</code></li>
+<li><code>utils::write.csv</code></li>
+<li><code>utils::write.csv2</code></li>
+<li><code>utils::write.table</code>
 <ul>
-<li><code>write.table()</code>: Data output.
-<ul>
-<li>Prefer <code>readr::write_delim()</code> to <code>utils::write.table()</code>.</li>
-<li>Child functions: <code>write.csv()</code>, <code>write.csv2()</code>.</li>
+<li>Prefer <code>readr::write_delim</code> to <code>utils::write.table</code>.</li>
 </ul></li>
 </ul>
 <p><code>XLConnect</code>: Read, write, and format Excel data.
-## Format Output</p>
-<p><code>base</code></p>
+## Format Output
+***</p>
 <ul>
-<li><code>format()</code>: Format an object for pretty printing.</li>
-</ul>
-<p><code>knitr</code></p>
+<li><code>base::format</code></li>
+<li><code>DT::datatable</code>
 <ul>
-<li><code>kable()</code>: Create tables in LaTex, HTML, Markdown, and reStructuredText.</li>
-</ul>
-<p><code>lubridate</code></p>
+<li>Use the <code>options = list(dom = 't')</code> argument to remove the search bar.</li>
+<li>Use the <code>options = list(columnDefs = list(list(className = "db-center", targets = (column_position))))</code> argument to center column values (where <code>0</code> indicates the first column).</li>
+</ul></li>
+<li><code>knitr::kable</code></li>
+<li><code>lubridate::stamp</code>
 <ul>
-<li><code>stamp()</code>: Format dates and times based on human-friendly templates.</li>
+<li>Format dates and times based on human-friendly templates.</li>
+</ul></li>
+<li><code>scales::dollar</code></li>
 </ul>
-<p><code>scales</code>: Scale functions for visualization.</p>
-<ul>
-<li><code>dollar()</code>: Round to the nearest cent and display dollar sign.</li>
-</ul>
-<hr />
 </div>
 <div id="graphics" class="section level2">
 <h2>Graphics</h2>
-<p>‘knitr’</p>
+<p>**</p>
 <ul>
-<li><code>include_graphics()</code>: Embed external images in ‘knitr’ documents.
+<li><code>knitr::include_graphics</code>
 <ul>
-<li>Preferable to the <code>![alt text or image title](path/to/image)</code> Markdown syntax for embedding an external image, as <code>include_graphics()</code> offers more control over the attributes of the image.</li>
+<li>Embed external images in ‘knitr’ documents.</li>
+<li>Preferable to the <code>![alt text or image title](path/to/image)</code> Markdown syntax for embedding an external image, as <code>include_graphics</code> offers more control over the attributes of the image.</li>
 </ul></li>
 </ul>
-<hr />
 </div>
-<div id="plots-1" class="section level2">
+<div id="plots" class="section level2">
 <h2>Plots</h2>
-<p><code>ggplot2</code></p>
-<ul>
-<li><code>element_*()</code>: Specify the display of how non-data components of a plot are drawn.</li>
-<li><code>labs()</code>: Modify axis, legend, and plot labels.
-<ul>
-<li>Child functions: <code>xlab()</code>, <code>ylab()</code>, <code>ggtitle()</code></li>
-</ul></li>
-<li><code>theme()</code>: Customize the non-data components of a plot.</li>
-</ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">ggplot</span>(plot_data_<span class="dv">2006</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> working_hours)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Working hours per week&quot;</span>,</a>
-<a class="sourceLine" id="cb8-4" data-line-number="4">       <span class="dt">y =</span> <span class="st">&quot;Number of countries&quot;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="st">  </span><span class="kw">theme</span>(</a>
-<a class="sourceLine" id="cb8-6" data-line-number="6">    <span class="dt">text =</span> <span class="kw">element_text</span>(<span class="dt">family =</span> <span class="st">&quot;Bookman&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;gray25&quot;</span>))</a></code></pre></div>
-<pre><code>+ child Functions: `theme_*()` are predefined themes, including `theme_classic()` and `theme_minimal()`. See `?theme_classic` for a list of predefined themes.</code></pre>
 <hr />
+<ul>
+<li><code>ggplot2::element_*</code>: Specify the display of how non-data components of a plot are drawn.</li>
+<li><code>ggplot2::labs</code>: Modify axis, legend, and plot labels.
+<ul>
+<li>Child functions: <code>xlab</code>, <code>ylab</code>, <code>ggtitle</code></li>
+</ul></li>
+<li><code>ggplot2::theme</code>: Customize the non-data components of a plot.
+<ul>
+<li>See example below.</li>
+<li>See <code>?theme_classic</code> for a list of predefined themes.</li>
+</ul></li>
+</ul>
+<p><strong>Example: <code>ggplot2::theme</code></strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">ggplot</span>(plot_data_<span class="dv">2006</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> working_hours)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb9-3" title="3"><span class="st">  </span><span class="kw">labs</span>(</a>
+<a class="sourceLine" id="cb9-4" title="4">    <span class="dt">x =</span> <span class="st">&quot;Working hours per week&quot;</span>,</a>
+<a class="sourceLine" id="cb9-5" title="5">    <span class="dt">y =</span> <span class="st">&quot;Number of countries&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb9-6" title="6"><span class="st">  </span><span class="kw">theme</span>(</a>
+<a class="sourceLine" id="cb9-7" title="7">    <span class="dt">text =</span> <span class="kw">element_text</span>(<span class="dt">family =</span> <span class="st">&quot;Bookman&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;gray25&quot;</span>))</a></code></pre></div>
 </div>
 <div id="rmarkdown" class="section level2">
 <h2>RMarkdown</h2>
+<hr />
 <ul>
 <li>See <a href="https://bookdown.org/yihui/rmarkdown/">RMarkdown: The Definitive Guide</a></li>
 <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">Mozzila Developer Network</a> for CSS help.</li>

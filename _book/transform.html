@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Transform | R Reference Manual</title>
   <meta name="description" content="Transform | R Reference Manual" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Transform | R Reference Manual" />
   <meta property="og:type" content="book" />
@@ -49,9 +49,9 @@
 
 
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<script src="libs/viz-0.3/viz.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.1/grViz.js"></script>
+<script src="libs/grViz-binding-1.0.5/grViz.js"></script>
 
 
 <style type="text/css">
@@ -71,7 +71,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -134,31 +134,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html"><i class="fa fa-check"></i>Import or Create Data</a><ul>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#import-data-from-a-local-drive"><i class="fa fa-check"></i>Import Data from a Local Drive</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#import-data-from-the-internet"><i class="fa fa-check"></i>Import Data from the Internet</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#import-data-from-a-database"><i class="fa fa-check"></i>Import Data from a Database</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#reference-material"><i class="fa fa-check"></i>Reference Material</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html"><i class="fa fa-check"></i>Import</a><ul>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-a-local-drive"><i class="fa fa-check"></i>Import Data from a Local Drive</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-the-internet"><i class="fa fa-check"></i>Import Data from the Internet</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-from-or-create-data-in-a-database"><i class="fa fa-check"></i>Import from or Create Data in a Database</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i>Tidy</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#understand-the-structure-of-the-data"><i class="fa fa-check"></i>Understand the Structure of the Data</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#look-at-the-data"><i class="fa fa-check"></i>Look at the Data</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#visualize-the-data"><i class="fa fa-check"></i>Visualize the Data</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#tidy-data"><i class="fa fa-check"></i>Tidy Data</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#manage-columns-and-observations"><i class="fa fa-check"></i>Manage Columns and Observations</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#transpose"><i class="fa fa-check"></i>Transpose</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#tidy-data"><i class="fa fa-check"></i>Tidy Data</a></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#prepare-data-for-analysis"><i class="fa fa-check"></i>Prepare Data for Analysis</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#coerce-data"><i class="fa fa-check"></i>Coerce Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#coerce"><i class="fa fa-check"></i>Coerce</a></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#dates-and-datetimes"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#factors-and-levels"><i class="fa fa-check"></i>Factors and Levels</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#filter-and-remove-data"><i class="fa fa-check"></i>Filter and Remove Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#filter"><i class="fa fa-check"></i>Filter</a></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#strings"><i class="fa fa-check"></i>Strings</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#test-data"><i class="fa fa-check"></i>Test Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#test"><i class="fa fa-check"></i>Test</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>Transform</a><ul>
@@ -168,12 +159,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#factors"><i class="fa fa-check"></i>Factors</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#merge-or-append-data"><i class="fa fa-check"></i>Merge or Append Data</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#narrow-in-on-observations-of-interest"><i class="fa fa-check"></i>Narrow in on Observations of Interest</a></li>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test-1"><i class="fa fa-check"></i>Test</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i>Visualize</a><ul>
-<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#flowcharts"><i class="fa fa-check"></i>Flowcharts</a></li>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#interfaces"><i class="fa fa-check"></i>Interfaces</a></li>
-<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#plots"><i class="fa fa-check"></i>Plots</a></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots"><i class="fa fa-check"></i>Graphs, Charts, and Plots</a></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots---statistics"><i class="fa fa-check"></i>Graphs, Charts, and Plots - Statistics</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a><ul>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#general"><i class="fa fa-check"></i>General</a></li>
@@ -184,10 +175,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a><ul>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#export"><i class="fa fa-check"></i>Export</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#graphics"><i class="fa fa-check"></i>Graphics</a></li>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots-1"><i class="fa fa-check"></i>Plots</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots"><i class="fa fa-check"></i>Plots</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html"><i class="fa fa-check"></i>Program</a><ul>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#characters"><i class="fa fa-check"></i>Characters</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#conditionals-control-flows"><i class="fa fa-check"></i>Conditionals &amp; Control Flows</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#environment-and-workspace"><i class="fa fa-check"></i>Environment and Workspace</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#evaluation-standard-and-non-standard"><i class="fa fa-check"></i>Evaluation (Standard and Non-standard)</a></li>
@@ -199,6 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#pipes"><i class="fa fa-check"></i>Pipes</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#popups"><i class="fa fa-check"></i>Popups</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#selecting-subsetting"><i class="fa fa-check"></i>Selecting &amp; Subsetting</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#system-commands"><i class="fa fa-check"></i>System Commands</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#version-control"><i class="fa fa-check"></i>Version Control</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html"><i class="fa fa-check"></i>Referenced Packages</a><ul>
@@ -235,10 +228,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Transform</h1>
 <hr />
 <p>“Transformation includes narrowing in on observations of interest (like all people in one city, or all data from the last year), creating new variables that are functions of existing variables (like computing velocity from speed and time), and calculating a set of summary statistics (like counts or means).”<br />
-- Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em></p>
-<hr />
+- Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em>
+***</p>
 <div id="arithmetic-summary-statistics" class="section level2">
 <h2>Arithmetic &amp; Summary Statistics</h2>
+<hr />
 <p><code>{assertive}</code></p>
 <ul>
 <li><code>is_divisible_by</code>: Is the input divisible by a number?</li>
@@ -256,11 +250,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Note that <code>mean</code> can be used to calculate a percentage when used in <code>summarize</code>, as follows:</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">by_country &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="st">  </span>votes <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(country) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">total =</span> <span class="kw">n</span>(),</a>
-<a class="sourceLine" id="cb4-5" data-line-number="5">            <span class="dt">percent_yes =</span> <span class="kw">mean</span>(vote <span class="op">==</span><span class="st"> </span><span class="dv">1</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">by_country &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="st">  </span>votes <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="st">  </span><span class="kw">group_by</span>(country) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">total =</span> <span class="kw">n</span>(),</a>
+<a class="sourceLine" id="cb4-5" title="5">            <span class="dt">percent_yes =</span> <span class="kw">mean</span>(vote <span class="op">==</span><span class="st"> </span><span class="dv">1</span>))</a></code></pre></div>
 <ul>
 <li><code>median</code>: Compute the median value.</li>
 <li><code>min</code>: Return the minimum value.</li>
@@ -342,9 +336,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>mutate()</code> can also be used to modify existing variables. To change the case of a character variable, for example, do something like:</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">df &lt;-</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="st">  </span>df <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">var_name =</span> <span class="kw">str_to_lower</span>(var_name))</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">df &lt;-</a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="st">  </span>df <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">var_name =</span> <span class="kw">str_to_lower</span>(var_name))</a></code></pre></div>
 <pre><code>+ Child function: `transmute()` (drops existing variables).</code></pre>
 <ul>
 <li><code>recode()</code>: Recode values (the numeric alternative to using <code>if_else</code> or <code>case_when()</code>).</li>
@@ -353,55 +347,124 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="dates-and-datetimes-1" class="section level2">
 <h2>Dates and Datetimes</h2>
-<p><code>base</code></p>
 <ul>
-<li><code>date()</code>: Get the current system date and time.</li>
-<li><code>difftime()</code>: Time intervals and differences.
+<li><code>base::date</code>
 <ul>
-<li><code>difftime()</code> is the function behind the <code>-</code> operator when used with dates and datetimes (e.g., <code>time_1 - time_2</code> is equivalent to <code>difftime(time_1, time_2)</code>). The advantage of using <code>difftime()</code> over <code>-</code>, however, is the <code>units</code> argument because it allows you to specify the unit of time in which the difference is calculated.</li>
+<li>Get the current system date and time.</li>
 </ul></li>
-<li><code>months()</code>: Extract the month names.</li>
-<li><code>quarters()</code>: Extract the calendar quarters.</li>
-<li><code>Sys.Date()</code>: Get the current date in the current time zone.</li>
-<li><code>Sys.time()</code>: Get the absolute date-time value (which can be converted to various time zones and may return different days).</li>
-<li><code>weekdays()</code>: Extract weekday names.</li>
-</ul>
-<p><code>lubridate</code></p>
+<li><code>base::difftime</code>
 <ul>
-<li><code>date()</code>: Get or set the date component of a date-time.</li>
-<li><code>day()</code>: Get or set the day component of a datetime.</li>
-<li><code>month()</code>: Get or set the month component of a datetime.</li>
-<li><code>now()</code>: The current time (as a POSIXct object).</li>
-<li><code>quarter()</code>: Get or set the fiscal quarter or semester component of a datetime.</li>
-<li><code>round_date()</code>: Round the datetime to the nearest datetime.
-<ul>
-<li>Child functions: <code>ceiling_date()</code>, <code>floor_date()</code>.</li>
+<li>Time intervals and differences.</li>
+<li><code>base::difftime</code> is the function behind the <code>-</code> operator when used with dates and datetimes (e.g., <code>time_1 - time_2</code> is equivalent to <code>difftime(time_1, time_2)</code>). The advantage of using <code>difftime</code> over <code>-</code>, however, is the <code>units</code> argument because it allows you to specify the unit of time in which the difference is calculated.</li>
 </ul></li>
-<li>Time spans: Duration:
+<li><code>base::months</code>
 <ul>
-<li><code>dseconds()</code>, <code>dminutes()</code>, <code>dhours()</code>, <code>ddays()</code>, <code>dweeks()</code>, <code>dyears()</code>.</li>
+<li>Extract the month names.</li>
+</ul></li>
+<li><code>base::quarters</code>
+<ul>
+<li>Extract the calendar quarters.</li>
+</ul></li>
+<li><code>base::Sys.Date</code>
+<ul>
+<li>Get the current date in the current time zone.</li>
+</ul></li>
+<li><code>base::Sys.time</code>
+<ul>
+<li>Get the absolute date-time value (which can be converted to various time zones and may return different days).</li>
+</ul></li>
+<li><code>base::weekdays</code>
+<ul>
+<li>Extract weekday names.</li>
+</ul></li>
+<li><code>lubridate::ceiling_date</code></li>
+<li><code>lubridate::date</code>
+<ul>
+<li>Get or set the date component of a date-time.</li>
+</ul></li>
+<li><code>lubridate::day</code>
+<ul>
+<li>Get or set the day component of a datetime.</li>
+</ul></li>
+<li><code>lubridate::floor_date</code></li>
+<li><code>lubridate::month</code>
+<ul>
+<li>Get or set the month component of a datetime.</li>
+</ul></li>
+<li><code>lubridate::now</code>
+<ul>
+<li>The current time (as a POSIXct object).</li>
+</ul></li>
+<li><code>lubridate::quarter</code>
+<ul>
+<li>Get or set the fiscal quarter or semester component of a datetime.</li>
+</ul></li>
+<li><code>lubridate::round_date</code></li>
+<li>Time spans: Duration
+<ul>
 <li>Use when you are interested in seconds elapsed.</li>
+<li><code>lubridate::ddays</code></li>
+<li><code>lubridate::dhours</code></li>
+<li><code>lubridate::dminutes</code></li>
+<li><code>lubridate::dseconds</code></li>
+<li><code>lubridate::dweeks</code></li>
+<li><code>lubridate::dyears</code></li>
 </ul></li>
-<li>Time spans: Interval:
+<li>Time spans: Interval
 <ul>
-<li><code>interval()</code>, <code>%--%</code>, <code>is.interval()</code>, <code>int_start()</code>, <code>int_end()</code>, <code>int_length()</code>, <code>int_flip()</code>, <code>int_shift()</code>, <code>int_overlaps()</code>, <code>int_standardize()</code>, <code>int_aligns()</code>, <code>int_diff()</code>.</li>
 <li>Use when you have a start and end.</li>
+<li><code>%--%</code></li>
+<li><code>int_aligns</code></li>
+<li><code>int_diff</code></li>
+<li><code>int_end</code></li>
+<li><code>int_flip</code></li>
+<li><code>int_length</code></li>
+<li><code>int_overlaps</code></li>
+<li><code>int_shift</code></li>
+<li><code>int_standardize</code></li>
+<li><code>int_start</code></li>
+<li><code>interval</code></li>
+<li><code>is.interval</code></li>
 </ul></li>
-<li>Time spans: Period:
+<li>Time spans: Period
 <ul>
-<li><code>seconds()</code>, <code>minutes()</code>, <code>hours()</code>, <code>days()</code>, <code>weeks()</code>, <code>months()</code>, <code>years()</code>.</li>
 <li>Use when you are interested in human units.</li>
+<li><code>lubridate::days</code></li>
+<li><code>lubridate::hours</code></li>
+<li><code>lubridate::minutes</code></li>
+<li><code>lubridate::months</code></li>
+<li><code>lubridate::seconds</code></li>
+<li><code>lubridate::weeks</code></li>
+<li><code>lubridate::years</code></li>
 </ul></li>
 <li>Time zones:
 <ul>
-<li><code>force_tz()</code>: Change the time zone without changing the clock time.</li>
-<li><code>tz()</code>: Extract the time zone from a datetime.</li>
-<li><code>with_tz()</code>: View the same instant in a different time zone.</li>
+<li><code>lubridate::force_tz</code>
+<ul>
+<li>Change the time zone without changing the clock time.</li>
 </ul></li>
-<li><code>today()</code>: The current date (as a Date object).</li>
-<li><code>%m+%</code> &amp; <code>%m-%</code>: Add and subtract months to a date without exceeding the last day of the new month.</li>
-<li><code>%within%</code>: Test whether a date or interval falls within an interval.</li>
-<li><code>year()</code>: Get or set the year component of a datetime.</li>
+<li><code>lubridate::tz</code>
+<ul>
+<li>Extract the time zone from a datetime.</li>
+</ul></li>
+<li><code>lubridate::with_tz</code>
+<ul>
+<li>View the same instant in a different time zone.</li>
+</ul></li>
+</ul></li>
+<li><code>lubridate::today</code></li>
+<li><code>lubridate::%m+%</code> &amp; <code>%m-%</code>
+<ul>
+<li>Add and subtract months to a date without exceeding the last day of the new month.</li>
+</ul></li>
+<li><code>lubridate::%within%</code>
+<ul>
+<li>Test whether a date or interval falls within an interval.</li>
+</ul></li>
+<li><code>lubridate::year</code>
+<ul>
+<li>Get or set the year component of a datetime.</li>
+</ul></li>
 </ul>
 <hr />
 </div>
@@ -506,18 +569,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use <code>%in%</code> when using multiple <code>|</code> conditions. The following two commands, for example, are equivalent:</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">ilo_data <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(country <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Sweden&quot;</span>, <span class="st">&quot;Switzerland&quot;</span>))</a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4">ilo_data <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="st">  </span><span class="kw">filter</span>(country <span class="op">==</span><span class="st"> &quot;Sweden&quot;</span> <span class="op">|</span><span class="st"> </span>country <span class="op">==</span><span class="st"> &quot;Switzerland&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1">ilo_data <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="st">  </span><span class="kw">filter</span>(country <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Sweden&quot;</span>, <span class="st">&quot;Switzerland&quot;</span>))</a>
+<a class="sourceLine" id="cb7-3" title="3"></a>
+<a class="sourceLine" id="cb7-4" title="4">ilo_data <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-5" title="5"><span class="st">  </span><span class="kw">filter</span>(country <span class="op">==</span><span class="st"> &quot;Sweden&quot;</span> <span class="op">|</span><span class="st"> </span>country <span class="op">==</span><span class="st"> &quot;Switzerland&quot;</span>)</a></code></pre></div>
 <ul>
 <li><code>renam</code>: Rename variables by name (a modification of <code>select</code>).</li>
 <li><code>sample_n</code>: Sample n rows from a table.</li>
 <li><code>select</code>: Select/rename variables.
 <ul>
 <li>Helper functions include: <code>starts_wit</code>, <code>ends_with</code>, <code>contains</code>, <code>matches</code>, <code>num_range</code>, and <code>one_of</code>. See <code>?dplyr::select_helpers</code>.</li>
-<li>Helper functions take strings (e.g., <code>contains(&quot;work&quot;)</code> rather than <code>contains(work)</code>).</li>
+<li>Helper functions take strings (e.g., <code>contains("work")</code> rather than <code>contains(work)</code>).</li>
 </ul></li>
 <li><code>slice</code>: Choose rows by position.</li>
 <li><code>transmute</code>: Create or transform variables.
@@ -527,7 +590,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <hr />
 </div>
-<div id="test" class="section level2">
+<div id="test-1" class="section level2">
 <h2>Test</h2>
 <p><code>base</code></p>
 <ul>
