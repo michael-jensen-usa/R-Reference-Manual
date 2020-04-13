@@ -104,9 +104,13 @@ References:
 * `base::setwd`
   * Set the working directory file path.
   * When using Windows, use "/" instead of "\".
+* `base::Sys.getenv`
+  * See also `Sys.setenv`.
 * `base::Sys.info`
   * Extract system and user information.
   * Example: `Sys.info()[c("sysname", "release")]`.
+* `base::Sys.setenv`
+  * See also `Sys.setenv`.
 * `gdata::object.size`
   * Report the space allocated for an object.
   * See also `utils::object.size`.
