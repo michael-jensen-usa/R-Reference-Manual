@@ -144,7 +144,7 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
   Program
 \end{itemize}
 
-\hypertarget{htmlwidget-22d588dc8cb3ff51e0c2}{}
+\hypertarget{htmlwidget-ee7f4787cd6f60c0b7c6}{}
 
 \hypertarget{import}{%
 \chapter{Import}\label{import}}
@@ -1011,37 +1011,29 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\texttt{\{assertive\}}
-
 \begin{itemize}
 \tightlist
 \item
-  \texttt{is\_divisible\_by}: Is the input divisible by a number?
-\end{itemize}
-
-\texttt{\{base\}}
-
-\begin{itemize}
-\tightlist
+  \texttt{assertive::is\_divisible\_by}
 \item
-  \texttt{abs}: Compute absolute value.
+  \texttt{base::abs}
 \item
-  \texttt{colMeans}: Compute the column mean.
+  \texttt{base::colMeans}
 \item
-  \texttt{colSums}: Compute the column sum.
+  \texttt{base::colSums}
 \item
-  \texttt{diff}: Compute the difference between two objects.
+  \texttt{base::diff}
 \item
-  \texttt{IQR}: Compute the inter-quartile range.
+  \texttt{base::IQR}
 \item
-  \texttt{max}: Return the maximum value.
+  \texttt{base::max}
 \item
-  \texttt{mean}: Compute the mean value.
+  \texttt{base::mean}
 
   \begin{itemize}
   \tightlist
   \item
-    Note that \texttt{mean} can be used to calculate a percentage when used in \texttt{summarize}, as follows:
+    Note that \texttt{base::mean} can be used to calculate a percentage when used in \texttt{dplyr::summarize}, as follows:
   \end{itemize}
 \end{itemize}
 
@@ -1058,9 +1050,9 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 \begin{itemize}
 \tightlist
 \item
-  \texttt{median}: Compute the median value.
+  \texttt{base::median}
 \item
-  \texttt{min}: Return the minimum value.
+  \texttt{base::min}
 \item
   Mode: Use \texttt{table} to view the mode of a data set.
 \item
@@ -1080,7 +1072,7 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
     \end{itemize}
   \end{itemize}
 \item
-  \texttt{range}: Return a vector containing the minimum and maximum values.
+  \texttt{base::range}
 
   \begin{itemize}
   \tightlist
@@ -1088,35 +1080,35 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
     Use \texttt{diff(range())} to get the range as a measure of variability.
   \end{itemize}
 \item
-  \texttt{round}: Round values to a specified number of decimal places.
+  \texttt{base::round}
 \item
-  \texttt{rowMeans}: Compute the row mean.
+  \texttt{base::rowMeans}
 \item
-  \texttt{rowSums}: Compute the row sum.
+  \texttt{base::rowSums}
 \item
-  \texttt{sd}: Compute the standard deviation.
+  \texttt{base::sd}
 \item
-  \texttt{signif}: Round values to a specified number of significant digits.
-\item
-  \texttt{sqrt}: Compute square root.
-\item
-  \texttt{sum}: Sum elements.
-\item
-  \texttt{summary}: Compute summary statistics.
-\item
-  \texttt{var}: Compute the variance.
-\end{itemize}
+  \texttt{base::signif}
 
-\texttt{\{dplyr\}}
-
-\begin{itemize}
-\tightlist
+  \begin{itemize}
+  \tightlist
+  \item
+    Round values to a specified number of significant digits.
+  \end{itemize}
 \item
-  \texttt{count}: Count/tally observations by group.
+  \texttt{base::sqrt}
 \item
-  \texttt{group\_by}: Group by one or more variables.
+  \texttt{base::sum}
 \item
-  \texttt{n}: Get the number of observations in a current group.
+  \texttt{base::summary}
+\item
+  \texttt{base::var}
+\item
+  \texttt{dplyr::count}
+\item
+  \texttt{dplyr::group\_by}
+\item
+  \texttt{dplyr::n}
 
   \begin{itemize}
   \tightlist
@@ -1124,9 +1116,17 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
     Must be used within \texttt{summarise}, \texttt{mutate}, or \texttt{filter}.
   \end{itemize}
 \item
-  \texttt{n\_distinct}: Count the number of unique values in a vector.
+  \texttt{dplyr::n\_distinct}
 \item
-  \texttt{summarize}: Reduce multiple values to a single value.
+  \texttt{dplyr::near}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Compare two numeric vectors (safer than using \texttt{==}).
+  \end{itemize}
+\item
+  \texttt{dplyr::summarize}
 
   \begin{itemize}
   \tightlist
@@ -1134,17 +1134,11 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
     Use \texttt{mean(variable\ ==\ value)} to get a percentage (see the above example for \texttt{mean}.)
   \end{itemize}
 \item
-  \texttt{tally}: An alternative to \texttt{count}.
+  \texttt{dplyr::tally}
 \item
-  \texttt{top\_n}: Select top (or bottom) n rows (by value).
-\end{itemize}
-
-\texttt{\{magrittr\}}
-
-\begin{itemize}
-\tightlist
+  \texttt{dplyr::top\_n}
 \item
-  \texttt{extract}: Pipeable extraction operator.
+  \texttt{magrittr::extract}
 
   \begin{itemize}
   \tightlist
@@ -1152,7 +1146,7 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
     \texttt{x\ \%\textgreater{}\%\ extract(y)} is equivalent to \texttt{x{[}y{]}}.
   \end{itemize}
 \item
-  \texttt{multiply\_by}: Pipeable multiplication operator.
+  \texttt{magrittr::multiply\_by}
 
   \begin{itemize}
   \tightlist
@@ -1160,31 +1154,31 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
     \texttt{x\ \%\textgreater{}\%\ multiply\_by(y)} is equivalent to \texttt{x\ *\ y}.
   \end{itemize}
 \item
-  \texttt{raise\_to\_power}: Pipeable exponent operator.
+  \texttt{magrittr::raise\_to\_power}
 
   \begin{itemize}
   \tightlist
   \item
     \texttt{x\ \%\textgreater{}\%\ raise\_to\_power(y)} is equivalent to \texttt{x\^{}y}.
   \end{itemize}
-\end{itemize}
+\item
+  \texttt{stats::aggregate}
 
-\texttt{\{stats\}}
-
-\begin{itemize}
-\tightlist
+  \begin{itemize}
+  \tightlist
+  \item
+    Compute summary statistics of data subsets.
+  \end{itemize}
 \item
-  \texttt{aggregate}: Compute summary statistics of data subsets.
+  \texttt{stats::cor}
 \item
-  \texttt{cor}: Correlation.
+  \texttt{stats::cov}
 \item
-  \texttt{cov}: Covariance.
+  \texttt{stats::lag}
 \item
-  \texttt{lag}: Lag a time series.
+  \texttt{stats::rnorm}
 \item
-  \texttt{rnorm}: Generate a random normal distribution.
-\item
-  \texttt{var}: Variance.
+  \texttt{stats::var}
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -2454,11 +2448,14 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
   \item
     Prefer \texttt{readr::write\_delim} to \texttt{utils::write.table}.
   \end{itemize}
+\item
+  \texttt{XLConnect::loadWorkbook}
 \end{itemize}
 
-\texttt{XLConnect}: Read, write, and format Excel data.
-\#\# Format Output
-***
+\hypertarget{format-output}{%
+\section{Format Output}\label{format-output}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{itemize}
 \tightlist
@@ -2474,6 +2471,10 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
   \item
     Use the \texttt{options\ =\ list(columnDefs\ =\ list(list(className\ =\ "db-center",\ targets\ =\ (column\_position))))} argument to center column values (where \texttt{0} indicates the first column).
   \end{itemize}
+\item
+  \texttt{kableExtra::kable\_styling}
+\item
+  \texttt{kableExtra::add\_footnote}
 \item
   \texttt{knitr::kable}
 \item
@@ -2905,6 +2906,14 @@ References:
     When using Windows, use ``/'' instead of "".
   \end{itemize}
 \item
+  \texttt{base::Sys.getenv}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    See also \texttt{Sys.setenv}.
+  \end{itemize}
+\item
   \texttt{base::Sys.info}
 
   \begin{itemize}
@@ -2913,6 +2922,14 @@ References:
     Extract system and user information.
   \item
     Example: \texttt{Sys.info(){[}c("sysname",\ "release"){]}}.
+  \end{itemize}
+\item
+  \texttt{base::Sys.setenv}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    See also \texttt{Sys.setenv}.
   \end{itemize}
 \item
   \texttt{gdata::object.size}
