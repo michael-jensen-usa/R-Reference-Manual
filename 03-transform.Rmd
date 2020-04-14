@@ -103,6 +103,7 @@ df <-
   * Extract the month names.
 * `base::quarters`
   * Extract the calendar quarters.
+* `base::seq.Date`
 * `base::Sys.Date`
   * Get the current date in the current time zone.
 * `base::Sys.time`
