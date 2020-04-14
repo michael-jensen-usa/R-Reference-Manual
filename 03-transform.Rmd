@@ -146,13 +146,13 @@ df <-
   * `is.interval`
 * Time spans: Period
   * Use when you are interested in human units.
-  * `lubridate::days`
-  * `lubridate::hours`
-  * `lubridate::minutes`
-  * `lubridate::months`
-  * `lubridate::seconds`
-  * `lubridate::weeks`
-  * `lubridate::years` 
+  * `lubridate::day`
+  * `lubridate::hour`
+  * `lubridate::minute`
+  * `lubridate::month`
+  * `lubridate::second`
+  * `lubridate::week`
+  * `lubridate::year` 
 * Time zones:
   * `lubridate::force_tz`
     * Change the time zone without changing the clock time.
