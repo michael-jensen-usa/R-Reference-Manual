@@ -135,6 +135,11 @@ unzip("Data Sets/Countries", exdir = "Data Sets")
 * `DBI::dbSendStatement`
 * `dbplyr::tbl`
 
+**SQL**
+
+* Temp tables
+  * Use `SET NOCOUNT ON` in the SQL query to prevent R confusing the SQL rowcount return value with the temporary table.
+
 ## Notes & References
 ***
 
