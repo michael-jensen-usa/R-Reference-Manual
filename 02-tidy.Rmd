@@ -29,11 +29,13 @@
 * `base::typeof`
 * `graphics::hist`
 * `graphics::plot`
+* `skimr::skim`
+  * Similar to `tibble::glimpse` and `utils::str`.
 * `tibble::glimpse`
-  * Similar to `utils::str`.
+  * Similar to `skimr::skim` and `utils::str`.
 * `utils::head`
 * `utils::str`
-  * Similar to `tibble::glimpse`.
+  * Similar to `skimr::skim` and `tibble::glimpse`.
 * `utils::tail`
 
 ## Tidy Data
