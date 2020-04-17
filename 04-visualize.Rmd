@@ -20,6 +20,7 @@
   * Add points to a plot.
 * `diagram`
 * `DiagrammeR`
+* `ggally::ggally_box`
 * `ggbeeswarm::geom_beeswarm`
 * `ggplot2::aes`
   * Arguments include `color`, `fill`, `size`, `labels`, `alpha`, `shape` (1-20 accept color attributes and 21-25 accept color and fill attributes), `linewidth`, `linetype`, and `group`.
@@ -130,6 +131,7 @@
 * `grid::unit`
   * Create a `unit` object, to specify locations and dimensions in a coordinate system.
   * See example below.
+* `plotly::plot_ly`
 * `RColorBrewer::brewer.pal`
   * Make the ColorBrewer color palettes available as R palattes.
   
