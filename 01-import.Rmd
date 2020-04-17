@@ -124,6 +124,7 @@ unzip("Data Sets/Countries", exdir = "Data Sets")
 * `DBI::dbBind`
 * `DBI::dbClearResult`
 * `DBI::dbConnect`
+  * See example below for specifying a database.
 * `DBI::dbDataType`
 * `DBI::dbDisconnect`
 * `DBI::dbExecute`
@@ -133,9 +134,40 @@ unzip("Data Sets/Countries", exdir = "Data Sets")
 * `DBI::dbReadTable`
 * `DBI::dbSendQuery`
 * `DBI::dbSendStatement`
+* `DBI::Id`
+  * See example below.
+* `DBI::SQL`
+  * See example below.
+* `dbplyr::in_schema`
 * `dbplyr::tbl`
 
-**SQL**
+**Example:** `DBI::Id` vs `DBI::SQL`
+
+The following are comparable methods of accessing <schema_name>.<table_name>:
+
+```{r, eval=FALSE}
+dbCreateTable(
+  conn,
+  Id(schema = "schema_name", table = "table_name"),
+  fields = "field_name")
+
+dbCreateTable(
+  conn,
+  SQL("schema_name.table_name"),
+  fields = "field_name")
+```
+
+**Example:** `DBI::dbConnect`
+
+```{r, eval=FALSE}
+conn_1 <- 
+  dbConnect(odbc::odbc(), dsn = "sql") # Default database: Actuary
+
+conn_2 <- 
+  dbConnect(odbc::odbc(), dsn = "sql", Database = "Staging")
+```
+
+### SQL
 
 * Temp tables
   * Use `SET NOCOUNT ON` in the SQL query to prevent R confusing the SQL rowcount return value with the temporary table.
