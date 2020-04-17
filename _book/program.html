@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="communicate.html"/>
-<link rel="next" href="referenced-packages.html"/>
+<link rel="next" href="references-resources.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -138,7 +138,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="import.html"><a href="import.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
 <li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-a-local-drive"><i class="fa fa-check"></i>Import Data from a Local Drive</a></li>
 <li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-the-internet"><i class="fa fa-check"></i>Import Data from the Internet</a></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-from-or-create-data-in-a-database"><i class="fa fa-check"></i>Import from or Create Data in a Database</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-from-or-create-data-in-a-database"><i class="fa fa-check"></i>Import from or Create Data in a Database</a><ul>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#sql"><i class="fa fa-check"></i>SQL</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="import.html"><a href="import.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i>Tidy</a><ul>
@@ -173,6 +175,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#strings-1"><i class="fa fa-check"></i>Strings</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a><ul>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#css"><i class="fa fa-check"></i>CSS</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#export"><i class="fa fa-check"></i>Export</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#format-output"><i class="fa fa-check"></i>Format Output</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#graphics"><i class="fa fa-check"></i>Graphics</a></li>
@@ -194,14 +197,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#selecting-subsetting"><i class="fa fa-check"></i>Selecting &amp; Subsetting</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#system-commands"><i class="fa fa-check"></i>System Commands</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#version-control"><i class="fa fa-check"></i>Version Control</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html"><i class="fa fa-check"></i>Referenced Packages</a><ul>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#a-d"><i class="fa fa-check"></i>A-D</a></li>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#e-h"><i class="fa fa-check"></i>E-H</a></li>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#i-l"><i class="fa fa-check"></i>I-L</a></li>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#m-p"><i class="fa fa-check"></i>M-P</a></li>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#q-t"><i class="fa fa-check"></i>Q-T</a></li>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#u-z"><i class="fa fa-check"></i>U-Z</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references-resources.html"><a href="references-resources.html"><i class="fa fa-check"></i>References &amp; Resources</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -509,13 +504,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Useful when matching a character argument specified in the function signature. For example,</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">args</span>(prop.test)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">args</span>(prop.test)</a></code></pre></div>
 <pre><code>## function (x, n, p = NULL, alternative = c(&quot;two.sided&quot;, &quot;less&quot;, 
 ##     &quot;greater&quot;), conf.level = 0.95, correct = TRUE) 
 ## NULL</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="co"># The body of `prop.test` contains the following line of code:</span></a>
-<a class="sourceLine" id="cb12-2" title="2"><span class="co"># `alternative &lt;- match.arg(alternative), which reassigns it to the selected</span></a>
-<a class="sourceLine" id="cb12-3" title="3"><span class="co"># character vector.</span></a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="co"># The body of `prop.test` contains the following line of code:</span></a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="co"># `alternative &lt;- match.arg(alternative), which reassigns it to the selected</span></a>
+<a class="sourceLine" id="cb13-3" title="3"><span class="co"># character vector.</span></a></code></pre></div>
 <ul>
 <li><code>message</code>: Generage a diagnostic message.
 <ul>
@@ -550,16 +545,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Useful when you want to return multiple output from a function. For example:</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1">session &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
-<a class="sourceLine" id="cb13-2" title="2">  </a>
-<a class="sourceLine" id="cb13-3" title="3">  <span class="kw">list</span>(</a>
-<a class="sourceLine" id="cb13-4" title="4">    <span class="dt">r_version =</span> R.version.string,</a>
-<a class="sourceLine" id="cb13-5" title="5">    <span class="dt">operating_system =</span> <span class="kw">Sys.info</span>()[<span class="kw">c</span>(<span class="st">&quot;sysname&quot;</span>, <span class="st">&quot;release&quot;</span>)],</a>
-<a class="sourceLine" id="cb13-6" title="6">    <span class="dt">loaded_pkgs =</span> <span class="kw">loadedNamespaces</span>()</a>
-<a class="sourceLine" id="cb13-7" title="7">  )</a>
-<a class="sourceLine" id="cb13-8" title="8">}</a>
-<a class="sourceLine" id="cb13-9" title="9"></a>
-<a class="sourceLine" id="cb13-10" title="10"><span class="kw">c</span>(vrsn, os, pkgs) <span class="op">%&lt;-%</span><span class="st"> </span><span class="kw">session</span>() </a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1">session &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
+<a class="sourceLine" id="cb14-2" title="2">  </a>
+<a class="sourceLine" id="cb14-3" title="3">  <span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb14-4" title="4">    <span class="dt">r_version =</span> R.version.string,</a>
+<a class="sourceLine" id="cb14-5" title="5">    <span class="dt">operating_system =</span> <span class="kw">Sys.info</span>()[<span class="kw">c</span>(<span class="st">&quot;sysname&quot;</span>, <span class="st">&quot;release&quot;</span>)],</a>
+<a class="sourceLine" id="cb14-6" title="6">    <span class="dt">loaded_pkgs =</span> <span class="kw">loadedNamespaces</span>()</a>
+<a class="sourceLine" id="cb14-7" title="7">  )</a>
+<a class="sourceLine" id="cb14-8" title="8">}</a>
+<a class="sourceLine" id="cb14-9" title="9"></a>
+<a class="sourceLine" id="cb14-10" title="10"><span class="kw">c</span>(vrsn, os, pkgs) <span class="op">%&lt;-%</span><span class="st"> </span><span class="kw">session</span>() </a></code></pre></div>
 <hr />
 </div>
 <div id="learn-about-an-object" class="section level2">
@@ -667,22 +662,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>purrr:pluck</code></li>
 </ul>
 <p><strong>Example:</strong> <code>.$variable_name</code></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1">ui_summary_table &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb14-2" title="2"><span class="st">  </span>aws_vendors <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb14-3" title="3"><span class="st">  </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(vendor_name, <span class="st">&quot;UTAH INTERACTIVE&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb14-4" title="4"><span class="st">  </span>.<span class="op">$</span>vendor_id <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb14-5" title="5"><span class="st">  </span><span class="kw">map</span>(query_summary_table) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb14-6" title="6"><span class="st">  </span><span class="kw">bind_rows</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1">ui_summary_table &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb15-2" title="2"><span class="st">  </span>aws_vendors <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb15-3" title="3"><span class="st">  </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(vendor_name, <span class="st">&quot;UTAH INTERACTIVE&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb15-4" title="4"><span class="st">  </span>.<span class="op">$</span>vendor_id <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb15-5" title="5"><span class="st">  </span><span class="kw">map</span>(query_summary_table) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb15-6" title="6"><span class="st">  </span><span class="kw">bind_rows</span>()</a></code></pre></div>
 <p><strong>Example:</strong> <code>.[["variable_name"]]</code></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1">  odbc_aws <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb15-2" title="2"><span class="st">    </span><span class="kw">dbGetQuery</span>(</a>
-<a class="sourceLine" id="cb15-3" title="3">      <span class="kw">paste</span>(<span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb15-4" title="4"><span class="st">            SELECT id</span></a>
-<a class="sourceLine" id="cb15-5" title="5"><span class="st">            FROM batch</span></a>
-<a class="sourceLine" id="cb15-6" title="6"><span class="st">            WHERE entity_id = &quot;</span>, t_id, <span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb15-7" title="7"><span class="st">            AND status IN (&#39;PROCESSED&#39;, &#39;PROCESSING&#39;)&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb15-8" title="8"><span class="st">    </span>.[[<span class="st">&quot;id&quot;</span>]] <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb15-9" title="9"><span class="st">  </span><span class="kw">as.double</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1">  odbc_aws <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb16-2" title="2"><span class="st">    </span><span class="kw">dbGetQuery</span>(</a>
+<a class="sourceLine" id="cb16-3" title="3">      <span class="kw">paste</span>(<span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb16-4" title="4"><span class="st">            SELECT id</span></a>
+<a class="sourceLine" id="cb16-5" title="5"><span class="st">            FROM batch</span></a>
+<a class="sourceLine" id="cb16-6" title="6"><span class="st">            WHERE entity_id = &quot;</span>, t_id, <span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb16-7" title="7"><span class="st">            AND status IN (&#39;PROCESSED&#39;, &#39;PROCESSING&#39;)&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb16-8" title="8"><span class="st">    </span>.[[<span class="st">&quot;id&quot;</span>]] <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb16-9" title="9"><span class="st">  </span><span class="kw">as.double</span>()</a></code></pre></div>
 <p><strong>References:</strong></p>
 <ul>
 <li><a href="https://twitter.com/hadleywickham/status/643381054758363136">“Indexing lists in #rstats. Inspired by Residence Inn”</a> (Hadley Wickham, Twitter, 14 September 2015)</li>
@@ -729,7 +724,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="communicate.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="referenced-packages.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="references-resources.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

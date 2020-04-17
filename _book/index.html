@@ -138,7 +138,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="import.html"><a href="import.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
 <li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-a-local-drive"><i class="fa fa-check"></i>Import Data from a Local Drive</a></li>
 <li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-the-internet"><i class="fa fa-check"></i>Import Data from the Internet</a></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-from-or-create-data-in-a-database"><i class="fa fa-check"></i>Import from or Create Data in a Database</a></li>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-from-or-create-data-in-a-database"><i class="fa fa-check"></i>Import from or Create Data in a Database</a><ul>
+<li class="chapter" data-level="" data-path="import.html"><a href="import.html#sql"><i class="fa fa-check"></i>SQL</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="import.html"><a href="import.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i>Tidy</a><ul>
@@ -173,6 +175,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#strings-1"><i class="fa fa-check"></i>Strings</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a><ul>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#css"><i class="fa fa-check"></i>CSS</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#export"><i class="fa fa-check"></i>Export</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#format-output"><i class="fa fa-check"></i>Format Output</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#graphics"><i class="fa fa-check"></i>Graphics</a></li>
@@ -194,14 +197,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#selecting-subsetting"><i class="fa fa-check"></i>Selecting &amp; Subsetting</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#system-commands"><i class="fa fa-check"></i>System Commands</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#version-control"><i class="fa fa-check"></i>Version Control</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html"><i class="fa fa-check"></i>Referenced Packages</a><ul>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#a-d"><i class="fa fa-check"></i>A-D</a></li>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#e-h"><i class="fa fa-check"></i>E-H</a></li>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#i-l"><i class="fa fa-check"></i>I-L</a></li>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#m-p"><i class="fa fa-check"></i>M-P</a></li>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#q-t"><i class="fa fa-check"></i>Q-T</a></li>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#u-z"><i class="fa fa-check"></i>U-Z</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references-resources.html"><a href="references-resources.html"><i class="fa fa-check"></i>References &amp; Resources</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -240,8 +235,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Communicate</li>
 <li>Program</li>
 </ul>
-<div id="htmlwidget-29349bd26eefd416af1f" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-29349bd26eefd416af1f">{"x":{"diagram":" digraph {\n\ngraph [rankdir = LR;\n       compound = TRUE;\n       nodesep = 1]\n\nsubgraph cluster0 {\n  style = rounded;\n  label = Program;\n  labeljust = center;\n  node [color = white];\n\n  Import; Tidy; Communicate\n\n  subgraph cluster1 {\n    style = rounded;\n    bgcolor = lightgrey;\n    label = Understand;\n    labeljust = center;\n    node [color = lightgrey];\n\n    Transform -> Visualize -> Model -> Transform;\n\n    {rank = same; Model; Visualize}\n  }\n  \n  Import -> Tidy -> Transform;\n\n  edge [headport = w]\n  {Model; Visualize} -> Communicate [ltail = cluster1]\n}\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ef090a2465240c258e6d" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ef090a2465240c258e6d">{"x":{"diagram":" digraph {\n\ngraph [rankdir = LR;\n       compound = TRUE;\n       nodesep = 1]\n\nsubgraph cluster0 {\n  style = rounded;\n  label = Program;\n  labeljust = center;\n  node [color = white];\n\n  Import; Tidy; Communicate\n\n  subgraph cluster1 {\n    style = rounded;\n    bgcolor = lightgrey;\n    label = Understand;\n    labeljust = center;\n    node [color = lightgrey];\n\n    Transform -> Visualize -> Model -> Transform;\n\n    {rank = same; Model; Visualize}\n  }\n  \n  Import -> Tidy -> Transform;\n\n  edge [headport = w]\n  {Model; Visualize} -> Communicate [ltail = cluster1]\n}\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 </div>
             </section>

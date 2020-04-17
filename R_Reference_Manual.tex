@@ -144,7 +144,7 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
   Program
 \end{itemize}
 
-\hypertarget{htmlwidget-ee7f4787cd6f60c0b7c6}{}
+\hypertarget{htmlwidget-77a8c7a459f4123a1c69}{}
 
 \hypertarget{import}{%
 \chapter{Import}\label{import}}
@@ -413,6 +413,12 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
   \texttt{DBI::dbClearResult}
 \item
   \texttt{DBI::dbConnect}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    See example below for specifying a database.
+  \end{itemize}
 \item
   \texttt{DBI::dbDataType}
 \item
@@ -432,7 +438,70 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 \item
   \texttt{DBI::dbSendStatement}
 \item
+  \texttt{DBI::Id}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    See example below.
+  \end{itemize}
+\item
+  \texttt{DBI::SQL}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    See example below.
+  \end{itemize}
+\item
+  \texttt{dbplyr::in\_schema}
+\item
   \texttt{dbplyr::tbl}
+\end{itemize}
+
+\textbf{Example:} \texttt{DBI::Id} vs \texttt{DBI::SQL}
+
+The following are comparable methods of accessing .:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{dbCreateTable}\NormalTok{(}
+\NormalTok{  conn,}
+  \KeywordTok{Id}\NormalTok{(}\DataTypeTok{schema =} \StringTok{"schema_name"}\NormalTok{, }\DataTypeTok{table =} \StringTok{"table_name"}\NormalTok{),}
+  \DataTypeTok{fields =} \StringTok{"field_name"}\NormalTok{)}
+
+\KeywordTok{dbCreateTable}\NormalTok{(}
+\NormalTok{  conn,}
+  \KeywordTok{SQL}\NormalTok{(}\StringTok{"schema_name.table_name"}\NormalTok{),}
+  \DataTypeTok{fields =} \StringTok{"field_name"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Example:} \texttt{DBI::dbConnect}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{conn_}\DecValTok{1}\NormalTok{ <-}\StringTok{ }
+\StringTok{  }\KeywordTok{dbConnect}\NormalTok{(odbc}\OperatorTok{::}\KeywordTok{odbc}\NormalTok{(), }\DataTypeTok{dsn =} \StringTok{"sql"}\NormalTok{) }\CommentTok{# Default database: Actuary}
+
+\NormalTok{conn_}\DecValTok{2}\NormalTok{ <-}\StringTok{ }
+\StringTok{  }\KeywordTok{dbConnect}\NormalTok{(odbc}\OperatorTok{::}\KeywordTok{odbc}\NormalTok{(), }\DataTypeTok{dsn =} \StringTok{"sql"}\NormalTok{, }\DataTypeTok{Database =} \StringTok{"Staging"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{sql}{%
+\subsection{SQL}\label{sql}}
+
+\begin{itemize}
+\tightlist
+\item
+  Temp tables
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Use \texttt{SET\ NOCOUNT\ ON} in the SQL query to prevent R confusing the SQL rowcount return value with the temporary table.
+  \end{itemize}
 \end{itemize}
 
 \hypertarget{notes-references}{%
@@ -517,12 +586,20 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 \item
   \texttt{graphics::plot}
 \item
+  \texttt{skimr::skim}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Similar to \texttt{tibble::glimpse} and \texttt{utils::str}.
+  \end{itemize}
+\item
   \texttt{tibble::glimpse}
 
   \begin{itemize}
   \tightlist
   \item
-    Similar to \texttt{utils::str}.
+    Similar to \texttt{skimr::skim} and \texttt{utils::str}.
   \end{itemize}
 \item
   \texttt{utils::head}
@@ -532,7 +609,7 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
   \begin{itemize}
   \tightlist
   \item
-    Similar to \texttt{tibble::glimpse}.
+    Similar to \texttt{skimr::skim} and \texttt{tibble::glimpse}.
   \end{itemize}
 \item
   \texttt{utils::tail}
@@ -1086,6 +1163,8 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 \item
   \texttt{base::rowSums}
 \item
+  \texttt{base::scale}
+\item
   \texttt{base::sd}
 \item
   \texttt{base::signif}
@@ -1205,28 +1284,29 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
   \tightlist
   \item
     \texttt{mutate()} can also be used to modify existing variables. To change the case of a character variable, for example, do something like:
+  \item
+    Child function: \texttt{transmute()} (drops existing variables).
   \end{itemize}
+\item
+  \texttt{recode()}: Recode values (the numeric alternative to using \texttt{if\_else} or \texttt{case\_when()}).
 \end{itemize}
+
+\textbf{Example:} \texttt{dplyr::mutate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{df <-}
 \StringTok{  }\NormalTok{df }\OperatorTok{%>%}
 \StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{var_name =} \KeywordTok{str_to_lower}\NormalTok{(var_name))}
+
+\CommentTok{# Add a T/F vector, which can then be referenced to highlight certain }
+\CommentTok{# information in a plot:}
+
+\NormalTok{df <-}\StringTok{ }
+\StringTok{  }\NormalTok{df }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{hilight =} \DataTypeTok{attributed_provider_id =} \DecValTok{95597}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-+ Child function: `transmute()` (drops existing variables).
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{recode()}: Recode values (the numeric alternative to using \texttt{if\_else} or \texttt{case\_when()}).
-\end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{dates-and-datetimes-1}{%
 \section{Dates and Datetimes}\label{dates-and-datetimes-1}}
@@ -1267,6 +1347,8 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
   \item
     Extract the calendar quarters.
   \end{itemize}
+\item
+  \texttt{base::seq.Date}
 \item
   \texttt{base::Sys.Date}
 
@@ -1397,19 +1479,19 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
   \item
     Use when you are interested in human units.
   \item
-    \texttt{lubridate::days}
+    \texttt{lubridate::day}
   \item
-    \texttt{lubridate::hours}
+    \texttt{lubridate::hour}
   \item
-    \texttt{lubridate::minutes}
+    \texttt{lubridate::minute}
   \item
-    \texttt{lubridate::months}
+    \texttt{lubridate::month}
   \item
-    \texttt{lubridate::seconds}
+    \texttt{lubridate::second}
   \item
-    \texttt{lubridate::weeks}
+    \texttt{lubridate::week}
   \item
-    \texttt{lubridate::years}
+    \texttt{lubridate::year}
   \end{itemize}
 \item
   Time zones:
@@ -1789,6 +1871,8 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 \item
   \texttt{DiagrammeR}
 \item
+  \texttt{ggally::ggally\_box}
+\item
   \texttt{ggbeeswarm::geom\_beeswarm}
 \item
   \texttt{ggplot2::aes}
@@ -2136,6 +2220,8 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
     See example below.
   \end{itemize}
 \item
+  \texttt{plotly::plot\_ly}
+\item
   \texttt{RColorBrewer::brewer.pal}
 
   \begin{itemize}
@@ -2395,6 +2481,11 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 - Garrett Grolemund \& Hadley Wickham, \emph{R for Data Science}
 ***
 
+\hypertarget{css}{%
+\section{CSS}\label{css}}
+
+\emph{Center Title}
+
 \hypertarget{export}{%
 \section{Export}\label{export}}
 
@@ -2470,6 +2561,14 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
     Use the \texttt{options\ =\ list(dom\ =\ \textquotesingle{}t\textquotesingle{})} argument to remove the search bar.
   \item
     Use the \texttt{options\ =\ list(columnDefs\ =\ list(list(className\ =\ "db-center",\ targets\ =\ (column\_position))))} argument to center column values (where \texttt{0} indicates the first column).
+  \end{itemize}
+\item
+  \texttt{gt::gt}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Alternative to \texttt{knitr::kable} and \texttt{DT::datatable}, styled after \texttt{ggplot2}.
   \end{itemize}
 \item
   \texttt{kableExtra::kable\_styling}
@@ -3504,227 +3603,6 @@ Git
 \item
   \texttt{restore}: Load the most recent snapshot to the project's private library.
 \end{itemize}
-
-\hypertarget{referenced-packages}{%
-\chapter{Referenced Packages}\label{referenced-packages}}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\hypertarget{a-d}{%
-\section{A-D}\label{a-d}}
-
-\href{https://CRAN.R-project.org/package=anytime}{\texttt{anytime}}: Date converter.
-
-\href{https://CRAN.R-project.org/package=assertive}{\texttt{assertive}}: Check functions to ensure code integrity.
-
-\href{https://www.rdocumentation.org/packages/base/versions/3.5.1}{\texttt{base}}: Base R functions.
-
-\href{https://CRAN.R-project.org/package=bookdown}{\texttt{bookdown}}: Author books and technical documents with R Markdown.
-+ See Yihui Xie's \href{https://bookdown.org/yihui/bookdown/}{\emph{bookdown: Authoring Books and Technical Documents with R Markdown}}.
-
-\href{https://CRAN.R-project.org/package=broom}{\texttt{broom}}: Convert statistical analysis objects into tidy data frames.
-
-\href{https://CRAN.R-project.org/package=car}{\texttt{car}}: Companion to applied regression.
-
-\href{https://CRAN.R-project.org/package=chron}{\texttt{chron}}: Chronological objects which can handle dates and times.
-
-\href{https://CRAN.R-project.org/package=countrycode}{\texttt{countrycode}}: Convert country names and country codes.
-
-\href{https://CRAN.R-project.org/package=data.table}{\texttt{data.table}}: For large data.
-
-\href{https://CRAN.R-project.org/package=DBI}{\texttt{DBI}}: Database interface.
-
-\begin{itemize}
-\item
-  For MySQL documentation, see the \href{https://dev.mysql.com/}{MySQL Reference Manual}.
-\item
-  Use with the \texttt{odbc} package.
-\end{itemize}
-
-\href{https://CRAN.R-project.org/package=diagram}{\texttt{diagram}}: Visualize simple graphs (networks); create plot flow diagrams.
-
-\href{https://CRAN.R-project.org/package=DiagrammeR}{\texttt{DiagrammeR}}: Graph/network visualization.
-+ DiagrammeR uses the \href{https://www.graphviz.org/}{GraphViz} language.
-
-\href{https://CRAN.R-project.org/package=dplyr}{\texttt{dplyr}}: Data manipulation.
-
-\begin{itemize}
-\tightlist
-\item
-  See also \href{https://dplyr.tidyverse.org/}{dplyr.tidyverse.org}.
-\end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\hypertarget{e-h}{%
-\section{E-H}\label{e-h}}
-
-\href{https://CRAN.R-project.org/package=fasttime}{\texttt{fasttime}}: Fast utilit function for time parsing and conversion.
-
-\href{https://CRAN.R-project.org/package=forcats}{\texttt{forcats}}: Tools for working with categorical variables.
-
-\href{https://CRAN.R-project.org/package=fuzzyjoin}{\texttt{fuzzyjoin}}: Join tables together on inexact matching.
-
-\href{https://CRAN.R-project.org/package=fuzzywuzzyR}{\texttt{fuzzywuzzyR}}: Fuzzy string matching.
-
-\href{https://CRAN.R-project.org/package=gdata}{\texttt{gdata}}: Data manipulation.
-
-\href{https://CRAN.R-project.org/package=ggbeeswarm}{\texttt{ggbeeswarm}}: Categorical scatter plots (violin and beeswarm).
-
-\href{https://CRAN.R-project.org/package=ggplot2}{\texttt{ggplot2}}: Create elegant data visualizations.
-
-\href{https://CRAN.R-project.org/package=ggridges}{\texttt{ggridges}}: Ridgeline plots in \texttt{ggplot2}.
-
-\href{https://www.rdocumentation.org/packages/graphics/versions/3.5.1}{\texttt{graphics}}: R functions for base graphics.
-
-\href{https://www.rdocumentation.org/packages/grDevices/versions/3.5.2}{\texttt{grDevices}}: Grahpics devices and support for base and grid graphics.
-
-\href{https://CRAN.R-project.org/package=Hmisc}{\texttt{Hmisc}}: Harrell miscellaneous.
-
-\href{https://CRAN.R-project.org/package=hms}{\texttt{hms}}: Times without dates.
-
-\href{https://CRAN.R-project.org/package=httr}{\texttt{httr}}: Tools for working with HTTP.
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\hypertarget{i-l}{%
-\section{I-L}\label{i-l}}
-
-\href{https://CRAN.R-project.org/package=installr}{\texttt{installr}}: Install and update stuff (such as R, Rtools, Rstudio, Git).
-
-\href{https://CRAN.R-project.org/package=janitor}{\texttt{janitor}}: Simple tools for examining and cleaning dirty data.
-
-\href{https://CRAN.R-project.org/package=jsonlite}{\texttt{jsonlite}}: A robust, high performance JSON parser and generator.
-
-\href{https://CRAN.R-project.org/package=knitr}{\texttt{knitr}}: Dynamic report generation in R using Literate Programming techniques.
-+ See Yihui Xie's \href{http://yihui.name/knitr/}{\emph{knitr}}.
-
-\href{https://CRAN.R-project.org/package=lubridate}{\texttt{lubridate}}: Functions to work with date-times and time-spans.
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{lubridate} uses character formatting similar to \texttt{strptime()}, though there are some differences. To see \texttt{lubridate}'s formatting, type \texttt{?parse\_date\_time} into the R Console.
-\end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\hypertarget{m-p}{%
-\section{M-P}\label{m-p}}
-
-\href{https://CRAN.R-project.org/package=magrittr}{\texttt{magrittr}}: Forward-pipe operator for R.
-
-\href{https://www.rdocumentation.org/packages/methods/versions/3.5.1}{\texttt{methods}}: Formal methods and classes.
-
-\href{https://CRAN.R-project.org/package=mgcv}{\texttt{mgcv}}: Mixed GAM computational vehicle with automatic smoothness estimation.
-
-\href{https://CRAN.R-project.org/package=microbenchmark}{\texttt{microbenchmark}}: Measure and compare the execution time of R expressions.
-
-\href{https://CRAN.R-project.org/package=odbc}{\texttt{odbc}}: Connect to ODBC compatible databases using the DBI Interface.
-
-\href{https://CRAN.R-project.org/package=openintro}{`openintro'}: Data sets and supplemental functions from OpenIntro textbooks.
-
-\href{https://CRAN.R-project.org/package=packrat}{\texttt{packrat}}: Manage and document the versions of packages used in an R program.
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{packrat} tends to cause more trouble than it prevents, so avoid using it unless necessary or until it is improved.
-\end{itemize}
-
-\href{https://CRAN.R-project.org/package=pryr}{\texttt{pryr}}: Tools to pry back the covers of R and understand the language at a deeper level.
-
-\href{https://CRAN.R-project.org/package=purrr}{\texttt{purrr}}: Functional programming tools.
-
-\begin{itemize}
-\tightlist
-\item
-  See also \href{https://purrr.tidyverse.org/}{purr.tidyverse.org}.
-\end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\hypertarget{q-t}{%
-\section{Q-T}\label{q-t}}
-
-\href{https://CRAN.R-project.org/package=qdap}{\texttt{qdap}}: Bridging the gap between qualitative data and quantitative analysis (text mining).
-
-\href{https://CRAN.R-project.org/package=qdapDictionaries}{\texttt{qdapDictionaries}}: Dictionaries and word lists for the \texttt{qdap} package.
-
-\href{https://CRAN.R-project.org/package=RColorBrewer}{\texttt{RColorBrewer}}: ColorBrewer palattes.
-
-\href{https://CRAN.R-project.org/package=readr}{\texttt{readr}}: Read rectangular text data.
-
-\begin{itemize}
-\tightlist
-\item
-  See also \href{https://readr.tidyverse.org/}{readr.tidyverse.org}.
-\end{itemize}
-
-\href{https://CRAN.R-project.org/package=readxl}{\texttt{readxl}}: Read Excel files.
-
-\href{https://CRAN.R-project.org/package=rjson}{\texttt{rjson}}: Convert between R and JSON objects.
-
-\href{https://CRAN.R-project.org/package=rlang}{\texttt{rlang}}: Functions for base types and Core R and Tidyverse features.
-
-\href{https://CRAN.R-project.org/package=rmarkdown}{\texttt{RMarkdown}}: Save and execute code; generate high quality reports.
-
-\begin{itemize}
-\tightlist
-\item
-  See also \href{https://bookdown.org/yihui/rmarkdown/}{``R Markdown: The Definitive Guide''}).
-\end{itemize}
-
-\href{https://CRAN.R-project.org/package=scales}{\texttt{scales}}: Scale functions for visualization.
-
-\href{https://CRAN.R-project.org/package=shiny}{\texttt{shiny}}: Web application framework.
-
-\href{https://CRAN.R-project.org/package=splitstackshape}{\texttt{splitstackshape}}: Stack and reshape datasets after splitting concatenated values.
-
-\href{https://www.rdocumentation.org/packages/stats/versions/3.5.1}{\texttt{stats}}: Statistical functions.
-
-\href{https://CRAN.R-project.org/package=stringr}{\texttt{stringr}}: Working with strings.
-
-\begin{itemize}
-\tightlist
-\item
-  See also \href{https://stringr.tidyverse.org/}{stringr.tidyverse.org}).
-\end{itemize}
-
-\href{https://CRAN.R-project.org/package=svDialogs}{\texttt{svDialogs}}: Dialog boxes for Windows, MacOS, and Linuxes.
-
-\href{https://CRAN.R-project.org/package=sys}{\texttt{sys}}: Powerful and reliable tools for running system commands in R.
-
-\href{https://www.rdocumentation.org/packages/tcltk/versions/3.5.2}{\texttt{tcltk}}: Interface and languate bindings to Tcl/Tk GUI elements.
-
-\href{https://CRAN.R-project.org/package=tibble}{\texttt{tibble}}: Simple data frames with stricter checking and better formatting than the traditional data frame.
-
-\href{https://CRAN.R-project.org/package=tidyr}{\texttt{tidyr}}: Tidy data.
-
-\begin{itemize}
-\tightlist
-\item
-  See also \href{https://tidyr.tidyverse.org/}{tidyr.tidyverse.org}.
-\end{itemize}
-
-\href{https://CRAN.R-project.org/package=tinytex}{\texttt{tinytex}}: Compile LaTeX Documents.
-+ Required to compile and build a \texttt{bookdown} book.
-+ See \url{https://yihui.name/tinytex/}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\hypertarget{u-z}{%
-\section{U-Z}\label{u-z}}
-
-\href{https://CRAN.R-project.org/package=R.utils}{\texttt{utils}}: Various programming utilities.
-
-\href{https://CRAN.R-project.org/package=XLConnect}{\texttt{XLConnect}}: Read, write, and format Excel data.
-
-\href{https://CRAN.R-project.org/package=xts}{\texttt{xts}}: Provide for uniform handling of R's different time-based data classes by extending zoo.
-
-\href{https://CRAN.R-project.org/package=zeallot}{\texttt{zeallot}}: Multiple, unpacking, and destructuring assignment.
-
-\href{https://CRAN.R-project.org/package=zoo}{\texttt{zoo}}: For regular and irregular time series.
 
 \hypertarget{references-resources}{%
 \chapter{References \& Resources}\label{references-resources}}
