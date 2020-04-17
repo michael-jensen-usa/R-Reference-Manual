@@ -5,6 +5,17 @@
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*
 ***
 
+## CSS
+
+*Center Title*
+
+<style type="text/css">
+
+h1.title {
+  text-align: center;
+}
+</style>
+
 ## Export
 ***
 
