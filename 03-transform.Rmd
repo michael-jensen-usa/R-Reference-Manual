@@ -38,6 +38,7 @@ by_country <-
 * `base::round`
 * `base::rowMeans`
 * `base::rowSums`
+* `base::scale`
 * `base::sd`
 * `base::signif`
   * Round values to a specified number of significant digits.
@@ -81,17 +82,25 @@ by_country <-
 
 * `mutate()`: Add new variables.
     + `mutate()` can also be used to modify existing variables. To change the case of a character variable, for example, do something like:
+    + Child function: `transmute()` (drops existing variables).
+* `recode()`: Recode values (the numeric alternative to using `if_else` or `case_when()`).
     
+**Example:** `dplyr::mutate`
+
 ```{r, eval=FALSE}
 df <-
   df %>%
   mutate(var_name = str_to_lower(var_name))
+
+# Add a T/F vector, which can then be referenced to highlight certain 
+# information in a plot:
+
+df <- 
+  df %>% 
+  mutate(hilight = attributed_provider_id = 95597)
 ```
 
-    + Child function: `transmute()` (drops existing variables).
-* `recode()`: Recode values (the numeric alternative to using `if_else` or `case_when()`).
-    
-***
+
 ## Dates and Datetimes
 
 * `base::date`
