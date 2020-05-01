@@ -29,6 +29,7 @@
   * Allows objects in the database to be accessed by giving their names (e.g., `height` rather than `women$height`).
 * `base::file.choose`
   * Use as `file = file.choose()` inside a data import function (such as `read_csv` and `readRDS`).
+* `base::file.size`
 * `base::load`
   * Reload datasets saved with `base::save`.
 * `base::readRDS`
