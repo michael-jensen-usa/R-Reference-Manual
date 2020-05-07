@@ -125,7 +125,6 @@ unzip("Data Sets/Countries", exdir = "Data Sets")
 * `DBI::dbBind`
 * `DBI::dbClearResult`
 * `DBI::dbConnect`
-  * See example below for specifying a database.
 * `DBI::dbDataType`
 * `DBI::dbDisconnect`
 * `DBI::dbExecute`
@@ -141,6 +140,9 @@ unzip("Data Sets/Countries", exdir = "Data Sets")
   * See example below.
 * `dbplyr::in_schema`
 * `dbplyr::tbl`
+* `odbc::dbConnect`
+  * See example below for specifying a database.
+  * See example below for troubleshooting hang-ups.
 
 **Example:** `DBI::Id` vs `DBI::SQL`
 
@@ -158,14 +160,22 @@ dbCreateTable(
   fields = "field_name")
 ```
 
-**Example:** `DBI::dbConnect`
+**Example:** `odbc::dbConnect`
 
 ```{r, eval=FALSE}
+# Specify database:
 conn_1 <- 
   dbConnect(odbc::odbc(), dsn = "sql") # Default database: Actuary
 
 conn_2 <- 
   dbConnect(odbc::odbc(), dsn = "sql", Database = "Staging")
+
+# Troubleshoot hang-ups
+# It appears that RStudio's attempt to load information into the Connection Pane,
+# via `odbc::dbConnect`, can sometimes cause the call to hang, indefinitely.
+# Use the following code to access the database in such a situation:
+
+options(connectionObserver = FALSE)
 ```
 
 ### SQL
