@@ -356,10 +356,12 @@ ui_summary_table <-
 
 Git
 
+* [*A successful Git branching model*](https://nvie.com/posts/a-successful-git-branching-model/)
 * [Git](https://git-scm.com/)
-* [*Pro Git*](https://git-scm.com/book/en/v2) by Scott Chacon and Ben Straub
 * [*Git and GitHub*](http://r-pkgs.had.co.nz/git.html#git-learning) by Hadley Wickham
 * [*Happy Git and GitHub for the useR*](http://happygitwithr.com/) by Jenny Bryan
+* [*Pro Git*](https://git-scm.com/book/en/v2) by Scott Chacon and Ben Straub
+* [*Understanding the GitHub flow*](https://guides.github.com/introduction/flow/)
 
 * `git branch`: List, create, or delete branches.
     + `git branch -d <branch_name>`: Delete a local branch.
