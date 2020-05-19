@@ -51,7 +51,7 @@
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.5/grViz.js"></script>
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
 
 
 <style type="text/css">
@@ -273,9 +273,11 @@ h1.title {
 <li><code>base::format</code></li>
 <li><code>DT::datatable</code>
 <ul>
-<li>Use the <code>options = list(dom = 't')</code> argument to remove the search bar.</li>
-<li>Use the <code>options = list(columnDefs = list(list(className = "db-center", targets = (column_position))))</code> argument to center column values (where <code>0</code> indicates the first column).</li>
+<li>Use <code>options = list(dom = 't')</code> to remove the search bar.</li>
+<li>Use <code>options = list(dom = "t", lengthchange = FALSE)</code> to remove the search bar and box that allows the user to choose how many rows to see.</li>
+<li>Use <code>options = list(columnDefs = list(list(className = "db-center", targets = (column_position))))</code> to center column values (where <code>0</code> indicates the first column).</li>
 </ul></li>
+<li><code>DT::formatCurrency</code></li>
 <li><code>gt::gt</code>
 <ul>
 <li>Alternative to <code>knitr::kable</code> and <code>DT::datatable</code>, styled after <code>ggplot2</code>.</li>

@@ -144,7 +144,11 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
   Program
 \end{itemize}
 
-\hypertarget{htmlwidget-77a8c7a459f4123a1c69}{}
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\hypertarget{htmlwidget-75fae9ee15704ff1fbc6}{}
 
 \hypertarget{import}{%
 \chapter{Import}\label{import}}
@@ -229,6 +233,8 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
   \item
     Use as \texttt{file\ =\ file.choose()} inside a data import function (such as \texttt{read\_csv} and \texttt{readRDS}).
   \end{itemize}
+\item
+  \texttt{base::file.size}
 \item
   \texttt{base::load}
 
@@ -413,12 +419,6 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
   \texttt{DBI::dbClearResult}
 \item
   \texttt{DBI::dbConnect}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    See example below for specifying a database.
-  \end{itemize}
 \item
   \texttt{DBI::dbDataType}
 \item
@@ -457,6 +457,16 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
   \texttt{dbplyr::in\_schema}
 \item
   \texttt{dbplyr::tbl}
+\item
+  \texttt{odbc::dbConnect}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    See example below for specifying a database.
+  \item
+    See example below for troubleshooting hang-ups.
+  \end{itemize}
 \end{itemize}
 
 \textbf{Example:} \texttt{DBI::Id} vs \texttt{DBI::SQL}
@@ -472,20 +482,28 @@ The following are comparable methods of accessing .:
 
 \KeywordTok{dbCreateTable}\NormalTok{(}
 \NormalTok{  conn,}
-  \KeywordTok{SQL}\NormalTok{(}\StringTok{"schema_name.table_name"}\NormalTok{),}
+  \DataTypeTok{name =} \KeywordTok{SQL}\NormalTok{(}\StringTok{"schema_name.table_name"}\NormalTok{),}
   \DataTypeTok{fields =} \StringTok{"field_name"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\textbf{Example:} \texttt{DBI::dbConnect}
+\textbf{Example:} \texttt{odbc::dbConnect}
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{# Specify database:}
 \NormalTok{conn_}\DecValTok{1}\NormalTok{ <-}\StringTok{ }
 \StringTok{  }\KeywordTok{dbConnect}\NormalTok{(odbc}\OperatorTok{::}\KeywordTok{odbc}\NormalTok{(), }\DataTypeTok{dsn =} \StringTok{"sql"}\NormalTok{) }\CommentTok{# Default database: Actuary}
 
 \NormalTok{conn_}\DecValTok{2}\NormalTok{ <-}\StringTok{ }
 \StringTok{  }\KeywordTok{dbConnect}\NormalTok{(odbc}\OperatorTok{::}\KeywordTok{odbc}\NormalTok{(), }\DataTypeTok{dsn =} \StringTok{"sql"}\NormalTok{, }\DataTypeTok{Database =} \StringTok{"Staging"}\NormalTok{)}
+
+\CommentTok{# Troubleshoot hang-ups}
+\CommentTok{# It appears that RStudio's attempt to load information into the Connection Pane,}
+\CommentTok{# via `odbc::dbConnect`, can sometimes cause the call to hang, indefinitely.}
+\CommentTok{# Use the following code to access the database in such a situation:}
+
+\KeywordTok{options}\NormalTok{(}\DataTypeTok{connectionObserver =} \OtherTok{FALSE}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1871,7 +1889,23 @@ The following are comparable methods of accessing .:
 \item
   \texttt{DiagrammeR}
 \item
-  \texttt{ggally::ggally\_box}
+  \texttt{GGally::ggally\_box}
+\item
+  \texttt{GGally::ggpairs}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Scatter plot matrix (SPLOM).
+  \end{itemize}
+\item
+  \texttt{GGally::ggparcoord}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Parallel coordinate plots.
+  \end{itemize}
 \item
   \texttt{ggbeeswarm::geom\_beeswarm}
 \item
@@ -2037,6 +2071,14 @@ The following are comparable methods of accessing .:
   \end{itemize}
 \item
   \texttt{ggplot2::geom\_text}
+\item
+  \texttt{ggplot2::geom\_tile}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Heat maps.
+  \end{itemize}
 \item
   \texttt{ggplot2::geom\_violin}
 \item
@@ -2558,10 +2600,14 @@ The following are comparable methods of accessing .:
   \begin{itemize}
   \tightlist
   \item
-    Use the \texttt{options\ =\ list(dom\ =\ \textquotesingle{}t\textquotesingle{})} argument to remove the search bar.
+    Use \texttt{options\ =\ list(dom\ =\ \textquotesingle{}t\textquotesingle{})} to remove the search bar.
   \item
-    Use the \texttt{options\ =\ list(columnDefs\ =\ list(list(className\ =\ "db-center",\ targets\ =\ (column\_position))))} argument to center column values (where \texttt{0} indicates the first column).
+    Use \texttt{options\ =\ list(dom\ =\ "t",\ lengthchange\ =\ FALSE)} to remove the search bar and box that allows the user to choose how many rows to see.
+  \item
+    Use \texttt{options\ =\ list(columnDefs\ =\ list(list(className\ =\ "db-center",\ targets\ =\ (column\_position))))} to center column values (where \texttt{0} indicates the first column).
   \end{itemize}
+\item
+  \texttt{DT::formatCurrency}
 \item
   \texttt{gt::gt}
 
@@ -3501,6 +3547,8 @@ References:
     Helper functions: \texttt{contains}, \texttt{ends\_with}, \texttt{matches}, \texttt{num\_range}, \texttt{one\_of}, \texttt{starts\_with}.
   \end{itemize}
 \item
+  \texttt{ggplot2::cut\_number}
+\item
   \texttt{magrittr::extract}
 \item
   \texttt{magrittr::extract2}
@@ -3569,13 +3617,17 @@ Git
 
 \begin{itemize}
 \item
-  \href{https://git-scm.com/}{Git}
+  \href{https://nvie.com/posts/a-successful-git-branching-model/}{\emph{A successful Git branching model}}
 \item
-  \href{https://git-scm.com/book/en/v2}{\emph{Pro Git}} by Scott Chacon and Ben Straub
+  \href{https://git-scm.com/}{Git}
 \item
   \href{http://r-pkgs.had.co.nz/git.html\#git-learning}{\emph{Git and GitHub}} by Hadley Wickham
 \item
   \href{http://happygitwithr.com/}{\emph{Happy Git and GitHub for the useR}} by Jenny Bryan
+\item
+  \href{https://git-scm.com/book/en/v2}{\emph{Pro Git}} by Scott Chacon and Ben Straub
+\item
+  \href{https://guides.github.com/introduction/flow/}{\emph{Understanding the GitHub flow}}
 \item
   \texttt{git\ branch}: List, create, or delete branches.
 

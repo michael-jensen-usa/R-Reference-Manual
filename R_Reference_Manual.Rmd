@@ -96,6 +96,7 @@ knitr::write_bib(c(
   * Allows objects in the database to be accessed by giving their names (e.g., `height` rather than `women$height`).
 * `base::file.choose`
   * Use as `file = file.choose()` inside a data import function (such as `read_csv` and `readRDS`).
+* `base::file.size`
 * `base::load`
   * Reload datasets saved with `base::save`.
 * `base::readRDS`
@@ -191,7 +192,6 @@ unzip("Data Sets/Countries", exdir = "Data Sets")
 * `DBI::dbBind`
 * `DBI::dbClearResult`
 * `DBI::dbConnect`
-  * See example below for specifying a database.
 * `DBI::dbDataType`
 * `DBI::dbDisconnect`
 * `DBI::dbExecute`
@@ -207,6 +207,9 @@ unzip("Data Sets/Countries", exdir = "Data Sets")
   * See example below.
 * `dbplyr::in_schema`
 * `dbplyr::tbl`
+* `odbc::dbConnect`
+  * See example below for specifying a database.
+  * See example below for troubleshooting hang-ups.
 
 **Example:** `DBI::Id` vs `DBI::SQL`
 
@@ -220,18 +223,26 @@ dbCreateTable(
 
 dbCreateTable(
   conn,
-  SQL("schema_name.table_name"),
+  name = SQL("schema_name.table_name"),
   fields = "field_name")
 ```
 
-**Example:** `DBI::dbConnect`
+**Example:** `odbc::dbConnect`
 
 ```{r, eval=FALSE}
+# Specify database:
 conn_1 <- 
   dbConnect(odbc::odbc(), dsn = "sql") # Default database: Actuary
 
 conn_2 <- 
   dbConnect(odbc::odbc(), dsn = "sql", Database = "Staging")
+
+# Troubleshoot hang-ups
+# It appears that RStudio's attempt to load information into the Connection Pane,
+# via `odbc::dbConnect`, can sometimes cause the call to hang, indefinitely.
+# Use the following code to access the database in such a situation:
+
+options(connectionObserver = FALSE)
 ```
 
 ### SQL
@@ -747,7 +758,11 @@ ilo_data %>%
   * Add points to a plot.
 * `diagram`
 * `DiagrammeR`
-* `ggally::ggally_box`
+* `GGally::ggally_box`
+* `GGally::ggpairs`
+  * Scatter plot matrix (SPLOM).
+* `GGally::ggparcoord`
+  * Parallel coordinate plots.
 * `ggbeeswarm::geom_beeswarm`
 * `ggplot2::aes`
   * Arguments include `color`, `fill`, `size`, `labels`, `alpha`, `shape` (1-20 accept color attributes and 21-25 accept color and fill attributes), `linewidth`, `linetype`, and `group`.
@@ -797,6 +812,8 @@ ilo_data %>%
 * `ggplot2::geom_smooth`
   * Smoothed conditional means; aids the eye in seeing patterns in the presence of overplotting.
 * `ggplot2::geom_text`
+* `ggplot2::geom_tile`
+  * Heat maps.
 * `ggplot2::geom_violin`
 * `ggplot2::geom_vline`
 * `ggplot2::ggplot`
@@ -1002,8 +1019,10 @@ h1.title {
 
 * `base::format`
 * `DT::datatable`
-  * Use the `options = list(dom = 't')` argument to remove the search bar.
-  * Use the `options = list(columnDefs = list(list(className = "db-center", targets = (column_position))))` argument to center column values (where `0` indicates the first column).
+  * Use `options = list(dom = 't')` to remove the search bar.
+  * Use `options = list(dom = "t", lengthchange = FALSE)` to remove the search bar and box that allows the user to choose how many rows to see.
+  * Use `options = list(columnDefs = list(list(className = "db-center", targets = (column_position))))` to center column values (where `0` indicates the first column).
+* `DT::formatCurrency`
 * `gt::gt`
   * Alternative to `knitr::kable` and `DT::datatable`, styled after `ggplot2`.
 * `kableExtra::kable_styling`
@@ -1363,6 +1382,7 @@ c(vrsn, os, pkgs) %<-% session()
 * `dplyr::rename`
 * `dplyr::select`
   * Helper functions: `contains`, `ends_with`, `matches`, `num_range`, `one_of`, `starts_with`.
+* `ggplot2::cut_number`
 * `magrittr::extract`
 * `magrittr::extract2`
 * `purrr:pluck`
@@ -1408,10 +1428,12 @@ ui_summary_table <-
 
 Git
 
+* [*A successful Git branching model*](https://nvie.com/posts/a-successful-git-branching-model/)
 * [Git](https://git-scm.com/)
-* [*Pro Git*](https://git-scm.com/book/en/v2) by Scott Chacon and Ben Straub
 * [*Git and GitHub*](http://r-pkgs.had.co.nz/git.html#git-learning) by Hadley Wickham
 * [*Happy Git and GitHub for the useR*](http://happygitwithr.com/) by Jenny Bryan
+* [*Pro Git*](https://git-scm.com/book/en/v2) by Scott Chacon and Ben Straub
+* [*Understanding the GitHub flow*](https://guides.github.com/introduction/flow/)
 
 * `git branch`: List, create, or delete branches.
     + `git branch -d <branch_name>`: Delete a local branch.

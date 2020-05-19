@@ -51,7 +51,7 @@
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.5/grViz.js"></script>
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
 
 
 <style type="text/css">
@@ -264,6 +264,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Use as <code>file = file.choose()</code> inside a data import function (such as <code>read_csv</code> and <code>readRDS</code>).</li>
 </ul></li>
+<li><code>base::file.size</code></li>
 <li><code>base::load</code>
 <ul>
 <li>Reload datasets saved with <code>base::save</code>.</li>
@@ -366,10 +367,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><code>DBI::dbBind</code></li>
 <li><code>DBI::dbClearResult</code></li>
-<li><code>DBI::dbConnect</code>
-<ul>
-<li>See example below for specifying a database.</li>
-</ul></li>
+<li><code>DBI::dbConnect</code></li>
 <li><code>DBI::dbDataType</code></li>
 <li><code>DBI::dbDisconnect</code></li>
 <li><code>DBI::dbExecute</code></li>
@@ -389,6 +387,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><code>dbplyr::in_schema</code></li>
 <li><code>dbplyr::tbl</code></li>
+<li><code>odbc::dbConnect</code>
+<ul>
+<li>See example below for specifying a database.</li>
+<li>See example below for troubleshooting hang-ups.</li>
+</ul></li>
 </ul>
 <p><strong>Example:</strong> <code>DBI::Id</code> vs <code>DBI::SQL</code></p>
 <p>The following are comparable methods of accessing <schema_name>.<table_name>:</p>
@@ -399,14 +402,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb4-5" title="5"></a>
 <a class="sourceLine" id="cb4-6" title="6"><span class="kw">dbCreateTable</span>(</a>
 <a class="sourceLine" id="cb4-7" title="7">  conn,</a>
-<a class="sourceLine" id="cb4-8" title="8">  <span class="kw">SQL</span>(<span class="st">&quot;schema_name.table_name&quot;</span>),</a>
+<a class="sourceLine" id="cb4-8" title="8">  <span class="dt">name =</span> <span class="kw">SQL</span>(<span class="st">&quot;schema_name.table_name&quot;</span>),</a>
 <a class="sourceLine" id="cb4-9" title="9">  <span class="dt">fields =</span> <span class="st">&quot;field_name&quot;</span>)</a></code></pre></div>
-<p><strong>Example:</strong> <code>DBI::dbConnect</code></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">conn_<span class="dv">1</span> &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="st">  </span><span class="kw">dbConnect</span>(odbc<span class="op">::</span><span class="kw">odbc</span>(), <span class="dt">dsn =</span> <span class="st">&quot;sql&quot;</span>) <span class="co"># Default database: Actuary</span></a>
-<a class="sourceLine" id="cb5-3" title="3"></a>
-<a class="sourceLine" id="cb5-4" title="4">conn_<span class="dv">2</span> &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb5-5" title="5"><span class="st">  </span><span class="kw">dbConnect</span>(odbc<span class="op">::</span><span class="kw">odbc</span>(), <span class="dt">dsn =</span> <span class="st">&quot;sql&quot;</span>, <span class="dt">Database =</span> <span class="st">&quot;Staging&quot;</span>)</a></code></pre></div>
+<p><strong>Example:</strong> <code>odbc::dbConnect</code></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># Specify database:</span></a>
+<a class="sourceLine" id="cb5-2" title="2">conn_<span class="dv">1</span> &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="st">  </span><span class="kw">dbConnect</span>(odbc<span class="op">::</span><span class="kw">odbc</span>(), <span class="dt">dsn =</span> <span class="st">&quot;sql&quot;</span>) <span class="co"># Default database: Actuary</span></a>
+<a class="sourceLine" id="cb5-4" title="4"></a>
+<a class="sourceLine" id="cb5-5" title="5">conn_<span class="dv">2</span> &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="st">  </span><span class="kw">dbConnect</span>(odbc<span class="op">::</span><span class="kw">odbc</span>(), <span class="dt">dsn =</span> <span class="st">&quot;sql&quot;</span>, <span class="dt">Database =</span> <span class="st">&quot;Staging&quot;</span>)</a>
+<a class="sourceLine" id="cb5-7" title="7"></a>
+<a class="sourceLine" id="cb5-8" title="8"><span class="co"># Troubleshoot hang-ups</span></a>
+<a class="sourceLine" id="cb5-9" title="9"><span class="co"># It appears that RStudio&#39;s attempt to load information into the Connection Pane,</span></a>
+<a class="sourceLine" id="cb5-10" title="10"><span class="co"># via `odbc::dbConnect`, can sometimes cause the call to hang, indefinitely.</span></a>
+<a class="sourceLine" id="cb5-11" title="11"><span class="co"># Use the following code to access the database in such a situation:</span></a>
+<a class="sourceLine" id="cb5-12" title="12"></a>
+<a class="sourceLine" id="cb5-13" title="13"><span class="kw">options</span>(<span class="dt">connectionObserver =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 <div id="sql" class="section level3">
 <h3>SQL</h3>
 <ul>

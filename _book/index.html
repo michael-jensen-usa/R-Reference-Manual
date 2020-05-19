@@ -51,7 +51,7 @@
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.5/grViz.js"></script>
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
 
 
 <style type="text/css">
@@ -235,8 +235,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Communicate</li>
 <li>Program</li>
 </ul>
-<div id="htmlwidget-ef090a2465240c258e6d" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ef090a2465240c258e6d">{"x":{"diagram":" digraph {\n\ngraph [rankdir = LR;\n       compound = TRUE;\n       nodesep = 1]\n\nsubgraph cluster0 {\n  style = rounded;\n  label = Program;\n  labeljust = center;\n  node [color = white];\n\n  Import; Tidy; Communicate\n\n  subgraph cluster1 {\n    style = rounded;\n    bgcolor = lightgrey;\n    label = Understand;\n    labeljust = center;\n    node [color = lightgrey];\n\n    Transform -> Visualize -> Model -> Transform;\n\n    {rank = same; Model; Visualize}\n  }\n  \n  Import -> Tidy -> Transform;\n\n  edge [headport = w]\n  {Model; Visualize} -> Communicate [ltail = cluster1]\n}\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-5b6dbb124c7ff5ff58ed" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5b6dbb124c7ff5ff58ed">{"x":{"diagram":" digraph {\n\ngraph [rankdir = LR;\n       compound = TRUE;\n       nodesep = 1]\n\nsubgraph cluster0 {\n  style = rounded;\n  label = Program;\n  labeljust = center;\n  node [color = white];\n\n  Import; Tidy; Communicate\n\n  subgraph cluster1 {\n    style = rounded;\n    bgcolor = lightgrey;\n    label = Understand;\n    labeljust = center;\n    node [color = lightgrey];\n\n    Transform -> Visualize -> Model -> Transform;\n\n    {rank = same; Model; Visualize}\n  }\n  \n  Import -> Tidy -> Transform;\n\n  edge [headport = w]\n  {Model; Visualize} -> Communicate [ltail = cluster1]\n}\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 </div>
             </section>
