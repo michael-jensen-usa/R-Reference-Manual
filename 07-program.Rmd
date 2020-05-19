@@ -311,6 +311,7 @@ c(vrsn, os, pkgs) %<-% session()
 * `dplyr::rename`
 * `dplyr::select`
   * Helper functions: `contains`, `ends_with`, `matches`, `num_range`, `one_of`, `starts_with`.
+* `ggplot2::cut_number`
 * `magrittr::extract`
 * `magrittr::extract2`
 * `purrr:pluck`
