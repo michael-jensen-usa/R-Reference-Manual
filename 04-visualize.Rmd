@@ -44,7 +44,7 @@
 * `ggplot2::element_text`
 * `ggplot2::facet_grid`
   * Lay out panels in a grid.
-  * When using a tilde function, the variable on the left specifies the rows and the variable on the right specifies the columns (when faceting in only one direction; i.e., only rows or only columns). Use `.` to specify nothing for the unused direction (e.g. `facet_grid(cyl ~ .)`).
+  * `ROWS ~ COLS`: When using a tilde function, the variable on the left specifies the rows and the variable on the right specifies the columns (when faceting in only one direction; i.e., only rows or only columns). Use `.` to specify nothing for the unused direction (e.g. `facet_grid(cyl ~ .)`).
 * `ggplot2::facet_wrap`
   * Wrap a 1D ribbon of panels into 2D (observe a variable, conditional on another variable).
 * `ggplot2::geom_abline`
