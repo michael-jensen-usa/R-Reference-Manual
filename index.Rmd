@@ -20,9 +20,9 @@ In *R for Data Science*, Garrett Grolemund and Hadley Wickham outline the tools 
 * Program
 
 ```{r, echo=FALSE}
-library(DiagrammeR)
+DiagrammeR::grViz(" 
 
-grViz(" digraph {
+digraph {
 
 graph [rankdir = LR;
        compound = TRUE;
