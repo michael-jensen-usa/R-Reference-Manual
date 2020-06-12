@@ -3,9 +3,9 @@
 
 "Surrounding [the tools for importing, tidying, transforming, visualising, modeling, and communicating data] is programming. Programming is a cross-cutting tool that you use in every part of a project. You don't need to be an expert programmer to be a data scientist, but learning more about programming pays off because becoming a better programmer allows you to automate common tasks, and solve new problems with greater ease."  
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*
-***
 
 ## Characters
+*** 
 
 References:
 * `?Quotes`
@@ -37,8 +37,8 @@ References:
 * `case_when()`: A general vectorized `if`.
 * `if_else()`: Vectorized `if`.
 
-***
 ## Environment and Workspace
+***
 
 * `base::baseenve`
   * The environment of the `base` package; it's enclosing environment ("parent environment") is the empty environment.
@@ -212,111 +212,92 @@ args(prop.test)
 * `unlist`: Flatten lists.
   * Useful when using `purrr`'s `map` functions, which return objects as type `list`.
 
-`{zeallot}`
+`{}`
 
-* `%<-%`: Multiple assignment operator.
-  * Useful when you want to return multiple output from a function. For example:
+* `zeallot::%<-%`: Multiple assignment operator (see example below).
   
+#### Examples
+
+* `zeallot::%<-%`:
+
 ```{r, eval=FALSE}
 session <- function() {
   
   list(
-    r_version = R.version.string,
+    r_version        = R.version.string,
     operating_system = Sys.info()[c("sysname", "release")],
-    loaded_pkgs = loadedNamespaces()
+    loaded_pkgs      = loadedNamespaces()
   )
 }
 
 c(vrsn, os, pkgs) %<-% session() 
 ```
 
-***
 ## Learn About an Object
 
-`base`
+* `?object_name`
+* `??object_name`
+* `base::args()`: Display the argument names and default values of a function.
+* `base::attributes()`: View or assign an objects attributes (e.g., `class()`, `dim()`, `dimnames()`, `names()`, `row.names()`). 
+* `base::body()`: Get or set the body of a function.
+* `base::colnames()`: Retrieve or set column names.
+* `base::dim()`: Retrieve or set the dimnames of an object.
+* `base::dimnames()`: Retrieve or set the dimension names of an object.
+* `base::formals()`: Get or set the formal arguments of a function.
+* `base::help()`: Get the topic documentation.
+* `base::help.search()`: Search the help system for documentation matching a given character string.
+* `base::vignette()`: View a specified package vignette.
+* `base::rownames()`: Retrieve or set row names.
 
-* `args()`: Display the argument names and default values of a function.
-* `attributes()`: View or assign an objects attributes (e.g., `class()`, `dim()`, `dimnames()`, `names()`, `row.names()`). 
-* `body()`: Get or set the body of a function.
-* `colnames()`: Retrieve or set column names.
-* `dim()`: Retrieve or set the dimnames of an object.
-* `dimnames()`: Retrieve or set the dimension names of an object.
-* `formals()`: Get or set the formal arguments of a function.
-* `help()`: Get the topic documentation.
-* `help.search()`: Search the help system for documentation matching a given character string.
-* `vignette()`: View a specified package vignette.
-* ?object_name
-* ??object_name
-* `rownames()`: Retrieve or set row names.
-
-***
 ## Loops
 
-`base`
+* `base::seq()`: Sequence generation (this functions makes `length()` unnecessary).
+* `base::seq_along()`: In `for` loops, safer than using `base::ncol()` or `base::nrow()`.
 
-* `seq()`: Sequence generation.
-    + This functions makes `length()` unnecessary.
-    + Child function: `seq_along()`
-        + In `for` loops, safer than using `ncol()` or `nrow()`.
-
-***
 ## Optimization
 
-`microbenchmark`
-
-* `microbenchmark()`: Sub-millisecond accurate timing of expression evaluations.
+`microbenchmark::microbenchmark()`: Sub-millisecond accurate timing of expression evaluations.
     + A more accurate replacement of `system.time(replicate(1000, expr))`.
 
-***
 ## Pipes
 
-`magrittr`
+* `magrittr::%<>%`: Compound assignment-pipe operator.
+* `magrittr::%>%`: Forward-pipe operator.
+* `magrittr::%$%`: Expositions-pipe operator.
+* `magrittr::add()`: `+`, for pipes.
+* `magrittr::and()`: `&`, for pipes.
+* `magrittr::extract()`:`[`, for pipes (see also `purrr::pluck()`).
+* `magrittr::extract2()`: `[[`, for pipes.
+* `magrittr::freduce()`: Apply a list of functions sequentially.
+* `magrittr::is_in()`: `%in%`, for pipes.
+* `magrittr::multiply_by()`: `*`, for pipes.
+* `magrittr::or()`: `|`, for pipes.
+* `magrittr::raise_to_power()`: `^`, for pipes.
+* `magrittr::subtract()`: `-`, for pipes.
 
-* `%<>%`: Compound assignment-pipe operator.
-* `%>%`: Forward-pipe operator.
-* `%$%`: Expositions-pipe operator.
-* `add`: `+`, for pipes.
-* `and`: `&`, for pipes.
-* `extract`:`[`, for pipes.
-  * See also `purrr::pluck`.
-* `extract2`: `[[`, for pipes.
-* `freduce`: Apply a list of functions sequentially.
-* `is_in`: `%in%`, for pipes.
-* `multiply_by`: `*`, for pipes.
-* `or`: `|`, for pipes.
-* `raise_to_power`: `^`, for pipes.
-* `subtract`: `-`, for pipes.
-
-***
 ## Popups
 
-`svDialogs`
-
-* `dlg_message`: Display a modal message box (works in Windows, MacOS, and Linux).
-
-`tcltk`
-
-* `tk_messageBox`: Display a generic message box using Tk (Windows-specific).
+* `svDialogs::dlg_message()`: Display a modal message box (works in Windows, MacOS, and Linux).
+* `tcltk::tk_messageBox()`: Display a generic message box using Tk (Windows-specific).
 
 ## Selecting & Subsetting
 
-* `.$variable_name`
-  * See example below.
-* `.[["variable_name"]]`
-  * See example below.
-* `base::subset`
-* `dplyr::first`
-* `dplyr::last`
-* `dplyr::nth`
-* `dplyr::rename`
-* `dplyr::select`
-  * Helper functions: `contains`, `ends_with`, `matches`, `num_range`, `one_of`, `starts_with`.
+* `.$variable_name`: See example below.
+* `.[["variable_name"]]`: See example below.
+* `base::subset()`
+* `dplyr::first()`
+* `dplyr::las()t`
+* `dplyr::nth()`
+* `dplyr::rename()`
+* `dplyr::select()`: Helper functions include `contains()`, `ends_with()`, `matches()`, `num_range()`, `one_of()`, `starts_with()`.
 * `ggplot2::cut_number`
-* `magrittr::extract`
-* `magrittr::extract2`
-* `purrr:pluck`
+* `magrittr::extract()`
+* `magrittr::extract2()`
+* `purrr:pluck()`
 
-**Example:** `.$variable_name`
+#### Examples
+
+* `.$variable_name`:
 
 ```{r, eval=FALSE}
 ui_summary_table <- 
@@ -327,31 +308,43 @@ ui_summary_table <-
   bind_rows()
 ```
 
-**Example:** `.[["variable_name"]]`
+* `.[["variable_name"]]`:
 
 ```{r, eval=FALSE}
-  odbc_aws %>% 
-    dbGetQuery(
-      paste("
-            SELECT id
-            FROM batch
-            WHERE entity_id = ", t_id, "
-            AND status IN ('PROCESSED', 'PROCESSING')")) %>% 
-    .[["id"]] %>% 
-  as.double()
+odbc_aws %>% 
+  dbGetQuery(
+    paste("
+          SELECT id
+          FROM batch
+          WHERE entity_id = ", t_id, "
+          AND status IN ('PROCESSED', 'PROCESSING')"
+    )
+  ) %>% 
+  .[["id"]] %>% 
+as.double()
 ```
 
-**References:**
+#### References
 
 * ["Indexing lists in #rstats. Inspired by Residence Inn"](https://twitter.com/hadleywickham/status/643381054758363136) (Hadley Wickham, Twitter, 14 September 2015)
 
-***
+## Style Guide
+
+* ["The Tidyverse Style Guide"](https://style.tidyverse.org/) by Hadley Wickham.
+* General Layout and Ordering (taken from the outdated ["Google's R Style Guide"](http://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html))
+  * Title
+  * Author
+  * File description (e.g., purpose of program, inputs, outputs)
+  * `source()` and `library()` statements
+  * Function definitions
+  * Executed statements.
+
 ## System Commands
 
-* `base::system`
-* `base::system2`
-* `sys::exec`
-* `sys::exec_r`
+* `base::system()`
+* `base::system2()`
+* `sys::exec()`
+* `sys::exec_r()`
 
 ## Version Control
 
