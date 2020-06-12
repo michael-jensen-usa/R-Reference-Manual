@@ -1,98 +1,97 @@
-# Import
+# Import or Create Data
 ***
+
+```{css, echo=FALSE}
+h2 {
+  padding-bottom: 1px;
+  border-bottom: 1px solid black;
+}
+```
 
 ## Create Data
-***
 
-* `base::array`
-* `base::c`
-* `base::data.frame`
-* `base::dir.create`
-  * Create a file path in the computer's file system.
-* `base::factor`
-* `base::list`
-* `base::matrix`
-* `base::seq`
-* `base::vector`
-  * Preferable to `base::c` when creating an empty vector (["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve)).
-* `stats::rnorm`
-* `tibble::add_row`
-* `tibble::tibble`
-* `tibble::tribble`
-  * Row-wise tibble creation.
+* `base::array()`
+* `base::c()`: See `base::vector()`.
+* `base::data.frame()`
+* `base::dir.create()`: Create a file path in the computer's file system.
+* `base::factor()`
+* `base::list()`
+* `base::matrix()`
+* `base::seq()`
+* `base::vector()`: Preferable to `base::c()` when creating an empty vector (["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve)).
+* `stats::rnorm()`
+* `tibble::add_row()`
+* `tibble::tibble()`
+* `tibble::tribble()`: Row-wise tibble creation.
 
-## Import Data from a Local Drive
-***
+## Local Drive
 
-* `base::attach`
+* `base::attach()`
   * Attach a set of R objects to the search path.
   * Allows objects in the database to be accessed by giving their names (e.g., `height` rather than `women$height`).
-* `base::file.choose`
-  * Use as `file = file.choose()` inside a data import function (such as `read_csv` and `readRDS`).
-* `base::file.size`
-* `base::load`
-  * Reload datasets saved with `base::save`.
-* `base::readRDS`
-  * Restore an R object written with `base::saveRDS`.
-* `data.table::fread`
-  * Similar to `utils::read.table`, but faster and more convenient for large data sets.
-* `foreign::read.spss`
-* `haven::read_sas`
-* `readr::read_csv`
-* `readr::read_csv2`
-* `readr::read_delim`
-* `readr::read_tsv`
-* `readxl::excel_sheets`
-* `readxl::read_excel`
-* `readxl::read_xls`
-* `readxl::read_xlsx`
-* `utils::data`
+* `base::file.choose()`
+* `base::file.size()`
+* `base::load()`: Reload datasets saved with `base::save()`.
+* `base::readRDS()`: Restore an R object written with `base::saveRDS()`.
+* `data.table::fread()`: Similar to `utils::read.table()`, but faster and more convenient for large data sets.
+* `foreign::read.spss()`
+* `haven::read_sas()`
+* `readr::read_csv()`
+* `readr::read_csv2()`
+* `readr::read_delim()`
+* `readr::read_tsv()`
+* `readxl::excel_sheets()`
+* `readxl::read_excel()`
+* `readxl::read_xls()`
+* `readxl::read_xlsx()`
+* `utils::data()`
   * Load specified data sets, or list the available data sets.
   * Use this function to load the data sets that accompany R packages, such as `openintro::hsb2`, `openintro::email50`,and `gapminder::gapminder`.
-* `utils::read.csv`
-* `utils::read.csv2`
-* `utils::read.delim`
-* `utils::read.delim2`
-* `utils::read.table`
-  * Read a file in table format.
-* `XLConnect::readWorksheetFromFile`
-  * Read data from worksheets in an Excel file.
+* `utils::read.csv()`
+* `utils::read.csv2()`
+* `utils::read.delim()`
+* `utils::read.delim2()`
+* `utils::read.table()`: Read a file in table format.
+* `XLConnect::readWorksheetFromFile()`: Read data from worksheets in an Excel file.
 
-## Import Data from the Internet
-***
+## Internet
 
-* `httr::GET`: Get a URL.
-* `jsonlite::read_json`: Read and write JSON.
-* `readr::read_csv`
-* `readr::read_csv2`
-* `readr::read_delim`
-* `readr::read_tsv`
-* `rjson::fromJSON`: Convert JSON to R.
-* `utils::download.file`
-  * See example below.
-* `utils::unzip`
-  * See example below.
+* `httr::GET()`: Get a URL.
+* `jsonlite::read_json()`: Read and write JSON.
+* `readr::read_csv()`
+* `readr::read_csv2()`
+* `readr::read_delim()`
+* `readr::read_tsv()`
+* `rjson::fromJSON()`: Convert JSON to R.
+* `utils::download.file()`: See example below.
+* `utils::unzip()`: See example below.  
 
-**Example:** `utils::download.file`
+#### Examples
+
+* `utils::download.file()`:
 
 ```{r, eval=FALSE}
 download.file(
   "https://assets.datacamp.com/production/repositories/5028/datasets/a55843f83746968c7f118d82ed727db9c71e891f/snake_river_visits.rds",
-  destfile = paste0(getwd(), "/Snake River Visits.rds"))
+  destfile = paste0(getwd(), "/Snake River Visits.rds")
+)
 
+# Option 1:
 snake_river_visits <- readRDS(file.choose())
-# or
-path <- paste0(getwd(), "/Snake River Visits.rds")
-snake_river_visits <- readRDS(path)
+
+# Option 2:
+snake_river_path   <- paste0(getwd(), "/Snake River Visits.rds")
+snake_river_visits <- readRDS(snake_river_path)
 ```
 
-**Example:** Download `.Rdata` files
+* `utils::download.file()` for .Rdata files:
 
 ```{r, eval=FALSE}
 # Example 1:
 download.file(
   "https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData", 
-  destfile = "datacamp_iris_dataset.Rdata")
+  destfile = "datacamp_iris_dataset.Rdata"
+)
 
 load("datacamp_iris_dataset.Rdata")
 
@@ -103,48 +102,49 @@ download.file(
   # The documentation for `download.file` indicates that the function will
   # automatically include `mode = "wb"` for .Rdata files. That may have happened
   # in Example 1, but didn't happen in Example 2, which is why I've included it.
-  mode = "wb")
+  mode = "wb"
+)
 
 load("chis_2009.Rdata")
 ```
 
-**Example:** `utils::unzip`
+* `utils::unzip()`:
 
 ```{r, eval=FALSE}
 download.file(
   "https://assets.datacamp.com/production/repositories/1069/datasets/578834f5908e3b2fa575429a287586d1eaeb2e54/countries2.zip",
   destfile = "Data Sets/Countries",
-  mode = "wb")
+  mode = "wb"
+)
 
 unzip("Data Sets/Countries", exdir = "Data Sets")
 ```
 
-## Import from or Create Data in a Database
-***
+## Database
 
-* `DBI::dbBind`
-* `DBI::dbClearResult`
-* `DBI::dbConnect`
-* `DBI::dbDataType`
-* `DBI::dbDisconnect`
-* `DBI::dbExecute`
-* `DBI::dbFetch`
-* `DBI::dbGetQuery`
-* `DBI::dbListTables`
-* `DBI::dbReadTable`
-* `DBI::dbSendQuery`
-* `DBI::dbSendStatement`
-* `DBI::Id`
-  * See example below.
-* `DBI::SQL`
-  * See example below.
-* `dbplyr::in_schema`
-* `dbplyr::tbl`
-* `odbc::dbConnect`
+* `DBI::dbBind()`
+* `DBI::dbClearResult()`
+* `DBI::dbConnect()`
+* `DBI::dbDataType()`
+* `DBI::dbDisconnect()`
+* `DBI::dbExecute()`
+* `DBI::dbFetch()`
+* `DBI::dbGetQuery()`
+* `DBI::dbListTables()`
+* `DBI::dbReadTable()`
+* `DBI::dbSendQuery()`
+* `DBI::dbSendStatement()`
+* `DBI::Id()`: See example below.
+* `DBI::SQL()`: See example below.
+* `dbplyr::in_schema()`
+* `dbplyr::tbl()`
+* `odbc::dbConnect()`
   * See example below for specifying a database.
   * See example below for troubleshooting hang-ups.
 
-**Example:** `DBI::Id` vs `DBI::SQL`
+#### Examples
+
+* `DBI::Id()` vs `DBI::SQL()`:
 
 The following are comparable methods of accessing <schema_name>.<table_name>:
 
@@ -152,23 +152,23 @@ The following are comparable methods of accessing <schema_name>.<table_name>:
 dbCreateTable(
   conn,
   Id(schema = "schema_name", table = "table_name"),
-  fields = "field_name")
+  fields = "field_name"
+)
 
 dbCreateTable(
   conn,
-  name = SQL("schema_name.table_name"),
-  fields = "field_name")
+  name   = SQL("schema_name.table_name"),
+  fields = "field_name"
+)
 ```
 
-**Example:** `odbc::dbConnect`
+* `odbc::dbConnect()`:
 
 ```{r, eval=FALSE}
 # Specify database:
-conn_1 <- 
-  dbConnect(odbc::odbc(), dsn = "sql") # Default database: Actuary
+conn_1 <- dbConnect(odbc::odbc(), dsn = "sql") # Default database: Actuary
 
-conn_2 <- 
-  dbConnect(odbc::odbc(), dsn = "sql", Database = "Staging")
+conn_2 <- dbConnect(odbc::odbc(), dsn = "sql", Database = "Staging")
 
 # Troubleshoot hang-ups
 # It appears that RStudio's attempt to load information into the Connection Pane,
@@ -178,13 +178,12 @@ conn_2 <-
 options(connectionObserver = FALSE)
 ```
 
-### SQL
+#### SQL
 
-* Temp tables
+* Temp Tables
   * Use `SET NOCOUNT ON` in the SQL query to prevent R confusing the SQL rowcount return value with the temporary table.
 
 ## Notes & References
-***
 
 * ["Data structures"](http://adv-r.had.co.nz/Data-structures.html) (Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
 * `{openintro}` contains data sets useful for practicing and teaching.
