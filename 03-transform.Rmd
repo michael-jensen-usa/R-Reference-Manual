@@ -55,6 +55,7 @@ by_country <-
   * Compare two numeric vectors (safer than using `==`).
 * `dplyr::summarize`
   * Use `mean(variable == value)` to get a percentage (see the above example for `mean`.)
+  * See `dplyr::n_distinct()`.
 * `dplyr::tally`
 * `dplyr::top_n`
 * `magrittr::extract`
