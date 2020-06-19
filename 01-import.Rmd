@@ -178,6 +178,10 @@ conn_2 <- dbConnect(odbc::odbc(), dsn = "sql", Database = "Staging")
 options(connectionObserver = FALSE)
 ```
 
+#### References
+
+* ["Databases using R"](db.rstudio.com)
+
 #### SQL
 
 * Temp Tables
