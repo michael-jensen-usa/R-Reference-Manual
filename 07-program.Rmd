@@ -290,7 +290,7 @@ c(vrsn, os, pkgs) %<-% session()
 * `ggplot2::cut_number`
 * `magrittr::extract()`
 * `magrittr::extract2()`
-* `purrr:pluck()`
+* `purrr:pluck()`: See also `magrittr::extract2()`.
 
 #### Examples
 
