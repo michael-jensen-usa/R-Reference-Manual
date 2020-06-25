@@ -186,8 +186,8 @@ options(connectionObserver = FALSE)
 
 * Temp Tables
   * Use `SET NOCOUNT ON` in the SQL query to prevent R confusing the SQL rowcount return value with the temporary table.
-•	Try case-sensitive syntax (e.g., when querying a database other than the default).
-•	Try selecting certain columns, rather than `SELECT *`, as SQL BLOB columns cause trouble. 
+* Try case-sensitive syntax (e.g., when querying a database other than the default).
+* Try selecting certain columns, rather than `SELECT *`, as SQL BLOB columns cause trouble. 
 
 ## Notes & References
 
