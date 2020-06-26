@@ -227,7 +227,6 @@ df <-
 * `add_column()`: Add columns to a data frame.
 * `add_row()`: Add rows to a data frame.
 
-***
 ## Narrow in on Observations of Interest
 
 `{base}`
@@ -243,12 +242,12 @@ df <-
 * `table`: Build a table of the counts at each combination of factor levels.
   * Use `prop.table` to see the table entries expressed as proportions.
 
-`{dplyr}`
 
-* `arrange`: Arrange rows by variable, in ascending order.
-    + Related functions: `arrange_all`, `arrange_at`, `arrange_if`.
-* `distinct`: Select distinct rows.
-* `filter`: Return rows with matching conditions.
+* `dplr::all_equal()`: Compare data frames.
+* `dplyr::arrange()`: Arrange rows by variable, in ascending order.
+    + Related functions: `arrange_all()`, `arrange_at()`, `arrange_if()`.
+* `dplyr::distinct()`: Select distinct rows.
+* `dplyr::filter()`: Return rows with matching conditions.
   * Use `%in%` when using multiple `|` conditions. The following two commands, for example, are equivalent:
 ```{r, eval=FALSE}
 ilo_data %>% 
@@ -258,16 +257,15 @@ ilo_data %>%
   filter(country == "Sweden" | country == "Switzerland")
 ```
     
-* `renam`: Rename variables by name (a modification of `select`).
-* `sample_n`: Sample n rows from a table.
-* `select`: Select/rename variables. 
+* `dplyr::rename()`: Rename variables by name (a modification of `select`).
+* `dplyr::sample_n()`: Sample n rows from a table.
+* `dplyr::select()`: Select/rename variables. 
   * Helper functions include: `starts_wit`, `ends_with`, `contains`, `matches`, `num_range`, and `one_of`. See `?dplyr::select_helpers`.
   * Helper functions take strings (e.g., `contains("work")` rather than `contains(work)`).
-* `slice`: Choose rows by position.
-* `transmute`: Create or transform variables.
-  * Like a combination of `select` and `mutate`.
+* `dplyr::slice()`: Choose rows by position.
+* `dplyr::transmute()`: Create or transform variables.
+  * Like a combination of `dplyr::select` and `dplyr::mutate`.
 
-***
 ## Test
 
 `base`
