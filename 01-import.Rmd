@@ -189,6 +189,11 @@ options(connectionObserver = FALSE)
 * Try case-sensitive syntax (e.g., when querying a database other than the default).
 * Try selecting certain columns, rather than `SELECT *`, as SQL BLOB columns cause trouble. 
 
+##### References
+
+* ["10 Easy Steps to a Complete Understanding of SQL"](https://blog.jooq.org/2016/03/17/10-easy-steps-to-a-complete-understanding-of-sql/)
+* ["Query Planning"](https://www.sqlite.org/queryplanner.html)
+
 ## Notes & References
 
 * ["Data structures"](http://adv-r.had.co.nz/Data-structures.html) (Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
