@@ -113,6 +113,7 @@ References:
 * `gdata::object.size()`
   * Report the space allocated for an object.
   * See also `utils::object.size()`.
+* `here::here()`
 * `installr::updateR()`
   * Check for the latest R version; downloads and installs new R versions.
 * `pryr::where()`: Find where a name is defined.
