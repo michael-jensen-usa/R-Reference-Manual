@@ -268,13 +268,11 @@ ilo_data %>%
 
 ## Test
 
-`base`
-
-* `identical()`: Test objects for exact equality.
-* `match()`: Value matching.
+* `base::identical()`: Test objects for exact equality.
+* `base::match()`: Value matching.
     + `%in%` is the more intuitive binary operator.
-* `setequal()`: Check two vectors for equality.
-* `which()`: Determine which indices are `TRUE`.
+* `base::setequal()`: Check two vectors for equality.
+* `base::which()`: Determine which indices are `TRUE`.
     + This function is often unnecessary, according to the DataCamp article ["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve).
-* `which.min()`/`which.max()`: Where is the `min()`/`max()` or first `TRUE`/`FALSE`?
-* `%in%`: See `match()`.
+* `base::which.min()`/`base::which.max()`: Where is the `min()`/`max()` or first `TRUE`/`FALSE`?
+* `%in%`: See `base::match()`.
