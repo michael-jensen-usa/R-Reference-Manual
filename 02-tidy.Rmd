@@ -6,7 +6,6 @@
 ***
 
 ## Explore Raw Data
-***
 
 * `base::attr`
   * `attr(x, "names")` is the same as `base::names(x)`.
@@ -39,7 +38,6 @@
 * `utils::tail`
 
 ## Tidy Data
-***
 
 * `base::duplicated`
   * See also `data.table::duplicated`
@@ -73,7 +71,6 @@
 * `tidyr::unnest`
 
 ## Prepare Data for Analysis
-***
 
 ### Coerce
 
