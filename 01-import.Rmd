@@ -1,13 +1,6 @@
 # Import or Create Data
 ***
 
-```{css, echo=FALSE}
-h2 {
-  padding-bottom: 1px;
-  border-bottom: 1px solid black;
-}
-```
-
 ## Create Data
 
 * `base::array()`
