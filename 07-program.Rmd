@@ -364,7 +364,3 @@ Git
 * See note on the `packrat` package in the "Referenced Packages" section.
 * `snapshot`: Capture and store the packages and versions in use.
 * `restore`: Load the most recent snapshot to the project's private library.
-
-#### References
-
-* [Happy Git and GitHub for the useR](https://happygitwithr.com/) by Jenny Bryan and Jim Hester
