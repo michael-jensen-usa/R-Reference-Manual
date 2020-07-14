@@ -110,8 +110,6 @@ References:
   * Example: `Sys.info()[c("sysname", "release")]`.
 * `base::Sys.setenv()`
   * See also `Sys.setenv()`.
-* `base::update.packages`
-  * 00LOCK error when updating a package: Use `update.packages(ask = FALSE, checkBuilt = TRUE, INSTALL_opts = "--no-lock")`
 * `gdata::object.size()`
   * Report the space allocated for an object.
   * See also `utils::object.size()`.
@@ -348,10 +346,16 @@ as.double()
 
 ## Version Control
 
-Git
+* `base::update.packages()`
+  * 00LOCK error when updating a package: Use `update.packages(ask = FALSE, checkBuilt = TRUE, INSTALL_opts = "--no-lock")`
+* `packrat::snapshot()`: Capture and store the packages and versions in use.
+* `packrat::restore()`: Load the most recent snapshot to the project's private library.
+* Packrat still seems to be under development. The idea sounds good, but in practice the packrat package has caused lots of problems. 
+
+#### Git
 
 * [*A successful Git branching model*](https://nvie.com/posts/a-successful-git-branching-model/)
-* [Git](https://git-scm.com/)
+* [git-scm.com](https://git-scm.com/)
 * [*Git and GitHub*](http://r-pkgs.had.co.nz/git.html#git-learning) by Hadley Wickham
 * [*Happy Git and GitHub for the useR*](http://happygitwithr.com/) by Jenny Bryan
 * [*Pro Git*](https://git-scm.com/book/en/v2) by Scott Chacon and Ben Straub
@@ -360,9 +364,3 @@ Git
 * `git branch`: List, create, or delete branches.
     + `git branch -d <branch_name>`: Delete a local branch.
         + See ["Delete branch in RStudio pop-up"](https://community.rstudio.com/t/delete-branch-in-rstudio-pop-up/15465) for help removing branches in RStudio after removing them from Git.
-
-`{packrat}`
-
-* See note on the `packrat` package in the "Referenced Packages" section.
-* `snapshot`: Capture and store the packages and versions in use.
-* `restore`: Load the most recent snapshot to the project's private library.
