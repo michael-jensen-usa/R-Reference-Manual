@@ -110,6 +110,8 @@ References:
   * Example: `Sys.info()[c("sysname", "release")]`.
 * `base::Sys.setenv()`
   * See also `Sys.setenv()`.
+* `base::update.packages`
+  * 00LOCK error when updating a package: Use `update.packages(ask = FALSE, checkBuilt = TRUE, INSTALL_opts = "--no-lock")`
 * `gdata::object.size()`
   * Report the space allocated for an object.
   * See also `utils::object.size()`.
