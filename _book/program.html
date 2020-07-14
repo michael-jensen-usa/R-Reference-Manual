@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Program | R Reference Manual</title>
   <meta name="description" content="Program | R Reference Manual" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Program | R Reference Manual" />
   <meta property="og:type" content="book" />
@@ -48,6 +48,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
@@ -55,9 +56,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -66,14 +67,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -82,9 +85,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -134,14 +137,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html"><i class="fa fa-check"></i>Import</a><ul>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-a-local-drive"><i class="fa fa-check"></i>Import Data from a Local Drive</a></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-the-internet"><i class="fa fa-check"></i>Import Data from the Internet</a></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-from-or-create-data-in-a-database"><i class="fa fa-check"></i>Import from or Create Data in a Database</a><ul>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#sql"><i class="fa fa-check"></i>SQL</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html"><i class="fa fa-check"></i>Import or Create Data</a><ul>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#local-drive"><i class="fa fa-check"></i>Local Drive</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#internet"><i class="fa fa-check"></i>Internet</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#database"><i class="fa fa-check"></i>Database</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i>Tidy</a><ul>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a></li>
@@ -157,11 +158,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>Transform</a><ul>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#arithmetic-summary-statistics"><i class="fa fa-check"></i>Arithmetic &amp; Summary Statistics</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#create-new-variables-or-modify-existing-ones"><i class="fa fa-check"></i>Create New Variables or Modify Existing Ones</a></li>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#dates-and-datetimes-1"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#dates-and-datetimes"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#factors"><i class="fa fa-check"></i>Factors</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#merge-or-append-data"><i class="fa fa-check"></i>Merge or Append Data</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#narrow-in-on-observations-of-interest"><i class="fa fa-check"></i>Narrow in on Observations of Interest</a></li>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test-1"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#test"><i class="fa fa-check"></i>Test</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i>Visualize</a><ul>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#interfaces"><i class="fa fa-check"></i>Interfaces</a></li>
@@ -172,7 +173,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#general"><i class="fa fa-check"></i>General</a></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#regression"><i class="fa fa-check"></i>Regression</a></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#simulation-prediction"><i class="fa fa-check"></i>Simulation &amp; Prediction</a></li>
-<li class="chapter" data-level="" data-path="model.html"><a href="model.html#strings-1"><i class="fa fa-check"></i>Strings</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#strings"><i class="fa fa-check"></i>Strings</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a><ul>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#css"><i class="fa fa-check"></i>CSS</a></li>
@@ -195,11 +196,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#pipes"><i class="fa fa-check"></i>Pipes</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#popups"><i class="fa fa-check"></i>Popups</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#selecting-subsetting"><i class="fa fa-check"></i>Selecting &amp; Subsetting</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#style-guide"><i class="fa fa-check"></i>Style Guide</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#system-commands"><i class="fa fa-check"></i>System Commands</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#version-control"><i class="fa fa-check"></i>Version Control</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references-resources.html"><a href="references-resources.html"><i class="fa fa-check"></i>References &amp; Resources</a></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#references"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -224,8 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Program</h1>
 <hr />
 <p>“Surrounding [the tools for importing, tidying, transforming, visualising, modeling, and communicating data] is programming. Programming is a cross-cutting tool that you use in every part of a project. You don’t need to be an expert programmer to be a data scientist, but learning more about programming pays off because becoming a better programmer allows you to automate common tasks, and solve new problems with greater ease.”<br />
-- Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em>
-***</p>
+- Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em></p>
 <div id="characters" class="section level2">
 <h2>Characters</h2>
 <p>References:
@@ -267,164 +268,165 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>case_when()</code>: A general vectorized <code>if</code>.</li>
 <li><code>if_else()</code>: Vectorized <code>if</code>.</li>
 </ul>
-<hr />
 </div>
 <div id="environment-and-workspace" class="section level2">
 <h2>Environment and Workspace</h2>
 <ul>
-<li><code>base::baseenve</code>
+<li><code>base::.libPaths()</code></li>
+<li><code>base::baseenve()</code>
 <ul>
 <li>The environment of the <code>base</code> package; it’s enclosing environment (“parent environment”) is the empty environment.</li>
 </ul></li>
-<li><code>base::dir</code>
+<li><code>base::dir()</code>
 <ul>
 <li>List the files in a directory.</li>
 </ul></li>
-<li><code>base::dir.create</code>
+<li><code>base::dir.create()</code>
 <ul>
 <li>Create a file path in the computer’s file system.</li>
 </ul></li>
-<li><code>base::emptyenv</code>
+<li><code>base::emptyenv()</code>
 <ul>
 <li>The empty environment, which is the ancestor of all environments and the only environment without an enclosing environment.</li>
 </ul></li>
-<li><code>base::environment</code>
+<li><code>base::environment()</code>
 <ul>
 <li>The current environment.</li>
 </ul></li>
-<li><code>base::environmentName</code></li>
-<li><code>base::exists</code>
+<li><code>base::environmentName()</code></li>
+<li><code>base::exists()</code>
 <ul>
 <li>Remember that <code>R</code> will look for an object in parent environments until it reaches the empty environment, so use <code>inherits = FALSE</code> to limit the search to only the current environment.</li>
 </ul></li>
-<li><code>base::getOption</code>
+<li><code>base::getOption()</code>
 <ul>
 <li>Set and examine global options.</li>
 </ul></li>
-<li><code>base::getwd</code>
+<li><code>base::getwd()</code>
 <ul>
 <li>Get the working directory.</li>
 </ul></li>
-<li><code>base::globalenv</code>
+<li><code>base::globalenv()</code>
 <ul>
-<li>The environment in which you normally work, it’s enclosing environment is the last package attached with <code>library</code> or <code>require</code>.</li>
+<li>The environment in which you normally work, it’s enclosing environment is the last package attached with <code>library()</code> or <code>require()</code>.</li>
 </ul></li>
-<li><code>base::history</code>
+<li><code>base::history()</code>
 <ul>
 <li>Display the previous 25 commands.</li>
 </ul></li>
-<li><code>base::install.packages</code>
+<li><code>base::install.packages()</code>
 <ul>
 <li>Install packages from repositories or local files.</li>
 </ul></li>
-<li><code>base::library</code>
+<li><code>base::library()</code>
 <ul>
 <li>Load and attach packages, returning an error if the packages does not exist.</li>
 </ul></li>
-<li><code>base::list.files</code>
+<li><code>base::list.files()</code>
 <ul>
 <li>List the files in a directory/folder.</li>
 </ul></li>
-<li><code>base::loadedNamespaces</code>
+<li><code>base::loadedNamespaces()</code>
 <ul>
 <li>Return the loaded name spaces.</li>
 </ul></li>
-<li><code>base::loadhistory</code>
+<li><code>base::loadhistory()</code>
 <ul>
 <li>Recall command history.</li>
 </ul></li>
-<li><code>base::ls</code>
+<li><code>base::ls()</code>
 <ul>
 <li>List objects in the specified environment.</li>
 </ul></li>
-<li><code>base::list2env</code>
+<li><code>base::list2env()</code>
 <ul>
 <li>From a list, build or add to an environment.</li>
 </ul></li>
-<li><code>base::new.env</code>
+<li><code>base::new.env()</code>
 <ul>
 <li>Create a new environment.</li>
 </ul></li>
-<li><code>base::options</code>
+<li><code>base::options()</code>
 <ul>
 <li>Set and examine global options.</li>
 </ul></li>
-<li><code>base::parent.env</code>
+<li><code>base::parent.env()</code>
 <ul>
 <li>Return the enclosing environment of the environment listed as an argument.</li>
-<li><code>base::parent.env</code> returns information that can be unhelpful, so use with <code>base::environmentName</code>, as follows: <code>parent.env(environment_name) %&gt;% environmentName</code>.</li>
+<li><code>base::parent.env()</code> returns information that can be unhelpful, so use with <code>base::environmentName()</code>, as follows: <code>parent.env(environment_name) %&gt;% environmentName()</code>.</li>
 </ul></li>
-<li><code>base::q</code>
+<li><code>base::q()</code>
 <ul>
 <li>Terminate an R session.</li>
 </ul></li>
-<li><code>base::R.version</code>
+<li><code>base::R.version()</code>
 <ul>
 <li>Version information.</li>
 </ul></li>
-<li><code>base::R.version.string</code>
+<li><code>base::R.version.string()</code>
 <ul>
 <li>Version information.</li>
-<li>Same call as <code>R.version$version.string</code>.</li>
+<li>Same call as <code>R.version$version.string()</code>.</li>
 </ul></li>
-<li><code>base::require</code>
+<li><code>base::require()</code>
 <ul>
 <li>Load and attach packages, returning <code>FALSE</code> if the package does not exist.</li>
 </ul></li>
-<li><code>base::rm</code>
+<li><code>base::rm()</code>
 <ul>
 <li>Remove objects from a specified environment.</li>
 </ul></li>
-<li><code>base::savehistory</code>
+<li><code>base::savehistory()</code>
 <ul>
 <li>Save command history (default value is “.Rhistory”).</li>
 </ul></li>
-<li><code>base::save.image</code>
+<li><code>base::save.image()</code>
 <ul>
 <li>Save the current workspace.</li>
 </ul></li>
-<li><code>base::search</code>
+<li><code>base::search()</code>
 <ul>
 <li>Return a list of attached packages and R objects.</li>
 </ul></li>
-<li><code>base::searchpaths</code>
+<li><code>base::searchpaths()</code>
 <ul>
 <li>Return the path to attached packages.</li>
 </ul></li>
-<li><code>base::setwd</code>
+<li><code>base::setwd()</code>
 <ul>
 <li>Set the working directory file path.</li>
 <li>When using Windows, use “/” instead of "".</li>
 </ul></li>
-<li><code>base::Sys.getenv</code>
+<li><code>base::Sys.getenv()</code>
 <ul>
-<li>See also <code>Sys.setenv</code>.</li>
+<li>See also <code>Sys.setenv()</code>.</li>
 </ul></li>
-<li><code>base::Sys.info</code>
+<li><code>base::Sys.info()</code>
 <ul>
 <li>Extract system and user information.</li>
 <li>Example: <code>Sys.info()[c("sysname", "release")]</code>.</li>
 </ul></li>
-<li><code>base::Sys.setenv</code>
+<li><code>base::Sys.setenv()</code>
 <ul>
-<li>See also <code>Sys.setenv</code>.</li>
+<li>See also <code>Sys.setenv()</code>.</li>
 </ul></li>
-<li><code>gdata::object.size</code>
+<li><code>gdata::object.size()</code>
 <ul>
 <li>Report the space allocated for an object.</li>
-<li>See also <code>utils::object.size</code>.</li>
+<li>See also <code>utils::object.size()</code>.</li>
 </ul></li>
-<li><code>installr::updateR</code>
+<li><code>here::here()</code></li>
+<li><code>installr::updateR()</code>
 <ul>
 <li>Check for the latest R version; downloads and installs new R versions.</li>
 </ul></li>
-<li><code>pryr::where</code>: Find where a name is defined.</li>
-<li><code>utils::ls.str</code>: List objects and their structure.</li>
-<li><code>utils::object.size</code>: Report the space allocated for an object.
+<li><code>pryr::where()</code>: Find where a name is defined.</li>
+<li><code>utils::ls.str()</code>: List objects and their structure.</li>
+<li><code>utils::object.size()</code>: Report the space allocated for an object.
 <ul>
-<li>See also <code>gdata::object.size</code>.</li>
+<li>See also <code>gdata::object.size()</code>.</li>
 </ul></li>
-<li><code>utils::sessionInfo</code>: Collect information about the current R session.</li>
+<li><code>utils::sessionInfo()</code>: Collect information about the current R session.</li>
 </ul>
 <p>References:</p>
 <ul>
@@ -488,218 +490,220 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="functions" class="section level2">
 <h2>Functions</h2>
-<p><code>{assertive}</code></p>
 <ul>
-<li><code>assert_*</code>: Check whether the input is <code>*</code> (e..g, <code>assert_is_numeric</code>) and throw and error if the input does not meet the condition.</li>
-<li><code>coerce_to</code>: Coerce the input to a different class, with a warning.</li>
-<li><code>is_*</code>: Checks whether the input matches the condition specified by <code>*</code> (e.g., <code>is_non_positive</code>).</li>
-<li><code>use_first</code>: Use only the first element of a vector.</li>
-</ul>
-<p><code>{base}</code></p>
-<ul>
-<li><code>do.call</code>: Execute a function call from a name or a function and a list of arguments to be passed to the function.</li>
-<li><code>invisible</code>: Return a (temporarily) invisible copy of an object.</li>
-<li><code>match.arg</code>: Argument verification.
+<li><code>assertive::assert_*()</code>: Check whether the input is <code>*</code> (e..g, <code>assert_is_numeric()</code>) and throw and error if the input does not meet the condition.</li>
+<li><code>assertive::coerce_to()</code>: Coerce the input to a different class, with a warning.</li>
+<li><code>assertive::is_*()</code>: Checks whether the input matches the condition specified by <code>*</code> (e.g., <code>assertive::is_non_positive()</code>).</li>
+<li><code>assertive::use_first()</code>: Use only the first element of a vector.</li>
+<li><code>base::do.call()</code>: Execute a function call from a name or a function and a list of arguments to be passed to the function.</li>
+<li><code>base::invisible()</code>: Return a (temporarily) invisible copy of an object.</li>
+<li><code>base::match.arg()</code>: Argument verification.
 <ul>
 <li>Useful when matching a character argument specified in the function signature. For example,</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">args</span>(prop.test)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="program.html#cb11-1"></a><span class="kw">args</span>(prop.test)</span></code></pre></div>
 <pre><code>## function (x, n, p = NULL, alternative = c(&quot;two.sided&quot;, &quot;less&quot;, 
 ##     &quot;greater&quot;), conf.level = 0.95, correct = TRUE) 
 ## NULL</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="co"># The body of `prop.test` contains the following line of code:</span></a>
-<a class="sourceLine" id="cb13-2" title="2"><span class="co"># `alternative &lt;- match.arg(alternative), which reassigns it to the selected</span></a>
-<a class="sourceLine" id="cb13-3" title="3"><span class="co"># character vector.</span></a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="program.html#cb13-1"></a><span class="co"># The body of `prop.test` contains the following line of code:</span></span>
+<span id="cb13-2"><a href="program.html#cb13-2"></a><span class="co"># `alternative &lt;- match.arg(alternative), which reassigns it to the selected</span></span>
+<span id="cb13-3"><a href="program.html#cb13-3"></a><span class="co"># character vector.</span></span></code></pre></div>
 <ul>
-<li><code>message</code>: Generage a diagnostic message.
+<li><code>base::message()</code>
 <ul>
+<li>Generate a diagnostic message.</li>
 <li>Preferable to generating a message using <code>cat</code>.</li>
 </ul></li>
-<li><code>return</code>: Return a value from a function.
+<li><code>base::return()</code>
 <ul>
+<li>Return a value from a function.</li>
 <li>Useful in <code>if</code> statements where one condition is simple and the other is complex (see section 19.6.1 “Explicit return statements” in Hadley Wickham’s <a href="https://r4ds.had.co.nz/functions.html"><em>R for Data Science</em></a>.</li>
 </ul></li>
-<li><code>setNames</code>: Set the names in an object.
+<li><code>base::setNames()</code>
 <ul>
+<li>Set the names in an object.</li>
 <li>Useful in function writing; see documentation.</li>
 </ul></li>
-<li><code>stop</code>: Stop execution of the expression and execute an error action.
+<li><code>base::stop()</code>
 <ul>
+<li>Stop execution of the expression and execute an error action.</li>
 <li>Useful in combination with an <code>if</code> statement when you want to generate helpful error messages.</li>
 </ul></li>
-<li><code>stopifnot</code>: Ensure the truth of an R expression.
+<li><code>base::stopifnot()</code>
 <ul>
-<li>See section 19.5.2 “Checking values” in Hadley Wickham’s <a href="https://r4ds.had.co.nz/functions.html"><em>R for Data Science</em></a> for a discussion of <code>stop</code> versus <code>stopifnot</code>.</li>
+<li>Ensure the truth of an R expression.</li>
+<li>See section 19.5.2 “Checking values” in Hadley Wickham’s <a href="https://r4ds.had.co.nz/functions.html"><em>R for Data Science</em></a> for a discussion of <code>stop()</code> versus <code>stopifnot()</code>.</li>
 <li>Consider functions from <code>{assertive}</code> as an alternative to <code>stopifnot</code> and <code>stop</code>.</li>
 </ul></li>
-<li><code>unlist</code>: Flatten lists.
+<li><code>base::unlist()</code>
 <ul>
+<li>Flatten lists.</li>
 <li>Useful when using <code>purrr</code>’s <code>map</code> functions, which return objects as type <code>list</code>.</li>
 </ul></li>
+<li><code>zeallot::%&lt;-%</code>: Multiple assignment operator (see example below).</li>
 </ul>
-<p><code>{zeallot}</code></p>
+<div id="examples" class="section level4">
+<h4>Examples</h4>
 <ul>
-<li><code>%&lt;-%</code>: Multiple assignment operator.
-<ul>
-<li>Useful when you want to return multiple output from a function. For example:</li>
-</ul></li>
+<li><code>zeallot::%&lt;-%</code>:</li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1">session &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
-<a class="sourceLine" id="cb14-2" title="2">  </a>
-<a class="sourceLine" id="cb14-3" title="3">  <span class="kw">list</span>(</a>
-<a class="sourceLine" id="cb14-4" title="4">    <span class="dt">r_version =</span> R.version.string,</a>
-<a class="sourceLine" id="cb14-5" title="5">    <span class="dt">operating_system =</span> <span class="kw">Sys.info</span>()[<span class="kw">c</span>(<span class="st">&quot;sysname&quot;</span>, <span class="st">&quot;release&quot;</span>)],</a>
-<a class="sourceLine" id="cb14-6" title="6">    <span class="dt">loaded_pkgs =</span> <span class="kw">loadedNamespaces</span>()</a>
-<a class="sourceLine" id="cb14-7" title="7">  )</a>
-<a class="sourceLine" id="cb14-8" title="8">}</a>
-<a class="sourceLine" id="cb14-9" title="9"></a>
-<a class="sourceLine" id="cb14-10" title="10"><span class="kw">c</span>(vrsn, os, pkgs) <span class="op">%&lt;-%</span><span class="st"> </span><span class="kw">session</span>() </a></code></pre></div>
-<hr />
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="program.html#cb14-1"></a>session &lt;-<span class="st"> </span><span class="cf">function</span>() {</span>
+<span id="cb14-2"><a href="program.html#cb14-2"></a>  </span>
+<span id="cb14-3"><a href="program.html#cb14-3"></a>  <span class="kw">list</span>(</span>
+<span id="cb14-4"><a href="program.html#cb14-4"></a>    <span class="dt">r_version        =</span> R.version.string,</span>
+<span id="cb14-5"><a href="program.html#cb14-5"></a>    <span class="dt">operating_system =</span> <span class="kw">Sys.info</span>()[<span class="kw">c</span>(<span class="st">&quot;sysname&quot;</span>, <span class="st">&quot;release&quot;</span>)],</span>
+<span id="cb14-6"><a href="program.html#cb14-6"></a>    <span class="dt">loaded_pkgs      =</span> <span class="kw">loadedNamespaces</span>()</span>
+<span id="cb14-7"><a href="program.html#cb14-7"></a>  )</span>
+<span id="cb14-8"><a href="program.html#cb14-8"></a>}</span>
+<span id="cb14-9"><a href="program.html#cb14-9"></a></span>
+<span id="cb14-10"><a href="program.html#cb14-10"></a><span class="kw">c</span>(vrsn, os, pkgs) <span class="op">%&lt;-%</span><span class="st"> </span><span class="kw">session</span>() </span></code></pre></div>
+</div>
 </div>
 <div id="learn-about-an-object" class="section level2">
 <h2>Learn About an Object</h2>
-<p><code>base</code></p>
 <ul>
-<li><code>args()</code>: Display the argument names and default values of a function.</li>
-<li><code>attributes()</code>: View or assign an objects attributes (e.g., <code>class()</code>, <code>dim()</code>, <code>dimnames()</code>, <code>names()</code>, <code>row.names()</code>).</li>
-<li><code>body()</code>: Get or set the body of a function.</li>
-<li><code>colnames()</code>: Retrieve or set column names.</li>
-<li><code>dim()</code>: Retrieve or set the dimnames of an object.</li>
-<li><code>dimnames()</code>: Retrieve or set the dimension names of an object.</li>
-<li><code>formals()</code>: Get or set the formal arguments of a function.</li>
-<li><code>help()</code>: Get the topic documentation.</li>
-<li><code>help.search()</code>: Search the help system for documentation matching a given character string.</li>
-<li><code>vignette()</code>: View a specified package vignette.</li>
-<li>?object_name</li>
-<li>??object_name</li>
-<li><code>rownames()</code>: Retrieve or set row names.</li>
+<li><code>?object_name</code></li>
+<li><code>??object_name</code></li>
+<li><code>base::args()</code>: Display the argument names and default values of a function.</li>
+<li><code>base::attributes()</code>: View or assign an objects attributes (e.g., <code>class()</code>, <code>dim()</code>, <code>dimnames()</code>, <code>names()</code>, <code>row.names()</code>).</li>
+<li><code>base::body()</code>: Get or set the body of a function.</li>
+<li><code>base::colnames()</code>: Retrieve or set column names.</li>
+<li><code>base::dim()</code>: Retrieve or set the dimnames of an object.</li>
+<li><code>base::dimnames()</code>: Retrieve or set the dimension names of an object.</li>
+<li><code>base::formals()</code>: Get or set the formal arguments of a function.</li>
+<li><code>base::help()</code>: Get the topic documentation.</li>
+<li><code>base::help.search()</code>: Search the help system for documentation matching a given character string.</li>
+<li><code>base::vignette()</code>: View a specified package vignette.</li>
+<li><code>base::rownames()</code>: Retrieve or set row names.</li>
 </ul>
-<hr />
 </div>
 <div id="loops" class="section level2">
 <h2>Loops</h2>
-<p><code>base</code></p>
 <ul>
-<li><code>seq()</code>: Sequence generation.
-<ul>
-<li>This functions makes <code>length()</code> unnecessary.</li>
-<li>Child function: <code>seq_along()</code>
-<ul>
-<li>In <code>for</code> loops, safer than using <code>ncol()</code> or <code>nrow()</code>.</li>
-</ul></li>
-</ul></li>
+<li><code>base::seq()</code>: Sequence generation (this functions makes <code>length()</code> unnecessary).</li>
+<li><code>base::seq_along()</code>: In <code>for</code> loops, safer than using <code>base::ncol()</code> or <code>base::nrow()</code>.</li>
 </ul>
-<hr />
 </div>
 <div id="optimization" class="section level2">
 <h2>Optimization</h2>
-<p><code>microbenchmark</code></p>
-<ul>
-<li><code>microbenchmark()</code>: Sub-millisecond accurate timing of expression evaluations.
-<ul>
-<li>A more accurate replacement of <code>system.time(replicate(1000, expr))</code>.</li>
-</ul></li>
-</ul>
-<hr />
+<p><code>microbenchmark::microbenchmark()</code>: Sub-millisecond accurate timing of expression evaluations.
++ A more accurate replacement of <code>system.time(replicate(1000, expr))</code>.</p>
 </div>
 <div id="pipes" class="section level2">
 <h2>Pipes</h2>
-<p><code>magrittr</code></p>
 <ul>
-<li><code>%&lt;&gt;%</code>: Compound assignment-pipe operator.</li>
-<li><code>%&gt;%</code>: Forward-pipe operator.</li>
-<li><code>%$%</code>: Expositions-pipe operator.</li>
-<li><code>add</code>: <code>+</code>, for pipes.</li>
-<li><code>and</code>: <code>&amp;</code>, for pipes.</li>
-<li><code>extract</code>:<code>[</code>, for pipes.
-<ul>
-<li>See also <code>purrr::pluck</code>.</li>
-</ul></li>
-<li><code>extract2</code>: <code>[[</code>, for pipes.</li>
-<li><code>freduce</code>: Apply a list of functions sequentially.</li>
-<li><code>is_in</code>: <code>%in%</code>, for pipes.</li>
-<li><code>multiply_by</code>: <code>*</code>, for pipes.</li>
-<li><code>or</code>: <code>|</code>, for pipes.</li>
-<li><code>raise_to_power</code>: <code>^</code>, for pipes.</li>
-<li><code>subtract</code>: <code>-</code>, for pipes.</li>
+<li><code>magrittr::%&lt;&gt;%</code>: Compound assignment-pipe operator.</li>
+<li><code>magrittr::%&gt;%</code>: Forward-pipe operator.</li>
+<li><code>magrittr::%$%</code>: Expositions-pipe operator.</li>
+<li><code>magrittr::add()</code>: <code>+</code>, for pipes.</li>
+<li><code>magrittr::and()</code>: <code>&amp;</code>, for pipes.</li>
+<li><code>magrittr::extract()</code>:<code>[</code>, for pipes (see also <code>purrr::pluck()</code>).</li>
+<li><code>magrittr::extract2()</code>: <code>[[</code>, for pipes.</li>
+<li><code>magrittr::freduce()</code>: Apply a list of functions sequentially.</li>
+<li><code>magrittr::is_in()</code>: <code>%in%</code>, for pipes.</li>
+<li><code>magrittr::multiply_by()</code>: <code>*</code>, for pipes.</li>
+<li><code>magrittr::or()</code>: <code>|</code>, for pipes.</li>
+<li><code>magrittr::raise_to_power()</code>: <code>^</code>, for pipes.</li>
+<li><code>magrittr::subtract()</code>: <code>-</code>, for pipes.</li>
 </ul>
-<hr />
 </div>
 <div id="popups" class="section level2">
 <h2>Popups</h2>
-<p><code>svDialogs</code></p>
 <ul>
-<li><code>dlg_message</code>: Display a modal message box (works in Windows, MacOS, and Linux).</li>
-</ul>
-<p><code>tcltk</code></p>
-<ul>
-<li><code>tk_messageBox</code>: Display a generic message box using Tk (Windows-specific).</li>
+<li><code>svDialogs::dlg_message()</code>: Display a modal message box (works in Windows, MacOS, and Linux).</li>
+<li><code>tcltk::tk_messageBox()</code>: Display a generic message box using Tk (Windows-specific).</li>
 </ul>
 </div>
 <div id="selecting-subsetting" class="section level2">
 <h2>Selecting &amp; Subsetting</h2>
 <ul>
-<li><code>.$variable_name</code>
-<ul>
-<li>See example below.</li>
-</ul></li>
-<li><code>.[["variable_name"]]</code>
-<ul>
-<li>See example below.</li>
-</ul></li>
-<li><code>base::subset</code></li>
-<li><code>dplyr::first</code></li>
-<li><code>dplyr::last</code></li>
-<li><code>dplyr::nth</code></li>
-<li><code>dplyr::rename</code></li>
-<li><code>dplyr::select</code>
-<ul>
-<li>Helper functions: <code>contains</code>, <code>ends_with</code>, <code>matches</code>, <code>num_range</code>, <code>one_of</code>, <code>starts_with</code>.</li>
-</ul></li>
+<li><code>.$variable_name</code>: See example below.</li>
+<li><code>.[["variable_name"]]</code>: See example below.</li>
+<li><code>base::subset()</code></li>
+<li><code>dplyr::first()</code></li>
+<li><code>dplyr::las()t</code></li>
+<li><code>dplyr::nth()</code></li>
+<li><code>dplyr::rename()</code></li>
+<li><code>dplyr::select()</code>: Helper functions include <code>contains()</code>, <code>ends_with()</code>, <code>matches()</code>, <code>num_range()</code>, <code>one_of()</code>, <code>starts_with()</code>.</li>
 <li><code>ggplot2::cut_number</code></li>
-<li><code>magrittr::extract</code></li>
-<li><code>magrittr::extract2</code></li>
-<li><code>purrr:pluck</code></li>
+<li><code>magrittr::extract()</code></li>
+<li><code>magrittr::extract2()</code></li>
+<li><code>purrr:pluck()</code>: See also <code>magrittr::extract2()</code>.</li>
 </ul>
-<p><strong>Example:</strong> <code>.$variable_name</code></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1">ui_summary_table &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb15-2" title="2"><span class="st">  </span>aws_vendors <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb15-3" title="3"><span class="st">  </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(vendor_name, <span class="st">&quot;UTAH INTERACTIVE&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb15-4" title="4"><span class="st">  </span>.<span class="op">$</span>vendor_id <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb15-5" title="5"><span class="st">  </span><span class="kw">map</span>(query_summary_table) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb15-6" title="6"><span class="st">  </span><span class="kw">bind_rows</span>()</a></code></pre></div>
-<p><strong>Example:</strong> <code>.[["variable_name"]]</code></p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1">  odbc_aws <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb16-2" title="2"><span class="st">    </span><span class="kw">dbGetQuery</span>(</a>
-<a class="sourceLine" id="cb16-3" title="3">      <span class="kw">paste</span>(<span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb16-4" title="4"><span class="st">            SELECT id</span></a>
-<a class="sourceLine" id="cb16-5" title="5"><span class="st">            FROM batch</span></a>
-<a class="sourceLine" id="cb16-6" title="6"><span class="st">            WHERE entity_id = &quot;</span>, t_id, <span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb16-7" title="7"><span class="st">            AND status IN (&#39;PROCESSED&#39;, &#39;PROCESSING&#39;)&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb16-8" title="8"><span class="st">    </span>.[[<span class="st">&quot;id&quot;</span>]] <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb16-9" title="9"><span class="st">  </span><span class="kw">as.double</span>()</a></code></pre></div>
-<p><strong>References:</strong></p>
+<div id="examples-1" class="section level4">
+<h4>Examples</h4>
+<ul>
+<li><code>.$variable_name</code>:</li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="program.html#cb15-1"></a>ui_summary_table &lt;-<span class="st"> </span></span>
+<span id="cb15-2"><a href="program.html#cb15-2"></a><span class="st">  </span>aws_vendors <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb15-3"><a href="program.html#cb15-3"></a><span class="st">  </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(vendor_name, <span class="st">&quot;UTAH INTERACTIVE&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb15-4"><a href="program.html#cb15-4"></a><span class="st">  </span>.<span class="op">$</span>vendor_id <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb15-5"><a href="program.html#cb15-5"></a><span class="st">  </span><span class="kw">map</span>(query_summary_table) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb15-6"><a href="program.html#cb15-6"></a><span class="st">  </span><span class="kw">bind_rows</span>()</span></code></pre></div>
+<ul>
+<li><code>.[["variable_name"]]</code>:</li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="program.html#cb16-1"></a>odbc_aws <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb16-2"><a href="program.html#cb16-2"></a><span class="st">  </span><span class="kw">dbGetQuery</span>(</span>
+<span id="cb16-3"><a href="program.html#cb16-3"></a>    <span class="kw">paste</span>(<span class="st">&quot;</span></span>
+<span id="cb16-4"><a href="program.html#cb16-4"></a><span class="st">          SELECT id</span></span>
+<span id="cb16-5"><a href="program.html#cb16-5"></a><span class="st">          FROM batch</span></span>
+<span id="cb16-6"><a href="program.html#cb16-6"></a><span class="st">          WHERE entity_id = &quot;</span>, t_id, <span class="st">&quot;</span></span>
+<span id="cb16-7"><a href="program.html#cb16-7"></a><span class="st">          AND status IN (&#39;PROCESSED&#39;, &#39;PROCESSING&#39;)&quot;</span></span>
+<span id="cb16-8"><a href="program.html#cb16-8"></a>    )</span>
+<span id="cb16-9"><a href="program.html#cb16-9"></a>  ) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb16-10"><a href="program.html#cb16-10"></a><span class="st">  </span>.[[<span class="st">&quot;id&quot;</span>]] <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb16-11"><a href="program.html#cb16-11"></a><span class="kw">as.double</span>()</span></code></pre></div>
+</div>
+<div id="references" class="section level4">
+<h4>References</h4>
 <ul>
 <li><a href="https://twitter.com/hadleywickham/status/643381054758363136">“Indexing lists in #rstats. Inspired by Residence Inn”</a> (Hadley Wickham, Twitter, 14 September 2015)</li>
 </ul>
-<hr />
+</div>
+</div>
+<div id="style-guide" class="section level2">
+<h2>Style Guide</h2>
+<ul>
+<li><a href="https://style.tidyverse.org/">“The Tidyverse Style Guide”</a> by Hadley Wickham.</li>
+<li>General Layout and Ordering (taken from the outdated <a href="http://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html">“Google’s R Style Guide”</a>)
+<ul>
+<li>Title</li>
+<li>Author</li>
+<li>File description (e.g., purpose of program, inputs, outputs)</li>
+<li><code>source()</code> and <code>library()</code> statements</li>
+<li>Function definitions</li>
+<li>Executed statements.</li>
+</ul></li>
+</ul>
 </div>
 <div id="system-commands" class="section level2">
 <h2>System Commands</h2>
 <ul>
-<li><code>base::system</code></li>
-<li><code>base::system2</code></li>
-<li><code>sys::exec</code></li>
-<li><code>sys::exec_r</code></li>
+<li><code>base::system()</code></li>
+<li><code>base::system2()</code></li>
+<li><code>sys::exec()</code></li>
+<li><code>sys::exec_r()</code></li>
 </ul>
 </div>
 <div id="version-control" class="section level2">
 <h2>Version Control</h2>
-<p>Git</p>
+<ul>
+<li><code>base::update.packages()</code>
+<ul>
+<li>00LOCK error when updating a package: Use <code>update.packages(ask = FALSE, checkBuilt = TRUE, INSTALL_opts = "--no-lock")</code></li>
+</ul></li>
+<li><code>packrat::snapshot()</code>: Capture and store the packages and versions in use.</li>
+<li><code>packrat::restore()</code>: Load the most recent snapshot to the project’s private library.</li>
+<li>Packrat still seems to be under development. The idea sounds good, but in practice the packrat package has caused lots of problems.</li>
+</ul>
+<div id="git" class="section level4">
+<h4>Git</h4>
 <ul>
 <li><p><a href="https://nvie.com/posts/a-successful-git-branching-model/"><em>A successful Git branching model</em></a></p></li>
-<li><p><a href="https://git-scm.com/">Git</a></p></li>
+<li><p><a href="https://git-scm.com/">git-scm.com</a></p></li>
 <li><p><a href="http://r-pkgs.had.co.nz/git.html#git-learning"><em>Git and GitHub</em></a> by Hadley Wickham</p></li>
 <li><p><a href="http://happygitwithr.com/"><em>Happy Git and GitHub for the useR</em></a> by Jenny Bryan</p></li>
 <li><p><a href="https://git-scm.com/book/en/v2"><em>Pro Git</em></a> by Scott Chacon and Ben Straub</p></li>
@@ -712,13 +716,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 </ul>
-<p><code>{packrat}</code></p>
-<ul>
-<li>See note on the <code>packrat</code> package in the “Referenced Packages” section.</li>
-<li><code>snapshot</code>: Capture and store the packages and versions in use.</li>
-<li><code>restore</code>: Load the most recent snapshot to the project’s private library.</li>
-</ul>
 
+</div>
 </div>
 </div>
             </section>

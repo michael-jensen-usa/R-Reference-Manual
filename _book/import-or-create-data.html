@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Import or Create Data | R Reference Manual</title>
   <meta name="description" content="Import or Create Data | R Reference Manual" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Import or Create Data | R Reference Manual" />
   <meta property="og:type" content="book" />
@@ -48,12 +48,17 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -62,14 +67,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -78,9 +85,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -132,58 +139,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html"><i class="fa fa-check"></i>Import or Create Data</a><ul>
 <li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#import-data-from-a-local-drive"><i class="fa fa-check"></i>Import Data from a Local Drive</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#import-data-from-the-internet"><i class="fa fa-check"></i>Import Data from the Internet</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#import-from-or-create-data-in-a-database"><i class="fa fa-check"></i>Import from or Create Data in a Database</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#local-drive"><i class="fa fa-check"></i>Local Drive</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#internet"><i class="fa fa-check"></i>Internet</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#database"><i class="fa fa-check"></i>Database</a></li>
 <li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i>Tidy</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#understand-the-structure-of-the-data"><i class="fa fa-check"></i>Understand the Structure of the Data</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#look-at-the-data"><i class="fa fa-check"></i>Look at the Data</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#visualize-the-data"><i class="fa fa-check"></i>Visualize the Data</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#tidy-data"><i class="fa fa-check"></i>Tidy Data</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#manage-columns-and-observations"><i class="fa fa-check"></i>Manage Columns and Observations</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#transpose"><i class="fa fa-check"></i>Transpose</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#tidy-data"><i class="fa fa-check"></i>Tidy Data</a></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#prepare-data-for-analysis"><i class="fa fa-check"></i>Prepare Data for Analysis</a><ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#coerce-data"><i class="fa fa-check"></i>Coerce Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#coerce"><i class="fa fa-check"></i>Coerce</a></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#dates-and-datetimes"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#factors-and-levels"><i class="fa fa-check"></i>Factors and Levels</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#filter-and-remove-data"><i class="fa fa-check"></i>Filter and Remove Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#filter"><i class="fa fa-check"></i>Filter</a></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#strings"><i class="fa fa-check"></i>Strings</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#test-data"><i class="fa fa-check"></i>Test Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#test"><i class="fa fa-check"></i>Test</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>Transform</a><ul>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#arithmetic-summary-statistics"><i class="fa fa-check"></i>Arithmetic &amp; Summary Statistics</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#create-new-variables-or-modify-existing-ones"><i class="fa fa-check"></i>Create New Variables or Modify Existing Ones</a></li>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#dates-and-datetimes-1"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#dates-and-datetimes"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#factors"><i class="fa fa-check"></i>Factors</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#merge-or-append-data"><i class="fa fa-check"></i>Merge or Append Data</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#narrow-in-on-observations-of-interest"><i class="fa fa-check"></i>Narrow in on Observations of Interest</a></li>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#test"><i class="fa fa-check"></i>Test</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i>Visualize</a><ul>
-<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#flowcharts"><i class="fa fa-check"></i>Flowcharts</a></li>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#interfaces"><i class="fa fa-check"></i>Interfaces</a></li>
-<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#plots"><i class="fa fa-check"></i>Plots</a></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots"><i class="fa fa-check"></i>Graphs, Charts, and Plots</a></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots---statistics"><i class="fa fa-check"></i>Graphs, Charts, and Plots - Statistics</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a><ul>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#general"><i class="fa fa-check"></i>General</a></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#regression"><i class="fa fa-check"></i>Regression</a></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#simulation-prediction"><i class="fa fa-check"></i>Simulation &amp; Prediction</a></li>
-<li class="chapter" data-level="" data-path="model.html"><a href="model.html#strings-1"><i class="fa fa-check"></i>Strings</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#strings"><i class="fa fa-check"></i>Strings</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a><ul>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#css"><i class="fa fa-check"></i>CSS</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#export"><i class="fa fa-check"></i>Export</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#format-output"><i class="fa fa-check"></i>Format Output</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#graphics"><i class="fa fa-check"></i>Graphics</a></li>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots-1"><i class="fa fa-check"></i>Plots</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots"><i class="fa fa-check"></i>Plots</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html"><i class="fa fa-check"></i>Program</a><ul>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#characters"><i class="fa fa-check"></i>Characters</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#conditionals-control-flows"><i class="fa fa-check"></i>Conditionals &amp; Control Flows</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#environment-and-workspace"><i class="fa fa-check"></i>Environment and Workspace</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#evaluation-standard-and-non-standard"><i class="fa fa-check"></i>Evaluation (Standard and Non-standard)</a></li>
@@ -195,19 +196,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#pipes"><i class="fa fa-check"></i>Pipes</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#popups"><i class="fa fa-check"></i>Popups</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#selecting-subsetting"><i class="fa fa-check"></i>Selecting &amp; Subsetting</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#style-guide"><i class="fa fa-check"></i>Style Guide</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#system-commands"><i class="fa fa-check"></i>System Commands</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#version-control"><i class="fa fa-check"></i>Version Control</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html"><i class="fa fa-check"></i>Referenced Packages</a><ul>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#a-d"><i class="fa fa-check"></i>A-D</a></li>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#e-h"><i class="fa fa-check"></i>E-H</a></li>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#i-l"><i class="fa fa-check"></i>I-L</a></li>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#m-p"><i class="fa fa-check"></i>M-P</a></li>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#q-t"><i class="fa fa-check"></i>Q-T</a></li>
-<li class="chapter" data-level="" data-path="referenced-packages.html"><a href="referenced-packages.html#u-z"><i class="fa fa-check"></i>U-Z</a></li>
-</ul></li>
 <li class="chapter" data-level="" data-path="references-resources.html"><a href="references-resources.html"><i class="fa fa-check"></i>References &amp; Resources</a></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#references"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -233,158 +227,205 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <hr />
 <div id="create-data" class="section level2">
 <h2>Create Data</h2>
-<hr />
 <ul>
-<li><code>base::array</code></li>
-<li><code>base::c</code></li>
-<li><code>base::data.frame</code></li>
-<li><code>base::dir.create</code>
-<ul>
-<li>Create a file path in the computer’s file system.</li>
-</ul></li>
-<li><code>base::factor</code></li>
-<li><code>base::list</code></li>
-<li><code>base::matrix</code></li>
-<li><code>base::seq</code></li>
-<li><code>base::vector</code>
-<ul>
-<li>Preferable to <code>base::c</code> when creating an empty vector, according to <a href="https://www.datacamp.com/community/tutorials/five-tips-r-code-improve">“Five Tips to Improve Your R Code”</a>.</li>
-</ul></li>
-<li><code>stats::rnorm</code></li>
-<li><code>tibble::add_row</code></li>
-<li><code>tibble::tibble</code></li>
+<li><code>base::array()</code></li>
+<li><code>base::c()</code>: See <code>base::vector()</code>.</li>
+<li><code>base::data.frame()</code></li>
+<li><code>base::dir.create()</code>: Create a file path in the computer’s file system.</li>
+<li><code>base::factor()</code></li>
+<li><code>base::list()</code></li>
+<li><code>base::matrix()</code></li>
+<li><code>base::seq()</code></li>
+<li><code>base::vector()</code>: Preferable to <code>base::c()</code> when creating an empty vector (<a href="https://www.datacamp.com/community/tutorials/five-tips-r-code-improve">“Five Tips to Improve Your R Code”</a>).</li>
+<li><code>stats::rnorm()</code></li>
+<li><code>tibble::add_row()</code></li>
+<li><code>tibble::tibble()</code></li>
+<li><code>tibble::tribble()</code>: Row-wise tibble creation.</li>
 </ul>
 </div>
-<div id="import-data-from-a-local-drive" class="section level2">
-<h2>Import Data from a Local Drive</h2>
-<hr />
+<div id="local-drive" class="section level2">
+<h2>Local Drive</h2>
 <ul>
-<li><code>base::attach</code>
+<li><code>base::attach()</code>
 <ul>
 <li>Attach a set of R objects to the search path.</li>
 <li>Allows objects in the database to be accessed by giving their names (e.g., <code>height</code> rather than <code>women$height</code>).</li>
 </ul></li>
-<li><code>base::file.choose</code>
-<ul>
-<li>Use as <code>file = file.choose()</code> inside a data import function (such as <code>read_csv</code> and <code>readRDS</code>).</li>
-</ul></li>
-<li><code>base::load</code>
-<ul>
-<li>Reload datasets saved with <code>base::save</code>.</li>
-</ul></li>
-<li><code>base::readRDS</code>
-<ul>
-<li>Restore an R object written with <code>base::saveRDS</code>.</li>
-</ul></li>
-<li><code>data.table::fread</code>
-<ul>
-<li>Similar to <code>utils::read.table</code>, but faster and more convenient for large data sets.</li>
-</ul></li>
-<li><code>foreign::read.spss</code></li>
-<li><code>haven::read_sas</code></li>
-<li><code>readr::read_csv</code></li>
-<li><code>readr::read_csv2</code></li>
-<li><code>readr::read_delim</code></li>
-<li><code>readr::read_tsv</code></li>
-<li><code>readxl::excel_sheets</code></li>
-<li><code>readxl::read_excel</code></li>
-<li><code>readxl::read_xls</code></li>
-<li><code>readxl::read_xlsx</code></li>
-<li><code>utils::data</code>
+<li><code>base::file.choose()</code></li>
+<li><code>base::file.size()</code></li>
+<li><code>base::load()</code>: Reload datasets saved with <code>base::save()</code>.</li>
+<li><code>base::readRDS()</code>: Restore an R object written with <code>base::saveRDS()</code>.</li>
+<li><code>data.table::fread()</code>: Similar to <code>utils::read.table()</code>, but faster and more convenient for large data sets.</li>
+<li><code>foreign::read.spss()</code></li>
+<li><code>haven::read_sas()</code></li>
+<li><code>readr::read_csv()</code></li>
+<li><code>readr::read_csv2()</code></li>
+<li><code>readr::read_delim()</code></li>
+<li><code>readr::read_tsv()</code></li>
+<li><code>readxl::excel_sheets()</code></li>
+<li><code>readxl::read_excel()</code></li>
+<li><code>readxl::read_xls()</code></li>
+<li><code>readxl::read_xlsx()</code></li>
+<li><code>utils::data()</code>
 <ul>
 <li>Load specified data sets, or list the available data sets.</li>
 <li>Use this function to load the data sets that accompany R packages, such as <code>openintro::hsb2</code>, <code>openintro::email50</code>,and <code>gapminder::gapminder</code>.</li>
 </ul></li>
-<li><code>utils::read.csv</code></li>
-<li><code>utils::read.csv2</code></li>
-<li><code>utils::read.delim</code></li>
-<li><code>utils::read.delim2</code></li>
-<li><code>utils::read.table</code>
-<ul>
-<li>Read a file in table format.</li>
-</ul></li>
-<li><code>XLConnect::readWorksheetFromFile</code>
-<ul>
-<li>Read data from worksheets in an Excel file.</li>
-</ul></li>
+<li><code>utils::read.csv()</code></li>
+<li><code>utils::read.csv2()</code></li>
+<li><code>utils::read.delim()</code></li>
+<li><code>utils::read.delim2()</code></li>
+<li><code>utils::read.table()</code>: Read a file in table format.</li>
+<li><code>XLConnect::readWorksheetFromFile()</code>: Read data from worksheets in an Excel file.</li>
 </ul>
 </div>
-<div id="import-data-from-the-internet" class="section level2">
-<h2>Import Data from the Internet</h2>
-<hr />
+<div id="internet" class="section level2">
+<h2>Internet</h2>
 <ul>
-<li><code>httr::GET</code>: Get a URL.</li>
-<li><code>jsonlite::read_json</code>: Read and write JSON.</li>
-<li><code>readr::read_csv</code></li>
-<li><code>readr::read_csv2</code></li>
-<li><code>readr::read_delim</code></li>
-<li><code>readr::read_tsv</code></li>
-<li><code>rjson::fromJSON</code>: Convert JSON to R.</li>
-<li><code>utils::download.file</code>
-<ul>
-<li>See example below.</li>
-</ul></li>
-<li><code>utils::unzip</code>
-<ul>
-<li>See example below.</li>
-</ul></li>
+<li><code>httr::GET()</code>: Get a URL.</li>
+<li><code>jsonlite::read_json()</code>: Read and write JSON.</li>
+<li><code>readr::read_csv()</code></li>
+<li><code>readr::read_csv2()</code></li>
+<li><code>readr::read_delim()</code></li>
+<li><code>readr::read_tsv()</code></li>
+<li><code>rjson::fromJSON()</code>: Convert JSON to R.</li>
+<li><code>utils::download.file()</code>: See example below.</li>
+<li><code>utils::unzip()</code>: See example below.</li>
 </ul>
-<p><strong>Example:</strong> <code>utils::download.file</code></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">download.file</span>(</a>
-<a class="sourceLine" id="cb1-2" title="2">  <span class="st">&quot;https://assets.datacamp.com/production/repositories/5028/datasets/a55843f83746968c7f118d82ed727db9c71e891f/snake_river_visits.rds&quot;</span>,</a>
-<a class="sourceLine" id="cb1-3" title="3">  <span class="dt">destfile =</span> <span class="kw">paste0</span>(<span class="kw">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>))</a>
-<a class="sourceLine" id="cb1-4" title="4"></a>
-<a class="sourceLine" id="cb1-5" title="5">snake_river_visits &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="kw">file.choose</span>())</a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="co"># or</span></a>
-<a class="sourceLine" id="cb1-7" title="7">path &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="kw">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>)</a>
-<a class="sourceLine" id="cb1-8" title="8">snake_river_visits &lt;-<span class="st"> </span><span class="kw">readRDS</span>(path)</a></code></pre></div>
-<p><strong>Example:</strong> Download <code>.Rdata</code> files</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># Example 1:</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="kw">download.file</span>(</a>
-<a class="sourceLine" id="cb2-3" title="3">  <span class="st">&quot;https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData&quot;</span>, </a>
-<a class="sourceLine" id="cb2-4" title="4">  <span class="dt">destfile =</span> <span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span>)</a>
-<a class="sourceLine" id="cb2-5" title="5"></a>
-<a class="sourceLine" id="cb2-6" title="6"><span class="kw">load</span>(<span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span>)</a>
-<a class="sourceLine" id="cb2-7" title="7"></a>
-<a class="sourceLine" id="cb2-8" title="8"><span class="co"># Example 2:</span></a>
-<a class="sourceLine" id="cb2-9" title="9"><span class="kw">download.file</span>(</a>
-<a class="sourceLine" id="cb2-10" title="10">  <span class="st">&quot;https://assets.datacamp.com/production/repositories/235/datasets/3b6fc2923b599058584b57d8c605c6bef454d273/CHIS2009_reduced_2.Rdata&quot;</span>,</a>
-<a class="sourceLine" id="cb2-11" title="11">  <span class="dt">destfile =</span> <span class="st">&quot;chis_2009.Rdata&quot;</span>,</a>
-<a class="sourceLine" id="cb2-12" title="12">  <span class="co"># The documentation for `download.file` indicates that the function will</span></a>
-<a class="sourceLine" id="cb2-13" title="13">  <span class="co"># automatically include `mode = &quot;wb&quot;` for .Rdata files. That may have happened</span></a>
-<a class="sourceLine" id="cb2-14" title="14">  <span class="co"># in Example 1, but didn&#39;t happen in Example 2, which is why I&#39;ve included it.</span></a>
-<a class="sourceLine" id="cb2-15" title="15">  <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span>)</a>
-<a class="sourceLine" id="cb2-16" title="16"></a>
-<a class="sourceLine" id="cb2-17" title="17"><span class="kw">load</span>(<span class="st">&quot;chis_2009.Rdata&quot;</span>)</a></code></pre></div>
-<p><strong>Example:</strong> <code>utils::unzip</code></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">download.file</span>(</a>
-<a class="sourceLine" id="cb3-2" title="2">  <span class="st">&quot;https://assets.datacamp.com/production/repositories/1069/datasets/578834f5908e3b2fa575429a287586d1eaeb2e54/countries2.zip&quot;</span>,</a>
-<a class="sourceLine" id="cb3-3" title="3">  <span class="dt">destfile =</span> <span class="st">&quot;Data Sets/Countries&quot;</span>,</a>
-<a class="sourceLine" id="cb3-4" title="4">  <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span>)</a>
-<a class="sourceLine" id="cb3-5" title="5"></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="kw">unzip</span>(<span class="st">&quot;Data Sets/Countries&quot;</span>, <span class="dt">exdir =</span> <span class="st">&quot;Data Sets&quot;</span>)</a></code></pre></div>
+<div id="examples" class="section level4">
+<h4>Examples</h4>
+<ul>
+<li><code>utils::download.file()</code>:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="import-or-create-data.html#cb1-1"></a><span class="kw">download.file</span>(</span>
+<span id="cb1-2"><a href="import-or-create-data.html#cb1-2"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/5028/datasets/a55843f83746968c7f118d82ed727db9c71e891f/snake_river_visits.rds&quot;</span>,</span>
+<span id="cb1-3"><a href="import-or-create-data.html#cb1-3"></a>  <span class="dt">destfile =</span> <span class="kw">paste0</span>(<span class="kw">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>)</span>
+<span id="cb1-4"><a href="import-or-create-data.html#cb1-4"></a>)</span>
+<span id="cb1-5"><a href="import-or-create-data.html#cb1-5"></a></span>
+<span id="cb1-6"><a href="import-or-create-data.html#cb1-6"></a><span class="co"># Option 1:</span></span>
+<span id="cb1-7"><a href="import-or-create-data.html#cb1-7"></a>snake_river_visits &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="kw">file.choose</span>())</span>
+<span id="cb1-8"><a href="import-or-create-data.html#cb1-8"></a></span>
+<span id="cb1-9"><a href="import-or-create-data.html#cb1-9"></a><span class="co"># Option 2:</span></span>
+<span id="cb1-10"><a href="import-or-create-data.html#cb1-10"></a>snake_river_path   &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="kw">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>)</span>
+<span id="cb1-11"><a href="import-or-create-data.html#cb1-11"></a>snake_river_visits &lt;-<span class="st"> </span><span class="kw">readRDS</span>(snake_river_path)</span></code></pre></div>
+<ul>
+<li><code>utils::download.file()</code> for .Rdata files:</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="import-or-create-data.html#cb2-1"></a><span class="co"># Example 1:</span></span>
+<span id="cb2-2"><a href="import-or-create-data.html#cb2-2"></a><span class="kw">download.file</span>(</span>
+<span id="cb2-3"><a href="import-or-create-data.html#cb2-3"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData&quot;</span>, </span>
+<span id="cb2-4"><a href="import-or-create-data.html#cb2-4"></a>  <span class="dt">destfile =</span> <span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span></span>
+<span id="cb2-5"><a href="import-or-create-data.html#cb2-5"></a>)</span>
+<span id="cb2-6"><a href="import-or-create-data.html#cb2-6"></a></span>
+<span id="cb2-7"><a href="import-or-create-data.html#cb2-7"></a><span class="kw">load</span>(<span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span>)</span>
+<span id="cb2-8"><a href="import-or-create-data.html#cb2-8"></a></span>
+<span id="cb2-9"><a href="import-or-create-data.html#cb2-9"></a><span class="co"># Example 2:</span></span>
+<span id="cb2-10"><a href="import-or-create-data.html#cb2-10"></a><span class="kw">download.file</span>(</span>
+<span id="cb2-11"><a href="import-or-create-data.html#cb2-11"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/235/datasets/3b6fc2923b599058584b57d8c605c6bef454d273/CHIS2009_reduced_2.Rdata&quot;</span>,</span>
+<span id="cb2-12"><a href="import-or-create-data.html#cb2-12"></a>  <span class="dt">destfile =</span> <span class="st">&quot;chis_2009.Rdata&quot;</span>,</span>
+<span id="cb2-13"><a href="import-or-create-data.html#cb2-13"></a>  <span class="co"># The documentation for `download.file` indicates that the function will</span></span>
+<span id="cb2-14"><a href="import-or-create-data.html#cb2-14"></a>  <span class="co"># automatically include `mode = &quot;wb&quot;` for .Rdata files. That may have happened</span></span>
+<span id="cb2-15"><a href="import-or-create-data.html#cb2-15"></a>  <span class="co"># in Example 1, but didn&#39;t happen in Example 2, which is why I&#39;ve included it.</span></span>
+<span id="cb2-16"><a href="import-or-create-data.html#cb2-16"></a>  <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span></span>
+<span id="cb2-17"><a href="import-or-create-data.html#cb2-17"></a>)</span>
+<span id="cb2-18"><a href="import-or-create-data.html#cb2-18"></a></span>
+<span id="cb2-19"><a href="import-or-create-data.html#cb2-19"></a><span class="kw">load</span>(<span class="st">&quot;chis_2009.Rdata&quot;</span>)</span></code></pre></div>
+<ul>
+<li><code>utils::unzip()</code>:</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="import-or-create-data.html#cb3-1"></a><span class="kw">download.file</span>(</span>
+<span id="cb3-2"><a href="import-or-create-data.html#cb3-2"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/1069/datasets/578834f5908e3b2fa575429a287586d1eaeb2e54/countries2.zip&quot;</span>,</span>
+<span id="cb3-3"><a href="import-or-create-data.html#cb3-3"></a>  <span class="dt">destfile =</span> <span class="st">&quot;Data Sets/Countries&quot;</span>,</span>
+<span id="cb3-4"><a href="import-or-create-data.html#cb3-4"></a>  <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span></span>
+<span id="cb3-5"><a href="import-or-create-data.html#cb3-5"></a>)</span>
+<span id="cb3-6"><a href="import-or-create-data.html#cb3-6"></a></span>
+<span id="cb3-7"><a href="import-or-create-data.html#cb3-7"></a><span class="kw">unzip</span>(<span class="st">&quot;Data Sets/Countries&quot;</span>, <span class="dt">exdir =</span> <span class="st">&quot;Data Sets&quot;</span>)</span></code></pre></div>
 </div>
-<div id="import-from-or-create-data-in-a-database" class="section level2">
-<h2>Import from or Create Data in a Database</h2>
-<hr />
+</div>
+<div id="database" class="section level2">
+<h2>Database</h2>
 <ul>
-<li><code>DBI::dbBind</code></li>
-<li><code>DBI::dbClearResult</code></li>
-<li><code>DBI::dbConnect</code></li>
-<li><code>DBI::dbDataType</code></li>
-<li><code>DBI::dbDisconnect</code></li>
-<li><code>DBI::dbExecute</code></li>
-<li><code>DBI::dbFetch</code></li>
-<li><code>DBI::dbGetQuery</code></li>
-<li><code>DBI::dbListTables</code></li>
-<li><code>DBI::dbReadTable</code></li>
-<li><code>DBI::dbSendQuery</code></li>
-<li><code>DBI::dbSendStatement</code></li>
+<li><code>DBI::dbBind()</code></li>
+<li><code>DBI::dbClearResult()</code></li>
+<li><code>DBI::dbConnect()</code></li>
+<li><code>DBI::dbDataType()</code></li>
+<li><code>DBI::dbDisconnect()</code></li>
+<li><code>DBI::dbExecute()</code></li>
+<li><code>DBI::dbFetch()</code></li>
+<li><code>DBI::dbGetQuery()</code></li>
+<li><code>DBI::dbListTables()</code></li>
+<li><code>DBI::dbReadTable()</code></li>
+<li><code>DBI::dbSendQuery()</code></li>
+<li><code>DBI::dbSendStatement()</code></li>
+<li><code>DBI::Id()</code>: See example below.</li>
+<li><code>DBI::SQL()</code>: See example below.</li>
+<li><code>dbplyr::in_schema()</code></li>
+<li><code>dbplyr::tbl()</code></li>
+<li><code>odbc::dbConnect()</code>
+<ul>
+<li>See example below for specifying a database.</li>
+<li>See example below for troubleshooting hang-ups.</li>
+</ul></li>
 </ul>
+<div id="examples-1" class="section level4">
+<h4>Examples</h4>
+<ul>
+<li><code>DBI::Id()</code> vs <code>DBI::SQL()</code>:</li>
+</ul>
+<p>The following are comparable methods of accessing <schema_name>.<table_name>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="import-or-create-data.html#cb4-1"></a><span class="kw">dbCreateTable</span>(</span>
+<span id="cb4-2"><a href="import-or-create-data.html#cb4-2"></a>  conn,</span>
+<span id="cb4-3"><a href="import-or-create-data.html#cb4-3"></a>  <span class="kw">Id</span>(<span class="dt">schema =</span> <span class="st">&quot;schema_name&quot;</span>, <span class="dt">table =</span> <span class="st">&quot;table_name&quot;</span>),</span>
+<span id="cb4-4"><a href="import-or-create-data.html#cb4-4"></a>  <span class="dt">fields =</span> <span class="st">&quot;field_name&quot;</span></span>
+<span id="cb4-5"><a href="import-or-create-data.html#cb4-5"></a>)</span>
+<span id="cb4-6"><a href="import-or-create-data.html#cb4-6"></a></span>
+<span id="cb4-7"><a href="import-or-create-data.html#cb4-7"></a><span class="kw">dbCreateTable</span>(</span>
+<span id="cb4-8"><a href="import-or-create-data.html#cb4-8"></a>  conn,</span>
+<span id="cb4-9"><a href="import-or-create-data.html#cb4-9"></a>  <span class="dt">name   =</span> <span class="kw">SQL</span>(<span class="st">&quot;schema_name.table_name&quot;</span>),</span>
+<span id="cb4-10"><a href="import-or-create-data.html#cb4-10"></a>  <span class="dt">fields =</span> <span class="st">&quot;field_name&quot;</span></span>
+<span id="cb4-11"><a href="import-or-create-data.html#cb4-11"></a>)</span></code></pre></div>
+<ul>
+<li><code>odbc::dbConnect()</code>:</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="import-or-create-data.html#cb5-1"></a><span class="co"># Specify database:</span></span>
+<span id="cb5-2"><a href="import-or-create-data.html#cb5-2"></a>conn_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">dbConnect</span>(odbc<span class="op">::</span><span class="kw">odbc</span>(), <span class="dt">dsn =</span> <span class="st">&quot;sql&quot;</span>) <span class="co"># Default database: Actuary</span></span>
+<span id="cb5-3"><a href="import-or-create-data.html#cb5-3"></a></span>
+<span id="cb5-4"><a href="import-or-create-data.html#cb5-4"></a>conn_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">dbConnect</span>(odbc<span class="op">::</span><span class="kw">odbc</span>(), <span class="dt">dsn =</span> <span class="st">&quot;sql&quot;</span>, <span class="dt">Database =</span> <span class="st">&quot;Staging&quot;</span>)</span>
+<span id="cb5-5"><a href="import-or-create-data.html#cb5-5"></a></span>
+<span id="cb5-6"><a href="import-or-create-data.html#cb5-6"></a><span class="co"># Troubleshoot hang-ups</span></span>
+<span id="cb5-7"><a href="import-or-create-data.html#cb5-7"></a><span class="co"># It appears that RStudio&#39;s attempt to load information into the Connection Pane,</span></span>
+<span id="cb5-8"><a href="import-or-create-data.html#cb5-8"></a><span class="co"># via `odbc::dbConnect`, can sometimes cause the call to hang, indefinitely.</span></span>
+<span id="cb5-9"><a href="import-or-create-data.html#cb5-9"></a><span class="co"># Use the following code to access the database in such a situation:</span></span>
+<span id="cb5-10"><a href="import-or-create-data.html#cb5-10"></a></span>
+<span id="cb5-11"><a href="import-or-create-data.html#cb5-11"></a><span class="kw">options</span>(<span class="dt">connectionObserver =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+</div>
+<div id="references" class="section level4">
+<h4>References</h4>
+<ul>
+<li><a href="db.rstudio.com">“Databases using R”</a></li>
+</ul>
+</div>
+<div id="sql" class="section level4">
+<h4>SQL</h4>
+<ul>
+<li>Temp Tables
+<ul>
+<li>Use <code>SET NOCOUNT ON</code> in the SQL query to prevent R confusing the SQL rowcount return value with the temporary table.</li>
+</ul></li>
+<li>Try case-sensitive syntax (e.g., when querying a database other than the default).</li>
+<li>Try selecting certain columns, rather than <code>SELECT *</code>, as SQL BLOB columns cause trouble.</li>
+</ul>
+<div id="references-1" class="section level5">
+<h5>References</h5>
+<ul>
+<li><a href="https://blog.jooq.org/2016/03/17/10-easy-steps-to-a-complete-understanding-of-sql/">“10 Easy Steps to a Complete Understanding of SQL”</a></li>
+<li><a href="https://www.sqlite.org/queryplanner.html">“Query Planning”</a></li>
+</ul>
+</div>
+</div>
 </div>
 <div id="notes-references" class="section level2">
 <h2>Notes &amp; References</h2>
-<hr />
 <ul>
 <li><a href="http://adv-r.had.co.nz/Data-structures.html">“Data structures”</a> (Wickham, <a href="http://adv-r.had.co.nz/"><em>Advanced R</em></a>)</li>
 <li><code>{openintro}</code> contains data sets useful for practicing and teaching.</li>

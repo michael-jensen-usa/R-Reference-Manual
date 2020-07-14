@@ -148,75 +148,56 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 ## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
 \end{verbatim}
 
-\hypertarget{htmlwidget-75fae9ee15704ff1fbc6}{}
+\hypertarget{htmlwidget-2695ad8a4f8c3246d9d0}{}
+\begin{grViz}
 
-\hypertarget{import}{%
-\chapter{Import}\label{import}}
+\end{grViz}
+
+\hypertarget{import-or-create-data}{%
+\chapter{Import or Create Data}\label{import-or-create-data}}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{create-data}{%
 \section{Create Data}\label{create-data}}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
 \begin{itemize}
 \tightlist
 \item
-  \texttt{base::array}
+  \texttt{base::array()}
 \item
-  \texttt{base::c}
+  \texttt{base::c()}: See \texttt{base::vector()}.
 \item
-  \texttt{base::data.frame}
+  \texttt{base::data.frame()}
 \item
-  \texttt{base::dir.create}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Create a file path in the computer's file system.
-  \end{itemize}
+  \texttt{base::dir.create()}: Create a file path in the computer's file system.
 \item
-  \texttt{base::factor}
+  \texttt{base::factor()}
 \item
-  \texttt{base::list}
+  \texttt{base::list()}
 \item
-  \texttt{base::matrix}
+  \texttt{base::matrix()}
 \item
-  \texttt{base::seq}
+  \texttt{base::seq()}
 \item
-  \texttt{base::vector}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Preferable to \texttt{base::c} when creating an empty vector (\href{https://www.datacamp.com/community/tutorials/five-tips-r-code-improve}{``Five Tips to Improve Your R Code''}).
-  \end{itemize}
+  \texttt{base::vector()}: Preferable to \texttt{base::c()} when creating an empty vector (\href{https://www.datacamp.com/community/tutorials/five-tips-r-code-improve}{``Five Tips to Improve Your R Code''}).
 \item
-  \texttt{stats::rnorm}
+  \texttt{stats::rnorm()}
 \item
-  \texttt{tibble::add\_row}
+  \texttt{tibble::add\_row()}
 \item
-  \texttt{tibble::tibble}
+  \texttt{tibble::tibble()}
 \item
-  \texttt{tibble::tribble}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Row-wise tibble creation.
-  \end{itemize}
+  \texttt{tibble::tribble()}: Row-wise tibble creation.
 \end{itemize}
 
-\hypertarget{import-data-from-a-local-drive}{%
-\section{Import Data from a Local Drive}\label{import-data-from-a-local-drive}}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\hypertarget{local-drive}{%
+\section{Local Drive}\label{local-drive}}
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{base::attach}
+  \texttt{base::attach()}
 
   \begin{itemize}
   \tightlist
@@ -226,61 +207,37 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
     Allows objects in the database to be accessed by giving their names (e.g., \texttt{height} rather than \texttt{women\$height}).
   \end{itemize}
 \item
-  \texttt{base::file.choose}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Use as \texttt{file\ =\ file.choose()} inside a data import function (such as \texttt{read\_csv} and \texttt{readRDS}).
-  \end{itemize}
+  \texttt{base::file.choose()}
 \item
-  \texttt{base::file.size}
+  \texttt{base::file.size()}
 \item
-  \texttt{base::load}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Reload datasets saved with \texttt{base::save}.
-  \end{itemize}
+  \texttt{base::load()}: Reload datasets saved with \texttt{base::save()}.
 \item
-  \texttt{base::readRDS}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Restore an R object written with \texttt{base::saveRDS}.
-  \end{itemize}
+  \texttt{base::readRDS()}: Restore an R object written with \texttt{base::saveRDS()}.
 \item
-  \texttt{data.table::fread}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Similar to \texttt{utils::read.table}, but faster and more convenient for large data sets.
-  \end{itemize}
+  \texttt{data.table::fread()}: Similar to \texttt{utils::read.table()}, but faster and more convenient for large data sets.
 \item
-  \texttt{foreign::read.spss}
+  \texttt{foreign::read.spss()}
 \item
-  \texttt{haven::read\_sas}
+  \texttt{haven::read\_sas()}
 \item
-  \texttt{readr::read\_csv}
+  \texttt{readr::read\_csv()}
 \item
-  \texttt{readr::read\_csv2}
+  \texttt{readr::read\_csv2()}
 \item
-  \texttt{readr::read\_delim}
+  \texttt{readr::read\_delim()}
 \item
-  \texttt{readr::read\_tsv}
+  \texttt{readr::read\_tsv()}
 \item
-  \texttt{readxl::excel\_sheets}
+  \texttt{readxl::excel\_sheets()}
 \item
-  \texttt{readxl::read\_excel}
+  \texttt{readxl::read\_excel()}
 \item
-  \texttt{readxl::read\_xls}
+  \texttt{readxl::read\_xls()}
 \item
-  \texttt{readxl::read\_xlsx}
+  \texttt{readxl::read\_xlsx()}
 \item
-  \texttt{utils::data}
+  \texttt{utils::data()}
 
   \begin{itemize}
   \tightlist
@@ -290,93 +247,82 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
     Use this function to load the data sets that accompany R packages, such as \texttt{openintro::hsb2}, \texttt{openintro::email50},and \texttt{gapminder::gapminder}.
   \end{itemize}
 \item
-  \texttt{utils::read.csv}
+  \texttt{utils::read.csv()}
 \item
-  \texttt{utils::read.csv2}
+  \texttt{utils::read.csv2()}
 \item
-  \texttt{utils::read.delim}
+  \texttt{utils::read.delim()}
 \item
-  \texttt{utils::read.delim2}
+  \texttt{utils::read.delim2()}
 \item
-  \texttt{utils::read.table}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Read a file in table format.
-  \end{itemize}
+  \texttt{utils::read.table()}: Read a file in table format.
 \item
-  \texttt{XLConnect::readWorksheetFromFile}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Read data from worksheets in an Excel file.
-  \end{itemize}
+  \texttt{XLConnect::readWorksheetFromFile()}: Read data from worksheets in an Excel file.
 \end{itemize}
 
-\hypertarget{import-data-from-the-internet}{%
-\section{Import Data from the Internet}\label{import-data-from-the-internet}}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\hypertarget{internet}{%
+\section{Internet}\label{internet}}
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{httr::GET}: Get a URL.
+  \texttt{httr::GET()}: Get a URL.
 \item
-  \texttt{jsonlite::read\_json}: Read and write JSON.
+  \texttt{jsonlite::read\_json()}: Read and write JSON.
 \item
-  \texttt{readr::read\_csv}
+  \texttt{readr::read\_csv()}
 \item
-  \texttt{readr::read\_csv2}
+  \texttt{readr::read\_csv2()}
 \item
-  \texttt{readr::read\_delim}
+  \texttt{readr::read\_delim()}
 \item
-  \texttt{readr::read\_tsv}
+  \texttt{readr::read\_tsv()}
 \item
-  \texttt{rjson::fromJSON}: Convert JSON to R.
+  \texttt{rjson::fromJSON()}: Convert JSON to R.
 \item
-  \texttt{utils::download.file}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    See example below.
-  \end{itemize}
+  \texttt{utils::download.file()}: See example below.
 \item
-  \texttt{utils::unzip}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    See example below.
-  \end{itemize}
+  \texttt{utils::unzip()}: See example below.
 \end{itemize}
 
-\textbf{Example:} \texttt{utils::download.file}
+\hypertarget{examples}{%
+\subsubsection{Examples}\label{examples}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{utils::download.file()}:
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{download.file}\NormalTok{(}
   \StringTok{"https://assets.datacamp.com/production/repositories/5028/datasets/a55843f83746968c7f118d82ed727db9c71e891f/snake_river_visits.rds"}\NormalTok{,}
-  \DataTypeTok{destfile =} \KeywordTok{paste0}\NormalTok{(}\KeywordTok{getwd}\NormalTok{(), }\StringTok{"/Snake River Visits.rds"}\NormalTok{))}
+  \DataTypeTok{destfile =} \KeywordTok{paste0}\NormalTok{(}\KeywordTok{getwd}\NormalTok{(), }\StringTok{"/Snake River Visits.rds"}\NormalTok{)}
+\NormalTok{)}
 
+\CommentTok{# Option 1:}
 \NormalTok{snake_river_visits <-}\StringTok{ }\KeywordTok{readRDS}\NormalTok{(}\KeywordTok{file.choose}\NormalTok{())}
-\CommentTok{# or}
-\NormalTok{path <-}\StringTok{ }\KeywordTok{paste0}\NormalTok{(}\KeywordTok{getwd}\NormalTok{(), }\StringTok{"/Snake River Visits.rds"}\NormalTok{)}
-\NormalTok{snake_river_visits <-}\StringTok{ }\KeywordTok{readRDS}\NormalTok{(path)}
+
+\CommentTok{# Option 2:}
+\NormalTok{snake_river_path   <-}\StringTok{ }\KeywordTok{paste0}\NormalTok{(}\KeywordTok{getwd}\NormalTok{(), }\StringTok{"/Snake River Visits.rds"}\NormalTok{)}
+\NormalTok{snake_river_visits <-}\StringTok{ }\KeywordTok{readRDS}\NormalTok{(snake_river_path)}
 \end{Highlighting}
 \end{Shaded}
 
-\textbf{Example:} Download \texttt{.Rdata} files
+\begin{itemize}
+\tightlist
+\item
+  \texttt{utils::download.file()} for .Rdata files:
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# Example 1:}
 \KeywordTok{download.file}\NormalTok{(}
   \StringTok{"https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData"}\NormalTok{, }
-  \DataTypeTok{destfile =} \StringTok{"datacamp_iris_dataset.Rdata"}\NormalTok{)}
+  \DataTypeTok{destfile =} \StringTok{"datacamp_iris_dataset.Rdata"}
+\NormalTok{)}
 
 \KeywordTok{load}\NormalTok{(}\StringTok{"datacamp_iris_dataset.Rdata"}\NormalTok{)}
 
@@ -387,78 +333,70 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
   \CommentTok{# The documentation for `download.file` indicates that the function will}
   \CommentTok{# automatically include `mode = "wb"` for .Rdata files. That may have happened}
   \CommentTok{# in Example 1, but didn't happen in Example 2, which is why I've included it.}
-  \DataTypeTok{mode =} \StringTok{"wb"}\NormalTok{)}
+  \DataTypeTok{mode =} \StringTok{"wb"}
+\NormalTok{)}
 
 \KeywordTok{load}\NormalTok{(}\StringTok{"chis_2009.Rdata"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\textbf{Example:} \texttt{utils::unzip}
+\begin{itemize}
+\tightlist
+\item
+  \texttt{utils::unzip()}:
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{download.file}\NormalTok{(}
   \StringTok{"https://assets.datacamp.com/production/repositories/1069/datasets/578834f5908e3b2fa575429a287586d1eaeb2e54/countries2.zip"}\NormalTok{,}
   \DataTypeTok{destfile =} \StringTok{"Data Sets/Countries"}\NormalTok{,}
-  \DataTypeTok{mode =} \StringTok{"wb"}\NormalTok{)}
+  \DataTypeTok{mode =} \StringTok{"wb"}
+\NormalTok{)}
 
 \KeywordTok{unzip}\NormalTok{(}\StringTok{"Data Sets/Countries"}\NormalTok{, }\DataTypeTok{exdir =} \StringTok{"Data Sets"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{import-from-or-create-data-in-a-database}{%
-\section{Import from or Create Data in a Database}\label{import-from-or-create-data-in-a-database}}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\hypertarget{database}{%
+\section{Database}\label{database}}
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{DBI::dbBind}
+  \texttt{DBI::dbBind()}
 \item
-  \texttt{DBI::dbClearResult}
+  \texttt{DBI::dbClearResult()}
 \item
-  \texttt{DBI::dbConnect}
+  \texttt{DBI::dbConnect()}
 \item
-  \texttt{DBI::dbDataType}
+  \texttt{DBI::dbDataType()}
 \item
-  \texttt{DBI::dbDisconnect}
+  \texttt{DBI::dbDisconnect()}
 \item
-  \texttt{DBI::dbExecute}
+  \texttt{DBI::dbExecute()}
 \item
-  \texttt{DBI::dbFetch}
+  \texttt{DBI::dbFetch()}
 \item
-  \texttt{DBI::dbGetQuery}
+  \texttt{DBI::dbGetQuery()}
 \item
-  \texttt{DBI::dbListTables}
+  \texttt{DBI::dbListTables()}
 \item
-  \texttt{DBI::dbReadTable}
+  \texttt{DBI::dbReadTable()}
 \item
-  \texttt{DBI::dbSendQuery}
+  \texttt{DBI::dbSendQuery()}
 \item
-  \texttt{DBI::dbSendStatement}
+  \texttt{DBI::dbSendStatement()}
 \item
-  \texttt{DBI::Id}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    See example below.
-  \end{itemize}
+  \texttt{DBI::Id()}: See example below.
 \item
-  \texttt{DBI::SQL}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    See example below.
-  \end{itemize}
+  \texttt{DBI::SQL()}: See example below.
 \item
-  \texttt{dbplyr::in\_schema}
+  \texttt{dbplyr::in\_schema()}
 \item
-  \texttt{dbplyr::tbl}
+  \texttt{dbplyr::tbl()}
 \item
-  \texttt{odbc::dbConnect}
+  \texttt{odbc::dbConnect()}
 
   \begin{itemize}
   \tightlist
@@ -469,7 +407,14 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
   \end{itemize}
 \end{itemize}
 
-\textbf{Example:} \texttt{DBI::Id} vs \texttt{DBI::SQL}
+\hypertarget{examples-1}{%
+\subsubsection{Examples}\label{examples-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{DBI::Id()} vs \texttt{DBI::SQL()}:
+\end{itemize}
 
 The following are comparable methods of accessing .:
 
@@ -478,25 +423,29 @@ The following are comparable methods of accessing .:
 \KeywordTok{dbCreateTable}\NormalTok{(}
 \NormalTok{  conn,}
   \KeywordTok{Id}\NormalTok{(}\DataTypeTok{schema =} \StringTok{"schema_name"}\NormalTok{, }\DataTypeTok{table =} \StringTok{"table_name"}\NormalTok{),}
-  \DataTypeTok{fields =} \StringTok{"field_name"}\NormalTok{)}
+  \DataTypeTok{fields =} \StringTok{"field_name"}
+\NormalTok{)}
 
 \KeywordTok{dbCreateTable}\NormalTok{(}
 \NormalTok{  conn,}
-  \DataTypeTok{name =} \KeywordTok{SQL}\NormalTok{(}\StringTok{"schema_name.table_name"}\NormalTok{),}
-  \DataTypeTok{fields =} \StringTok{"field_name"}\NormalTok{)}
+  \DataTypeTok{name   =} \KeywordTok{SQL}\NormalTok{(}\StringTok{"schema_name.table_name"}\NormalTok{),}
+  \DataTypeTok{fields =} \StringTok{"field_name"}
+\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\textbf{Example:} \texttt{odbc::dbConnect}
+\begin{itemize}
+\tightlist
+\item
+  \texttt{odbc::dbConnect()}:
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# Specify database:}
-\NormalTok{conn_}\DecValTok{1}\NormalTok{ <-}\StringTok{ }
-\StringTok{  }\KeywordTok{dbConnect}\NormalTok{(odbc}\OperatorTok{::}\KeywordTok{odbc}\NormalTok{(), }\DataTypeTok{dsn =} \StringTok{"sql"}\NormalTok{) }\CommentTok{# Default database: Actuary}
+\NormalTok{conn_}\DecValTok{1}\NormalTok{ <-}\StringTok{ }\KeywordTok{dbConnect}\NormalTok{(odbc}\OperatorTok{::}\KeywordTok{odbc}\NormalTok{(), }\DataTypeTok{dsn =} \StringTok{"sql"}\NormalTok{) }\CommentTok{# Default database: Actuary}
 
-\NormalTok{conn_}\DecValTok{2}\NormalTok{ <-}\StringTok{ }
-\StringTok{  }\KeywordTok{dbConnect}\NormalTok{(odbc}\OperatorTok{::}\KeywordTok{odbc}\NormalTok{(), }\DataTypeTok{dsn =} \StringTok{"sql"}\NormalTok{, }\DataTypeTok{Database =} \StringTok{"Staging"}\NormalTok{)}
+\NormalTok{conn_}\DecValTok{2}\NormalTok{ <-}\StringTok{ }\KeywordTok{dbConnect}\NormalTok{(odbc}\OperatorTok{::}\KeywordTok{odbc}\NormalTok{(), }\DataTypeTok{dsn =} \StringTok{"sql"}\NormalTok{, }\DataTypeTok{Database =} \StringTok{"Staging"}\NormalTok{)}
 
 \CommentTok{# Troubleshoot hang-ups}
 \CommentTok{# It appears that RStudio's attempt to load information into the Connection Pane,}
@@ -507,25 +456,47 @@ The following are comparable methods of accessing .:
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{sql}{%
-\subsection{SQL}\label{sql}}
+\hypertarget{references}{%
+\subsubsection{References}\label{references}}
 
 \begin{itemize}
 \tightlist
 \item
-  Temp tables
+  \href{db.rstudio.com}{``Databases using R''}
+\end{itemize}
+
+\hypertarget{sql}{%
+\subsubsection{SQL}\label{sql}}
+
+\begin{itemize}
+\tightlist
+\item
+  Temp Tables
 
   \begin{itemize}
   \tightlist
   \item
     Use \texttt{SET\ NOCOUNT\ ON} in the SQL query to prevent R confusing the SQL rowcount return value with the temporary table.
   \end{itemize}
+\item
+  Try case-sensitive syntax (e.g., when querying a database other than the default).
+\item
+  Try selecting certain columns, rather than \texttt{SELECT\ *}, as SQL BLOB columns cause trouble.
+\end{itemize}
+
+\hypertarget{references-1}{%
+\paragraph{References}\label{references-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://blog.jooq.org/2016/03/17/10-easy-steps-to-a-complete-understanding-of-sql/}{``10 Easy Steps to a Complete Understanding of SQL''}
+\item
+  \href{https://www.sqlite.org/queryplanner.html}{``Query Planning''}
 \end{itemize}
 
 \hypertarget{notes-references}{%
 \section{Notes \& References}\label{notes-references}}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{itemize}
 \tightlist
@@ -548,8 +519,6 @@ The following are comparable methods of accessing .:
 
 \hypertarget{explore-raw-data}{%
 \section{Explore Raw Data}\label{explore-raw-data}}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{itemize}
 \tightlist
@@ -635,8 +604,6 @@ The following are comparable methods of accessing .:
 
 \hypertarget{tidy-data}{%
 \section{Tidy Data}\label{tidy-data}}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{itemize}
 \tightlist
@@ -740,8 +707,6 @@ The following are comparable methods of accessing .:
 
 \hypertarget{prepare-data-for-analysis}{%
 \section{Prepare Data for Analysis}\label{prepare-data-for-analysis}}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{coerce}{%
 \subsection{Coerce}\label{coerce}}
@@ -1229,6 +1194,8 @@ The following are comparable methods of accessing .:
   \tightlist
   \item
     Use \texttt{mean(variable\ ==\ value)} to get a percentage (see the above example for \texttt{mean}.)
+  \item
+    See \texttt{dplyr::n\_distinct()}.
   \end{itemize}
 \item
   \texttt{dplyr::tally}
@@ -1326,8 +1293,8 @@ The following are comparable methods of accessing .:
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{dates-and-datetimes-1}{%
-\section{Dates and Datetimes}\label{dates-and-datetimes-1}}
+\hypertarget{dates-and-datetimes}{%
+\section{Dates and Datetimes}\label{dates-and-datetimes}}
 
 \begin{itemize}
 \tightlist
@@ -1695,8 +1662,6 @@ The following are comparable methods of accessing .:
   \texttt{add\_row()}: Add rows to a data frame.
 \end{itemize}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
 \hypertarget{narrow-in-on-observations-of-interest}{%
 \section{Narrow in on Observations of Interest}\label{narrow-in-on-observations-of-interest}}
 
@@ -1740,24 +1705,20 @@ The following are comparable methods of accessing .:
   \item
     Use \texttt{prop.table} to see the table entries expressed as proportions.
   \end{itemize}
-\end{itemize}
-
-\texttt{\{dplyr\}}
-
-\begin{itemize}
-\tightlist
 \item
-  \texttt{arrange}: Arrange rows by variable, in ascending order.
+  \texttt{dplr::all\_equal()}: Compare data frames.
+\item
+  \texttt{dplyr::arrange()}: Arrange rows by variable, in ascending order.
 
   \begin{itemize}
   \tightlist
   \item
-    Related functions: \texttt{arrange\_all}, \texttt{arrange\_at}, \texttt{arrange\_if}.
+    Related functions: \texttt{arrange\_all()}, \texttt{arrange\_at()}, \texttt{arrange\_if()}.
   \end{itemize}
 \item
-  \texttt{distinct}: Select distinct rows.
+  \texttt{dplyr::distinct()}: Select distinct rows.
 \item
-  \texttt{filter}: Return rows with matching conditions.
+  \texttt{dplyr::filter()}: Return rows with matching conditions.
 
   \begin{itemize}
   \tightlist
@@ -1779,11 +1740,11 @@ The following are comparable methods of accessing .:
 \begin{itemize}
 \tightlist
 \item
-  \texttt{renam}: Rename variables by name (a modification of \texttt{select}).
+  \texttt{dplyr::rename()}: Rename variables by name (a modification of \texttt{select}).
 \item
-  \texttt{sample\_n}: Sample n rows from a table.
+  \texttt{dplyr::sample\_n()}: Sample n rows from a table.
 \item
-  \texttt{select}: Select/rename variables.
+  \texttt{dplyr::select()}: Select/rename variables.
 
   \begin{itemize}
   \tightlist
@@ -1793,30 +1754,26 @@ The following are comparable methods of accessing .:
     Helper functions take strings (e.g., \texttt{contains("work")} rather than \texttt{contains(work)}).
   \end{itemize}
 \item
-  \texttt{slice}: Choose rows by position.
+  \texttt{dplyr::slice()}: Choose rows by position.
 \item
-  \texttt{transmute}: Create or transform variables.
+  \texttt{dplyr::transmute()}: Create or transform variables.
 
   \begin{itemize}
   \tightlist
   \item
-    Like a combination of \texttt{select} and \texttt{mutate}.
+    Like a combination of \texttt{dplyr::select} and \texttt{dplyr::mutate}.
   \end{itemize}
 \end{itemize}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\hypertarget{test-1}{%
-\section{Test}\label{test-1}}
-
-\texttt{base}
+\hypertarget{test}{%
+\section{Test}\label{test}}
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{identical()}: Test objects for exact equality.
+  \texttt{base::identical()}: Test objects for exact equality.
 \item
-  \texttt{match()}: Value matching.
+  \texttt{base::match()}: Value matching.
 
   \begin{itemize}
   \tightlist
@@ -1824,9 +1781,9 @@ The following are comparable methods of accessing .:
     \texttt{\%in\%} is the more intuitive binary operator.
   \end{itemize}
 \item
-  \texttt{setequal()}: Check two vectors for equality.
+  \texttt{base::setequal()}: Check two vectors for equality.
 \item
-  \texttt{which()}: Determine which indices are \texttt{TRUE}.
+  \texttt{base::which()}: Determine which indices are \texttt{TRUE}.
 
   \begin{itemize}
   \tightlist
@@ -1834,9 +1791,9 @@ The following are comparable methods of accessing .:
     This function is often unnecessary, according to the DataCamp article \href{https://www.datacamp.com/community/tutorials/five-tips-r-code-improve}{``Five Tips to Improve Your R Code''}.
   \end{itemize}
 \item
-  \texttt{which.min()}/\texttt{which.max()}: Where is the \texttt{min()}/\texttt{max()} or first \texttt{TRUE}/\texttt{FALSE}?
+  \texttt{base::which.min()}/\texttt{base::which.max()}: Where is the \texttt{min()}/\texttt{max()} or first \texttt{TRUE}/\texttt{FALSE}?
 \item
-  \texttt{\%in\%}: See \texttt{match()}.
+  \texttt{\%in\%}: See \texttt{base::match()}.
 \end{itemize}
 
 \hypertarget{visualize}{%
@@ -1964,7 +1921,7 @@ The following are comparable methods of accessing .:
   \item
     Lay out panels in a grid.
   \item
-    When using a tilde function, the variable on the left specifies the rows and the variable on the right specifies the columns (when faceting in only one direction; i.e., only rows or only columns). Use \texttt{.} to specify nothing for the unused direction (e.g.~\texttt{facet\_grid(cyl\ \textasciitilde{}\ .)}).
+    \texttt{ROWS\ \textasciitilde{}\ COLS}: When using a tilde function, the variable on the left specifies the rows and the variable on the right specifies the columns (when faceting in only one direction; i.e., only rows or only columns). Use \texttt{.} to specify nothing for the unused direction (e.g.~\texttt{facet\_grid(cyl\ \textasciitilde{}\ .)}).
   \end{itemize}
 \item
   \texttt{ggplot2::facet\_wrap}
@@ -2487,8 +2444,8 @@ The following are comparable methods of accessing .:
   \texttt{stats::rnorm}
 \end{itemize}
 
-\hypertarget{strings-1}{%
-\section{Strings}\label{strings-1}}
+\hypertarget{strings}{%
+\section{Strings}\label{strings}}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -2716,7 +2673,6 @@ The following are comparable methods of accessing .:
 
 ``Surrounding {[}the tools for importing, tidying, transforming, visualising, modeling, and communicating data{]} is programming. Programming is a cross-cutting tool that you use in every part of a project. You don't need to be an expert programmer to be a data scientist, but learning more about programming pays off because becoming a better programmer allows you to automate common tasks, and solve new problems with greater ease.''\\
 - Garrett Grolemund \& Hadley Wickham, \emph{R for Data Science}
-***
 
 \hypertarget{characters}{%
 \section{Characters}\label{characters}}
@@ -2795,15 +2751,15 @@ References:
   \texttt{if\_else()}: Vectorized \texttt{if}.
 \end{itemize}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
 \hypertarget{environment-and-workspace}{%
 \section{Environment and Workspace}\label{environment-and-workspace}}
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{base::baseenve}
+  \texttt{base::.libPaths()}
+\item
+  \texttt{base::baseenve()}
 
   \begin{itemize}
   \tightlist
@@ -2811,7 +2767,7 @@ References:
     The environment of the \texttt{base} package; it's enclosing environment (``parent environment'') is the empty environment.
   \end{itemize}
 \item
-  \texttt{base::dir}
+  \texttt{base::dir()}
 
   \begin{itemize}
   \tightlist
@@ -2819,7 +2775,7 @@ References:
     List the files in a directory.
   \end{itemize}
 \item
-  \texttt{base::dir.create}
+  \texttt{base::dir.create()}
 
   \begin{itemize}
   \tightlist
@@ -2827,7 +2783,7 @@ References:
     Create a file path in the computer's file system.
   \end{itemize}
 \item
-  \texttt{base::emptyenv}
+  \texttt{base::emptyenv()}
 
   \begin{itemize}
   \tightlist
@@ -2835,7 +2791,7 @@ References:
     The empty environment, which is the ancestor of all environments and the only environment without an enclosing environment.
   \end{itemize}
 \item
-  \texttt{base::environment}
+  \texttt{base::environment()}
 
   \begin{itemize}
   \tightlist
@@ -2843,9 +2799,9 @@ References:
     The current environment.
   \end{itemize}
 \item
-  \texttt{base::environmentName}
+  \texttt{base::environmentName()}
 \item
-  \texttt{base::exists}
+  \texttt{base::exists()}
 
   \begin{itemize}
   \tightlist
@@ -2853,7 +2809,7 @@ References:
     Remember that \texttt{R} will look for an object in parent environments until it reaches the empty environment, so use \texttt{inherits\ =\ FALSE} to limit the search to only the current environment.
   \end{itemize}
 \item
-  \texttt{base::getOption}
+  \texttt{base::getOption()}
 
   \begin{itemize}
   \tightlist
@@ -2861,7 +2817,7 @@ References:
     Set and examine global options.
   \end{itemize}
 \item
-  \texttt{base::getwd}
+  \texttt{base::getwd()}
 
   \begin{itemize}
   \tightlist
@@ -2869,15 +2825,15 @@ References:
     Get the working directory.
   \end{itemize}
 \item
-  \texttt{base::globalenv}
+  \texttt{base::globalenv()}
 
   \begin{itemize}
   \tightlist
   \item
-    The environment in which you normally work, it's enclosing environment is the last package attached with \texttt{library} or \texttt{require}.
+    The environment in which you normally work, it's enclosing environment is the last package attached with \texttt{library()} or \texttt{require()}.
   \end{itemize}
 \item
-  \texttt{base::history}
+  \texttt{base::history()}
 
   \begin{itemize}
   \tightlist
@@ -2885,7 +2841,7 @@ References:
     Display the previous 25 commands.
   \end{itemize}
 \item
-  \texttt{base::install.packages}
+  \texttt{base::install.packages()}
 
   \begin{itemize}
   \tightlist
@@ -2893,7 +2849,7 @@ References:
     Install packages from repositories or local files.
   \end{itemize}
 \item
-  \texttt{base::library}
+  \texttt{base::library()}
 
   \begin{itemize}
   \tightlist
@@ -2901,7 +2857,7 @@ References:
     Load and attach packages, returning an error if the packages does not exist.
   \end{itemize}
 \item
-  \texttt{base::list.files}
+  \texttt{base::list.files()}
 
   \begin{itemize}
   \tightlist
@@ -2909,7 +2865,7 @@ References:
     List the files in a directory/folder.
   \end{itemize}
 \item
-  \texttt{base::loadedNamespaces}
+  \texttt{base::loadedNamespaces()}
 
   \begin{itemize}
   \tightlist
@@ -2917,7 +2873,7 @@ References:
     Return the loaded name spaces.
   \end{itemize}
 \item
-  \texttt{base::loadhistory}
+  \texttt{base::loadhistory()}
 
   \begin{itemize}
   \tightlist
@@ -2925,7 +2881,7 @@ References:
     Recall command history.
   \end{itemize}
 \item
-  \texttt{base::ls}
+  \texttt{base::ls()}
 
   \begin{itemize}
   \tightlist
@@ -2933,7 +2889,7 @@ References:
     List objects in the specified environment.
   \end{itemize}
 \item
-  \texttt{base::list2env}
+  \texttt{base::list2env()}
 
   \begin{itemize}
   \tightlist
@@ -2941,7 +2897,7 @@ References:
     From a list, build or add to an environment.
   \end{itemize}
 \item
-  \texttt{base::new.env}
+  \texttt{base::new.env()}
 
   \begin{itemize}
   \tightlist
@@ -2949,7 +2905,7 @@ References:
     Create a new environment.
   \end{itemize}
 \item
-  \texttt{base::options}
+  \texttt{base::options()}
 
   \begin{itemize}
   \tightlist
@@ -2957,17 +2913,17 @@ References:
     Set and examine global options.
   \end{itemize}
 \item
-  \texttt{base::parent.env}
+  \texttt{base::parent.env()}
 
   \begin{itemize}
   \tightlist
   \item
     Return the enclosing environment of the environment listed as an argument.
   \item
-    \texttt{base::parent.env} returns information that can be unhelpful, so use with \texttt{base::environmentName}, as follows: \texttt{parent.env(environment\_name)\ \%\textgreater{}\%\ environmentName}.
+    \texttt{base::parent.env()} returns information that can be unhelpful, so use with \texttt{base::environmentName()}, as follows: \texttt{parent.env(environment\_name)\ \%\textgreater{}\%\ environmentName()}.
   \end{itemize}
 \item
-  \texttt{base::q}
+  \texttt{base::q()}
 
   \begin{itemize}
   \tightlist
@@ -2975,7 +2931,7 @@ References:
     Terminate an R session.
   \end{itemize}
 \item
-  \texttt{base::R.version}
+  \texttt{base::R.version()}
 
   \begin{itemize}
   \tightlist
@@ -2983,17 +2939,17 @@ References:
     Version information.
   \end{itemize}
 \item
-  \texttt{base::R.version.string}
+  \texttt{base::R.version.string()}
 
   \begin{itemize}
   \tightlist
   \item
     Version information.
   \item
-    Same call as \texttt{R.version\$version.string}.
+    Same call as \texttt{R.version\$version.string()}.
   \end{itemize}
 \item
-  \texttt{base::require}
+  \texttt{base::require()}
 
   \begin{itemize}
   \tightlist
@@ -3001,7 +2957,7 @@ References:
     Load and attach packages, returning \texttt{FALSE} if the package does not exist.
   \end{itemize}
 \item
-  \texttt{base::rm}
+  \texttt{base::rm()}
 
   \begin{itemize}
   \tightlist
@@ -3009,7 +2965,7 @@ References:
     Remove objects from a specified environment.
   \end{itemize}
 \item
-  \texttt{base::savehistory}
+  \texttt{base::savehistory()}
 
   \begin{itemize}
   \tightlist
@@ -3017,7 +2973,7 @@ References:
     Save command history (default value is ``.Rhistory'').
   \end{itemize}
 \item
-  \texttt{base::save.image}
+  \texttt{base::save.image()}
 
   \begin{itemize}
   \tightlist
@@ -3025,7 +2981,7 @@ References:
     Save the current workspace.
   \end{itemize}
 \item
-  \texttt{base::search}
+  \texttt{base::search()}
 
   \begin{itemize}
   \tightlist
@@ -3033,7 +2989,7 @@ References:
     Return a list of attached packages and R objects.
   \end{itemize}
 \item
-  \texttt{base::searchpaths}
+  \texttt{base::searchpaths()}
 
   \begin{itemize}
   \tightlist
@@ -3041,7 +2997,7 @@ References:
     Return the path to attached packages.
   \end{itemize}
 \item
-  \texttt{base::setwd}
+  \texttt{base::setwd()}
 
   \begin{itemize}
   \tightlist
@@ -3051,15 +3007,15 @@ References:
     When using Windows, use ``/'' instead of "".
   \end{itemize}
 \item
-  \texttt{base::Sys.getenv}
+  \texttt{base::Sys.getenv()}
 
   \begin{itemize}
   \tightlist
   \item
-    See also \texttt{Sys.setenv}.
+    See also \texttt{Sys.setenv()}.
   \end{itemize}
 \item
-  \texttt{base::Sys.info}
+  \texttt{base::Sys.info()}
 
   \begin{itemize}
   \tightlist
@@ -3069,25 +3025,27 @@ References:
     Example: \texttt{Sys.info(){[}c("sysname",\ "release"){]}}.
   \end{itemize}
 \item
-  \texttt{base::Sys.setenv}
+  \texttt{base::Sys.setenv()}
 
   \begin{itemize}
   \tightlist
   \item
-    See also \texttt{Sys.setenv}.
+    See also \texttt{Sys.setenv()}.
   \end{itemize}
 \item
-  \texttt{gdata::object.size}
+  \texttt{gdata::object.size()}
 
   \begin{itemize}
   \tightlist
   \item
     Report the space allocated for an object.
   \item
-    See also \texttt{utils::object.size}.
+    See also \texttt{utils::object.size()}.
   \end{itemize}
 \item
-  \texttt{installr::updateR}
+  \texttt{here::here()}
+\item
+  \texttt{installr::updateR()}
 
   \begin{itemize}
   \tightlist
@@ -3095,19 +3053,19 @@ References:
     Check for the latest R version; downloads and installs new R versions.
   \end{itemize}
 \item
-  \texttt{pryr::where}: Find where a name is defined.
+  \texttt{pryr::where()}: Find where a name is defined.
 \item
-  \texttt{utils::ls.str}: List objects and their structure.
+  \texttt{utils::ls.str()}: List objects and their structure.
 \item
-  \texttt{utils::object.size}: Report the space allocated for an object.
+  \texttt{utils::object.size()}: Report the space allocated for an object.
 
   \begin{itemize}
   \tightlist
   \item
-    See also \texttt{gdata::object.size}.
+    See also \texttt{gdata::object.size()}.
   \end{itemize}
 \item
-  \texttt{utils::sessionInfo}: Collect information about the current R session.
+  \texttt{utils::sessionInfo()}: Collect information about the current R session.
 \end{itemize}
 
 References:
@@ -3225,30 +3183,22 @@ References:
 \hypertarget{functions}{%
 \section{Functions}\label{functions}}
 
-\texttt{\{assertive\}}
-
 \begin{itemize}
 \tightlist
 \item
-  \texttt{assert\_*}: Check whether the input is \texttt{*} (e..g, \texttt{assert\_is\_numeric}) and throw and error if the input does not meet the condition.
+  \texttt{assertive::assert\_*()}: Check whether the input is \texttt{*} (e..g, \texttt{assert\_is\_numeric()}) and throw and error if the input does not meet the condition.
 \item
-  \texttt{coerce\_to}: Coerce the input to a different class, with a warning.
+  \texttt{assertive::coerce\_to()}: Coerce the input to a different class, with a warning.
 \item
-  \texttt{is\_*}: Checks whether the input matches the condition specified by \texttt{*} (e.g., \texttt{is\_non\_positive}).
+  \texttt{assertive::is\_*()}: Checks whether the input matches the condition specified by \texttt{*} (e.g., \texttt{assertive::is\_non\_positive()}).
 \item
-  \texttt{use\_first}: Use only the first element of a vector.
-\end{itemize}
-
-\texttt{\{base\}}
-
-\begin{itemize}
-\tightlist
+  \texttt{assertive::use\_first()}: Use only the first element of a vector.
 \item
-  \texttt{do.call}: Execute a function call from a name or a function and a list of arguments to be passed to the function.
+  \texttt{base::do.call()}: Execute a function call from a name or a function and a list of arguments to be passed to the function.
 \item
-  \texttt{invisible}: Return a (temporarily) invisible copy of an object.
+  \texttt{base::invisible()}: Return a (temporarily) invisible copy of an object.
 \item
-  \texttt{match.arg}: Argument verification.
+  \texttt{base::match.arg()}: Argument verification.
 
   \begin{itemize}
   \tightlist
@@ -3280,69 +3230,78 @@ References:
 \begin{itemize}
 \tightlist
 \item
-  \texttt{message}: Generage a diagnostic message.
+  \texttt{base::message()}
 
   \begin{itemize}
   \tightlist
+  \item
+    Generate a diagnostic message.
   \item
     Preferable to generating a message using \texttt{cat}.
   \end{itemize}
 \item
-  \texttt{return}: Return a value from a function.
+  \texttt{base::return()}
 
   \begin{itemize}
   \tightlist
+  \item
+    Return a value from a function.
   \item
     Useful in \texttt{if} statements where one condition is simple and the other is complex (see section 19.6.1 ``Explicit return statements'' in Hadley Wickham's \href{https://r4ds.had.co.nz/functions.html}{\emph{R for Data Science}}.
   \end{itemize}
 \item
-  \texttt{setNames}: Set the names in an object.
+  \texttt{base::setNames()}
 
   \begin{itemize}
   \tightlist
+  \item
+    Set the names in an object.
   \item
     Useful in function writing; see documentation.
   \end{itemize}
 \item
-  \texttt{stop}: Stop execution of the expression and execute an error action.
+  \texttt{base::stop()}
 
   \begin{itemize}
   \tightlist
+  \item
+    Stop execution of the expression and execute an error action.
   \item
     Useful in combination with an \texttt{if} statement when you want to generate helpful error messages.
   \end{itemize}
 \item
-  \texttt{stopifnot}: Ensure the truth of an R expression.
+  \texttt{base::stopifnot()}
 
   \begin{itemize}
   \tightlist
   \item
-    See section 19.5.2 ``Checking values'' in Hadley Wickham's \href{https://r4ds.had.co.nz/functions.html}{\emph{R for Data Science}} for a discussion of \texttt{stop} versus \texttt{stopifnot}.
+    Ensure the truth of an R expression.
+  \item
+    See section 19.5.2 ``Checking values'' in Hadley Wickham's \href{https://r4ds.had.co.nz/functions.html}{\emph{R for Data Science}} for a discussion of \texttt{stop()} versus \texttt{stopifnot()}.
   \item
     Consider functions from \texttt{\{assertive\}} as an alternative to \texttt{stopifnot} and \texttt{stop}.
   \end{itemize}
 \item
-  \texttt{unlist}: Flatten lists.
+  \texttt{base::unlist()}
 
   \begin{itemize}
   \tightlist
   \item
+    Flatten lists.
+  \item
     Useful when using \texttt{purrr}'s \texttt{map} functions, which return objects as type \texttt{list}.
   \end{itemize}
+\item
+  \texttt{zeallot::\%\textless{}-\%}: Multiple assignment operator (see example below).
 \end{itemize}
 
-\texttt{\{zeallot\}}
+\hypertarget{examples}{%
+\subsubsection{Examples}\label{examples}}
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{\%\textless{}-\%}: Multiple assignment operator.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Useful when you want to return multiple output from a function. For example:
-  \end{itemize}
+  \texttt{zeallot::\%\textless{}-\%}:
 \end{itemize}
 
 \begin{Shaded}
@@ -3350,9 +3309,9 @@ References:
 \NormalTok{session <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{() \{}
   
   \KeywordTok{list}\NormalTok{(}
-    \DataTypeTok{r_version =}\NormalTok{ R.version.string,}
+    \DataTypeTok{r_version        =}\NormalTok{ R.version.string,}
     \DataTypeTok{operating_system =} \KeywordTok{Sys.info}\NormalTok{()[}\KeywordTok{c}\NormalTok{(}\StringTok{"sysname"}\NormalTok{, }\StringTok{"release"}\NormalTok{)],}
-    \DataTypeTok{loaded_pkgs =} \KeywordTok{loadedNamespaces}\NormalTok{()}
+    \DataTypeTok{loaded_pkgs      =} \KeywordTok{loadedNamespaces}\NormalTok{()}
 \NormalTok{  )}
 \NormalTok{\}}
 
@@ -3360,151 +3319,98 @@ References:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
 \hypertarget{learn-about-an-object}{%
 \section{Learn About an Object}\label{learn-about-an-object}}
-
-\texttt{base}
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{args()}: Display the argument names and default values of a function.
+  \texttt{?object\_name}
 \item
-  \texttt{attributes()}: View or assign an objects attributes (e.g., \texttt{class()}, \texttt{dim()}, \texttt{dimnames()}, \texttt{names()}, \texttt{row.names()}).
+  \texttt{??object\_name}
 \item
-  \texttt{body()}: Get or set the body of a function.
+  \texttt{base::args()}: Display the argument names and default values of a function.
 \item
-  \texttt{colnames()}: Retrieve or set column names.
+  \texttt{base::attributes()}: View or assign an objects attributes (e.g., \texttt{class()}, \texttt{dim()}, \texttt{dimnames()}, \texttt{names()}, \texttt{row.names()}).
 \item
-  \texttt{dim()}: Retrieve or set the dimnames of an object.
+  \texttt{base::body()}: Get or set the body of a function.
 \item
-  \texttt{dimnames()}: Retrieve or set the dimension names of an object.
+  \texttt{base::colnames()}: Retrieve or set column names.
 \item
-  \texttt{formals()}: Get or set the formal arguments of a function.
+  \texttt{base::dim()}: Retrieve or set the dimnames of an object.
 \item
-  \texttt{help()}: Get the topic documentation.
+  \texttt{base::dimnames()}: Retrieve or set the dimension names of an object.
 \item
-  \texttt{help.search()}: Search the help system for documentation matching a given character string.
+  \texttt{base::formals()}: Get or set the formal arguments of a function.
 \item
-  \texttt{vignette()}: View a specified package vignette.
+  \texttt{base::help()}: Get the topic documentation.
 \item
-  ?object\_name
+  \texttt{base::help.search()}: Search the help system for documentation matching a given character string.
 \item
-  ??object\_name
+  \texttt{base::vignette()}: View a specified package vignette.
 \item
-  \texttt{rownames()}: Retrieve or set row names.
+  \texttt{base::rownames()}: Retrieve or set row names.
 \end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{loops}{%
 \section{Loops}\label{loops}}
 
-\texttt{base}
-
 \begin{itemize}
 \tightlist
 \item
-  \texttt{seq()}: Sequence generation.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    This functions makes \texttt{length()} unnecessary.
-  \item
-    Child function: \texttt{seq\_along()}
-
-    \begin{itemize}
-    \tightlist
-    \item
-      In \texttt{for} loops, safer than using \texttt{ncol()} or \texttt{nrow()}.
-    \end{itemize}
-  \end{itemize}
+  \texttt{base::seq()}: Sequence generation (this functions makes \texttt{length()} unnecessary).
+\item
+  \texttt{base::seq\_along()}: In \texttt{for} loops, safer than using \texttt{base::ncol()} or \texttt{base::nrow()}.
 \end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{optimization}{%
 \section{Optimization}\label{optimization}}
 
-\texttt{microbenchmark}
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{microbenchmark()}: Sub-millisecond accurate timing of expression evaluations.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    A more accurate replacement of \texttt{system.time(replicate(1000,\ expr))}.
-  \end{itemize}
-\end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\texttt{microbenchmark::microbenchmark()}: Sub-millisecond accurate timing of expression evaluations.
++ A more accurate replacement of \texttt{system.time(replicate(1000,\ expr))}.
 
 \hypertarget{pipes}{%
 \section{Pipes}\label{pipes}}
 
-\texttt{magrittr}
-
 \begin{itemize}
 \tightlist
 \item
-  \texttt{\%\textless{}\textgreater{}\%}: Compound assignment-pipe operator.
+  \texttt{magrittr::\%\textless{}\textgreater{}\%}: Compound assignment-pipe operator.
 \item
-  \texttt{\%\textgreater{}\%}: Forward-pipe operator.
+  \texttt{magrittr::\%\textgreater{}\%}: Forward-pipe operator.
 \item
-  \texttt{\%\$\%}: Expositions-pipe operator.
+  \texttt{magrittr::\%\$\%}: Expositions-pipe operator.
 \item
-  \texttt{add}: \texttt{+}, for pipes.
+  \texttt{magrittr::add()}: \texttt{+}, for pipes.
 \item
-  \texttt{and}: \texttt{\&}, for pipes.
+  \texttt{magrittr::and()}: \texttt{\&}, for pipes.
 \item
-  \texttt{extract}:\texttt{{[}}, for pipes.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    See also \texttt{purrr::pluck}.
-  \end{itemize}
+  \texttt{magrittr::extract()}:\texttt{{[}}, for pipes (see also \texttt{purrr::pluck()}).
 \item
-  \texttt{extract2}: \texttt{{[}{[}}, for pipes.
+  \texttt{magrittr::extract2()}: \texttt{{[}{[}}, for pipes.
 \item
-  \texttt{freduce}: Apply a list of functions sequentially.
+  \texttt{magrittr::freduce()}: Apply a list of functions sequentially.
 \item
-  \texttt{is\_in}: \texttt{\%in\%}, for pipes.
+  \texttt{magrittr::is\_in()}: \texttt{\%in\%}, for pipes.
 \item
-  \texttt{multiply\_by}: \texttt{*}, for pipes.
+  \texttt{magrittr::multiply\_by()}: \texttt{*}, for pipes.
 \item
-  \texttt{or}: \texttt{\textbar{}}, for pipes.
+  \texttt{magrittr::or()}: \texttt{\textbar{}}, for pipes.
 \item
-  \texttt{raise\_to\_power}: \texttt{\^{}}, for pipes.
+  \texttt{magrittr::raise\_to\_power()}: \texttt{\^{}}, for pipes.
 \item
-  \texttt{subtract}: \texttt{-}, for pipes.
+  \texttt{magrittr::subtract()}: \texttt{-}, for pipes.
 \end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{popups}{%
 \section{Popups}\label{popups}}
 
-\texttt{svDialogs}
-
 \begin{itemize}
 \tightlist
 \item
-  \texttt{dlg\_message}: Display a modal message box (works in Windows, MacOS, and Linux).
-\end{itemize}
-
-\texttt{tcltk}
-
-\begin{itemize}
-\tightlist
+  \texttt{svDialogs::dlg\_message()}: Display a modal message box (works in Windows, MacOS, and Linux).
 \item
-  \texttt{tk\_messageBox}: Display a generic message box using Tk (Windows-specific).
+  \texttt{tcltk::tk\_messageBox()}: Display a generic message box using Tk (Windows-specific).
 \end{itemize}
 
 \hypertarget{selecting-subsetting}{%
@@ -3513,50 +3419,39 @@ References:
 \begin{itemize}
 \tightlist
 \item
-  \texttt{.\$variable\_name}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    See example below.
-  \end{itemize}
+  \texttt{.\$variable\_name}: See example below.
 \item
-  \texttt{.{[}{[}"variable\_name"{]}{]}}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    See example below.
-  \end{itemize}
+  \texttt{.{[}{[}"variable\_name"{]}{]}}: See example below.
 \item
-  \texttt{base::subset}
+  \texttt{base::subset()}
 \item
-  \texttt{dplyr::first}
+  \texttt{dplyr::first()}
 \item
-  \texttt{dplyr::last}
+  \texttt{dplyr::las()t}
 \item
-  \texttt{dplyr::nth}
+  \texttt{dplyr::nth()}
 \item
-  \texttt{dplyr::rename}
+  \texttt{dplyr::rename()}
 \item
-  \texttt{dplyr::select}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Helper functions: \texttt{contains}, \texttt{ends\_with}, \texttt{matches}, \texttt{num\_range}, \texttt{one\_of}, \texttt{starts\_with}.
-  \end{itemize}
+  \texttt{dplyr::select()}: Helper functions include \texttt{contains()}, \texttt{ends\_with()}, \texttt{matches()}, \texttt{num\_range()}, \texttt{one\_of()}, \texttt{starts\_with()}.
 \item
   \texttt{ggplot2::cut\_number}
 \item
-  \texttt{magrittr::extract}
+  \texttt{magrittr::extract()}
 \item
-  \texttt{magrittr::extract2}
+  \texttt{magrittr::extract2()}
 \item
-  \texttt{purrr:pluck}
+  \texttt{purrr:pluck()}: See also \texttt{magrittr::extract2()}.
 \end{itemize}
 
-\textbf{Example:} \texttt{.\$variable\_name}
+\hypertarget{examples-1}{%
+\subsubsection{Examples}\label{examples-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{.\$variable\_name}:
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3569,23 +3464,30 @@ References:
 \end{Highlighting}
 \end{Shaded}
 
-\textbf{Example:} \texttt{.{[}{[}"variable\_name"{]}{]}}
+\begin{itemize}
+\tightlist
+\item
+  \texttt{.{[}{[}"variable\_name"{]}{]}}:
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{  odbc_aws }\OperatorTok{%>%}\StringTok{ }
-\StringTok{    }\KeywordTok{dbGetQuery}\NormalTok{(}
-      \KeywordTok{paste}\NormalTok{(}\StringTok{"}
-\StringTok{            SELECT id}
-\StringTok{            FROM batch}
-\StringTok{            WHERE entity_id = "}\NormalTok{, t_id, }\StringTok{"}
-\StringTok{            AND status IN ('PROCESSED', 'PROCESSING')"}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{    }\NormalTok{.[[}\StringTok{"id"}\NormalTok{]] }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{as.double}\NormalTok{()}
+\NormalTok{odbc_aws }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{dbGetQuery}\NormalTok{(}
+    \KeywordTok{paste}\NormalTok{(}\StringTok{"}
+\StringTok{          SELECT id}
+\StringTok{          FROM batch}
+\StringTok{          WHERE entity_id = "}\NormalTok{, t_id, }\StringTok{"}
+\StringTok{          AND status IN ('PROCESSED', 'PROCESSING')"}
+\NormalTok{    )}
+\NormalTok{  ) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\NormalTok{.[[}\StringTok{"id"}\NormalTok{]] }\OperatorTok{%>%}\StringTok{ }
+\KeywordTok{as.double}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
-\textbf{References:}
+\hypertarget{references}{%
+\subsubsection{References}\label{references}}
 
 \begin{itemize}
 \tightlist
@@ -3593,7 +3495,32 @@ References:
   \href{https://twitter.com/hadleywickham/status/643381054758363136}{``Indexing lists in \#rstats. Inspired by Residence Inn''} (Hadley Wickham, Twitter, 14 September 2015)
 \end{itemize}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\hypertarget{style-guide}{%
+\section{Style Guide}\label{style-guide}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://style.tidyverse.org/}{``The Tidyverse Style Guide''} by Hadley Wickham.
+\item
+  General Layout and Ordering (taken from the outdated \href{http://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html}{``Google's R Style Guide''})
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Title
+  \item
+    Author
+  \item
+    File description (e.g., purpose of program, inputs, outputs)
+  \item
+    \texttt{source()} and \texttt{library()} statements
+  \item
+    Function definitions
+  \item
+    Executed statements.
+  \end{itemize}
+\end{itemize}
 
 \hypertarget{system-commands}{%
 \section{System Commands}\label{system-commands}}
@@ -3601,25 +3528,44 @@ References:
 \begin{itemize}
 \tightlist
 \item
-  \texttt{base::system}
+  \texttt{base::system()}
 \item
-  \texttt{base::system2}
+  \texttt{base::system2()}
 \item
-  \texttt{sys::exec}
+  \texttt{sys::exec()}
 \item
-  \texttt{sys::exec\_r}
+  \texttt{sys::exec\_r()}
 \end{itemize}
 
 \hypertarget{version-control}{%
 \section{Version Control}\label{version-control}}
 
-Git
+\begin{itemize}
+\tightlist
+\item
+  \texttt{base::update.packages()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    00LOCK error when updating a package: Use \texttt{update.packages(ask\ =\ FALSE,\ checkBuilt\ =\ TRUE,\ INSTALL\_opts\ =\ "-\/-no-lock")}
+  \end{itemize}
+\item
+  \texttt{packrat::snapshot()}: Capture and store the packages and versions in use.
+\item
+  \texttt{packrat::restore()}: Load the most recent snapshot to the project's private library.
+\item
+  Packrat still seems to be under development. The idea sounds good, but in practice the packrat package has caused lots of problems.
+\end{itemize}
+
+\hypertarget{git}{%
+\subsubsection{Git}\label{git}}
 
 \begin{itemize}
 \item
   \href{https://nvie.com/posts/a-successful-git-branching-model/}{\emph{A successful Git branching model}}
 \item
-  \href{https://git-scm.com/}{Git}
+  \href{https://git-scm.com/}{git-scm.com}
 \item
   \href{http://r-pkgs.had.co.nz/git.html\#git-learning}{\emph{Git and GitHub}} by Hadley Wickham
 \item
@@ -3642,18 +3588,6 @@ Git
       See \href{https://community.rstudio.com/t/delete-branch-in-rstudio-pop-up/15465}{``Delete branch in RStudio pop-up''} for help removing branches in RStudio after removing them from Git.
     \end{itemize}
   \end{itemize}
-\end{itemize}
-
-\texttt{\{packrat\}}
-
-\begin{itemize}
-\tightlist
-\item
-  See note on the \texttt{packrat} package in the ``Referenced Packages'' section.
-\item
-  \texttt{snapshot}: Capture and store the packages and versions in use.
-\item
-  \texttt{restore}: Load the most recent snapshot to the project's private library.
 \end{itemize}
 
 \hypertarget{references-resources}{%
@@ -3718,6 +3652,8 @@ Git
     \href{https://bookdown.org/csgillespie/efficientR/}{\emph{Efficient R Programming}}
   \item
     \href{https://committedtotape.shinyapps.io/freeR/}{\emph{Free R Reading Material}}
+  \item
+    \href{https://rstats.wtf/}{\emph{What They Forgot to Teach You About R}} by Jenny Bryan and Jim Hester
   \end{itemize}
 \item
   Other Online Resources

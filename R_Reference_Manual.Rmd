@@ -20,9 +20,9 @@ In *R for Data Science*, Garrett Grolemund and Hadley Wickham outline the tools 
 * Program
 
 ```{r, echo=FALSE}
-library(DiagrammeR)
+DiagrammeR::grViz(" 
 
-grViz(" digraph {
+digraph {
 
 graph [rankdir = LR;
        compound = TRUE;
@@ -65,101 +65,93 @@ knitr::write_bib(c(
 
 <!--chapter:end:index.Rmd-->
 
-# Import
+# Import or Create Data
 ***
 
 ## Create Data
-***
 
-* `base::array`
-* `base::c`
-* `base::data.frame`
-* `base::dir.create`
-  * Create a file path in the computer's file system.
-* `base::factor`
-* `base::list`
-* `base::matrix`
-* `base::seq`
-* `base::vector`
-  * Preferable to `base::c` when creating an empty vector (["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve)).
-* `stats::rnorm`
-* `tibble::add_row`
-* `tibble::tibble`
-* `tibble::tribble`
-  * Row-wise tibble creation.
+* `base::array()`
+* `base::c()`: See `base::vector()`.
+* `base::data.frame()`
+* `base::dir.create()`: Create a file path in the computer's file system.
+* `base::factor()`
+* `base::list()`
+* `base::matrix()`
+* `base::seq()`
+* `base::vector()`: Preferable to `base::c()` when creating an empty vector (["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve)).
+* `stats::rnorm()`
+* `tibble::add_row()`
+* `tibble::tibble()`
+* `tibble::tribble()`: Row-wise tibble creation.
 
-## Import Data from a Local Drive
-***
+## Local Drive
 
-* `base::attach`
+* `base::attach()`
   * Attach a set of R objects to the search path.
   * Allows objects in the database to be accessed by giving their names (e.g., `height` rather than `women$height`).
-* `base::file.choose`
-  * Use as `file = file.choose()` inside a data import function (such as `read_csv` and `readRDS`).
-* `base::file.size`
-* `base::load`
-  * Reload datasets saved with `base::save`.
-* `base::readRDS`
-  * Restore an R object written with `base::saveRDS`.
-* `data.table::fread`
-  * Similar to `utils::read.table`, but faster and more convenient for large data sets.
-* `foreign::read.spss`
-* `haven::read_sas`
-* `readr::read_csv`
-* `readr::read_csv2`
-* `readr::read_delim`
-* `readr::read_tsv`
-* `readxl::excel_sheets`
-* `readxl::read_excel`
-* `readxl::read_xls`
-* `readxl::read_xlsx`
-* `utils::data`
+* `base::file.choose()`
+* `base::file.size()`
+* `base::load()`: Reload datasets saved with `base::save()`.
+* `base::readRDS()`: Restore an R object written with `base::saveRDS()`.
+* `data.table::fread()`: Similar to `utils::read.table()`, but faster and more convenient for large data sets.
+* `foreign::read.spss()`
+* `haven::read_sas()`
+* `readr::read_csv()`
+* `readr::read_csv2()`
+* `readr::read_delim()`
+* `readr::read_tsv()`
+* `readxl::excel_sheets()`
+* `readxl::read_excel()`
+* `readxl::read_xls()`
+* `readxl::read_xlsx()`
+* `utils::data()`
   * Load specified data sets, or list the available data sets.
   * Use this function to load the data sets that accompany R packages, such as `openintro::hsb2`, `openintro::email50`,and `gapminder::gapminder`.
-* `utils::read.csv`
-* `utils::read.csv2`
-* `utils::read.delim`
-* `utils::read.delim2`
-* `utils::read.table`
-  * Read a file in table format.
-* `XLConnect::readWorksheetFromFile`
-  * Read data from worksheets in an Excel file.
+* `utils::read.csv()`
+* `utils::read.csv2()`
+* `utils::read.delim()`
+* `utils::read.delim2()`
+* `utils::read.table()`: Read a file in table format.
+* `XLConnect::readWorksheetFromFile()`: Read data from worksheets in an Excel file.
 
-## Import Data from the Internet
-***
+## Internet
 
-* `httr::GET`: Get a URL.
-* `jsonlite::read_json`: Read and write JSON.
-* `readr::read_csv`
-* `readr::read_csv2`
-* `readr::read_delim`
-* `readr::read_tsv`
-* `rjson::fromJSON`: Convert JSON to R.
-* `utils::download.file`
-  * See example below.
-* `utils::unzip`
-  * See example below.
+* `httr::GET()`: Get a URL.
+* `jsonlite::read_json()`: Read and write JSON.
+* `readr::read_csv()`
+* `readr::read_csv2()`
+* `readr::read_delim()`
+* `readr::read_tsv()`
+* `rjson::fromJSON()`: Convert JSON to R.
+* `utils::download.file()`: See example below.
+* `utils::unzip()`: See example below.  
 
-**Example:** `utils::download.file`
+#### Examples
+
+* `utils::download.file()`:
 
 ```{r, eval=FALSE}
 download.file(
   "https://assets.datacamp.com/production/repositories/5028/datasets/a55843f83746968c7f118d82ed727db9c71e891f/snake_river_visits.rds",
-  destfile = paste0(getwd(), "/Snake River Visits.rds"))
+  destfile = paste0(getwd(), "/Snake River Visits.rds")
+)
 
+# Option 1:
 snake_river_visits <- readRDS(file.choose())
-# or
-path <- paste0(getwd(), "/Snake River Visits.rds")
-snake_river_visits <- readRDS(path)
+
+# Option 2:
+snake_river_path   <- paste0(getwd(), "/Snake River Visits.rds")
+snake_river_visits <- readRDS(snake_river_path)
 ```
 
-**Example:** Download `.Rdata` files
+* `utils::download.file()` for .Rdata files:
 
 ```{r, eval=FALSE}
 # Example 1:
 download.file(
   "https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData", 
-  destfile = "datacamp_iris_dataset.Rdata")
+  destfile = "datacamp_iris_dataset.Rdata"
+)
 
 load("datacamp_iris_dataset.Rdata")
 
@@ -170,48 +162,49 @@ download.file(
   # The documentation for `download.file` indicates that the function will
   # automatically include `mode = "wb"` for .Rdata files. That may have happened
   # in Example 1, but didn't happen in Example 2, which is why I've included it.
-  mode = "wb")
+  mode = "wb"
+)
 
 load("chis_2009.Rdata")
 ```
 
-**Example:** `utils::unzip`
+* `utils::unzip()`:
 
 ```{r, eval=FALSE}
 download.file(
   "https://assets.datacamp.com/production/repositories/1069/datasets/578834f5908e3b2fa575429a287586d1eaeb2e54/countries2.zip",
   destfile = "Data Sets/Countries",
-  mode = "wb")
+  mode = "wb"
+)
 
 unzip("Data Sets/Countries", exdir = "Data Sets")
 ```
 
-## Import from or Create Data in a Database
-***
+## Database
 
-* `DBI::dbBind`
-* `DBI::dbClearResult`
-* `DBI::dbConnect`
-* `DBI::dbDataType`
-* `DBI::dbDisconnect`
-* `DBI::dbExecute`
-* `DBI::dbFetch`
-* `DBI::dbGetQuery`
-* `DBI::dbListTables`
-* `DBI::dbReadTable`
-* `DBI::dbSendQuery`
-* `DBI::dbSendStatement`
-* `DBI::Id`
-  * See example below.
-* `DBI::SQL`
-  * See example below.
-* `dbplyr::in_schema`
-* `dbplyr::tbl`
-* `odbc::dbConnect`
+* `DBI::dbBind()`
+* `DBI::dbClearResult()`
+* `DBI::dbConnect()`
+* `DBI::dbDataType()`
+* `DBI::dbDisconnect()`
+* `DBI::dbExecute()`
+* `DBI::dbFetch()`
+* `DBI::dbGetQuery()`
+* `DBI::dbListTables()`
+* `DBI::dbReadTable()`
+* `DBI::dbSendQuery()`
+* `DBI::dbSendStatement()`
+* `DBI::Id()`: See example below.
+* `DBI::SQL()`: See example below.
+* `dbplyr::in_schema()`
+* `dbplyr::tbl()`
+* `odbc::dbConnect()`
   * See example below for specifying a database.
   * See example below for troubleshooting hang-ups.
 
-**Example:** `DBI::Id` vs `DBI::SQL`
+#### Examples
+
+* `DBI::Id()` vs `DBI::SQL()`:
 
 The following are comparable methods of accessing <schema_name>.<table_name>:
 
@@ -219,23 +212,23 @@ The following are comparable methods of accessing <schema_name>.<table_name>:
 dbCreateTable(
   conn,
   Id(schema = "schema_name", table = "table_name"),
-  fields = "field_name")
+  fields = "field_name"
+)
 
 dbCreateTable(
   conn,
-  name = SQL("schema_name.table_name"),
-  fields = "field_name")
+  name   = SQL("schema_name.table_name"),
+  fields = "field_name"
+)
 ```
 
-**Example:** `odbc::dbConnect`
+* `odbc::dbConnect()`:
 
 ```{r, eval=FALSE}
 # Specify database:
-conn_1 <- 
-  dbConnect(odbc::odbc(), dsn = "sql") # Default database: Actuary
+conn_1 <- dbConnect(odbc::odbc(), dsn = "sql") # Default database: Actuary
 
-conn_2 <- 
-  dbConnect(odbc::odbc(), dsn = "sql", Database = "Staging")
+conn_2 <- dbConnect(odbc::odbc(), dsn = "sql", Database = "Staging")
 
 # Troubleshoot hang-ups
 # It appears that RStudio's attempt to load information into the Connection Pane,
@@ -245,13 +238,23 @@ conn_2 <-
 options(connectionObserver = FALSE)
 ```
 
-### SQL
+#### References
 
-* Temp tables
+* ["Databases using R"](db.rstudio.com)
+
+#### SQL
+
+* Temp Tables
   * Use `SET NOCOUNT ON` in the SQL query to prevent R confusing the SQL rowcount return value with the temporary table.
+* Try case-sensitive syntax (e.g., when querying a database other than the default).
+* Try selecting certain columns, rather than `SELECT *`, as SQL BLOB columns cause trouble. 
+
+##### References
+
+* ["10 Easy Steps to a Complete Understanding of SQL"](https://blog.jooq.org/2016/03/17/10-easy-steps-to-a-complete-understanding-of-sql/)
+* ["Query Planning"](https://www.sqlite.org/queryplanner.html)
 
 ## Notes & References
-***
 
 * ["Data structures"](http://adv-r.had.co.nz/Data-structures.html) (Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
 * `{openintro}` contains data sets useful for practicing and teaching.
@@ -267,7 +270,6 @@ options(connectionObserver = FALSE)
 ***
 
 ## Explore Raw Data
-***
 
 * `base::attr`
   * `attr(x, "names")` is the same as `base::names(x)`.
@@ -300,7 +302,6 @@ options(connectionObserver = FALSE)
 * `utils::tail`
 
 ## Tidy Data
-***
 
 * `base::duplicated`
   * See also `data.table::duplicated`
@@ -334,7 +335,6 @@ options(connectionObserver = FALSE)
 * `tidyr::unnest`
 
 ## Prepare Data for Analysis
-***
 
 ### Coerce
 
@@ -509,6 +509,7 @@ by_country <-
   * Compare two numeric vectors (safer than using `==`).
 * `dplyr::summarize`
   * Use `mean(variable == value)` to get a percentage (see the above example for `mean`.)
+  * See `dplyr::n_distinct()`.
 * `dplyr::tally`
 * `dplyr::top_n`
 * `magrittr::extract`
@@ -680,7 +681,6 @@ df <-
 * `add_column()`: Add columns to a data frame.
 * `add_row()`: Add rows to a data frame.
 
-***
 ## Narrow in on Observations of Interest
 
 `{base}`
@@ -696,12 +696,12 @@ df <-
 * `table`: Build a table of the counts at each combination of factor levels.
   * Use `prop.table` to see the table entries expressed as proportions.
 
-`{dplyr}`
 
-* `arrange`: Arrange rows by variable, in ascending order.
-    + Related functions: `arrange_all`, `arrange_at`, `arrange_if`.
-* `distinct`: Select distinct rows.
-* `filter`: Return rows with matching conditions.
+* `dplr::all_equal()`: Compare data frames.
+* `dplyr::arrange()`: Arrange rows by variable, in ascending order.
+    + Related functions: `arrange_all()`, `arrange_at()`, `arrange_if()`.
+* `dplyr::distinct()`: Select distinct rows.
+* `dplyr::filter()`: Return rows with matching conditions.
   * Use `%in%` when using multiple `|` conditions. The following two commands, for example, are equivalent:
 ```{r, eval=FALSE}
 ilo_data %>% 
@@ -711,28 +711,25 @@ ilo_data %>%
   filter(country == "Sweden" | country == "Switzerland")
 ```
     
-* `renam`: Rename variables by name (a modification of `select`).
-* `sample_n`: Sample n rows from a table.
-* `select`: Select/rename variables. 
+* `dplyr::rename()`: Rename variables by name (a modification of `select`).
+* `dplyr::sample_n()`: Sample n rows from a table.
+* `dplyr::select()`: Select/rename variables. 
   * Helper functions include: `starts_wit`, `ends_with`, `contains`, `matches`, `num_range`, and `one_of`. See `?dplyr::select_helpers`.
   * Helper functions take strings (e.g., `contains("work")` rather than `contains(work)`).
-* `slice`: Choose rows by position.
-* `transmute`: Create or transform variables.
-  * Like a combination of `select` and `mutate`.
+* `dplyr::slice()`: Choose rows by position.
+* `dplyr::transmute()`: Create or transform variables.
+  * Like a combination of `dplyr::select` and `dplyr::mutate`.
 
-***
 ## Test
 
-`base`
-
-* `identical()`: Test objects for exact equality.
-* `match()`: Value matching.
+* `base::identical()`: Test objects for exact equality.
+* `base::match()`: Value matching.
     + `%in%` is the more intuitive binary operator.
-* `setequal()`: Check two vectors for equality.
-* `which()`: Determine which indices are `TRUE`.
+* `base::setequal()`: Check two vectors for equality.
+* `base::which()`: Determine which indices are `TRUE`.
     + This function is often unnecessary, according to the DataCamp article ["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve).
-* `which.min()`/`which.max()`: Where is the `min()`/`max()` or first `TRUE`/`FALSE`?
-* `%in%`: See `match()`.
+* `base::which.min()`/`base::which.max()`: Where is the `min()`/`max()` or first `TRUE`/`FALSE`?
+* `%in%`: See `base::match()`.
 
 <!--chapter:end:03-transform.Rmd-->
 
@@ -782,7 +779,7 @@ ilo_data %>%
 * `ggplot2::element_text`
 * `ggplot2::facet_grid`
   * Lay out panels in a grid.
-  * When using a tilde function, the variable on the left specifies the rows and the variable on the right specifies the columns (when faceting in only one direction; i.e., only rows or only columns). Use `.` to specify nothing for the unused direction (e.g. `facet_grid(cyl ~ .)`).
+  * `ROWS ~ COLS`: When using a tilde function, the variable on the left specifies the rows and the variable on the right specifies the columns (when faceting in only one direction; i.e., only rows or only columns). Use `.` to specify nothing for the unused direction (e.g. `facet_grid(cyl ~ .)`).
 * `ggplot2::facet_wrap`
   * Wrap a 1D ribbon of panels into 2D (observe a variable, conditional on another variable).
 * `ggplot2::geom_abline`
@@ -1074,7 +1071,6 @@ ggplot(plot_data_2006) +
 
 "Surrounding [the tools for importing, tidying, transforming, visualising, modeling, and communicating data] is programming. Programming is a cross-cutting tool that you use in every part of a project. You don't need to be an expert programmer to be a data scientist, but learning more about programming pays off because becoming a better programmer allows you to automate common tasks, and solve new problems with greater ease."  
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*
-***
 
 ## Characters
 
@@ -1108,90 +1104,91 @@ References:
 * `case_when()`: A general vectorized `if`.
 * `if_else()`: Vectorized `if`.
 
-***
 ## Environment and Workspace
 
-* `base::baseenve`
+* `base::.libPaths()`
+* `base::baseenve()`
   * The environment of the `base` package; it's enclosing environment ("parent environment") is the empty environment.
-* `base::dir`
+* `base::dir()`
   * List the files in a directory.
-* `base::dir.create`
+* `base::dir.create()`
   * Create a file path in the computer's file system.
-* `base::emptyenv`
+* `base::emptyenv()`
   * The empty environment, which is the ancestor of all environments and the only environment without an enclosing environment.
-* `base::environment`
+* `base::environment()`
   * The current environment.
-* `base::environmentName`
-* `base::exists`
+* `base::environmentName()`
+* `base::exists()`
   * Remember that `R` will look for an object in parent environments until it reaches the empty environment, so use `inherits = FALSE` to limit the search to only the current environment.
-* `base::getOption`
+* `base::getOption()`
   * Set and examine global options.
-* `base::getwd`
+* `base::getwd()`
   * Get the working directory.
-* `base::globalenv`
-  * The environment in which you normally work, it's enclosing environment is the last package attached with `library` or `require`.
-* `base::history`
+* `base::globalenv()`
+  * The environment in which you normally work, it's enclosing environment is the last package attached with `library()` or `require()`.
+* `base::history()`
   * Display the previous 25 commands.
-* `base::install.packages`
+* `base::install.packages()`
   * Install packages from repositories or local files.
-* `base::library`
+* `base::library()`
   * Load and attach packages, returning an error if the packages does not exist.
-* `base::list.files`
+* `base::list.files()`
   * List the files in a directory/folder.
-* `base::loadedNamespaces`
+* `base::loadedNamespaces()`
   * Return the loaded name spaces.
-* `base::loadhistory`
+* `base::loadhistory()`
   * Recall command history.
-* `base::ls`
+* `base::ls()`
   * List objects in the specified environment.
-* `base::list2env`
+* `base::list2env()`
   * From a list, build or add to an environment.
-* `base::new.env`
+* `base::new.env()`
   * Create a new environment.
-* `base::options`
+* `base::options()`
   * Set and examine global options.
-* `base::parent.env`
+* `base::parent.env()`
   * Return the enclosing environment of the environment listed as an argument.
-  * `base::parent.env` returns information that can be unhelpful, so use with `base::environmentName`, as follows: `parent.env(environment_name) %>% environmentName`.
-* `base::q`
+  * `base::parent.env()` returns information that can be unhelpful, so use with `base::environmentName()`, as follows: `parent.env(environment_name) %>% environmentName()`.
+* `base::q()`
   * Terminate an R session.
-* `base::R.version`
+* `base::R.version()`
   * Version information.
-* `base::R.version.string`
+* `base::R.version.string()`
   * Version information. 
-  * Same call as `R.version$version.string`.
-* `base::require`
+  * Same call as `R.version$version.string()`.
+* `base::require()`
   * Load and attach packages, returning `FALSE` if the package does not exist.
-* `base::rm`
+* `base::rm()`
   * Remove objects from a specified environment.
-* `base::savehistory`
+* `base::savehistory()`
   * Save command history (default value is ".Rhistory").
-* `base::save.image`
+* `base::save.image()`
   * Save the current workspace.
-* `base::search`
+* `base::search()`
   * Return a list of attached packages and R objects.
-* `base::searchpaths`
+* `base::searchpaths()`
   * Return the path to attached packages.
-* `base::setwd`
+* `base::setwd()`
   * Set the working directory file path.
   * When using Windows, use "/" instead of "\".
-* `base::Sys.getenv`
-  * See also `Sys.setenv`.
-* `base::Sys.info`
+* `base::Sys.getenv()`
+  * See also `Sys.setenv()`.
+* `base::Sys.info()`
   * Extract system and user information.
   * Example: `Sys.info()[c("sysname", "release")]`.
-* `base::Sys.setenv`
-  * See also `Sys.setenv`.
-* `gdata::object.size`
+* `base::Sys.setenv()`
+  * See also `Sys.setenv()`.
+* `gdata::object.size()`
   * Report the space allocated for an object.
-  * See also `utils::object.size`.
-* `installr::updateR`
+  * See also `utils::object.size()`.
+* `here::here()`
+* `installr::updateR()`
   * Check for the latest R version; downloads and installs new R versions.
-* `pryr::where`: Find where a name is defined.
-* `utils::ls.str`: List objects and  their structure.
-* `utils::object.size`: Report the space allocated for an object.
-  * See also `gdata::object.size`.
-* `utils::sessionInfo`: Collect information about the current R session.
+* `pryr::where()`: Find where a name is defined.
+* `utils::ls.str()`: List objects and  their structure.
+* `utils::object.size()`: Report the space allocated for an object.
+  * See also `gdata::object.size()`.
+* `utils::sessionInfo()`: Collect information about the current R session.
     
 References:
 
@@ -1247,18 +1244,13 @@ References:
 ***
 ## Functions
 
-`{assertive}`
-
-* `assert_*`: Check whether the input is `*` (e..g, `assert_is_numeric`) and throw and error if the input does not meet the condition.
-* `coerce_to`: Coerce the input to a different class, with a warning.
-* `is_*`: Checks whether the input matches the condition specified by `*` (e.g., `is_non_positive`).
-* `use_first`: Use only the first element of a vector.
-
-`{base}`
-
-* `do.call`: Execute a function call from a name or a function and a list of arguments to be passed to the function.
-* `invisible`: Return a (temporarily) invisible copy of an object.
-* `match.arg`: Argument verification.
+* `assertive::assert_*()`: Check whether the input is `*` (e..g, `assert_is_numeric()`) and throw and error if the input does not meet the condition.
+* `assertive::coerce_to()`: Coerce the input to a different class, with a warning.
+* `assertive::is_*()`: Checks whether the input matches the condition specified by `*` (e.g., `assertive::is_non_positive()`).
+* `assertive::use_first()`: Use only the first element of a vector.
+* `base::do.call()`: Execute a function call from a name or a function and a list of arguments to be passed to the function.
+* `base::invisible()`: Return a (temporarily) invisible copy of an object.
+* `base::match.arg()`: Argument verification.
   * Useful when matching a character argument specified in the function signature. For example, 
 
 ```{r}
@@ -1269,125 +1261,109 @@ args(prop.test)
 # character vector.
 ```
   
-* `message`: Generage a diagnostic message.
+* `base::message()`
+  * Generate a diagnostic message.
   * Preferable to generating a message using `cat`.
-* `return`: Return a value from a function.
+* `base::return()`
+  * Return a value from a function.
   * Useful in `if` statements where one condition is simple and the other is complex (see section 19.6.1 "Explicit return statements" in Hadley Wickham's [*R for Data Science*](https://r4ds.had.co.nz/functions.html).
-* `setNames`: Set the names in an object.
+* `base::setNames()`
+  * Set the names in an object.
   * Useful in function writing; see documentation.
-* `stop`: Stop execution of the expression and execute an error action.
+* `base::stop()`
+  * Stop execution of the expression and execute an error action.
   * Useful in combination with an `if` statement when you want to generate helpful error messages.
-* `stopifnot`: Ensure the truth of an R expression.
-  * See section 19.5.2 "Checking values" in Hadley Wickham's [*R for Data Science*](https://r4ds.had.co.nz/functions.html) for a discussion of `stop` versus `stopifnot`.
+* `base::stopifnot()`
+  * Ensure the truth of an R expression.
+  * See section 19.5.2 "Checking values" in Hadley Wickham's [*R for Data Science*](https://r4ds.had.co.nz/functions.html) for a discussion of `stop()` versus `stopifnot()`.
   * Consider functions from `{assertive}` as an alternative to `stopifnot` and `stop`.
-* `unlist`: Flatten lists.
+* `base::unlist()`
+  * Flatten lists.
   * Useful when using `purrr`'s `map` functions, which return objects as type `list`.
-
-`{zeallot}`
-
-* `%<-%`: Multiple assignment operator.
-  * Useful when you want to return multiple output from a function. For example:
+* `zeallot::%<-%`: Multiple assignment operator (see example below).
   
+#### Examples
+
+* `zeallot::%<-%`:
+
 ```{r, eval=FALSE}
 session <- function() {
   
   list(
-    r_version = R.version.string,
+    r_version        = R.version.string,
     operating_system = Sys.info()[c("sysname", "release")],
-    loaded_pkgs = loadedNamespaces()
+    loaded_pkgs      = loadedNamespaces()
   )
 }
 
 c(vrsn, os, pkgs) %<-% session() 
 ```
 
-***
 ## Learn About an Object
 
-`base`
+* `?object_name`
+* `??object_name`
+* `base::args()`: Display the argument names and default values of a function.
+* `base::attributes()`: View or assign an objects attributes (e.g., `class()`, `dim()`, `dimnames()`, `names()`, `row.names()`). 
+* `base::body()`: Get or set the body of a function.
+* `base::colnames()`: Retrieve or set column names.
+* `base::dim()`: Retrieve or set the dimnames of an object.
+* `base::dimnames()`: Retrieve or set the dimension names of an object.
+* `base::formals()`: Get or set the formal arguments of a function.
+* `base::help()`: Get the topic documentation.
+* `base::help.search()`: Search the help system for documentation matching a given character string.
+* `base::vignette()`: View a specified package vignette.
+* `base::rownames()`: Retrieve or set row names.
 
-* `args()`: Display the argument names and default values of a function.
-* `attributes()`: View or assign an objects attributes (e.g., `class()`, `dim()`, `dimnames()`, `names()`, `row.names()`). 
-* `body()`: Get or set the body of a function.
-* `colnames()`: Retrieve or set column names.
-* `dim()`: Retrieve or set the dimnames of an object.
-* `dimnames()`: Retrieve or set the dimension names of an object.
-* `formals()`: Get or set the formal arguments of a function.
-* `help()`: Get the topic documentation.
-* `help.search()`: Search the help system for documentation matching a given character string.
-* `vignette()`: View a specified package vignette.
-* ?object_name
-* ??object_name
-* `rownames()`: Retrieve or set row names.
-
-***
 ## Loops
 
-`base`
+* `base::seq()`: Sequence generation (this functions makes `length()` unnecessary).
+* `base::seq_along()`: In `for` loops, safer than using `base::ncol()` or `base::nrow()`.
 
-* `seq()`: Sequence generation.
-    + This functions makes `length()` unnecessary.
-    + Child function: `seq_along()`
-        + In `for` loops, safer than using `ncol()` or `nrow()`.
-
-***
 ## Optimization
 
-`microbenchmark`
-
-* `microbenchmark()`: Sub-millisecond accurate timing of expression evaluations.
+`microbenchmark::microbenchmark()`: Sub-millisecond accurate timing of expression evaluations.
     + A more accurate replacement of `system.time(replicate(1000, expr))`.
 
-***
 ## Pipes
 
-`magrittr`
+* `magrittr::%<>%`: Compound assignment-pipe operator.
+* `magrittr::%>%`: Forward-pipe operator.
+* `magrittr::%$%`: Expositions-pipe operator.
+* `magrittr::add()`: `+`, for pipes.
+* `magrittr::and()`: `&`, for pipes.
+* `magrittr::extract()`:`[`, for pipes (see also `purrr::pluck()`).
+* `magrittr::extract2()`: `[[`, for pipes.
+* `magrittr::freduce()`: Apply a list of functions sequentially.
+* `magrittr::is_in()`: `%in%`, for pipes.
+* `magrittr::multiply_by()`: `*`, for pipes.
+* `magrittr::or()`: `|`, for pipes.
+* `magrittr::raise_to_power()`: `^`, for pipes.
+* `magrittr::subtract()`: `-`, for pipes.
 
-* `%<>%`: Compound assignment-pipe operator.
-* `%>%`: Forward-pipe operator.
-* `%$%`: Expositions-pipe operator.
-* `add`: `+`, for pipes.
-* `and`: `&`, for pipes.
-* `extract`:`[`, for pipes.
-  * See also `purrr::pluck`.
-* `extract2`: `[[`, for pipes.
-* `freduce`: Apply a list of functions sequentially.
-* `is_in`: `%in%`, for pipes.
-* `multiply_by`: `*`, for pipes.
-* `or`: `|`, for pipes.
-* `raise_to_power`: `^`, for pipes.
-* `subtract`: `-`, for pipes.
-
-***
 ## Popups
 
-`svDialogs`
-
-* `dlg_message`: Display a modal message box (works in Windows, MacOS, and Linux).
-
-`tcltk`
-
-* `tk_messageBox`: Display a generic message box using Tk (Windows-specific).
+* `svDialogs::dlg_message()`: Display a modal message box (works in Windows, MacOS, and Linux).
+* `tcltk::tk_messageBox()`: Display a generic message box using Tk (Windows-specific).
 
 ## Selecting & Subsetting
 
-* `.$variable_name`
-  * See example below.
-* `.[["variable_name"]]`
-  * See example below.
-* `base::subset`
-* `dplyr::first`
-* `dplyr::last`
-* `dplyr::nth`
-* `dplyr::rename`
-* `dplyr::select`
-  * Helper functions: `contains`, `ends_with`, `matches`, `num_range`, `one_of`, `starts_with`.
+* `.$variable_name`: See example below.
+* `.[["variable_name"]]`: See example below.
+* `base::subset()`
+* `dplyr::first()`
+* `dplyr::las()t`
+* `dplyr::nth()`
+* `dplyr::rename()`
+* `dplyr::select()`: Helper functions include `contains()`, `ends_with()`, `matches()`, `num_range()`, `one_of()`, `starts_with()`.
 * `ggplot2::cut_number`
-* `magrittr::extract`
-* `magrittr::extract2`
-* `purrr:pluck`
+* `magrittr::extract()`
+* `magrittr::extract2()`
+* `purrr:pluck()`: See also `magrittr::extract2()`.
 
-**Example:** `.$variable_name`
+#### Examples
+
+* `.$variable_name`:
 
 ```{r, eval=FALSE}
 ui_summary_table <- 
@@ -1398,38 +1374,56 @@ ui_summary_table <-
   bind_rows()
 ```
 
-**Example:** `.[["variable_name"]]`
+* `.[["variable_name"]]`:
 
 ```{r, eval=FALSE}
-  odbc_aws %>% 
-    dbGetQuery(
-      paste("
-            SELECT id
-            FROM batch
-            WHERE entity_id = ", t_id, "
-            AND status IN ('PROCESSED', 'PROCESSING')")) %>% 
-    .[["id"]] %>% 
-  as.double()
+odbc_aws %>% 
+  dbGetQuery(
+    paste("
+          SELECT id
+          FROM batch
+          WHERE entity_id = ", t_id, "
+          AND status IN ('PROCESSED', 'PROCESSING')"
+    )
+  ) %>% 
+  .[["id"]] %>% 
+as.double()
 ```
 
-**References:**
+#### References
 
 * ["Indexing lists in #rstats. Inspired by Residence Inn"](https://twitter.com/hadleywickham/status/643381054758363136) (Hadley Wickham, Twitter, 14 September 2015)
 
-***
+## Style Guide
+
+* ["The Tidyverse Style Guide"](https://style.tidyverse.org/) by Hadley Wickham.
+* General Layout and Ordering (taken from the outdated ["Google's R Style Guide"](http://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html))
+  * Title
+  * Author
+  * File description (e.g., purpose of program, inputs, outputs)
+  * `source()` and `library()` statements
+  * Function definitions
+  * Executed statements.
+
 ## System Commands
 
-* `base::system`
-* `base::system2`
-* `sys::exec`
-* `sys::exec_r`
+* `base::system()`
+* `base::system2()`
+* `sys::exec()`
+* `sys::exec_r()`
 
 ## Version Control
 
-Git
+* `base::update.packages()`
+  * 00LOCK error when updating a package: Use `update.packages(ask = FALSE, checkBuilt = TRUE, INSTALL_opts = "--no-lock")`
+* `packrat::snapshot()`: Capture and store the packages and versions in use.
+* `packrat::restore()`: Load the most recent snapshot to the project's private library.
+* Packrat still seems to be under development. The idea sounds good, but in practice the packrat package has caused lots of problems. 
+
+#### Git
 
 * [*A successful Git branching model*](https://nvie.com/posts/a-successful-git-branching-model/)
-* [Git](https://git-scm.com/)
+* [git-scm.com](https://git-scm.com/)
 * [*Git and GitHub*](http://r-pkgs.had.co.nz/git.html#git-learning) by Hadley Wickham
 * [*Happy Git and GitHub for the useR*](http://happygitwithr.com/) by Jenny Bryan
 * [*Pro Git*](https://git-scm.com/book/en/v2) by Scott Chacon and Ben Straub
@@ -1438,12 +1432,6 @@ Git
 * `git branch`: List, create, or delete branches.
     + `git branch -d <branch_name>`: Delete a local branch.
         + See ["Delete branch in RStudio pop-up"](https://community.rstudio.com/t/delete-branch-in-rstudio-pop-up/15465) for help removing branches in RStudio after removing them from Git.
-
-`{packrat}`
-
-* See note on the `packrat` package in the "Referenced Packages" section.
-* `snapshot`: Capture and store the packages and versions in use.
-* `restore`: Load the most recent snapshot to the project's private library.
 
 <!--chapter:end:07-program.Rmd-->
 
@@ -1478,6 +1466,7 @@ Git
   * [*The tidyverse style guide*](http://style.tidyverse.org/)
   * [*Efficient R Programming*](https://bookdown.org/csgillespie/efficientR/)
   * [*Free R Reading Material*](https://committedtotape.shinyapps.io/freeR/)
+  * [*What They Forgot to Teach You About R*](https://rstats.wtf/) by Jenny Bryan and Jim Hester
 
 * Other Online Resources
   * [DataCamp](https://www.datacamp.com/)

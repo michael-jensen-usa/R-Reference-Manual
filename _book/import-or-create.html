@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Import | R Reference Manual</title>
-  <meta name="description" content="Import | R Reference Manual" />
+  <title>Import (or Create) | R Reference Manual</title>
+  <meta name="description" content="Import (or Create) | R Reference Manual" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Import | R Reference Manual" />
+  <meta property="og:title" content="Import (or Create) | R Reference Manual" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Import | R Reference Manual" />
+  <meta name="twitter:title" content="Import (or Create) | R Reference Manual" />
   
   
   
@@ -132,16 +132,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html"><i class="fa fa-check"></i>Import</a><ul>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-a-local-drive"><i class="fa fa-check"></i>Import Data from a Local Drive</a></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-data-from-the-internet"><i class="fa fa-check"></i>Import Data from the Internet</a><ul>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#examples"><i class="fa fa-check"></i>Examples</a></li>
+<li class="chapter" data-level="" data-path="import-or-create.html"><a href="import-or-create.html"><i class="fa fa-check"></i>Import (or Create)</a><ul>
+<li class="chapter" data-level="" data-path="import-or-create.html"><a href="import-or-create.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
+<li class="chapter" data-level="" data-path="import-or-create.html"><a href="import-or-create.html#local-drive"><i class="fa fa-check"></i>Local Drive</a></li>
+<li class="chapter" data-level="" data-path="import-or-create.html"><a href="import-or-create.html#internet"><i class="fa fa-check"></i>Internet</a></li>
+<li class="chapter" data-level="" data-path="import-or-create.html"><a href="import-or-create.html#database"><i class="fa fa-check"></i>Database</a><ul>
+<li class="chapter" data-level="" data-path="import-or-create.html"><a href="import-or-create.html#sql"><i class="fa fa-check"></i>SQL</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#import-from-or-create-data-in-a-database"><i class="fa fa-check"></i>Import from or Create Data in a Database</a><ul>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#sql"><i class="fa fa-check"></i>SQL</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="import.html"><a href="import.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
+<li class="chapter" data-level="" data-path="import-or-create.html"><a href="import-or-create.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i>Tidy</a><ul>
 <li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a></li>
@@ -220,50 +218,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="import" class="section level1">
-<h1>Import</h1>
+<div id="import-or-create" class="section level1">
+<h1>Import (or Create)</h1>
 <hr />
+<style type="text/css">
+h2 {
+  padding-bottom: 1px;
+  border-bottom: 1px solid black;
+}
+</style>
 <div id="create-data" class="section level2">
 <h2>Create Data</h2>
-<hr />
-<div id="basearray" class="section level5">
-<h5><code>base::array()</code></h5>
+<p><code>base::array()</code></p>
+<p><code>base::c()</code></p>
+<p><code>base::data.frame()</code></p>
+<p><code>base::dir.create()</code>: Create a file path in the computer’s file system.</p>
+<p><code>base::factor()</code></p>
+<p><code>base::list()</code></p>
+<p><code>base::matrix()</code></p>
+<p><code>base::seq()</code></p>
+<p><code>base::vector()</code>: Preferable to <code>base::c()</code> when creating an empty vector (<a href="https://www.datacamp.com/community/tutorials/five-tips-r-code-improve">“Five Tips to Improve Your R Code”</a>).</p>
+<p><code>stats::rnorm()</code></p>
+<p><code>tibble::add_row()</code></p>
+<p><code>tibble::tibble()</code></p>
+<p><code>tibble::tribble()</code>: Row-wise tibble creation.</p>
 </div>
-<div id="basec" class="section level5">
-<h5><code>base::c()</code></h5>
-</div>
-<div id="basedata.frame" class="section level5">
-<h5><code>base::data.frame()</code></h5>
-</div>
-<div id="basedir.create" class="section level5">
-<h5><code>base::dir.create()</code></h5>
-<p>Create a file path in the computer’s file system.</p>
-</div>
-<div id="basefactor" class="section level5">
-<h5><code>base::factor()</code></h5>
-</div>
-<div id="baselist" class="section level5">
-<h5><code>base::list()</code></h5>
-</div>
-<div id="basematrix" class="section level5">
-<h5><code>base::matrix()</code></h5>
-</div>
-<div id="baseseq" class="section level5">
-<h5><code>base::seq()</code></h5>
-</div>
-<div id="basevector" class="section level5">
-<h5><code>base::vector()</code></h5>
-<p>Preferable to <code>base::c</code> when creating an empty vector (<a href="https://www.datacamp.com/community/tutorials/five-tips-r-code-improve">“Five Tips to Improve Your R Code”</a>).
-##### <code>stats::rnorm()</code>
-##### <code>tibble::add_row()</code>
-##### <code>tibble::tibble()</code>
-##### <code>tibble::tribble()</code>
-Row-wise tibble creation.</p>
-</div>
-</div>
-<div id="import-data-from-a-local-drive" class="section level2">
-<h2>Import Data from a Local Drive</h2>
-<hr />
+<div id="local-drive" class="section level2">
+<h2>Local Drive</h2>
 <ul>
 <li><code>base::attach</code>
 <ul>
@@ -316,63 +297,63 @@ Row-wise tibble creation.</p>
 </ul></li>
 </ul>
 </div>
-<div id="import-data-from-the-internet" class="section level2">
-<h2>Import Data from the Internet</h2>
-<hr />
-<ul>
-<li><code>httr::GET</code>: Get a URL.</li>
-<li><code>jsonlite::read_json</code>: Read and write JSON.</li>
-<li><code>readr::read_csv</code></li>
-<li><code>readr::read_csv2</code></li>
-<li><code>readr::read_delim</code></li>
-<li><code>readr::read_tsv</code></li>
-<li><code>rjson::fromJSON</code>: Convert JSON to R.</li>
-<li><code>utils::download.file</code>: See example below.</li>
-<li><code>utils::unzip</code>: See example below.</li>
-</ul>
-<div id="examples" class="section level3">
-<h3>Examples</h3>
-<p><code>utils::download.file</code>:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="import.html#cb1-1"></a><span class="kw">download.file</span>(</span>
-<span id="cb1-2"><a href="import.html#cb1-2"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/5028/datasets/a55843f83746968c7f118d82ed727db9c71e891f/snake_river_visits.rds&quot;</span>,</span>
-<span id="cb1-3"><a href="import.html#cb1-3"></a>  <span class="dt">destfile =</span> <span class="kw">paste0</span>(<span class="kw">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>)</span>
-<span id="cb1-4"><a href="import.html#cb1-4"></a>)</span>
-<span id="cb1-5"><a href="import.html#cb1-5"></a></span>
-<span id="cb1-6"><a href="import.html#cb1-6"></a><span class="co"># Option 1:</span></span>
-<span id="cb1-7"><a href="import.html#cb1-7"></a>snake_river_visits &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="kw">file.choose</span>())</span>
-<span id="cb1-8"><a href="import.html#cb1-8"></a></span>
-<span id="cb1-9"><a href="import.html#cb1-9"></a><span class="co"># Option 2:</span></span>
-<span id="cb1-10"><a href="import.html#cb1-10"></a>snake_river_path   &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="kw">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>)</span>
-<span id="cb1-11"><a href="import.html#cb1-11"></a>snake_river_visits &lt;-<span class="st"> </span><span class="kw">readRDS</span>(snake_river_path)</span></code></pre></div>
-<p>Download <code>.Rdata</code> files:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="import.html#cb2-1"></a><span class="co"># Example 1:</span></span>
-<span id="cb2-2"><a href="import.html#cb2-2"></a><span class="kw">download.file</span>(</span>
-<span id="cb2-3"><a href="import.html#cb2-3"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData&quot;</span>, </span>
-<span id="cb2-4"><a href="import.html#cb2-4"></a>  <span class="dt">destfile =</span> <span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span>)</span>
-<span id="cb2-5"><a href="import.html#cb2-5"></a></span>
-<span id="cb2-6"><a href="import.html#cb2-6"></a><span class="kw">load</span>(<span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span>)</span>
-<span id="cb2-7"><a href="import.html#cb2-7"></a></span>
-<span id="cb2-8"><a href="import.html#cb2-8"></a><span class="co"># Example 2:</span></span>
-<span id="cb2-9"><a href="import.html#cb2-9"></a><span class="kw">download.file</span>(</span>
-<span id="cb2-10"><a href="import.html#cb2-10"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/235/datasets/3b6fc2923b599058584b57d8c605c6bef454d273/CHIS2009_reduced_2.Rdata&quot;</span>,</span>
-<span id="cb2-11"><a href="import.html#cb2-11"></a>  <span class="dt">destfile =</span> <span class="st">&quot;chis_2009.Rdata&quot;</span>,</span>
-<span id="cb2-12"><a href="import.html#cb2-12"></a>  <span class="co"># The documentation for `download.file` indicates that the function will</span></span>
-<span id="cb2-13"><a href="import.html#cb2-13"></a>  <span class="co"># automatically include `mode = &quot;wb&quot;` for .Rdata files. That may have happened</span></span>
-<span id="cb2-14"><a href="import.html#cb2-14"></a>  <span class="co"># in Example 1, but didn&#39;t happen in Example 2, which is why I&#39;ve included it.</span></span>
-<span id="cb2-15"><a href="import.html#cb2-15"></a>  <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span>)</span>
-<span id="cb2-16"><a href="import.html#cb2-16"></a></span>
-<span id="cb2-17"><a href="import.html#cb2-17"></a><span class="kw">load</span>(<span class="st">&quot;chis_2009.Rdata&quot;</span>)</span></code></pre></div>
-<p><code>utils::unzip</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="import.html#cb3-1"></a><span class="kw">download.file</span>(</span>
-<span id="cb3-2"><a href="import.html#cb3-2"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/1069/datasets/578834f5908e3b2fa575429a287586d1eaeb2e54/countries2.zip&quot;</span>,</span>
-<span id="cb3-3"><a href="import.html#cb3-3"></a>  <span class="dt">destfile =</span> <span class="st">&quot;Data Sets/Countries&quot;</span>,</span>
-<span id="cb3-4"><a href="import.html#cb3-4"></a>  <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span>)</span>
-<span id="cb3-5"><a href="import.html#cb3-5"></a></span>
-<span id="cb3-6"><a href="import.html#cb3-6"></a><span class="kw">unzip</span>(<span class="st">&quot;Data Sets/Countries&quot;</span>, <span class="dt">exdir =</span> <span class="st">&quot;Data Sets&quot;</span>)</span></code></pre></div>
+<div id="internet" class="section level2">
+<h2>Internet</h2>
+<p><code>httr::GET()</code>: Get a URL.</p>
+<p><code>jsonlite::read_json()</code>: Read and write JSON.</p>
+<p><code>readr::read_csv()</code></p>
+<p><code>readr::read_csv2()</code></p>
+<p><code>readr::read_delim()</code></p>
+<p><code>readr::read_tsv()</code></p>
+<p><code>rjson::fromJSON()</code>: Convert JSON to R.</p>
+<p><code>utils::download.file()</code>: See example below.</p>
+<p><code>utils::unzip()</code>: See example below.</p>
+<div id="examples" class="section level4">
+<h4>Examples</h4>
+<p><code>utils::download.file()</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="import-or-create.html#cb1-1"></a><span class="kw">download.file</span>(</span>
+<span id="cb1-2"><a href="import-or-create.html#cb1-2"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/5028/datasets/a55843f83746968c7f118d82ed727db9c71e891f/snake_river_visits.rds&quot;</span>,</span>
+<span id="cb1-3"><a href="import-or-create.html#cb1-3"></a>  <span class="dt">destfile =</span> <span class="kw">paste0</span>(<span class="kw">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>)</span>
+<span id="cb1-4"><a href="import-or-create.html#cb1-4"></a>)</span>
+<span id="cb1-5"><a href="import-or-create.html#cb1-5"></a></span>
+<span id="cb1-6"><a href="import-or-create.html#cb1-6"></a><span class="co"># Option 1:</span></span>
+<span id="cb1-7"><a href="import-or-create.html#cb1-7"></a>snake_river_visits &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="kw">file.choose</span>())</span>
+<span id="cb1-8"><a href="import-or-create.html#cb1-8"></a></span>
+<span id="cb1-9"><a href="import-or-create.html#cb1-9"></a><span class="co"># Option 2:</span></span>
+<span id="cb1-10"><a href="import-or-create.html#cb1-10"></a>snake_river_path   &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="kw">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>)</span>
+<span id="cb1-11"><a href="import-or-create.html#cb1-11"></a>snake_river_visits &lt;-<span class="st"> </span><span class="kw">readRDS</span>(snake_river_path)</span></code></pre></div>
+<p><code>utils::download.file()</code> for .Rdata files:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="import-or-create.html#cb2-1"></a><span class="co"># Example 1:</span></span>
+<span id="cb2-2"><a href="import-or-create.html#cb2-2"></a><span class="kw">download.file</span>(</span>
+<span id="cb2-3"><a href="import-or-create.html#cb2-3"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData&quot;</span>, </span>
+<span id="cb2-4"><a href="import-or-create.html#cb2-4"></a>  <span class="dt">destfile =</span> <span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span></span>
+<span id="cb2-5"><a href="import-or-create.html#cb2-5"></a>)</span>
+<span id="cb2-6"><a href="import-or-create.html#cb2-6"></a></span>
+<span id="cb2-7"><a href="import-or-create.html#cb2-7"></a><span class="kw">load</span>(<span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span>)</span>
+<span id="cb2-8"><a href="import-or-create.html#cb2-8"></a></span>
+<span id="cb2-9"><a href="import-or-create.html#cb2-9"></a><span class="co"># Example 2:</span></span>
+<span id="cb2-10"><a href="import-or-create.html#cb2-10"></a><span class="kw">download.file</span>(</span>
+<span id="cb2-11"><a href="import-or-create.html#cb2-11"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/235/datasets/3b6fc2923b599058584b57d8c605c6bef454d273/CHIS2009_reduced_2.Rdata&quot;</span>,</span>
+<span id="cb2-12"><a href="import-or-create.html#cb2-12"></a>  <span class="dt">destfile =</span> <span class="st">&quot;chis_2009.Rdata&quot;</span>,</span>
+<span id="cb2-13"><a href="import-or-create.html#cb2-13"></a>  <span class="co"># The documentation for `download.file` indicates that the function will</span></span>
+<span id="cb2-14"><a href="import-or-create.html#cb2-14"></a>  <span class="co"># automatically include `mode = &quot;wb&quot;` for .Rdata files. That may have happened</span></span>
+<span id="cb2-15"><a href="import-or-create.html#cb2-15"></a>  <span class="co"># in Example 1, but didn&#39;t happen in Example 2, which is why I&#39;ve included it.</span></span>
+<span id="cb2-16"><a href="import-or-create.html#cb2-16"></a>  <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span></span>
+<span id="cb2-17"><a href="import-or-create.html#cb2-17"></a>)</span>
+<span id="cb2-18"><a href="import-or-create.html#cb2-18"></a></span>
+<span id="cb2-19"><a href="import-or-create.html#cb2-19"></a><span class="kw">load</span>(<span class="st">&quot;chis_2009.Rdata&quot;</span>)</span></code></pre></div>
+<p><code>utils::unzip()</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="import-or-create.html#cb3-1"></a><span class="kw">download.file</span>(</span>
+<span id="cb3-2"><a href="import-or-create.html#cb3-2"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/1069/datasets/578834f5908e3b2fa575429a287586d1eaeb2e54/countries2.zip&quot;</span>,</span>
+<span id="cb3-3"><a href="import-or-create.html#cb3-3"></a>  <span class="dt">destfile =</span> <span class="st">&quot;Data Sets/Countries&quot;</span>,</span>
+<span id="cb3-4"><a href="import-or-create.html#cb3-4"></a>  <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span></span>
+<span id="cb3-5"><a href="import-or-create.html#cb3-5"></a>)</span>
+<span id="cb3-6"><a href="import-or-create.html#cb3-6"></a></span>
+<span id="cb3-7"><a href="import-or-create.html#cb3-7"></a><span class="kw">unzip</span>(<span class="st">&quot;Data Sets/Countries&quot;</span>, <span class="dt">exdir =</span> <span class="st">&quot;Data Sets&quot;</span>)</span></code></pre></div>
 </div>
 </div>
-<div id="import-from-or-create-data-in-a-database" class="section level2">
-<h2>Import from or Create Data in a Database</h2>
+<div id="database" class="section level2">
+<h2>Database</h2>
 <hr />
 <ul>
 <li><code>DBI::dbBind</code></li>
@@ -405,29 +386,29 @@ Row-wise tibble creation.</p>
 </ul>
 <p><strong>Example:</strong> <code>DBI::Id</code> vs <code>DBI::SQL</code></p>
 <p>The following are comparable methods of accessing <schema_name>.<table_name>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="import.html#cb4-1"></a><span class="kw">dbCreateTable</span>(</span>
-<span id="cb4-2"><a href="import.html#cb4-2"></a>  conn,</span>
-<span id="cb4-3"><a href="import.html#cb4-3"></a>  <span class="kw">Id</span>(<span class="dt">schema =</span> <span class="st">&quot;schema_name&quot;</span>, <span class="dt">table =</span> <span class="st">&quot;table_name&quot;</span>),</span>
-<span id="cb4-4"><a href="import.html#cb4-4"></a>  <span class="dt">fields =</span> <span class="st">&quot;field_name&quot;</span>)</span>
-<span id="cb4-5"><a href="import.html#cb4-5"></a></span>
-<span id="cb4-6"><a href="import.html#cb4-6"></a><span class="kw">dbCreateTable</span>(</span>
-<span id="cb4-7"><a href="import.html#cb4-7"></a>  conn,</span>
-<span id="cb4-8"><a href="import.html#cb4-8"></a>  <span class="dt">name =</span> <span class="kw">SQL</span>(<span class="st">&quot;schema_name.table_name&quot;</span>),</span>
-<span id="cb4-9"><a href="import.html#cb4-9"></a>  <span class="dt">fields =</span> <span class="st">&quot;field_name&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="import-or-create.html#cb4-1"></a><span class="kw">dbCreateTable</span>(</span>
+<span id="cb4-2"><a href="import-or-create.html#cb4-2"></a>  conn,</span>
+<span id="cb4-3"><a href="import-or-create.html#cb4-3"></a>  <span class="kw">Id</span>(<span class="dt">schema =</span> <span class="st">&quot;schema_name&quot;</span>, <span class="dt">table =</span> <span class="st">&quot;table_name&quot;</span>),</span>
+<span id="cb4-4"><a href="import-or-create.html#cb4-4"></a>  <span class="dt">fields =</span> <span class="st">&quot;field_name&quot;</span>)</span>
+<span id="cb4-5"><a href="import-or-create.html#cb4-5"></a></span>
+<span id="cb4-6"><a href="import-or-create.html#cb4-6"></a><span class="kw">dbCreateTable</span>(</span>
+<span id="cb4-7"><a href="import-or-create.html#cb4-7"></a>  conn,</span>
+<span id="cb4-8"><a href="import-or-create.html#cb4-8"></a>  <span class="dt">name =</span> <span class="kw">SQL</span>(<span class="st">&quot;schema_name.table_name&quot;</span>),</span>
+<span id="cb4-9"><a href="import-or-create.html#cb4-9"></a>  <span class="dt">fields =</span> <span class="st">&quot;field_name&quot;</span>)</span></code></pre></div>
 <p><strong>Example:</strong> <code>odbc::dbConnect</code></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="import.html#cb5-1"></a><span class="co"># Specify database:</span></span>
-<span id="cb5-2"><a href="import.html#cb5-2"></a>conn_<span class="dv">1</span> &lt;-<span class="st"> </span></span>
-<span id="cb5-3"><a href="import.html#cb5-3"></a><span class="st">  </span><span class="kw">dbConnect</span>(odbc<span class="op">::</span><span class="kw">odbc</span>(), <span class="dt">dsn =</span> <span class="st">&quot;sql&quot;</span>) <span class="co"># Default database: Actuary</span></span>
-<span id="cb5-4"><a href="import.html#cb5-4"></a></span>
-<span id="cb5-5"><a href="import.html#cb5-5"></a>conn_<span class="dv">2</span> &lt;-<span class="st"> </span></span>
-<span id="cb5-6"><a href="import.html#cb5-6"></a><span class="st">  </span><span class="kw">dbConnect</span>(odbc<span class="op">::</span><span class="kw">odbc</span>(), <span class="dt">dsn =</span> <span class="st">&quot;sql&quot;</span>, <span class="dt">Database =</span> <span class="st">&quot;Staging&quot;</span>)</span>
-<span id="cb5-7"><a href="import.html#cb5-7"></a></span>
-<span id="cb5-8"><a href="import.html#cb5-8"></a><span class="co"># Troubleshoot hang-ups</span></span>
-<span id="cb5-9"><a href="import.html#cb5-9"></a><span class="co"># It appears that RStudio&#39;s attempt to load information into the Connection Pane,</span></span>
-<span id="cb5-10"><a href="import.html#cb5-10"></a><span class="co"># via `odbc::dbConnect`, can sometimes cause the call to hang, indefinitely.</span></span>
-<span id="cb5-11"><a href="import.html#cb5-11"></a><span class="co"># Use the following code to access the database in such a situation:</span></span>
-<span id="cb5-12"><a href="import.html#cb5-12"></a></span>
-<span id="cb5-13"><a href="import.html#cb5-13"></a><span class="kw">options</span>(<span class="dt">connectionObserver =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="import-or-create.html#cb5-1"></a><span class="co"># Specify database:</span></span>
+<span id="cb5-2"><a href="import-or-create.html#cb5-2"></a>conn_<span class="dv">1</span> &lt;-<span class="st"> </span></span>
+<span id="cb5-3"><a href="import-or-create.html#cb5-3"></a><span class="st">  </span><span class="kw">dbConnect</span>(odbc<span class="op">::</span><span class="kw">odbc</span>(), <span class="dt">dsn =</span> <span class="st">&quot;sql&quot;</span>) <span class="co"># Default database: Actuary</span></span>
+<span id="cb5-4"><a href="import-or-create.html#cb5-4"></a></span>
+<span id="cb5-5"><a href="import-or-create.html#cb5-5"></a>conn_<span class="dv">2</span> &lt;-<span class="st"> </span></span>
+<span id="cb5-6"><a href="import-or-create.html#cb5-6"></a><span class="st">  </span><span class="kw">dbConnect</span>(odbc<span class="op">::</span><span class="kw">odbc</span>(), <span class="dt">dsn =</span> <span class="st">&quot;sql&quot;</span>, <span class="dt">Database =</span> <span class="st">&quot;Staging&quot;</span>)</span>
+<span id="cb5-7"><a href="import-or-create.html#cb5-7"></a></span>
+<span id="cb5-8"><a href="import-or-create.html#cb5-8"></a><span class="co"># Troubleshoot hang-ups</span></span>
+<span id="cb5-9"><a href="import-or-create.html#cb5-9"></a><span class="co"># It appears that RStudio&#39;s attempt to load information into the Connection Pane,</span></span>
+<span id="cb5-10"><a href="import-or-create.html#cb5-10"></a><span class="co"># via `odbc::dbConnect`, can sometimes cause the call to hang, indefinitely.</span></span>
+<span id="cb5-11"><a href="import-or-create.html#cb5-11"></a><span class="co"># Use the following code to access the database in such a situation:</span></span>
+<span id="cb5-12"><a href="import-or-create.html#cb5-12"></a></span>
+<span id="cb5-13"><a href="import-or-create.html#cb5-13"></a><span class="kw">options</span>(<span class="dt">connectionObserver =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 <div id="sql" class="section level3">
 <h3>SQL</h3>
 <ul>
