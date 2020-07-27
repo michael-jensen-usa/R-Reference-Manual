@@ -339,6 +339,7 @@ as.double()
 
 ## System Commands
 
+* `base::shell()`
 * `base::system()`
 * `base::system2()`
 * `sys::exec()`
