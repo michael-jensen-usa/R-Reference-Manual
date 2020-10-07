@@ -58,6 +58,8 @@ by_country <-
   * See `dplyr::n_distinct()`.
 * `dplyr::tally`
 * `dplyr::top_n`
+* `dummies::dummy.data.frame()`
+  * Dummify a data frame (useful when needing to calculate the Jaccard index for categorical data).
 * `magrittr::extract`
   * `x %>% extract(y)` is equivalent to `x[y]`. 
 * `magrittr::multiply_by`
