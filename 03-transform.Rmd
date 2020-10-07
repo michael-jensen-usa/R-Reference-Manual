@@ -64,13 +64,14 @@ by_country <-
   * `x %>% multiply_by(y)` is equivalent to `x * y`.
 * `magrittr::raise_to_power`
   * `x %>% raise_to_power(y)` is equivalent to `x^y`.
-* `stats::aggregate`
+* `stats::aggregate()`
   * Compute summary statistics of data subsets.
-* `stats::cor`
-* `stats::cov`
-* `stats::lag`
-* `stats::rnorm`
-* `stats::var`
+* `stats::cor()`
+* `stats::cov()`
+* `stats::dist()`
+* `stats::lag()`
+* `stats::rnorm()`
+* `stats::var()`
 
 ***
 ## Create New Variables or Modify Existing Ones

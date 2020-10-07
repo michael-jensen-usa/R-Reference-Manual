@@ -95,7 +95,7 @@
 
 ### Dates and Datetimes
 
-* `anytime::anytime`: Parse POSIXct or Date objects from input data.
+* `anytime::anytime()`: Parse POSIXct or Date objects from input data.
 * `base::as.Date()`
 * `base::OlsonNames()` 
   * Displays available time zones.
