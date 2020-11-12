@@ -70,7 +70,10 @@ by_country <-
   * Compute summary statistics of data subsets.
 * `stats::cor()`
 * `stats::cov()`
+* `stats::cutree()`
+  * Pair with `stats::hcLust()`.
 * `stats::dist()`
+* `stats::hclust()`
 * `stats::lag()`
 * `stats::rnorm()`
 * `stats::var()`
