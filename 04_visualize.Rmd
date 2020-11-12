@@ -142,7 +142,9 @@
 * `RColorBrewer::brewer.pal()`
   * Make the ColorBrewer color palettes available as R palattes.
   
-**Example: `grid::unit`
+#### Examples
+
+* `grid::unit`
 
 ```{r, eval=FALSE}
 # Increase spacing between facets in a `ggplot` object:

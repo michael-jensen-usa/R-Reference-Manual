@@ -148,96 +148,258 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 ## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
 \end{verbatim}
 
-\hypertarget{htmlwidget-2695ad8a4f8c3246d9d0}{}
-\begin{grViz}
+\hypertarget{htmlwidget-eda0ebbc36e0ebb14da7}{}
 
-\end{grViz}
+\hypertarget{references-resources}{%
+\section{References \& Resources}\label{references-resources}}
+
+\begin{itemize}
+\item
+  For an introduction to the R programming language, see the R Project for Statistical Computing's \href{https://www.r-project.org/about.html}{``What is R?''} and Wikipedia's \href{https://en.wikipedia.org/wiki/R_(programming_language)}{``R (programming language).''}
+\item
+  To download R, go to \href{https://www.r-project.org/}{r-project.org} and choose the cloud CRAN Mirror option.
+\item
+  To program in the R language on a user-friendly platform, download the \href{https://www.rstudio.com/}{RStudio} IDE.
+\item
+  \href{https://www.r-project.org/}{The R Project for Statistical Computing}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{https://cran.r-project.org/web/packages/}{Library of R Packages}
+  \item
+    \href{https://www.r-project.org/help.html}{\emph{Getting Help with R}}
+  \item
+    \href{https://cran.r-project.org/manuals.html}{\emph{The R Manuals}}
+  \item
+    \href{https://cran.r-project.org/faqs.html}{\emph{Frequently Asked Questions}}
+  \item
+    \href{https://www.r-project.org/doc/bib/R-books.html}{\emph{Books Related to R}}
+  \item
+    \href{https://www.r-project.org/other-docs.html}{\emph{Documentation}}
+  \end{itemize}
+\item
+  \href{https://www.rstudio.com/}{RStudio}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{https://www.rstudio.com/resources/cheatsheets/}{\emph{RStudio Cheat Sheets}}
+  \item
+    \href{https://www.rstudio.com/resources/webinars/}{\emph{Webinars and Videos On Demand}}
+  \item
+    \href{https://www.rstudio.com/online-learning/}{\emph{Online learning}}
+  \item
+    \href{https://blog.rstudio.com/}{\emph{RStudio Blog}}
+  \end{itemize}
+\item
+  Online Manuals
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{http://r4ds.had.co.nz/}{\emph{R for Data Science}}
+  \item
+    \href{http://adv-r.had.co.nz/}{\emph{Advanced R}} by Hadley Wickham
+    + Hadley's second edition draft is available \href{https://adv-r.hadley.nz/}{here}.
+  \item
+    \href{http://r-pkgs.had.co.nz/}{\emph{R Packages}} by Hadley Wickham
+  \item
+    \href{http://www.burns-stat.com/pages/Tutor/R_inferno.pdf}{\emph{The R Inferno}} by Patrick Burns
+  \item
+    \href{http://style.tidyverse.org/}{\emph{The tidyverse style guide}}
+  \item
+    \href{https://bookdown.org/csgillespie/efficientR/}{\emph{Efficient R Programming}}
+  \item
+    \href{https://committedtotape.shinyapps.io/freeR/}{\emph{Free R Reading Material}}
+  \item
+    \href{https://rstats.wtf/}{\emph{What They Forgot to Teach You About R}} by Jenny Bryan and Jim Hester
+  \end{itemize}
+\item
+  Other Online Resources
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{https://www.datacamp.com/}{DataCamp}
+  \item
+    \href{https://www.rdocumentation.org/}{RDocumentation}
+  \item
+    \href{https://www.r-bloggers.com/how-to-learn-r-2/}{R Bloggers}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \href{https://www.r-bloggers.com/how-to-learn-r-2/}{``Tutorials for learning R''}
+    \end{itemize}
+  \item
+    \href{https://regex101.com/}{Regular Expressions 101}
+  \end{itemize}
+\end{itemize}
 
 \hypertarget{import-or-create-data}{%
 \chapter{Import or Create Data}\label{import-or-create-data}}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
 \hypertarget{create-data}{%
 \section{Create Data}\label{create-data}}
+
+\texttt{\{base\}}
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{base::array()}
+  \texttt{array()}
 \item
-  \texttt{base::c()}: See \texttt{base::vector()}.
+  \texttt{c()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    See \texttt{base::vector()}.
+  \end{itemize}
 \item
-  \texttt{base::data.frame()}
+  \texttt{data.frame()}
 \item
-  \texttt{base::dir.create()}: Create a file path in the computer's file system.
+  \texttt{dir.create()}
 \item
-  \texttt{base::factor()}
+  \texttt{factor()}
 \item
-  \texttt{base::list()}
+  \texttt{list()}
 \item
-  \texttt{base::matrix()}
+  \texttt{matrix()}
 \item
-  \texttt{base::seq()}
+  \texttt{seq()}
 \item
-  \texttt{base::vector()}: Preferable to \texttt{base::c()} when creating an empty vector (\href{https://www.datacamp.com/community/tutorials/five-tips-r-code-improve}{``Five Tips to Improve Your R Code''}).
+  \texttt{vector()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Preferable to \texttt{base::c()} when creating an empty vector (\href{https://www.datacamp.com/community/tutorials/five-tips-r-code-improve}{``Five Tips to Improve Your R Code''}).
+  \end{itemize}
+\end{itemize}
+
+\texttt{\{stats\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{stats::rnorm()}
+  \texttt{rnorm()}
+\end{itemize}
+
+\texttt{\{tibble\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{tibble::add\_row()}
+  \texttt{add\_row()}
 \item
-  \texttt{tibble::tibble()}
+  \texttt{tibble()}
 \item
-  \texttt{tibble::tribble()}: Row-wise tibble creation.
+  \texttt{tribble()}
 \end{itemize}
 
 \hypertarget{local-drive}{%
 \section{Local Drive}\label{local-drive}}
 
+\texttt{\{base\}}
+
 \begin{itemize}
 \tightlist
 \item
-  \texttt{base::attach()}
+  \texttt{attach()}
 
   \begin{itemize}
   \tightlist
   \item
-    Attach a set of R objects to the search path.
-  \item
     Allows objects in the database to be accessed by giving their names (e.g., \texttt{height} rather than \texttt{women\$height}).
   \end{itemize}
 \item
-  \texttt{base::file.choose()}
+  \texttt{file.choose()}
 \item
-  \texttt{base::file.size()}
+  \texttt{file.size()}
 \item
-  \texttt{base::load()}: Reload datasets saved with \texttt{base::save()}.
+  \texttt{load()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Reload datasets saved with \texttt{base::save()}.
+  \end{itemize}
 \item
-  \texttt{base::readRDS()}: Restore an R object written with \texttt{base::saveRDS()}.
+  \texttt{readRDS()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Restore an R object written with \texttt{base::saveRDS()}.
+  \end{itemize}
+\end{itemize}
+
+\texttt{\{data.table\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{data.table::fread()}: Similar to \texttt{utils::read.table()}, but faster and more convenient for large data sets.
+  \texttt{fread()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Similar to \texttt{utils::read.table()}, but faster and more convenient for large data sets.
+  \end{itemize}
+\end{itemize}
+
+\texttt{\{foreign\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{foreign::read.spss()}
+  \texttt{read.spss()}
+\end{itemize}
+
+\texttt{\{haven\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{haven::read\_sas()}
+  \texttt{read\_sas()}
+\end{itemize}
+
+\texttt{\{readr\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{readr::read\_csv()}
+  \texttt{read\_csv()}
 \item
-  \texttt{readr::read\_csv2()}
+  \texttt{read\_csv2()}
 \item
-  \texttt{readr::read\_delim()}
+  \texttt{read\_delim()}
 \item
-  \texttt{readr::read\_tsv()}
+  \texttt{rread\_tsv()}
+\end{itemize}
+
+\texttt{\{readxl\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{readxl::excel\_sheets()}
+  \texttt{excel\_sheets()}
 \item
-  \texttt{readxl::read\_excel()}
+  \texttt{read\_excel()}
 \item
-  \texttt{readxl::read\_xls()}
+  \texttt{read\_xls()}
 \item
-  \texttt{readxl::read\_xlsx()}
+  \texttt{read\_xlsx()}
+\end{itemize}
+
+\texttt{\{utils\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{utils::data()}
+  \texttt{data()}
 
   \begin{itemize}
   \tightlist
@@ -247,52 +409,104 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
     Use this function to load the data sets that accompany R packages, such as \texttt{openintro::hsb2}, \texttt{openintro::email50},and \texttt{gapminder::gapminder}.
   \end{itemize}
 \item
-  \texttt{utils::read.csv()}
+  \texttt{read.csv()}
 \item
-  \texttt{utils::read.csv2()}
+  \texttt{read.csv2()}
 \item
-  \texttt{utils::read.delim()}
+  \texttt{read.delim()}
 \item
-  \texttt{utils::read.delim2()}
+  \texttt{read.delim2()}
 \item
-  \texttt{utils::read.table()}: Read a file in table format.
+  \texttt{read.table()}
+\end{itemize}
+
+\texttt{\{XLConnect\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{XLConnect::readWorksheetFromFile()}: Read data from worksheets in an Excel file.
+  \texttt{readWorksheetFromFile()}
 \end{itemize}
 
 \hypertarget{internet}{%
 \section{Internet}\label{internet}}
 
+\texttt{\{httr\}}
+
 \begin{itemize}
 \tightlist
 \item
-  \texttt{httr::GET()}: Get a URL.
+  \texttt{GET()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Get a URL.
+  \end{itemize}
+\end{itemize}
+
+\texttt{\{jsonlite\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{jsonlite::read\_json()}: Read and write JSON.
+  \texttt{read\_json()}
+\end{itemize}
+
+\texttt{\{readr\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{readr::read\_csv()}
+  \texttt{read\_csv()}
 \item
-  \texttt{readr::read\_csv2()}
+  \texttt{read\_csv2()}
 \item
-  \texttt{readr::read\_delim()}
+  \texttt{read\_delim()}
 \item
-  \texttt{readr::read\_tsv()}
+  \texttt{read\_tsv()}
+\end{itemize}
+
+\texttt{\{rjson\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{rjson::fromJSON()}: Convert JSON to R.
+  \texttt{fromJSON()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Convert JSON to R.
+  \end{itemize}
+\end{itemize}
+
+\texttt{\{utils\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{utils::download.file()}: See example below.
+  \texttt{download.file()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    See example below.
+  \end{itemize}
 \item
-  \texttt{utils::unzip()}: See example below.
+  \texttt{unzip()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    See example below.
+  \end{itemize}
 \end{itemize}
 
 \hypertarget{examples}{%
-\subsubsection{Examples}\label{examples}}
+\subsection{Examples}\label{examples}}
 
-\begin{itemize}
-\tightlist
-\item
-  \texttt{utils::download.file()}:
-\end{itemize}
+\texttt{utils::download.file()}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -310,11 +524,7 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 \end{Highlighting}
 \end{Shaded}
 
-\begin{itemize}
-\tightlist
-\item
-  \texttt{utils::download.file()} for .Rdata files:
-\end{itemize}
+\texttt{utils::download.file()} for .Rdata files:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -340,11 +550,7 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 \end{Highlighting}
 \end{Shaded}
 
-\begin{itemize}
-\tightlist
-\item
-  \texttt{utils::unzip()}:
-\end{itemize}
+\texttt{utils::unzip()}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -361,42 +567,68 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 \hypertarget{database}{%
 \section{Database}\label{database}}
 
+\texttt{\{DBI\}}
+
 \begin{itemize}
 \tightlist
 \item
-  \texttt{DBI::dbBind()}
+  \texttt{dbBind()}
 \item
-  \texttt{DBI::dbClearResult()}
+  \texttt{dbClearResult()}
 \item
-  \texttt{DBI::dbConnect()}
+  \texttt{dbConnect()}
 \item
-  \texttt{DBI::dbDataType()}
+  \texttt{dbDataType()}
 \item
-  \texttt{DBI::dbDisconnect()}
+  \texttt{dbDisconnect()}
 \item
-  \texttt{DBI::dbExecute()}
+  \texttt{dbExecute()}
 \item
-  \texttt{DBI::dbFetch()}
+  \texttt{dbFetch()}
 \item
-  \texttt{DBI::dbGetQuery()}
+  \texttt{dbGetQuery()}
 \item
-  \texttt{DBI::dbListTables()}
+  \texttt{dbListTables()}
 \item
-  \texttt{DBI::dbReadTable()}
+  \texttt{dbReadTable()}
 \item
-  \texttt{DBI::dbSendQuery()}
+  \texttt{dbSendQuery()}
 \item
-  \texttt{DBI::dbSendStatement()}
+  \texttt{dbSendStatement()}
 \item
-  \texttt{DBI::Id()}: See example below.
+  \texttt{Id()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    See example below.
+  \end{itemize}
 \item
-  \texttt{DBI::SQL()}: See example below.
+  \texttt{SQL()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    See example below.
+  \end{itemize}
+\end{itemize}
+
+\texttt{\{dbplyr\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{dbplyr::in\_schema()}
+  \texttt{in\_schema()}
 \item
-  \texttt{dbplyr::tbl()}
+  \texttt{tbl()}
+\end{itemize}
+
+\texttt{\{odbc\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{odbc::dbConnect()}
+  \texttt{dbConnect()}
 
   \begin{itemize}
   \tightlist
@@ -408,15 +640,11 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 \end{itemize}
 
 \hypertarget{examples-1}{%
-\subsubsection{Examples}\label{examples-1}}
+\subsection{Examples}\label{examples-1}}
 
-\begin{itemize}
-\tightlist
-\item
-  \texttt{DBI::Id()} vs \texttt{DBI::SQL()}:
-\end{itemize}
+\texttt{DBI::Id()} vs \texttt{DBI::SQL()}:
 
-The following are comparable methods of accessing .:
+The following are comparable methods of accessing \texttt{\textless{}schema\_name\textgreater{}.\textless{}table\_name\textgreater{}}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -434,11 +662,7 @@ The following are comparable methods of accessing .:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{itemize}
-\tightlist
-\item
-  \texttt{odbc::dbConnect()}:
-\end{itemize}
+\texttt{odbc::dbConnect()}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -457,7 +681,7 @@ The following are comparable methods of accessing .:
 \end{Shaded}
 
 \hypertarget{references}{%
-\subsubsection{References}\label{references}}
+\subsection{References}\label{references}}
 
 \begin{itemize}
 \tightlist
@@ -465,8 +689,11 @@ The following are comparable methods of accessing .:
   \href{db.rstudio.com}{``Databases using R''}
 \end{itemize}
 
-\hypertarget{sql}{%
-\subsubsection{SQL}\label{sql}}
+\hypertarget{sql-and-r}{%
+\subsection{SQL and R}\label{sql-and-r}}
+
+\hypertarget{tips-and-troubleshooting-hints}{%
+\subsubsection{Tips and Troubleshooting Hints}\label{tips-and-troubleshooting-hints}}
 
 \begin{itemize}
 \tightlist
@@ -481,11 +708,11 @@ The following are comparable methods of accessing .:
 \item
   Try case-sensitive syntax (e.g., when querying a database other than the default).
 \item
-  Try selecting certain columns, rather than \texttt{SELECT\ *}, as SQL BLOB columns cause trouble.
+  Try selecting specific columns, rather than \texttt{SELECT\ *}, as SQL BLOB columns cause trouble.
 \end{itemize}
 
-\hypertarget{references-1}{%
-\paragraph{References}\label{references-1}}
+\hypertarget{sql-references}{%
+\subsubsection{SQL References}\label{sql-references}}
 
 \begin{itemize}
 \tightlist
@@ -777,7 +1004,7 @@ The following are comparable methods of accessing .:
 \begin{itemize}
 \tightlist
 \item
-  \texttt{anytime::anytime}: Parse POSIXct or Date objects from input data.
+  \texttt{anytime::anytime()}: Parse POSIXct or Date objects from input data.
 \item
   \texttt{base::as.Date()}
 \item
@@ -1202,6 +1429,14 @@ The following are comparable methods of accessing .:
 \item
   \texttt{dplyr::top\_n}
 \item
+  \texttt{dummies::dummy.data.frame()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Dummify a data frame (useful when needing to calculate the Jaccard index for categorical data).
+  \end{itemize}
+\item
   \texttt{magrittr::extract}
 
   \begin{itemize}
@@ -1226,7 +1461,7 @@ The following are comparable methods of accessing .:
     \texttt{x\ \%\textgreater{}\%\ raise\_to\_power(y)} is equivalent to \texttt{x\^{}y}.
   \end{itemize}
 \item
-  \texttt{stats::aggregate}
+  \texttt{stats::aggregate()}
 
   \begin{itemize}
   \tightlist
@@ -1234,15 +1469,27 @@ The following are comparable methods of accessing .:
     Compute summary statistics of data subsets.
   \end{itemize}
 \item
-  \texttt{stats::cor}
+  \texttt{stats::cor()}
 \item
-  \texttt{stats::cov}
+  \texttt{stats::cov()}
 \item
-  \texttt{stats::lag}
+  \texttt{stats::cutree()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Pair with \texttt{stats::hcLust()}.
+  \end{itemize}
 \item
-  \texttt{stats::rnorm}
+  \texttt{stats::dist()}
 \item
-  \texttt{stats::var}
+  \texttt{stats::hclust()}
+\item
+  \texttt{stats::lag()}
+\item
+  \texttt{stats::rnorm()}
+\item
+  \texttt{stats::var()}
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -1293,8 +1540,8 @@ The following are comparable methods of accessing .:
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{dates-and-datetimes}{%
-\section{Dates and Datetimes}\label{dates-and-datetimes}}
+\hypertarget{dates-and-datetimes-1}{%
+\section{Dates and Datetimes}\label{dates-and-datetimes-1}}
 
 \begin{itemize}
 \tightlist
@@ -1765,8 +2012,8 @@ The following are comparable methods of accessing .:
   \end{itemize}
 \end{itemize}
 
-\hypertarget{test}{%
-\section{Test}\label{test}}
+\hypertarget{test-1}{%
+\section{Test}\label{test-1}}
 
 \begin{itemize}
 \tightlist
@@ -1824,7 +2071,7 @@ The following are comparable methods of accessing .:
 \begin{itemize}
 \tightlist
 \item
-  \texttt{base::abline}
+  \texttt{base::abline()}
 
   \begin{itemize}
   \tightlist
@@ -1832,9 +2079,9 @@ The following are comparable methods of accessing .:
     Add straight lines to a plot.
   \end{itemize}
 \item
-  \texttt{base::plot}
+  \texttt{base::plot()}
 \item
-  \texttt{base::points}
+  \texttt{base::points()}
 
   \begin{itemize}
   \tightlist
@@ -1846,9 +2093,9 @@ The following are comparable methods of accessing .:
 \item
   \texttt{DiagrammeR}
 \item
-  \texttt{GGally::ggally\_box}
+  \texttt{GGally::ggally\_box()}
 \item
-  \texttt{GGally::ggpairs}
+  \texttt{GGally::ggpairs()}
 
   \begin{itemize}
   \tightlist
@@ -1856,7 +2103,7 @@ The following are comparable methods of accessing .:
     Scatter plot matrix (SPLOM).
   \end{itemize}
 \item
-  \texttt{GGally::ggparcoord}
+  \texttt{GGally::ggparcoord()}
 
   \begin{itemize}
   \tightlist
@@ -1864,9 +2111,9 @@ The following are comparable methods of accessing .:
     Parallel coordinate plots.
   \end{itemize}
 \item
-  \texttt{ggbeeswarm::geom\_beeswarm}
+  \texttt{ggbeeswarm::geom\_beeswarm()}
 \item
-  \texttt{ggplot2::aes}
+  \texttt{ggplot2::aes()}
 
   \begin{itemize}
   \tightlist
@@ -1879,10 +2126,10 @@ The following are comparable methods of accessing .:
   \item
     The default shape for points does not have a \texttt{fill} attribute, which means that mapping a categorical variable onto \texttt{fill} won't result in multiple colors.
   \item
-    Helper functions to include in the call when needing to modify the data include: \texttt{stats::reorder}.
+    Helper functions to include in the call when needing to modify the data include: \texttt{stats::reorder()}.
   \end{itemize}
 \item
-  \texttt{ggplot2::coord\_cartesian}
+  \texttt{ggplot2::coord\_cartesian()}
 
   \begin{itemize}
   \tightlist
@@ -1890,7 +2137,7 @@ The following are comparable methods of accessing .:
     Zoom a plot in or out without changing the underlying data.
   \end{itemize}
 \item
-  \texttt{ggplot2::coord\_flip}
+  \texttt{ggplot2::coord\_flip()}
 
   \begin{itemize}
   \tightlist
@@ -1898,7 +2145,7 @@ The following are comparable methods of accessing .:
     Flip the x and y axes.
   \end{itemize}
 \item
-  \texttt{ggplot2::coord\_polar}
+  \texttt{ggplot2::coord\_polar()}
 
   \begin{itemize}
   \tightlist
@@ -1906,25 +2153,25 @@ The following are comparable methods of accessing .:
     Use to convert a stacked bar chart to a pie chart.
   \end{itemize}
 \item
-  \texttt{ggplot2::element\_blank}
+  \texttt{ggplot2::element\_blank()}
 \item
-  \texttt{ggplot2::element\_line}
+  \texttt{ggplot2::element\_line()}
 \item
-  \texttt{ggplot2::element\_rect}
+  \texttt{ggplot2::element\_rect()}
 \item
-  \texttt{ggplot2::element\_text}
+  \texttt{ggplot2::element\_text()}
 \item
-  \texttt{ggplot2::facet\_grid}
+  \texttt{ggplot2::facet\_grid()}
 
   \begin{itemize}
   \tightlist
   \item
     Lay out panels in a grid.
   \item
-    \texttt{ROWS\ \textasciitilde{}\ COLS}: When using a tilde function, the variable on the left specifies the rows and the variable on the right specifies the columns (when faceting in only one direction; i.e., only rows or only columns). Use \texttt{.} to specify nothing for the unused direction (e.g.~\texttt{facet\_grid(cyl\ \textasciitilde{}\ .)}).
+    \texttt{ROWS\ \textasciitilde{}\ COLS}: When using a tilde function, the variable on the left specifies the rows and the variable on the right specifies the columns. When faceting in only one direction (e.g., only on rows), use \texttt{.} to specify nothing for the unused direction.
   \end{itemize}
 \item
-  \texttt{ggplot2::facet\_wrap}
+  \texttt{ggplot2::facet\_wrap()}
 
   \begin{itemize}
   \tightlist
@@ -1932,7 +2179,7 @@ The following are comparable methods of accessing .:
     Wrap a 1D ribbon of panels into 2D (observe a variable, conditional on another variable).
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_abline}
+  \texttt{ggplot2::geom\_abline()}
 
   \begin{itemize}
   \tightlist
@@ -1940,7 +2187,7 @@ The following are comparable methods of accessing .:
     Add reference lines to a plot.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_bar}
+  \texttt{ggplot2::geom\_bar()}
 
   \begin{itemize}
   \tightlist
@@ -1948,9 +2195,9 @@ The following are comparable methods of accessing .:
     Create a bar chart, where the height of the bar is proportional to the number of cases in each group.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_boxplot}
+  \texttt{ggplot2::geom\_boxplot()}
 \item
-  \texttt{ggplot2::geom\_col}
+  \texttt{ggplot2::geom\_col()}
 
   \begin{itemize}
   \tightlist
@@ -1958,17 +2205,17 @@ The following are comparable methods of accessing .:
     Create a bar chart, where the height of the bar represents values in the data.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_density}
+  \texttt{ggplot2::geom\_density()}
 
   \begin{itemize}
   \tightlist
   \item
     Create a kernal density estimate (a smoothed version of a histogram).
   \item
-    Consider using \texttt{ggplot2::geom\_rug} with \texttt{ggplot2::geom\_density} in order to be transparent about smoothed data.
+    Consider using \texttt{ggplot2::geom\_rug()} with \texttt{ggplot2::geom\_density()} in order to be transparent about smoothed data.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_dotplot}
+  \texttt{ggplot2::geom\_dotplot()}
 
   \begin{itemize}
   \tightlist
@@ -1976,7 +2223,7 @@ The following are comparable methods of accessing .:
     Create a histogram out of dots.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_errorbar}
+  \texttt{ggplot2::geom\_errorbar()}
 
   \begin{itemize}
   \tightlist
@@ -1984,7 +2231,7 @@ The following are comparable methods of accessing .:
     Shortcut for \texttt{geom\_bar(stat\ =\ "identity")}.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_histogram}
+  \texttt{ggplot2::geom\_histogram()}
 
   \begin{itemize}
   \tightlist
@@ -1992,16 +2239,16 @@ The following are comparable methods of accessing .:
     Use \texttt{y\ =\ stat(density)} to rescale the y-axis from counts to a probability estimate.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_hline}
-  *\texttt{ggplot2::geom\_jitter}
+  \texttt{ggplot2::geom\_hline()}
+  *\texttt{ggplot2::geom\_jitter()}
 
   \begin{itemize}
   \tightlist
   \item
-    Useful with \texttt{ggplot2::geom\_boxplot}.
+    Useful with \texttt{ggplot2::geom\_boxplot()}.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_path}
+  \texttt{ggplot2::geom\_path()}
 
   \begin{itemize}
   \tightlist
@@ -2009,17 +2256,17 @@ The following are comparable methods of accessing .:
     Connect observations in the order in which they appear.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_point}
+  \texttt{ggplot2::geom\_point()}
 \item
-  \texttt{ggplot2::geom\_rug}
+  \texttt{ggplot2::geom\_rug()}
 
   \begin{itemize}
   \tightlist
   \item
-    Useful with \texttt{ggplot2::geom\_density}.
+    Useful with \texttt{ggplot2::geom\_density()}.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_smooth}
+  \texttt{ggplot2::geom\_smooth()}
 
   \begin{itemize}
   \tightlist
@@ -2027,9 +2274,9 @@ The following are comparable methods of accessing .:
     Smoothed conditional means; aids the eye in seeing patterns in the presence of overplotting.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_text}
+  \texttt{ggplot2::geom\_text()}
 \item
-  \texttt{ggplot2::geom\_tile}
+  \texttt{ggplot2::geom\_tile()}
 
   \begin{itemize}
   \tightlist
@@ -2037,25 +2284,25 @@ The following are comparable methods of accessing .:
     Heat maps.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_violin}
+  \texttt{ggplot2::geom\_violin()}
 \item
-  \texttt{ggplot2::geom\_vline}
+  \texttt{ggplot2::geom\_vline()}
 \item
-  \texttt{ggplot2::ggplot}
+  \texttt{ggplot2::ggplot()}
 \item
-  \texttt{ggplot2::ggtitle}
+  \texttt{ggplot2::ggtitle()}
 \item
-  \texttt{ggplot2::group}
+  \texttt{ggplot2::group()}
 
   \begin{itemize}
   \tightlist
   \item
-    Used within \texttt{aes}.
+    Used within \texttt{aes()}.
   \item
     Note that \texttt{group} is usually unnecessary when specifying \texttt{color}, \texttt{shape}, \texttt{fill}, or \texttt{linetype} within \texttt{aes}, or when using facets. See \href{https://ggplot2.tidyverse.org/reference/aes_group_order.html}{``Aesthetics: grouping''} for more information.
   \end{itemize}
 \item
-  \texttt{ggplot2::labs}
+  \texttt{ggplot2::labs()}
 
   \begin{itemize}
   \tightlist
@@ -2063,7 +2310,7 @@ The following are comparable methods of accessing .:
     Modify axis, legend, and plot labels.
   \end{itemize}
 \item
-  \texttt{ggplot2::position\_identity}
+  \texttt{ggplot2::position\_identity()}
 
   \begin{itemize}
   \tightlist
@@ -2071,7 +2318,7 @@ The following are comparable methods of accessing .:
     Don't adjust position.
   \end{itemize}
 \item
-  \texttt{ggplot2::position\_dodge}
+  \texttt{ggplot2::position\_dodge()}
 
   \begin{itemize}
   \tightlist
@@ -2079,7 +2326,7 @@ The following are comparable methods of accessing .:
     Dodge overlapping objects side-to-side.
   \end{itemize}
 \item
-  \texttt{ggplot2::position\_nudge}
+  \texttt{ggplot2::position\_nudge()}
 
   \begin{itemize}
   \tightlist
@@ -2087,7 +2334,7 @@ The following are comparable methods of accessing .:
     Nudge points a fixed distance.
   \end{itemize}
 \item
-  \texttt{ggplot2::position\_stack}
+  \texttt{ggplot2::position\_stack()}
 
   \begin{itemize}
   \tightlist
@@ -2095,7 +2342,7 @@ The following are comparable methods of accessing .:
     Stack overlapping objects on top of each other, as counts.
   \end{itemize}
 \item
-  \texttt{ggplot2::position\_fill}
+  \texttt{ggplot2::position\_fill()}
 
   \begin{itemize}
   \tightlist
@@ -2103,55 +2350,55 @@ The following are comparable methods of accessing .:
     Stack overlapping objects on top of each other, as densities.
   \end{itemize}
 \item
-  \texttt{ggplot2::position\_jitter}
+  \texttt{ggplot2::position\_jitter()}
 \item
-  \texttt{ggplot2::position\_jitterdodge}
+  \texttt{ggplot2::position\_jitterdodge()}
 \item
-  \texttt{ggplot2::scale\_x\_continuous}
+  \texttt{ggplot2::scale\_x\_continuous()}
 \item
-  \texttt{ggplot2::scale\_y\_*}
+  \texttt{ggplot2::scale\_y\_*()}
 \item
-  \texttt{ggplot2::scale\_color\_manual}
+  \texttt{ggplot2::scale\_color\_manual()}
 \item
-  \texttt{ggplot2::scale\_fill\_*}
+  \texttt{ggplot2::scale\_fill\_*()}
 \item
-  \texttt{ggplot2::scale\_shape\_*}
+  \texttt{ggplot2::scale\_shape\_*()}
 \item
-  \texttt{ggplot2::scale\_size}
+  \texttt{ggplot2::scale\_size()}
 \item
-  \texttt{ggplot2::scale\_linetype\_*}
+  \texttt{ggplot2::scale\_linetype\_*()}
 \item
-  \texttt{ggplot2::stat\_bin}
+  \texttt{ggplot2::stat\_bin()}
 \item
-  \texttt{ggplot2::stat\_bin2d}
+  \texttt{ggplot2::stat\_bin2d()}
 \item
-  \texttt{ggplot2::stat\_bindot}
+  \texttt{ggplot2::stat\_bindot()}
 \item
-  \texttt{ggplot2::stat\_binhex}
+  \texttt{ggplot2::stat\_binhex()}
 \item
-  \texttt{ggplot2::stat\_boxplot}
+  \texttt{ggplot2::stat\_boxplot()}
 \item
-  \texttt{ggplot2::stat\_contour}
+  \texttt{ggplot2::stat\_contour()}
 \item
-  \texttt{ggplot2::stat\_quantile}
+  \texttt{ggplot2::stat\_quantile()}
 \item
-  \texttt{ggplot2::stat\_smooth}
+  \texttt{ggplot2::stat\_smooth()}
 \item
-  \texttt{ggplot2::stat\_sum}
+  \texttt{ggplot2::stat\_sum()}
 \item
-  \texttt{ggplot2::theme}
+  \texttt{ggplot2::theme()}
 
   \begin{itemize}
   \tightlist
   \item
-    See example for \texttt{grid::unit}.
+    See example for \texttt{grid::unit()}.
   \end{itemize}
 \item
-  \texttt{ggplot2::theme\_get}
+  \texttt{ggplot2::theme\_get()}
 \item
-  \texttt{ggplot2::theme\_set}
+  \texttt{ggplot2::theme\_set()}
 \item
-  \texttt{ggplot2::theme\_update}
+  \texttt{ggplot2::theme\_update()}
 
   \begin{itemize}
   \tightlist
@@ -2159,13 +2406,13 @@ The following are comparable methods of accessing .:
     ``When you call `theme\_update' and assign it to an object (e.g., called \texttt{old}), that object stores the \emph{current} default theme, and the arguments \emph{update} the default theme. If you want to restore the previous default theme, you can get it back by using \texttt{theme\_update} again.'' -DataCamp
   \end{itemize}
 \item
-  \texttt{ggplot2::xlab}
+  \texttt{ggplot2::xlab()}
 \item
-  \texttt{ggplot2::xlim}
+  \texttt{ggplot2::xlim()}
 \item
-  \texttt{ggplot2::ylab}
+  \texttt{ggplot2::ylab()}
 \item
-  \texttt{ggridges::geom\_density\_ridges}
+  \texttt{ggridges::geom\_density\_ridges()}
 
   \begin{itemize}
   \tightlist
@@ -2173,7 +2420,7 @@ The following are comparable methods of accessing .:
     Create a ridgeline plot.
   \end{itemize}
 \item
-  \texttt{graphics::boxplot}
+  \texttt{graphics::boxplot()}
 
   \begin{itemize}
   \tightlist
@@ -2181,9 +2428,11 @@ The following are comparable methods of accessing .:
     Create a box-and-whisker plot.
   \end{itemize}
 \item
-  \texttt{graphics::hist}
+  \texttt{graphics::hist()}
 \item
-  \texttt{graphics::stripchart}
+  \texttt{graphics::par()}
+\item
+  \texttt{graphics::stripchart()}
 
   \begin{itemize}
   \tightlist
@@ -2193,7 +2442,7 @@ The following are comparable methods of accessing .:
     Prefer over \texttt{ggplot} when creating one-dimensional plots.
   \end{itemize}
 \item
-  \texttt{grDevices::colorRamp}
+  \texttt{grDevices::colorRamp()}
 
   \begin{itemize}
   \tightlist
@@ -2201,7 +2450,7 @@ The following are comparable methods of accessing .:
     Color interpolation.
   \end{itemize}
 \item
-  \texttt{grDevices::colorRampPalette}
+  \texttt{grDevices::colorRampPalette()}
 
   \begin{itemize}
   \tightlist
@@ -2209,7 +2458,7 @@ The following are comparable methods of accessing .:
     Color interpolation.
   \end{itemize}
 \item
-  \texttt{grid::unit}
+  \texttt{grid::unit()}
 
   \begin{itemize}
   \tightlist
@@ -2219,9 +2468,9 @@ The following are comparable methods of accessing .:
     See example below.
   \end{itemize}
 \item
-  \texttt{plotly::plot\_ly}
+  \texttt{plotly::plot\_ly()}
 \item
-  \texttt{RColorBrewer::brewer.pal}
+  \texttt{RColorBrewer::brewer.pal()}
 
   \begin{itemize}
   \tightlist
@@ -2230,7 +2479,14 @@ The following are comparable methods of accessing .:
   \end{itemize}
 \end{itemize}
 
-**Example: \texttt{grid::unit}
+\hypertarget{examples-2}{%
+\subsubsection{Examples}\label{examples-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{grid::unit}
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2444,8 +2700,8 @@ The following are comparable methods of accessing .:
   \texttt{stats::rnorm}
 \end{itemize}
 
-\hypertarget{strings}{%
-\section{Strings}\label{strings}}
+\hypertarget{strings-1}{%
+\section{Strings}\label{strings-1}}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -3295,8 +3551,8 @@ References:
   \texttt{zeallot::\%\textless{}-\%}: Multiple assignment operator (see example below).
 \end{itemize}
 
-\hypertarget{examples}{%
-\subsubsection{Examples}\label{examples}}
+\hypertarget{examples-3}{%
+\subsubsection{Examples}\label{examples-3}}
 
 \begin{itemize}
 \tightlist
@@ -3444,8 +3700,8 @@ References:
   \texttt{purrr:pluck()}: See also \texttt{magrittr::extract2()}.
 \end{itemize}
 
-\hypertarget{examples-1}{%
-\subsubsection{Examples}\label{examples-1}}
+\hypertarget{examples-4}{%
+\subsubsection{Examples}\label{examples-4}}
 
 \begin{itemize}
 \tightlist
@@ -3486,8 +3742,8 @@ References:
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{references}{%
-\subsubsection{References}\label{references}}
+\hypertarget{references-1}{%
+\subsubsection{References}\label{references-1}}
 
 \begin{itemize}
 \tightlist
@@ -3528,6 +3784,8 @@ References:
 \begin{itemize}
 \tightlist
 \item
+  \texttt{base::shell()}
+\item
   \texttt{base::system()}
 \item
   \texttt{base::system2()}
@@ -3549,6 +3807,22 @@ References:
   \tightlist
   \item
     00LOCK error when updating a package: Use \texttt{update.packages(ask\ =\ FALSE,\ checkBuilt\ =\ TRUE,\ INSTALL\_opts\ =\ "-\/-no-lock")}
+  \end{itemize}
+\item
+  \texttt{installr::updateR()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Remove old versions from Windows:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Settings \textgreater{} Apps and Features \textgreater{} uninstall old version
+    \item
+      Control Panel \textgreater{} All Control Panel Items \textgreater{} Programs and Features \textgreater{} uninstall old versions
+    \end{itemize}
   \end{itemize}
 \item
   \texttt{packrat::snapshot()}: Capture and store the packages and versions in use.
@@ -3587,93 +3861,6 @@ References:
     \item
       See \href{https://community.rstudio.com/t/delete-branch-in-rstudio-pop-up/15465}{``Delete branch in RStudio pop-up''} for help removing branches in RStudio after removing them from Git.
     \end{itemize}
-  \end{itemize}
-\end{itemize}
-
-\hypertarget{references-resources}{%
-\chapter{References \& Resources}\label{references-resources}}
-
-\begin{itemize}
-\item
-  For an introduction to the R programming language, see the R Project for Statistical Computing's \href{https://www.r-project.org/about.html}{``What is R?''} and Wikipedia's \href{https://en.wikipedia.org/wiki/R_(programming_language)}{``R (programming language).''}
-\item
-  To download R, go to \href{https://www.r-project.org/}{r-project.org} and choose the cloud CRAN Mirror option.
-\item
-  To program in the R language on a user-friendly platform, download the \href{https://www.rstudio.com/}{RStudio} IDE.
-\item
-  \href{https://www.r-project.org/}{The R Project for Statistical Computing}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    \href{https://cran.r-project.org/web/packages/}{Library of R Packages}
-  \item
-    \href{https://www.r-project.org/help.html}{\emph{Getting Help with R}}
-  \item
-    \href{https://cran.r-project.org/manuals.html}{\emph{The R Manuals}}
-  \item
-    \href{https://cran.r-project.org/faqs.html}{\emph{Frequently Asked Questions}}
-  \item
-    \href{https://www.r-project.org/doc/bib/R-books.html}{\emph{Books Related to R}}
-  \item
-    \href{https://www.r-project.org/other-docs.html}{\emph{Documentation}}
-  \end{itemize}
-\item
-  \href{https://www.rstudio.com/}{RStudio}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    \href{https://www.rstudio.com/resources/cheatsheets/}{\emph{RStudio Cheat Sheets}}
-  \item
-    \href{https://www.rstudio.com/resources/webinars/}{\emph{Webinars and Videos On Demand}}
-  \item
-    \href{https://www.rstudio.com/online-learning/}{\emph{Online learning}}
-  \item
-    \href{https://blog.rstudio.com/}{\emph{RStudio Blog}}
-  \end{itemize}
-\item
-  Online Manuals
-
-  \begin{itemize}
-  \tightlist
-  \item
-    \href{http://r4ds.had.co.nz/}{\emph{R for Data Science}}
-  \item
-    \href{http://adv-r.had.co.nz/}{\emph{Advanced R}} by Hadley Wickham
-    + Hadley's second edition draft is available \href{https://adv-r.hadley.nz/}{here}.
-  \item
-    \href{http://r-pkgs.had.co.nz/}{\emph{R Packages}} by Hadley Wickham
-  \item
-    \href{http://www.burns-stat.com/pages/Tutor/R_inferno.pdf}{\emph{The R Inferno}} by Patrick Burns
-  \item
-    \href{http://style.tidyverse.org/}{\emph{The tidyverse style guide}}
-  \item
-    \href{https://bookdown.org/csgillespie/efficientR/}{\emph{Efficient R Programming}}
-  \item
-    \href{https://committedtotape.shinyapps.io/freeR/}{\emph{Free R Reading Material}}
-  \item
-    \href{https://rstats.wtf/}{\emph{What They Forgot to Teach You About R}} by Jenny Bryan and Jim Hester
-  \end{itemize}
-\item
-  Other Online Resources
-
-  \begin{itemize}
-  \tightlist
-  \item
-    \href{https://www.datacamp.com/}{DataCamp}
-  \item
-    \href{https://www.rdocumentation.org/}{RDocumentation}
-  \item
-    \href{https://www.r-bloggers.com/how-to-learn-r-2/}{R Bloggers}
-
-    \begin{itemize}
-    \tightlist
-    \item
-      \href{https://www.r-bloggers.com/how-to-learn-r-2/}{``Tutorials for learning R''}
-    \end{itemize}
-  \item
-    \href{https://regex101.com/}{Regular Expressions 101}
   \end{itemize}
 \end{itemize}
 

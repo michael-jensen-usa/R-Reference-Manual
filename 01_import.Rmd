@@ -1,67 +1,119 @@
 # Import or Create Data
-***
 
 ## Create Data
 
-* `base::array()`
-* `base::c()`: See `base::vector()`.
-* `base::data.frame()`
-* `base::dir.create()`: Create a file path in the computer's file system.
-* `base::factor()`
-* `base::list()`
-* `base::matrix()`
-* `base::seq()`
-* `base::vector()`: Preferable to `base::c()` when creating an empty vector (["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve)).
-* `stats::rnorm()`
-* `tibble::add_row()`
-* `tibble::tibble()`
-* `tibble::tribble()`: Row-wise tibble creation.
+`{base}`
+
+* `array()`
+* `c()`
+  * See `base::vector()`.
+* `data.frame()`
+* `dir.create()`
+* `factor()`
+* `list()`
+* `matrix()`
+* `seq()`
+* `vector()`
+  * Preferable to `base::c()` when creating an empty vector (["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve)).
+
+`{stats}`
+
+* `rnorm()`
+
+`{tibble}`
+
+* `add_row()`
+* `tibble()`
+* `tribble()`
 
 ## Local Drive
 
-* `base::attach()`
-  * Attach a set of R objects to the search path.
+`{base}`
+
+* `attach()`
   * Allows objects in the database to be accessed by giving their names (e.g., `height` rather than `women$height`).
-* `base::file.choose()`
-* `base::file.size()`
-* `base::load()`: Reload datasets saved with `base::save()`.
-* `base::readRDS()`: Restore an R object written with `base::saveRDS()`.
-* `data.table::fread()`: Similar to `utils::read.table()`, but faster and more convenient for large data sets.
-* `foreign::read.spss()`
-* `haven::read_sas()`
-* `readr::read_csv()`
-* `readr::read_csv2()`
-* `readr::read_delim()`
-* `readr::read_tsv()`
-* `readxl::excel_sheets()`
-* `readxl::read_excel()`
-* `readxl::read_xls()`
-* `readxl::read_xlsx()`
-* `utils::data()`
+* `file.choose()`
+* `file.size()`
+* `load()`
+  * Reload datasets saved with `base::save()`.
+* `readRDS()`
+  * Restore an R object written with `base::saveRDS()`.
+  
+`{data.table}`
+
+* `fread()`
+  * Similar to `utils::read.table()`, but faster and more convenient for large data sets.
+  
+`{foreign}`
+
+* `read.spss()`
+
+`{haven}`
+
+* `read_sas()`
+
+`{readr}`
+
+* `read_csv()`
+* `read_csv2()`
+* `read_delim()`
+* `rread_tsv()`
+
+`{readxl}`
+
+* `excel_sheets()`
+* `read_excel()`
+* `read_xls()`
+* `read_xlsx()`
+
+`{utils}`
+
+* `data()`
   * Load specified data sets, or list the available data sets.
   * Use this function to load the data sets that accompany R packages, such as `openintro::hsb2`, `openintro::email50`,and `gapminder::gapminder`.
-* `utils::read.csv()`
-* `utils::read.csv2()`
-* `utils::read.delim()`
-* `utils::read.delim2()`
-* `utils::read.table()`: Read a file in table format.
-* `XLConnect::readWorksheetFromFile()`: Read data from worksheets in an Excel file.
+* `read.csv()`
+* `read.csv2()`
+* `read.delim()`
+* `read.delim2()`
+* `read.table()`
+
+`{XLConnect}`
+
+* `readWorksheetFromFile()`
 
 ## Internet
 
-* `httr::GET()`: Get a URL.
-* `jsonlite::read_json()`: Read and write JSON.
-* `readr::read_csv()`
-* `readr::read_csv2()`
-* `readr::read_delim()`
-* `readr::read_tsv()`
-* `rjson::fromJSON()`: Convert JSON to R.
-* `utils::download.file()`: See example below.
-* `utils::unzip()`: See example below.  
+`{httr}`
 
-#### Examples
+* `GET()`
+  * Get a URL.
 
-* `utils::download.file()`:
+`{jsonlite}`
+
+* `read_json()`
+
+`{readr}`
+
+* `read_csv()`
+* `read_csv2()`
+* `read_delim()`
+* `read_tsv()`
+
+`{rjson}`
+
+* `fromJSON()`
+  * Convert JSON to R.
+
+`{utils}`
+
+* `download.file()`
+  * See example below.
+* `unzip()`
+  * See example below.
+
+### Examples
+
+`utils::download.file()`:
 
 ```{r, eval=FALSE}
 download.file(
@@ -77,7 +129,7 @@ snake_river_path   <- paste0(getwd(), "/Snake River Visits.rds")
 snake_river_visits <- readRDS(snake_river_path)
 ```
 
-* `utils::download.file()` for .Rdata files:
+`utils::download.file()` for .Rdata files:
 
 ```{r, eval=FALSE}
 # Example 1:
@@ -101,7 +153,7 @@ download.file(
 load("chis_2009.Rdata")
 ```
 
-* `utils::unzip()`:
+`utils::unzip()`:
 
 ```{r, eval=FALSE}
 download.file(
@@ -115,31 +167,41 @@ unzip("Data Sets/Countries", exdir = "Data Sets")
 
 ## Database
 
-* `DBI::dbBind()`
-* `DBI::dbClearResult()`
-* `DBI::dbConnect()`
-* `DBI::dbDataType()`
-* `DBI::dbDisconnect()`
-* `DBI::dbExecute()`
-* `DBI::dbFetch()`
-* `DBI::dbGetQuery()`
-* `DBI::dbListTables()`
-* `DBI::dbReadTable()`
-* `DBI::dbSendQuery()`
-* `DBI::dbSendStatement()`
-* `DBI::Id()`: See example below.
-* `DBI::SQL()`: See example below.
-* `dbplyr::in_schema()`
-* `dbplyr::tbl()`
-* `odbc::dbConnect()`
+`{DBI}`
+
+* `dbBind()`
+* `dbClearResult()`
+* `dbConnect()`
+* `dbDataType()`
+* `dbDisconnect()`
+* `dbExecute()`
+* `dbFetch()`
+* `dbGetQuery()`
+* `dbListTables()`
+* `dbReadTable()`
+* `dbSendQuery()`
+* `dbSendStatement()`
+* `Id()`
+  * See example below.
+* `SQL()`
+  * See example below.
+
+`{dbplyr}`
+
+* `in_schema()`
+* `tbl()`
+
+`{odbc}`
+
+* `dbConnect()`
   * See example below for specifying a database.
   * See example below for troubleshooting hang-ups.
 
-#### Examples
+### Examples
 
-* `DBI::Id()` vs `DBI::SQL()`:
+`DBI::Id()` vs `DBI::SQL()`:
 
-The following are comparable methods of accessing <schema_name>.<table_name>:
+The following are comparable methods of accessing `<schema_name>.<table_name>`:
 
 ```{r, eval=FALSE}
 dbCreateTable(
@@ -155,7 +217,7 @@ dbCreateTable(
 )
 ```
 
-* `odbc::dbConnect()`:
+`odbc::dbConnect()`:
 
 ```{r, eval=FALSE}
 # Specify database:
@@ -171,18 +233,20 @@ conn_2 <- dbConnect(odbc::odbc(), dsn = "sql", Database = "Staging")
 options(connectionObserver = FALSE)
 ```
 
-#### References
+### References
 
 * ["Databases using R"](db.rstudio.com)
 
-#### SQL
+### SQL and R
+
+#### Tips and Troubleshooting Hints
 
 * Temp Tables
   * Use `SET NOCOUNT ON` in the SQL query to prevent R confusing the SQL rowcount return value with the temporary table.
 * Try case-sensitive syntax (e.g., when querying a database other than the default).
-* Try selecting certain columns, rather than `SELECT *`, as SQL BLOB columns cause trouble. 
+* Try selecting specific columns, rather than `SELECT *`, as SQL BLOB columns cause trouble. 
 
-##### References
+#### SQL References
 
 * ["10 Easy Steps to a Complete Understanding of SQL"](https://blog.jooq.org/2016/03/17/10-easy-steps-to-a-complete-understanding-of-sql/)
 * ["Query Planning"](https://www.sqlite.org/queryplanner.html)

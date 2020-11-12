@@ -56,6 +56,46 @@ subgraph cluster0 {
 }")
 ```
 
+## References & Resources
+
+* For an introduction to the R programming language, see the R Project for Statistical Computing's ["What is R?"](https://www.r-project.org/about.html) and Wikipedia's ["R (programming language)."](https://en.wikipedia.org/wiki/R_(programming_language))
+
+* To download R, go to [r-project.org](https://www.r-project.org/) and choose the cloud CRAN Mirror option.
+
+* To program in the R language on a user-friendly platform, download the [RStudio](https://www.rstudio.com/) IDE.
+
+* [The R Project for Statistical Computing](https://www.r-project.org/)
+  * [Library of R Packages](https://cran.r-project.org/web/packages/)
+  * [*Getting Help with R*](https://www.r-project.org/help.html)
+  * [*The R Manuals*](https://cran.r-project.org/manuals.html)
+  * [*Frequently Asked Questions*](https://cran.r-project.org/faqs.html)
+  * [*Books Related to R*](https://www.r-project.org/doc/bib/R-books.html)
+  * [*Documentation*](https://www.r-project.org/other-docs.html)
+
+* [RStudio](https://www.rstudio.com/)
+  * [*RStudio Cheat Sheets*](https://www.rstudio.com/resources/cheatsheets/)
+  * [*Webinars and Videos On Demand*](https://www.rstudio.com/resources/webinars/)
+  * [*Online learning*](https://www.rstudio.com/online-learning/)
+  * [*RStudio Blog*](https://blog.rstudio.com/)
+
+* Online Manuals
+  * [*R for Data Science*](http://r4ds.had.co.nz/)
+  * [*Advanced R*](http://adv-r.had.co.nz/) by Hadley Wickham
+        + Hadley's second edition draft is available [here](https://adv-r.hadley.nz/).
+  * [*R Packages*](http://r-pkgs.had.co.nz/) by Hadley Wickham
+  * [*The R Inferno*](http://www.burns-stat.com/pages/Tutor/R_inferno.pdf) by Patrick Burns
+  * [*The tidyverse style guide*](http://style.tidyverse.org/)
+  * [*Efficient R Programming*](https://bookdown.org/csgillespie/efficientR/)
+  * [*Free R Reading Material*](https://committedtotape.shinyapps.io/freeR/)
+  * [*What They Forgot to Teach You About R*](https://rstats.wtf/) by Jenny Bryan and Jim Hester
+
+* Other Online Resources
+  * [DataCamp](https://www.datacamp.com/)
+  * [RDocumentation](https://www.rdocumentation.org/)
+  * [R Bloggers](https://www.r-bloggers.com/how-to-learn-r-2/)
+    * ["Tutorials for learning R"](https://www.r-bloggers.com/how-to-learn-r-2/)
+  * [Regular Expressions 101](https://regex101.com/)
+
 ```{r include=FALSE}
 # automatically create a bib database for R packages
 knitr::write_bib(c(
@@ -66,69 +106,121 @@ knitr::write_bib(c(
 <!--chapter:end:index.Rmd-->
 
 # Import or Create Data
-***
 
 ## Create Data
 
-* `base::array()`
-* `base::c()`: See `base::vector()`.
-* `base::data.frame()`
-* `base::dir.create()`: Create a file path in the computer's file system.
-* `base::factor()`
-* `base::list()`
-* `base::matrix()`
-* `base::seq()`
-* `base::vector()`: Preferable to `base::c()` when creating an empty vector (["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve)).
-* `stats::rnorm()`
-* `tibble::add_row()`
-* `tibble::tibble()`
-* `tibble::tribble()`: Row-wise tibble creation.
+`{base}`
+
+* `array()`
+* `c()`
+  * See `base::vector()`.
+* `data.frame()`
+* `dir.create()`
+* `factor()`
+* `list()`
+* `matrix()`
+* `seq()`
+* `vector()`
+  * Preferable to `base::c()` when creating an empty vector (["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve)).
+
+`{stats}`
+
+* `rnorm()`
+
+`{tibble}`
+
+* `add_row()`
+* `tibble()`
+* `tribble()`
 
 ## Local Drive
 
-* `base::attach()`
-  * Attach a set of R objects to the search path.
+`{base}`
+
+* `attach()`
   * Allows objects in the database to be accessed by giving their names (e.g., `height` rather than `women$height`).
-* `base::file.choose()`
-* `base::file.size()`
-* `base::load()`: Reload datasets saved with `base::save()`.
-* `base::readRDS()`: Restore an R object written with `base::saveRDS()`.
-* `data.table::fread()`: Similar to `utils::read.table()`, but faster and more convenient for large data sets.
-* `foreign::read.spss()`
-* `haven::read_sas()`
-* `readr::read_csv()`
-* `readr::read_csv2()`
-* `readr::read_delim()`
-* `readr::read_tsv()`
-* `readxl::excel_sheets()`
-* `readxl::read_excel()`
-* `readxl::read_xls()`
-* `readxl::read_xlsx()`
-* `utils::data()`
+* `file.choose()`
+* `file.size()`
+* `load()`
+  * Reload datasets saved with `base::save()`.
+* `readRDS()`
+  * Restore an R object written with `base::saveRDS()`.
+  
+`{data.table}`
+
+* `fread()`
+  * Similar to `utils::read.table()`, but faster and more convenient for large data sets.
+  
+`{foreign}`
+
+* `read.spss()`
+
+`{haven}`
+
+* `read_sas()`
+
+`{readr}`
+
+* `read_csv()`
+* `read_csv2()`
+* `read_delim()`
+* `rread_tsv()`
+
+`{readxl}`
+
+* `excel_sheets()`
+* `read_excel()`
+* `read_xls()`
+* `read_xlsx()`
+
+`{utils}`
+
+* `data()`
   * Load specified data sets, or list the available data sets.
   * Use this function to load the data sets that accompany R packages, such as `openintro::hsb2`, `openintro::email50`,and `gapminder::gapminder`.
-* `utils::read.csv()`
-* `utils::read.csv2()`
-* `utils::read.delim()`
-* `utils::read.delim2()`
-* `utils::read.table()`: Read a file in table format.
-* `XLConnect::readWorksheetFromFile()`: Read data from worksheets in an Excel file.
+* `read.csv()`
+* `read.csv2()`
+* `read.delim()`
+* `read.delim2()`
+* `read.table()`
+
+`{XLConnect}`
+
+* `readWorksheetFromFile()`
 
 ## Internet
 
-* `httr::GET()`: Get a URL.
-* `jsonlite::read_json()`: Read and write JSON.
-* `readr::read_csv()`
-* `readr::read_csv2()`
-* `readr::read_delim()`
-* `readr::read_tsv()`
-* `rjson::fromJSON()`: Convert JSON to R.
-* `utils::download.file()`: See example below.
-* `utils::unzip()`: See example below.  
+`{httr}`
 
-#### Examples
+* `GET()`
+  * Get a URL.
 
-* `utils::download.file()`:
+`{jsonlite}`
+
+* `read_json()`
+
+`{readr}`
+
+* `read_csv()`
+* `read_csv2()`
+* `read_delim()`
+* `read_tsv()`
+
+`{rjson}`
+
+* `fromJSON()`
+  * Convert JSON to R.
+
+`{utils}`
+
+* `download.file()`
+  * See example below.
+* `unzip()`
+  * See example below.
+
+### Examples
+
+`utils::download.file()`:
 
 ```{r, eval=FALSE}
 download.file(
@@ -144,7 +236,7 @@ snake_river_path   <- paste0(getwd(), "/Snake River Visits.rds")
 snake_river_visits <- readRDS(snake_river_path)
 ```
 
-* `utils::download.file()` for .Rdata files:
+`utils::download.file()` for .Rdata files:
 
 ```{r, eval=FALSE}
 # Example 1:
@@ -168,7 +260,7 @@ download.file(
 load("chis_2009.Rdata")
 ```
 
-* `utils::unzip()`:
+`utils::unzip()`:
 
 ```{r, eval=FALSE}
 download.file(
@@ -182,31 +274,41 @@ unzip("Data Sets/Countries", exdir = "Data Sets")
 
 ## Database
 
-* `DBI::dbBind()`
-* `DBI::dbClearResult()`
-* `DBI::dbConnect()`
-* `DBI::dbDataType()`
-* `DBI::dbDisconnect()`
-* `DBI::dbExecute()`
-* `DBI::dbFetch()`
-* `DBI::dbGetQuery()`
-* `DBI::dbListTables()`
-* `DBI::dbReadTable()`
-* `DBI::dbSendQuery()`
-* `DBI::dbSendStatement()`
-* `DBI::Id()`: See example below.
-* `DBI::SQL()`: See example below.
-* `dbplyr::in_schema()`
-* `dbplyr::tbl()`
-* `odbc::dbConnect()`
+`{DBI}`
+
+* `dbBind()`
+* `dbClearResult()`
+* `dbConnect()`
+* `dbDataType()`
+* `dbDisconnect()`
+* `dbExecute()`
+* `dbFetch()`
+* `dbGetQuery()`
+* `dbListTables()`
+* `dbReadTable()`
+* `dbSendQuery()`
+* `dbSendStatement()`
+* `Id()`
+  * See example below.
+* `SQL()`
+  * See example below.
+
+`{dbplyr}`
+
+* `in_schema()`
+* `tbl()`
+
+`{odbc}`
+
+* `dbConnect()`
   * See example below for specifying a database.
   * See example below for troubleshooting hang-ups.
 
-#### Examples
+### Examples
 
-* `DBI::Id()` vs `DBI::SQL()`:
+`DBI::Id()` vs `DBI::SQL()`:
 
-The following are comparable methods of accessing <schema_name>.<table_name>:
+The following are comparable methods of accessing `<schema_name>.<table_name>`:
 
 ```{r, eval=FALSE}
 dbCreateTable(
@@ -222,7 +324,7 @@ dbCreateTable(
 )
 ```
 
-* `odbc::dbConnect()`:
+`odbc::dbConnect()`:
 
 ```{r, eval=FALSE}
 # Specify database:
@@ -238,18 +340,20 @@ conn_2 <- dbConnect(odbc::odbc(), dsn = "sql", Database = "Staging")
 options(connectionObserver = FALSE)
 ```
 
-#### References
+### References
 
 * ["Databases using R"](db.rstudio.com)
 
-#### SQL
+### SQL and R
+
+#### Tips and Troubleshooting Hints
 
 * Temp Tables
   * Use `SET NOCOUNT ON` in the SQL query to prevent R confusing the SQL rowcount return value with the temporary table.
 * Try case-sensitive syntax (e.g., when querying a database other than the default).
-* Try selecting certain columns, rather than `SELECT *`, as SQL BLOB columns cause trouble. 
+* Try selecting specific columns, rather than `SELECT *`, as SQL BLOB columns cause trouble. 
 
-##### References
+#### SQL References
 
 * ["10 Easy Steps to a Complete Understanding of SQL"](https://blog.jooq.org/2016/03/17/10-easy-steps-to-a-complete-understanding-of-sql/)
 * ["Query Planning"](https://www.sqlite.org/queryplanner.html)
@@ -260,7 +364,7 @@ options(connectionObserver = FALSE)
 * `{openintro}` contains data sets useful for practicing and teaching.
 * ["Vectors"](https://r4ds.had.co.nz/vectors.html) (Grolemund & Wickham, [*R for Data Science*](https://r4ds.had.co.nz/))
 
-<!--chapter:end:01-import.Rmd-->
+<!--chapter:end:01_import.Rmd-->
 
 # Tidy
 ***
@@ -359,7 +463,7 @@ options(connectionObserver = FALSE)
 
 ### Dates and Datetimes
 
-* `anytime::anytime`: Parse POSIXct or Date objects from input data.
+* `anytime::anytime()`: Parse POSIXct or Date objects from input data.
 * `base::as.Date()`
 * `base::OlsonNames()` 
   * Displays available time zones.
@@ -450,7 +554,7 @@ options(connectionObserver = FALSE)
   * Find complete cases (i.e., rows without `NA` values).
 * `tibble::is_tibble`
 
-<!--chapter:end:02-tidy.Rmd-->
+<!--chapter:end:02_tidy.Rmd-->
 
 # Transform
 ***
@@ -512,19 +616,25 @@ by_country <-
   * See `dplyr::n_distinct()`.
 * `dplyr::tally`
 * `dplyr::top_n`
+* `dummies::dummy.data.frame()`
+  * Dummify a data frame (useful when needing to calculate the Jaccard index for categorical data).
 * `magrittr::extract`
   * `x %>% extract(y)` is equivalent to `x[y]`. 
 * `magrittr::multiply_by`
   * `x %>% multiply_by(y)` is equivalent to `x * y`.
 * `magrittr::raise_to_power`
   * `x %>% raise_to_power(y)` is equivalent to `x^y`.
-* `stats::aggregate`
+* `stats::aggregate()`
   * Compute summary statistics of data subsets.
-* `stats::cor`
-* `stats::cov`
-* `stats::lag`
-* `stats::rnorm`
-* `stats::var`
+* `stats::cor()`
+* `stats::cov()`
+* `stats::cutree()`
+  * Pair with `stats::hcLust()`.
+* `stats::dist()`
+* `stats::hclust()`
+* `stats::lag()`
+* `stats::rnorm()`
+* `stats::var()`
 
 ***
 ## Create New Variables or Modify Existing Ones
@@ -731,7 +841,7 @@ ilo_data %>%
 * `base::which.min()`/`base::which.max()`: Where is the `min()`/`max()` or first `TRUE`/`FALSE`?
 * `%in%`: See `base::match()`.
 
-<!--chapter:end:03-transform.Rmd-->
+<!--chapter:end:03_transform.Rmd-->
 
 # Visualize
 ***
@@ -748,135 +858,138 @@ ilo_data %>%
 ## Graphs, Charts, and Plots
 ***
 
-* `base::abline`
+* `base::abline()`
   * Add straight lines to a plot.
-* `base::plot`
-* `base::points`
+* `base::plot()`
+* `base::points()`
   * Add points to a plot.
 * `diagram`
 * `DiagrammeR`
-* `GGally::ggally_box`
-* `GGally::ggpairs`
+* `GGally::ggally_box()`
+* `GGally::ggpairs()`
   * Scatter plot matrix (SPLOM).
-* `GGally::ggparcoord`
+* `GGally::ggparcoord()`
   * Parallel coordinate plots.
-* `ggbeeswarm::geom_beeswarm`
-* `ggplot2::aes`
+* `ggbeeswarm::geom_beeswarm()`
+* `ggplot2::aes()`
   * Arguments include `color`, `fill`, `size`, `labels`, `alpha`, `shape` (1-20 accept color attributes and 21-25 accept color and fill attributes), `linewidth`, `linetype`, and `group`.
   * Use `?pch` to see options for `shape`.
   * Note that `aes` can be called within `geom_*` rather than prior to.
   * The default shape for points does not have a `fill` attribute, which means that mapping a categorical variable onto `fill` won't result in multiple colors.
-  * Helper functions to include in the call when needing to modify the data include: `stats::reorder`.
-* `ggplot2::coord_cartesian`
+  * Helper functions to include in the call when needing to modify the data include: `stats::reorder()`.
+* `ggplot2::coord_cartesian()`
   * Zoom a plot in or out without changing the underlying data.
-* `ggplot2::coord_flip`
+* `ggplot2::coord_flip()`
   * Flip the x and y axes.
-* `ggplot2::coord_polar`
+* `ggplot2::coord_polar()`
   * Use to convert a stacked bar chart to a pie chart.
-* `ggplot2::element_blank`
-* `ggplot2::element_line`
-* `ggplot2::element_rect`
-* `ggplot2::element_text`
-* `ggplot2::facet_grid`
+* `ggplot2::element_blank()`
+* `ggplot2::element_line()`
+* `ggplot2::element_rect()`
+* `ggplot2::element_text()`
+* `ggplot2::facet_grid()`
   * Lay out panels in a grid.
-  * `ROWS ~ COLS`: When using a tilde function, the variable on the left specifies the rows and the variable on the right specifies the columns (when faceting in only one direction; i.e., only rows or only columns). Use `.` to specify nothing for the unused direction (e.g. `facet_grid(cyl ~ .)`).
-* `ggplot2::facet_wrap`
+  * `ROWS ~ COLS`: When using a tilde function, the variable on the left specifies the rows and the variable on the right specifies the columns. When faceting in only one direction (e.g., only on rows), use `.` to specify nothing for the unused direction.
+* `ggplot2::facet_wrap()`
   * Wrap a 1D ribbon of panels into 2D (observe a variable, conditional on another variable).
-* `ggplot2::geom_abline`
+* `ggplot2::geom_abline()`
   * Add reference lines to a plot.
-* `ggplot2::geom_bar`
+* `ggplot2::geom_bar()`
   * Create a bar chart, where the height of the bar is proportional to the number of cases in each group.
-* `ggplot2::geom_boxplot`
-* `ggplot2::geom_col`
+* `ggplot2::geom_boxplot()`
+* `ggplot2::geom_col()`
   * Create a bar chart, where the height of the bar represents values in the data.
-* `ggplot2::geom_density`
+* `ggplot2::geom_density()`
   * Create a kernal density estimate (a smoothed version of a histogram).
-  *  Consider using `ggplot2::geom_rug` with `ggplot2::geom_density` in order to be transparent about smoothed data.
-* `ggplot2::geom_dotplot`
+  *  Consider using `ggplot2::geom_rug()` with `ggplot2::geom_density()` in order to be transparent about smoothed data.
+* `ggplot2::geom_dotplot()`
   * Create a histogram out of dots.
-* `ggplot2::geom_errorbar`
+* `ggplot2::geom_errorbar()`
   * Shortcut for `geom_bar(stat = "identity")`.
-* `ggplot2::geom_histogram`
+* `ggplot2::geom_histogram()`
   *  Use `y = stat(density)` to rescale the y-axis from counts to a probability estimate.
-* `ggplot2::geom_hline`
-*`ggplot2::geom_jitter`
-  * Useful with `ggplot2::geom_boxplot`.
-* `ggplot2::geom_path`
+* `ggplot2::geom_hline()`
+*`ggplot2::geom_jitter()`
+  * Useful with `ggplot2::geom_boxplot()`.
+* `ggplot2::geom_path()`
   * Connect observations in the order in which they appear.
-* `ggplot2::geom_point`
-* `ggplot2::geom_rug`
-  * Useful with `ggplot2::geom_density`.
-* `ggplot2::geom_smooth`
+* `ggplot2::geom_point()`
+* `ggplot2::geom_rug()`
+  * Useful with `ggplot2::geom_density()`.
+* `ggplot2::geom_smooth()`
   * Smoothed conditional means; aids the eye in seeing patterns in the presence of overplotting.
-* `ggplot2::geom_text`
-* `ggplot2::geom_tile`
+* `ggplot2::geom_text()`
+* `ggplot2::geom_tile()`
   * Heat maps.
-* `ggplot2::geom_violin`
-* `ggplot2::geom_vline`
-* `ggplot2::ggplot`
-* `ggplot2::ggtitle`
-* `ggplot2::group`
-  * Used within `aes`. 
+* `ggplot2::geom_violin()`
+* `ggplot2::geom_vline()`
+* `ggplot2::ggplot()`
+* `ggplot2::ggtitle()`
+* `ggplot2::group()`
+  * Used within `aes()`. 
   * Note that `group` is usually unnecessary when specifying `color`, `shape`, `fill`, or `linetype` within `aes`, or when using facets. See ["Aesthetics: grouping"](https://ggplot2.tidyverse.org/reference/aes_group_order.html) for more information.
-* `ggplot2::labs`
+* `ggplot2::labs()`
   * Modify axis, legend, and plot labels.
-* `ggplot2::position_identity`
+* `ggplot2::position_identity()`
   * Don't adjust position.
-* `ggplot2::position_dodge`
+* `ggplot2::position_dodge()`
   * Dodge overlapping objects side-to-side.
-* `ggplot2::position_nudge`
+* `ggplot2::position_nudge()`
   * Nudge points a fixed distance.
-* `ggplot2::position_stack`
+* `ggplot2::position_stack()`
   * Stack overlapping objects on top of each other, as counts.
-* `ggplot2::position_fill`
+* `ggplot2::position_fill()`
   * Stack overlapping objects on top of each other, as densities.
-* `ggplot2::position_jitter`
-* `ggplot2::position_jitterdodge`
-* `ggplot2::scale_x_continuous`
-* `ggplot2::scale_y_*`
-* `ggplot2::scale_color_manual`
-* `ggplot2::scale_fill_*`
-* `ggplot2::scale_shape_*`
-* `ggplot2::scale_size`
-* `ggplot2::scale_linetype_*`
-* `ggplot2::stat_bin`
-* `ggplot2::stat_bin2d`
-* `ggplot2::stat_bindot`
-* `ggplot2::stat_binhex`
-* `ggplot2::stat_boxplot`
-* `ggplot2::stat_contour`
-* `ggplot2::stat_quantile`
-* `ggplot2::stat_smooth`
-* `ggplot2::stat_sum`
-* `ggplot2::theme`
-  * See example for `grid::unit`.
-* `ggplot2::theme_get`
-* `ggplot2::theme_set`
-* `ggplot2::theme_update`
+* `ggplot2::position_jitter()`
+* `ggplot2::position_jitterdodge()`
+* `ggplot2::scale_x_continuous()`
+* `ggplot2::scale_y_*()`
+* `ggplot2::scale_color_manual()`
+* `ggplot2::scale_fill_*()`
+* `ggplot2::scale_shape_*()`
+* `ggplot2::scale_size()`
+* `ggplot2::scale_linetype_*()`
+* `ggplot2::stat_bin()`
+* `ggplot2::stat_bin2d()`
+* `ggplot2::stat_bindot()`
+* `ggplot2::stat_binhex()`
+* `ggplot2::stat_boxplot()`
+* `ggplot2::stat_contour()`
+* `ggplot2::stat_quantile()`
+* `ggplot2::stat_smooth()`
+* `ggplot2::stat_sum()`
+* `ggplot2::theme()`
+  * See example for `grid::unit()`.
+* `ggplot2::theme_get()`
+* `ggplot2::theme_set()`
+* `ggplot2::theme_update()`
   * "When you call 'theme_update' and assign it to an object (e.g., called `old`), that object stores the *current* default theme, and the arguments *update* the default theme. If you want to restore the previous default theme, you can get it back by using `theme_update` again." -DataCamp
-* `ggplot2::xlab`
-* `ggplot2::xlim`
-* `ggplot2::ylab`
-* `ggridges::geom_density_ridges`
+* `ggplot2::xlab()`
+* `ggplot2::xlim()`
+* `ggplot2::ylab()`
+* `ggridges::geom_density_ridges()`
   * Create a ridgeline plot.
-* `graphics::boxplot`
+* `graphics::boxplot()`
   * Create a box-and-whisker plot.
-* `graphics::hist`
-* `graphics::stripchart`
+* `graphics::hist()`
+* `graphics::par()`
+* `graphics::stripchart()`
   * One dimensional scatter plots.
   * Prefer over `ggplot` when creating one-dimensional plots.
-* `grDevices::colorRamp`
+* `grDevices::colorRamp()`
   * Color interpolation.
-* `grDevices::colorRampPalette`
+* `grDevices::colorRampPalette()`
   * Color interpolation.
-* `grid::unit`
+* `grid::unit()`
   * Create a `unit` object, to specify locations and dimensions in a coordinate system.
   * See example below.
-* `plotly::plot_ly`
-* `RColorBrewer::brewer.pal`
+* `plotly::plot_ly()`
+* `RColorBrewer::brewer.pal()`
   * Make the ColorBrewer color palettes available as R palattes.
   
-**Example: `grid::unit`
+#### Examples
+
+* `grid::unit`
 
 ```{r, eval=FALSE}
 # Increase spacing between facets in a `ggplot` object:
@@ -902,7 +1015,7 @@ plot +
 * `ggplot2::summary`
   * Summarize `y` values at distinct `x` values.
 
-<!--chapter:end:04-visualize.Rmd-->
+<!--chapter:end:04_visualize.Rmd-->
 
 # Model
 ***
@@ -971,7 +1084,7 @@ plot +
 * `fuzzyjoin::stringdist_semi_join`
 * `fuzzywuzzyR::FuzzMatcher`
 
-<!--chapter:end:05-model.Rmd-->
+<!--chapter:end:05_model.Rmd-->
 
 # Communicate
 ***
@@ -1064,7 +1177,7 @@ ggplot(plot_data_2006) +
 * See [RMarkdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
 * See [Mozzila Developer Network](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) for CSS help.
 
-<!--chapter:end:06-communicate.Rmd-->
+<!--chapter:end:06_communicate.Rmd-->
 
 # Program
 ***
@@ -1407,6 +1520,7 @@ as.double()
 
 ## System Commands
 
+* `base::shell()`
 * `base::system()`
 * `base::system2()`
 * `sys::exec()`
@@ -1416,6 +1530,10 @@ as.double()
 
 * `base::update.packages()`
   * 00LOCK error when updating a package: Use `update.packages(ask = FALSE, checkBuilt = TRUE, INSTALL_opts = "--no-lock")`
+* `installr::updateR()`
+  * Remove old versions from Windows:
+    * Settings > Apps and Features > uninstall old version
+    * Control Panel > All Control Panel Items > Programs and Features > uninstall old versions
 * `packrat::snapshot()`: Capture and store the packages and versions in use.
 * `packrat::restore()`: Load the most recent snapshot to the project's private library.
 * Packrat still seems to be under development. The idea sounds good, but in practice the packrat package has caused lots of problems. 
@@ -1433,49 +1551,10 @@ as.double()
     + `git branch -d <branch_name>`: Delete a local branch.
         + See ["Delete branch in RStudio pop-up"](https://community.rstudio.com/t/delete-branch-in-rstudio-pop-up/15465) for help removing branches in RStudio after removing them from Git.
 
-<!--chapter:end:07-program.Rmd-->
+<!--chapter:end:07_program.Rmd-->
 
-# References & Resources
 
-* For an introduction to the R programming language, see the R Project for Statistical Computing's ["What is R?"](https://www.r-project.org/about.html) and Wikipedia's ["R (programming language)."](https://en.wikipedia.org/wiki/R_(programming_language))
-
-* To download R, go to [r-project.org](https://www.r-project.org/) and choose the cloud CRAN Mirror option.
-
-* To program in the R language on a user-friendly platform, download the [RStudio](https://www.rstudio.com/) IDE.
-
-* [The R Project for Statistical Computing](https://www.r-project.org/)
-  * [Library of R Packages](https://cran.r-project.org/web/packages/)
-  * [*Getting Help with R*](https://www.r-project.org/help.html)
-  * [*The R Manuals*](https://cran.r-project.org/manuals.html)
-  * [*Frequently Asked Questions*](https://cran.r-project.org/faqs.html)
-  * [*Books Related to R*](https://www.r-project.org/doc/bib/R-books.html)
-  * [*Documentation*](https://www.r-project.org/other-docs.html)
-
-* [RStudio](https://www.rstudio.com/)
-  * [*RStudio Cheat Sheets*](https://www.rstudio.com/resources/cheatsheets/)
-  * [*Webinars and Videos On Demand*](https://www.rstudio.com/resources/webinars/)
-  * [*Online learning*](https://www.rstudio.com/online-learning/)
-  * [*RStudio Blog*](https://blog.rstudio.com/)
-
-* Online Manuals
-  * [*R for Data Science*](http://r4ds.had.co.nz/)
-  * [*Advanced R*](http://adv-r.had.co.nz/) by Hadley Wickham
-        + Hadley's second edition draft is available [here](https://adv-r.hadley.nz/).
-  * [*R Packages*](http://r-pkgs.had.co.nz/) by Hadley Wickham
-  * [*The R Inferno*](http://www.burns-stat.com/pages/Tutor/R_inferno.pdf) by Patrick Burns
-  * [*The tidyverse style guide*](http://style.tidyverse.org/)
-  * [*Efficient R Programming*](https://bookdown.org/csgillespie/efficientR/)
-  * [*Free R Reading Material*](https://committedtotape.shinyapps.io/freeR/)
-  * [*What They Forgot to Teach You About R*](https://rstats.wtf/) by Jenny Bryan and Jim Hester
-
-* Other Online Resources
-  * [DataCamp](https://www.datacamp.com/)
-  * [RDocumentation](https://www.rdocumentation.org/)
-  * [R Bloggers](https://www.r-bloggers.com/how-to-learn-r-2/)
-    * ["Tutorials for learning R"](https://www.r-bloggers.com/how-to-learn-r-2/)
-  * [Regular Expressions 101](https://regex101.com/)
-
-<!--chapter:end:09-references-and-resources.Rmd-->
+<!--chapter:end:09_references_and_resources.Rmd-->
 
 `r if (knitr::is_html_output()) '
 # References {-}
