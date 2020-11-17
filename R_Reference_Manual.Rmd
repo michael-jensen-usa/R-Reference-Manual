@@ -1553,9 +1553,6 @@ as.double()
 
 <!--chapter:end:07_program.Rmd-->
 
-
-<!--chapter:end:09_references_and_resources.Rmd-->
-
 `r if (knitr::is_html_output()) '
 # References {-}
 '`
