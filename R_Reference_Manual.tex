@@ -148,7 +148,7 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 ## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
 \end{verbatim}
 
-\hypertarget{htmlwidget-5355f0d8b9bb77fc8192}{}
+\hypertarget{htmlwidget-a9049a09a84a7ca9e507}{}
 
 \hypertarget{references-resources}{%
 \section{References \& Resources}\label{references-resources}}
@@ -1287,8 +1287,6 @@ The following are comparable methods of accessing \texttt{\textless{}schema\_nam
 \hypertarget{transform}{%
 \chapter{Transform}\label{transform}}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
 ``Transformation includes narrowing in on observations of interest (like all people in one city, or all data from the last year), creating new variables that are functions of existing variables (like computing velocity from speed and time), and calculating a set of summary statistics (like counts or means).''\\
 - Garrett Grolemund \& Hadley Wickham, \emph{R for Data Science}
 ***
@@ -1296,31 +1294,37 @@ The following are comparable methods of accessing \texttt{\textless{}schema\_nam
 \hypertarget{arithmetic-summary-statistics}{%
 \section{Arithmetic \& Summary Statistics}\label{arithmetic-summary-statistics}}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\texttt{\{assertive\}}
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{assertive::is\_divisible\_by}
+  \texttt{is\_divisible\_by()}
+\end{itemize}
+
+\texttt{\{base\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{base::abs}
+  \texttt{abs()}
 \item
-  \texttt{base::colMeans}
+  \texttt{colMeans()}
 \item
-  \texttt{base::colSums}
+  \texttt{colSums()}
 \item
-  \texttt{base::diff}
+  \texttt{diff()}
 \item
-  \texttt{base::IQR}
+  \texttt{IQR()}
 \item
-  \texttt{base::max}
+  \texttt{max()}
 \item
-  \texttt{base::mean}
+  \texttt{mean()}
 
   \begin{itemize}
   \tightlist
   \item
-    Note that \texttt{base::mean} can be used to calculate a percentage when used in \texttt{dplyr::summarize}, as follows:
+    Note that \texttt{base::mean()} can be used to calculate a percentage when used in \texttt{dplyr::summarize()}, as follows:
   \end{itemize}
 \end{itemize}
 
@@ -1337,9 +1341,9 @@ The following are comparable methods of accessing \texttt{\textless{}schema\_nam
 \begin{itemize}
 \tightlist
 \item
-  \texttt{base::median}
+  \texttt{median()}
 \item
-  \texttt{base::min}
+  \texttt{min()}
 \item
   Mode: Use \texttt{table} to view the mode of a data set.
 \item
@@ -1355,11 +1359,11 @@ The following are comparable methods of accessing \texttt{\textless{}schema\_nam
     \begin{itemize}
     \tightlist
     \item
-      Use \texttt{identical} and \texttt{all.equal} rather than \texttt{==} and \texttt{!=} in tests where a single \texttt{TRUE} or \texttt{FALSE} is required (such as \texttt{if} expressions).
+      Use \texttt{identical()} and \texttt{(all.equal))} rather than \texttt{==} and \texttt{!=} in tests where a single \texttt{TRUE} or \texttt{FALSE} is required (such as \texttt{if} expressions).
     \end{itemize}
   \end{itemize}
 \item
-  \texttt{base::range}
+  \texttt{range()}
 
   \begin{itemize}
   \tightlist
@@ -1367,17 +1371,17 @@ The following are comparable methods of accessing \texttt{\textless{}schema\_nam
     Use \texttt{diff(range())} to get the range as a measure of variability.
   \end{itemize}
 \item
-  \texttt{base::round}
+  \texttt{round()}
 \item
-  \texttt{base::rowMeans}
+  \texttt{rowMeans()}
 \item
-  \texttt{base::rowSums}
+  \texttt{rowSums()}
 \item
-  \texttt{base::scale}
+  \texttt{scale()}
 \item
-  \texttt{base::sd}
+  \texttt{sd()}
 \item
-  \texttt{base::signif}
+  \texttt{signif()}
 
   \begin{itemize}
   \tightlist
@@ -1385,29 +1389,35 @@ The following are comparable methods of accessing \texttt{\textless{}schema\_nam
     Round values to a specified number of significant digits.
   \end{itemize}
 \item
-  \texttt{base::sqrt}
+  \texttt{sqrt()}
 \item
-  \texttt{base::sum}
+  \texttt{sum()}
 \item
-  \texttt{base::summary}
+  \texttt{summary()}
 \item
-  \texttt{base::var}
+  \texttt{var()}
+\end{itemize}
+
+\texttt{\{dplyr\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{dplyr::count}
+  \texttt{count()}
 \item
-  \texttt{dplyr::group\_by}
+  \texttt{group\_by()}
 \item
-  \texttt{dplyr::n}
+  \texttt{n()}
 
   \begin{itemize}
   \tightlist
   \item
-    Must be used within \texttt{summarise}, \texttt{mutate}, or \texttt{filter}.
+    Must be used within \texttt{summarize()}, \texttt{mutate()}, or \texttt{filter()}.
   \end{itemize}
 \item
-  \texttt{dplyr::n\_distinct}
+  \texttt{n\_distinct()}
 \item
-  \texttt{dplyr::near}
+  \texttt{near()}
 
   \begin{itemize}
   \tightlist
@@ -1415,29 +1425,41 @@ The following are comparable methods of accessing \texttt{\textless{}schema\_nam
     Compare two numeric vectors (safer than using \texttt{==}).
   \end{itemize}
 \item
-  \texttt{dplyr::summarize}
+  \texttt{summarize()}
 
   \begin{itemize}
   \tightlist
   \item
-    Use \texttt{mean(variable\ ==\ value)} to get a percentage (see the above example for \texttt{mean}.)
+    Use \texttt{mean(variable\ ==\ value)} to get a percentage (see the above example for \texttt{mean()}.)
   \item
     See \texttt{dplyr::n\_distinct()}.
   \end{itemize}
 \item
-  \texttt{dplyr::tally}
+  \texttt{tally()}
 \item
-  \texttt{dplyr::top\_n}
+  \texttt{top\_n()}
+\end{itemize}
+
+\texttt{\{dummies\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{dummies::dummy.data.frame()}
+  \texttt{dummy.data.frame()}
 
   \begin{itemize}
   \tightlist
   \item
-    Dummify a data frame (useful when needing to calculate the Jaccard index for categorical data).
+    Dummify a data frame (useful when needing to calculate the Jaccard index for categorical data)
   \end{itemize}
+\end{itemize}
+
+\texttt{\{magrittr\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{magrittr::extract}
+  \texttt{extract()}
 
   \begin{itemize}
   \tightlist
@@ -1445,7 +1467,9 @@ The following are comparable methods of accessing \texttt{\textless{}schema\_nam
     \texttt{x\ \%\textgreater{}\%\ extract(y)} is equivalent to \texttt{x{[}y{]}}.
   \end{itemize}
 \item
-  \texttt{magrittr::multiply\_by}
+  \texttt{extract2()}
+\item
+  \texttt{multiply\_by()}
 
   \begin{itemize}
   \tightlist
@@ -1453,15 +1477,21 @@ The following are comparable methods of accessing \texttt{\textless{}schema\_nam
     \texttt{x\ \%\textgreater{}\%\ multiply\_by(y)} is equivalent to \texttt{x\ *\ y}.
   \end{itemize}
 \item
-  \texttt{magrittr::raise\_to\_power}
+  \texttt{raise\_to\_power()}
 
   \begin{itemize}
   \tightlist
   \item
     \texttt{x\ \%\textgreater{}\%\ raise\_to\_power(y)} is equivalent to \texttt{x\^{}y}.
   \end{itemize}
+\end{itemize}
+
+\texttt{\{stats\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{stats::aggregate()}
+  \texttt{aggregate()}
 
   \begin{itemize}
   \tightlist
@@ -1469,30 +1499,28 @@ The following are comparable methods of accessing \texttt{\textless{}schema\_nam
     Compute summary statistics of data subsets.
   \end{itemize}
 \item
-  \texttt{stats::cor()}
+  \texttt{cor()}
 \item
-  \texttt{stats::cov()}
+  \texttt{cov()}
 \item
-  \texttt{stats::cutree()}
+  \texttt{cutree()}
 
   \begin{itemize}
   \tightlist
   \item
-    Pair with \texttt{stats::hcLust()}.
+    Pair with \texttt{stats::hclust()}.
   \end{itemize}
 \item
-  \texttt{stats::dist()}
+  \texttt{dist()}
 \item
-  \texttt{stats::hclust()}
+  \texttt{hclust()}
 \item
-  \texttt{stats::lag()}
+  \texttt{lag()}
 \item
-  \texttt{stats::rnorm()}
+  \texttt{rnorm()}
 \item
-  \texttt{stats::var()}
+  \texttt{var()}
 \end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{create-new-variables-or-modify-existing-ones}{%
 \section{Create New Variables or Modify Existing Ones}\label{create-new-variables-or-modify-existing-ones}}
@@ -2551,6 +2579,29 @@ The following are comparable methods of accessing \texttt{\textless{}schema\_nam
 - Garrett Grolemund \& Hadley Wickham, \emph{R for Data Science}''
 ***
 
+\hypertarget{cluster-analysis}{%
+\section{Cluster Analysis}\label{cluster-analysis}}
+
+\texttt{\{stats\}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{cutree()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Pair with \texttt{stats::hclust()}.
+  \end{itemize}
+\item
+  \texttt{dist()}
+\item
+  \texttt{hclust()}
+\item
+  \texttt{kmeans()}
+\end{itemize}
+
 \hypertarget{general}{%
 \section{General}\label{general}}
 
@@ -2702,8 +2753,6 @@ The following are comparable methods of accessing \texttt{\textless{}schema\_nam
 
 \hypertarget{strings-1}{%
 \section{Strings}\label{strings-1}}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{itemize}
 \tightlist

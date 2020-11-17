@@ -180,6 +180,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots---statistics"><i class="fa fa-check"></i>Graphs, Charts, and Plots - Statistics</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a><ul>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#cluster-analysis"><i class="fa fa-check"></i>Cluster Analysis</a></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#general"><i class="fa fa-check"></i>General</a></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#regression"><i class="fa fa-check"></i>Regression</a></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#simulation-prediction"><i class="fa fa-check"></i>Simulation &amp; Prediction</a></li>
@@ -237,6 +238,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>“Models are complementary tools to visualisation. Once you have made your questions sufficiently precise, you can use a model to answer them. Models are a fundamentally mathematical or computational tool, so they generally scale well. … But every model makes assumptions, and by its very nature a model cannot question its own assumptions. That means a model cannot fundamentally surprise you.
 - Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em>”
 ***</p>
+<div id="cluster-analysis" class="section level2">
+<h2>Cluster Analysis</h2>
+<p><code>{stats}</code></p>
+<ul>
+<li><code>cutree()</code>
+<ul>
+<li>Pair with <code>stats::hclust()</code>.</li>
+</ul></li>
+<li><code>dist()</code></li>
+<li><code>hclust()</code></li>
+<li><code>kmeans()</code></li>
+</ul>
+</div>
 <div id="general" class="section level2">
 <h2>General</h2>
 <ul>
@@ -318,7 +332,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="strings-1" class="section level2">
 <h2>Strings</h2>
-<hr />
 <ul>
 <li><code>base::agrep</code></li>
 <li><code>fuzzyjoin::stringdist_join</code></li>

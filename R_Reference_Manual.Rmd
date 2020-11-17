@@ -557,24 +557,27 @@ options(connectionObserver = FALSE)
 <!--chapter:end:02_tidy.Rmd-->
 
 # Transform
-***
 
 "Transformation includes narrowing in on observations of interest (like all people in one city, or all data from the last year), creating new variables that are functions of existing variables (like computing velocity from speed and time), and calculating a set of summary statistics (like counts or means)."  
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*
 ***
 
 ## Arithmetic & Summary Statistics
-***
 
-* `assertive::is_divisible_by`
-* `base::abs`
-* `base::colMeans`
-* `base::colSums`
-* `base::diff`
-* `base::IQR`
-* `base::max`
-* `base::mean`
-  * Note that `base::mean` can be used to calculate a percentage when used in `dplyr::summarize`, as follows:
+`{assertive}`
+
+* `is_divisible_by()`
+
+`{base}`
+
+* `abs()`
+* `colMeans()`
+* `colSums()`
+* `diff()`
+* `IQR()`
+* `max()`
+* `mean()`
+  * Note that `base::mean()` can be used to calculate a percentage when used in `dplyr::summarize()`, as follows:
   
 ```{r, eval=FALSE}
 by_country <- 
@@ -583,60 +586,73 @@ by_country <-
   summarize(total = n(),
             percent_yes = mean(vote == 1))
 ```
-  
-* `base::median`
-* `base::min`
+
+* `median()`
+* `min()`
 * Mode: Use `table` to view the mode of a data set.
 * Operators:
   * Arithmetic Operators: `+`, `-`, `*`, `/`, `%%`
   * Comparison Operators: `<`, `>`, `<=`, `>=`, `==`, `!=`.
-    * Use `identical` and `all.equal` rather than `==` and `!=` in tests where a single `TRUE` or `FALSE` is required (such as `if` expressions).
-* `base::range`
+    * Use `identical()` and `(all.equal))` rather than `==` and `!=` in tests where a single `TRUE` or `FALSE` is required (such as `if` expressions).
+* `range()`
   * Use `diff(range())` to get the range as a measure of variability.
-* `base::round`
-* `base::rowMeans`
-* `base::rowSums`
-* `base::scale`
-* `base::sd`
-* `base::signif`
+* `round()`
+* `rowMeans()`
+* `rowSums()`
+* `scale()`
+* `sd()`
+* `signif()`
   * Round values to a specified number of significant digits.
-* `base::sqrt`
-* `base::sum`
-* `base::summary`
-* `base::var`
-* `dplyr::count`
-* `dplyr::group_by`
-* `dplyr::n`
-  * Must be used within `summarise`, `mutate`, or `filter`.
-* `dplyr::n_distinct`
-* `dplyr::near`
-  * Compare two numeric vectors (safer than using `==`).
-* `dplyr::summarize`
-  * Use `mean(variable == value)` to get a percentage (see the above example for `mean`.)
-  * See `dplyr::n_distinct()`.
-* `dplyr::tally`
-* `dplyr::top_n`
-* `dummies::dummy.data.frame()`
-  * Dummify a data frame (useful when needing to calculate the Jaccard index for categorical data).
-* `magrittr::extract`
-  * `x %>% extract(y)` is equivalent to `x[y]`. 
-* `magrittr::multiply_by`
-  * `x %>% multiply_by(y)` is equivalent to `x * y`.
-* `magrittr::raise_to_power`
-  * `x %>% raise_to_power(y)` is equivalent to `x^y`.
-* `stats::aggregate()`
-  * Compute summary statistics of data subsets.
-* `stats::cor()`
-* `stats::cov()`
-* `stats::cutree()`
-  * Pair with `stats::hcLust()`.
-* `stats::dist()`
-* `stats::hclust()`
-* `stats::lag()`
-* `stats::rnorm()`
-* `stats::var()`
+* `sqrt()`
+* `sum()`
+* `summary()`
+* `var()`
 
-***
+`{dplyr}`
+
+* `count()`
+* `group_by()`
+* `n()`
+  * Must be used within `summarize()`, `mutate()`, or `filter()`.
+* `n_distinct()`
+* `near()`
+  * Compare two numeric vectors (safer than using `==`).
+* `summarize()`
+  * Use `mean(variable == value)` to get a percentage (see the above example for `mean()`.)
+  * See `dplyr::n_distinct()`.
+* `tally()`
+* `top_n()`
+
+
+`{dummies}`
+
+* `dummy.data.frame()`
+  * Dummify a data frame (useful when needing to calculate the Jaccard index for categorical data)
+  
+`{magrittr}`
+
+* `extract()`
+  * `x %>% extract(y)` is equivalent to `x[y]`.
+* `extract2()`
+* `multiply_by()`
+  * `x %>% multiply_by(y)` is equivalent to `x * y`.
+* `raise_to_power()`
+  * `x %>% raise_to_power(y)` is equivalent to `x^y`.
+
+`{stats}`
+
+* `aggregate()`
+  * Compute summary statistics of data subsets.
+* `cor()`
+* `cov()`
+* `cutree()`
+  * Pair with `stats::hclust()`.
+* `dist()`
+* `hclust()`
+* `lag()`
+* `rnorm()`
+* `var()`
+
 ## Create New Variables or Modify Existing Ones
 
 `countrycode`
@@ -1024,6 +1040,16 @@ plot +
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*"
 ***
 
+## Cluster Analysis
+
+`{stats}`
+
+* `cutree()`
+  * Pair with `stats::hclust()`.
+* `dist()`
+* `hclust()`
+* `kmeans()`
+
 ## General
 
 * `base::sample`
@@ -1072,7 +1098,6 @@ plot +
 * `stats::rnorm`
 
 ## Strings
-***
 
 * `base::agrep`
 * `fuzzyjoin::stringdist_join`

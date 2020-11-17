@@ -180,6 +180,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots---statistics"><i class="fa fa-check"></i>Graphs, Charts, and Plots - Statistics</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a><ul>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#cluster-analysis"><i class="fa fa-check"></i>Cluster Analysis</a></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#general"><i class="fa fa-check"></i>General</a></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#regression"><i class="fa fa-check"></i>Regression</a></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#simulation-prediction"><i class="fa fa-check"></i>Simulation &amp; Prediction</a></li>
@@ -233,24 +234,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="transform" class="section level1">
 <h1>Transform</h1>
-<hr />
 <p>“Transformation includes narrowing in on observations of interest (like all people in one city, or all data from the last year), creating new variables that are functions of existing variables (like computing velocity from speed and time), and calculating a set of summary statistics (like counts or means).”<br />
 - Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em>
 ***</p>
 <div id="arithmetic-summary-statistics" class="section level2">
 <h2>Arithmetic &amp; Summary Statistics</h2>
-<hr />
+<p><code>{assertive}</code></p>
 <ul>
-<li><code>assertive::is_divisible_by</code></li>
-<li><code>base::abs</code></li>
-<li><code>base::colMeans</code></li>
-<li><code>base::colSums</code></li>
-<li><code>base::diff</code></li>
-<li><code>base::IQR</code></li>
-<li><code>base::max</code></li>
-<li><code>base::mean</code>
+<li><code>is_divisible_by()</code></li>
+</ul>
+<p><code>{base}</code></p>
 <ul>
-<li>Note that <code>base::mean</code> can be used to calculate a percentage when used in <code>dplyr::summarize</code>, as follows:</li>
+<li><code>abs()</code></li>
+<li><code>colMeans()</code></li>
+<li><code>colSums()</code></li>
+<li><code>diff()</code></li>
+<li><code>IQR()</code></li>
+<li><code>max()</code></li>
+<li><code>mean()</code>
+<ul>
+<li>Note that <code>base::mean()</code> can be used to calculate a percentage when used in <code>dplyr::summarize()</code>, as follows:</li>
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="transform.html#cb6-1"></a>by_country &lt;-<span class="st"> </span></span>
@@ -259,85 +262,97 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-4"><a href="transform.html#cb6-4"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">total =</span> <span class="kw">n</span>(),</span>
 <span id="cb6-5"><a href="transform.html#cb6-5"></a>            <span class="dt">percent_yes =</span> <span class="kw">mean</span>(vote <span class="op">==</span><span class="st"> </span><span class="dv">1</span>))</span></code></pre></div>
 <ul>
-<li><code>base::median</code></li>
-<li><code>base::min</code></li>
+<li><code>median()</code></li>
+<li><code>min()</code></li>
 <li>Mode: Use <code>table</code> to view the mode of a data set.</li>
 <li>Operators:
 <ul>
 <li>Arithmetic Operators: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%%</code></li>
 <li>Comparison Operators: <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>==</code>, <code>!=</code>.
 <ul>
-<li>Use <code>identical</code> and <code>all.equal</code> rather than <code>==</code> and <code>!=</code> in tests where a single <code>TRUE</code> or <code>FALSE</code> is required (such as <code>if</code> expressions).</li>
+<li>Use <code>identical()</code> and <code>(all.equal))</code> rather than <code>==</code> and <code>!=</code> in tests where a single <code>TRUE</code> or <code>FALSE</code> is required (such as <code>if</code> expressions).</li>
 </ul></li>
 </ul></li>
-<li><code>base::range</code>
+<li><code>range()</code>
 <ul>
 <li>Use <code>diff(range())</code> to get the range as a measure of variability.</li>
 </ul></li>
-<li><code>base::round</code></li>
-<li><code>base::rowMeans</code></li>
-<li><code>base::rowSums</code></li>
-<li><code>base::scale</code></li>
-<li><code>base::sd</code></li>
-<li><code>base::signif</code>
+<li><code>round()</code></li>
+<li><code>rowMeans()</code></li>
+<li><code>rowSums()</code></li>
+<li><code>scale()</code></li>
+<li><code>sd()</code></li>
+<li><code>signif()</code>
 <ul>
 <li>Round values to a specified number of significant digits.</li>
 </ul></li>
-<li><code>base::sqrt</code></li>
-<li><code>base::sum</code></li>
-<li><code>base::summary</code></li>
-<li><code>base::var</code></li>
-<li><code>dplyr::count</code></li>
-<li><code>dplyr::group_by</code></li>
-<li><code>dplyr::n</code>
+<li><code>sqrt()</code></li>
+<li><code>sum()</code></li>
+<li><code>summary()</code></li>
+<li><code>var()</code></li>
+</ul>
+<p><code>{dplyr}</code></p>
 <ul>
-<li>Must be used within <code>summarise</code>, <code>mutate</code>, or <code>filter</code>.</li>
+<li><code>count()</code></li>
+<li><code>group_by()</code></li>
+<li><code>n()</code>
+<ul>
+<li>Must be used within <code>summarize()</code>, <code>mutate()</code>, or <code>filter()</code>.</li>
 </ul></li>
-<li><code>dplyr::n_distinct</code></li>
-<li><code>dplyr::near</code>
+<li><code>n_distinct()</code></li>
+<li><code>near()</code>
 <ul>
 <li>Compare two numeric vectors (safer than using <code>==</code>).</li>
 </ul></li>
-<li><code>dplyr::summarize</code>
+<li><code>summarize()</code>
 <ul>
-<li>Use <code>mean(variable == value)</code> to get a percentage (see the above example for <code>mean</code>.)</li>
+<li>Use <code>mean(variable == value)</code> to get a percentage (see the above example for <code>mean()</code>.)</li>
 <li>See <code>dplyr::n_distinct()</code>.</li>
 </ul></li>
-<li><code>dplyr::tally</code></li>
-<li><code>dplyr::top_n</code></li>
-<li><code>dummies::dummy.data.frame()</code>
+<li><code>tally()</code></li>
+<li><code>top_n()</code></li>
+</ul>
+<p><code>{dummies}</code></p>
 <ul>
-<li>Dummify a data frame (useful when needing to calculate the Jaccard index for categorical data).</li>
+<li><code>dummy.data.frame()</code>
+<ul>
+<li>Dummify a data frame (useful when needing to calculate the Jaccard index for categorical data)</li>
 </ul></li>
-<li><code>magrittr::extract</code>
+</ul>
+<p><code>{magrittr}</code></p>
+<ul>
+<li><code>extract()</code>
 <ul>
 <li><code>x %&gt;% extract(y)</code> is equivalent to <code>x[y]</code>.</li>
 </ul></li>
-<li><code>magrittr::multiply_by</code>
+<li><code>extract2()</code></li>
+<li><code>multiply_by()</code>
 <ul>
 <li><code>x %&gt;% multiply_by(y)</code> is equivalent to <code>x * y</code>.</li>
 </ul></li>
-<li><code>magrittr::raise_to_power</code>
+<li><code>raise_to_power()</code>
 <ul>
 <li><code>x %&gt;% raise_to_power(y)</code> is equivalent to <code>x^y</code>.</li>
 </ul></li>
-<li><code>stats::aggregate()</code>
+</ul>
+<p><code>{stats}</code></p>
+<ul>
+<li><code>aggregate()</code>
 <ul>
 <li>Compute summary statistics of data subsets.</li>
 </ul></li>
-<li><code>stats::cor()</code></li>
-<li><code>stats::cov()</code></li>
-<li><code>stats::cutree()</code>
+<li><code>cor()</code></li>
+<li><code>cov()</code></li>
+<li><code>cutree()</code>
 <ul>
-<li>Pair with <code>stats::hcLust()</code>.</li>
+<li>Pair with <code>stats::hclust()</code>.</li>
 </ul></li>
-<li><code>stats::dist()</code></li>
-<li><code>stats::hclust()</code></li>
-<li><code>stats::lag()</code></li>
-<li><code>stats::rnorm()</code></li>
-<li><code>stats::var()</code></li>
+<li><code>dist()</code></li>
+<li><code>hclust()</code></li>
+<li><code>lag()</code></li>
+<li><code>rnorm()</code></li>
+<li><code>var()</code></li>
 </ul>
-<hr />
 </div>
 <div id="create-new-variables-or-modify-existing-ones" class="section level2">
 <h2>Create New Variables or Modify Existing Ones</h2>

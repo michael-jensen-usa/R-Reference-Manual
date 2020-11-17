@@ -5,6 +5,16 @@
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*"
 ***
 
+## Cluster Analysis
+
+`{stats}`
+
+* `cutree()`
+  * Pair with `stats::hclust()`.
+* `dist()`
+* `hclust()`
+* `kmeans()`
+
 ## General
 
 * `base::sample`
@@ -53,7 +63,6 @@
 * `stats::rnorm`
 
 ## Strings
-***
 
 * `base::agrep`
 * `fuzzyjoin::stringdist_join`
