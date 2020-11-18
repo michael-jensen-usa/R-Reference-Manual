@@ -169,9 +169,11 @@ unzip("Data Sets/Countries", exdir = "Data Sets")
 
 `{DBI}`
 
+* `dbAppendTable()`
 * `dbBind()`
 * `dbClearResult()`
 * `dbConnect()`
+* `dbCreateTable()`
 * `dbDataType()`
 * `dbDisconnect()`
 * `dbExecute()`
@@ -179,6 +181,7 @@ unzip("Data Sets/Countries", exdir = "Data Sets")
 * `dbGetQuery()`
 * `dbListTables()`
 * `dbReadTable()`
+* `dbRemoveTable()`
 * `dbSendQuery()`
 * `dbSendStatement()`
 * `Id()`
@@ -201,19 +204,20 @@ unzip("Data Sets/Countries", exdir = "Data Sets")
 
 `DBI::Id()` vs `DBI::SQL()`:
 
-The following are comparable methods of accessing `<schema_name>.<table_name>`:
+The following are comparable methods of accessing `<database>.<schema_name>.<table_name>`:
 
 ```{r, eval=FALSE}
 dbCreateTable(
   conn,
-  Id(schema = "schema_name", table = "table_name"),
-  fields = "field_name"
+  name = 
+    Id(catalog = "database_name", schema = "schema_name", table = "table_name"),
+  fields = sample_data_frame
 )
 
 dbCreateTable(
   conn,
-  name   = SQL("schema_name.table_name"),
-  fields = "field_name"
+  name = SQL("database_name.schema_name.table_name"),
+  fields = sample_data_frame
 )
 ```
 

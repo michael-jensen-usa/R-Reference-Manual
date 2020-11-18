@@ -148,7 +148,7 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 ## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
 \end{verbatim}
 
-\hypertarget{htmlwidget-5d9ec20e9a51ad2e8eed}{}
+\hypertarget{htmlwidget-6e5a579a6cd55c3914c7}{}
 
 \hypertarget{references-resources}{%
 \section{References \& Resources}\label{references-resources}}
@@ -572,11 +572,15 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 \begin{itemize}
 \tightlist
 \item
+  \texttt{dbAppendTable()}
+\item
   \texttt{dbBind()}
 \item
   \texttt{dbClearResult()}
 \item
   \texttt{dbConnect()}
+\item
+  \texttt{dbCreateTable()}
 \item
   \texttt{dbDataType()}
 \item
@@ -591,6 +595,8 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
   \texttt{dbListTables()}
 \item
   \texttt{dbReadTable()}
+\item
+  \texttt{dbRemoveTable()}
 \item
   \texttt{dbSendQuery()}
 \item
@@ -644,20 +650,21 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 
 \texttt{DBI::Id()} vs \texttt{DBI::SQL()}:
 
-The following are comparable methods of accessing \texttt{\textless{}schema\_name\textgreater{}.\textless{}table\_name\textgreater{}}:
+The following are comparable methods of accessing \texttt{\textless{}database\textgreater{}.\textless{}schema\_name\textgreater{}.\textless{}table\_name\textgreater{}}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{dbCreateTable}\NormalTok{(}
 \NormalTok{  conn,}
-  \KeywordTok{Id}\NormalTok{(}\DataTypeTok{schema =} \StringTok{"schema_name"}\NormalTok{, }\DataTypeTok{table =} \StringTok{"table_name"}\NormalTok{),}
-  \DataTypeTok{fields =} \StringTok{"field_name"}
+  \DataTypeTok{name =} 
+    \KeywordTok{Id}\NormalTok{(}\DataTypeTok{catalog =} \StringTok{"database_name"}\NormalTok{, }\DataTypeTok{schema =} \StringTok{"schema_name"}\NormalTok{, }\DataTypeTok{table =} \StringTok{"table_name"}\NormalTok{),}
+  \DataTypeTok{fields =}\NormalTok{ sample_data_frame}
 \NormalTok{)}
 
 \KeywordTok{dbCreateTable}\NormalTok{(}
 \NormalTok{  conn,}
-  \DataTypeTok{name   =} \KeywordTok{SQL}\NormalTok{(}\StringTok{"schema_name.table_name"}\NormalTok{),}
-  \DataTypeTok{fields =} \StringTok{"field_name"}
+  \DataTypeTok{name =} \KeywordTok{SQL}\NormalTok{(}\StringTok{"database_name.schema_name.table_name"}\NormalTok{),}
+  \DataTypeTok{fields =}\NormalTok{ sample_data_frame}
 \NormalTok{)}
 \end{Highlighting}
 \end{Shaded}

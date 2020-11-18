@@ -417,9 +417,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>Database</h2>
 <p><code>{DBI}</code></p>
 <ul>
+<li><code>dbAppendTable()</code></li>
 <li><code>dbBind()</code></li>
 <li><code>dbClearResult()</code></li>
 <li><code>dbConnect()</code></li>
+<li><code>dbCreateTable()</code></li>
 <li><code>dbDataType()</code></li>
 <li><code>dbDisconnect()</code></li>
 <li><code>dbExecute()</code></li>
@@ -427,6 +429,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>dbGetQuery()</code></li>
 <li><code>dbListTables()</code></li>
 <li><code>dbReadTable()</code></li>
+<li><code>dbRemoveTable()</code></li>
 <li><code>dbSendQuery()</code></li>
 <li><code>dbSendStatement()</code></li>
 <li><code>Id()</code>
@@ -454,18 +457,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="examples-1" class="section level3">
 <h3>Examples</h3>
 <p><code>DBI::Id()</code> vs <code>DBI::SQL()</code>:</p>
-<p>The following are comparable methods of accessing <code>&lt;schema_name&gt;.&lt;table_name&gt;</code>:</p>
+<p>The following are comparable methods of accessing <code>&lt;database&gt;.&lt;schema_name&gt;.&lt;table_name&gt;</code>:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="import-or-create-data.html#cb4-1"></a><span class="kw">dbCreateTable</span>(</span>
 <span id="cb4-2"><a href="import-or-create-data.html#cb4-2"></a>  conn,</span>
-<span id="cb4-3"><a href="import-or-create-data.html#cb4-3"></a>  <span class="kw">Id</span>(<span class="dt">schema =</span> <span class="st">&quot;schema_name&quot;</span>, <span class="dt">table =</span> <span class="st">&quot;table_name&quot;</span>),</span>
-<span id="cb4-4"><a href="import-or-create-data.html#cb4-4"></a>  <span class="dt">fields =</span> <span class="st">&quot;field_name&quot;</span></span>
-<span id="cb4-5"><a href="import-or-create-data.html#cb4-5"></a>)</span>
-<span id="cb4-6"><a href="import-or-create-data.html#cb4-6"></a></span>
-<span id="cb4-7"><a href="import-or-create-data.html#cb4-7"></a><span class="kw">dbCreateTable</span>(</span>
-<span id="cb4-8"><a href="import-or-create-data.html#cb4-8"></a>  conn,</span>
-<span id="cb4-9"><a href="import-or-create-data.html#cb4-9"></a>  <span class="dt">name   =</span> <span class="kw">SQL</span>(<span class="st">&quot;schema_name.table_name&quot;</span>),</span>
-<span id="cb4-10"><a href="import-or-create-data.html#cb4-10"></a>  <span class="dt">fields =</span> <span class="st">&quot;field_name&quot;</span></span>
-<span id="cb4-11"><a href="import-or-create-data.html#cb4-11"></a>)</span></code></pre></div>
+<span id="cb4-3"><a href="import-or-create-data.html#cb4-3"></a>  <span class="dt">name =</span> </span>
+<span id="cb4-4"><a href="import-or-create-data.html#cb4-4"></a>    <span class="kw">Id</span>(<span class="dt">catalog =</span> <span class="st">&quot;database_name&quot;</span>, <span class="dt">schema =</span> <span class="st">&quot;schema_name&quot;</span>, <span class="dt">table =</span> <span class="st">&quot;table_name&quot;</span>),</span>
+<span id="cb4-5"><a href="import-or-create-data.html#cb4-5"></a>  <span class="dt">fields =</span> sample_data_frame</span>
+<span id="cb4-6"><a href="import-or-create-data.html#cb4-6"></a>)</span>
+<span id="cb4-7"><a href="import-or-create-data.html#cb4-7"></a></span>
+<span id="cb4-8"><a href="import-or-create-data.html#cb4-8"></a><span class="kw">dbCreateTable</span>(</span>
+<span id="cb4-9"><a href="import-or-create-data.html#cb4-9"></a>  conn,</span>
+<span id="cb4-10"><a href="import-or-create-data.html#cb4-10"></a>  <span class="dt">name =</span> <span class="kw">SQL</span>(<span class="st">&quot;database_name.schema_name.table_name&quot;</span>),</span>
+<span id="cb4-11"><a href="import-or-create-data.html#cb4-11"></a>  <span class="dt">fields =</span> sample_data_frame</span>
+<span id="cb4-12"><a href="import-or-create-data.html#cb4-12"></a>)</span></code></pre></div>
 <p><code>odbc::dbConnect()</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="import-or-create-data.html#cb5-1"></a><span class="co"># Specify database:</span></span>
 <span id="cb5-2"><a href="import-or-create-data.html#cb5-2"></a>conn_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">dbConnect</span>(odbc<span class="op">::</span><span class="kw">odbc</span>(), <span class="dt">dsn =</span> <span class="st">&quot;sql&quot;</span>) <span class="co"># Default database: Actuary</span></span>
