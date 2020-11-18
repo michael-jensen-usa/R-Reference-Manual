@@ -1,187 +1,271 @@
 # Tidy
-***
 
 "Tidying your data means storing it in a consistent form that matches the semantics of the dataset with the way it is stored. In brief, when your data is tidy, each column is a variable and each row is an observation. Tidying data is important because the consistent structure lets you focus your struggle on questions about the data, not fighting to get the data into the right form for different functions."  
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*
-***
 
 ## Explore Raw Data
 
-* `base::attr`
+`{base}`
+
+* `attr()`
   * `attr(x, "names")` is the same as `base::names(x)`.
   * Use `attr(x, "names") <- value` to set attribute values.
-* `base::attributes`
-* `base::class`
-* `base::colnames`
-* `base::dim`
-* `base::dimnames`
-* `base::format`
-* `base::length`
-* `base::levels`
+* `attribute()s`
+* `class()`
+* `colnames()`
+* `dim()`
+* `dimnames()`
+* `format()`
+* `length()`
+* `levels()`
   * Levels default to alphabetical order, so be careful when renaming them (i.e., don't accidentally set the "F" level equal to "Male" rather than "Female").
-* `base::mode`
-* `base::names`
-* `base::nchar`
-* `base::order`
-* `base::rownames`
-* `base::summary`
-* `base::typeof`
-* `graphics::hist`
-* `graphics::plot`
-* `skimr::skim`
-  * Similar to `tibble::glimpse` and `utils::str`.
-* `tibble::glimpse`
-  * Similar to `skimr::skim` and `utils::str`.
-* `utils::head`
-* `utils::str`
-  * Similar to `skimr::skim` and `tibble::glimpse`.
-* `utils::tail`
+* `mode()`
+* `names()`
+* `nchar()`
+* `order()`
+* `rownames()`
+* `summary()`
+* `typeof()`
+
+`{graphics}`
+
+* `hist()`
+* `plot()`
+
+`{skimr}`
+
+* `skim()`
+  * Similar to `tibble::glimpse()` and `utils::str()`.
+
+`{tibble}`
+
+* `glimpse()`
+  * Similar to `skimr::skim()` and `utils::str()`.
+
+`{utils}`
+
+* `head()`
+* `str()`
+  * Similar to `skimr::skim()` and `tibble::glimpse()`.
+* `tail()`
 
 ## Tidy Data
 
-* `base::duplicated`
-  * See also `data.table::duplicated`
-* `base::unique`
-  * See also `data.table::unique`
-* `data.table::anyDuplicated`
-* `data.table::duplicated`
-  * See also `base::duplicated`
-* `data.table::unique`
-  * See also `base::unique`
-* `janitor::clean_names`
-* `janitor::get_dupes`
-  * Prefer over `base::duplicated` and `data.table::duplicated`.
-* `janitor::remove_empty`
-* `purrr::transpose`
+`{base}`
+
+* `duplicated()`
+  * See also `data.table::duplicated()`
+* `unique()`
+  * See also `data.table::unique()`
+  
+`{data.table}`
+  
+* `anyDuplicated()`
+* `duplicated()`
+  * See also `base::duplicated()`
+* `unique()`
+  * See also `base::unique()`
+
+`{janitor}`
+
+* `clean_names()`
+* `get_dupes()`
+  * Prefer over `base::duplicated()` and `data.table::duplicated()`.
+* `remove_empty()`
+
+`{purrr}`
+
+* `transpose()`
   * Turn a list-of-lists inside-out.
-* `splitstackshape::cSplit`
-  * See also `tidyr::separate`
-* `tibble::rowid_to_column`
+
+`{splitstackshape}`
+
+* `cSplit()`
+  * See also `tidyr::separate()`
+
+`{tibble}`
+
+* `rowid_to_column()`
   * Add a column of sequential row IDs.
-  * Useful when a separate ID is required to manipulate rows or columns, such as when using `tidyr::pivot_longer`
-* `tibble::rownames`
-* `tidyr::nest`
+  * Useful when a separate ID is required to manipulate rows or columns, such as when using `tidyr::pivot_longe()r`
+* `rownames()`
+
+`{tidyr}`
+
+* `nest()`
   * Nest repeated values in a list-variable.
   * Helpful when separating a data frame in preparation to model the data for each grouping.
-* `tidyr::replace_na`
-* `tidyr::separate`
-* `tidyr::pivot_longer`
-* `tidyr::pivot_wider`
-* `tidyr::unite`
-* `tidyr::unnest`
+* `replace_na()`
+* `separate()`
+* `pivot_longer()`
+* `pivot_wider()`
+* `unite()`
+* `unnest()`
 
 ## Prepare Data for Analysis
 
 ### Coerce
 
-* `base::as.array`
-* `base::as.data.frame`
-  * See also`tibble::as_tibble`.
-* `base::as.Date`
-* `base::as.factor`
-* `base::as.list`
-* `base::as.matrix`
-* `base::as.POSIX*`
-* `base::factor`
+`{base}`
+
+* `as.array()`
+* `as.data.frame()`
+  * See also`tibble::as_tibble()`.
+* `as.Date()`
+* `as.factor()`
+* `as.list()`
+* `as.matrix()`
+* `as.POSIX*()`
+* `factor()`
   * Rearrange the order of factors by using the `levels` argument. For example, rearrange the order of "Bad, "Good," and "Neutral" using `levels = c("Bad", "Neutral", "Good").
-* `base::is.na`
+* `is.na()`
   * Use `is.na <-` to set elements to `NA`.
-* `base::unclass`
-* `methods::as`
-* `tibble::as_tibble`
-  * Preferable to `base::as.data.frame`.
-* `tibble::enframe`
-  * Preferable to using `tibble::as_tibble` to coerce a vector to a data frame.
+* `unclass()`
+
+`{methods}`
+
+* `as()`
+
+`{tibble}`
+
+* `as_tibble()`
+  * Preferable to `base::as.data.frame()`.
+* `enframe()`
+  * Preferable to using `tibble::as_tibble()` to coerce a vector to a data frame.
 
 ### Dates and Datetimes
 
-* `anytime::anytime()`: Parse POSIXct or Date objects from input data.
-* `base::as.Date()`
-* `base::OlsonNames()` 
+`{anytime}`
+
+* `anytime()`: Parse POSIXct or Date objects from input data.
+
+`{base}`
+
+* `as.Date()`
+* `OlsonNames()` 
   * Displays available time zones.
-* `base::as.POSIX*()`
-* `base::as.POSIXct()`
-* `base::strptime()`
+* `as.POSIXct.*()`
+* `as.POSIXlt.*()`
+* `strptime()`
   * Date-time conversion to and from character.
-* `base::Sys.timezone()`
-  * See also `base::OlsonNames`.
-* `fasttime::fastPOSIXct`
+* `Sys.timezone()`
+  * See also `base::OlsonNames()`.
+
+`{fasttime}`
+
+* `fastPOSIXct()`
   * Convert strings into `POSIXct` object (string must be in year, month, day, hour, minute, second format.)
-* `hms:as.hms`
-* `hms::hms`
+
+`{hms}`
+
+* `as.hms()`
+* `hms()`
   * Store time-of-day values as `hms` class.
-* `hms::is.hms`
-* `lubridate::as_date`
-* `lubridate::fast_strptime`
-  * Fast C parser of numeric formats only that accepts explicit format arguments (just as `base::strptime`).
+* `is.hms()`
+
+`{lubridate}`
+
+* `as_date()`
+* `fast_strptime()`
+  * Fast C parser of numeric formats only that accepts explicit format arguments (just as `base::strptime()`).
   * Note that the format argument must match the input exactly, including any non-white space characters (such as "T" and "Z").
-* `lubridate::make_date`
+* `make_date()`
   * Create dates from numeric representations.
-* `lubridate::make_datetime`
+* `make_datetime()`
   * Create date-times from numeric representations.
-* `lubridate::parse_date_time`
-  * This function can be slow, because it is designed to be forgiving and flexible. If the dates you are working with are in a consistent format (ideally ISO 8601), use one of the following: `fasttime::fastPOSIXct` or `lubridate::parse_date_time2`.
-* `lubridate::parse_date_time2`
+* `parse_date_time()`
+  * This function can be slow, because it is designed to be forgiving and flexible. If the dates you are working with are in a consistent format (ideally ISO 8601), use one of the following: `fasttime::fastPOSIXct()` or `lubridate::parse_date_time2()`.
+* `parse_date_time2()`
   * Fast C parser of numeric orders.
-* `lubridate::ymd`: Parse dates with year, month, and day components.
-  * Related formats: `ydm`, `mdy`, `myd`, `dmy`, `dym`, `yq`.
-* `lubridate::ymd_hms`: Parse date-times with year, month, day, hour, minute, and second components.
-  * Related formats: `ymd_hm`, `ymd_h`, `dmy_hms`, `dmy_hm`, `dmy_h`, `mdy_hms`, `mdy_hm`, `mdy_h`, `ydm_hms`, `ydm_hm`, `ydm_h`.
+* `ymd()`: Parse dates with year, month, and day components.
+  * Related formats: `ydm()`, `mdy()`, `myd()`, `dmy()`, `dym()`, `yq()`.
+* `ymd_hms()`: Parse date-times with year, month, day, hour, minute, and second components.
+  * Related formats: `ymd_hm()`, `ymd_h()`, `dmy_hms()`, `dmy_hm()`, `dmy_h()`, `mdy_hms()`, `mdy_hm()`, `mdy_h()`, `ydm_hms()`, `ydm_hm()`, `ydm_h()`.
         
 ### Filter
 
-* `dplyr::filter`
-* `purrr::keep`
-* `stats::na.omit`
+`{dplyr}`
+
+* `filter()`
+
+`{purrr}`
+
+* `keep()`
+
+`{stats}`
+
+* `na.omit()`
 
 ### Strings
 
-* `base::cat`
+`{base}`
+
+* `cat()`
   * Concatenate and print. 
-* `base::chartr`
+* `chartr()`
   * Change certain characters.
-* `base::gregexpr`
-* `base::grep`
-* `base::grepl`
-* `base::gsub`
-* `base::regexec`
-* `base::regexpr`
-* `base::sub`
-* `base::tolower`
-  * See also `stringr::str_to_lower`.
-* `base::toupper`: Convert to uppercase.
-  * See also `stringr::str_to_upper`.
-* `qdap::check_spelling`
-* `qdapDictionaries::DICTIONARY`
+* `gregexpr()`
+* `grep()`
+* `grepl()`
+* `gsub()`
+* `regexec()`
+* `regexpr()`
+* `sub()`
+* `tolower()`
+  * See also `stringr::str_to_lower()`.
+* `toupper()`: Convert to uppercase.
+  * See also `stringr::str_to_upper()`.
+
+`{qdap}`
+
+* `check_spelling()`
+
+`{qdapDictionaries}`
+
+* `DICTIONARY()`
   * Nettalk Corpus syllable data set.
-* `qdapDictionaries::GradyAugmented`
+* `GradyAugmented()`
   * Augmented list of Grady Ward's *English Words* and Mark Kantrowitz's *Names* List.
   * Mark Kantrowitz's *Names* list is available in full [here](http://www.cs.cmu.edu/afs/cs/project/ai-repository/ai/areas/nlp/corpora/names/).
-* `stringr::str_detect`
-  * Control the `pattern` argument options with `regex` (e.g., `str_detect(x, regex(pattern, ignore_case = TRUE))`.
-* `stringr::str_remove`
-* `stringr::str_to_lower`
-* `stringr::str_to_title`
-* `stringr::str_trim`
-* `stringr::str_to_upper`
+
+`{stringr}`
+
+* `str_detect`
+  * Control the `pattern` argument options with `regex()` (e.g., `str_detect(x, regex(pattern, ignore_case = TRUE))`.
+* `str_remove()`
+* `str_to_lower()`
+* `str_to_title()`
+* `str_trim()`
+* `str_to_upper()`
 
 ### Test
 
-* `base::all()`
-* `base::any`
-  * Use `any(is.na(data.frame))` to determine if there are any NA values in a data frame.
-* `base::anyNA`
-  * Possibly faster implementation of `any(is.na(x))`.
-* `base::exists`
-* `base::is.array`
-* `base::is.data.frame`
-* `base::is.matrix`
-* `base::is.vector`
-* `base::setequal`
+`{base}`
+
+* `all()`
+* `any()`
+  * Use `any(is.na(data.frame))` to determine if there are any `NA` values in a data frame.
+* `anyNA()`
+  * Possibly faster implementation of `base::any(is.na(x))`.
+* `exists()`
+* `is.array()`
+* `is.data.frame()`
+* `is.matrix()`
+* `is.vector()`
+* `setequal()`
   * Check two vectors for equality.
-* `base::sum`
+* `sum()`
   * Test whether all elements of a vector do or do not meet a certain condition, use as follows: `sum(email$num_char < 0)`.
-* `purrr::every`
-* `stats::complete.cases`
+
+`{purrr}`
+
+* `every()`
+
+`{stats}`
+
+* `complete.cases()`
   * Find complete cases (i.e., rows without `NA` values).
-* `tibble::is_tibble`
+
+`{tibble}`
+
+* `is_tibble()`

@@ -234,289 +234,366 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="tidy" class="section level1">
 <h1>Tidy</h1>
-<hr />
 <p>“Tidying your data means storing it in a consistent form that matches the semantics of the dataset with the way it is stored. In brief, when your data is tidy, each column is a variable and each row is an observation. Tidying data is important because the consistent structure lets you focus your struggle on questions about the data, not fighting to get the data into the right form for different functions.”<br />
-- Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em>
-***</p>
+- Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em></p>
 <div id="explore-raw-data" class="section level2">
 <h2>Explore Raw Data</h2>
+<p><code>{base}</code></p>
 <ul>
-<li><code>base::attr</code>
+<li><code>attr()</code>
 <ul>
 <li><code>attr(x, "names")</code> is the same as <code>base::names(x)</code>.</li>
 <li>Use <code>attr(x, "names") &lt;- value</code> to set attribute values.</li>
 </ul></li>
-<li><code>base::attributes</code></li>
-<li><code>base::class</code></li>
-<li><code>base::colnames</code></li>
-<li><code>base::dim</code></li>
-<li><code>base::dimnames</code></li>
-<li><code>base::format</code></li>
-<li><code>base::length</code></li>
-<li><code>base::levels</code>
+<li><code>attribute()s</code></li>
+<li><code>class()</code></li>
+<li><code>colnames()</code></li>
+<li><code>dim()</code></li>
+<li><code>dimnames()</code></li>
+<li><code>format()</code></li>
+<li><code>length()</code></li>
+<li><code>levels()</code>
 <ul>
 <li>Levels default to alphabetical order, so be careful when renaming them (i.e., don’t accidentally set the “F” level equal to “Male” rather than “Female”).</li>
 </ul></li>
-<li><code>base::mode</code></li>
-<li><code>base::names</code></li>
-<li><code>base::nchar</code></li>
-<li><code>base::order</code></li>
-<li><code>base::rownames</code></li>
-<li><code>base::summary</code></li>
-<li><code>base::typeof</code></li>
-<li><code>graphics::hist</code></li>
-<li><code>graphics::plot</code></li>
-<li><code>skimr::skim</code>
+<li><code>mode()</code></li>
+<li><code>names()</code></li>
+<li><code>nchar()</code></li>
+<li><code>order()</code></li>
+<li><code>rownames()</code></li>
+<li><code>summary()</code></li>
+<li><code>typeof()</code></li>
+</ul>
+<p><code>{graphics}</code></p>
 <ul>
-<li>Similar to <code>tibble::glimpse</code> and <code>utils::str</code>.</li>
-</ul></li>
-<li><code>tibble::glimpse</code>
+<li><code>hist()</code></li>
+<li><code>plot()</code></li>
+</ul>
+<p><code>{skimr}</code></p>
 <ul>
-<li>Similar to <code>skimr::skim</code> and <code>utils::str</code>.</li>
-</ul></li>
-<li><code>utils::head</code></li>
-<li><code>utils::str</code>
+<li><code>skim()</code>
 <ul>
-<li>Similar to <code>skimr::skim</code> and <code>tibble::glimpse</code>.</li>
+<li>Similar to <code>tibble::glimpse()</code> and <code>utils::str()</code>.</li>
 </ul></li>
-<li><code>utils::tail</code></li>
+</ul>
+<p><code>{tibble}</code></p>
+<ul>
+<li><code>glimpse()</code>
+<ul>
+<li>Similar to <code>skimr::skim()</code> and <code>utils::str()</code>.</li>
+</ul></li>
+</ul>
+<p><code>{utils}</code></p>
+<ul>
+<li><code>head()</code></li>
+<li><code>str()</code>
+<ul>
+<li>Similar to <code>skimr::skim()</code> and <code>tibble::glimpse()</code>.</li>
+</ul></li>
+<li><code>tail()</code></li>
 </ul>
 </div>
 <div id="tidy-data" class="section level2">
 <h2>Tidy Data</h2>
+<p><code>{base}</code></p>
 <ul>
-<li><code>base::duplicated</code>
+<li><code>duplicated()</code>
 <ul>
-<li>See also <code>data.table::duplicated</code></li>
+<li>See also <code>data.table::duplicated()</code></li>
 </ul></li>
-<li><code>base::unique</code>
+<li><code>unique()</code>
 <ul>
-<li>See also <code>data.table::unique</code></li>
+<li>See also <code>data.table::unique()</code></li>
 </ul></li>
-<li><code>data.table::anyDuplicated</code></li>
-<li><code>data.table::duplicated</code>
+</ul>
+<p><code>{data.table}</code></p>
 <ul>
-<li>See also <code>base::duplicated</code></li>
-</ul></li>
-<li><code>data.table::unique</code>
+<li><code>anyDuplicated()</code></li>
+<li><code>duplicated()</code>
 <ul>
-<li>See also <code>base::unique</code></li>
+<li>See also <code>base::duplicated()</code></li>
 </ul></li>
-<li><code>janitor::clean_names</code></li>
-<li><code>janitor::get_dupes</code>
+<li><code>unique()</code>
 <ul>
-<li>Prefer over <code>base::duplicated</code> and <code>data.table::duplicated</code>.</li>
+<li>See also <code>base::unique()</code></li>
 </ul></li>
-<li><code>janitor::remove_empty</code></li>
-<li><code>purrr::transpose</code>
+</ul>
+<p><code>{janitor}</code></p>
+<ul>
+<li><code>clean_names()</code></li>
+<li><code>get_dupes()</code>
+<ul>
+<li>Prefer over <code>base::duplicated()</code> and <code>data.table::duplicated()</code>.</li>
+</ul></li>
+<li><code>remove_empty()</code></li>
+</ul>
+<p><code>{purrr}</code></p>
+<ul>
+<li><code>transpose()</code>
 <ul>
 <li>Turn a list-of-lists inside-out.</li>
 </ul></li>
-<li><code>splitstackshape::cSplit</code>
+</ul>
+<p><code>{splitstackshape}</code></p>
 <ul>
-<li>See also <code>tidyr::separate</code></li>
+<li><code>cSplit()</code>
+<ul>
+<li>See also <code>tidyr::separate()</code></li>
 </ul></li>
-<li><code>tibble::rowid_to_column</code>
+</ul>
+<p><code>{tibble}</code></p>
+<ul>
+<li><code>rowid_to_column()</code>
 <ul>
 <li>Add a column of sequential row IDs.</li>
-<li>Useful when a separate ID is required to manipulate rows or columns, such as when using <code>tidyr::pivot_longer</code></li>
+<li>Useful when a separate ID is required to manipulate rows or columns, such as when using <code>tidyr::pivot_longe()r</code></li>
 </ul></li>
-<li><code>tibble::rownames</code></li>
-<li><code>tidyr::nest</code>
+<li><code>rownames()</code></li>
+</ul>
+<p><code>{tidyr}</code></p>
+<ul>
+<li><code>nest()</code>
 <ul>
 <li>Nest repeated values in a list-variable.</li>
 <li>Helpful when separating a data frame in preparation to model the data for each grouping.</li>
 </ul></li>
-<li><code>tidyr::replace_na</code></li>
-<li><code>tidyr::separate</code></li>
-<li><code>tidyr::pivot_longer</code></li>
-<li><code>tidyr::pivot_wider</code></li>
-<li><code>tidyr::unite</code></li>
-<li><code>tidyr::unnest</code></li>
+<li><code>replace_na()</code></li>
+<li><code>separate()</code></li>
+<li><code>pivot_longer()</code></li>
+<li><code>pivot_wider()</code></li>
+<li><code>unite()</code></li>
+<li><code>unnest()</code></li>
 </ul>
 </div>
 <div id="prepare-data-for-analysis" class="section level2">
 <h2>Prepare Data for Analysis</h2>
 <div id="coerce" class="section level3">
 <h3>Coerce</h3>
+<p><code>{base}</code></p>
 <ul>
-<li><code>base::as.array</code></li>
-<li><code>base::as.data.frame</code>
+<li><code>as.array()</code></li>
+<li><code>as.data.frame()</code>
 <ul>
-<li>See also<code>tibble::as_tibble</code>.</li>
+<li>See also<code>tibble::as_tibble()</code>.</li>
 </ul></li>
-<li><code>base::as.Date</code></li>
-<li><code>base::as.factor</code></li>
-<li><code>base::as.list</code></li>
-<li><code>base::as.matrix</code></li>
-<li><code>base::as.POSIX*</code></li>
-<li><code>base::factor</code>
+<li><code>as.Date()</code></li>
+<li><code>as.factor()</code></li>
+<li><code>as.list()</code></li>
+<li><code>as.matrix()</code></li>
+<li><code>as.POSIX*()</code></li>
+<li><code>factor()</code>
 <ul>
 <li>Rearrange the order of factors by using the <code>levels</code> argument. For example, rearrange the order of “Bad,”Good," and “Neutral” using `levels = c(“Bad”, “Neutral”, “Good”).</li>
 </ul></li>
-<li><code>base::is.na</code>
+<li><code>is.na()</code>
 <ul>
 <li>Use <code>is.na &lt;-</code> to set elements to <code>NA</code>.</li>
 </ul></li>
-<li><code>base::unclass</code></li>
-<li><code>methods::as</code></li>
-<li><code>tibble::as_tibble</code>
+<li><code>unclass()</code></li>
+</ul>
+<p><code>{methods}</code></p>
 <ul>
-<li>Preferable to <code>base::as.data.frame</code>.</li>
+<li><code>as()</code></li>
+</ul>
+<p><code>{tibble}</code></p>
+<ul>
+<li><code>as_tibble()</code>
+<ul>
+<li>Preferable to <code>base::as.data.frame()</code>.</li>
 </ul></li>
-<li><code>tibble::enframe</code>
+<li><code>enframe()</code>
 <ul>
-<li>Preferable to using <code>tibble::as_tibble</code> to coerce a vector to a data frame.</li>
+<li>Preferable to using <code>tibble::as_tibble()</code> to coerce a vector to a data frame.</li>
 </ul></li>
 </ul>
 </div>
 <div id="dates-and-datetimes" class="section level3">
 <h3>Dates and Datetimes</h3>
+<p><code>{anytime}</code></p>
 <ul>
-<li><code>anytime::anytime()</code>: Parse POSIXct or Date objects from input data.</li>
-<li><code>base::as.Date()</code></li>
-<li><code>base::OlsonNames()</code>
+<li><code>anytime()</code>: Parse POSIXct or Date objects from input data.</li>
+</ul>
+<p><code>{base}</code></p>
+<ul>
+<li><code>as.Date()</code></li>
+<li><code>OlsonNames()</code>
 <ul>
 <li>Displays available time zones.</li>
 </ul></li>
-<li><code>base::as.POSIX*()</code></li>
-<li><code>base::as.POSIXct()</code></li>
-<li><code>base::strptime()</code>
+<li><code>as.POSIXct.*()</code></li>
+<li><code>as.POSIXlt.*()</code></li>
+<li><code>strptime()</code>
 <ul>
 <li>Date-time conversion to and from character.</li>
 </ul></li>
-<li><code>base::Sys.timezone()</code>
+<li><code>Sys.timezone()</code>
 <ul>
-<li>See also <code>base::OlsonNames</code>.</li>
+<li>See also <code>base::OlsonNames()</code>.</li>
 </ul></li>
-<li><code>fasttime::fastPOSIXct</code>
+</ul>
+<p><code>{fasttime}</code></p>
+<ul>
+<li><code>fastPOSIXct()</code>
 <ul>
 <li>Convert strings into <code>POSIXct</code> object (string must be in year, month, day, hour, minute, second format.)</li>
 </ul></li>
-<li><code>hms:as.hms</code></li>
-<li><code>hms::hms</code>
+</ul>
+<p><code>{hms}</code></p>
+<ul>
+<li><code>as.hms()</code></li>
+<li><code>hms()</code>
 <ul>
 <li>Store time-of-day values as <code>hms</code> class.</li>
 </ul></li>
-<li><code>hms::is.hms</code></li>
-<li><code>lubridate::as_date</code></li>
-<li><code>lubridate::fast_strptime</code>
+<li><code>is.hms()</code></li>
+</ul>
+<p><code>{lubridate}</code></p>
 <ul>
-<li>Fast C parser of numeric formats only that accepts explicit format arguments (just as <code>base::strptime</code>).</li>
+<li><code>as_date()</code></li>
+<li><code>fast_strptime()</code>
+<ul>
+<li>Fast C parser of numeric formats only that accepts explicit format arguments (just as <code>base::strptime()</code>).</li>
 <li>Note that the format argument must match the input exactly, including any non-white space characters (such as “T” and “Z”).</li>
 </ul></li>
-<li><code>lubridate::make_date</code>
+<li><code>make_date()</code>
 <ul>
 <li>Create dates from numeric representations.</li>
 </ul></li>
-<li><code>lubridate::make_datetime</code>
+<li><code>make_datetime()</code>
 <ul>
 <li>Create date-times from numeric representations.</li>
 </ul></li>
-<li><code>lubridate::parse_date_time</code>
+<li><code>parse_date_time()</code>
 <ul>
-<li>This function can be slow, because it is designed to be forgiving and flexible. If the dates you are working with are in a consistent format (ideally ISO 8601), use one of the following: <code>fasttime::fastPOSIXct</code> or <code>lubridate::parse_date_time2</code>.</li>
+<li>This function can be slow, because it is designed to be forgiving and flexible. If the dates you are working with are in a consistent format (ideally ISO 8601), use one of the following: <code>fasttime::fastPOSIXct()</code> or <code>lubridate::parse_date_time2()</code>.</li>
 </ul></li>
-<li><code>lubridate::parse_date_time2</code>
+<li><code>parse_date_time2()</code>
 <ul>
 <li>Fast C parser of numeric orders.</li>
 </ul></li>
-<li><code>lubridate::ymd</code>: Parse dates with year, month, and day components.
+<li><code>ymd()</code>: Parse dates with year, month, and day components.
 <ul>
-<li>Related formats: <code>ydm</code>, <code>mdy</code>, <code>myd</code>, <code>dmy</code>, <code>dym</code>, <code>yq</code>.</li>
+<li>Related formats: <code>ydm()</code>, <code>mdy()</code>, <code>myd()</code>, <code>dmy()</code>, <code>dym()</code>, <code>yq()</code>.</li>
 </ul></li>
-<li><code>lubridate::ymd_hms</code>: Parse date-times with year, month, day, hour, minute, and second components.
+<li><code>ymd_hms()</code>: Parse date-times with year, month, day, hour, minute, and second components.
 <ul>
-<li>Related formats: <code>ymd_hm</code>, <code>ymd_h</code>, <code>dmy_hms</code>, <code>dmy_hm</code>, <code>dmy_h</code>, <code>mdy_hms</code>, <code>mdy_hm</code>, <code>mdy_h</code>, <code>ydm_hms</code>, <code>ydm_hm</code>, <code>ydm_h</code>.</li>
+<li>Related formats: <code>ymd_hm()</code>, <code>ymd_h()</code>, <code>dmy_hms()</code>, <code>dmy_hm()</code>, <code>dmy_h()</code>, <code>mdy_hms()</code>, <code>mdy_hm()</code>, <code>mdy_h()</code>, <code>ydm_hms()</code>, <code>ydm_hm()</code>, <code>ydm_h()</code>.</li>
 </ul></li>
 </ul>
 </div>
 <div id="filter" class="section level3">
 <h3>Filter</h3>
+<p><code>{dplyr}</code></p>
 <ul>
-<li><code>dplyr::filter</code></li>
-<li><code>purrr::keep</code></li>
-<li><code>stats::na.omit</code></li>
+<li><code>filter()</code></li>
+</ul>
+<p><code>{purrr}</code></p>
+<ul>
+<li><code>keep()</code></li>
+</ul>
+<p><code>{stats}</code></p>
+<ul>
+<li><code>na.omit()</code></li>
 </ul>
 </div>
 <div id="strings" class="section level3">
 <h3>Strings</h3>
+<p><code>{base}</code></p>
 <ul>
-<li><code>base::cat</code>
+<li><code>cat()</code>
 <ul>
 <li>Concatenate and print.</li>
 </ul></li>
-<li><code>base::chartr</code>
+<li><code>chartr()</code>
 <ul>
 <li>Change certain characters.</li>
 </ul></li>
-<li><code>base::gregexpr</code></li>
-<li><code>base::grep</code></li>
-<li><code>base::grepl</code></li>
-<li><code>base::gsub</code></li>
-<li><code>base::regexec</code></li>
-<li><code>base::regexpr</code></li>
-<li><code>base::sub</code></li>
-<li><code>base::tolower</code>
+<li><code>gregexpr()</code></li>
+<li><code>grep()</code></li>
+<li><code>grepl()</code></li>
+<li><code>gsub()</code></li>
+<li><code>regexec()</code></li>
+<li><code>regexpr()</code></li>
+<li><code>sub()</code></li>
+<li><code>tolower()</code>
 <ul>
-<li>See also <code>stringr::str_to_lower</code>.</li>
+<li>See also <code>stringr::str_to_lower()</code>.</li>
 </ul></li>
-<li><code>base::toupper</code>: Convert to uppercase.
+<li><code>toupper()</code>: Convert to uppercase.
 <ul>
-<li>See also <code>stringr::str_to_upper</code>.</li>
+<li>See also <code>stringr::str_to_upper()</code>.</li>
 </ul></li>
-<li><code>qdap::check_spelling</code></li>
-<li><code>qdapDictionaries::DICTIONARY</code>
+</ul>
+<p><code>{qdap}</code></p>
+<ul>
+<li><code>check_spelling()</code></li>
+</ul>
+<p><code>{qdapDictionaries}</code></p>
+<ul>
+<li><code>DICTIONARY()</code>
 <ul>
 <li>Nettalk Corpus syllable data set.</li>
 </ul></li>
-<li><code>qdapDictionaries::GradyAugmented</code>
+<li><code>GradyAugmented()</code>
 <ul>
 <li>Augmented list of Grady Ward’s <em>English Words</em> and Mark Kantrowitz’s <em>Names</em> List.</li>
 <li>Mark Kantrowitz’s <em>Names</em> list is available in full <a href="http://www.cs.cmu.edu/afs/cs/project/ai-repository/ai/areas/nlp/corpora/names/">here</a>.</li>
 </ul></li>
-<li><code>stringr::str_detect</code>
+</ul>
+<p><code>{stringr}</code></p>
 <ul>
-<li>Control the <code>pattern</code> argument options with <code>regex</code> (e.g., <code>str_detect(x, regex(pattern, ignore_case = TRUE))</code>.</li>
+<li><code>str_detect</code>
+<ul>
+<li>Control the <code>pattern</code> argument options with <code>regex()</code> (e.g., <code>str_detect(x, regex(pattern, ignore_case = TRUE))</code>.</li>
 </ul></li>
-<li><code>stringr::str_remove</code></li>
-<li><code>stringr::str_to_lower</code></li>
-<li><code>stringr::str_to_title</code></li>
-<li><code>stringr::str_trim</code></li>
-<li><code>stringr::str_to_upper</code></li>
+<li><code>str_remove()</code></li>
+<li><code>str_to_lower()</code></li>
+<li><code>str_to_title()</code></li>
+<li><code>str_trim()</code></li>
+<li><code>str_to_upper()</code></li>
 </ul>
 </div>
 <div id="test" class="section level3">
 <h3>Test</h3>
+<p><code>{base}</code></p>
 <ul>
-<li><code>base::all()</code></li>
-<li><code>base::any</code>
+<li><code>all()</code></li>
+<li><code>any()</code>
 <ul>
-<li>Use <code>any(is.na(data.frame))</code> to determine if there are any NA values in a data frame.</li>
+<li>Use <code>any(is.na(data.frame))</code> to determine if there are any <code>NA</code> values in a data frame.</li>
 </ul></li>
-<li><code>base::anyNA</code>
+<li><code>anyNA()</code>
 <ul>
-<li>Possibly faster implementation of <code>any(is.na(x))</code>.</li>
+<li>Possibly faster implementation of <code>base::any(is.na(x))</code>.</li>
 </ul></li>
-<li><code>base::exists</code></li>
-<li><code>base::is.array</code></li>
-<li><code>base::is.data.frame</code></li>
-<li><code>base::is.matrix</code></li>
-<li><code>base::is.vector</code></li>
-<li><code>base::setequal</code>
+<li><code>exists()</code></li>
+<li><code>is.array()</code></li>
+<li><code>is.data.frame()</code></li>
+<li><code>is.matrix()</code></li>
+<li><code>is.vector()</code></li>
+<li><code>setequal()</code>
 <ul>
 <li>Check two vectors for equality.</li>
 </ul></li>
-<li><code>base::sum</code>
+<li><code>sum()</code>
 <ul>
 <li>Test whether all elements of a vector do or do not meet a certain condition, use as follows: <code>sum(email$num_char &lt; 0)</code>.</li>
 </ul></li>
-<li><code>purrr::every</code></li>
-<li><code>stats::complete.cases</code>
+</ul>
+<p><code>{purrr}</code></p>
+<ul>
+<li><code>every()</code></li>
+</ul>
+<p><code>{stats}</code></p>
+<ul>
+<li><code>complete.cases()</code>
 <ul>
 <li>Find complete cases (i.e., rows without <code>NA</code> values).</li>
 </ul></li>
-<li><code>tibble::is_tibble</code></li>
+</ul>
+<p><code>{tibble}</code></p>
+<ul>
+<li><code>is_tibble()</code></li>
 </ul>
 
 </div>
