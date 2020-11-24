@@ -249,6 +249,10 @@ options(connectionObserver = FALSE)
   * Use `SET NOCOUNT ON` in the SQL query to prevent R confusing the SQL rowcount return value with the temporary table.
 * Try case-sensitive syntax (e.g., when querying a database other than the default).
 * Try selecting specific columns, rather than `SELECT *`, as SQL BLOB columns cause trouble. 
+* Error Messages
+  * `Error in env[[name]] <- x : attempt to use zero-length variable name`
+    * Problem code: `select max(date) from table`
+    * Solution: `select max(date) as max_date from table`
 
 #### SQL References
 
