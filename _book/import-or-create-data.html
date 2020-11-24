@@ -500,6 +500,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li>Try case-sensitive syntax (e.g., when querying a database other than the default).</li>
 <li>Try selecting specific columns, rather than <code>SELECT *</code>, as SQL BLOB columns cause trouble.</li>
+<li>Error Messages
+<ul>
+<li><code>Error in env[[name]] &lt;- x : attempt to use zero-length variable name</code>
+<ul>
+<li>Problem code: <code>select max(date) from table</code></li>
+<li>Solution: <code>select max(date) as max_date from table</code></li>
+</ul></li>
+</ul></li>
 </ul>
 </div>
 <div id="sql-references" class="section level4">
