@@ -148,7 +148,7 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 ## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
 \end{verbatim}
 
-\hypertarget{htmlwidget-aea99e52208d91bc4db8}{}
+\hypertarget{htmlwidget-532e93a77fad6985754b}{}
 
 \hypertarget{references-resources}{%
 \section{References \& Resources}\label{references-resources}}
@@ -732,7 +732,40 @@ The following are comparable methods of accessing \texttt{\textless{}database\te
       Solution: \texttt{select\ max(date)\ as\ max\_date\ from\ table}
     \end{itemize}
   \end{itemize}
+\item
+  Parameterized Queries
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Reference: \href{https://db.rstudio.com/}{``Databases Using R''}
+  \item
+    See example below.
+  \end{itemize}
 \end{itemize}
+
+\hypertarget{examples-2}{%
+\subsubsection{Examples}\label{examples-2}}
+
+Parameterized query:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{param_query <-}\StringTok{ }\KeywordTok{dbSendQuery}\NormalTok{(con, }\StringTok{"select * from table where column = ?"}\NormalTok{)}
+
+\KeywordTok{dbBind}\NormalTok{(param_query, input)}
+\KeywordTok{dbFetch}\NormalTok{(param_query)}
+
+\CommentTok{# As a function:}
+\NormalTok{query_data <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(input) \{}
+  
+  \KeywordTok{dbBind}\NormalTok{(param_query, input)}
+  \KeywordTok{dbFetch}\NormalTok{(param_query)}
+\NormalTok{\}}
+
+\KeywordTok{map}\NormalTok{(}\KeywordTok{as.list}\NormalTok{(df}\OperatorTok{$}\NormalTok{input_column), query_data) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{bind_rows}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{sql-references}{%
 \subsubsection{SQL References}\label{sql-references}}
@@ -2684,8 +2717,8 @@ The following are comparable methods of accessing \texttt{\textless{}database\te
   \end{itemize}
 \end{itemize}
 
-\hypertarget{examples-2}{%
-\subsubsection{Examples}\label{examples-2}}
+\hypertarget{examples-3}{%
+\subsubsection{Examples}\label{examples-3}}
 
 \begin{itemize}
 \tightlist
@@ -3777,8 +3810,8 @@ References:
   \texttt{zeallot::\%\textless{}-\%}: Multiple assignment operator (see example below).
 \end{itemize}
 
-\hypertarget{examples-3}{%
-\subsubsection{Examples}\label{examples-3}}
+\hypertarget{examples-4}{%
+\subsubsection{Examples}\label{examples-4}}
 
 \begin{itemize}
 \tightlist
@@ -3926,8 +3959,8 @@ References:
   \texttt{purrr:pluck()}: See also \texttt{magrittr::extract2()}.
 \end{itemize}
 
-\hypertarget{examples-4}{%
-\subsubsection{Examples}\label{examples-4}}
+\hypertarget{examples-5}{%
+\subsubsection{Examples}\label{examples-5}}
 
 \begin{itemize}
 \tightlist

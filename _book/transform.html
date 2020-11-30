@@ -255,11 +255,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Note that <code>base::mean()</code> can be used to calculate a percentage when used in <code>dplyr::summarize()</code>, as follows:</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="transform.html#cb6-1"></a>by_country &lt;-<span class="st"> </span></span>
-<span id="cb6-2"><a href="transform.html#cb6-2"></a><span class="st">  </span>votes <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb6-3"><a href="transform.html#cb6-3"></a><span class="st">  </span><span class="kw">group_by</span>(country) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb6-4"><a href="transform.html#cb6-4"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">total =</span> <span class="kw">n</span>(),</span>
-<span id="cb6-5"><a href="transform.html#cb6-5"></a>            <span class="dt">percent_yes =</span> <span class="kw">mean</span>(vote <span class="op">==</span><span class="st"> </span><span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="transform.html#cb7-1"></a>by_country &lt;-<span class="st"> </span></span>
+<span id="cb7-2"><a href="transform.html#cb7-2"></a><span class="st">  </span>votes <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb7-3"><a href="transform.html#cb7-3"></a><span class="st">  </span><span class="kw">group_by</span>(country) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb7-4"><a href="transform.html#cb7-4"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">total =</span> <span class="kw">n</span>(),</span>
+<span id="cb7-5"><a href="transform.html#cb7-5"></a>            <span class="dt">percent_yes =</span> <span class="kw">mean</span>(vote <span class="op">==</span><span class="st"> </span><span class="dv">1</span>))</span></code></pre></div>
 <ul>
 <li><code>median()</code></li>
 <li><code>min()</code></li>
@@ -369,16 +369,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>recode()</code>: Recode values (the numeric alternative to using <code>if_else</code> or <code>case_when()</code>).</li>
 </ul>
 <p><strong>Example:</strong> <code>dplyr::mutate</code></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="transform.html#cb7-1"></a>df &lt;-</span>
-<span id="cb7-2"><a href="transform.html#cb7-2"></a><span class="st">  </span>df <span class="op">%&gt;%</span></span>
-<span id="cb7-3"><a href="transform.html#cb7-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">var_name =</span> <span class="kw">str_to_lower</span>(var_name))</span>
-<span id="cb7-4"><a href="transform.html#cb7-4"></a></span>
-<span id="cb7-5"><a href="transform.html#cb7-5"></a><span class="co"># Add a T/F vector, which can then be referenced to highlight certain </span></span>
-<span id="cb7-6"><a href="transform.html#cb7-6"></a><span class="co"># information in a plot:</span></span>
-<span id="cb7-7"><a href="transform.html#cb7-7"></a></span>
-<span id="cb7-8"><a href="transform.html#cb7-8"></a>df &lt;-<span class="st"> </span></span>
-<span id="cb7-9"><a href="transform.html#cb7-9"></a><span class="st">  </span>df <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb7-10"><a href="transform.html#cb7-10"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">hilight =</span> <span class="dt">attributed_provider_id =</span> <span class="dv">95597</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="transform.html#cb8-1"></a>df &lt;-</span>
+<span id="cb8-2"><a href="transform.html#cb8-2"></a><span class="st">  </span>df <span class="op">%&gt;%</span></span>
+<span id="cb8-3"><a href="transform.html#cb8-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">var_name =</span> <span class="kw">str_to_lower</span>(var_name))</span>
+<span id="cb8-4"><a href="transform.html#cb8-4"></a></span>
+<span id="cb8-5"><a href="transform.html#cb8-5"></a><span class="co"># Add a T/F vector, which can then be referenced to highlight certain </span></span>
+<span id="cb8-6"><a href="transform.html#cb8-6"></a><span class="co"># information in a plot:</span></span>
+<span id="cb8-7"><a href="transform.html#cb8-7"></a></span>
+<span id="cb8-8"><a href="transform.html#cb8-8"></a>df &lt;-<span class="st"> </span></span>
+<span id="cb8-9"><a href="transform.html#cb8-9"></a><span class="st">  </span>df <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb8-10"><a href="transform.html#cb8-10"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">hilight =</span> <span class="dt">attributed_provider_id =</span> <span class="dv">95597</span>)</span></code></pre></div>
 </div>
 <div id="dates-and-datetimes-1" class="section level2">
 <h2>Dates and Datetimes</h2>
@@ -602,11 +602,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use <code>%in%</code> when using multiple <code>|</code> conditions. The following two commands, for example, are equivalent:</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="transform.html#cb8-1"></a>ilo_data <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb8-2"><a href="transform.html#cb8-2"></a><span class="st">  </span><span class="kw">filter</span>(country <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Sweden&quot;</span>, <span class="st">&quot;Switzerland&quot;</span>))</span>
-<span id="cb8-3"><a href="transform.html#cb8-3"></a></span>
-<span id="cb8-4"><a href="transform.html#cb8-4"></a>ilo_data <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb8-5"><a href="transform.html#cb8-5"></a><span class="st">  </span><span class="kw">filter</span>(country <span class="op">==</span><span class="st"> &quot;Sweden&quot;</span> <span class="op">|</span><span class="st"> </span>country <span class="op">==</span><span class="st"> &quot;Switzerland&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="transform.html#cb9-1"></a>ilo_data <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb9-2"><a href="transform.html#cb9-2"></a><span class="st">  </span><span class="kw">filter</span>(country <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Sweden&quot;</span>, <span class="st">&quot;Switzerland&quot;</span>))</span>
+<span id="cb9-3"><a href="transform.html#cb9-3"></a></span>
+<span id="cb9-4"><a href="transform.html#cb9-4"></a>ilo_data <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb9-5"><a href="transform.html#cb9-5"></a><span class="st">  </span><span class="kw">filter</span>(country <span class="op">==</span><span class="st"> &quot;Sweden&quot;</span> <span class="op">|</span><span class="st"> </span>country <span class="op">==</span><span class="st"> &quot;Switzerland&quot;</span>)</span></code></pre></div>
 <ul>
 <li><code>dplyr::rename()</code>: Rename variables by name (a modification of <code>select</code>).</li>
 <li><code>dplyr::sample_n()</code>: Sample n rows from a table.</li>

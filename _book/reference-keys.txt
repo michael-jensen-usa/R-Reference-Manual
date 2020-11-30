@@ -10,6 +10,7 @@ examples-1
 references
 sql-and-r
 tips-and-troubleshooting-hints
+examples-2
 sql-references
 notes-references
 tidy
@@ -32,7 +33,7 @@ test-1
 visualize
 interfaces
 graphs-charts-and-plots
-examples-2
+examples-3
 graphs-charts-and-plots---statistics
 model
 cluster-analysis
@@ -54,14 +55,14 @@ environment-and-workspace
 evaluation-standard-and-non-standard
 functionals
 functions
-examples-3
+examples-4
 learn-about-an-object
 loops
 optimization
 pipes
 popups
 selecting-subsetting
-examples-4
+examples-5
 references-1
 style-guide
 system-commands

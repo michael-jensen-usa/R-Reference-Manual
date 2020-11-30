@@ -508,7 +508,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Solution: <code>select max(date) as max_date from table</code></li>
 </ul></li>
 </ul></li>
+<li>Parameterized Queries
+<ul>
+<li>Reference: <a href="https://db.rstudio.com/">“Databases Using R”</a></li>
+<li>See example below.</li>
+</ul></li>
 </ul>
+</div>
+<div id="examples-2" class="section level4">
+<h4>Examples</h4>
+<p>Parameterized query:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="import-or-create-data.html#cb6-1"></a>param_query &lt;-<span class="st"> </span><span class="kw">dbSendQuery</span>(con, <span class="st">&quot;select * from table where column = ?&quot;</span>)</span>
+<span id="cb6-2"><a href="import-or-create-data.html#cb6-2"></a></span>
+<span id="cb6-3"><a href="import-or-create-data.html#cb6-3"></a><span class="kw">dbBind</span>(param_query, input)</span>
+<span id="cb6-4"><a href="import-or-create-data.html#cb6-4"></a><span class="kw">dbFetch</span>(param_query)</span>
+<span id="cb6-5"><a href="import-or-create-data.html#cb6-5"></a></span>
+<span id="cb6-6"><a href="import-or-create-data.html#cb6-6"></a><span class="co"># As a function:</span></span>
+<span id="cb6-7"><a href="import-or-create-data.html#cb6-7"></a>query_data &lt;-<span class="st"> </span><span class="cf">function</span>(input) {</span>
+<span id="cb6-8"><a href="import-or-create-data.html#cb6-8"></a>  </span>
+<span id="cb6-9"><a href="import-or-create-data.html#cb6-9"></a>  <span class="kw">dbBind</span>(param_query, input)</span>
+<span id="cb6-10"><a href="import-or-create-data.html#cb6-10"></a>  <span class="kw">dbFetch</span>(param_query)</span>
+<span id="cb6-11"><a href="import-or-create-data.html#cb6-11"></a>}</span>
+<span id="cb6-12"><a href="import-or-create-data.html#cb6-12"></a></span>
+<span id="cb6-13"><a href="import-or-create-data.html#cb6-13"></a><span class="kw">map</span>(<span class="kw">as.list</span>(df<span class="op">$</span>input_column), query_data) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">bind_rows</span>()</span></code></pre></div>
 </div>
 <div id="sql-references" class="section level4">
 <h4>SQL References</h4>
