@@ -253,6 +253,29 @@ options(connectionObserver = FALSE)
   * `Error in env[[name]] <- x : attempt to use zero-length variable name`
     * Problem code: `select max(date) from table`
     * Solution: `select max(date) as max_date from table`
+* Parameterized Queries
+  * Reference: ["Databases Using R"](https://db.rstudio.com/)
+  * See example below.
+  
+#### Examples
+
+Parameterized query:
+
+```{r, eval=FALSE}
+param_query <- dbSendQuery(con, "select * from table where column = ?")
+
+dbBind(param_query, input)
+dbFetch(param_query)
+
+# As a function:
+query_data <- function(input) {
+  
+  dbBind(param_query, input)
+  dbFetch(param_query)
+}
+
+map(as.list(df$input_column), query_data) %>% bind_rows()
+```
 
 #### SQL References
 
