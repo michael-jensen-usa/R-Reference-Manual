@@ -66,6 +66,11 @@
 * `unique()`
   * See also `base::unique()`
 
+`{dplyr}`
+
+* `na_if()`
+  * See also `tidyr::replace_na()`.
+
 `{janitor}`
 
 * `clean_names()`
@@ -96,6 +101,7 @@
   * Nest repeated values in a list-variable.
   * Helpful when separating a data frame in preparation to model the data for each grouping.
 * `replace_na()`
+  * See also `dplyr::na_if()`.
 * `separate()`
 * `pivot_longer()`
 * `pivot_wider()`
