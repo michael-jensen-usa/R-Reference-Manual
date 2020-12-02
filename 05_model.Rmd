@@ -7,6 +7,11 @@
 
 ## Cluster Analysis
 
+`{cluster}`
+
+* `pam()`
+  * Useful for silhouette analysis; similar but not identical to `stats::kmeans()`.
+
 `{stats}`
 
 * `cutree()`
