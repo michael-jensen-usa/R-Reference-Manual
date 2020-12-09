@@ -93,7 +93,7 @@
 * `rowid_to_column()`
   * Add a column of sequential row IDs.
   * Useful when a separate ID is required to manipulate rows or columns, such as when using `tidyr::pivot_longe()r`
-* `rownames()`
+* `rownames_to_column()`
 
 `{tidyr}`
 
