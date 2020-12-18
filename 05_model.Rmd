@@ -33,6 +33,12 @@
 * `stats::var`
 
 ***
+## Machine Learning
+
+`{class}`
+
+* `knn()`
+
 ## Regression
 
 * `broom::augment`

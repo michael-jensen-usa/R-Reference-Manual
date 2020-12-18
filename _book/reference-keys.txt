@@ -38,6 +38,7 @@ graphs-charts-and-plots---statistics
 model
 cluster-analysis
 general
+machine-learning
 regression
 simulation-prediction
 strings-1
