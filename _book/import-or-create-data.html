@@ -428,7 +428,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>dbExecute()</code></li>
 <li><code>dbFetch()</code></li>
 <li><code>dbGetQuery()</code></li>
-<li><code>dbListTables()</code></li>
+<li><code>dbListTables()</code>
+<ul>
+<li>Specify schema with <code>dbListTables(conn, schema = "schema_name")</code>.</li>
+</ul></li>
 <li><code>dbReadTable()</code></li>
 <li><code>dbRemoveTable()</code></li>
 <li><code>dbSendQuery()</code></li>

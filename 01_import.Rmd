@@ -180,6 +180,7 @@ unzip("Data Sets/Countries", exdir = "Data Sets")
 * `dbFetch()`
 * `dbGetQuery()`
 * `dbListTables()`
+  * Specify schema with `dbListTables(conn, schema = "schema_name")`.
 * `dbReadTable()`
 * `dbRemoveTable()`
 * `dbSendQuery()`
