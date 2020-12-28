@@ -148,7 +148,7 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 ## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
 \end{verbatim}
 
-\hypertarget{htmlwidget-a3d315e5ec4df22d7607}{}
+\hypertarget{htmlwidget-eae7f74118d70f5ff294}{}
 
 \hypertarget{references-resources}{%
 \section{References \& Resources}\label{references-resources}}
@@ -922,12 +922,22 @@ Parameterized query:
 \begin{itemize}
 \tightlist
 \item
+  \texttt{droplevels()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Drop unused levels from factors.
+  \item
+    This function will keep levels that have even 1 or 2 counts. If you want to remove levels with low counts from a data set in order to simplify your analysis, first filter out those rows and then use \texttt{droplevels()}.
+  \end{itemize}
+\item
   \texttt{duplicated()}
 
   \begin{itemize}
   \tightlist
   \item
-    See also \texttt{data.table::duplicated()}
+    See also \texttt{data.table::duplicated()}.
   \end{itemize}
 \item
   \texttt{unique()}
@@ -935,7 +945,7 @@ Parameterized query:
   \begin{itemize}
   \tightlist
   \item
-    See also \texttt{data.table::unique()}
+    See also \texttt{data.table::unique()}.
   \end{itemize}
 \end{itemize}
 
@@ -951,7 +961,7 @@ Parameterized query:
   \begin{itemize}
   \tightlist
   \item
-    See also \texttt{base::duplicated()}
+    See also \texttt{base::duplicated()}.
   \end{itemize}
 \item
   \texttt{unique()}
@@ -959,7 +969,7 @@ Parameterized query:
   \begin{itemize}
   \tightlist
   \item
-    See also \texttt{base::unique()}
+    See also \texttt{base::unique()}.
   \end{itemize}
 \end{itemize}
 
@@ -1560,22 +1570,8 @@ Parameterized query:
   \begin{itemize}
   \tightlist
   \item
-    Note that \texttt{base::mean()} can be used to calculate a percentage when used in \texttt{dplyr::summarize()}, as follows:
+    Note that \texttt{base::mean()} can be used to calculate a percentage when used in \texttt{dplyr::summarize()}; see example below.
   \end{itemize}
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{by_country <-}\StringTok{ }
-\StringTok{  }\NormalTok{votes }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{group_by}\NormalTok{(country) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{total =} \KeywordTok{n}\NormalTok{(),}
-            \DataTypeTok{percent_yes =} \KeywordTok{mean}\NormalTok{(vote }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{itemize}
-\tightlist
 \item
   \texttt{median()}
 \item
@@ -1757,6 +1753,22 @@ Parameterized query:
 \item
   \texttt{var()}
 \end{itemize}
+
+\hypertarget{examples-3}{%
+\subsection{Examples}\label{examples-3}}
+
+\texttt{base::mean()}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{by_country <-}\StringTok{ }
+\StringTok{  }\NormalTok{votes }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(country) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{summarize}\NormalTok{(}
+    \DataTypeTok{total =} \KeywordTok{n}\NormalTok{(),}
+    \DataTypeTok{percent_yes =} \KeywordTok{mean}\NormalTok{(vote }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{create-new-variables-or-modify-existing-ones}{%
 \section{Create New Variables or Modify Existing Ones}\label{create-new-variables-or-modify-existing-ones}}
@@ -2181,62 +2193,79 @@ Parameterized query:
 \begin{itemize}
 \tightlist
 \item
-  \texttt{droplevels}: Drop unused levels from factors.
+  \texttt{order()}
 
   \begin{itemize}
   \tightlist
   \item
-    This function will keep levels that have even 1 or 2 counts. If you want to remove levels with low counts from a data set in order to simplify your analysis, first \texttt{filter} out those rows and then use \texttt{droplevels}.
+    See also: \texttt{dplyr::arrange()}.
   \end{itemize}
 \item
-  \texttt{order}: Arrange in ascending or descending order.
+  \texttt{prop.table()}
 
   \begin{itemize}
   \tightlist
   \item
-    Alternative: \texttt{dplyr::arrange}.
-  \end{itemize}
-\item
-  \texttt{prop.table}: Express table entries as proportions of the marginal table.
-
-  \begin{itemize}
-  \tightlist
+    Express table entries as proportions of the marginal table (thus, as the values are proportions of the whole, \texttt{sum(prop.table(table\_name))} = 1.)
   \item
-    The input is a table produced by \texttt{table}.
-  \item
-    As these are proportions of the whole, \texttt{sum(prop.table(table\_name))} = 1.
+    The input is a table produced by \texttt{base::table()}.
   \item
     Specify conditional proportions on rows or columns by using the \texttt{margin} argument.
   \end{itemize}
 \item
-  \texttt{table}: Build a table of the counts at each combination of factor levels.
+  \texttt{table()}: Build a table of the counts at each combination of factor levels.
 
   \begin{itemize}
   \tightlist
   \item
-    Use \texttt{prop.table} to see the table entries expressed as proportions.
-  \end{itemize}
-\item
-  \texttt{dplr::all\_equal()}: Compare data frames.
-\item
-  \texttt{dplyr::arrange()}: Arrange rows by variable, in ascending order.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Related functions: \texttt{arrange\_all()}, \texttt{arrange\_at()}, \texttt{arrange\_if()}.
-  \end{itemize}
-\item
-  \texttt{dplyr::distinct()}: Select distinct rows.
-\item
-  \texttt{dplyr::filter()}: Return rows with matching conditions.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Use \texttt{\%in\%} when using multiple \texttt{\textbar{}} conditions. The following two commands, for example, are equivalent:
+    Use \texttt{base::prop.table()} to see the table entries expressed as proportions.
   \end{itemize}
 \end{itemize}
+
+\texttt{\{dplyr\}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{arrange()}
+\item
+  \texttt{distinct()}
+\item
+  \texttt{filter()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    When using multiple \texttt{\textbar{}} conditions, use \texttt{\%in\%} to save space; see example below.
+  \end{itemize}
+\item
+  \texttt{rename()}
+\item
+  \texttt{sample\_n()}
+\item
+  \texttt{select()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Use \texttt{?dplyr::select\_helpers} to see the available helper functions.
+  \end{itemize}
+\item
+  \texttt{slice()}
+\item
+  \texttt{transmute()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A combination of \texttt{dplyr::select()} and \texttt{dplyr::mutate()}.
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{examples-4}{%
+\subsection{Examples}\label{examples-4}}
+
+\texttt{dplyr::filter()}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2248,43 +2277,23 @@ Parameterized query:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{itemize}
-\tightlist
-\item
-  \texttt{dplyr::rename()}: Rename variables by name (a modification of \texttt{select}).
-\item
-  \texttt{dplyr::sample\_n()}: Sample n rows from a table.
-\item
-  \texttt{dplyr::select()}: Select/rename variables.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Helper functions include: \texttt{starts\_wit}, \texttt{ends\_with}, \texttt{contains}, \texttt{matches}, \texttt{num\_range}, and \texttt{one\_of}. See \texttt{?dplyr::select\_helpers}.
-  \item
-    Helper functions take strings (e.g., \texttt{contains("work")} rather than \texttt{contains(work)}).
-  \end{itemize}
-\item
-  \texttt{dplyr::slice()}: Choose rows by position.
-\item
-  \texttt{dplyr::transmute()}: Create or transform variables.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Like a combination of \texttt{dplyr::select} and \texttt{dplyr::mutate}.
-  \end{itemize}
-\end{itemize}
-
 \hypertarget{test-1}{%
 \section{Test}\label{test-1}}
 
+\texttt{\{base\}}
+
 \begin{itemize}
 \tightlist
 \item
-  \texttt{base::identical()}: Test objects for exact equality.
+  \texttt{identical()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    See also \texttt{dplyr::all\_equal()}, \texttt{dplyr::near()}.
+  \end{itemize}
 \item
-  \texttt{base::match()}: Value matching.
+  \texttt{match()}
 
   \begin{itemize}
   \tightlist
@@ -2292,29 +2301,68 @@ Parameterized query:
     \texttt{\%in\%} is the more intuitive binary operator.
   \end{itemize}
 \item
-  \texttt{base::setequal()}: Check two vectors for equality.
-\item
-  \texttt{base::which()}: Determine which indices are \texttt{TRUE}.
+  \texttt{setequal()}
 
   \begin{itemize}
   \tightlist
   \item
-    This function is often unnecessary, according to the DataCamp article \href{https://www.datacamp.com/community/tutorials/five-tips-r-code-improve}{``Five Tips to Improve Your R Code''}.
+    Check two vectors for equality.
+  \item
+    See also \texttt{dplyr::near()}.
   \end{itemize}
 \item
-  \texttt{base::which.min()}/\texttt{base::which.max()}: Where is the \texttt{min()}/\texttt{max()} or first \texttt{TRUE}/\texttt{FALSE}?
+  \texttt{which()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This function is often unnecessary, according to \href{https://www.datacamp.com/community/tutorials/five-tips-r-code-improve}{``Five Tips to Improve Your R Code''}.
+  \end{itemize}
 \item
-  \texttt{\%in\%}: See \texttt{base::match()}.
+  \texttt{which.max()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Use also to identify the first \texttt{TRUE}/\texttt{FALSE}.
+  \end{itemize}
+\item
+  \texttt{which.min()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Use also to identify the first \texttt{TRUE}/\texttt{FALSE}.
+  \end{itemize}
+\end{itemize}
+
+\texttt{\{dplyr\}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{all\_equal()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Compare data frames.
+  \end{itemize}
+\item
+  \texttt{near()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    See also \texttt{base::identical()}.
+  \end{itemize}
 \end{itemize}
 
 \hypertarget{visualize}{%
 \chapter{Visualize}\label{visualize}}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
 ``Visualisation is a fundamentally human activity. A good visualisation will show you things that you did not expect, or raise new questions about the data. A good visualisation might also hint that you're asking the wrong question, or you need to collect different data. Visualisations can surprise you, but don't scale particularly well because they require a human to interpret them.''\\
 - Garrett Grolemund \& Hadley Wickham, \emph{R for Data Science}
-***
 
 \hypertarget{interfaces}{%
 \section{Interfaces}\label{interfaces}}
@@ -2329,8 +2377,6 @@ Parameterized query:
 
 \hypertarget{graphs-charts-and-plots}{%
 \section{Graphs, Charts, and Plots}\label{graphs-charts-and-plots}}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{itemize}
 \tightlist
@@ -2743,8 +2789,8 @@ Parameterized query:
   \end{itemize}
 \end{itemize}
 
-\hypertarget{examples-3}{%
-\subsubsection{Examples}\label{examples-3}}
+\hypertarget{examples-5}{%
+\subsubsection{Examples}\label{examples-5}}
 
 \begin{itemize}
 \tightlist
@@ -2809,11 +2855,8 @@ Parameterized query:
 \hypertarget{model}{%
 \chapter{Model}\label{model}}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
 ``Models are complementary tools to visualisation. Once you have made your questions sufficiently precise, you can use a model to answer them. Models are a fundamentally mathematical or computational tool, so they generally scale well. \ldots{} But every model makes assumptions, and by its very nature a model cannot question its own assumptions. That means a model cannot fundamentally surprise you.
 - Garrett Grolemund \& Hadley Wickham, \emph{R for Data Science}''
-***
 
 \hypertarget{cluster-analysis}{%
 \section{Cluster Analysis}\label{cluster-analysis}}
@@ -3861,8 +3904,8 @@ References:
   \texttt{zeallot::\%\textless{}-\%}: Multiple assignment operator (see example below).
 \end{itemize}
 
-\hypertarget{examples-4}{%
-\subsubsection{Examples}\label{examples-4}}
+\hypertarget{examples-6}{%
+\subsubsection{Examples}\label{examples-6}}
 
 \begin{itemize}
 \tightlist
@@ -4010,8 +4053,8 @@ References:
   \texttt{purrr:pluck()}: See also \texttt{magrittr::extract2()}.
 \end{itemize}
 
-\hypertarget{examples-5}{%
-\subsubsection{Examples}\label{examples-5}}
+\hypertarget{examples-7}{%
+\subsubsection{Examples}\label{examples-7}}
 
 \begin{itemize}
 \tightlist

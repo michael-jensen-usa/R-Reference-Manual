@@ -49,9 +49,7 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
@@ -166,12 +164,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>Transform</a><ul>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#arithmetic-summary-statistics"><i class="fa fa-check"></i>Arithmetic &amp; Summary Statistics</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#arithmetic-summary-statistics"><i class="fa fa-check"></i>Arithmetic &amp; Summary Statistics</a><ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#examples-3"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#create-new-variables-or-modify-existing-ones"><i class="fa fa-check"></i>Create New Variables or Modify Existing Ones</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#dates-and-datetimes-1"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#factors"><i class="fa fa-check"></i>Factors</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#merge-or-append-data"><i class="fa fa-check"></i>Merge or Append Data</a></li>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#narrow-in-on-observations-of-interest"><i class="fa fa-check"></i>Narrow in on Observations of Interest</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#narrow-in-on-observations-of-interest"><i class="fa fa-check"></i>Narrow in on Observations of Interest</a><ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#examples-4"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test-1"><i class="fa fa-check"></i>Test</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i>Visualize</a><ul>
@@ -298,13 +300,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>Tidy Data</h2>
 <p><code>{base}</code></p>
 <ul>
+<li><code>droplevels()</code>
+<ul>
+<li>Drop unused levels from factors.</li>
+<li>This function will keep levels that have even 1 or 2 counts. If you want to remove levels with low counts from a data set in order to simplify your analysis, first filter out those rows and then use <code>droplevels()</code>.</li>
+</ul></li>
 <li><code>duplicated()</code>
 <ul>
-<li>See also <code>data.table::duplicated()</code></li>
+<li>See also <code>data.table::duplicated()</code>.</li>
 </ul></li>
 <li><code>unique()</code>
 <ul>
-<li>See also <code>data.table::unique()</code></li>
+<li>See also <code>data.table::unique()</code>.</li>
 </ul></li>
 </ul>
 <p><code>{data.table}</code></p>
@@ -312,11 +319,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>anyDuplicated()</code></li>
 <li><code>duplicated()</code>
 <ul>
-<li>See also <code>base::duplicated()</code></li>
+<li>See also <code>base::duplicated()</code>.</li>
 </ul></li>
 <li><code>unique()</code>
 <ul>
-<li>See also <code>base::unique()</code></li>
+<li>See also <code>base::unique()</code>.</li>
 </ul></li>
 </ul>
 <p><code>{dplyr}</code></p>

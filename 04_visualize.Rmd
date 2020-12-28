@@ -1,9 +1,7 @@
 # Visualize
-***
 
 "Visualisation is a fundamentally human activity. A good visualisation will show you things that you did not expect, or raise new questions about the data. A good visualisation might also hint that you're asking the wrong question, or you need to collect different data. Visualisations can surprise you, but don't scale particularly well because they require a human to interpret them."  
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*
-***
 
 ## Interfaces
 ***
@@ -11,7 +9,6 @@
 * `shiny`
 
 ## Graphs, Charts, and Plots
-***
 
 * `base::abline()`
   * Add straight lines to a plot.

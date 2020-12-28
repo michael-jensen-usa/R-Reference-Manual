@@ -53,18 +53,21 @@
 
 `{base}`
 
+* `droplevels()`
+  * Drop unused levels from factors.
+  * This function will keep levels that have even 1 or 2 counts. If you want to remove levels with low counts from a data set in order to simplify your analysis, first filter out those rows and then use `droplevels()`.
 * `duplicated()`
-  * See also `data.table::duplicated()`
+  * See also `data.table::duplicated()`.
 * `unique()`
-  * See also `data.table::unique()`
+  * See also `data.table::unique()`.
   
 `{data.table}`
   
 * `anyDuplicated()`
 * `duplicated()`
-  * See also `base::duplicated()`
+  * See also `base::duplicated()`.
 * `unique()`
-  * See also `base::unique()`
+  * See also `base::unique()`.
 
 `{dplyr}`
 

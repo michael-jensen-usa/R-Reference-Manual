@@ -18,16 +18,7 @@
 * `IQR()`
 * `max()`
 * `mean()`
-  * Note that `base::mean()` can be used to calculate a percentage when used in `dplyr::summarize()`, as follows:
-  
-```{r, eval=FALSE}
-by_country <- 
-  votes %>% 
-  group_by(country) %>% 
-  summarize(total = n(),
-            percent_yes = mean(vote == 1))
-```
-
+  * Note that `base::mean()` can be used to calculate a percentage when used in `dplyr::summarize()`; see example below.
 * `median()`
 * `min()`
 * Mode: Use `table` to view the mode of a data set.
@@ -64,7 +55,6 @@ by_country <-
 * `tally()`
 * `top_n()`
 
-
 `{dummies}`
 
 * `dummy.data.frame()`
@@ -93,6 +83,19 @@ by_country <-
 * `lag()`
 * `rnorm()`
 * `var()`
+
+### Examples
+
+`base::mean()`
+
+```{r, eval=FALSE}
+by_country <- 
+  votes %>% 
+  group_by(country) %>% 
+  summarize(
+    total = n(),
+    percent_yes = mean(vote == 1))
+```
 
 ## Create New Variables or Modify Existing Ones
 
@@ -252,24 +255,33 @@ df <-
 
 `{base}`
 
-* `droplevels`: Drop unused levels from factors.
-  * This function will keep levels that have even 1 or 2 counts. If you want to remove levels with low counts from a data set in order to simplify your analysis, first `filter` out those rows and then use `droplevels`.
-* `order`: Arrange in ascending or descending order.
-  * Alternative: `dplyr::arrange`.
-* `prop.table`: Express table entries as proportions of the marginal table.
-  * The input is a table produced by `table`.
-  * As these are proportions of the whole, `sum(prop.table(table_name))` = 1.
+* `order()`
+  * See also: `dplyr::arrange()`.
+* `prop.table()`
+  * Express table entries as proportions of the marginal table (thus, as the values are proportions of the whole, `sum(prop.table(table_name))` = 1.)
+  * The input is a table produced by `base::table()`.
   * Specify conditional proportions on rows or columns by using the `margin` argument.
-* `table`: Build a table of the counts at each combination of factor levels.
-  * Use `prop.table` to see the table entries expressed as proportions.
+* `table()`: Build a table of the counts at each combination of factor levels.
+  * Use `base::prop.table()` to see the table entries expressed as proportions.
 
+`{dplyr}`
 
-* `dplr::all_equal()`: Compare data frames.
-* `dplyr::arrange()`: Arrange rows by variable, in ascending order.
-    + Related functions: `arrange_all()`, `arrange_at()`, `arrange_if()`.
-* `dplyr::distinct()`: Select distinct rows.
-* `dplyr::filter()`: Return rows with matching conditions.
-  * Use `%in%` when using multiple `|` conditions. The following two commands, for example, are equivalent:
+* `arrange()`
+* `distinct()`
+* `filter()`
+  * When using multiple `|` conditions, use `%in%` to save space; see example below.
+* `rename()`
+* `sample_n()`
+* `select()`
+  * Use `?dplyr::select_helpers` to see the available helper functions.
+* `slice()`
+* `transmute()`
+  * A combination of `dplyr::select()` and `dplyr::mutate()`.
+
+### Examples
+
+`dplyr::filter()`
+
 ```{r, eval=FALSE}
 ilo_data %>% 
   filter(country %in% c("Sweden", "Switzerland"))
@@ -277,23 +289,29 @@ ilo_data %>%
 ilo_data %>% 
   filter(country == "Sweden" | country == "Switzerland")
 ```
-    
-* `dplyr::rename()`: Rename variables by name (a modification of `select`).
-* `dplyr::sample_n()`: Sample n rows from a table.
-* `dplyr::select()`: Select/rename variables. 
-  * Helper functions include: `starts_wit`, `ends_with`, `contains`, `matches`, `num_range`, and `one_of`. See `?dplyr::select_helpers`.
-  * Helper functions take strings (e.g., `contains("work")` rather than `contains(work)`).
-* `dplyr::slice()`: Choose rows by position.
-* `dplyr::transmute()`: Create or transform variables.
-  * Like a combination of `dplyr::select` and `dplyr::mutate`.
 
 ## Test
 
-* `base::identical()`: Test objects for exact equality.
-* `base::match()`: Value matching.
-    + `%in%` is the more intuitive binary operator.
-* `base::setequal()`: Check two vectors for equality.
-* `base::which()`: Determine which indices are `TRUE`.
-    + This function is often unnecessary, according to the DataCamp article ["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve).
-* `base::which.min()`/`base::which.max()`: Where is the `min()`/`max()` or first `TRUE`/`FALSE`?
-* `%in%`: See `base::match()`.
+`{base}`
+
+* `identical()`
+  * See also `dplyr::all_equal()`, `dplyr::near()`.
+* `match()`
+  * `%in%` is the more intuitive binary operator.
+* `setequal()`
+  * Check two vectors for equality.
+  * See also `dplyr::near()`.
+* `which()`
+  * This function is often unnecessary, according to ["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve).
+* `which.max()`
+  * Use also to identify the first `TRUE`/`FALSE`.
+* `which.min()`
+  * Use also to identify the first `TRUE`/`FALSE`.
+
+`{dplyr}`
+
+* `all_equal()`
+  * Compare data frames.
+* `near()`
+  * See also `base::identical()`.
+  

@@ -49,9 +49,7 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
@@ -166,12 +164,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>Transform</a><ul>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#arithmetic-summary-statistics"><i class="fa fa-check"></i>Arithmetic &amp; Summary Statistics</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#arithmetic-summary-statistics"><i class="fa fa-check"></i>Arithmetic &amp; Summary Statistics</a><ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#examples-3"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#create-new-variables-or-modify-existing-ones"><i class="fa fa-check"></i>Create New Variables or Modify Existing Ones</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#dates-and-datetimes-1"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#factors"><i class="fa fa-check"></i>Factors</a></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#merge-or-append-data"><i class="fa fa-check"></i>Merge or Append Data</a></li>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#narrow-in-on-observations-of-interest"><i class="fa fa-check"></i>Narrow in on Observations of Interest</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#narrow-in-on-observations-of-interest"><i class="fa fa-check"></i>Narrow in on Observations of Interest</a><ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#examples-4"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test-1"><i class="fa fa-check"></i>Test</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i>Visualize</a><ul>
@@ -253,15 +255,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>max()</code></li>
 <li><code>mean()</code>
 <ul>
-<li>Note that <code>base::mean()</code> can be used to calculate a percentage when used in <code>dplyr::summarize()</code>, as follows:</li>
+<li>Note that <code>base::mean()</code> can be used to calculate a percentage when used in <code>dplyr::summarize()</code>; see example below.</li>
 </ul></li>
-</ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="transform.html#cb7-1"></a>by_country &lt;-<span class="st"> </span></span>
-<span id="cb7-2"><a href="transform.html#cb7-2"></a><span class="st">  </span>votes <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb7-3"><a href="transform.html#cb7-3"></a><span class="st">  </span><span class="kw">group_by</span>(country) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb7-4"><a href="transform.html#cb7-4"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">total =</span> <span class="kw">n</span>(),</span>
-<span id="cb7-5"><a href="transform.html#cb7-5"></a>            <span class="dt">percent_yes =</span> <span class="kw">mean</span>(vote <span class="op">==</span><span class="st"> </span><span class="dv">1</span>))</span></code></pre></div>
-<ul>
 <li><code>median()</code></li>
 <li><code>min()</code></li>
 <li>Mode: Use <code>table</code> to view the mode of a data set.</li>
@@ -353,6 +348,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>rnorm()</code></li>
 <li><code>var()</code></li>
 </ul>
+<div id="examples-3" class="section level3">
+<h3>Examples</h3>
+<p><code>base::mean()</code></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="transform.html#cb7-1"></a>by_country &lt;-<span class="st"> </span></span>
+<span id="cb7-2"><a href="transform.html#cb7-2"></a><span class="st">  </span>votes <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb7-3"><a href="transform.html#cb7-3"></a><span class="st">  </span><span class="kw">group_by</span>(country) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb7-4"><a href="transform.html#cb7-4"></a><span class="st">  </span><span class="kw">summarize</span>(</span>
+<span id="cb7-5"><a href="transform.html#cb7-5"></a>    <span class="dt">total =</span> <span class="kw">n</span>(),</span>
+<span id="cb7-6"><a href="transform.html#cb7-6"></a>    <span class="dt">percent_yes =</span> <span class="kw">mean</span>(vote <span class="op">==</span><span class="st"> </span><span class="dv">1</span>))</span></code></pre></div>
+</div>
 </div>
 <div id="create-new-variables-or-modify-existing-ones" class="section level2">
 <h2>Create New Variables or Modify Existing Ones</h2>
@@ -574,70 +579,91 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>Narrow in on Observations of Interest</h2>
 <p><code>{base}</code></p>
 <ul>
-<li><code>droplevels</code>: Drop unused levels from factors.
+<li><code>order()</code>
 <ul>
-<li>This function will keep levels that have even 1 or 2 counts. If you want to remove levels with low counts from a data set in order to simplify your analysis, first <code>filter</code> out those rows and then use <code>droplevels</code>.</li>
+<li>See also: <code>dplyr::arrange()</code>.</li>
 </ul></li>
-<li><code>order</code>: Arrange in ascending or descending order.
+<li><code>prop.table()</code>
 <ul>
-<li>Alternative: <code>dplyr::arrange</code>.</li>
-</ul></li>
-<li><code>prop.table</code>: Express table entries as proportions of the marginal table.
-<ul>
-<li>The input is a table produced by <code>table</code>.</li>
-<li>As these are proportions of the whole, <code>sum(prop.table(table_name))</code> = 1.</li>
+<li>Express table entries as proportions of the marginal table (thus, as the values are proportions of the whole, <code>sum(prop.table(table_name))</code> = 1.)</li>
+<li>The input is a table produced by <code>base::table()</code>.</li>
 <li>Specify conditional proportions on rows or columns by using the <code>margin</code> argument.</li>
 </ul></li>
-<li><code>table</code>: Build a table of the counts at each combination of factor levels.
+<li><code>table()</code>: Build a table of the counts at each combination of factor levels.
 <ul>
-<li>Use <code>prop.table</code> to see the table entries expressed as proportions.</li>
-</ul></li>
-<li><code>dplr::all_equal()</code>: Compare data frames.</li>
-<li><code>dplyr::arrange()</code>: Arrange rows by variable, in ascending order.
-<ul>
-<li>Related functions: <code>arrange_all()</code>, <code>arrange_at()</code>, <code>arrange_if()</code>.</li>
-</ul></li>
-<li><code>dplyr::distinct()</code>: Select distinct rows.</li>
-<li><code>dplyr::filter()</code>: Return rows with matching conditions.
-<ul>
-<li>Use <code>%in%</code> when using multiple <code>|</code> conditions. The following two commands, for example, are equivalent:</li>
+<li>Use <code>base::prop.table()</code> to see the table entries expressed as proportions.</li>
 </ul></li>
 </ul>
+<p><code>{dplyr}</code></p>
+<ul>
+<li><code>arrange()</code></li>
+<li><code>distinct()</code></li>
+<li><code>filter()</code>
+<ul>
+<li>When using multiple <code>|</code> conditions, use <code>%in%</code> to save space; see example below.</li>
+</ul></li>
+<li><code>rename()</code></li>
+<li><code>sample_n()</code></li>
+<li><code>select()</code>
+<ul>
+<li>Use <code>?dplyr::select_helpers</code> to see the available helper functions.</li>
+</ul></li>
+<li><code>slice()</code></li>
+<li><code>transmute()</code>
+<ul>
+<li>A combination of <code>dplyr::select()</code> and <code>dplyr::mutate()</code>.</li>
+</ul></li>
+</ul>
+<div id="examples-4" class="section level3">
+<h3>Examples</h3>
+<p><code>dplyr::filter()</code></p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="transform.html#cb9-1"></a>ilo_data <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb9-2"><a href="transform.html#cb9-2"></a><span class="st">  </span><span class="kw">filter</span>(country <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Sweden&quot;</span>, <span class="st">&quot;Switzerland&quot;</span>))</span>
 <span id="cb9-3"><a href="transform.html#cb9-3"></a></span>
 <span id="cb9-4"><a href="transform.html#cb9-4"></a>ilo_data <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb9-5"><a href="transform.html#cb9-5"></a><span class="st">  </span><span class="kw">filter</span>(country <span class="op">==</span><span class="st"> &quot;Sweden&quot;</span> <span class="op">|</span><span class="st"> </span>country <span class="op">==</span><span class="st"> &quot;Switzerland&quot;</span>)</span></code></pre></div>
-<ul>
-<li><code>dplyr::rename()</code>: Rename variables by name (a modification of <code>select</code>).</li>
-<li><code>dplyr::sample_n()</code>: Sample n rows from a table.</li>
-<li><code>dplyr::select()</code>: Select/rename variables.
-<ul>
-<li>Helper functions include: <code>starts_wit</code>, <code>ends_with</code>, <code>contains</code>, <code>matches</code>, <code>num_range</code>, and <code>one_of</code>. See <code>?dplyr::select_helpers</code>.</li>
-<li>Helper functions take strings (e.g., <code>contains("work")</code> rather than <code>contains(work)</code>).</li>
-</ul></li>
-<li><code>dplyr::slice()</code>: Choose rows by position.</li>
-<li><code>dplyr::transmute()</code>: Create or transform variables.
-<ul>
-<li>Like a combination of <code>dplyr::select</code> and <code>dplyr::mutate</code>.</li>
-</ul></li>
-</ul>
+</div>
 </div>
 <div id="test-1" class="section level2">
 <h2>Test</h2>
+<p><code>{base}</code></p>
 <ul>
-<li><code>base::identical()</code>: Test objects for exact equality.</li>
-<li><code>base::match()</code>: Value matching.
+<li><code>identical()</code>
+<ul>
+<li>See also <code>dplyr::all_equal()</code>, <code>dplyr::near()</code>.</li>
+</ul></li>
+<li><code>match()</code>
 <ul>
 <li><code>%in%</code> is the more intuitive binary operator.</li>
 </ul></li>
-<li><code>base::setequal()</code>: Check two vectors for equality.</li>
-<li><code>base::which()</code>: Determine which indices are <code>TRUE</code>.
+<li><code>setequal()</code>
 <ul>
-<li>This function is often unnecessary, according to the DataCamp article <a href="https://www.datacamp.com/community/tutorials/five-tips-r-code-improve">“Five Tips to Improve Your R Code”</a>.</li>
+<li>Check two vectors for equality.</li>
+<li>See also <code>dplyr::near()</code>.</li>
 </ul></li>
-<li><code>base::which.min()</code>/<code>base::which.max()</code>: Where is the <code>min()</code>/<code>max()</code> or first <code>TRUE</code>/<code>FALSE</code>?</li>
-<li><code>%in%</code>: See <code>base::match()</code>.</li>
+<li><code>which()</code>
+<ul>
+<li>This function is often unnecessary, according to <a href="https://www.datacamp.com/community/tutorials/five-tips-r-code-improve">“Five Tips to Improve Your R Code”</a>.</li>
+</ul></li>
+<li><code>which.max()</code>
+<ul>
+<li>Use also to identify the first <code>TRUE</code>/<code>FALSE</code>.</li>
+</ul></li>
+<li><code>which.min()</code>
+<ul>
+<li>Use also to identify the first <code>TRUE</code>/<code>FALSE</code>.</li>
+</ul></li>
+</ul>
+<p><code>{dplyr}</code></p>
+<ul>
+<li><code>all_equal()</code>
+<ul>
+<li>Compare data frames.</li>
+</ul></li>
+<li><code>near()</code>
+<ul>
+<li>See also <code>base::identical()</code>.</li>
+</ul></li>
 </ul>
 
 </div>

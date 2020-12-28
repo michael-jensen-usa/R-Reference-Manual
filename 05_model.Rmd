@@ -1,9 +1,7 @@
 # Model
-***
 
 "Models are complementary tools to visualisation. Once you have made your questions sufficiently precise, you can use a model to answer them. Models are a fundamentally mathematical or computational tool, so they generally scale well. ... But every model makes assumptions, and by its very nature a model cannot question its own assumptions. That means a model cannot fundamentally surprise you. 
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*"
-***
 
 ## Cluster Analysis
 
