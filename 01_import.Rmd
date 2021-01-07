@@ -282,6 +282,7 @@ map(as.list(df$input_column), query_data) %>% bind_rows()
 
 * ["10 Easy Steps to a Complete Understanding of SQL"](https://blog.jooq.org/2016/03/17/10-easy-steps-to-a-complete-understanding-of-sql/)
 * ["Query Planning"](https://www.sqlite.org/queryplanner.html)
+* ["Using SQL in RStudio](https://irene.rbind.io/post/using-sql-in-rstudio/) by Irene Steves
 
 ## Notes & References
 
