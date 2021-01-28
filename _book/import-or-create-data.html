@@ -304,10 +304,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><code>{readr}</code></p>
 <ul>
-<li><code>read_csv()</code></li>
+<li><code>read_csv()</code>
+<ul>
+<li><code>read_csv()</code> may import the data with as an object with an <code>spec_tbl_df</code> subclass, which can be removed as follows <code>read_csv("file_path.csv") %&gt;% .[]</code>.</li>
+</ul></li>
 <li><code>read_csv2()</code></li>
 <li><code>read_delim()</code></li>
-<li><code>rread_tsv()</code></li>
+<li><code>read_tsv()</code></li>
 </ul>
 <p><code>{readxl}</code></p>
 <ul>

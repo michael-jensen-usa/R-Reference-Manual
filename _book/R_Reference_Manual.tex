@@ -148,7 +148,7 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 ## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
 \end{verbatim}
 
-\hypertarget{htmlwidget-92de03c4df0c24ed045f}{}
+\hypertarget{htmlwidget-61e7924f04a230593e7d}{}
 
 \hypertarget{references-resources}{%
 \section{References \& Resources}\label{references-resources}}
@@ -372,12 +372,18 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 \tightlist
 \item
   \texttt{read\_csv()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{read\_csv()} may import the data with as an object with an \texttt{spec\_tbl\_df} subclass, which can be removed as follows \texttt{read\_csv("file\_path.csv")\ \%\textgreater{}\%\ .{[}{]}}.
+  \end{itemize}
 \item
   \texttt{read\_csv2()}
 \item
   \texttt{read\_delim()}
 \item
-  \texttt{rread\_tsv()}
+  \texttt{read\_tsv()}
 \end{itemize}
 
 \texttt{\{readxl\}}
