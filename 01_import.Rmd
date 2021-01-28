@@ -55,9 +55,10 @@
 `{readr}`
 
 * `read_csv()`
+  * `read_csv()` may import the data with as an object with an `spec_tbl_df` subclass, which can be removed as follows `read_csv("file_path.csv") %>% .[]`.
 * `read_csv2()`
 * `read_delim()`
-* `rread_tsv()`
+* `read_tsv()`
 
 `{readxl}`
 
