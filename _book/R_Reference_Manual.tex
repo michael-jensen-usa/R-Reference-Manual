@@ -148,7 +148,7 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
 ## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
 \end{verbatim}
 
-\hypertarget{htmlwidget-61e7924f04a230593e7d}{}
+\hypertarget{htmlwidget-3eaa658961bf225c16b2}{}
 
 \hypertarget{references-resources}{%
 \section{References \& Resources}\label{references-resources}}
@@ -2386,10 +2386,12 @@ Parameterized query:
 \hypertarget{graphs-charts-and-plots}{%
 \section{Graphs, Charts, and Plots}\label{graphs-charts-and-plots}}
 
+\texttt{\{base\}}
+
 \begin{itemize}
 \tightlist
 \item
-  \texttt{base::abline()}
+  \texttt{abline()}
 
   \begin{itemize}
   \tightlist
@@ -2397,23 +2399,23 @@ Parameterized query:
     Add straight lines to a plot.
   \end{itemize}
 \item
-  \texttt{base::plot()}
+  \texttt{plot()}
 \item
-  \texttt{base::points()}
+  \texttt{points()}
+\end{itemize}
 
-  \begin{itemize}
-  \tightlist
-  \item
-    Add points to a plot.
-  \end{itemize}
+\texttt{\{diagram\}}
+
+\texttt{\{DiagrammeR\}}
+
+\texttt{\{GGally\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{diagram}
+  \texttt{ggally\_box()}
 \item
-  \texttt{DiagrammeR}
-\item
-  \texttt{GGally::ggally\_box()}
-\item
-  \texttt{GGally::ggpairs()}
+  \texttt{ggpairs()}
 
   \begin{itemize}
   \tightlist
@@ -2421,17 +2423,29 @@ Parameterized query:
     Scatter plot matrix (SPLOM).
   \end{itemize}
 \item
-  \texttt{GGally::ggparcoord()}
+  \texttt{ggparcoord()}
 
   \begin{itemize}
   \tightlist
   \item
     Parallel coordinate plots.
   \end{itemize}
+\end{itemize}
+
+\texttt{\{ggbeeswarm\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{ggbeeswarm::geom\_beeswarm()}
+  \texttt{geom\_beeswarm()}
+\end{itemize}
+
+\texttt{\{ggplot2\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{ggplot2::aes()}
+  \texttt{aes()}
 
   \begin{itemize}
   \tightlist
@@ -2447,7 +2461,7 @@ Parameterized query:
     Helper functions to include in the call when needing to modify the data include: \texttt{stats::reorder()}.
   \end{itemize}
 \item
-  \texttt{ggplot2::coord\_cartesian()}
+  \texttt{coord\_cartesian()}
 
   \begin{itemize}
   \tightlist
@@ -2455,7 +2469,7 @@ Parameterized query:
     Zoom a plot in or out without changing the underlying data.
   \end{itemize}
 \item
-  \texttt{ggplot2::coord\_flip()}
+  \texttt{coord\_flip()}
 
   \begin{itemize}
   \tightlist
@@ -2463,7 +2477,7 @@ Parameterized query:
     Flip the x and y axes.
   \end{itemize}
 \item
-  \texttt{ggplot2::coord\_polar()}
+  \texttt{coord\_polar()}
 
   \begin{itemize}
   \tightlist
@@ -2471,15 +2485,15 @@ Parameterized query:
     Use to convert a stacked bar chart to a pie chart.
   \end{itemize}
 \item
-  \texttt{ggplot2::element\_blank()}
+  \texttt{element\_blank()}
 \item
-  \texttt{ggplot2::element\_line()}
+  \texttt{element\_line()}
 \item
-  \texttt{ggplot2::element\_rect()}
+  \texttt{element\_rect()}
 \item
-  \texttt{ggplot2::element\_text()}
+  \texttt{element\_text()}
 \item
-  \texttt{ggplot2::facet\_grid()}
+  \texttt{facet\_grid()}
 
   \begin{itemize}
   \tightlist
@@ -2489,7 +2503,7 @@ Parameterized query:
     \texttt{ROWS\ \textasciitilde{}\ COLS}: When using a tilde function, the variable on the left specifies the rows and the variable on the right specifies the columns. When faceting in only one direction (e.g., only on rows), use \texttt{.} to specify nothing for the unused direction.
   \end{itemize}
 \item
-  \texttt{ggplot2::facet\_wrap()}
+  \texttt{facet\_wrap()}
 
   \begin{itemize}
   \tightlist
@@ -2497,7 +2511,7 @@ Parameterized query:
     Wrap a 1D ribbon of panels into 2D (observe a variable, conditional on another variable).
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_abline()}
+  \texttt{geom\_abline()}
 
   \begin{itemize}
   \tightlist
@@ -2505,7 +2519,7 @@ Parameterized query:
     Add reference lines to a plot.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_bar()}
+  \texttt{geom\_bar()}
 
   \begin{itemize}
   \tightlist
@@ -2513,9 +2527,9 @@ Parameterized query:
     Create a bar chart, where the height of the bar is proportional to the number of cases in each group.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_boxplot()}
+  \texttt{geom\_boxplot()}
 \item
-  \texttt{ggplot2::geom\_col()}
+  \texttt{geom\_col()}
 
   \begin{itemize}
   \tightlist
@@ -2523,7 +2537,7 @@ Parameterized query:
     Create a bar chart, where the height of the bar represents values in the data.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_density()}
+  \texttt{geom\_density()}
 
   \begin{itemize}
   \tightlist
@@ -2533,7 +2547,7 @@ Parameterized query:
     Consider using \texttt{ggplot2::geom\_rug()} with \texttt{ggplot2::geom\_density()} in order to be transparent about smoothed data.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_dotplot()}
+  \texttt{geom\_dotplot()}
 
   \begin{itemize}
   \tightlist
@@ -2541,7 +2555,7 @@ Parameterized query:
     Create a histogram out of dots.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_errorbar()}
+  \texttt{geom\_errorbar()}
 
   \begin{itemize}
   \tightlist
@@ -2549,7 +2563,7 @@ Parameterized query:
     Shortcut for \texttt{geom\_bar(stat\ =\ "identity")}.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_histogram()}
+  \texttt{geom\_histogram()}
 
   \begin{itemize}
   \tightlist
@@ -2558,7 +2572,7 @@ Parameterized query:
   \end{itemize}
 \item
   \texttt{ggplot2::geom\_hline()}
-  *\texttt{ggplot2::geom\_jitter()}
+  *\texttt{geom\_jitter()}
 
   \begin{itemize}
   \tightlist
@@ -2566,7 +2580,7 @@ Parameterized query:
     Useful with \texttt{ggplot2::geom\_boxplot()}.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_path()}
+  \texttt{geom\_path()}
 
   \begin{itemize}
   \tightlist
@@ -2574,9 +2588,9 @@ Parameterized query:
     Connect observations in the order in which they appear.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_point()}
+  \texttt{geom\_point()}
 \item
-  \texttt{ggplot2::geom\_rug()}
+  \texttt{geom\_rug()}
 
   \begin{itemize}
   \tightlist
@@ -2584,7 +2598,7 @@ Parameterized query:
     Useful with \texttt{ggplot2::geom\_density()}.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_smooth()}
+  \texttt{geom\_smooth()}
 
   \begin{itemize}
   \tightlist
@@ -2592,9 +2606,9 @@ Parameterized query:
     Smoothed conditional means; aids the eye in seeing patterns in the presence of overplotting.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_text()}
+  \texttt{geom\_text()}
 \item
-  \texttt{ggplot2::geom\_tile()}
+  \texttt{geom\_tile()}
 
   \begin{itemize}
   \tightlist
@@ -2602,15 +2616,15 @@ Parameterized query:
     Heat maps.
   \end{itemize}
 \item
-  \texttt{ggplot2::geom\_violin()}
+  \texttt{geom\_violin()}
 \item
-  \texttt{ggplot2::geom\_vline()}
+  \texttt{geom\_vline()}
 \item
-  \texttt{ggplot2::ggplot()}
+  \texttt{ggplot()}
 \item
-  \texttt{ggplot2::ggtitle()}
+  \texttt{ggtitle()}
 \item
-  \texttt{ggplot2::group()}
+  \texttt{group()}
 
   \begin{itemize}
   \tightlist
@@ -2620,7 +2634,7 @@ Parameterized query:
     Note that \texttt{group} is usually unnecessary when specifying \texttt{color}, \texttt{shape}, \texttt{fill}, or \texttt{linetype} within \texttt{aes}, or when using facets. See \href{https://ggplot2.tidyverse.org/reference/aes_group_order.html}{``Aesthetics: grouping''} for more information.
   \end{itemize}
 \item
-  \texttt{ggplot2::labs()}
+  \texttt{labs()}
 
   \begin{itemize}
   \tightlist
@@ -2628,7 +2642,7 @@ Parameterized query:
     Modify axis, legend, and plot labels.
   \end{itemize}
 \item
-  \texttt{ggplot2::position\_identity()}
+  \texttt{position\_identity()}
 
   \begin{itemize}
   \tightlist
@@ -2636,7 +2650,7 @@ Parameterized query:
     Don't adjust position.
   \end{itemize}
 \item
-  \texttt{ggplot2::position\_dodge()}
+  \texttt{position\_dodge()}
 
   \begin{itemize}
   \tightlist
@@ -2644,7 +2658,7 @@ Parameterized query:
     Dodge overlapping objects side-to-side.
   \end{itemize}
 \item
-  \texttt{ggplot2::position\_nudge()}
+  \texttt{position\_nudge()}
 
   \begin{itemize}
   \tightlist
@@ -2652,7 +2666,7 @@ Parameterized query:
     Nudge points a fixed distance.
   \end{itemize}
 \item
-  \texttt{ggplot2::position\_stack()}
+  \texttt{position\_stack()}
 
   \begin{itemize}
   \tightlist
@@ -2660,7 +2674,7 @@ Parameterized query:
     Stack overlapping objects on top of each other, as counts.
   \end{itemize}
 \item
-  \texttt{ggplot2::position\_fill()}
+  \texttt{position\_fill()}
 
   \begin{itemize}
   \tightlist
@@ -2668,43 +2682,43 @@ Parameterized query:
     Stack overlapping objects on top of each other, as densities.
   \end{itemize}
 \item
-  \texttt{ggplot2::position\_jitter()}
+  \texttt{position\_jitter()}
 \item
-  \texttt{ggplot2::position\_jitterdodge()}
+  \texttt{position\_jitterdodge()}
 \item
-  \texttt{ggplot2::scale\_x\_continuous()}
+  \texttt{scale\_x\_*()}
 \item
-  \texttt{ggplot2::scale\_y\_*()}
+  \texttt{scale\_y\_*()}
 \item
-  \texttt{ggplot2::scale\_color\_manual()}
+  \texttt{scale\_color\_manual()}
 \item
-  \texttt{ggplot2::scale\_fill\_*()}
+  \texttt{scale\_fill\_*()}
 \item
-  \texttt{ggplot2::scale\_shape\_*()}
+  \texttt{scale\_shape\_*()}
 \item
-  \texttt{ggplot2::scale\_size()}
+  \texttt{scale\_size()}
 \item
-  \texttt{ggplot2::scale\_linetype\_*()}
+  \texttt{scale\_linetype\_*()}
 \item
-  \texttt{ggplot2::stat\_bin()}
+  \texttt{stat\_bin()}
 \item
-  \texttt{ggplot2::stat\_bin2d()}
+  \texttt{stat\_bin2d()}
 \item
-  \texttt{ggplot2::stat\_bindot()}
+  \texttt{stat\_bindot()}
 \item
-  \texttt{ggplot2::stat\_binhex()}
+  \texttt{stat\_binhex()}
 \item
-  \texttt{ggplot2::stat\_boxplot()}
+  \texttt{stat\_boxplot()}
 \item
-  \texttt{ggplot2::stat\_contour()}
+  \texttt{stat\_contour()}
 \item
-  \texttt{ggplot2::stat\_quantile()}
+  \texttt{stat\_quantile()}
 \item
-  \texttt{ggplot2::stat\_smooth()}
+  \texttt{stat\_smooth()}
 \item
-  \texttt{ggplot2::stat\_sum()}
+  \texttt{stat\_sum()}
 \item
-  \texttt{ggplot2::theme()}
+  \texttt{theme()}
 
   \begin{itemize}
   \tightlist
@@ -2712,11 +2726,11 @@ Parameterized query:
     See example for \texttt{grid::unit()}.
   \end{itemize}
 \item
-  \texttt{ggplot2::theme\_get()}
+  \texttt{theme\_get()}
 \item
-  \texttt{ggplot2::theme\_set()}
+  \texttt{theme\_set()}
 \item
-  \texttt{ggplot2::theme\_update()}
+  \texttt{theme\_update()}
 
   \begin{itemize}
   \tightlist
@@ -2724,43 +2738,55 @@ Parameterized query:
     ``When you call `theme\_update' and assign it to an object (e.g., called \texttt{old}), that object stores the \emph{current} default theme, and the arguments \emph{update} the default theme. If you want to restore the previous default theme, you can get it back by using \texttt{theme\_update} again.'' -DataCamp
   \end{itemize}
 \item
-  \texttt{ggplot2::xlab()}
+  \texttt{xlab()}
 \item
-  \texttt{ggplot2::xlim()}
+  \texttt{xlim()}
 \item
-  \texttt{ggplot2::ylab()}
+  \texttt{ylab()}
+\end{itemize}
+
+\texttt{\{ggridges\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{ggridges::geom\_density\_ridges()}
+  \texttt{geom\_density\_ridges()}
 
   \begin{itemize}
   \tightlist
   \item
     Create a ridgeline plot.
   \end{itemize}
-\item
-  \texttt{graphics::boxplot()}
+\end{itemize}
 
-  \begin{itemize}
-  \tightlist
-  \item
-    Create a box-and-whisker plot.
-  \end{itemize}
+\texttt{\{graphics\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{graphics::hist()}
+  \texttt{boxplot()}
 \item
-  \texttt{graphics::par()}
+  \texttt{hist()}
 \item
-  \texttt{graphics::stripchart()}
+  \texttt{par()}
+\item
+  \texttt{stripchart()}
 
   \begin{itemize}
   \tightlist
   \item
     One dimensional scatter plots.
   \item
-    Prefer over \texttt{ggplot} when creating one-dimensional plots.
+    Prefer over \texttt{ggplot2::ggplot()} when creating one-dimensional plots.
   \end{itemize}
+\end{itemize}
+
+\texttt{\{grDevices\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{grDevices::colorRamp()}
+  \texttt{colorRamp()}
 
   \begin{itemize}
   \tightlist
@@ -2768,15 +2794,21 @@ Parameterized query:
     Color interpolation.
   \end{itemize}
 \item
-  \texttt{grDevices::colorRampPalette()}
+  \texttt{colorRampPalette()}
 
   \begin{itemize}
   \tightlist
   \item
     Color interpolation.
   \end{itemize}
+\end{itemize}
+
+\texttt{\{grid\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{grid::unit()}
+  \texttt{unit()}
 
   \begin{itemize}
   \tightlist
@@ -2785,26 +2817,34 @@ Parameterized query:
   \item
     See example below.
   \end{itemize}
-\item
-  \texttt{plotly::plot\_ly()}
-\item
-  \texttt{RColorBrewer::brewer.pal()}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Make the ColorBrewer color palettes available as R palattes.
-  \end{itemize}
 \end{itemize}
 
-\hypertarget{examples-5}{%
-\subsubsection{Examples}\label{examples-5}}
+\texttt{\{plotly\}}
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{grid::unit}
+  \texttt{plot\_ly()}
 \end{itemize}
+
+\texttt{\{RColorBrewer\}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{brewer.pal()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Make the ColorBrewer color palettes available as R palettes.
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{examples-5}{%
+\subsection{Examples}\label{examples-5}}
+
+\texttt{grid::unit()}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2820,20 +2860,20 @@ Parameterized query:
 \hypertarget{graphs-charts-and-plots---statistics}{%
 \section{Graphs, Charts, and Plots - Statistics}\label{graphs-charts-and-plots---statistics}}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\texttt{\{ggplot2\}}
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{ggplot2::mean\_cl\_boot}
+  \texttt{mean\_cl\_boot}
 \item
-  \texttt{ggplot2::mean\_cl\_normal}
+  \texttt{mean\_cl\_normal}
 \item
-  \texttt{ggplot2::sdl}
+  \texttt{sdl}
 \item
-  \texttt{ggplot2::median\_hilow}
+  \texttt{median\_hilow}
 \item
-  \texttt{ggplot2::stat\_function}
+  \texttt{stat\_function}
 
   \begin{itemize}
   \tightlist
@@ -2841,7 +2881,7 @@ Parameterized query:
     Compute \texttt{y} values from a function of \texttt{x} values.
   \end{itemize}
 \item
-  \texttt{ggplot2::qq}
+  \texttt{qq}
 
   \begin{itemize}
   \tightlist
@@ -2849,9 +2889,9 @@ Parameterized query:
     Perfrm calculations for a quantile-quantile plot.
   \end{itemize}
 \item
-  \texttt{ggplot2::qq\_line}
+  \texttt{qq\_line}
 \item
-  \texttt{ggplot2::summary}
+  \texttt{summary}
 
   \begin{itemize}
   \tightlist
