@@ -83,6 +83,12 @@ ggplot(plot_data_2006) +
     text = element_text(family = "Bookman", color = "gray25"))
 ```
     
+## RStudio Connect
+
+`{rsconnect}`
+
+* `writeManifest()`
+
 ## RMarkdown
 ***
 

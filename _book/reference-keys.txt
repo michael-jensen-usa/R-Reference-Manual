@@ -50,6 +50,7 @@ export
 format-output
 graphics
 plots
+rstudio-connect
 rmarkdown
 program
 characters
