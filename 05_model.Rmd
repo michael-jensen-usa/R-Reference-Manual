@@ -37,6 +37,10 @@
 
 * `knn()`
 
+`{naivebayes}`
+
+* `naive_bayes()`
+
 ## Regression
 
 * `broom::augment`
