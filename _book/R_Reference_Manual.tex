@@ -2944,14 +2944,28 @@ Parameterized query:
 \hypertarget{general}{%
 \section{General}\label{general}}
 
+\texttt{\{base\}}
+
 \begin{itemize}
 \tightlist
 \item
-  \texttt{base::sample}
+  \texttt{sample()}
+\end{itemize}
+
+\texttt{\{dplyr\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{dplyr::sample\_n}
+  \texttt{sample\_n()}
+\end{itemize}
+
+\texttt{\{stats\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{stats::coef}
+  \texttt{coef()}
 
   \begin{itemize}
   \tightlist
@@ -2959,11 +2973,11 @@ Parameterized query:
     Extract model coefficients.
   \end{itemize}
 \item
-  \texttt{stats::cor}
+  \texttt{cor()}
 \item
-  \texttt{stats::cov}
+  \texttt{cov()}
 \item
-  \texttt{stats::cov2cor}
+  \texttt{cov2cor()}
 
   \begin{itemize}
   \tightlist
@@ -2971,10 +2985,8 @@ Parameterized query:
     Scale a covariance matrix into a correlation matrix.
   \end{itemize}
 \item
-  \texttt{stats::var}
+  \texttt{var()}
 \end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{machine-learning}{%
 \section{Machine Learning}\label{machine-learning}}
@@ -2998,10 +3010,12 @@ Parameterized query:
 \hypertarget{regression}{%
 \section{Regression}\label{regression}}
 
+\texttt{\{broom\}}
+
 \begin{itemize}
 \tightlist
 \item
-  \texttt{broom::augment}
+  \texttt{augment()}
 
   \begin{itemize}
   \tightlist
@@ -3009,7 +3023,7 @@ Parameterized query:
     Augment data with information from an object.
   \end{itemize}
 \item
-  \texttt{broom::glance}
+  \texttt{glance()}
 
   \begin{itemize}
   \tightlist
@@ -3017,25 +3031,37 @@ Parameterized query:
     Construct a single row summary of a model, fit, or other object.
   \end{itemize}
 \item
-  \texttt{broom::tidy}
+  \texttt{tidy()}
 
   \begin{itemize}
   \tightlist
   \item
     Turn an object into a tidy tibble.
   \end{itemize}
+\end{itemize}
+
+\texttt{\{mgcv\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{\{mgcv::gam}
+  \texttt{gam()}
 
   \begin{itemize}
   \tightlist
   \item
     Generalized additive models (GAMs) with integrated smoothness estimation.
   \end{itemize}
+\end{itemize}
+
+\texttt{\{mixtools\}}
+
+\texttt{\{stats\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{mixtools::}
-\item
-  \texttt{stats::df.residual}
+  \texttt{df.residual()}
 
   \begin{itemize}
   \tightlist
@@ -3043,7 +3069,7 @@ Parameterized query:
     Get the residual degrees of freedom.
   \end{itemize}
 \item
-  \texttt{stats::lm}
+  \texttt{lm()}
 
   \begin{itemize}
   \tightlist
@@ -3051,7 +3077,7 @@ Parameterized query:
     Fit linear models.
   \end{itemize}
 \item
-  \texttt{stats::p.adjust}
+  \texttt{p.adjust()}
 
   \begin{itemize}
   \tightlist
@@ -3059,7 +3085,7 @@ Parameterized query:
     Adjust p-values for multiple comparisons.
   \end{itemize}
 \item
-  \texttt{stats::predict}
+  \texttt{predict()}
 
   \begin{itemize}
   \tightlist
@@ -3067,15 +3093,21 @@ Parameterized query:
     Model predictions.
   \end{itemize}
 \item
-  \texttt{stats::residuals}
+  \texttt{residuals()}
 
   \begin{itemize}
   \tightlist
   \item
     Extract model residuals.
   \end{itemize}
+\end{itemize}
+
+\texttt{\{tidyr\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{tidyr::nest}
+  \texttt{nest()}
 
   \begin{itemize}
   \tightlist
@@ -3086,17 +3118,23 @@ Parameterized query:
   \end{itemize}
 \end{itemize}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
 \hypertarget{simulation-prediction}{%
 \section{Simulation \& Prediction}\label{simulation-prediction}}
+
+\texttt{\{base\}}
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{base::set.seed}
+  \texttt{set.seed()}
+\end{itemize}
+
+\texttt{\{stats\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{stats::predict}
+  \texttt{predict()}
 
   \begin{itemize}
   \tightlist
@@ -3106,32 +3144,46 @@ Parameterized query:
     Use with \texttt{lm} class objects and new data to predict new values (e.g., \texttt{predict(model,\ newdata)}).
   \end{itemize}
 \item
-  \texttt{stats::rnorm}
+  \texttt{rnorm()}
 \end{itemize}
 
 \hypertarget{strings-1}{%
 \section{Strings}\label{strings-1}}
 
+\texttt{\{base\}}
+
 \begin{itemize}
 \tightlist
 \item
-  \texttt{base::agrep}
+  \texttt{agrep()}
+\end{itemize}
+
+\texttt{\{fuzzyjoin\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{fuzzyjoin::stringdist\_join}
+  \texttt{stringdist\_join()}
 \item
-  \texttt{fuzzyjoin::stringdist\_anti\_join}
+  \texttt{stringdist\_anti\_join()}
 \item
-  \texttt{fuzzyjoin::stringdist\_full\_join}
+  \texttt{stringdist\_full\_join()}
 \item
-  \texttt{fuzzyjoin::stringdist\_inner\_join}
+  \texttt{stringdist\_inner\_join()}
 \item
-  \texttt{fuzzyjoin::stringdist\_left\_join}
+  \texttt{stringdist\_left\_join()}
 \item
-  \texttt{fuzzyjoin::stringdist\_right\_join}
+  \texttt{stringdist\_right\_join()}
 \item
-  \texttt{fuzzyjoin::stringdist\_semi\_join}
+  \texttt{stringdist\_semi\_join()}
+\end{itemize}
+
+\texttt{\{fuzzywuzzyR\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{fuzzywuzzyR::FuzzMatcher}
+  \texttt{FuzzMatcher()}
 \end{itemize}
 
 \hypertarget{communicate}{%

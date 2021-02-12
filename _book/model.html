@@ -264,22 +264,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="general" class="section level2">
 <h2>General</h2>
+<p><code>{base}</code></p>
 <ul>
-<li><code>base::sample</code></li>
-<li><code>dplyr::sample_n</code></li>
-<li><code>stats::coef</code>
+<li><code>sample()</code></li>
+</ul>
+<p><code>{dplyr}</code></p>
+<ul>
+<li><code>sample_n()</code></li>
+</ul>
+<p><code>{stats}</code></p>
+<ul>
+<li><code>coef()</code>
 <ul>
 <li>Extract model coefficients.</li>
 </ul></li>
-<li><code>stats::cor</code></li>
-<li><code>stats::cov</code></li>
-<li><code>stats::cov2cor</code>
+<li><code>cor()</code></li>
+<li><code>cov()</code></li>
+<li><code>cov2cor()</code>
 <ul>
 <li>Scale a covariance matrix into a correlation matrix.</li>
 </ul></li>
-<li><code>stats::var</code></li>
+<li><code>var()</code></li>
 </ul>
-<hr />
 </div>
 <div id="machine-learning" class="section level2">
 <h2>Machine Learning</h2>
@@ -294,76 +300,96 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="regression" class="section level2">
 <h2>Regression</h2>
+<p><code>{broom}</code></p>
 <ul>
-<li><code>broom::augment</code>
+<li><code>augment()</code>
 <ul>
 <li>Augment data with information from an object.</li>
 </ul></li>
-<li><code>broom::glance</code>
+<li><code>glance()</code>
 <ul>
 <li>Construct a single row summary of a model, fit, or other object.</li>
 </ul></li>
-<li><code>broom::tidy</code>
+<li><code>tidy()</code>
 <ul>
 <li>Turn an object into a tidy tibble.</li>
 </ul></li>
-<li><code>{mgcv::gam</code>
+</ul>
+<p><code>{mgcv}</code></p>
+<ul>
+<li><code>gam()</code>
 <ul>
 <li>Generalized additive models (GAMs) with integrated smoothness estimation.</li>
 </ul></li>
-<li><code>mixtools::</code></li>
-<li><code>stats::df.residual</code>
+</ul>
+<p><code>{mixtools}</code></p>
+<p><code>{stats}</code></p>
+<ul>
+<li><code>df.residual()</code>
 <ul>
 <li>Get the residual degrees of freedom.</li>
 </ul></li>
-<li><code>stats::lm</code>
+<li><code>lm()</code>
 <ul>
 <li>Fit linear models.</li>
 </ul></li>
-<li><code>stats::p.adjust</code>
+<li><code>p.adjust()</code>
 <ul>
 <li>Adjust p-values for multiple comparisons.</li>
 </ul></li>
-<li><code>stats::predict</code>
+<li><code>predict()</code>
 <ul>
 <li>Model predictions.</li>
 </ul></li>
-<li><code>stats::residuals</code>
+<li><code>residuals()</code>
 <ul>
 <li>Extract model residuals.</li>
 </ul></li>
-<li><code>tidyr::nest</code>
+</ul>
+<p><code>{tidyr}</code></p>
+<ul>
+<li><code>nest()</code>
 <ul>
 <li>Nest repeated values in a list-variable.</li>
 <li>Helpful when separating a data frame in preparation to model the data for each grouping.</li>
 </ul></li>
 </ul>
-<hr />
 </div>
 <div id="simulation-prediction" class="section level2">
 <h2>Simulation &amp; Prediction</h2>
+<p><code>{base}</code></p>
 <ul>
-<li><code>base::set.seed</code></li>
-<li><code>stats::predict</code>
+<li><code>set.seed()</code></li>
+</ul>
+<p><code>{stats}</code></p>
+<ul>
+<li><code>predict()</code>
 <ul>
 <li>Model prediction.</li>
 <li>Use with <code>lm</code> class objects and new data to predict new values (e.g., <code>predict(model, newdata)</code>).</li>
 </ul></li>
-<li><code>stats::rnorm</code></li>
+<li><code>rnorm()</code></li>
 </ul>
 </div>
 <div id="strings-1" class="section level2">
 <h2>Strings</h2>
+<p><code>{base}</code></p>
 <ul>
-<li><code>base::agrep</code></li>
-<li><code>fuzzyjoin::stringdist_join</code></li>
-<li><code>fuzzyjoin::stringdist_anti_join</code></li>
-<li><code>fuzzyjoin::stringdist_full_join</code></li>
-<li><code>fuzzyjoin::stringdist_inner_join</code></li>
-<li><code>fuzzyjoin::stringdist_left_join</code></li>
-<li><code>fuzzyjoin::stringdist_right_join</code></li>
-<li><code>fuzzyjoin::stringdist_semi_join</code></li>
-<li><code>fuzzywuzzyR::FuzzMatcher</code></li>
+<li><code>agrep()</code></li>
+</ul>
+<p><code>{fuzzyjoin}</code></p>
+<ul>
+<li><code>stringdist_join()</code></li>
+<li><code>stringdist_anti_join()</code></li>
+<li><code>stringdist_full_join()</code></li>
+<li><code>stringdist_inner_join()</code></li>
+<li><code>stringdist_left_join()</code></li>
+<li><code>stringdist_right_join()</code></li>
+<li><code>stringdist_semi_join()</code></li>
+</ul>
+<p><code>{fuzzywuzzyR}</code></p>
+<ul>
+<li><code>FuzzMatcher()</code></li>
 </ul>
 
 </div>

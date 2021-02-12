@@ -20,17 +20,24 @@
 
 ## General
 
-* `base::sample`
-* `dplyr::sample_n`
-* `stats::coef`
-  * Extract model coefficients.
-* `stats::cor`
-* `stats::cov`
-* `stats::cov2cor`
-  * Scale a covariance matrix into a correlation matrix.
-* `stats::var`
+`{base}`
 
-***
+* `sample()`
+
+`{dplyr}`
+
+* `sample_n()`
+
+`{stats}`
+
+* `coef()`
+  * Extract model coefficients.
+* `cor()`
+* `cov()`
+* `cov2cor()`
+  * Scale a covariance matrix into a correlation matrix.
+* `var()`
+
 ## Machine Learning
 
 `{class}`
@@ -43,46 +50,71 @@
 
 ## Regression
 
-* `broom::augment`
+`{broom}`
+
+* `augment()`
   * Augment data with information from an object.
-* `broom::glance`
+* `glance()`
   * Construct a single row summary of a model, fit, or other object.
-* `broom::tidy`
+* `tidy()`
   * Turn an object into a tidy tibble.
-* `{mgcv::gam`
+
+`{mgcv}`
+
+* `gam()`
   * Generalized additive models (GAMs) with integrated smoothness estimation.
-* `mixtools::`
-* `stats::df.residual`
+
+`{mixtools}`
+
+
+`{stats}`
+
+* `df.residual()`
   * Get the residual degrees of freedom.
-* `stats::lm`
+* `lm()`
   * Fit linear models.
-* `stats::p.adjust`
+* `p.adjust()`
   * Adjust p-values for multiple comparisons.
-* `stats::predict`
+* `predict()`
   * Model predictions.
-* `stats::residuals`
+* `residuals()`
   * Extract model residuals.
-* `tidyr::nest`
+  
+`{tidyr}`
+
+* `nest()`
   * Nest repeated values in a list-variable.
   * Helpful when separating a data frame in preparation to model the data for each grouping.
 
-***
 ## Simulation & Prediction
 
-* `base::set.seed`
-* `stats::predict`
+`{base}`
+
+* `set.seed()`
+
+`{stats}`
+
+* `predict()`
   * Model prediction.
   * Use with `lm` class objects and new data to predict new values (e.g., `predict(model, newdata)`).
-* `stats::rnorm`
+* `rnorm()`
 
 ## Strings
 
-* `base::agrep`
-* `fuzzyjoin::stringdist_join`
-* `fuzzyjoin::stringdist_anti_join`
-* `fuzzyjoin::stringdist_full_join`
-* `fuzzyjoin::stringdist_inner_join`
-* `fuzzyjoin::stringdist_left_join` 
-* `fuzzyjoin::stringdist_right_join`
-* `fuzzyjoin::stringdist_semi_join`
-* `fuzzywuzzyR::FuzzMatcher`
+`{base}`
+
+* `agrep()`
+
+`{fuzzyjoin}`
+
+* `stringdist_join()`
+* `stringdist_anti_join()`
+* `stringdist_full_join()`
+* `stringdist_inner_join()`
+* `stringdist_left_join()` 
+* `stringdist_right_join()`
+* `stringdist_semi_join()`
+
+`{fuzzywuzzyR}`
+
+* `FuzzMatcher()`
