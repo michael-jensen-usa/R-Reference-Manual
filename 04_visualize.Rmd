@@ -37,6 +37,10 @@
 
 * `geom_beeswarm()`
 
+`{ggforce}`
+
+* `facet_wrap_paginate()`
+
 `{ggplot2}`
 
 * `aes()`
@@ -60,6 +64,7 @@
   * `ROWS ~ COLS`: When using a tilde function, the variable on the left specifies the rows and the variable on the right specifies the columns. When faceting in only one direction (e.g., only on rows), use `.` to specify nothing for the unused direction.
 * `facet_wrap()`
   * Wrap a 1D ribbon of panels into 2D (observe a variable, conditional on another variable).
+  * See `ggforce::facet_wrap_paginate()` when there are too many panels.
 * `geom_abline()`
   * Add reference lines to a plot.
 * `geom_bar()`
