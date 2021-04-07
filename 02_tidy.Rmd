@@ -209,6 +209,7 @@
 
 `{base}`
 
+* `agrep()`
 * `cat()`
   * Concatenate and print. 
 * `chartr()`
@@ -224,6 +225,20 @@
   * See also `stringr::str_to_lower()`.
 * `toupper()`: Convert to uppercase.
   * See also `stringr::str_to_upper()`.
+
+`{fuzzyjoin}`
+
+* `stringdist_join()`
+* `stringdist_anti_join()`
+* `stringdist_full_join()`
+* `stringdist_inner_join()`
+* `stringdist_left_join()` 
+* `stringdist_right_join()`
+* `stringdist_semi_join()`
+
+`{fuzzywuzzyR}`
+
+* `FuzzMatcher()`
 
 `{qdap}`
 

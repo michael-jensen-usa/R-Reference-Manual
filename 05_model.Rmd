@@ -98,23 +98,3 @@
   * Model prediction.
   * Use with `lm` class objects and new data to predict new values (e.g., `predict(model, newdata)`).
 * `rnorm()`
-
-## Strings
-
-`{base}`
-
-* `agrep()`
-
-`{fuzzyjoin}`
-
-* `stringdist_join()`
-* `stringdist_anti_join()`
-* `stringdist_full_join()`
-* `stringdist_inner_join()`
-* `stringdist_left_join()` 
-* `stringdist_right_join()`
-* `stringdist_semi_join()`
-
-`{fuzzywuzzyR}`
-
-* `FuzzMatcher()`

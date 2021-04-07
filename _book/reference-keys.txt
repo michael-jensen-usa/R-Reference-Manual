@@ -43,7 +43,6 @@ general
 machine-learning
 regression
 simulation-prediction
-strings-1
 communicate
 css
 export
