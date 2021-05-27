@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Model | R Reference Manual</title>
   <meta name="description" content="Model | R Reference Manual" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Model | R Reference Manual" />
   <meta property="og:type" content="book" />
@@ -49,6 +49,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
@@ -119,6 +121,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -198,8 +201,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#cluster-analysis"><i class="fa fa-check"></i>Cluster Analysis</a></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#general"><i class="fa fa-check"></i>General</a></li>
-<li class="chapter" data-level="" data-path="model.html"><a href="model.html#machine-learning"><i class="fa fa-check"></i>Machine Learning</a></li>
-<li class="chapter" data-level="" data-path="model.html"><a href="model.html#regression"><i class="fa fa-check"></i>Regression</a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#regression-machine-learning"><i class="fa fa-check"></i>Regression &amp; Machine Learning</a></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html#simulation-prediction"><i class="fa fa-check"></i>Simulation &amp; Prediction</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a>
@@ -300,19 +302,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>var()</code></li>
 </ul>
 </div>
-<div id="machine-learning" class="section level2">
-<h2>Machine Learning</h2>
-<p><code>{class}</code></p>
-<ul>
-<li><code>knn()</code></li>
-</ul>
-<p><code>{naivebayes}</code></p>
-<ul>
-<li><code>naive_bayes()</code></li>
-</ul>
-</div>
-<div id="regression" class="section level2">
-<h2>Regression</h2>
+<div id="regression-machine-learning" class="section level2">
+<h2>Regression &amp; Machine Learning</h2>
 <p><code>{broom}</code></p>
 <ul>
 <li><code>augment()</code>
@@ -328,6 +319,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Turn an object into a tidy tibble.</li>
 </ul></li>
 </ul>
+<p><code>{class}</code></p>
+<ul>
+<li><code>knn()</code></li>
+</ul>
 <p><code>{mgcv}</code></p>
 <ul>
 <li><code>gam()</code>
@@ -336,6 +331,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <p><code>{mixtools}</code></p>
+<p><code>{naivebayes}</code></p>
+<ul>
+<li><code>naive_bayes()</code></li>
+</ul>
+<p><code>{pROC}</code></p>
+<ul>
+<li><code>auc()</code></li>
+<li><code>roc()</code></li>
+</ul>
 <p><code>{stats}</code></p>
 <ul>
 <li><code>df.residual()</code>
@@ -357,6 +361,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>residuals()</code>
 <ul>
 <li>Extract model residuals.</li>
+</ul></li>
+<li><code>step()</code>
+<ul>
+<li>Step-wise regression.</li>
 </ul></li>
 </ul>
 <p><code>{tidyr}</code></p>
@@ -415,6 +423,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

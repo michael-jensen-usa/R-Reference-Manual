@@ -38,17 +38,7 @@
   * Scale a covariance matrix into a correlation matrix.
 * `var()`
 
-## Machine Learning
-
-`{class}`
-
-* `knn()`
-
-`{naivebayes}`
-
-* `naive_bayes()`
-
-## Regression
+## Regression & Machine Learning
 
 `{broom}`
 
@@ -59,6 +49,10 @@
 * `tidy()`
   * Turn an object into a tidy tibble.
 
+`{class}`
+
+* `knn()`
+
 `{mgcv}`
 
 * `gam()`
@@ -66,6 +60,15 @@
 
 `{mixtools}`
 
+
+`{naivebayes}`
+
+* `naive_bayes()`
+
+`{pROC}`
+
+* `auc()`
+* `roc()`
 
 `{stats}`
 
@@ -79,6 +82,8 @@
   * Model predictions.
 * `residuals()`
   * Extract model residuals.
+* `step()`
+  * Step-wise regression.
   
 `{tidyr}`
 

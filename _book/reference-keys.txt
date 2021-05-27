@@ -40,8 +40,7 @@ graphs-charts-and-plots---statistics
 model
 cluster-analysis
 general
-machine-learning
-regression
+regression-machine-learning
 simulation-prediction
 communicate
 css
