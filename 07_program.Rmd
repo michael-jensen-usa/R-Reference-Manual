@@ -369,3 +369,5 @@ as.double()
 * `git branch`: List, create, or delete branches.
     + `git branch -d <branch_name>`: Delete a local branch.
         + See ["Delete branch in RStudio pop-up"](https://community.rstudio.com/t/delete-branch-in-rstudio-pop-up/15465) for help removing branches in RStudio after removing them from Git.
+* Git + R Projects
+  * R Projects (.Rproj files) should not be nested. Doing so causes problems with Git when tracking changes to a child .Rproj file.
