@@ -351,8 +351,8 @@ as.double()
   * 00LOCK error when updating a package: Use `update.packages(ask = FALSE, checkBuilt = TRUE, INSTALL_opts = "--no-lock")`
 * `installr::updateR()`
   * Remove old versions from Windows:
-    * Settings > Apps and Features > uninstall old version
     * Control Panel > All Control Panel Items > Programs and Features > uninstall old versions
+    * C: > Program Files > R > delete old versions.
 * `packrat::snapshot()`: Capture and store the packages and versions in use.
 * `packrat::restore()`: Load the most recent snapshot to the project's private library.
 * Packrat still seems to be under development. The idea sounds good, but in practice the packrat package has caused lots of problems. 
