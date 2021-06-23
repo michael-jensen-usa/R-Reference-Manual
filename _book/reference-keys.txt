@@ -38,7 +38,7 @@ graphs-charts-and-plots
 examples-5
 graphs-charts-and-plots---statistics
 model
-cluster-analysis
+cluster-analysis-and-classification
 general
 regression-machine-learning
 simulation-prediction
