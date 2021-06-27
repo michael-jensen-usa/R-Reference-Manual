@@ -273,7 +273,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>max()</code></li>
 <li><code>mean()</code>
 <ul>
-<li>Note that <code>base::mean()</code> can be used to calculate a percentage when used in <code>dplyr::summarize()</code>; see example below.</li>
+<li>Use <code>base::mean(variable == value)</code> to calculate percentage match (accuracy); see example below.</li>
 </ul></li>
 <li><code>median()</code></li>
 <li><code>min()</code></li>
@@ -319,7 +319,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><code>summarize()</code>
 <ul>
-<li>Use <code>mean(variable == value)</code> to get a percentage (see the above example for <code>mean()</code>.)</li>
 <li>See <code>dplyr::n_distinct()</code>.</li>
 </ul></li>
 <li><code>tally()</code></li>
@@ -374,7 +373,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-3"><a href="transform.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span> </span>
 <span id="cb7-4"><a href="transform.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
 <span id="cb7-5"><a href="transform.html#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">total =</span> <span class="fu">n</span>(),</span>
-<span id="cb7-6"><a href="transform.html#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_yes =</span> <span class="fu">mean</span>(vote <span class="sc">==</span> <span class="dv">1</span>))</span></code></pre></div>
+<span id="cb7-6"><a href="transform.html#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_yes =</span> <span class="fu">mean</span>(vote <span class="sc">==</span> <span class="dv">1</span>))</span>
+<span id="cb7-7"><a href="transform.html#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="transform.html#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Classification Trees: Compute the accuracy on the test dataset:</span></span>
+<span id="cb7-9"><a href="transform.html#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(loans_test<span class="sc">$</span>outcome <span class="sc">==</span> loans_test<span class="sc">$</span>prediction)</span></code></pre></div>
 </div>
 </div>
 <div id="create-new-variables-or-modify-existing-ones" class="section level2">

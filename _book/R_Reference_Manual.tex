@@ -1610,7 +1610,7 @@ Parameterized query:
   \begin{itemize}
   \tightlist
   \item
-    Note that \texttt{base::mean()} can be used to calculate a percentage when used in \texttt{dplyr::summarize()}; see example below.
+    Use \texttt{base::mean(variable\ ==\ value)} to calculate percentage match (accuracy); see example below.
   \end{itemize}
 \item
   \texttt{median()}
@@ -1701,8 +1701,6 @@ Parameterized query:
 
   \begin{itemize}
   \tightlist
-  \item
-    Use \texttt{mean(variable\ ==\ value)} to get a percentage (see the above example for \texttt{mean()}.)
   \item
     See \texttt{dplyr::n\_distinct()}.
   \end{itemize}
@@ -1807,6 +1805,9 @@ Parameterized query:
   \FunctionTok{summarize}\NormalTok{(}
     \AttributeTok{total =} \FunctionTok{n}\NormalTok{(),}
     \AttributeTok{percent\_yes =} \FunctionTok{mean}\NormalTok{(vote }\SpecialCharTok{==} \DecValTok{1}\NormalTok{))}
+
+\CommentTok{\# Classification Trees: Compute the accuracy on the test dataset:}
+\FunctionTok{mean}\NormalTok{(loans\_test}\SpecialCharTok{$}\NormalTok{outcome }\SpecialCharTok{==}\NormalTok{ loans\_test}\SpecialCharTok{$}\NormalTok{prediction)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2983,6 +2984,14 @@ Parameterized query:
   \texttt{hclust()}
 \item
   \texttt{kmeans()}
+\end{itemize}
+
+\texttt{\{randomForest\}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{randomForest()}
 \end{itemize}
 
 \texttt{\{rpart\}}

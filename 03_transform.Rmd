@@ -18,7 +18,7 @@
 * `IQR()`
 * `max()`
 * `mean()`
-  * Note that `base::mean()` can be used to calculate a percentage when used in `dplyr::summarize()`; see example below.
+  * Use `base::mean(variable == value)` to calculate percentage match (accuracy); see example below.
 * `median()`
 * `min()`
 * Mode: Use `table` to view the mode of a data set.
@@ -50,7 +50,6 @@
 * `near()`
   * Compare two numeric vectors (safer than using `==`).
 * `summarize()`
-  * Use `mean(variable == value)` to get a percentage (see the above example for `mean()`.)
   * See `dplyr::n_distinct()`.
 * `tally()`
 * `top_n()`
@@ -95,6 +94,9 @@ by_country <-
   summarize(
     total = n(),
     percent_yes = mean(vote == 1))
+
+# Classification Trees: Compute the accuracy on the test dataset:
+mean(loans_test$outcome == loans_test$prediction)
 ```
 
 ## Create New Variables or Modify Existing Ones

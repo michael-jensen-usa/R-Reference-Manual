@@ -18,6 +18,10 @@
 * `hclust()`
 * `kmeans()`
 
+`{randomForest}`
+
+* `randomForest()`
+
 `{rpart}`
 
 * `rpart()`
