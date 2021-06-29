@@ -90,6 +90,8 @@
   * Fit linear models.
 * `p.adjust()`
   * Adjust p-values for multiple comparisons.
+* `prcomp()`
+  * Principal Component Analysis.
 * `predict()`
   * Model predictions.
 * `residuals()`
