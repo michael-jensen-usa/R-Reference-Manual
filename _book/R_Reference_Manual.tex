@@ -3250,28 +3250,34 @@ Parameterized query:
 \hypertarget{communicate}{%
 \chapter{Communicate}\label{communicate}}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
 ``The last step of data science is communication, an absolutely critical part of any data analysis project. It doesn't matter how well your models and visualisation have led you to understand the data unless you can also communicate your results to others.''\\
 - Garrett Grolemund \& Hadley Wickham, \emph{R for Data Science}
-***
 
 \hypertarget{css}{%
 \section{CSS}\label{css}}
 
 \emph{Center Title}
 
+\begin{verbatim}
+<style type="text/css">
+
+h1.title {
+  text-align: center;
+}
+</style>
+\end{verbatim}
+
 \hypertarget{export}{%
 \section{Export}\label{export}}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\texttt{\{base\}}
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{base::file.path}
+  \texttt{file.path()}
 \item
-  \texttt{base::print}
+  \texttt{print()}
 
   \begin{itemize}
   \tightlist
@@ -3279,56 +3285,80 @@ Parameterized query:
     Use the \texttt{include.rownames\ =\ FALSE} argument to remove row numbers (or names) from the output.
   \end{itemize}
 \item
-  \texttt{base::save}
+  \texttt{save()}
 \item
-  \texttt{base::saveRDS}
+  \texttt{saveRDS()}
 
   \begin{itemize}
   \tightlist
   \item
-    See \href{https://www.fromthebottomoftheheap.net/2012/04/01/saving-and-loading-r-objects/}{``A better way of saving and loading objects in R''} to understand the differences between \texttt{save} and \texttt{saveRDS}.
+    See \href{https://www.fromthebottomoftheheap.net/2012/04/01/saving-and-loading-r-objects/}{``A better way of saving and loading objects in R''} to understand the differences between \texttt{save()} and \texttt{saveRDS()}.
   \end{itemize}
+\end{itemize}
+
+\texttt{\{readr\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{readr::write\_csv}
+  \texttt{write\_csv()}
 \item
-  \texttt{readr::write\_delim}
+  \texttt{write\_delim()}
 
   \begin{itemize}
   \tightlist
   \item
-    About twice as fast as \texttt{utils::write.csv}, and never writes row names.
+    About twice as fast as \texttt{utils::write.csv()} and never writes row names.
   \end{itemize}
 \item
-  \texttt{readr::write\_excel\_csv}
+  \texttt{write\_excel\_csv()}
 \item
-  \texttt{readr::write\_tsv}
+  \texttt{write\_tsv()}
+\end{itemize}
+
+\texttt{\{utils\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{utils::write.csv}
+  \texttt{write.csv()}
 \item
-  \texttt{utils::write.csv2}
+  \texttt{write.csv2()}
 \item
-  \texttt{utils::write.table}
+  \texttt{write.table()}
 
   \begin{itemize}
   \tightlist
   \item
-    Prefer \texttt{readr::write\_delim} to \texttt{utils::write.table}.
+    Prefer \texttt{readr::write\_delim()} to \texttt{utils::write.table()}.
   \end{itemize}
+\end{itemize}
+
+\texttt{\{XLConnect\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{XLConnect::loadWorkbook}
+  \texttt{loadWorkbook()}
 \end{itemize}
 
 \hypertarget{format-output}{%
 \section{Format Output}\label{format-output}}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\texttt{\{base\}}
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{base::format}
+  \texttt{format()}
+\end{itemize}
+
+\texttt{\{DT\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{DT::datatable}
+  \texttt{datatable()}
 
   \begin{itemize}
   \tightlist
@@ -3340,42 +3370,72 @@ Parameterized query:
     Use \texttt{options\ =\ list(columnDefs\ =\ list(list(className\ =\ "db-center",\ targets\ =\ (column\_position))))} to center column values (where \texttt{0} indicates the first column).
   \end{itemize}
 \item
-  \texttt{DT::formatCurrency}
+  \texttt{formatCurrency()}
+\end{itemize}
+
+\texttt{\{gt\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{gt::gt}
+  \texttt{gt()}
 
   \begin{itemize}
   \tightlist
   \item
     Alternative to \texttt{knitr::kable} and \texttt{DT::datatable}, styled after \texttt{ggplot2}.
   \end{itemize}
+\end{itemize}
+
+\texttt{\{kableExtra\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{kableExtra::kable\_styling}
+  \texttt{kable\_styling()}
 \item
-  \texttt{kableExtra::add\_footnote}
+  \texttt{add\_footnote()}
+\end{itemize}
+
+\texttt{\{knitr\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{knitr::kable}
+  \texttt{kable()}
+\end{itemize}
+
+\texttt{\{lubridate\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{lubridate::stamp}
+  \texttt{stamp()}
 
   \begin{itemize}
   \tightlist
   \item
     Format dates and times based on human-friendly templates.
   \end{itemize}
+\end{itemize}
+
+\texttt{\{scales\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{scales::dollar}
+  \texttt{dollar()}
 \end{itemize}
 
 \hypertarget{graphics}{%
 \section{Graphics}\label{graphics}}
 
-**
+\texttt{\{knitr\}}
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{knitr::include\_graphics}
+  \texttt{include\_graphics()}
 
   \begin{itemize}
   \tightlist
@@ -3389,33 +3449,44 @@ Parameterized query:
 \hypertarget{plots}{%
 \section{Plots}\label{plots}}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\texttt{\{ggplot2\}}
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{ggplot2::element\_*}: Specify the display of how non-data components of a plot are drawn.
-\item
-  \texttt{ggplot2::labs}: Modify axis, legend, and plot labels.
+  \texttt{element\_*()}
 
   \begin{itemize}
   \tightlist
   \item
-    Child functions: \texttt{xlab}, \texttt{ylab}, \texttt{ggtitle}
+    Specify the display of how non-data components of a plot are drawn.
   \end{itemize}
 \item
-  \texttt{ggplot2::theme}: Customize the non-data components of a plot.
+  \texttt{labs()}
 
   \begin{itemize}
   \tightlist
   \item
-    See example below.
+    Modify axis, legend, and plot labels.
   \item
-    See \texttt{?theme\_classic} for a list of predefined themes.
+    Child functions: \texttt{xlab()}, \texttt{ylab()}, \texttt{ggtitle()}
+  \end{itemize}
+\item
+  \texttt{theme()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Customize the non-data components of a plot (see example below).
+  \item
+    Use \texttt{?theme\_classic} for a list of predefined themes.
   \end{itemize}
 \end{itemize}
 
-\textbf{Example: \texttt{ggplot2::theme}}
+\hypertarget{examples-6}{%
+\subsection{Examples}\label{examples-6}}
+
+\texttt{ggplot2::theme()}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3442,8 +3513,6 @@ Parameterized query:
 
 \hypertarget{rmarkdown}{%
 \section{RMarkdown}\label{rmarkdown}}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{itemize}
 \tightlist
@@ -4082,8 +4151,8 @@ References:
   \texttt{zeallot::\%\textless{}-\%}: Multiple assignment operator (see example below).
 \end{itemize}
 
-\hypertarget{examples-6}{%
-\subsubsection{Examples}\label{examples-6}}
+\hypertarget{examples-7}{%
+\subsubsection{Examples}\label{examples-7}}
 
 \begin{itemize}
 \tightlist
@@ -4231,8 +4300,8 @@ References:
   \texttt{purrr:pluck()}: See also \texttt{magrittr::extract2()}.
 \end{itemize}
 
-\hypertarget{examples-7}{%
-\subsubsection{Examples}\label{examples-7}}
+\hypertarget{examples-8}{%
+\subsubsection{Examples}\label{examples-8}}
 
 \begin{itemize}
 \tightlist

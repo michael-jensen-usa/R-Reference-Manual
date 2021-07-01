@@ -1,77 +1,112 @@
 # Communicate
-***
 
 "The last step of data science is communication, an absolutely critical part of any data analysis project. It doesn't matter how well your models and visualisation have led you to understand the data unless you can also communicate your results to others."  
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*
-***
 
 ## CSS
 
 *Center Title*
 
+```
 <style type="text/css">
 
 h1.title {
   text-align: center;
 }
 </style>
+```
 
 ## Export
-***
 
-* `base::file.path`
-* `base::print`
+`{base}`
+
+* `file.path()`
+* `print()`
   * Use the `include.rownames = FALSE` argument to remove row numbers (or names) from the output.
-* `base::save`
-* `base::saveRDS`
-  * See ["A better way of saving and loading objects in R"](https://www.fromthebottomoftheheap.net/2012/04/01/saving-and-loading-r-objects/) to understand the differences between `save` and `saveRDS`.
-* `readr::write_csv`
-* `readr::write_delim`
-  * About twice as fast as `utils::write.csv`, and never writes row names.
-* `readr::write_excel_csv`
-* `readr::write_tsv`
-* `utils::write.csv`
-* `utils::write.csv2`
-* `utils::write.table`
-  * Prefer `readr::write_delim` to `utils::write.table`.
-* `XLConnect::loadWorkbook`
+* `save()`
+* `saveRDS()`
+  * See ["A better way of saving and loading objects in R"](https://www.fromthebottomoftheheap.net/2012/04/01/saving-and-loading-r-objects/) to understand the differences between `save()` and `saveRDS()`.
+
+`{readr}`
+
+* `write_csv()`
+* `write_delim()`
+  * About twice as fast as `utils::write.csv()` and never writes row names.
+* `write_excel_csv()`
+* `write_tsv()`
+
+`{utils}`
+
+* `write.csv()`
+* `write.csv2()`
+* `write.table()`
+  * Prefer `readr::write_delim()` to `utils::write.table()`.
+
+`{XLConnect}`
+
+* `loadWorkbook()`
 
 ## Format Output
-***
 
-* `base::format`
-* `DT::datatable`
+`{base}`
+
+* `format()`
+
+`{DT}`
+
+* `datatable()`
   * Use `options = list(dom = 't')` to remove the search bar.
   * Use `options = list(dom = "t", lengthchange = FALSE)` to remove the search bar and box that allows the user to choose how many rows to see.
   * Use `options = list(columnDefs = list(list(className = "db-center", targets = (column_position))))` to center column values (where `0` indicates the first column).
-* `DT::formatCurrency`
-* `gt::gt`
+* `formatCurrency()`
+
+`{gt}`
+
+* `gt()`
   * Alternative to `knitr::kable` and `DT::datatable`, styled after `ggplot2`.
-* `kableExtra::kable_styling`
-* `kableExtra::add_footnote`
-* `knitr::kable`
-* `lubridate::stamp`
+
+`{kableExtra}`
+
+* `kable_styling()`
+* `add_footnote()`
+
+`{knitr}`
+
+* `kable()`
+
+`{lubridate}`
+
+* `stamp()`
   * Format dates and times based on human-friendly templates.
-* `scales::dollar`
+
+`{scales}`
+
+* `dollar()`
 
 ## Graphics
-**
 
-* `knitr::include_graphics`
+`{knitr}`
+
+* `include_graphics()`
   * Embed external images in 'knitr' documents.
   * Preferable to the `![alt text or image title](path/to/image)` Markdown syntax for embedding an external image, as `include_graphics` offers more control over the attributes of the image.
 
 ## Plots
-***
 
-* `ggplot2::element_*`: Specify the display of how non-data components of a plot are drawn.
-* `ggplot2::labs`: Modify axis, legend, and plot labels.
-    + Child functions: `xlab`, `ylab`, `ggtitle`
-* `ggplot2::theme`: Customize the non-data components of a plot.
-  * See example below.
-  * See `?theme_classic` for a list of predefined themes.
+`{ggplot2}`
 
-**Example: `ggplot2::theme`**
+* `element_*()`
+  * Specify the display of how non-data components of a plot are drawn.
+* `labs()`
+  * Modify axis, legend, and plot labels.
+  * Child functions: `xlab()`, `ylab()`, `ggtitle()`
+* `theme()`
+  * Customize the non-data components of a plot (see example below).
+  * Use `?theme_classic` for a list of predefined themes.
+
+### Examples
+
+`ggplot2::theme()`
 
 ```{r, eval=FALSE}
 ggplot(plot_data_2006) +
@@ -90,7 +125,6 @@ ggplot(plot_data_2006) +
 * `writeManifest()`
 
 ## RMarkdown
-***
 
 * See [RMarkdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
 * See [Mozzila Developer Network](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) for CSS help.

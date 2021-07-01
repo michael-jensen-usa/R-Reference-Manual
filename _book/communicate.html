@@ -210,7 +210,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#export"><i class="fa fa-check"></i>Export</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#format-output"><i class="fa fa-check"></i>Format Output</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#graphics"><i class="fa fa-check"></i>Graphics</a></li>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots"><i class="fa fa-check"></i>Plots</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots"><i class="fa fa-check"></i>Plots</a>
+<ul>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#examples-6"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rstudio-connect"><i class="fa fa-check"></i>RStudio Connect</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a></li>
 </ul></li>
@@ -255,81 +258,106 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="communicate" class="section level1">
 <h1>Communicate</h1>
-<hr />
 <p>“The last step of data science is communication, an absolutely critical part of any data analysis project. It doesn’t matter how well your models and visualisation have led you to understand the data unless you can also communicate your results to others.”<br />
-- Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em>
-***</p>
+- Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em></p>
 <div id="css" class="section level2">
 <h2>CSS</h2>
 <p><em>Center Title</em></p>
-<style type="text/css">
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
 
 h1.title {
   text-align: center;
 }
-</style>
+&lt;/style&gt;</code></pre>
 </div>
 <div id="export" class="section level2">
 <h2>Export</h2>
-<hr />
+<p><code>{base}</code></p>
 <ul>
-<li><code>base::file.path</code></li>
-<li><code>base::print</code>
+<li><code>file.path()</code></li>
+<li><code>print()</code>
 <ul>
 <li>Use the <code>include.rownames = FALSE</code> argument to remove row numbers (or names) from the output.</li>
 </ul></li>
-<li><code>base::save</code></li>
-<li><code>base::saveRDS</code>
+<li><code>save()</code></li>
+<li><code>saveRDS()</code>
 <ul>
-<li>See <a href="https://www.fromthebottomoftheheap.net/2012/04/01/saving-and-loading-r-objects/">“A better way of saving and loading objects in R”</a> to understand the differences between <code>save</code> and <code>saveRDS</code>.</li>
+<li>See <a href="https://www.fromthebottomoftheheap.net/2012/04/01/saving-and-loading-r-objects/">“A better way of saving and loading objects in R”</a> to understand the differences between <code>save()</code> and <code>saveRDS()</code>.</li>
 </ul></li>
-<li><code>readr::write_csv</code></li>
-<li><code>readr::write_delim</code>
+</ul>
+<p><code>{readr}</code></p>
 <ul>
-<li>About twice as fast as <code>utils::write.csv</code>, and never writes row names.</li>
-</ul></li>
-<li><code>readr::write_excel_csv</code></li>
-<li><code>readr::write_tsv</code></li>
-<li><code>utils::write.csv</code></li>
-<li><code>utils::write.csv2</code></li>
-<li><code>utils::write.table</code>
+<li><code>write_csv()</code></li>
+<li><code>write_delim()</code>
 <ul>
-<li>Prefer <code>readr::write_delim</code> to <code>utils::write.table</code>.</li>
+<li>About twice as fast as <code>utils::write.csv()</code> and never writes row names.</li>
 </ul></li>
-<li><code>XLConnect::loadWorkbook</code></li>
+<li><code>write_excel_csv()</code></li>
+<li><code>write_tsv()</code></li>
+</ul>
+<p><code>{utils}</code></p>
+<ul>
+<li><code>write.csv()</code></li>
+<li><code>write.csv2()</code></li>
+<li><code>write.table()</code>
+<ul>
+<li>Prefer <code>readr::write_delim()</code> to <code>utils::write.table()</code>.</li>
+</ul></li>
+</ul>
+<p><code>{XLConnect}</code></p>
+<ul>
+<li><code>loadWorkbook()</code></li>
 </ul>
 </div>
 <div id="format-output" class="section level2">
 <h2>Format Output</h2>
-<hr />
+<p><code>{base}</code></p>
 <ul>
-<li><code>base::format</code></li>
-<li><code>DT::datatable</code>
+<li><code>format()</code></li>
+</ul>
+<p><code>{DT}</code></p>
+<ul>
+<li><code>datatable()</code>
 <ul>
 <li>Use <code>options = list(dom = 't')</code> to remove the search bar.</li>
 <li>Use <code>options = list(dom = "t", lengthchange = FALSE)</code> to remove the search bar and box that allows the user to choose how many rows to see.</li>
 <li>Use <code>options = list(columnDefs = list(list(className = "db-center", targets = (column_position))))</code> to center column values (where <code>0</code> indicates the first column).</li>
 </ul></li>
-<li><code>DT::formatCurrency</code></li>
-<li><code>gt::gt</code>
+<li><code>formatCurrency()</code></li>
+</ul>
+<p><code>{gt}</code></p>
+<ul>
+<li><code>gt()</code>
 <ul>
 <li>Alternative to <code>knitr::kable</code> and <code>DT::datatable</code>, styled after <code>ggplot2</code>.</li>
 </ul></li>
-<li><code>kableExtra::kable_styling</code></li>
-<li><code>kableExtra::add_footnote</code></li>
-<li><code>knitr::kable</code></li>
-<li><code>lubridate::stamp</code>
+</ul>
+<p><code>{kableExtra}</code></p>
+<ul>
+<li><code>kable_styling()</code></li>
+<li><code>add_footnote()</code></li>
+</ul>
+<p><code>{knitr}</code></p>
+<ul>
+<li><code>kable()</code></li>
+</ul>
+<p><code>{lubridate}</code></p>
+<ul>
+<li><code>stamp()</code>
 <ul>
 <li>Format dates and times based on human-friendly templates.</li>
 </ul></li>
-<li><code>scales::dollar</code></li>
+</ul>
+<p><code>{scales}</code></p>
+<ul>
+<li><code>dollar()</code></li>
 </ul>
 </div>
 <div id="graphics" class="section level2">
 <h2>Graphics</h2>
-<p>**</p>
+<p><code>{knitr}</code></p>
 <ul>
-<li><code>knitr::include_graphics</code>
+<li><code>include_graphics()</code>
 <ul>
 <li>Embed external images in ‘knitr’ documents.</li>
 <li>Preferable to the <code>![alt text or image title](path/to/image)</code> Markdown syntax for embedding an external image, as <code>include_graphics</code> offers more control over the attributes of the image.</li>
@@ -338,27 +366,34 @@ h1.title {
 </div>
 <div id="plots" class="section level2">
 <h2>Plots</h2>
-<hr />
+<p><code>{ggplot2}</code></p>
 <ul>
-<li><code>ggplot2::element_*</code>: Specify the display of how non-data components of a plot are drawn.</li>
-<li><code>ggplot2::labs</code>: Modify axis, legend, and plot labels.
+<li><code>element_*()</code>
 <ul>
-<li>Child functions: <code>xlab</code>, <code>ylab</code>, <code>ggtitle</code></li>
+<li>Specify the display of how non-data components of a plot are drawn.</li>
 </ul></li>
-<li><code>ggplot2::theme</code>: Customize the non-data components of a plot.
+<li><code>labs()</code>
 <ul>
-<li>See example below.</li>
-<li>See <code>?theme_classic</code> for a list of predefined themes.</li>
+<li>Modify axis, legend, and plot labels.</li>
+<li>Child functions: <code>xlab()</code>, <code>ylab()</code>, <code>ggtitle()</code></li>
+</ul></li>
+<li><code>theme()</code>
+<ul>
+<li>Customize the non-data components of a plot (see example below).</li>
+<li>Use <code>?theme_classic</code> for a list of predefined themes.</li>
 </ul></li>
 </ul>
-<p><strong>Example: <code>ggplot2::theme</code></strong></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="communicate.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot_data_2006) <span class="sc">+</span></span>
-<span id="cb11-2"><a href="communicate.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> working_hours)) <span class="sc">+</span></span>
-<span id="cb11-3"><a href="communicate.html#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb11-4"><a href="communicate.html#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Working hours per week&quot;</span>,</span>
-<span id="cb11-5"><a href="communicate.html#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Number of countries&quot;</span>) <span class="sc">+</span></span>
-<span id="cb11-6"><a href="communicate.html#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb11-7"><a href="communicate.html#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">&quot;Bookman&quot;</span>, <span class="at">color =</span> <span class="st">&quot;gray25&quot;</span>))</span></code></pre></div>
+<div id="examples-6" class="section level3">
+<h3>Examples</h3>
+<p><code>ggplot2::theme()</code></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="communicate.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot_data_2006) <span class="sc">+</span></span>
+<span id="cb12-2"><a href="communicate.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> working_hours)) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="communicate.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-4"><a href="communicate.html#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Working hours per week&quot;</span>,</span>
+<span id="cb12-5"><a href="communicate.html#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Number of countries&quot;</span>) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="communicate.html#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb12-7"><a href="communicate.html#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">&quot;Bookman&quot;</span>, <span class="at">color =</span> <span class="st">&quot;gray25&quot;</span>))</span></code></pre></div>
+</div>
 </div>
 <div id="rstudio-connect" class="section level2">
 <h2>RStudio Connect</h2>
@@ -369,7 +404,6 @@ h1.title {
 </div>
 <div id="rmarkdown" class="section level2">
 <h2>RMarkdown</h2>
-<hr />
 <ul>
 <li>See <a href="https://bookdown.org/yihui/rmarkdown/">RMarkdown: The Definitive Guide</a></li>
 <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">Mozzila Developer Network</a> for CSS help.</li>

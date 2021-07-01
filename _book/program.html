@@ -210,7 +210,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#export"><i class="fa fa-check"></i>Export</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#format-output"><i class="fa fa-check"></i>Format Output</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#graphics"><i class="fa fa-check"></i>Graphics</a></li>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots"><i class="fa fa-check"></i>Plots</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots"><i class="fa fa-check"></i>Plots</a>
+<ul>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#examples-6"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rstudio-connect"><i class="fa fa-check"></i>RStudio Connect</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a></li>
 </ul></li>
@@ -533,13 +536,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Useful when matching a character argument specified in the function signature. For example,</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="program.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(prop.test)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="program.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(prop.test)</span></code></pre></div>
 <pre><code>## function (x, n, p = NULL, alternative = c(&quot;two.sided&quot;, &quot;less&quot;, 
 ##     &quot;greater&quot;), conf.level = 0.95, correct = TRUE) 
 ## NULL</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="program.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The body of `prop.test` contains the following line of code:</span></span>
-<span id="cb14-2"><a href="program.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># `alternative &lt;- match.arg(alternative), which reassigns it to the selected</span></span>
-<span id="cb14-3"><a href="program.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># character vector.</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="program.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The body of `prop.test` contains the following line of code:</span></span>
+<span id="cb15-2"><a href="program.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># `alternative &lt;- match.arg(alternative), which reassigns it to the selected</span></span>
+<span id="cb15-3"><a href="program.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># character vector.</span></span></code></pre></div>
 <ul>
 <li><code>base::message()</code>
 <ul>
@@ -574,21 +577,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><code>zeallot::%&lt;-%</code>: Multiple assignment operator (see example below).</li>
 </ul>
-<div id="examples-6" class="section level4">
+<div id="examples-7" class="section level4">
 <h4>Examples</h4>
 <ul>
 <li><code>zeallot::%&lt;-%</code>:</li>
 </ul>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="program.html#cb15-1" aria-hidden="true" tabindex="-1"></a>session <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb15-2"><a href="program.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb15-3"><a href="program.html#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
-<span id="cb15-4"><a href="program.html#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">r_version        =</span> R.version.string,</span>
-<span id="cb15-5"><a href="program.html#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">operating_system =</span> <span class="fu">Sys.info</span>()[<span class="fu">c</span>(<span class="st">&quot;sysname&quot;</span>, <span class="st">&quot;release&quot;</span>)],</span>
-<span id="cb15-6"><a href="program.html#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">loaded_pkgs      =</span> <span class="fu">loadedNamespaces</span>()</span>
-<span id="cb15-7"><a href="program.html#cb15-7" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb15-8"><a href="program.html#cb15-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb15-9"><a href="program.html#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-10"><a href="program.html#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(vrsn, os, pkgs) <span class="sc">%&lt;-%</span> <span class="fu">session</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="program.html#cb16-1" aria-hidden="true" tabindex="-1"></a>session <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb16-2"><a href="program.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-3"><a href="program.html#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb16-4"><a href="program.html#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">r_version        =</span> R.version.string,</span>
+<span id="cb16-5"><a href="program.html#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">operating_system =</span> <span class="fu">Sys.info</span>()[<span class="fu">c</span>(<span class="st">&quot;sysname&quot;</span>, <span class="st">&quot;release&quot;</span>)],</span>
+<span id="cb16-6"><a href="program.html#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">loaded_pkgs      =</span> <span class="fu">loadedNamespaces</span>()</span>
+<span id="cb16-7"><a href="program.html#cb16-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb16-8"><a href="program.html#cb16-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-9"><a href="program.html#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="program.html#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(vrsn, os, pkgs) <span class="sc">%&lt;-%</span> <span class="fu">session</span>() </span></code></pre></div>
 </div>
 </div>
 <div id="learn-about-an-object" class="section level2">
@@ -662,31 +665,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>magrittr::extract2()</code></li>
 <li><code>purrr:pluck()</code>: See also <code>magrittr::extract2()</code>.</li>
 </ul>
-<div id="examples-7" class="section level4">
+<div id="examples-8" class="section level4">
 <h4>Examples</h4>
 <ul>
 <li><code>.$variable_name</code>:</li>
 </ul>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="program.html#cb16-1" aria-hidden="true" tabindex="-1"></a>ui_summary_table <span class="ot">&lt;-</span> </span>
-<span id="cb16-2"><a href="program.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  aws_vendors <span class="sc">%&gt;%</span> </span>
-<span id="cb16-3"><a href="program.html#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(vendor_name, <span class="st">&quot;UTAH INTERACTIVE&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-4"><a href="program.html#cb16-4" aria-hidden="true" tabindex="-1"></a>  .<span class="sc">$</span>vendor_id <span class="sc">%&gt;%</span> </span>
-<span id="cb16-5"><a href="program.html#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(query_summary_table) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-6"><a href="program.html#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="program.html#cb17-1" aria-hidden="true" tabindex="-1"></a>ui_summary_table <span class="ot">&lt;-</span> </span>
+<span id="cb17-2"><a href="program.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  aws_vendors <span class="sc">%&gt;%</span> </span>
+<span id="cb17-3"><a href="program.html#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(vendor_name, <span class="st">&quot;UTAH INTERACTIVE&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-4"><a href="program.html#cb17-4" aria-hidden="true" tabindex="-1"></a>  .<span class="sc">$</span>vendor_id <span class="sc">%&gt;%</span> </span>
+<span id="cb17-5"><a href="program.html#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(query_summary_table) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-6"><a href="program.html#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span></code></pre></div>
 <ul>
 <li><code>.[["variable_name"]]</code>:</li>
 </ul>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="program.html#cb17-1" aria-hidden="true" tabindex="-1"></a>odbc_aws <span class="sc">%&gt;%</span> </span>
-<span id="cb17-2"><a href="program.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dbGetQuery</span>(</span>
-<span id="cb17-3"><a href="program.html#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="st">&quot;</span></span>
-<span id="cb17-4"><a href="program.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="st">          SELECT id</span></span>
-<span id="cb17-5"><a href="program.html#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="st">          FROM batch</span></span>
-<span id="cb17-6"><a href="program.html#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="st">          WHERE entity_id = &quot;</span>, t_id, <span class="st">&quot;</span></span>
-<span id="cb17-7"><a href="program.html#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="st">          AND status IN (&#39;PROCESSED&#39;, &#39;PROCESSING&#39;)&quot;</span></span>
-<span id="cb17-8"><a href="program.html#cb17-8" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb17-9"><a href="program.html#cb17-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-10"><a href="program.html#cb17-10" aria-hidden="true" tabindex="-1"></a>  .[[<span class="st">&quot;id&quot;</span>]] <span class="sc">%&gt;%</span> </span>
-<span id="cb17-11"><a href="program.html#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="fu">as.double</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="program.html#cb18-1" aria-hidden="true" tabindex="-1"></a>odbc_aws <span class="sc">%&gt;%</span> </span>
+<span id="cb18-2"><a href="program.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dbGetQuery</span>(</span>
+<span id="cb18-3"><a href="program.html#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="st">&quot;</span></span>
+<span id="cb18-4"><a href="program.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="st">          SELECT id</span></span>
+<span id="cb18-5"><a href="program.html#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="st">          FROM batch</span></span>
+<span id="cb18-6"><a href="program.html#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="st">          WHERE entity_id = &quot;</span>, t_id, <span class="st">&quot;</span></span>
+<span id="cb18-7"><a href="program.html#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="st">          AND status IN (&#39;PROCESSED&#39;, &#39;PROCESSING&#39;)&quot;</span></span>
+<span id="cb18-8"><a href="program.html#cb18-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb18-9"><a href="program.html#cb18-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-10"><a href="program.html#cb18-10" aria-hidden="true" tabindex="-1"></a>  .[[<span class="st">&quot;id&quot;</span>]] <span class="sc">%&gt;%</span> </span>
+<span id="cb18-11"><a href="program.html#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="fu">as.double</span>()</span></code></pre></div>
 </div>
 <div id="references-1" class="section level4">
 <h4>References</h4>

@@ -48,6 +48,7 @@ export
 format-output
 graphics
 plots
+examples-6
 rstudio-connect
 rmarkdown
 program
@@ -57,14 +58,14 @@ environment-and-workspace
 evaluation-standard-and-non-standard
 functionals
 functions
-examples-6
+examples-7
 learn-about-an-object
 loops
 optimization
 pipes
 popups
 selecting-subsetting
-examples-7
+examples-8
 references-1
 style-guide
 system-commands
