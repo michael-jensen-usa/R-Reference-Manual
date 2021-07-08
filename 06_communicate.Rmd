@@ -57,7 +57,7 @@ h1.title {
 * `datatable()`
   * Use `options = list(dom = 't')` to remove the search bar.
   * Use `options = list(dom = "t", lengthchange = FALSE)` to remove the search bar and box that allows the user to choose how many rows to see.
-  * Use `options = list(columnDefs = list(list(className = "db-center", targets = (column_position))))` to center column values (where `0` indicates the first column).
+  * Use `options = list(columnDefs = list(list(className = "dt-center", targets = (column_position))))` to center column values (where `0` indicates the first column).
 * `formatCurrency()`
 
 `{gt}`
