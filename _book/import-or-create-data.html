@@ -537,6 +537,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Problem code: <code>select max(date) from table</code></li>
 <li>Solution: <code>select max(date) as max_date from table</code></li>
 </ul></li>
+<li>Error: “Object does not exist or you do not have permission to create/delete it” in combination with having db_owner rights to the database.
+<ul>
+<li>Problem code: <code>CREATE OR ALTER PROCEDURE &lt;non_default_schema&gt;.&lt;procedure_name&gt;</code></li>
+<li>Solution: The default database in the ODBC is not set to the database you wish to modify. You can recreate the error in SSMS by using the same code (e.g. set the database in the dropdown menu to master and run the script, which outputs the same error). Update the ODBC connection to specify the correct database.</li>
+</ul></li>
 </ul></li>
 <li>Parameterized Queries
 <ul>

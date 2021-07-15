@@ -745,6 +745,16 @@ The following are comparable methods of accessing \texttt{\textless{}database\te
     \item
       Solution: \texttt{select\ max(date)\ as\ max\_date\ from\ table}
     \end{itemize}
+  \item
+    Error: ``Object does not exist or you do not have permission to create/delete it'' in combination with having db\_owner rights to the database.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Problem code: \texttt{CREATE\ OR\ ALTER\ PROCEDURE\ \textless{}non\_default\_schema\textgreater{}.\textless{}procedure\_name\textgreater{}}
+    \item
+      Solution: The default database in the ODBC is not set to the database you wish to modify. You can recreate the error in SSMS by using the same code (e.g.~set the database in the dropdown menu to master and run the script, which outputs the same error). Update the ODBC connection to specify the correct database.
+    \end{itemize}
   \end{itemize}
 \item
   Parameterized Queries
