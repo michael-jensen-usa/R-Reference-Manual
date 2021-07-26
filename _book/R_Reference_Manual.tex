@@ -3535,8 +3535,6 @@ h1.title {
 \hypertarget{program}{%
 \chapter{Program}\label{program}}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
 ``Surrounding {[}the tools for importing, tidying, transforming, visualising, modeling, and communicating data{]} is programming. Programming is a cross-cutting tool that you use in every part of a project. You don't need to be an expert programmer to be a data scientist, but learning more about programming pays off because becoming a better programmer allows you to automate common tasks, and solve new problems with greater ease.''\\
 - Garrett Grolemund \& Hadley Wickham, \emph{R for Data Science}
 
@@ -3544,19 +3542,22 @@ h1.title {
 \section{Characters}\label{characters}}
 
 References:
-* \texttt{?Quotes}
-
-\hypertarget{conditionals-control-flows}{%
-\section{Conditionals \& Control Flows}\label{conditionals-control-flows}}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\texttt{base}
 
 \begin{itemize}
 \tightlist
 \item
-  Control (access documentation using ``?Control'')
+  \texttt{?Quotes}
+\end{itemize}
+
+\hypertarget{conditionals-control-flows}{%
+\section{Conditionals \& Control Flows}\label{conditionals-control-flows}}
+
+\texttt{\{base\}}
+
+\begin{itemize}
+\tightlist
+\item
+  Control (access documentation using \texttt{?Control})
 
   \begin{itemize}
   \tightlist
@@ -3567,17 +3568,17 @@ References:
     \tightlist
     \item
       The key difference between \texttt{if\ (cond)\ expr} and \texttt{ifelse} is that \texttt{if\ (cond)\ expr} will evaluate only the first element of an object with \texttt{length\ \textgreater{}\ 1}. See the documentation for each function and the ateucher's GitHub example titled \href{https://gist.github.com/ateucher/c7359f566eded9fcd4a255f4cbd4fe67}{``R: if vs ifelse''} to learn more.
+    \item
+      \texttt{for\ (var\ in\ seq)\ expr}
+    \item
+      \texttt{while\ (cond)\ expr}
+    \item
+      \texttt{repeat\ expr}
+    \item
+      \texttt{break}
+    \item
+      \texttt{next}
     \end{itemize}
-  \item
-    \texttt{for\ (var\ in\ seq)\ expr}
-  \item
-    \texttt{while\ (cond)\ expr}
-  \item
-    \texttt{repeat\ expr}
-  \item
-    \texttt{break}
-  \item
-    \texttt{next}
   \end{itemize}
 \item
   \texttt{identical()}: Test objects for exact equality.
@@ -3588,7 +3589,13 @@ References:
     Use \texttt{identical()} rather than \texttt{==} and \texttt{!=} in \texttt{if} and \texttt{while} statements to test for equality.
   \end{itemize}
 \item
-  'ifelse()\texttt{:\ Conditional\ element\ selection.\ \ \ \ \ +}dplyr::if\_else()` is more strict by checking the object type.
+  \texttt{ifelse()}: Conditional element selection.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{dplyr::if\_else()} is more strict by checking the object type.
+  \end{itemize}
 \item
   \texttt{stop()}: Stop execution of the expression and execute an error action.
 
@@ -3620,20 +3627,22 @@ References:
 \hypertarget{environment-and-workspace}{%
 \section{Environment and Workspace}\label{environment-and-workspace}}
 
+\texttt{\{base\}}
+
 \begin{itemize}
 \tightlist
 \item
-  \texttt{base::.libPaths()}
+  \texttt{.libPaths()}
 \item
-  \texttt{base::baseenve()}
+  \texttt{baseenv()}
 
   \begin{itemize}
   \tightlist
   \item
-    The environment of the \texttt{base} package; it's enclosing environment (``parent environment'') is the empty environment.
+    The environment of the \texttt{\{base\}} package; it's enclosing environment (``parent environment'') is the empty environment.
   \end{itemize}
 \item
-  \texttt{base::dir()}
+  \texttt{dir()}
 
   \begin{itemize}
   \tightlist
@@ -3641,7 +3650,7 @@ References:
     List the files in a directory.
   \end{itemize}
 \item
-  \texttt{base::dir.create()}
+  \texttt{dir.create()}
 
   \begin{itemize}
   \tightlist
@@ -3649,7 +3658,7 @@ References:
     Create a file path in the computer's file system.
   \end{itemize}
 \item
-  \texttt{base::emptyenv()}
+  \texttt{emptyenv()}
 
   \begin{itemize}
   \tightlist
@@ -3657,7 +3666,7 @@ References:
     The empty environment, which is the ancestor of all environments and the only environment without an enclosing environment.
   \end{itemize}
 \item
-  \texttt{base::environment()}
+  \texttt{environment()}
 
   \begin{itemize}
   \tightlist
@@ -3665,9 +3674,9 @@ References:
     The current environment.
   \end{itemize}
 \item
-  \texttt{base::environmentName()}
+  \texttt{environmentName()}
 \item
-  \texttt{base::exists()}
+  \texttt{exists()}
 
   \begin{itemize}
   \tightlist
@@ -3675,7 +3684,7 @@ References:
     Remember that \texttt{R} will look for an object in parent environments until it reaches the empty environment, so use \texttt{inherits\ =\ FALSE} to limit the search to only the current environment.
   \end{itemize}
 \item
-  \texttt{base::getOption()}
+  \texttt{getOption()}
 
   \begin{itemize}
   \tightlist
@@ -3683,7 +3692,7 @@ References:
     Set and examine global options.
   \end{itemize}
 \item
-  \texttt{base::getwd()}
+  \texttt{getwd()}
 
   \begin{itemize}
   \tightlist
@@ -3691,7 +3700,7 @@ References:
     Get the working directory.
   \end{itemize}
 \item
-  \texttt{base::globalenv()}
+  \texttt{globalenv()}
 
   \begin{itemize}
   \tightlist
@@ -3699,7 +3708,7 @@ References:
     The environment in which you normally work, it's enclosing environment is the last package attached with \texttt{library()} or \texttt{require()}.
   \end{itemize}
 \item
-  \texttt{base::history()}
+  \texttt{history()}
 
   \begin{itemize}
   \tightlist
@@ -3707,7 +3716,7 @@ References:
     Display the previous 25 commands.
   \end{itemize}
 \item
-  \texttt{base::install.packages()}
+  \texttt{install.packages()}
 
   \begin{itemize}
   \tightlist
@@ -3715,7 +3724,7 @@ References:
     Install packages from repositories or local files.
   \end{itemize}
 \item
-  \texttt{base::library()}
+  \texttt{library()}
 
   \begin{itemize}
   \tightlist
@@ -3723,7 +3732,7 @@ References:
     Load and attach packages, returning an error if the packages does not exist.
   \end{itemize}
 \item
-  \texttt{base::list.files()}
+  \texttt{list.files()}
 
   \begin{itemize}
   \tightlist
@@ -3731,7 +3740,7 @@ References:
     List the files in a directory/folder.
   \end{itemize}
 \item
-  \texttt{base::loadedNamespaces()}
+  \texttt{loadedNamespaces()}
 
   \begin{itemize}
   \tightlist
@@ -3739,7 +3748,7 @@ References:
     Return the loaded name spaces.
   \end{itemize}
 \item
-  \texttt{base::loadhistory()}
+  \texttt{loadhistory()}
 
   \begin{itemize}
   \tightlist
@@ -3747,7 +3756,7 @@ References:
     Recall command history.
   \end{itemize}
 \item
-  \texttt{base::ls()}
+  \texttt{ls()}
 
   \begin{itemize}
   \tightlist
@@ -3755,7 +3764,7 @@ References:
     List objects in the specified environment.
   \end{itemize}
 \item
-  \texttt{base::list2env()}
+  \texttt{list2env()}
 
   \begin{itemize}
   \tightlist
@@ -3763,7 +3772,7 @@ References:
     From a list, build or add to an environment.
   \end{itemize}
 \item
-  \texttt{base::new.env()}
+  \texttt{new.env()}
 
   \begin{itemize}
   \tightlist
@@ -3771,7 +3780,7 @@ References:
     Create a new environment.
   \end{itemize}
 \item
-  \texttt{base::options()}
+  \texttt{options()}
 
   \begin{itemize}
   \tightlist
@@ -3779,7 +3788,7 @@ References:
     Set and examine global options.
   \end{itemize}
 \item
-  \texttt{base::parent.env()}
+  \texttt{parent.env()}
 
   \begin{itemize}
   \tightlist
@@ -3789,7 +3798,7 @@ References:
     \texttt{base::parent.env()} returns information that can be unhelpful, so use with \texttt{base::environmentName()}, as follows: \texttt{parent.env(environment\_name)\ \%\textgreater{}\%\ environmentName()}.
   \end{itemize}
 \item
-  \texttt{base::q()}
+  \texttt{q()}
 
   \begin{itemize}
   \tightlist
@@ -3797,7 +3806,7 @@ References:
     Terminate an R session.
   \end{itemize}
 \item
-  \texttt{base::R.version()}
+  \texttt{R.version()}
 
   \begin{itemize}
   \tightlist
@@ -3805,7 +3814,7 @@ References:
     Version information.
   \end{itemize}
 \item
-  \texttt{base::R.version.string()}
+  \texttt{R.version.string()}
 
   \begin{itemize}
   \tightlist
@@ -3815,7 +3824,7 @@ References:
     Same call as \texttt{R.version\$version.string()}.
   \end{itemize}
 \item
-  \texttt{base::require()}
+  \texttt{require()}
 
   \begin{itemize}
   \tightlist
@@ -3823,7 +3832,7 @@ References:
     Load and attach packages, returning \texttt{FALSE} if the package does not exist.
   \end{itemize}
 \item
-  \texttt{base::rm()}
+  \texttt{rm()}
 
   \begin{itemize}
   \tightlist
@@ -3831,7 +3840,7 @@ References:
     Remove objects from a specified environment.
   \end{itemize}
 \item
-  \texttt{base::savehistory()}
+  \texttt{savehistory()}
 
   \begin{itemize}
   \tightlist
@@ -3839,7 +3848,7 @@ References:
     Save command history (default value is ``.Rhistory'').
   \end{itemize}
 \item
-  \texttt{base::save.image()}
+  \texttt{save.image()}
 
   \begin{itemize}
   \tightlist
@@ -3847,7 +3856,7 @@ References:
     Save the current workspace.
   \end{itemize}
 \item
-  \texttt{base::search()}
+  \texttt{search()}
 
   \begin{itemize}
   \tightlist
@@ -3855,7 +3864,7 @@ References:
     Return a list of attached packages and R objects.
   \end{itemize}
 \item
-  \texttt{base::searchpaths()}
+  \texttt{searchpaths()}
 
   \begin{itemize}
   \tightlist
@@ -3863,7 +3872,7 @@ References:
     Return the path to attached packages.
   \end{itemize}
 \item
-  \texttt{base::setwd()}
+  \texttt{setwd()}
 
   \begin{itemize}
   \tightlist
@@ -3873,7 +3882,7 @@ References:
     When using Windows, use ``/'' instead of "".
   \end{itemize}
 \item
-  \texttt{base::Sys.getenv()}
+  \texttt{Sys.getenv()}
 
   \begin{itemize}
   \tightlist
@@ -3881,7 +3890,7 @@ References:
     See also \texttt{Sys.setenv()}.
   \end{itemize}
 \item
-  \texttt{base::Sys.info()}
+  \texttt{Sys.info()}
 
   \begin{itemize}
   \tightlist
@@ -3891,15 +3900,21 @@ References:
     Example: \texttt{Sys.info(){[}c("sysname",\ "release"){]}}.
   \end{itemize}
 \item
-  \texttt{base::Sys.setenv()}
+  \texttt{Sys.setenv()}
 
   \begin{itemize}
   \tightlist
   \item
     See also \texttt{Sys.setenv()}.
   \end{itemize}
+\end{itemize}
+
+\texttt{\{gdata\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{gdata::object.size()}
+  \texttt{object.size()}
 
   \begin{itemize}
   \tightlist
@@ -3908,22 +3923,46 @@ References:
   \item
     See also \texttt{utils::object.size()}.
   \end{itemize}
+\end{itemize}
+
+\texttt{\{here\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{here::here()}
+  \texttt{here()}
+\end{itemize}
+
+\texttt{\{installr\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{installr::updateR()}
+  \texttt{updateR()}
 
   \begin{itemize}
   \tightlist
   \item
     Check for the latest R version; downloads and installs new R versions.
   \end{itemize}
+\end{itemize}
+
+\texttt{\{pryr\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{pryr::where()}: Find where a name is defined.
+  \texttt{where()}: Find where a name is defined.
+\end{itemize}
+
+\texttt{\{utils\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{utils::ls.str()}: List objects and their structure.
+  \texttt{ls.str()}: List objects and their structure.
 \item
-  \texttt{utils::object.size()}: Report the space allocated for an object.
+  \texttt{object.size()}: Report the space allocated for an object.
 
   \begin{itemize}
   \tightlist
@@ -3931,7 +3970,7 @@ References:
     See also \texttt{gdata::object.size()}.
   \end{itemize}
 \item
-  \texttt{utils::sessionInfo()}: Collect information about the current R session.
+  \texttt{sessionInfo()}: Collect information about the current R session.
 \end{itemize}
 
 References:
@@ -3942,8 +3981,6 @@ References:
   \href{http://adv-r.had.co.nz/Environments.html\#environments}{``Environments''} (Hadley Wickham, \href{http://adv-r.had.co.nz/}{\emph{Advanced R}})
 \end{itemize}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
 \hypertarget{evaluation-standard-and-non-standard}{%
 \section{Evaluation (Standard and Non-standard)}\label{evaluation-standard-and-non-standard}}
 
@@ -3952,13 +3989,39 @@ References:
 \begin{itemize}
 \tightlist
 \item
-  \texttt{cat()}: Concatenate and print.
+  \texttt{cat()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Concatenate and print.
+  \end{itemize}
 \item
-  \texttt{print():\ Print\ the\ argument\ to\ the\ Console.\ \ \ \ \ +\ A\ shortcut\ to}print()` is to place the code you want printed inside parentheses.
+  `print()
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Print the argument to the Console.
+  \item
+    A shortcut to \texttt{print()} is to place the code you want printed inside parentheses.
+  \end{itemize}
 \item
-  \texttt{quote()}: Return the argument, unevaluated.
+  \texttt{quote()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Return the argument, unevaluated.
+  \end{itemize}
 \item
-  \texttt{writeLines()}: Display quotes and backslashes as they would be read, rather than as R stores them (i.e., see the raw contents of the string, as the \texttt{print()} representation is not the same as the string itself).
+  \texttt{writeLines()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Display quotes and backslashes as they would be read, rather than as R stores them (i.e., see the raw contents of the string, as the \texttt{print()} representation is not the same as the string itself).
+  \end{itemize}
 \end{itemize}
 
 \texttt{rlang}
@@ -3987,8 +4050,6 @@ References:
   \href{https://dplyr.tidyverse.org/articles/programming.html}{``Programming with dplyr''} (dplyr.tidyverse.org)
 \end{itemize}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
 \hypertarget{functionals}{%
 \section{Functionals}\label{functionals}}
 
@@ -4002,19 +4063,61 @@ References:
   \begin{itemize}
   \tightlist
   \item
-    \texttt{apply}: Apply functions over array margins.
+    \texttt{apply}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Apply functions over array margins.
+    \end{itemize}
   \item
-    \texttt{lapply}: Apply a function over a list or vector.
+    \texttt{lapply}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Apply a function over a list or vector.
+    \end{itemize}
   \item
-    \texttt{sapply}: Apply a function over a list or vector and return a vector or matrix.
+    \texttt{sapply}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Apply a function over a list or vector and return a vector or matrix.
+    \end{itemize}
   \item
-    \texttt{vapply}: A safer version of \texttt{sapply}, as it requires the output type to be predetermined.
+    \texttt{vapply}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      A safer version of \texttt{sapply}, as it requires the output type to be predetermined.
+    \end{itemize}
   \item
-    \texttt{mapply}: Apply a function to multiple list or vector arguments.
+    \texttt{mapply}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Apply a function to multiple list or vector arguments.
+    \end{itemize}
   \item
-    \texttt{rapply}: Recursively apply a function to a list.
+    \texttt{rapply}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Recursively apply a function to a list.
+    \end{itemize}
   \item
-    \texttt{tapply}: Apply a function over a ragged array.
+    \texttt{tapply}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Apply a function over a ragged array.
+    \end{itemize}
   \end{itemize}
 \end{itemize}
 
@@ -4023,55 +4126,216 @@ References:
 \begin{itemize}
 \tightlist
 \item
-  \texttt{map}: Apply a function to each element of a vector.
+  \texttt{map}
 
   \begin{itemize}
   \tightlist
+  \item
+    Apply a function to each element of a vector.
   \item
     \texttt{tidyr::unnest} is useful in changing the list-column output of \texttt{map} into rows.
   \end{itemize}
 \item
-  \texttt{map2}: Map over multiple inputs simultaneously.
-\item
-  \texttt{map\_if}: Apply a function to elements of that match a condition.
-\item
-  \texttt{possibly}: Usese a default value whenever an error occurs.
-\item
-  \texttt{quietly}: Capture side effects in a list with components \texttt{result}, \texttt{output}, \texttt{messages}, and \texttt{warnings}.
-\item
-  \texttt{safely}: Capture side effects in a list with components \texttt{result} and \texttt{error}.
-\item
-  \texttt{transpose}: Transpose a list (turn a list-of-lists inside-out).
-\end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\hypertarget{functions}{%
-\section{Functions}\label{functions}}
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{assertive::assert\_*()}: Check whether the input is \texttt{*} (e..g, \texttt{assert\_is\_numeric()}) and throw and error if the input does not meet the condition.
-\item
-  \texttt{assertive::coerce\_to()}: Coerce the input to a different class, with a warning.
-\item
-  \texttt{assertive::is\_*()}: Checks whether the input matches the condition specified by \texttt{*} (e.g., \texttt{assertive::is\_non\_positive()}).
-\item
-  \texttt{assertive::use\_first()}: Use only the first element of a vector.
-\item
-  \texttt{base::do.call()}: Execute a function call from a name or a function and a list of arguments to be passed to the function.
-\item
-  \texttt{base::invisible()}: Return a (temporarily) invisible copy of an object.
-\item
-  \texttt{base::match.arg()}: Argument verification.
+  \texttt{map2}
 
   \begin{itemize}
   \tightlist
   \item
-    Useful when matching a character argument specified in the function signature. For example,
+    Map over multiple inputs simultaneously.
+  \end{itemize}
+\item
+  \texttt{map\_if}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Apply a function to elements of that match a condition.
+  \end{itemize}
+\item
+  \texttt{possibly}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Uses a default value whenever an error occurs.
+  \end{itemize}
+\item
+  \texttt{quietly}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Capture side effects in a list with components \texttt{result}, \texttt{output}, \texttt{messages}, and \texttt{warnings}.
+  \end{itemize}
+\item
+  \texttt{safely}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Capture side effects in a list with components \texttt{result} and \texttt{error}.
+  \end{itemize}
+\item
+  \texttt{transpose}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Transpose a list (turn a list-of-lists inside-out).
   \end{itemize}
 \end{itemize}
+
+\hypertarget{functions}{%
+\section{Functions}\label{functions}}
+
+\texttt{\{assertive\}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{assert\_*()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Check whether the input is \texttt{*} (e..g, \texttt{assert\_is\_numeric()}) and throw and error if the input does not meet the condition.
+  \end{itemize}
+\item
+  \texttt{coerce\_to()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Coerce the input to a different class, with a warning.
+  \end{itemize}
+\item
+  \texttt{is\_*()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Checks whether the input matches the condition specified by \texttt{*} (e.g., \texttt{assertive::is\_non\_positive()}).
+  \end{itemize}
+\item
+  \texttt{use\_first()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Use only the first element of a vector.
+  \end{itemize}
+\end{itemize}
+
+\texttt{\{base\}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{do.call()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Execute a function call from a name or a function and a list of arguments to be passed to the function.
+  \end{itemize}
+\item
+  \texttt{invisible()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Return a (temporarily) invisible copy of an object.
+  \end{itemize}
+\item
+  \texttt{match.arg()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Argument verification. Useful when matching a character argument specified in the function signature. See example.
+  \end{itemize}
+\item
+  \texttt{message()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Generate a diagnostic message.
+  \item
+    Preferable to generating a message using \texttt{cat}.
+  \end{itemize}
+\item
+  \texttt{return()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Return a value from a function.
+  \item
+    Useful in \texttt{if} statements where one condition is simple and the other is complex (see section 19.6.1 ``Explicit return statements'' in Hadley Wickham's \href{https://r4ds.had.co.nz/functions.html}{\emph{R for Data Science}}.
+  \end{itemize}
+\item
+  \texttt{setNames()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Set the names in an object.
+  \item
+    Useful in function writing; see documentation.
+  \end{itemize}
+\item
+  \texttt{stop()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Stop execution of the expression and execute an error action.
+  \item
+    Useful in combination with an \texttt{if} statement when you want to generate helpful error messages.
+  \end{itemize}
+\item
+  \texttt{stopifnot()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ensure the truth of an R expression.
+  \item
+    See section 19.5.2 ``Checking values'' in Hadley Wickham's \href{https://r4ds.had.co.nz/functions.html}{\emph{R for Data Science}} for a discussion of \texttt{stop()} versus \texttt{stopifnot()}.
+  \item
+    Consider functions from \texttt{\{assertive\}} as an alternative to \texttt{stopifnot} and \texttt{stop}.
+  \end{itemize}
+\item
+  \texttt{unlist()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Flatten lists.
+  \item
+    Useful when using \texttt{purrr}'s \texttt{map} functions, which return objects as type \texttt{list}.
+  \end{itemize}
+\end{itemize}
+
+\texttt{\{zeallot\}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{\%\textless{}-\%}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Multiple assignment operator (see example below).
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{examples-7}{%
+\subsection{Examples}\label{examples-7}}
+
+\texttt{base::args()}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4093,82 +4357,7 @@ References:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{itemize}
-\tightlist
-\item
-  \texttt{base::message()}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Generate a diagnostic message.
-  \item
-    Preferable to generating a message using \texttt{cat}.
-  \end{itemize}
-\item
-  \texttt{base::return()}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Return a value from a function.
-  \item
-    Useful in \texttt{if} statements where one condition is simple and the other is complex (see section 19.6.1 ``Explicit return statements'' in Hadley Wickham's \href{https://r4ds.had.co.nz/functions.html}{\emph{R for Data Science}}.
-  \end{itemize}
-\item
-  \texttt{base::setNames()}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Set the names in an object.
-  \item
-    Useful in function writing; see documentation.
-  \end{itemize}
-\item
-  \texttt{base::stop()}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Stop execution of the expression and execute an error action.
-  \item
-    Useful in combination with an \texttt{if} statement when you want to generate helpful error messages.
-  \end{itemize}
-\item
-  \texttt{base::stopifnot()}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Ensure the truth of an R expression.
-  \item
-    See section 19.5.2 ``Checking values'' in Hadley Wickham's \href{https://r4ds.had.co.nz/functions.html}{\emph{R for Data Science}} for a discussion of \texttt{stop()} versus \texttt{stopifnot()}.
-  \item
-    Consider functions from \texttt{\{assertive\}} as an alternative to \texttt{stopifnot} and \texttt{stop}.
-  \end{itemize}
-\item
-  \texttt{base::unlist()}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Flatten lists.
-  \item
-    Useful when using \texttt{purrr}'s \texttt{map} functions, which return objects as type \texttt{list}.
-  \end{itemize}
-\item
-  \texttt{zeallot::\%\textless{}-\%}: Multiple assignment operator (see example below).
-\end{itemize}
-
-\hypertarget{examples-7}{%
-\subsubsection{Examples}\label{examples-7}}
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{zeallot::\%\textless{}-\%}:
-\end{itemize}
+\texttt{zeallot::\%\textless{}-\%}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4194,28 +4383,76 @@ References:
   \texttt{?object\_name}
 \item
   \texttt{??object\_name}
+\end{itemize}
+
+\texttt{\{base\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{base::args()}: Display the argument names and default values of a function.
+  \texttt{args()}
 \item
-  \texttt{base::attributes()}: View or assign an objects attributes (e.g., \texttt{class()}, \texttt{dim()}, \texttt{dimnames()}, \texttt{names()}, \texttt{row.names()}).
+  \texttt{attributes()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    View or assign an objects attributes (e.g., \texttt{class()}, \texttt{dim()}, \texttt{dimnames()}, \texttt{names()}, \texttt{row.names()}).
+  \end{itemize}
 \item
-  \texttt{base::body()}: Get or set the body of a function.
+  \texttt{body()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Get or set the body of a function.
+  \end{itemize}
 \item
-  \texttt{base::colnames()}: Retrieve or set column names.
+  \texttt{colnames()}
 \item
-  \texttt{base::dim()}: Retrieve or set the dimnames of an object.
+  \texttt{dim()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Retrieve or set the dimnames of an object.
+  \end{itemize}
 \item
-  \texttt{base::dimnames()}: Retrieve or set the dimension names of an object.
+  \texttt{dimnames()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Retrieve or set the dimension names of an object.
+  \end{itemize}
 \item
-  \texttt{base::formals()}: Get or set the formal arguments of a function.
+  \texttt{formals()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Get or set the formal arguments of a function.
+  \end{itemize}
 \item
-  \texttt{base::help()}: Get the topic documentation.
+  \texttt{help()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Get the topic documentation.
+  \end{itemize}
 \item
-  \texttt{base::help.search()}: Search the help system for documentation matching a given character string.
+  \texttt{help.search()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Search the help system for documentation matching a given character string.
+  \end{itemize}
 \item
-  \texttt{base::vignette()}: View a specified package vignette.
+  \texttt{vignette()}
 \item
-  \texttt{base::rownames()}: Retrieve or set row names.
+  \texttt{rownames()}
 \end{itemize}
 
 \hypertarget{loops}{%
@@ -4391,18 +4628,26 @@ References:
 \hypertarget{system-commands}{%
 \section{System Commands}\label{system-commands}}
 
+\texttt{\{base\}}
+
 \begin{itemize}
 \tightlist
 \item
-  \texttt{base::shell()}
+  \texttt{shell()}
 \item
-  \texttt{base::system()}
+  \texttt{system()}
 \item
-  \texttt{base::system2()}
+  \texttt{system2()}
+\end{itemize}
+
+\texttt{\{sys\}}
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{sys::exec()}
+  \texttt{exec()}
 \item
-  \texttt{sys::exec\_r()}
+  \texttt{exec\_r()}
 \end{itemize}
 
 \hypertarget{version-control}{%

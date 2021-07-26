@@ -1,5 +1,4 @@
 # Program
-***
 
 "Surrounding [the tools for importing, tidying, transforming, visualising, modeling, and communicating data] is programming. Programming is a cross-cutting tool that you use in every part of a project. You don't need to be an expert programmer to be a data scientist, but learning more about programming pays off because becoming a better programmer allows you to automate common tasks, and solve new problems with greater ease."  
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*
@@ -7,16 +6,16 @@
 ## Characters
 
 References:
+
 * `?Quotes`
 
 ## Conditionals & Control Flows
-***
 
-`base`
+`{base}`
 
-* Control (access documentation using "?Control")
-    + `if (cond) expr`
-        + The key difference between `if (cond) expr` and `ifelse` is that `if (cond) expr` will evaluate only the first element of an object with `length > 1`. See the documentation for each function and the ateucher's GitHub example titled ["R: if vs ifelse"](https://gist.github.com/ateucher/c7359f566eded9fcd4a255f4cbd4fe67) to learn more.
+* Control (access documentation using `?Control`)
+  * `if (cond) expr`
+    * The key difference between `if (cond) expr` and `ifelse` is that `if (cond) expr` will evaluate only the first element of an object with `length > 1`. See the documentation for each function and the ateucher's GitHub example titled ["R: if vs ifelse"](https://gist.github.com/ateucher/c7359f566eded9fcd4a255f4cbd4fe67) to learn more.
     + `for (var in seq) expr`
     + `while (cond) expr`
     + `repeat expr`
@@ -24,12 +23,12 @@ References:
     + `next`
 * `identical()`: Test objects for exact equality.
     + Use `identical()` rather than `==` and `!=` in `if` and `while` statements to test for equality.
-* 'ifelse()`: Conditional element selection.
-    + `dplyr::if_else()` is more strict by checking the object type.
+* `ifelse()`: Conditional element selection.
+  * `dplyr::if_else()` is more strict by checking the object type.
 * `stop()`: Stop execution of the expression and execute an error action.
     + Useful in combination with an `if` statement when you want to generate helpful error messages.
 * `stopifnot()`: Ensure the truth of an R expression.
-    + Prefer `base::stop()` to `base::stopifnot()`.
+  * Prefer `base::stop()` to `base::stopifnot()`.
 
 `dplyr`
 
@@ -38,104 +37,125 @@ References:
 
 ## Environment and Workspace
 
-* `base::.libPaths()`
-* `base::baseenve()`
-  * The environment of the `base` package; it's enclosing environment ("parent environment") is the empty environment.
-* `base::dir()`
+`{base}`
+
+* `.libPaths()`
+* `baseenv()`
+  * The environment of the `{base}` package; it's enclosing environment ("parent environment") is the empty environment.
+* `dir()`
   * List the files in a directory.
-* `base::dir.create()`
+* `dir.create()`
   * Create a file path in the computer's file system.
-* `base::emptyenv()`
+* `emptyenv()`
   * The empty environment, which is the ancestor of all environments and the only environment without an enclosing environment.
-* `base::environment()`
+* `environment()`
   * The current environment.
-* `base::environmentName()`
-* `base::exists()`
+* `environmentName()`
+* `exists()`
   * Remember that `R` will look for an object in parent environments until it reaches the empty environment, so use `inherits = FALSE` to limit the search to only the current environment.
-* `base::getOption()`
+* `getOption()`
   * Set and examine global options.
-* `base::getwd()`
+* `getwd()`
   * Get the working directory.
-* `base::globalenv()`
+* `globalenv()`
   * The environment in which you normally work, it's enclosing environment is the last package attached with `library()` or `require()`.
-* `base::history()`
+* `history()`
   * Display the previous 25 commands.
-* `base::install.packages()`
+* `install.packages()`
   * Install packages from repositories or local files.
-* `base::library()`
+* `library()`
   * Load and attach packages, returning an error if the packages does not exist.
-* `base::list.files()`
+* `list.files()`
   * List the files in a directory/folder.
-* `base::loadedNamespaces()`
+* `loadedNamespaces()`
   * Return the loaded name spaces.
-* `base::loadhistory()`
+* `loadhistory()`
   * Recall command history.
-* `base::ls()`
+* `ls()`
   * List objects in the specified environment.
-* `base::list2env()`
+* `list2env()`
   * From a list, build or add to an environment.
-* `base::new.env()`
+* `new.env()`
   * Create a new environment.
-* `base::options()`
+* `options()`
   * Set and examine global options.
-* `base::parent.env()`
+* `parent.env()`
   * Return the enclosing environment of the environment listed as an argument.
   * `base::parent.env()` returns information that can be unhelpful, so use with `base::environmentName()`, as follows: `parent.env(environment_name) %>% environmentName()`.
-* `base::q()`
+* `q()`
   * Terminate an R session.
-* `base::R.version()`
+* `R.version()`
   * Version information.
-* `base::R.version.string()`
+* `R.version.string()`
   * Version information. 
   * Same call as `R.version$version.string()`.
-* `base::require()`
+* `require()`
   * Load and attach packages, returning `FALSE` if the package does not exist.
-* `base::rm()`
+* `rm()`
   * Remove objects from a specified environment.
-* `base::savehistory()`
+* `savehistory()`
   * Save command history (default value is ".Rhistory").
-* `base::save.image()`
+* `save.image()`
   * Save the current workspace.
-* `base::search()`
+* `search()`
   * Return a list of attached packages and R objects.
-* `base::searchpaths()`
+* `searchpaths()`
   * Return the path to attached packages.
-* `base::setwd()`
+* `setwd()`
   * Set the working directory file path.
   * When using Windows, use "/" instead of "\".
-* `base::Sys.getenv()`
+* `Sys.getenv()`
   * See also `Sys.setenv()`.
-* `base::Sys.info()`
+* `Sys.info()`
   * Extract system and user information.
   * Example: `Sys.info()[c("sysname", "release")]`.
-* `base::Sys.setenv()`
+* `Sys.setenv()`
   * See also `Sys.setenv()`.
-* `gdata::object.size()`
+
+`{gdata}`
+
+* `object.size()`
   * Report the space allocated for an object.
   * See also `utils::object.size()`.
-* `here::here()`
-* `installr::updateR()`
+
+`{here}`
+
+* `here()`
+
+`{installr}`
+
+* `updateR()`
   * Check for the latest R version; downloads and installs new R versions.
-* `pryr::where()`: Find where a name is defined.
-* `utils::ls.str()`: List objects and  their structure.
-* `utils::object.size()`: Report the space allocated for an object.
+
+`{pryr}`
+
+* `where()`: Find where a name is defined.
+
+
+`{utils}`
+
+* `ls.str()`: List objects and  their structure.
+* `object.size()`: Report the space allocated for an object.
   * See also `gdata::object.size()`.
-* `utils::sessionInfo()`: Collect information about the current R session.
+* `sessionInfo()`: Collect information about the current R session.
     
 References:
 
 * ["Environments"](http://adv-r.had.co.nz/Environments.html#environments) (Hadley Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
 
-***
 ## Evaluation (Standard and Non-standard)
 
 `base`
 
-* `cat()`: Concatenate and print.
-* `print(): Print the argument to the Console.
-    + A shortcut to `print()` is to place the code you want printed inside parentheses.
-* `quote()`: Return the argument, unevaluated.
-* `writeLines()`: Display quotes and backslashes as they would be read, rather than as R stores them (i.e., see the raw contents of the string, as the `print()` representation is not the same as the string itself).
+* `cat()`
+  * Concatenate and print.
+* `print()
+  * Print the argument to the Console.
+  *  A shortcut to `print()` is to place the code you want printed inside parentheses.
+* `quote()`
+  * Return the argument, unevaluated.
+* `writeLines()`
+  * Display quotes and backslashes as they would be read, rather than as R stores them (i.e., see the raw contents of the string, as the `print()` representation is not the same as the string itself).
 
 `rlang`
 
@@ -148,42 +168,93 @@ References:
 * ["Non-standard evaluation"](https://cran.r-project.org/web/packages/lazyeval/vignettes/lazyeval.html) (Hadley Wickham, `lazyeval` package vignette)
 * ["Programming with dplyr"](https://dplyr.tidyverse.org/articles/programming.html) (dplyr.tidyverse.org)
 
-***
 ## Functionals
 
 `{base}`
 
 * Apply Functions
-  * `apply`: Apply functions over array margins.
-  * `lapply`: Apply a function over a list or vector.
-  * `sapply`: Apply a function over a list or vector and return a vector or matrix.
-  * `vapply`: A safer version of `sapply`, as it requires the output type to be predetermined.
-  * `mapply`: Apply a function to multiple list or vector arguments.
-  * `rapply`: Recursively apply a function to a list. 
-  * `tapply`: Apply a function over a ragged array.
+  * `apply`
+    * Apply functions over array margins.
+  * `lapply`
+    * Apply a function over a list or vector.
+  * `sapply`
+    * Apply a function over a list or vector and return a vector or matrix.
+  * `vapply`
+    * A safer version of `sapply`, as it requires the output type to be predetermined.
+  * `mapply`
+    * Apply a function to multiple list or vector arguments.
+  * `rapply`
+    * Recursively apply a function to a list. 
+  * `tapply`
+    * Apply a function over a ragged array.
 
 `{purrr}`
 
-* `map`: Apply a function to each element of a vector.
+* `map`
+  * Apply a function to each element of a vector.
   * `tidyr::unnest` is useful in changing the list-column output of `map` into rows.
-* `map2`: Map over multiple inputs simultaneously.
-* `map_if`: Apply a function to elements of that match a condition.
-* `possibly`: Usese a default value whenever an error occurs.
-* `quietly`: Capture side effects in a list with components `result`, `output`, `messages`, and `warnings`.
-* `safely`: Capture side effects in a list with components `result` and `error`.
-* `transpose`: Transpose a list (turn a list-of-lists inside-out).
+* `map2`
+  * Map over multiple inputs simultaneously.
+* `map_if`
+  * Apply a function to elements of that match a condition.
+* `possibly`
+  * Uses a default value whenever an error occurs.
+* `quietly`
+  * Capture side effects in a list with components `result`, `output`, `messages`, and `warnings`.
+* `safely`
+  * Capture side effects in a list with components `result` and `error`.
+* `transpose`
+  * Transpose a list (turn a list-of-lists inside-out).
 
-***
 ## Functions
 
-* `assertive::assert_*()`: Check whether the input is `*` (e..g, `assert_is_numeric()`) and throw and error if the input does not meet the condition.
-* `assertive::coerce_to()`: Coerce the input to a different class, with a warning.
-* `assertive::is_*()`: Checks whether the input matches the condition specified by `*` (e.g., `assertive::is_non_positive()`).
-* `assertive::use_first()`: Use only the first element of a vector.
-* `base::do.call()`: Execute a function call from a name or a function and a list of arguments to be passed to the function.
-* `base::invisible()`: Return a (temporarily) invisible copy of an object.
-* `base::match.arg()`: Argument verification.
-  * Useful when matching a character argument specified in the function signature. For example, 
+`{assertive}`
+
+* `assert_*()`
+  * Check whether the input is `*` (e..g, `assert_is_numeric()`) and throw and error if the input does not meet the condition.
+* `coerce_to()`
+  * Coerce the input to a different class, with a warning.
+* `is_*()`
+  * Checks whether the input matches the condition specified by `*` (e.g., `assertive::is_non_positive()`).
+* `use_first()`
+  * Use only the first element of a vector.
+
+`{base}`
+
+* `do.call()`
+  * Execute a function call from a name or a function and a list of arguments to be passed to the function.
+* `invisible()`
+  * Return a (temporarily) invisible copy of an object.
+* `match.arg()`
+  * Argument verification. Useful when matching a character argument specified in the function signature. See example.
+* `message()`
+  * Generate a diagnostic message.
+  * Preferable to generating a message using `cat`.
+* `return()`
+  * Return a value from a function.
+  * Useful in `if` statements where one condition is simple and the other is complex (see section 19.6.1 "Explicit return statements" in Hadley Wickham's [*R for Data Science*](https://r4ds.had.co.nz/functions.html).
+* `setNames()`
+  * Set the names in an object.
+  * Useful in function writing; see documentation.
+* `stop()`
+  * Stop execution of the expression and execute an error action.
+  * Useful in combination with an `if` statement when you want to generate helpful error messages.
+* `stopifnot()`
+  * Ensure the truth of an R expression.
+  * See section 19.5.2 "Checking values" in Hadley Wickham's [*R for Data Science*](https://r4ds.had.co.nz/functions.html) for a discussion of `stop()` versus `stopifnot()`.
+  * Consider functions from `{assertive}` as an alternative to `stopifnot` and `stop`.
+* `unlist()`
+  * Flatten lists.
+  * Useful when using `purrr`'s `map` functions, which return objects as type `list`.
+  
+`{zeallot}`
+
+* `%<-%`
+  * Multiple assignment operator (see example below).
+  
+### Examples
+
+`base::args()`
 
 ```{r}
 args(prop.test)
@@ -192,31 +263,8 @@ args(prop.test)
 # `alternative <- match.arg(alternative), which reassigns it to the selected
 # character vector.
 ```
-  
-* `base::message()`
-  * Generate a diagnostic message.
-  * Preferable to generating a message using `cat`.
-* `base::return()`
-  * Return a value from a function.
-  * Useful in `if` statements where one condition is simple and the other is complex (see section 19.6.1 "Explicit return statements" in Hadley Wickham's [*R for Data Science*](https://r4ds.had.co.nz/functions.html).
-* `base::setNames()`
-  * Set the names in an object.
-  * Useful in function writing; see documentation.
-* `base::stop()`
-  * Stop execution of the expression and execute an error action.
-  * Useful in combination with an `if` statement when you want to generate helpful error messages.
-* `base::stopifnot()`
-  * Ensure the truth of an R expression.
-  * See section 19.5.2 "Checking values" in Hadley Wickham's [*R for Data Science*](https://r4ds.had.co.nz/functions.html) for a discussion of `stop()` versus `stopifnot()`.
-  * Consider functions from `{assertive}` as an alternative to `stopifnot` and `stop`.
-* `base::unlist()`
-  * Flatten lists.
-  * Useful when using `purrr`'s `map` functions, which return objects as type `list`.
-* `zeallot::%<-%`: Multiple assignment operator (see example below).
-  
-#### Examples
 
-* `zeallot::%<-%`:
+`zeallot::%<-%`:
 
 ```{r, eval=FALSE}
 session <- function() {
@@ -235,17 +283,27 @@ c(vrsn, os, pkgs) %<-% session()
 
 * `?object_name`
 * `??object_name`
-* `base::args()`: Display the argument names and default values of a function.
-* `base::attributes()`: View or assign an objects attributes (e.g., `class()`, `dim()`, `dimnames()`, `names()`, `row.names()`). 
-* `base::body()`: Get or set the body of a function.
-* `base::colnames()`: Retrieve or set column names.
-* `base::dim()`: Retrieve or set the dimnames of an object.
-* `base::dimnames()`: Retrieve or set the dimension names of an object.
-* `base::formals()`: Get or set the formal arguments of a function.
-* `base::help()`: Get the topic documentation.
-* `base::help.search()`: Search the help system for documentation matching a given character string.
-* `base::vignette()`: View a specified package vignette.
-* `base::rownames()`: Retrieve or set row names.
+
+`{base}`
+
+* `args()`
+* `attributes()`
+  * View or assign an objects attributes (e.g., `class()`, `dim()`, `dimnames()`, `names()`, `row.names()`). 
+* `body()`
+  * Get or set the body of a function.
+* `colnames()`
+* `dim()`
+  * Retrieve or set the dimnames of an object.
+* `dimnames()`
+  * Retrieve or set the dimension names of an object.
+* `formals()`
+  * Get or set the formal arguments of a function.
+* `help()`
+  * Get the topic documentation.
+* `help.search()`
+  * Search the help system for documentation matching a given character string.
+* `vignette()`
+* `rownames()`
 
 ## Loops
 
@@ -339,11 +397,16 @@ as.double()
 
 ## System Commands
 
-* `base::shell()`
-* `base::system()`
-* `base::system2()`
-* `sys::exec()`
-* `sys::exec_r()`
+`{base}`
+
+* `shell()`
+* `system()`
+* `system2()`
+
+`{sys}`
+
+* `exec()`
+* `exec_r()`
 
 ## Version Control
 
