@@ -4,113 +4,113 @@
 
 `{base}`
 
-* `array()`
-* `c()`
-  * See `base::vector()`.
-* `data.frame()`
-* `dir.create()`
-* `factor()`
-* `list()`
-* `matrix()`
-* `seq()`
-* `vector()`
-  * Preferable to `base::c()` when creating an empty vector (["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve)).
+- `array()`
+- `c()`
+  - See `base::vector()`.
+- `data.frame()`
+- `dir.create()`
+- `factor()`
+- `list()`
+- `matrix()`
+- `seq()`
+- `vector()`
+  - Preferable to `base::c()` when creating an empty vector (["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve)).
 
 `{stats}`
 
-* `rnorm()`
+- `rnorm()`
 
 `{tibble}`
 
-* `add_row()`
-* `tibble()`
-* `tribble()`
+- `add_row()`
+- `tibble()`
+- `tribble()`
 
 ## Local Drive
 
 `{base}`
 
-* `attach()`
-  * Allows objects in the database to be accessed by giving their names (e.g., `height` rather than `women$height`).
-* `file.choose()`
-* `file.size()`
-* `load()`
-  * Reload datasets saved with `base::save()`.
-* `readRDS()`
-  * Restore an R object written with `base::saveRDS()`.
+- `attach()`
+  - Allows objects in the database to be accessed by giving their names (e.g., `height` rather than `women$height`).
+- `file.choose()`
+- `file.size()`
+- `load()`
+  - Reload datasets saved with `base::save()`.
+- `readRDS()`
+  - Restore an R object written with `base::saveRDS()`.
   
 `{data.table}`
 
-* `fread()`
-  * Similar to `utils::read.table()`, but faster and more convenient for large data sets.
+- `fread()`
+  - Similar to `utils::read.table()`, but faster and more convenient for large data sets.
   
 `{foreign}`
 
-* `read.spss()`
+- `read.spss()`
 
 `{haven}`
 
-* `read_sas()`
+- `read_sas()`
 
 `{readr}`
 
-* `read_csv()`
-  * `read_csv()` may import the data with as an object with an `spec_tbl_df` subclass, which can be removed as follows `read_csv("file_path.csv") %>% .[]`.
-* `read_csv2()`
-* `read_delim()`
-* `read_tsv()`
+- `read_csv()`
+- `read_csv2()`
+- `read_delim()`
+  - Remove imported attributes using `%>% .[]` or `%>% unnest()`.
+- `read_tsv()`
 
 `{readxl}`
 
-* `excel_sheets()`
-* `read_excel()`
-* `read_xls()`
-* `read_xlsx()`
+- `excel_sheets()`
+- `read_excel()`
+- `read_xls()`
+- `read_xlsx()`
 
 `{utils}`
 
-* `data()`
-  * Load specified data sets, or list the available data sets.
-  * Use this function to load the data sets that accompany R packages, such as `openintro::hsb2`, `openintro::email50`,and `gapminder::gapminder`.
-* `read.csv()`
-* `read.csv2()`
-* `read.delim()`
-* `read.delim2()`
-* `read.table()`
+- `data()`
+  - Load specified data sets, or list the available data sets.
+  - Use this function to load the data sets that accompany R packages, such as `openintro::hsb2`, `openintro::email50`,and `gapminder::gapminder`.
+- `read.csv()`
+- `read.csv2()`
+- `read.delim()`
+- `read.delim2()`
+- `read.table()`
 
 `{XLConnect}`
 
-* `readWorksheetFromFile()`
+- `readWorksheetFromFile()`
 
 ## Internet
 
 `{httr}`
 
-* `GET()`
-  * Get a URL.
+- `GET()`
+  - Get a URL.
 
 `{jsonlite}`
 
-* `read_json()`
+- `read_json()`
 
 `{readr}`
 
-* `read_csv()`
-* `read_csv2()`
-* `read_delim()`
-* `read_tsv()`
+- `read_csv()`
+- `read_csv2()`
+- `read_delim()`
+- `read_tsv()`
 
 `{rjson}`
 
-* `fromJSON()`
-  * Convert JSON to R.
+- `fromJSON()`
+  - Convert JSON to R.
 
 `{utils}`
 
-* `download.file()`
-  * See example below.
-* `unzip()`
-  * See example below.
+- `download.file()`
+  - See example below.
+- `unzip()`
+  - See example below.
 
 ### Examples
 
@@ -170,37 +170,37 @@ unzip("Data Sets/Countries", exdir = "Data Sets")
 
 `{DBI}`
 
-* `dbAppendTable()`
-* `dbBind()`
-* `dbClearResult()`
-* `dbConnect()`
-* `dbCreateTable()`
-* `dbDataType()`
-* `dbDisconnect()`
-* `dbExecute()`
-* `dbFetch()`
-* `dbGetQuery()`
-* `dbListTables()`
-  * Specify schema with `dbListTables(conn, schema = "schema_name")`.
-* `dbReadTable()`
-* `dbRemoveTable()`
-* `dbSendQuery()`
-* `dbSendStatement()`
-* `Id()`
-  * See example below.
-* `SQL()`
-  * See example below.
+- `dbAppendTable()`
+- `dbBind()`
+- `dbClearResult()`
+- `dbConnect()`
+- `dbCreateTable()`
+- `dbDataType()`
+- `dbDisconnect()`
+- `dbExecute()`
+- `dbFetch()`
+- `dbGetQuery()`
+- `dbListTables()`
+  - Specify schema with `dbListTables(conn, schema = "schema_name")`.
+- `dbReadTable()`
+- `dbRemoveTable()`
+- `dbSendQuery()`
+- `dbSendStatement()`
+- `Id()`
+  - See example below.
+- `SQL()`
+  - See example below.
 
 `{dbplyr}`
 
-* `in_schema()`
-* `tbl()`
+- `in_schema()`
+- `tbl()`
 
 `{odbc}`
 
-* `dbConnect()`
-  * See example below for specifying a database.
-  * See example below for troubleshooting hang-ups.
+- `dbConnect()`
+  - See example below for specifying a database.
+  - See example below for troubleshooting hang-ups.
 
 ### Examples
 
@@ -241,26 +241,26 @@ options(connectionObserver = FALSE)
 
 ### References
 
-* ["Databases using R"](db.rstudio.com)
+- ["Databases using R"](db.rstudio.com)
 
 ### SQL and R
 
 #### Tips and Troubleshooting Hints
 
-* Temp Tables
-  * Use `SET NOCOUNT ON` in the SQL query to prevent R confusing the SQL rowcount return value with the temporary table.
-* Try case-sensitive syntax (e.g., when querying a database other than the default).
-* Try selecting specific columns, rather than `SELECT *`, as SQL BLOB columns cause trouble. 
-* Error Messages
-  * `Error in env[[name]] <- x : attempt to use zero-length variable name`
-    * Problem code: `select max(date) from table`
-    * Solution: `select max(date) as max_date from table`
-  * Error: "Object does not exist or you do not have permission to create/delete it" in combination with having db_owner rights to the database.
-    * Problem code: `CREATE OR ALTER PROCEDURE <non_default_schema>.<procedure_name>`
-    * Solution: The default database in the ODBC is not set to the database you wish to modify. You can recreate the error in SSMS by using the same code (e.g. set the database in the dropdown menu to master and run the script, which outputs the same error). Update the ODBC connection to specify the correct database.
-* Parameterized Queries
-  * Reference: ["Databases Using R"](https://db.rstudio.com/)
-  * See example below.
+- Temp Tables
+  - Use `SET NOCOUNT ON` in the SQL query to prevent R confusing the SQL rowcount return value with the temporary table.
+- Try case-sensitive syntax (e.g., when querying a database other than the default).
+- Try selecting specific columns, rather than `SELECT *`, as SQL BLOB columns cause trouble. 
+- Error Messages
+  - `Error in env[[name]] <- x : attempt to use zero-length variable name`
+    - Problem code: `select max(date) from table`
+    - Solution: `select max(date) as max_date from table`
+  - Error: "Object does not exist or you do not have permission to create/delete it" in combination with having db_owner rights to the database.
+    - Problem code: `CREATE OR ALTER PROCEDURE <non_default_schema>.<procedure_name>`
+    - Solution: The default database in the ODBC is not set to the database you wish to modify. You can recreate the error in SSMS by using the same code (e.g. set the database in the dropdown menu to master and run the script, which outputs the same error). Update the ODBC connection to specify the correct database.
+- Parameterized Queries
+  - Reference: ["Databases Using R"](https://db.rstudio.com/)
+  - See example below.
   
 #### Examples
 
@@ -284,12 +284,12 @@ map(as.list(df$input_column), query_data) %>% bind_rows()
 
 #### SQL References
 
-* ["10 Easy Steps to a Complete Understanding of SQL"](https://blog.jooq.org/2016/03/17/10-easy-steps-to-a-complete-understanding-of-sql/)
-* ["Query Planning"](https://www.sqlite.org/queryplanner.html)
-* ["Using SQL in RStudio](https://irene.rbind.io/post/using-sql-in-rstudio/) by Irene Steves
+- ["10 Easy Steps to a Complete Understanding of SQL"](https://blog.jooq.org/2016/03/17/10-easy-steps-to-a-complete-understanding-of-sql/)
+- ["Query Planning"](https://www.sqlite.org/queryplanner.html)
+- ["Using SQL in RStudio](https://irene.rbind.io/post/using-sql-in-rstudio/) by Irene Steves
 
 ## Notes & References
 
-* ["Data structures"](http://adv-r.had.co.nz/Data-structures.html) (Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
-* `{openintro}` contains data sets useful for practicing and teaching.
-* ["Vectors"](https://r4ds.had.co.nz/vectors.html) (Grolemund & Wickham, [*R for Data Science*](https://r4ds.had.co.nz/))
+- ["Data structures"](http://adv-r.had.co.nz/Data-structures.html) (Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
+- `{openintro}` contains data sets useful for practicing and teaching.
+- ["Vectors"](https://r4ds.had.co.nz/vectors.html) (Grolemund & Wickham, [*R for Data Science*](https://r4ds.had.co.nz/))
