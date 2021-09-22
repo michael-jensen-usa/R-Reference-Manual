@@ -7,113 +7,135 @@
 
 `{cluster}`
 
-* `pam()`
-  * Useful for silhouette analysis; similar but not identical to `stats::kmeans()`.
+- `pam()`
+  - Useful for silhouette analysis; similar but not identical to `stats::kmeans()`.
 
 `{stats}`
 
-* `cutree()`
-  * Pair with `stats::hclust()`.
-* `dist()`
-* `hclust()`
-* `kmeans()`
+- `cutree()`
+  - Pair with `stats::hclust()`.
+- `dist()`
+- `hclust()`
+- `kmeans()`
 
 `{randomForest}`
 
-* `randomForest()`
+- `randomForest()`
 
 `{rpart}`
 
-* `rpart()`
+- `rpart()`
 
 `{rpart.plot}`
 
-* `rpart.plot()`
+- `rpart.plot()`
 
 ## General
 
 `{base}`
 
-* `sample()`
+- `sample()`
 
 `{dplyr}`
 
-* `sample_n()`
+- `sample_n()`
 
 `{stats}`
 
-* `coef()`
-  * Extract model coefficients.
-* `cor()`
-* `cov()`
-* `cov2cor()`
-  * Scale a covariance matrix into a correlation matrix.
-* `var()`
+- `as.formula()`
+  - Use to define an object to pass as a formula into a model (e.g., `fmla <- as.formula("unemployment ~ population"), lm(fmla, data)`)
+- `coef()`
+  - Extract model coefficients.
+- `cor()`
+- `cov()`
+- `cov2cor()`
+  - Scale a covariance matrix into a correlation matrix.
+- `model.matrix()`
+  - Use to create dummy variables from categorical data.
+- `var()`
+
+`{WVPlots}`
+
+- `GainCurvePlot()`
 
 ## Regression & Machine Learning
 
+`{base}`
+
+- `summary()`
+  - Pass the model as the data argument.
+
 `{broom}`
 
-* `augment()`
-  * Augment data with information from an object.
-* `glance()`
-  * Construct a single row summary of a model, fit, or other object.
-* `tidy()`
-  * Turn an object into a tidy tibble.
+- `augment()`
+  - Augment data with information from an object.
+- `glance()`
+  - Construct a single row summary of a model, fit, or other object.
+- `tidy()`
+  - Turn an object into a tidy tibble.
 
 `{class}`
 
-* `knn()`
+- `knn()`
 
 `{mgcv}`
 
-* `gam()`
-  * Generalized additive models (GAMs) with integrated smoothness estimation.
+- `gam()`
+  - Generalized additive models (GAMs) with integrated smoothness estimation.
+  - Use `plot()` on a GAM object to view what the function learned from the data.
+- `s()`
+  - Indicates which of the explanatory variables should be considered non-linearly.
 
 `{mixtools}`
 
 
 `{naivebayes}`
 
-* `naive_bayes()`
+- `naive_bayes()`
 
 `{pROC}`
 
-* `auc()`
-* `roc()`
+- `auc()`
+- `roc()`
 
 `{stats}`
 
-* `df.residual()`
-  * Get the residual degrees of freedom.
-* `lm()`
-  * Fit linear models.
-* `p.adjust()`
-  * Adjust p-values for multiple comparisons.
-* `prcomp()`
-  * Principal Component Analysis.
-* `predict()`
-  * Model predictions.
-* `residuals()`
-  * Extract model residuals.
-* `step()`
-  * Step-wise regression.
+- `df.residual()`
+  - Get the residual degrees of freedom.
+- `lm()`
+  - Fit linear models.
+- `p.adjust()`
+  - Adjust p-values for multiple comparisons.
+- `prcomp()`
+  - Principal Component Analysis.
+- `predict()`
+  - Model predictions.
+  - For GAM, `predict()` returns a matrix so use `as.numeric()` to convert the matrix to a vector if adding to a data set (such as for plotting the predictions versus the actual outcomes).
+- `residuals()`
+  - Extract model residuals.
+- `step()`
+  - Step-wise regression.
   
 `{tidyr}`
 
-* `nest()`
-  * Nest repeated values in a list-variable.
-  * Helpful when separating a data frame in preparation to model the data for each grouping.
+- `nest()`
+  - Nest repeated values in a list-variable.
+  - Helpful when separating a data frame in preparation to model the data for each grouping.
+  
+`{vtreat}`
+
+- `splitPlan()`
+  - Use to create a cross-validation plan.
 
 ## Simulation & Prediction
 
 `{base}`
 
-* `set.seed()`
+- `set.seed()`
 
 `{stats}`
 
-* `predict()`
-  * Model prediction.
-  * Use with `lm` class objects and new data to predict new values (e.g., `predict(model, newdata)`).
-* `rnorm()`
+- `predict()`
+  - Model prediction.
+  - Use with `lm` class objects and new data to predict new values (e.g., `predict(model, newdata)`).
+- `rnorm()`
