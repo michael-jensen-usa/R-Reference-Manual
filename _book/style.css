@@ -1,0 +1,29 @@
+h1 {
+  padding-bottom: 1px;
+  border-bottom: 5px solid lightgray;
+}
+h2 {
+  padding-bottom: 1px;
+  border-bottom: 3px solid lightgray;
+}
+h3 {
+  padding-bottom: 1px;
+  border-bottom: 1px solid lightgray;
+}
+.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+.section {
+  margin-top: 30px
+}

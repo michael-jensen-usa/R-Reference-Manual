@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Visualize | R Reference Manual</title>
+  <meta name="description" content="Visualize | R Reference Manual" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Visualize | R Reference Manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Visualize | R Reference Manual" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="transform.html"/>
+<link rel="next" href="model.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Reference Manual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#references-resources"><i class="fa fa-check"></i>References &amp; Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html"><i class="fa fa-check"></i>Import or Create Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#local-drive"><i class="fa fa-check"></i>Local Drive</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#internet"><i class="fa fa-check"></i>Internet</a>
+<ul>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#examples"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#database"><i class="fa fa-check"></i>Database</a>
+<ul>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#examples-1"><i class="fa fa-check"></i>Examples</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#references"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#sql-and-r"><i class="fa fa-check"></i>SQL and R</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i>Tidy</a>
+<ul>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#tidy-data"><i class="fa fa-check"></i>Tidy Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#prepare-data-for-analysis"><i class="fa fa-check"></i>Prepare Data for Analysis</a>
+<ul>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#coerce"><i class="fa fa-check"></i>Coerce</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#dates-and-datetimes"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#filter"><i class="fa fa-check"></i>Filter</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#strings"><i class="fa fa-check"></i>Strings</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#test"><i class="fa fa-check"></i>Test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>Transform</a>
+<ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#arithmetic-summary-statistics"><i class="fa fa-check"></i>Arithmetic &amp; Summary Statistics</a>
+<ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#examples-3"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#create-new-variables-or-modify-existing-ones"><i class="fa fa-check"></i>Create New Variables or Modify Existing Ones</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#dates-and-datetimes-1"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#factors"><i class="fa fa-check"></i>Factors</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#merge-or-append-data"><i class="fa fa-check"></i>Merge or Append Data</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#narrow-in-on-observations-of-interest"><i class="fa fa-check"></i>Narrow in on Observations of Interest</a>
+<ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#examples-4"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test-1"><i class="fa fa-check"></i>Test</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i>Visualize</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#interfaces"><i class="fa fa-check"></i>Interfaces</a></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots"><i class="fa fa-check"></i>Graphs, Charts, and Plots</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#examples-5"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots---statistics"><i class="fa fa-check"></i>Graphs, Charts, and Plots - Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a>
+<ul>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#cluster-analysis-and-classification"><i class="fa fa-check"></i>Cluster Analysis and Classification</a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#general"><i class="fa fa-check"></i>General</a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#regression-machine-learning"><i class="fa fa-check"></i>Regression &amp; Machine Learning</a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#simulation-prediction"><i class="fa fa-check"></i>Simulation &amp; Prediction</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a>
+<ul>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#css"><i class="fa fa-check"></i>CSS</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#export"><i class="fa fa-check"></i>Export</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#format-output"><i class="fa fa-check"></i>Format Output</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#graphics"><i class="fa fa-check"></i>Graphics</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots"><i class="fa fa-check"></i>Plots</a>
+<ul>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#examples-6"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rstudio-connect"><i class="fa fa-check"></i>RStudio Connect</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html"><i class="fa fa-check"></i>Program</a>
+<ul>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#characters"><i class="fa fa-check"></i>Characters</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#conditionals-control-flows"><i class="fa fa-check"></i>Conditionals &amp; Control Flows</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#environment-and-workspace"><i class="fa fa-check"></i>Environment and Workspace</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#evaluation-standard-and-non-standard"><i class="fa fa-check"></i>Evaluation (Standard and Non-standard)</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#functionals"><i class="fa fa-check"></i>Functionals</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#functions"><i class="fa fa-check"></i>Functions</a>
+<ul>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#examples-7"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#learn-about-an-object"><i class="fa fa-check"></i>Learn About an Object</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#loops"><i class="fa fa-check"></i>Loops</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#optimization"><i class="fa fa-check"></i>Optimization</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#pipes"><i class="fa fa-check"></i>Pipes</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#popups"><i class="fa fa-check"></i>Popups</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#selecting-subsetting"><i class="fa fa-check"></i>Selecting &amp; Subsetting</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#style-guide"><i class="fa fa-check"></i>Style Guide</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#system-commands"><i class="fa fa-check"></i>System Commands</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#version-control"><i class="fa fa-check"></i>Version Control</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references-2.html"><a href="references-2.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Reference Manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="visualize" class="section level1">
+<h1>Visualize</h1>
+<p>“Visualisation is a fundamentally human activity. A good visualisation will show you things that you did not expect, or raise new questions about the data. A good visualisation might also hint that you’re asking the wrong question, or you need to collect different data. Visualisations can surprise you, but don’t scale particularly well because they require a human to interpret them.”<br />
+- Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em></p>
+<div id="interfaces" class="section level2">
+<h2>Interfaces</h2>
+<hr />
+<ul>
+<li><code>shiny</code></li>
+</ul>
+</div>
+<div id="graphs-charts-and-plots" class="section level2">
+<h2>Graphs, Charts, and Plots</h2>
+<p><code>{base}</code></p>
+<ul>
+<li><code>abline()</code>
+<ul>
+<li>Add straight lines to a plot.</li>
+</ul></li>
+<li><code>plot()</code></li>
+<li><code>points()</code></li>
+</ul>
+<p><code>{diagram}</code></p>
+<p><code>{DiagrammeR}</code></p>
+<p><code>{GGally}</code></p>
+<ul>
+<li><code>ggally_box()</code></li>
+<li><code>ggpairs()</code>
+<ul>
+<li>Scatter plot matrix (SPLOM).</li>
+</ul></li>
+<li><code>ggparcoord()</code>
+<ul>
+<li>Parallel coordinate plots.</li>
+</ul></li>
+</ul>
+<p><code>{ggbeeswarm}</code></p>
+<ul>
+<li><code>geom_beeswarm()</code></li>
+</ul>
+<p><code>{ggforce}</code></p>
+<ul>
+<li><code>facet_wrap_paginate()</code></li>
+</ul>
+<p><code>{ggplot2}</code></p>
+<ul>
+<li><code>aes()</code>
+<ul>
+<li>Arguments include <code>color</code>, <code>fill</code>, <code>size</code>, <code>labels</code>, <code>alpha</code>, <code>shape</code> (1-20 accept color attributes and 21-25 accept color and fill attributes), <code>linewidth</code>, <code>linetype</code>, and <code>group</code>.</li>
+<li>Use <code>?pch</code> to see options for <code>shape</code>.</li>
+<li>Note that <code>aes</code> can be called within <code>geom_*</code> rather than prior to.</li>
+<li>The default shape for points does not have a <code>fill</code> attribute, which means that mapping a categorical variable onto <code>fill</code> won’t result in multiple colors.</li>
+<li>Helper functions to include in the call when needing to modify the data include: <code>stats::reorder()</code>.</li>
+</ul></li>
+<li><code>coord_cartesian()</code>
+<ul>
+<li>Zoom a plot in or out without changing the underlying data.</li>
+</ul></li>
+<li><code>coord_flip()</code>
+<ul>
+<li>Flip the x and y axes.</li>
+</ul></li>
+<li><code>coord_polar()</code>
+<ul>
+<li>Use to convert a stacked bar chart to a pie chart.</li>
+</ul></li>
+<li><code>element_blank()</code></li>
+<li><code>element_line()</code></li>
+<li><code>element_rect()</code></li>
+<li><code>element_text()</code></li>
+<li><code>facet_grid()</code>
+<ul>
+<li>Lay out panels in a grid.</li>
+<li><code>ROWS ~ COLS</code>: When using a tilde function, the variable on the left specifies the rows and the variable on the right specifies the columns. When faceting in only one direction (e.g., only on rows), use <code>.</code> to specify nothing for the unused direction.</li>
+</ul></li>
+<li><code>facet_wrap()</code>
+<ul>
+<li>Wrap a 1D ribbon of panels into 2D (observe a variable, conditional on another variable).</li>
+<li>See <code>ggforce::facet_wrap_paginate()</code> when there are too many panels.</li>
+</ul></li>
+<li><code>geom_abline()</code>
+<ul>
+<li>Add reference lines to a plot.</li>
+</ul></li>
+<li><code>geom_bar()</code>
+<ul>
+<li>Create a bar chart, where the height of the bar is proportional to the number of cases in each group.</li>
+</ul></li>
+<li><code>geom_boxplot()</code></li>
+<li><code>geom_col()</code>
+<ul>
+<li>Create a bar chart, where the height of the bar represents values in the data.</li>
+</ul></li>
+<li><code>geom_density()</code>
+<ul>
+<li>Create a kernal density estimate (a smoothed version of a histogram).</li>
+<li>Consider using <code>ggplot2::geom_rug()</code> with <code>ggplot2::geom_density()</code> in order to be transparent about smoothed data.</li>
+</ul></li>
+<li><code>geom_dotplot()</code>
+<ul>
+<li>Create a histogram out of dots.</li>
+</ul></li>
+<li><code>geom_errorbar()</code>
+<ul>
+<li>Shortcut for <code>geom_bar(stat = "identity")</code>.</li>
+</ul></li>
+<li><code>geom_histogram()</code>
+<ul>
+<li>Use <code>y = stat(density)</code> to rescale the y-axis from counts to a probability estimate.</li>
+</ul></li>
+<li><code>ggplot2::geom_hline()</code>
+*<code>geom_jitter()</code>
+<ul>
+<li>Useful with <code>ggplot2::geom_boxplot()</code>.</li>
+</ul></li>
+<li><code>geom_path()</code>
+<ul>
+<li>Connect observations in the order in which they appear.</li>
+</ul></li>
+<li><code>geom_point()</code></li>
+<li><code>geom_rug()</code>
+<ul>
+<li>Useful with <code>ggplot2::geom_density()</code>.</li>
+</ul></li>
+<li><code>geom_smooth()</code>
+<ul>
+<li>Smoothed conditional means; aids the eye in seeing patterns in the presence of overplotting.</li>
+</ul></li>
+<li><code>geom_text()</code></li>
+<li><code>geom_tile()</code>
+<ul>
+<li>Heat maps.</li>
+</ul></li>
+<li><code>geom_violin()</code></li>
+<li><code>geom_vline()</code></li>
+<li><code>ggplot()</code></li>
+<li><code>ggtitle()</code></li>
+<li><code>group()</code>
+<ul>
+<li>Used within <code>aes()</code>.</li>
+<li>Note that <code>group</code> is usually unnecessary when specifying <code>color</code>, <code>shape</code>, <code>fill</code>, or <code>linetype</code> within <code>aes</code>, or when using facets. See <a href="https://ggplot2.tidyverse.org/reference/aes_group_order.html">“Aesthetics: grouping”</a> for more information.</li>
+</ul></li>
+<li><code>labs()</code>
+<ul>
+<li>Modify axis, legend, and plot labels.</li>
+</ul></li>
+<li><code>position_identity()</code>
+<ul>
+<li>Don’t adjust position.</li>
+</ul></li>
+<li><code>position_dodge()</code>
+<ul>
+<li>Dodge overlapping objects side-to-side.</li>
+</ul></li>
+<li><code>position_nudge()</code>
+<ul>
+<li>Nudge points a fixed distance.</li>
+</ul></li>
+<li><code>position_stack()</code>
+<ul>
+<li>Stack overlapping objects on top of each other, as counts.</li>
+</ul></li>
+<li><code>position_fill()</code>
+<ul>
+<li>Stack overlapping objects on top of each other, as densities.</li>
+</ul></li>
+<li><code>position_jitter()</code></li>
+<li><code>position_jitterdodge()</code></li>
+<li><code>scale_x_*()</code></li>
+<li><code>scale_y_*()</code></li>
+<li><code>scale_color_manual()</code></li>
+<li><code>scale_fill_*()</code></li>
+<li><code>scale_shape_*()</code></li>
+<li><code>scale_size()</code></li>
+<li><code>scale_linetype_*()</code></li>
+<li><code>stat_bin()</code></li>
+<li><code>stat_bin2d()</code></li>
+<li><code>stat_bindot()</code></li>
+<li><code>stat_binhex()</code></li>
+<li><code>stat_boxplot()</code></li>
+<li><code>stat_contour()</code></li>
+<li><code>stat_quantile()</code></li>
+<li><code>stat_smooth()</code></li>
+<li><code>stat_sum()</code></li>
+<li><code>theme()</code>
+<ul>
+<li>See example for <code>grid::unit()</code>.</li>
+</ul></li>
+<li><code>theme_get()</code></li>
+<li><code>theme_set()</code></li>
+<li><code>theme_update()</code>
+<ul>
+<li>“When you call ‘theme_update’ and assign it to an object (e.g., called <code>old</code>), that object stores the <em>current</em> default theme, and the arguments <em>update</em> the default theme. If you want to restore the previous default theme, you can get it back by using <code>theme_update</code> again.” -DataCamp</li>
+</ul></li>
+<li><code>xlab()</code></li>
+<li><code>xlim()</code></li>
+<li><code>ylab()</code></li>
+</ul>
+<p><code>{ggridges}</code></p>
+<ul>
+<li><code>geom_density_ridges()</code>
+<ul>
+<li>Create a ridgeline plot.</li>
+</ul></li>
+</ul>
+<p><code>{graphics}</code></p>
+<ul>
+<li><code>boxplot()</code></li>
+<li><code>hist()</code></li>
+<li><code>par()</code></li>
+<li><code>stripchart()</code>
+<ul>
+<li>One dimensional scatter plots.</li>
+<li>Prefer over <code>ggplot2::ggplot()</code> when creating one-dimensional plots.</li>
+</ul></li>
+</ul>
+<p><code>{grDevices}</code></p>
+<ul>
+<li><code>colorRamp()</code>
+<ul>
+<li>Color interpolation.</li>
+</ul></li>
+<li><code>colorRampPalette()</code>
+<ul>
+<li>Color interpolation.</li>
+</ul></li>
+</ul>
+<p><code>{grid}</code></p>
+<ul>
+<li><code>unit()</code>
+<ul>
+<li>Create a <code>unit</code> object, to specify locations and dimensions in a coordinate system.</li>
+<li>See example below.</li>
+</ul></li>
+</ul>
+<p><code>{plotly}</code></p>
+<ul>
+<li><code>plot_ly()</code></li>
+</ul>
+<p><code>{RColorBrewer}</code></p>
+<ul>
+<li><code>brewer.pal()</code>
+<ul>
+<li>Make the ColorBrewer color palettes available as R palettes.</li>
+</ul></li>
+</ul>
+<div id="examples-5" class="section level3">
+<h3>Examples</h3>
+<p><code>grid::unit()</code></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="visualize.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Increase spacing between facets in a `ggplot` object:</span></span>
+<span id="cb10-2"><a href="visualize.html#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="visualize.html#cb10-3" aria-hidden="true" tabindex="-1"></a>plot <span class="sc">+</span> </span>
+<span id="cb10-4"><a href="visualize.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb10-5"><a href="visualize.html#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.spacing.x =</span> <span class="fu">unit</span>(<span class="dv">2</span>, <span class="st">&quot;cm&quot;</span>),</span>
+<span id="cb10-6"><a href="visualize.html#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.margin =</span> <span class="fu">unit</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>), <span class="st">&quot;cm&quot;</span>))</span></code></pre></div>
+</div>
+</div>
+<div id="graphs-charts-and-plots---statistics" class="section level2">
+<h2>Graphs, Charts, and Plots - Statistics</h2>
+<p><code>{ggplot2}</code></p>
+<ul>
+<li><code>mean_cl_boot</code></li>
+<li><code>mean_cl_normal</code></li>
+<li><code>sdl</code></li>
+<li><code>median_hilow</code></li>
+<li><code>stat_function</code>
+<ul>
+<li>Compute <code>y</code> values from a function of <code>x</code> values.</li>
+</ul></li>
+<li><code>qq</code>
+<ul>
+<li>Perfrm calculations for a quantile-quantile plot.</li>
+</ul></li>
+<li><code>qq_line</code></li>
+<li><code>summary</code>
+<ul>
+<li>Summarize <code>y</code> values at distinct <code>x</code> values.</li>
+</ul></li>
+</ul>
+<p><code>{stats}</code></p>
+<ul>
+<li><code>biplot()</code></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="transform.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="model.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["R_Reference_Manual.pdf", "R_Reference_Manual.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

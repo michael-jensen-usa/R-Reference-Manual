@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Import or Create Data | R Reference Manual</title>
+  <meta name="description" content="Import or Create Data | R Reference Manual" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Import or Create Data | R Reference Manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Import or Create Data | R Reference Manual" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="tidy.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Reference Manual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#references-resources"><i class="fa fa-check"></i>References &amp; Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html"><i class="fa fa-check"></i>Import or Create Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#local-drive"><i class="fa fa-check"></i>Local Drive</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#internet"><i class="fa fa-check"></i>Internet</a>
+<ul>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#examples"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#database"><i class="fa fa-check"></i>Database</a>
+<ul>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#examples-1"><i class="fa fa-check"></i>Examples</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#references"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#sql-and-r"><i class="fa fa-check"></i>SQL and R</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i>Tidy</a>
+<ul>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#tidy-data"><i class="fa fa-check"></i>Tidy Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#prepare-data-for-analysis"><i class="fa fa-check"></i>Prepare Data for Analysis</a>
+<ul>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#coerce"><i class="fa fa-check"></i>Coerce</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#dates-and-datetimes"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#filter"><i class="fa fa-check"></i>Filter</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#strings"><i class="fa fa-check"></i>Strings</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#test"><i class="fa fa-check"></i>Test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>Transform</a>
+<ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#arithmetic-summary-statistics"><i class="fa fa-check"></i>Arithmetic &amp; Summary Statistics</a>
+<ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#examples-3"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#create-new-variables-or-modify-existing-ones"><i class="fa fa-check"></i>Create New Variables or Modify Existing Ones</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#dates-and-datetimes-1"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#factors"><i class="fa fa-check"></i>Factors</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#merge-or-append-data"><i class="fa fa-check"></i>Merge or Append Data</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#narrow-in-on-observations-of-interest"><i class="fa fa-check"></i>Narrow in on Observations of Interest</a>
+<ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#examples-4"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test-1"><i class="fa fa-check"></i>Test</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i>Visualize</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#interfaces"><i class="fa fa-check"></i>Interfaces</a></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots"><i class="fa fa-check"></i>Graphs, Charts, and Plots</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#examples-5"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots---statistics"><i class="fa fa-check"></i>Graphs, Charts, and Plots - Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a>
+<ul>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#cluster-analysis-and-classification"><i class="fa fa-check"></i>Cluster Analysis and Classification</a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#general"><i class="fa fa-check"></i>General</a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#regression-machine-learning"><i class="fa fa-check"></i>Regression &amp; Machine Learning</a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#simulation-prediction"><i class="fa fa-check"></i>Simulation &amp; Prediction</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a>
+<ul>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#css"><i class="fa fa-check"></i>CSS</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#export"><i class="fa fa-check"></i>Export</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#format-output"><i class="fa fa-check"></i>Format Output</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#graphics"><i class="fa fa-check"></i>Graphics</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots"><i class="fa fa-check"></i>Plots</a>
+<ul>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#examples-6"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rstudio-connect"><i class="fa fa-check"></i>RStudio Connect</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html"><i class="fa fa-check"></i>Program</a>
+<ul>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#characters"><i class="fa fa-check"></i>Characters</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#conditionals-control-flows"><i class="fa fa-check"></i>Conditionals &amp; Control Flows</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#environment-and-workspace"><i class="fa fa-check"></i>Environment and Workspace</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#evaluation-standard-and-non-standard"><i class="fa fa-check"></i>Evaluation (Standard and Non-standard)</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#functionals"><i class="fa fa-check"></i>Functionals</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#functions"><i class="fa fa-check"></i>Functions</a>
+<ul>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#examples-7"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#learn-about-an-object"><i class="fa fa-check"></i>Learn About an Object</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#loops"><i class="fa fa-check"></i>Loops</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#optimization"><i class="fa fa-check"></i>Optimization</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#pipes"><i class="fa fa-check"></i>Pipes</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#popups"><i class="fa fa-check"></i>Popups</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#selecting-subsetting"><i class="fa fa-check"></i>Selecting &amp; Subsetting</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#style-guide"><i class="fa fa-check"></i>Style Guide</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#system-commands"><i class="fa fa-check"></i>System Commands</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#version-control"><i class="fa fa-check"></i>Version Control</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references-2.html"><a href="references-2.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Reference Manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="import-or-create-data" class="section level1">
+<h1>Import or Create Data</h1>
+<div id="create-data" class="section level2">
+<h2>Create Data</h2>
+<p><code>{base}</code></p>
+<ul>
+<li><code>array()</code></li>
+<li><code>c()</code>
+<ul>
+<li>See <code>base::vector()</code>.</li>
+</ul></li>
+<li><code>data.frame()</code></li>
+<li><code>dir.create()</code></li>
+<li><code>factor()</code></li>
+<li><code>list()</code></li>
+<li><code>matrix()</code></li>
+<li><code>seq()</code></li>
+<li><code>vector()</code>
+<ul>
+<li>Preferable to <code>base::c()</code> when creating an empty vector (<a href="https://www.datacamp.com/community/tutorials/five-tips-r-code-improve">“Five Tips to Improve Your R Code”</a>).</li>
+</ul></li>
+</ul>
+<p><code>{stats}</code></p>
+<ul>
+<li><code>rnorm()</code></li>
+</ul>
+<p><code>{tibble}</code></p>
+<ul>
+<li><code>add_row()</code></li>
+<li><code>tibble()</code></li>
+<li><code>tribble()</code></li>
+</ul>
+</div>
+<div id="local-drive" class="section level2">
+<h2>Local Drive</h2>
+<p><code>{base}</code></p>
+<ul>
+<li><code>attach()</code>
+<ul>
+<li>Allows objects in the database to be accessed by giving their names (e.g., <code>height</code> rather than <code>women$height</code>).</li>
+</ul></li>
+<li><code>file.choose()</code></li>
+<li><code>file.size()</code></li>
+<li><code>load()</code>
+<ul>
+<li>Reload datasets saved with <code>base::save()</code>.</li>
+</ul></li>
+<li><code>readRDS()</code>
+<ul>
+<li>Restore an R object written with <code>base::saveRDS()</code>.</li>
+</ul></li>
+</ul>
+<p><code>{data.table}</code></p>
+<ul>
+<li><code>fread()</code>
+<ul>
+<li>Similar to <code>utils::read.table()</code>, but faster and more convenient for large data sets.</li>
+</ul></li>
+</ul>
+<p><code>{foreign}</code></p>
+<ul>
+<li><code>read.spss()</code></li>
+</ul>
+<p><code>{haven}</code></p>
+<ul>
+<li><code>read_sas()</code></li>
+</ul>
+<p><code>{readr}</code></p>
+<ul>
+<li><code>read_csv()</code></li>
+<li><code>read_csv2()</code></li>
+<li><code>read_delim()</code>
+<ul>
+<li>Remove imported attributes using <code>%&gt;% .[]</code> or <code>%&gt;% unnest()</code>.</li>
+</ul></li>
+<li><code>read_tsv()</code></li>
+</ul>
+<p><code>{readxl}</code></p>
+<ul>
+<li><code>excel_sheets()</code></li>
+<li><code>read_excel()</code></li>
+<li><code>read_xls()</code></li>
+<li><code>read_xlsx()</code></li>
+</ul>
+<p><code>{utils}</code></p>
+<ul>
+<li><code>data()</code>
+<ul>
+<li>Load specified data sets, or list the available data sets.</li>
+<li>Use this function to load the data sets that accompany R packages, such as <code>openintro::hsb2</code>, <code>openintro::email50</code>,and <code>gapminder::gapminder</code>.</li>
+</ul></li>
+<li><code>read.csv()</code></li>
+<li><code>read.csv2()</code></li>
+<li><code>read.delim()</code></li>
+<li><code>read.delim2()</code></li>
+<li><code>read.table()</code></li>
+</ul>
+<p><code>{XLConnect}</code></p>
+<ul>
+<li><code>readWorksheetFromFile()</code></li>
+</ul>
+</div>
+<div id="internet" class="section level2">
+<h2>Internet</h2>
+<p><code>{httr}</code></p>
+<ul>
+<li><code>GET()</code>
+<ul>
+<li>Get a URL.</li>
+</ul></li>
+</ul>
+<p><code>{jsonlite}</code></p>
+<ul>
+<li><code>read_json()</code></li>
+</ul>
+<p><code>{readr}</code></p>
+<ul>
+<li><code>read_csv()</code></li>
+<li><code>read_csv2()</code></li>
+<li><code>read_delim()</code></li>
+<li><code>read_tsv()</code></li>
+</ul>
+<p><code>{rjson}</code></p>
+<ul>
+<li><code>fromJSON()</code>
+<ul>
+<li>Convert JSON to R.</li>
+</ul></li>
+</ul>
+<p><code>{utils}</code></p>
+<ul>
+<li><code>download.file()</code>
+<ul>
+<li>See example below.</li>
+</ul></li>
+<li><code>unzip()</code>
+<ul>
+<li>See example below.</li>
+</ul></li>
+</ul>
+<div id="examples" class="section level3">
+<h3>Examples</h3>
+<p><code>utils::download.file()</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="import-or-create-data.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(</span>
+<span id="cb1-2"><a href="import-or-create-data.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/5028/datasets/a55843f83746968c7f118d82ed727db9c71e891f/snake_river_visits.rds&quot;</span>,</span>
+<span id="cb1-3"><a href="import-or-create-data.html#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">destfile =</span> <span class="fu">paste0</span>(<span class="fu">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>)</span>
+<span id="cb1-4"><a href="import-or-create-data.html#cb1-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-5"><a href="import-or-create-data.html#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="import-or-create-data.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 1:</span></span>
+<span id="cb1-7"><a href="import-or-create-data.html#cb1-7" aria-hidden="true" tabindex="-1"></a>snake_river_visits <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">file.choose</span>())</span>
+<span id="cb1-8"><a href="import-or-create-data.html#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="import-or-create-data.html#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 2:</span></span>
+<span id="cb1-10"><a href="import-or-create-data.html#cb1-10" aria-hidden="true" tabindex="-1"></a>snake_river_path   <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>)</span>
+<span id="cb1-11"><a href="import-or-create-data.html#cb1-11" aria-hidden="true" tabindex="-1"></a>snake_river_visits <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(snake_river_path)</span></code></pre></div>
+<p><code>utils::download.file()</code> for .Rdata files:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="import-or-create-data.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 1:</span></span>
+<span id="cb2-2"><a href="import-or-create-data.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(</span>
+<span id="cb2-3"><a href="import-or-create-data.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData&quot;</span>, </span>
+<span id="cb2-4"><a href="import-or-create-data.html#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">destfile =</span> <span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span></span>
+<span id="cb2-5"><a href="import-or-create-data.html#cb2-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-6"><a href="import-or-create-data.html#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="import-or-create-data.html#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span>)</span>
+<span id="cb2-8"><a href="import-or-create-data.html#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="import-or-create-data.html#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2:</span></span>
+<span id="cb2-10"><a href="import-or-create-data.html#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(</span>
+<span id="cb2-11"><a href="import-or-create-data.html#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/235/datasets/3b6fc2923b599058584b57d8c605c6bef454d273/CHIS2009_reduced_2.Rdata&quot;</span>,</span>
+<span id="cb2-12"><a href="import-or-create-data.html#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">destfile =</span> <span class="st">&quot;chis_2009.Rdata&quot;</span>,</span>
+<span id="cb2-13"><a href="import-or-create-data.html#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The documentation for `download.file` indicates that the function will</span></span>
+<span id="cb2-14"><a href="import-or-create-data.html#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># automatically include `mode = &quot;wb&quot;` for .Rdata files. That may have happened</span></span>
+<span id="cb2-15"><a href="import-or-create-data.html#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># in Example 1, but didn&#39;t happen in Example 2, which is why I&#39;ve included it.</span></span>
+<span id="cb2-16"><a href="import-or-create-data.html#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">mode =</span> <span class="st">&quot;wb&quot;</span></span>
+<span id="cb2-17"><a href="import-or-create-data.html#cb2-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-18"><a href="import-or-create-data.html#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="import-or-create-data.html#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;chis_2009.Rdata&quot;</span>)</span></code></pre></div>
+<p><code>utils::unzip()</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="import-or-create-data.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(</span>
+<span id="cb3-2"><a href="import-or-create-data.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/1069/datasets/578834f5908e3b2fa575429a287586d1eaeb2e54/countries2.zip&quot;</span>,</span>
+<span id="cb3-3"><a href="import-or-create-data.html#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">destfile =</span> <span class="st">&quot;Data Sets/Countries&quot;</span>,</span>
+<span id="cb3-4"><a href="import-or-create-data.html#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">mode =</span> <span class="st">&quot;wb&quot;</span></span>
+<span id="cb3-5"><a href="import-or-create-data.html#cb3-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-6"><a href="import-or-create-data.html#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="import-or-create-data.html#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(<span class="st">&quot;Data Sets/Countries&quot;</span>, <span class="at">exdir =</span> <span class="st">&quot;Data Sets&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="database" class="section level2">
+<h2>Database</h2>
+<p><code>{DBI}</code></p>
+<ul>
+<li><code>dbAppendTable()</code></li>
+<li><code>dbBind()</code></li>
+<li><code>dbClearResult()</code></li>
+<li><code>dbConnect()</code></li>
+<li><code>dbCreateTable()</code></li>
+<li><code>dbDataType()</code></li>
+<li><code>dbDisconnect()</code></li>
+<li><code>dbExecute()</code></li>
+<li><code>dbFetch()</code></li>
+<li><code>dbGetQuery()</code></li>
+<li><code>dbListTables()</code>
+<ul>
+<li>Specify schema with <code>dbListTables(conn, schema = "schema_name")</code>.</li>
+</ul></li>
+<li><code>dbReadTable()</code></li>
+<li><code>dbRemoveTable()</code></li>
+<li><code>dbSendQuery()</code></li>
+<li><code>dbSendStatement()</code></li>
+<li><code>Id()</code>
+<ul>
+<li>See example below.</li>
+</ul></li>
+<li><code>SQL()</code>
+<ul>
+<li>See example below.</li>
+</ul></li>
+</ul>
+<p><code>{dbplyr}</code></p>
+<ul>
+<li><code>in_schema()</code></li>
+<li><code>tbl()</code></li>
+</ul>
+<p><code>{odbc}</code></p>
+<ul>
+<li><code>dbConnect()</code>
+<ul>
+<li>See example below for specifying a database.</li>
+<li>See example below for troubleshooting hang-ups.</li>
+</ul></li>
+</ul>
+<div id="examples-1" class="section level3">
+<h3>Examples</h3>
+<p><code>DBI::Id()</code> vs <code>DBI::SQL()</code>:</p>
+<p>The following are comparable methods of accessing <code>&lt;database&gt;.&lt;schema_name&gt;.&lt;table_name&gt;</code>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="import-or-create-data.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbCreateTable</span>(</span>
+<span id="cb4-2"><a href="import-or-create-data.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  conn,</span>
+<span id="cb4-3"><a href="import-or-create-data.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> </span>
+<span id="cb4-4"><a href="import-or-create-data.html#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Id</span>(<span class="at">catalog =</span> <span class="st">&quot;database_name&quot;</span>, <span class="at">schema =</span> <span class="st">&quot;schema_name&quot;</span>, <span class="at">table =</span> <span class="st">&quot;table_name&quot;</span>),</span>
+<span id="cb4-5"><a href="import-or-create-data.html#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">fields =</span> sample_data_frame</span>
+<span id="cb4-6"><a href="import-or-create-data.html#cb4-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-7"><a href="import-or-create-data.html#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="import-or-create-data.html#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">dbCreateTable</span>(</span>
+<span id="cb4-9"><a href="import-or-create-data.html#cb4-9" aria-hidden="true" tabindex="-1"></a>  conn,</span>
+<span id="cb4-10"><a href="import-or-create-data.html#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">SQL</span>(<span class="st">&quot;database_name.schema_name.table_name&quot;</span>),</span>
+<span id="cb4-11"><a href="import-or-create-data.html#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">fields =</span> sample_data_frame</span>
+<span id="cb4-12"><a href="import-or-create-data.html#cb4-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p><code>odbc::dbConnect()</code>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="import-or-create-data.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify database:</span></span>
+<span id="cb5-2"><a href="import-or-create-data.html#cb5-2" aria-hidden="true" tabindex="-1"></a>conn_1 <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(odbc<span class="sc">::</span><span class="fu">odbc</span>(), <span class="at">dsn =</span> <span class="st">&quot;sql&quot;</span>) <span class="co"># Default database: Actuary</span></span>
+<span id="cb5-3"><a href="import-or-create-data.html#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="import-or-create-data.html#cb5-4" aria-hidden="true" tabindex="-1"></a>conn_2 <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(odbc<span class="sc">::</span><span class="fu">odbc</span>(), <span class="at">dsn =</span> <span class="st">&quot;sql&quot;</span>, <span class="at">Database =</span> <span class="st">&quot;Staging&quot;</span>)</span>
+<span id="cb5-5"><a href="import-or-create-data.html#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="import-or-create-data.html#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Troubleshoot hang-ups</span></span>
+<span id="cb5-7"><a href="import-or-create-data.html#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># It appears that RStudio&#39;s attempt to load information into the Connection Pane,</span></span>
+<span id="cb5-8"><a href="import-or-create-data.html#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># via `odbc::dbConnect`, can sometimes cause the call to hang, indefinitely.</span></span>
+<span id="cb5-9"><a href="import-or-create-data.html#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the following code to access the database in such a situation:</span></span>
+<span id="cb5-10"><a href="import-or-create-data.html#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="import-or-create-data.html#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">connectionObserver =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+</div>
+<div id="references" class="section level3">
+<h3>References</h3>
+<ul>
+<li><a href="db.rstudio.com">“Databases using R”</a></li>
+</ul>
+</div>
+<div id="sql-and-r" class="section level3">
+<h3>SQL and R</h3>
+<div id="tips-and-troubleshooting-hints" class="section level4">
+<h4>Tips and Troubleshooting Hints</h4>
+<ul>
+<li>Temp Tables
+<ul>
+<li>Use <code>SET NOCOUNT ON</code> in the SQL query to prevent R confusing the SQL rowcount return value with the temporary table.</li>
+</ul></li>
+<li>Try case-sensitive syntax (e.g., when querying a database other than the default).</li>
+<li>Try selecting specific columns, rather than <code>SELECT *</code>, as SQL BLOB columns cause trouble.</li>
+<li>Error Messages
+<ul>
+<li><code>Error in env[[name]] &lt;- x : attempt to use zero-length variable name</code>
+<ul>
+<li>Problem code: <code>select max(date) from table</code></li>
+<li>Solution: <code>select max(date) as max_date from table</code></li>
+</ul></li>
+<li>Error: “Object does not exist or you do not have permission to create/delete it” in combination with having db_owner rights to the database.
+<ul>
+<li>Problem code: <code>CREATE OR ALTER PROCEDURE &lt;non_default_schema&gt;.&lt;procedure_name&gt;</code></li>
+<li>Solution: The default database in the ODBC is not set to the database you wish to modify. You can recreate the error in SSMS by using the same code (e.g. set the database in the dropdown menu to master and run the script, which outputs the same error). Update the ODBC connection to specify the correct database.</li>
+</ul></li>
+</ul></li>
+<li>Parameterized Queries
+<ul>
+<li>Reference: <a href="https://db.rstudio.com/">“Databases Using R”</a></li>
+<li>See example below.</li>
+</ul></li>
+</ul>
+</div>
+<div id="examples-2" class="section level4">
+<h4>Examples</h4>
+<p>Parameterized query:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="import-or-create-data.html#cb6-1" aria-hidden="true" tabindex="-1"></a>param_query <span class="ot">&lt;-</span> <span class="fu">dbSendQuery</span>(con, <span class="st">&quot;select * from table where column = ?&quot;</span>)</span>
+<span id="cb6-2"><a href="import-or-create-data.html#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="import-or-create-data.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dbBind</span>(param_query, input)</span>
+<span id="cb6-4"><a href="import-or-create-data.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dbFetch</span>(param_query)</span>
+<span id="cb6-5"><a href="import-or-create-data.html#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="import-or-create-data.html#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># As a function:</span></span>
+<span id="cb6-7"><a href="import-or-create-data.html#cb6-7" aria-hidden="true" tabindex="-1"></a>query_data <span class="ot">&lt;-</span> <span class="cf">function</span>(input) {</span>
+<span id="cb6-8"><a href="import-or-create-data.html#cb6-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-9"><a href="import-or-create-data.html#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dbBind</span>(param_query, input)</span>
+<span id="cb6-10"><a href="import-or-create-data.html#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dbFetch</span>(param_query)</span>
+<span id="cb6-11"><a href="import-or-create-data.html#cb6-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-12"><a href="import-or-create-data.html#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="import-or-create-data.html#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(<span class="fu">as.list</span>(df<span class="sc">$</span>input_column), query_data) <span class="sc">%&gt;%</span> <span class="fu">bind_rows</span>()</span></code></pre></div>
+</div>
+<div id="sql-references" class="section level4">
+<h4>SQL References</h4>
+<ul>
+<li><a href="https://blog.jooq.org/2016/03/17/10-easy-steps-to-a-complete-understanding-of-sql/">“10 Easy Steps to a Complete Understanding of SQL”</a></li>
+<li><a href="https://www.sqlite.org/queryplanner.html">“Query Planning”</a></li>
+<li><a href="https://irene.rbind.io/post/using-sql-in-rstudio/">"Using SQL in RStudio</a> by Irene Steves</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="notes-references" class="section level2">
+<h2>Notes &amp; References</h2>
+<ul>
+<li><a href="http://adv-r.had.co.nz/Data-structures.html">“Data structures”</a> (Wickham, <a href="http://adv-r.had.co.nz/"><em>Advanced R</em></a>)</li>
+<li><code>{openintro}</code> contains data sets useful for practicing and teaching.</li>
+<li><a href="https://r4ds.had.co.nz/vectors.html">“Vectors”</a> (Grolemund &amp; Wickham, <a href="https://r4ds.had.co.nz/"><em>R for Data Science</em></a>)</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tidy.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["R_Reference_Manual.pdf", "R_Reference_Manual.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
