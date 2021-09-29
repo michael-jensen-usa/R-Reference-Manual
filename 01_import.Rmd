@@ -18,6 +18,9 @@
 
 `{stats}`
 
+- `dnorm()`
+- `pnorm()`
+- `qnorm()`
 - `rnorm()`
 
 `{tibble}`
@@ -261,6 +264,9 @@ options(connectionObserver = FALSE)
 - Parameterized Queries
   - Reference: ["Databases Using R"](https://db.rstudio.com/)
   - See example below.
+- Optimization:
+  - `WHERE EXISTS` and `WHERE NOT EXISTS` are generally more efficient than `=` and `<>`.
+  - `=` is generally more efficient than `<>`.
   
 #### Examples
 

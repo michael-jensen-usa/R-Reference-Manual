@@ -283,6 +283,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><code>{stats}</code></p>
 <ul>
+<li><code>dnorm()</code></li>
+<li><code>pnorm()</code></li>
+<li><code>qnorm()</code></li>
 <li><code>rnorm()</code></li>
 </ul>
 <p><code>{tibble}</code></p>
@@ -550,6 +553,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Reference: <a href="https://db.rstudio.com/">“Databases Using R”</a></li>
 <li>See example below.</li>
+</ul></li>
+<li>Optimization:
+<ul>
+<li><code>WHERE EXISTS</code> and <code>WHERE NOT EXISTS</code> are generally more efficient than <code>=</code> and <code>&lt;&gt;</code>.</li>
+<li><code>=</code> is generally more efficient than <code>&lt;&gt;</code>.</li>
 </ul></li>
 </ul>
 </div>
