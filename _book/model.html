@@ -197,13 +197,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots---statistics"><i class="fa fa-check"></i>Graphs, Charts, and Plots - Statistics</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a>
-<ul>
-<li class="chapter" data-level="" data-path="model.html"><a href="model.html#cluster-analysis-and-classification"><i class="fa fa-check"></i>Cluster Analysis and Classification</a></li>
-<li class="chapter" data-level="" data-path="model.html"><a href="model.html#general"><i class="fa fa-check"></i>General</a></li>
-<li class="chapter" data-level="" data-path="model.html"><a href="model.html#regression-machine-learning"><i class="fa fa-check"></i>Regression &amp; Machine Learning</a></li>
-<li class="chapter" data-level="" data-path="model.html"><a href="model.html#simulation-prediction"><i class="fa fa-check"></i>Simulation &amp; Prediction</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a>
 <ul>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#css"><i class="fa fa-check"></i>CSS</a></li>
@@ -263,79 +257,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Model</h1>
 <p>“Models are complementary tools to visualisation. Once you have made your questions sufficiently precise, you can use a model to answer them. Models are a fundamentally mathematical or computational tool, so they generally scale well. … But every model makes assumptions, and by its very nature a model cannot question its own assumptions. That means a model cannot fundamentally surprise you.
 - Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em>”</p>
-<div id="cluster-analysis-and-classification" class="section level2">
-<h2>Cluster Analysis and Classification</h2>
-<p><code>{cluster}</code></p>
-<ul>
-<li><code>pam()</code>
-<ul>
-<li>Useful for silhouette analysis; similar but not identical to <code>stats::kmeans()</code>.</li>
-</ul></li>
-</ul>
-<p><code>{stats}</code></p>
-<ul>
-<li><code>cutree()</code>
-<ul>
-<li>Pair with <code>stats::hclust()</code>.</li>
-</ul></li>
-<li><code>dist()</code></li>
-<li><code>hclust()</code></li>
-<li><code>kmeans()</code></li>
-</ul>
-<p><code>{randomForest}</code></p>
-<ul>
-<li><code>randomForest()</code></li>
-</ul>
-<p><code>{rpart}</code></p>
-<ul>
-<li><code>rpart()</code></li>
-</ul>
-<p><code>{rpart.plot}</code></p>
-<ul>
-<li><code>rpart.plot()</code></li>
-</ul>
-</div>
-<div id="general" class="section level2">
-<h2>General</h2>
 <p><code>{base}</code></p>
 <ul>
 <li><code>sample()</code></li>
-</ul>
-<p><code>{dplyr}</code></p>
-<ul>
-<li><code>sample_n()</code></li>
-</ul>
-<p><code>{stats}</code></p>
-<ul>
-<li><code>as.formula()</code>
-<ul>
-<li>Use to define an object to pass as a formula into a model (e.g., <code>fmla &lt;- as.formula("unemployment ~ population"), lm(fmla, data)</code>)</li>
-</ul></li>
-<li><code>coef()</code>
-<ul>
-<li>Extract model coefficients.</li>
-</ul></li>
-<li><code>cor()</code></li>
-<li><code>cov()</code></li>
-<li><code>cov2cor()</code>
-<ul>
-<li>Scale a covariance matrix into a correlation matrix.</li>
-</ul></li>
-<li><code>model.matrix()</code>
-<ul>
-<li>Use to create dummy variables from categorical data.</li>
-</ul></li>
-<li><code>var()</code></li>
-</ul>
-<p><code>{WVPlots}</code></p>
-<ul>
-<li><code>GainCurvePlot()</code></li>
-</ul>
-</div>
-<div id="regression-machine-learning" class="section level2">
-<h2>Regression &amp; Machine Learning</h2>
-<p><code>{base}</code></p>
-<ul>
+<li><code>set.seed()</code></li>
 <li><code>summary()</code>
 <ul>
 <li>Pass the model as the data argument.</li>
@@ -360,6 +285,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><code>knn()</code></li>
 </ul>
+<p><code>{cluster}</code></p>
+<ul>
+<li><code>pam()</code>
+<ul>
+<li>Useful for silhouette analysis; similar but not identical to <code>stats::kmeans()</code>.</li>
+</ul></li>
+</ul>
+<p><code>{dplyr}</code></p>
+<ul>
+<li><code>sample_n()</code></li>
+</ul>
 <p><code>{mgcv}</code></p>
 <ul>
 <li><code>gam()</code>
@@ -382,41 +318,77 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>auc()</code></li>
 <li><code>roc()</code></li>
 </ul>
+<p><code>{randomForest}</code></p>
+<ul>
+<li><code>randomForest()</code></li>
+</ul>
+<p><code>{rpart}</code></p>
+<ul>
+<li><code>rpart()</code></li>
+</ul>
+<p><code>{rpart.plot}</code></p>
+<ul>
+<li><code>rpart.plot()</code></li>
+</ul>
 <p><code>{stats}</code></p>
 <ul>
-<li><code>df.residual()</code>
+<li><p><code>as.formula()</code></p>
+<ul>
+<li>Use to define an object to pass as a formula into a model (e.g., <code>fmla &lt;- as.formula("unemployment ~ population"), lm(fmla, data)</code>)</li>
+</ul></li>
+<li><p><code>coef()</code></p>
+<ul>
+<li>Extract model coefficients.</li>
+</ul></li>
+<li><p><code>cor()</code></p></li>
+<li><p><code>cov()</code></p></li>
+<li><p><code>cov2cor()</code></p>
+<ul>
+<li>Scale a covariance matrix into a correlation matrix.</li>
+</ul></li>
+<li><p><code>cutree()</code></p>
+<ul>
+<li>Pair with <code>stats::hclust()</code>.</li>
+</ul></li>
+<li><p><code>df.residual()</code></p>
 <ul>
 <li>Get the residual degrees of freedom.</li>
 </ul></li>
-<li><code>lm()</code>
+<li><p><code>dist()</code></p></li>
+<li><p><code>hclust()</code></p></li>
+<li><p><code>kmeans()</code></p></li>
+<li><p><code>lm()</code></p>
 <ul>
 <li>Fit linear models.</li>
 </ul></li>
-<li><code>p.adjust()</code>
+<li><p><code>model.matrix()</code></p>
+<ul>
+<li>Use to create dummy variables from categorical data.</li>
+</ul></li>
+<li><p><code>p.adjust()</code></p>
 <ul>
 <li>Adjust p-values for multiple comparisons.</li>
 </ul></li>
-<li><code>prcomp()</code>
+<li><p><code>prcomp()</code></p>
 <ul>
 <li>Principal Component Analysis.</li>
 </ul></li>
-<li><code>predict()</code>
+<li><p><code>predict()</code></p>
 <ul>
 <li>Model predictions.</li>
+<li>Use with <code>lm</code> class objects and new data to predict new values (e.g., <code>predict(model, newdata)</code>).</li>
 <li>For GAM, <code>predict()</code> returns a matrix so use <code>as.numeric()</code> to convert the matrix to a vector if adding to a data set (such as for plotting the predictions versus the actual outcomes).</li>
 </ul></li>
-<li><code>residuals()</code>
+<li><p><code>residuals()</code></p>
 <ul>
 <li>Extract model residuals.</li>
 </ul></li>
-<li><code>step()</code>
+<li><p><code>step()</code></p>
 <ul>
 <li>Step-wise regression.</li>
 </ul></li>
-</ul>
-<p><code>{tidyr}</code></p>
-<ul>
-<li><code>nest()</code>
+<li><p><code>var(libr</code>{tidyr}`</p></li>
+<li><p><code>nest()</code></p>
 <ul>
 <li>Nest repeated values in a list-variable.</li>
 <li>Helpful when separating a data frame in preparation to model the data for each grouping.</li>
@@ -424,29 +396,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><code>{vtreat}</code></p>
 <ul>
+<li><code>kWayCrossValidation()</code></li>
 <li><code>splitPlan()</code>
 <ul>
 <li>Use to create a cross-validation plan.</li>
 </ul></li>
 </ul>
-</div>
-<div id="simulation-prediction" class="section level2">
-<h2>Simulation &amp; Prediction</h2>
-<p><code>{base}</code></p>
+<p><code>{WVPlots}</code></p>
 <ul>
-<li><code>set.seed()</code></li>
-</ul>
-<p><code>{stats}</code></p>
-<ul>
-<li><code>predict()</code>
-<ul>
-<li>Model prediction.</li>
-<li>Use with <code>lm</code> class objects and new data to predict new values (e.g., <code>predict(model, newdata)</code>).</li>
-</ul></li>
-<li><code>rnorm()</code></li>
+<li><code>GainCurvePlot()</code></li>
 </ul>
 
-</div>
 </div>
             </section>
 

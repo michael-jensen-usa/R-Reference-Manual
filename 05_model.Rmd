@@ -3,65 +3,10 @@
 "Models are complementary tools to visualisation. Once you have made your questions sufficiently precise, you can use a model to answer them. Models are a fundamentally mathematical or computational tool, so they generally scale well. ... But every model makes assumptions, and by its very nature a model cannot question its own assumptions. That means a model cannot fundamentally surprise you. 
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*"
 
-## Cluster Analysis and Classification
-
-`{cluster}`
-
-- `pam()`
-  - Useful for silhouette analysis; similar but not identical to `stats::kmeans()`.
-
-`{stats}`
-
-- `cutree()`
-  - Pair with `stats::hclust()`.
-- `dist()`
-- `hclust()`
-- `kmeans()`
-
-`{randomForest}`
-
-- `randomForest()`
-
-`{rpart}`
-
-- `rpart()`
-
-`{rpart.plot}`
-
-- `rpart.plot()`
-
-## General
-
 `{base}`
 
 - `sample()`
-
-`{dplyr}`
-
-- `sample_n()`
-
-`{stats}`
-
-- `as.formula()`
-  - Use to define an object to pass as a formula into a model (e.g., `fmla <- as.formula("unemployment ~ population"), lm(fmla, data)`)
-- `coef()`
-  - Extract model coefficients.
-- `cor()`
-- `cov()`
-- `cov2cor()`
-  - Scale a covariance matrix into a correlation matrix.
-- `model.matrix()`
-  - Use to create dummy variables from categorical data.
-- `var()`
-
-`{WVPlots}`
-
-- `GainCurvePlot()`
-
-## Regression & Machine Learning
-
-`{base}`
-
+- `set.seed()`
 - `summary()`
   - Pass the model as the data argument.
 
@@ -78,6 +23,15 @@
 
 - `knn()`
 
+`{cluster}`
+
+- `pam()`
+  - Useful for silhouette analysis; similar but not identical to `stats::kmeans()`.
+
+`{dplyr}`
+
+- `sample_n()`
+
 `{mgcv}`
 
 - `gam()`
@@ -88,7 +42,6 @@
 
 `{mixtools}`
 
-
 `{naivebayes}`
 
 - `naive_bayes()`
@@ -98,24 +51,52 @@
 - `auc()`
 - `roc()`
 
+`{randomForest}`
+
+- `randomForest()`
+
+`{rpart}`
+
+- `rpart()`
+
+`{rpart.plot}`
+
+- `rpart.plot()`
+
 `{stats}`
 
+- `as.formula()`
+  - Use to define an object to pass as a formula into a model (e.g., `fmla <- as.formula("unemployment ~ population"), lm(fmla, data)`)
+- `coef()`
+  - Extract model coefficients.
+- `cor()`
+- `cov()`
+- `cov2cor()`
+  - Scale a covariance matrix into a correlation matrix.
+- `cutree()`
+  - Pair with `stats::hclust()`.
 - `df.residual()`
   - Get the residual degrees of freedom.
+- `dist()`
+- `hclust()`
+- `kmeans()`
 - `lm()`
   - Fit linear models.
+- `model.matrix()`
+  - Use to create dummy variables from categorical data.
 - `p.adjust()`
   - Adjust p-values for multiple comparisons.
 - `prcomp()`
   - Principal Component Analysis.
 - `predict()`
   - Model predictions.
+  - Use with `lm` class objects and new data to predict new values (e.g., `predict(model, newdata)`).
   - For GAM, `predict()` returns a matrix so use `as.numeric()` to convert the matrix to a vector if adding to a data set (such as for plotting the predictions versus the actual outcomes).
 - `residuals()`
   - Extract model residuals.
 - `step()`
   - Step-wise regression.
-  
+- `var(libr
 `{tidyr}`
 
 - `nest()`
@@ -124,18 +105,10 @@
   
 `{vtreat}`
 
+- `kWayCrossValidation()`
 - `splitPlan()`
   - Use to create a cross-validation plan.
 
-## Simulation & Prediction
+`{WVPlots}`
 
-`{base}`
-
-- `set.seed()`
-
-`{stats}`
-
-- `predict()`
-  - Model prediction.
-  - Use with `lm` class objects and new data to predict new values (e.g., `predict(model, newdata)`).
-- `rnorm()`
+- `GainCurvePlot()`
