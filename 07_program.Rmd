@@ -7,250 +7,250 @@
 
 References:
 
-* `?Quotes`
+- `?Quotes`
 
 ## Conditionals & Control Flows
 
 `{base}`
 
-* Control (access documentation using `?Control`)
-  * `if (cond) expr`
-    * The key difference between `if (cond) expr` and `ifelse` is that `if (cond) expr` will evaluate only the first element of an object with `length > 1`. See the documentation for each function and the ateucher's GitHub example titled ["R: if vs ifelse"](https://gist.github.com/ateucher/c7359f566eded9fcd4a255f4cbd4fe67) to learn more.
-    + `for (var in seq) expr`
-    + `while (cond) expr`
-    + `repeat expr`
-    + `break`
-    + `next`
-* `identical()`: Test objects for exact equality.
-    + Use `identical()` rather than `==` and `!=` in `if` and `while` statements to test for equality.
-* `ifelse()`: Conditional element selection.
-  * `dplyr::if_else()` is more strict by checking the object type.
-* `stop()`: Stop execution of the expression and execute an error action.
-    + Useful in combination with an `if` statement when you want to generate helpful error messages.
-* `stopifnot()`: Ensure the truth of an R expression.
-  * Prefer `base::stop()` to `base::stopifnot()`.
+- Control (access documentation using `?Control`)
+  - `if (cond) expr`
+    - The key difference between `if (cond) expr` and `ifelse` is that `if (cond) expr` will evaluate only the first element of an object with `length > 1`. See the documentation for each function and the ateucher's GitHub example titled ["R: if vs ifelse"](https://gist.github.com/ateucher/c7359f566eded9fcd4a255f4cbd4fe67) to learn more.
+  - `for (var in seq) expr`
+  - `while (cond) expr`
+  - `repeat expr`
+  - `break`
+  - `next`
+- `identical()`: Test objects for exact equality.
+  - Use `identical()` rather than `==` and `!=` in `if` and `while` statements to test for equality.
+- `ifelse()`: Conditional element selection.
+  - `dplyr::if_else()` is more strict by checking the object type.
+- `stop()`: Stop execution of the expression and execute an error action.
+  - Useful in combination with an `if` statement when you want to generate helpful error messages.
+- `stopifnot()`: Ensure the truth of an R expression.
+  - Prefer `base::stop()` to `base::stopifnot()`.
 
 `dplyr`
 
-* `case_when()`: A general vectorized `if`.
-* `if_else()`: Vectorized `if`.
+- `case_when()`: A general vectorized `if`.
+- `if_else()`: Vectorized `if`.
 
 ## Environment and Workspace
 
 `{base}`
 
-* `.libPaths()`
-* `baseenv()`
-  * The environment of the `{base}` package; it's enclosing environment ("parent environment") is the empty environment.
-* `dir()`
-  * List the files in a directory.
-* `dir.create()`
-  * Create a file path in the computer's file system.
-* `emptyenv()`
-  * The empty environment, which is the ancestor of all environments and the only environment without an enclosing environment.
-* `environment()`
-  * The current environment.
-* `environmentName()`
-* `exists()`
-  * Remember that `R` will look for an object in parent environments until it reaches the empty environment, so use `inherits = FALSE` to limit the search to only the current environment.
-* `getOption()`
-  * Set and examine global options.
-* `getwd()`
-  * Get the working directory.
-* `globalenv()`
-  * The environment in which you normally work, it's enclosing environment is the last package attached with `library()` or `require()`.
-* `history()`
-  * Display the previous 25 commands.
-* `install.packages()`
-  * Install packages from repositories or local files.
-* `library()`
-  * Load and attach packages, returning an error if the packages does not exist.
-* `list.files()`
-  * List the files in a directory/folder.
-* `loadedNamespaces()`
-  * Return the loaded name spaces.
-* `loadhistory()`
-  * Recall command history.
-* `ls()`
-  * List objects in the specified environment.
-* `list2env()`
-  * From a list, build or add to an environment.
-* `new.env()`
-  * Create a new environment.
-* `options()`
-  * Set and examine global options.
-* `parent.env()`
-  * Return the enclosing environment of the environment listed as an argument.
-  * `base::parent.env()` returns information that can be unhelpful, so use with `base::environmentName()`, as follows: `parent.env(environment_name) %>% environmentName()`.
-* `q()`
-  * Terminate an R session.
-* `R.version()`
-  * Version information.
-* `R.version.string()`
-  * Version information. 
-  * Same call as `R.version$version.string()`.
-* `require()`
-  * Load and attach packages, returning `FALSE` if the package does not exist.
-* `rm()`
-  * Remove objects from a specified environment.
-* `savehistory()`
-  * Save command history (default value is ".Rhistory").
-* `save.image()`
-  * Save the current workspace.
-* `search()`
-  * Return a list of attached packages and R objects.
-* `searchpaths()`
-  * Return the path to attached packages.
-* `setwd()`
-  * Set the working directory file path.
-  * When using Windows, use "/" instead of "\".
-* `Sys.getenv()`
-  * See also `Sys.setenv()`.
-* `Sys.info()`
-  * Extract system and user information.
-  * Example: `Sys.info()[c("sysname", "release")]`.
-* `Sys.setenv()`
-  * See also `Sys.setenv()`.
+- `.libPaths()`
+- `baseenv()`
+  - The environment of the `{base}` package; it's enclosing environment ("parent environment") is the empty environment.
+- `dir()`
+  - List the files in a directory.
+- `dir.create()`
+  - Create a file path in the computer's file system.
+- `emptyenv()`
+  - The empty environment, which is the ancestor of all environments and the only environment without an enclosing environment.
+- `environment()`
+  - The current environment.
+- `environmentName()`
+- `exists()`
+  - Remember that `R` will look for an object in parent environments until it reaches the empty environment, so use `inherits = FALSE` to limit the search to only the current environment.
+- `getOption()`
+  - Set and examine global options.
+- `getwd()`
+  - Get the working directory.
+- `globalenv()`
+  - The environment in which you normally work, it's enclosing environment is the last package attached with `library()` or `require()`.
+- `history()`
+  - Display the previous 25 commands.
+- `install.packages()`
+  - Install packages from repositories or local files.
+- `library()`
+  - Load and attach packages, returning an error if the packages does not exist.
+- `list.files()`
+  - List the files in a directory/folder.
+- `loadedNamespaces()`
+  - Return the loaded name spaces.
+- `loadhistory()`
+  - Recall command history.
+- `ls()`
+  - List objects in the specified environment.
+- `list2env()`
+  - From a list, build or add to an environment.
+- `new.env()`
+  - Create a new environment.
+- `options()`
+  - Set and examine global options.
+- `parent.env()`
+  - Return the enclosing environment of the environment listed as an argument.
+  - `base::parent.env()` returns information that can be unhelpful, so use with `base::environmentName()`, as follows: `parent.env(environment_name) %>% environmentName()`.
+- `q()`
+  - Terminate an R session.
+- `R.version()`
+  - Version information.
+- `R.version.string()`
+  - Version information. 
+  - Same call as `R.version$version.string()`.
+- `require()`
+  - Load and attach packages, returning `FALSE` if the package does not exist.
+- `rm()`
+  - Remove objects from a specified environment.
+- `savehistory()`
+  - Save command history (default value is ".Rhistory").
+- `save.image()`
+  - Save the current workspace.
+- `search()`
+  - Return a list of attached packages and R objects.
+- `searchpaths()`
+  - Return the path to attached packages.
+- `setwd()`
+  - Set the working directory file path.
+  - When using Windows, use "/" instead of "\".
+- `Sys.getenv()`
+  - See also `Sys.setenv()`.
+- `Sys.info()`
+  - Extract system and user information.
+  - Example: `Sys.info()[c("sysname", "release")]`.
+- `Sys.setenv()`
+  - See also `Sys.setenv()`.
 
 `{gdata}`
 
-* `object.size()`
-  * Report the space allocated for an object.
-  * See also `utils::object.size()`.
+- `object.size()`
+  - Report the space allocated for an object.
+  - See also `utils::object.size()`.
 
 `{here}`
 
-* `here()`
+- `here()`
 
 `{installr}`
 
-* `updateR()`
-  * Check for the latest R version; downloads and installs new R versions.
+- `updateR()`
+  - Check for the latest R version; downloads and installs new R versions.
 
 `{pryr}`
 
-* `where()`: Find where a name is defined.
+- `where()`: Find where a name is defined.
 
 
 `{utils}`
 
-* `ls.str()`: List objects and  their structure.
-* `object.size()`: Report the space allocated for an object.
-  * See also `gdata::object.size()`.
-* `sessionInfo()`: Collect information about the current R session.
+- `ls.str()`: List objects and  their structure.
+- `object.size()`: Report the space allocated for an object.
+  - See also `gdata::object.size()`.
+- `sessionInfo()`: Collect information about the current R session.
     
 References:
 
-* ["Environments"](http://adv-r.had.co.nz/Environments.html#environments) (Hadley Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
+- ["Environments"](http://adv-r.had.co.nz/Environments.html#environments) (Hadley Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
 
 ## Evaluation (Standard and Non-standard)
 
 `base`
 
-* `cat()`
-  * Concatenate and print.
-* `print()
-  * Print the argument to the Console.
-  *  A shortcut to `print()` is to place the code you want printed inside parentheses.
-* `quote()`
-  * Return the argument, unevaluated.
-* `writeLines()`
-  * Display quotes and backslashes as they would be read, rather than as R stores them (i.e., see the raw contents of the string, as the `print()` representation is not the same as the string itself).
+- `cat()`
+  - Concatenate and print.
+- `print()
+  - Print the argument to the Console.
+  -  A shortcut to `print()` is to place the code you want printed inside parentheses.
+- `quote()`
+  - Return the argument, unevaluated.
+- `writeLines()`
+  - Display quotes and backslashes as they would be read, rather than as R stores them (i.e., see the raw contents of the string, as the `print()` representation is not the same as the string itself).
 
 `rlang`
 
-* Quosures
-    + `enquo()`, `new_quosure()`, `quo()`.
+- Quosures
+  - `enquo()`, `new_quosure()`, `quo()`.
     
 References:
 
-* ["Non-standard evaluation"](http://adv-r.had.co.nz/Computing-on-the-language.html) (Hadley Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
-* ["Non-standard evaluation"](https://cran.r-project.org/web/packages/lazyeval/vignettes/lazyeval.html) (Hadley Wickham, `lazyeval` package vignette)
-* ["Programming with dplyr"](https://dplyr.tidyverse.org/articles/programming.html) (dplyr.tidyverse.org)
+- ["Non-standard evaluation"](http://adv-r.had.co.nz/Computing-on-the-language.html) (Hadley Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
+- ["Non-standard evaluation"](https://cran.r-project.org/web/packages/lazyeval/vignettes/lazyeval.html) (Hadley Wickham, `lazyeval` package vignette)
+- ["Programming with dplyr"](https://dplyr.tidyverse.org/articles/programming.html) (dplyr.tidyverse.org)
 
 ## Functionals
 
 `{base}`
 
-* Apply Functions
-  * `apply`
-    * Apply functions over array margins.
-  * `lapply`
-    * Apply a function over a list or vector.
-  * `sapply`
-    * Apply a function over a list or vector and return a vector or matrix.
-  * `vapply`
-    * A safer version of `sapply`, as it requires the output type to be predetermined.
-  * `mapply`
-    * Apply a function to multiple list or vector arguments.
-  * `rapply`
-    * Recursively apply a function to a list. 
-  * `tapply`
-    * Apply a function over a ragged array.
+- Apply Functions
+  - `apply`
+    - Apply functions over array margins.
+  - `lapply`
+    - Apply a function over a list or vector.
+  - `sapply`
+    - Apply a function over a list or vector and return a vector or matrix.
+  - `vapply`
+    - A safer version of `sapply`, as it requires the output type to be predetermined.
+  - `mapply`
+    - Apply a function to multiple list or vector arguments.
+  - `rapply`
+    - Recursively apply a function to a list. 
+  - `tapply`
+    - Apply a function over a ragged array.
 
 `{purrr}`
 
-* `map`
-  * Apply a function to each element of a vector.
-  * `tidyr::unnest` is useful in changing the list-column output of `map` into rows.
-* `map2`
-  * Map over multiple inputs simultaneously.
-* `map_if`
-  * Apply a function to elements of that match a condition.
-* `possibly`
-  * Uses a default value whenever an error occurs.
-* `quietly`
-  * Capture side effects in a list with components `result`, `output`, `messages`, and `warnings`.
-* `safely`
-  * Capture side effects in a list with components `result` and `error`.
-* `transpose`
-  * Transpose a list (turn a list-of-lists inside-out).
+- `map`
+  - Apply a function to each element of a vector.
+  - `tidyr::unnest` is useful in changing the list-column output of `map` into rows.
+- `map2`
+  - Map over multiple inputs simultaneously.
+- `map_if`
+  - Apply a function to elements of that match a condition.
+- `possibly`
+  - Uses a default value whenever an error occurs.
+- `quietly`
+  - Capture side effects in a list with components `result`, `output`, `messages`, and `warnings`.
+- `safely`
+  - Capture side effects in a list with components `result` and `error`.
+- `transpose`
+  - Transpose a list (turn a list-of-lists inside-out).
 
 ## Functions
 
 `{assertive}`
 
-* `assert_*()`
-  * Check whether the input is `*` (e..g, `assert_is_numeric()`) and throw and error if the input does not meet the condition.
-* `coerce_to()`
-  * Coerce the input to a different class, with a warning.
-* `is_*()`
-  * Checks whether the input matches the condition specified by `*` (e.g., `assertive::is_non_positive()`).
-* `use_first()`
-  * Use only the first element of a vector.
+- `assert_*()`
+  - Check whether the input is `*` (e..g, `assert_is_numeric()`) and throw and error if the input does not meet the condition.
+- `coerce_to()`
+  - Coerce the input to a different class, with a warning.
+- `is_*()`
+  - Checks whether the input matches the condition specified by `*` (e.g., `assertive::is_non_positive()`).
+- `use_first()`
+  - Use only the first element of a vector.
 
 `{base}`
 
-* `do.call()`
-  * Execute a function call from a name or a function and a list of arguments to be passed to the function.
-* `invisible()`
-  * Return a (temporarily) invisible copy of an object.
-* `match.arg()`
-  * Argument verification. Useful when matching a character argument specified in the function signature. See example.
-* `message()`
-  * Generate a diagnostic message.
-  * Preferable to generating a message using `cat`.
-* `return()`
-  * Return a value from a function.
-  * Useful in `if` statements where one condition is simple and the other is complex (see section 19.6.1 "Explicit return statements" in Hadley Wickham's [*R for Data Science*](https://r4ds.had.co.nz/functions.html).
-* `setNames()`
-  * Set the names in an object.
-  * Useful in function writing; see documentation.
-* `stop()`
-  * Stop execution of the expression and execute an error action.
-  * Useful in combination with an `if` statement when you want to generate helpful error messages.
-* `stopifnot()`
-  * Ensure the truth of an R expression.
-  * See section 19.5.2 "Checking values" in Hadley Wickham's [*R for Data Science*](https://r4ds.had.co.nz/functions.html) for a discussion of `stop()` versus `stopifnot()`.
-  * Consider functions from `{assertive}` as an alternative to `stopifnot` and `stop`.
-* `unlist()`
-  * Flatten lists.
-  * Useful when using `purrr`'s `map` functions, which return objects as type `list`.
+- `do.call()`
+  - Execute a function call from a name or a function and a list of arguments to be passed to the function.
+- `invisible()`
+  - Return a (temporarily) invisible copy of an object.
+- `match.arg()`
+  - Argument verification. Useful when matching a character argument specified in the function signature. See example.
+- `message()`
+  - Generate a diagnostic message.
+  - Preferable to generating a message using `cat`.
+- `return()`
+  - Return a value from a function.
+  - Useful in `if` statements where one condition is simple and the other is complex (see section 19.6.1 "Explicit return statements" in Hadley Wickham's [*R for Data Science*](https://r4ds.had.co.nz/functions.html).
+- `setNames()`
+  - Set the names in an object.
+  - Useful in function writing; see documentation.
+- `stop()`
+  - Stop execution of the expression and execute an error action.
+  - Useful in combination with an `if` statement when you want to generate helpful error messages.
+- `stopifnot()`
+  - Ensure the truth of an R expression.
+  - See section 19.5.2 "Checking values" in Hadley Wickham's [*R for Data Science*](https://r4ds.had.co.nz/functions.html) for a discussion of `stop()` versus `stopifnot()`.
+  - Consider functions from `{assertive}` as an alternative to `stopifnot` and `stop`.
+- `unlist()`
+  - Flatten lists.
+  - Useful when using `purrr`'s `map` functions, which return objects as type `list`.
   
 `{zeallot}`
 
-* `%<-%`
-  * Multiple assignment operator (see example below).
+- `%<-%`
+  - Multiple assignment operator (see example below).
   
 ### Examples
 
@@ -281,79 +281,79 @@ c(vrsn, os, pkgs) %<-% session()
 
 ## Learn About an Object
 
-* `?object_name`
-* `??object_name`
+- `?object_name`
+- `??object_name`
 
 `{base}`
 
-* `args()`
-* `attributes()`
-  * View or assign an objects attributes (e.g., `class()`, `dim()`, `dimnames()`, `names()`, `row.names()`). 
-* `body()`
-  * Get or set the body of a function.
-* `colnames()`
-* `dim()`
-  * Retrieve or set the dimnames of an object.
-* `dimnames()`
-  * Retrieve or set the dimension names of an object.
-* `formals()`
-  * Get or set the formal arguments of a function.
-* `help()`
-  * Get the topic documentation.
-* `help.search()`
-  * Search the help system for documentation matching a given character string.
-* `vignette()`
-* `rownames()`
+- `args()`
+- `attributes()`
+  - View or assign an objects attributes (e.g., `class()`, `dim()`, `dimnames()`, `names()`, `row.names()`). 
+- `body()`
+  - Get or set the body of a function.
+- `colnames()`
+- `dim()`
+  - Retrieve or set the dimnames of an object.
+- `dimnames()`
+  - Retrieve or set the dimension names of an object.
+- `formals()`
+  - Get or set the formal arguments of a function.
+- `help()`
+  - Get the topic documentation.
+- `help.search()`
+  - Search the help system for documentation matching a given character string.
+- `vignette()`
+- `rownames()`
 
 ## Loops
 
-* `base::seq()`: Sequence generation (this functions makes `length()` unnecessary).
-* `base::seq_along()`: In `for` loops, safer than using `base::ncol()` or `base::nrow()`.
+- `base::seq()`: Sequence generation (this functions makes `length()` unnecessary).
+- `base::seq_along()`: In `for` loops, safer than using `base::ncol()` or `base::nrow()`.
 
 ## Optimization
 
 `microbenchmark::microbenchmark()`: Sub-millisecond accurate timing of expression evaluations.
-    + A more accurate replacement of `system.time(replicate(1000, expr))`.
+  - A more accurate replacement of `system.time(replicate(1000, expr))`.
 
 ## Pipes
 
-* `magrittr::%<>%`: Compound assignment-pipe operator.
-* `magrittr::%>%`: Forward-pipe operator.
-* `magrittr::%$%`: Expositions-pipe operator.
-* `magrittr::add()`: `+`, for pipes.
-* `magrittr::and()`: `&`, for pipes.
-* `magrittr::extract()`:`[`, for pipes (see also `purrr::pluck()`).
-* `magrittr::extract2()`: `[[`, for pipes.
-* `magrittr::freduce()`: Apply a list of functions sequentially.
-* `magrittr::is_in()`: `%in%`, for pipes.
-* `magrittr::multiply_by()`: `*`, for pipes.
-* `magrittr::or()`: `|`, for pipes.
-* `magrittr::raise_to_power()`: `^`, for pipes.
-* `magrittr::subtract()`: `-`, for pipes.
+- `magrittr::%<>%`: Compound assignment-pipe operator.
+- `magrittr::%>%`: Forward-pipe operator.
+- `magrittr::%$%`: Expositions-pipe operator.
+- `magrittr::add()`: `+`, for pipes.
+- `magrittr::and()`: `&`, for pipes.
+- `magrittr::extract()`:`[`, for pipes (see also `purrr::pluck()`).
+- `magrittr::extract2()`: `[[`, for pipes.
+- `magrittr::freduce()`: Apply a list of functions sequentially.
+- `magrittr::is_in()`: `%in%`, for pipes.
+- `magrittr::multiply_by()`: `*`, for pipes.
+- `magrittr::or()`: `|`, for pipes.
+- `magrittr::raise_to_power()`: `^`, for pipes.
+- `magrittr::subtract()`: `-`, for pipes.
 
 ## Popups
 
-* `svDialogs::dlg_message()`: Display a modal message box (works in Windows, MacOS, and Linux).
-* `tcltk::tk_messageBox()`: Display a generic message box using Tk (Windows-specific).
+- `svDialogs::dlg_message()`: Display a modal message box (works in Windows, MacOS, and Linux).
+- `tcltk::tk_messageBox()`: Display a generic message box using Tk (Windows-specific).
 
 ## Selecting & Subsetting
 
-* `.$variable_name`: See example below.
-* `.[["variable_name"]]`: See example below.
-* `base::subset()`
-* `dplyr::first()`
-* `dplyr::las()t`
-* `dplyr::nth()`
-* `dplyr::rename()`
-* `dplyr::select()`: Helper functions include `contains()`, `ends_with()`, `matches()`, `num_range()`, `one_of()`, `starts_with()`.
-* `ggplot2::cut_number`
-* `magrittr::extract()`
-* `magrittr::extract2()`
-* `purrr:pluck()`: See also `magrittr::extract2()`.
+- `.$variable_name`: See example below.
+- `.[["variable_name"]]`: See example below.
+- `base::subset()`
+- `dplyr::first()`
+- `dplyr::las()t`
+- `dplyr::nth()`
+- `dplyr::rename()`
+- `dplyr::select()`: Helper functions include `contains()`, `ends_with()`, `matches()`, `num_range()`, `one_of()`, `starts_with()`.
+- `ggplot2::cut_number`
+- `magrittr::extract()`
+- `magrittr::extract2()`
+- `purrr:pluck()`: See also `magrittr::extract2()`.
 
 #### Examples
 
-* `.$variable_name`:
+- `.$variable_name`:
 
 ```{r, eval=FALSE}
 ui_summary_table <- 
@@ -364,7 +364,7 @@ ui_summary_table <-
   bind_rows()
 ```
 
-* `.[["variable_name"]]`:
+- `.[["variable_name"]]`:
 
 ```{r, eval=FALSE}
 odbc_aws %>% 
@@ -382,55 +382,54 @@ as.double()
 
 #### References
 
-* ["Indexing lists in #rstats. Inspired by Residence Inn"](https://twitter.com/hadleywickham/status/643381054758363136) (Hadley Wickham, Twitter, 14 September 2015)
+- ["Indexing lists in #rstats. Inspired by Residence Inn"](https://twitter.com/hadleywickham/status/643381054758363136) (Hadley Wickham, Twitter, 14 September 2015)
 
 ## Style Guide
 
-* ["The Tidyverse Style Guide"](https://style.tidyverse.org/) by Hadley Wickham.
-* General Layout and Ordering (taken from the outdated ["Google's R Style Guide"](http://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html))
-  * Title
-  * Author
-  * File description (e.g., purpose of program, inputs, outputs)
-  * `source()` and `library()` statements
-  * Function definitions
-  * Executed statements.
+- ["The Tidyverse Style Guide"](https://style.tidyverse.org/) by Hadley Wickham.
+- General Layout and Ordering (taken from the outdated ["Google's R Style Guide"](http://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html))
+  - Title
+  - Author
+  - File description (e.g., purpose of program, inputs, outputs)
+  - `source()` and `library()` statements
+  - Function definitions
+  - Executed statements.
 
 ## System Commands
 
 `{base}`
 
-* `shell()`
-* `system()`
-* `system2()`
+- `shell()`
+- `system()`
+- `system2()`
 
 `{sys}`
 
-* `exec()`
-* `exec_r()`
+- `exec()`
+- `exec_r()`
 
 ## Version Control
 
-* `base::update.packages()`
-  * 00LOCK error when updating a package: Use `update.packages(ask = FALSE, checkBuilt = TRUE, INSTALL_opts = "--no-lock")`
-* `installr::updateR()`
-  * Remove old versions from Windows:
-    * Control Panel > All Control Panel Items > Programs and Features > uninstall old versions
-    * C: > Program Files > R > delete old versions.
-* `packrat::snapshot()`: Capture and store the packages and versions in use.
-* `packrat::restore()`: Load the most recent snapshot to the project's private library.
-* Packrat still seems to be under development. The idea sounds good, but in practice the packrat package has caused lots of problems. 
+- `base::update.packages()`
+  - 00LOCK error when updating a package: Use `update.packages(ask = FALSE, checkBuilt = TRUE, INSTALL_opts = "--no-lock")`
+- `installr::updateR()`
+  - Remove old versions from Windows:
+    - Control Panel > All Control Panel Items > Programs and Features > uninstall old versions
+    - C: > Program Files > R > delete old versions.
+- `packrat::snapshot()`: Capture and store the packages and versions in use.
+- `packrat::restore()`: Load the most recent snapshot to the project's private library.
+- Packrat still seems to be under development. The idea sounds good, but in practice the packrat package has caused lots of problems. 
 
 #### Git
 
-* [*A successful Git branching model*](https://nvie.com/posts/a-successful-git-branching-model/)
-* [git-scm.com](https://git-scm.com/)
-* [*Git and GitHub*](http://r-pkgs.had.co.nz/git.html#git-learning) by Hadley Wickham
-* [*Happy Git and GitHub for the useR*](http://happygitwithr.com/) by Jenny Bryan
-* [*Pro Git*](https://git-scm.com/book/en/v2) by Scott Chacon and Ben Straub
-* [*Understanding the GitHub flow*](https://guides.github.com/introduction/flow/)
-
-* `git branch`: List, create, or delete branches.
-    + `git branch -d <branch_name>`: Delete a local branch.
-        + See ["Delete branch in RStudio pop-up"](https://community.rstudio.com/t/delete-branch-in-rstudio-pop-up/15465) for help removing branches in RStudio after removing them from Git.
-* Git + R Projects
-  * R Projects (.Rproj files) should not be nested. Doing so causes problems with Git when tracking changes to a child .Rproj file.
+- [*A successful Git branching model*](https://nvie.com/posts/a-successful-git-branching-model/)
+- [git-scm.com](https://git-scm.com/)
+- [*Git and GitHub*](http://r-pkgs.had.co.nz/git.html#git-learning) by Hadley Wickham
+- [*Happy Git and GitHub for the useR*](http://happygitwithr.com/) by Jenny Bryan
+- [*Pro Git*](https://git-scm.com/book/en/v2) by Scott Chacon and Ben Straub
+- [*Understanding the GitHub flow*](https://guides.github.com/introduction/flow/)
+- `git branch`: List, create, or delete branches.
+  - `git branch -d <branch_name>`: Delete a local branch.
+    - See ["Delete branch in RStudio pop-up"](https://community.rstudio.com/t/delete-branch-in-rstudio-pop-up/15465) for help removing branches in RStudio after removing them from Git.
+- Git and R Projects
+  - R Projects (.Rproj files) should not be nested. Doing so causes problems with Git when tracking changes to a child .Rproj file.

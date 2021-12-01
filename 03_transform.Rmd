@@ -7,81 +7,81 @@
 
 `{assertive}`
 
-* `is_divisible_by()`
+- `is_divisible_by()`
 
 `{base}`
 
-* `abs()`
-* `colMeans()`
-* `colSums()`
-* `diff()`
-* `IQR()`
-* `max()`
-* `mean()`
-  * Use `base::mean(variable == value)` to calculate percentage match (accuracy); see example below.
-* `median()`
-* `min()`
-* Mode: Use `table` to view the mode of a data set.
-* Operators:
-  * Arithmetic Operators: `+`, `-`, `*`, `/`, `%%`
-  * Comparison Operators: `<`, `>`, `<=`, `>=`, `==`, `!=`.
-    * Use `identical()` and `(all.equal))` rather than `==` and `!=` in tests where a single `TRUE` or `FALSE` is required (such as `if` expressions).
-* `range()`
-  * Use `diff(range())` to get the range as a measure of variability.
-* `round()`
-* `rowMeans()`
-* `rowSums()`
-* `scale()`
-* `sd()`
-* `signif()`
-  * Round values to a specified number of significant digits.
-* `sqrt()`
-* `sum()`
-* `summary()`
-* `var()`
+- `abs()`
+- `colMeans()`
+- `colSums()`
+- `diff()`
+- `IQR()`
+- `max()`
+- `mean()`
+  - Use `base::mean(variable == value)` to calculate percentage match (accuracy); see example below.
+- `median()`
+- `min()`
+- Mode: Use `table` to view the mode of a data set.
+- Operators:
+  - Arithmetic Operators: `+`, `-`, `*`, `/`, `%%`
+  - Comparison Operators: `<`, `>`, `<=`, `>=`, `==`, `!=`.
+    - Use `identical()` and `(all.equal))` rather than `==` and `!=` in tests where a single `TRUE` or `FALSE` is required (such as `if` expressions).
+- `range()`
+  - Use `diff(range())` to get the range as a measure of variability.
+- `round()`
+- `rowMeans()`
+- `rowSums()`
+- `scale()`
+- `sd()`
+- `signif()`
+  - Round values to a specified number of significant digits.
+- `sqrt()`
+- `sum()`
+- `summary()`
+- `var()`
 
 `{dplyr}`
 
-* `count()`
-* `group_by()`
-* `n()`
-  * Must be used within `summarize()`, `mutate()`, or `filter()`.
-* `n_distinct()`
-* `near()`
-  * Compare two numeric vectors (safer than using `==`).
-* `summarize()`
-  * See `dplyr::n_distinct()`.
-* `tally()`
-* `top_n()`
+- `count()`
+- `group_by()`
+- `n()`
+  - Must be used within `summarize()`, `mutate()`, or `filter()`.
+- `n_distinct()`
+- `near()`
+  - Compare two numeric vectors (safer than using `==`).
+- `summarize()`
+  - See `dplyr::n_distinct()`.
+- `tally()`
+- `top_n()`
 
 `{dummies}`
 
-* `dummy.data.frame()`
-  * Dummify a data frame (useful when needing to calculate the Jaccard index for categorical data)
+- `dummy.data.frame()`
+  - Dummify a data frame (useful when needing to calculate the Jaccard index for categorical data)
   
 `{magrittr}`
 
-* `extract()`
-  * `x %>% extract(y)` is equivalent to `x[y]`.
-* `extract2()`
-* `multiply_by()`
-  * `x %>% multiply_by(y)` is equivalent to `x * y`.
-* `raise_to_power()`
-  * `x %>% raise_to_power(y)` is equivalent to `x^y`.
+- `extract()`
+  - `x %>% extract(y)` is equivalent to `x[y]`.
+- `extract2()`
+- `multiply_by()`
+  - `x %>% multiply_by(y)` is equivalent to `x * y`.
+- `raise_to_power()`
+  - `x %>% raise_to_power(y)` is equivalent to `x^y`.
 
 `{stats}`
 
-* `aggregate()`
-  * Compute summary statistics of data subsets.
-* `cor()`
-* `cov()`
-* `cutree()`
-  * Pair with `stats::hclust()`.
-* `dist()`
-* `hclust()`
-* `lag()`
-* `rnorm()`
-* `var()`
+- `aggregate()`
+  - Compute summary statistics of data subsets.
+- `cor()`
+- `cov()`
+- `cutree()`
+  - Pair with `stats::hclust()`.
+- `dist()`
+- `hclust()`
+- `lag()`
+- `rnorm()`
+- `var()`
 
 ### Examples
 
@@ -103,14 +103,14 @@ mean(loans_test$outcome == loans_test$prediction)
 
 `countrycode`
 
-* `countrycode()`: Convert country codes into country names.
+- `countrycode()`: Convert country codes into country names.
 
 `dplyr`
 
-* `mutate()`: Add new variables.
-    + `mutate()` can also be used to modify existing variables. To change the case of a character variable, for example, do something like:
-    + Child function: `transmute()` (drops existing variables).
-* `recode()`: Recode values (the numeric alternative to using `if_else` or `case_when()`).
+- `mutate()`: Add new variables.
+  - `mutate()` can also be used to modify existing variables. To change the case of a character variable, for example, do something like:
+  - Child function: `transmute()` (drops existing variables).
+- `recode()`: Recode values (the numeric alternative to using `if_else` or `case_when()`).
     
 **Example:** `dplyr::mutate`
 
@@ -130,155 +130,154 @@ df <-
 
 ## Dates and Datetimes
 
-* `base::date`
-  * Get the current system date and time.
-* `base::difftime`
-  * Time intervals and differences.
-  * `base::difftime` is the function behind the `-` operator when used with dates and datetimes (e.g., `time_1 - time_2` is equivalent to `difftime(time_1, time_2)`). The advantage of using  `difftime` over `-`, however, is the `units` argument because it allows you to specify the unit of time in which the difference is calculated.
-* `base::months`
-  * Extract the month names.
-* `base::quarters`
-  * Extract the calendar quarters.
-* `base::seq.Date`
-* `base::Sys.Date`
-  * Get the current date in the current time zone.
-* `base::Sys.time`
-  * Get the absolute date-time value (which can be converted to various time zones and may return different days).
-* `base::weekdays`
-  * Extract weekday names.
-* `lubridate::ceiling_date`
-* `lubridate::date`
-  * Get or set the date component of a date-time.
-* `lubridate::day`
-  * Get or set the day component of a datetime.
-* `lubridate::floor_date`
-* `lubridate::month`
-  * Get or set the month component of a datetime.
-* `lubridate::now`
-  * The current time (as a POSIXct object).
-* `lubridate::quarter`
-  * Get or set the fiscal quarter or semester component of a datetime.
-* `lubridate::round_date`
-* Time spans: Duration
-  * Use when you are interested in seconds elapsed.
-  * `lubridate::ddays`
-  * `lubridate::dhours`
-  * `lubridate::dminutes`
-  * `lubridate::dseconds`
-  * `lubridate::dweeks`
-  * `lubridate::dyears`
-* Time spans: Interval
-  * Use when you have a start and end.
-  * `%--%`
-  * `int_aligns`
-  * `int_diff`
-  * `int_end`
-  * `int_flip`
-  * `int_length`
-  * `int_overlaps`
-  * `int_shift`
-  * `int_standardize`
-  * `int_start`
-  * `interval`
-  * `is.interval`
-* Time spans: Period
-  * Use when you are interested in human units.
-  * `lubridate::day`
-  * `lubridate::hour`
-  * `lubridate::minute`
-  * `lubridate::month`
-  * `lubridate::second`
-  * `lubridate::week`
-  * `lubridate::year` 
-* Time zones:
-  * `lubridate::force_tz`
-    * Change the time zone without changing the clock time.
-  * `lubridate::tz`
-    * Extract the time zone from a datetime.
-  * `lubridate::with_tz`
-    * View the same instant in a different time zone.
-* `lubridate::today`
-* `lubridate::%m+%` & `%m-%`
-  * Add and subtract months to a date without exceeding the last day of the new month.
-* `lubridate::%within%`
-  * Test whether a date or interval falls within an interval.
-* `lubridate::year`
-  * Get or set the year component of a datetime.
+- `base::date`
+  - Get the current system date and time.
+- `base::difftime`
+  - Time intervals and differences.
+  - `base::difftime` is the function behind the `-` operator when used with dates and datetimes (e.g., `time_1 - time_2` is equivalent to `difftime(time_1, time_2)`). The advantage of using  `difftime` over `-`, however, is the `units` argument because it allows you to specify the unit of time in which the difference is calculated.
+- `base::months`
+  - Extract the month names.
+- `base::quarters`
+  - Extract the calendar quarters.
+- `base::seq.Date`
+- `base::Sys.Date`
+  - Get the current date in the current time zone.
+- `base::Sys.time`
+  - Get the absolute date-time value (which can be converted to various time zones and may return different days).
+- `base::weekdays`
+  - Extract weekday names.
+- `lubridate::ceiling_date`
+- `lubridate::date`
+  - Get or set the date component of a date-time.
+- `lubridate::day`
+  - Get or set the day component of a datetime.
+- `lubridate::floor_date`
+- `lubridate::month`
+  - Get or set the month component of a datetime.
+- `lubridate::now`
+  - The current time (as a POSIXct object).
+- `lubridate::quarter`
+  - Get or set the fiscal quarter or semester component of a datetime.
+- `lubridate::round_date`
+- Time spans: Duration
+  - Use when you are interested in seconds elapsed.
+  - `lubridate::ddays`
+  - `lubridate::dhours`
+  - `lubridate::dminutes`
+  - `lubridate::dseconds`
+  - `lubridate::dweeks`
+  - `lubridate::dyears`
+- Time spans: Interval
+  - Use when you have a start and end.
+  - `%--%`
+  - `int_aligns`
+  - `int_diff`
+  - `int_end`
+  - `int_flip`
+  - `int_length`
+  - `int_overlaps`
+  - `int_shift`
+  - `int_standardize`
+  - `int_start`
+  - `interval`
+  - `is.interval`
+- Time spans: Period
+  - Use when you are interested in human units.
+  - `lubridate::day`
+  - `lubridate::hour`
+  - `lubridate::minute`
+  - `lubridate::month`
+  - `lubridate::second`
+  - `lubridate::week`
+  - `lubridate::year` 
+- Time zones:
+  - `lubridate::force_tz`
+    - Change the time zone without changing the clock time.
+  - `lubridate::tz`
+    - Extract the time zone from a datetime.
+  - `lubridate::with_tz`
+    - View the same instant in a different time zone.
+- `lubridate::today`
+- `lubridate::%m+%` & `%m-%`
+  - Add and subtract months to a date without exceeding the last day of the new month.
+- `lubridate::%within%`
+  - Test whether a date or interval falls within an interval.
+- `lubridate::year`
+  - Get or set the year component of a datetime.
 
-***
 ## Factors
 
 `forcats`
 
-* `fct_drop()`: Drop levels.
-* `fct_reorder()`: Reorder levels, based on the value of another variable.
-* `fct_rev()`: Reverse levels.
+- `fct_drop()`: Drop levels.
+- `fct_reorder()`: Reorder levels, based on the value of another variable.
+- `fct_rev()`: Reverse levels.
 
 `stats`
 
-* `reorder()`: Reorder levels of a factor.
-    + Useful within the `aes()` argument in a `ggplot()` call.
+- `reorder()`: Reorder levels of a factor.
+    - Useful within the `aes()` argument in a `ggplot()` call.
 
 ## Merge or Append Data
 
 `base`
 
-* `append()`: Add elements to a vector.
-* `cbind()`: Combine objects by column.
-* `intersect()`: Combine data shared in common between two datasets.
-    + Similar to `dplyr::semi_join()`.
-* `merge()`: Merge two data frames.
-    + `dplyr::join` functions are an alternative to `merge()`.
-* `rbind()`: Combine objects by row.
-* `setdiff()`: Find the difference between two vectors.
-    + Similar to `dplyr::anti_join()`.
-* `union()`: Combine two datasets without duplicating values.
+- `append()`: Add elements to a vector.
+- `cbind()`: Combine objects by column.
+- `intersect()`: Combine data shared in common between two datasets.
+  - Similar to `dplyr::semi_join()`.
+- `merge()`: Merge two data frames.
+  - `dplyr::join` functions are an alternative to `merge()`.
+- `rbind()`: Combine objects by row.
+- `setdiff()`: Find the difference between two vectors.
+  - Similar to `dplyr::anti_join()`.
+- `union()`: Combine two datasets without duplicating values.
 
 `dplyr`
 
-* `bind()`: Bind multiple data frames by row and column.
-    + Child functions: bind_rows(), bind_cols(), combine().
-* Join Functions: Join two tables.
-    + Filtering Joins:
-        + anti_join(): Return all rows from `x` where there are not matching values in `y`, keeping just columns from `x`.
-        + semi_join(): Return all rows from `x` where there are matching values in `y`, keeping just columns from `x`. A semi join differs from an inner join because an inner join will return one row of `x` for each matching row of `y`, where a semi join will never duplicate rows of `x`.
-    + Mutating Joins:
-        + full_join(): Return all rows and all columns from both `x` and `y`. Where there are not matching values, returns `NA` for the one missing.
-        + inner_join(): Return all rows from `x` where there are matching values in `y`, and all columns from `x` and `y`. If there are multiple matches between `x` and `y`, all combination of the matches are returned.
-        + left_join(): Return all rows from `x`, and all columns from `x` and `y`. Rows in `x` with no match in `y` will have `NA` values in the new columns. If there are multiple matches between `x` and `y`, all combinations of the matches are returned.
-        + right_join(): Return all rows from `y`, and all columns from `x` and `y`. Rows in `x` with no match in `y` will have `NA` values in the new columns. If there are multiple matches between `y` and `x`, all combinations of the matches are returned.
+- `bind()`: Bind multiple data frames by row and column.
+  - Child functions: bind_rows(), bind_cols(), combine().
+- Join Functions: Join two tables.
+  - Filtering Joins:
+    - anti_join(): Return all rows from `x` where there are not matching values in `y`, keeping just columns from `x`.
+    - semi_join(): Return all rows from `x` where there are matching values in `y`, keeping just columns from `x`. A semi join differs from an inner join because an inner join will return one row of `x` for each matching row of `y`, where a semi join will never duplicate rows of `x`.
+    - Mutating Joins:
+      - full_join(): Return all rows and all columns from both `x` and `y`. Where there are not matching values, returns `NA` for the one missing.
+      - inner_join(): Return all rows from `x` where there are matching values in `y`, and all columns from `x` and `y`. If there are multiple matches between `x` and `y`, all combination of the matches are returned.
+      - left_join(): Return all rows from `x`, and all columns from `x` and `y`. Rows in `x` with no match in `y` will have `NA` values in the new columns. If there are multiple matches between `x` and `y`, all combinations of the matches are returned.
+      - right_join(): Return all rows from `y`, and all columns from `x` and `y`. Rows in `x` with no match in `y` will have `NA` values in the new columns. If there are multiple matches between `y` and `x`, all combinations of the matches are returned.
 
 `tibble`
 
-* `add_column()`: Add columns to a data frame.
-* `add_row()`: Add rows to a data frame.
+- `add_column()`: Add columns to a data frame.
+- `add_row()`: Add rows to a data frame.
 
 ## Narrow in on Observations of Interest
 
 `{base}`
 
-* `order()`
-  * See also: `dplyr::arrange()`.
-* `prop.table()`
-  * Express table entries as proportions of the marginal table (thus, as the values are proportions of the whole, `sum(prop.table(table_name))` = 1.)
-  * The input is a table produced by `base::table()`.
-  * Specify conditional proportions on rows or columns by using the `margin` argument.
-* `table()`: Build a table of the counts at each combination of factor levels.
-  * Use `base::prop.table()` to see the table entries expressed as proportions.
+- `order()`
+  - See also: `dplyr::arrange()`.
+- `prop.table()`
+  - Express table entries as proportions of the marginal table (thus, as the values are proportions of the whole, `sum(prop.table(table_name))` = 1.)
+  - The input is a table produced by `base::table()`.
+  - Specify conditional proportions on rows or columns by using the `margin` argument.
+- `table()`: Build a table of the counts at each combination of factor levels.
+  - Use `base::prop.table()` to see the table entries expressed as proportions.
 
 `{dplyr}`
 
-* `arrange()`
-* `distinct()`
-* `filter()`
-  * When using multiple `|` conditions, use `%in%` to save space; see example below.
-* `rename()`
-* `sample_n()`
-* `select()`
-  * Use `?dplyr::select_helpers` to see the available helper functions.
-* `slice()`
-* `transmute()`
-  * A combination of `dplyr::select()` and `dplyr::mutate()`.
+- `arrange()`
+- `distinct()`
+- `filter()`
+  - When using multiple `|` conditions, use `%in%` to save space; see example below.
+- `rename()`
+- `sample_n()`
+- `select()`
+  - Use `?dplyr::select_helpers` to see the available helper functions.
+- `slice()`
+- `transmute()`
+  - A combination of `dplyr::select()` and `dplyr::mutate()`.
 
 ### Examples
 
@@ -296,24 +295,24 @@ ilo_data %>%
 
 `{base}`
 
-* `identical()`
-  * See also `dplyr::all_equal()`, `dplyr::near()`.
-* `match()`
-  * `%in%` is the more intuitive binary operator.
-* `setequal()`
-  * Check two vectors for equality.
-  * See also `dplyr::near()`.
-* `which()`
-  * This function is often unnecessary, according to ["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve).
-* `which.max()`
-  * Use also to identify the first `TRUE`/`FALSE`.
-* `which.min()`
-  * Use also to identify the first `TRUE`/`FALSE`.
+- `identical()`
+  - See also `dplyr::all_equal()`, `dplyr::near()`.
+- `match()`
+  - `%in%` is the more intuitive binary operator.
+- `setequal()`
+  - Check two vectors for equality.
+  - See also `dplyr::near()`.
+- `which()`
+  - This function is often unnecessary, according to ["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve).
+- `which.max()`
+  - Use also to identify the first `TRUE`/`FALSE`.
+- `which.min()`
+  - Use also to identify the first `TRUE`/`FALSE`.
 
 `{dplyr}`
 
-* `all_equal()`
-  * Compare data frames.
-* `near()`
-  * See also `base::identical()`.
+- `all_equal()`
+  - Compare data frames.
+- `near()`
+  - See also `base::identical()`.
   

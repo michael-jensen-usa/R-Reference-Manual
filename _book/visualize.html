@@ -259,7 +259,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 - Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em></p>
 <div id="interfaces" class="section level2">
 <h2>Interfaces</h2>
-<hr />
 <ul>
 <li><code>shiny</code></li>
 </ul>
@@ -277,6 +276,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><code>{diagram}</code></p>
 <p><code>{DiagrammeR}</code></p>
+<ul>
+<li><code>grViz()</code></li>
+</ul>
 <p><code>{GGally}</code></p>
 <ul>
 <li><code>ggally_box()</code></li>
@@ -364,7 +366,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use <code>y = stat(density)</code> to rescale the y-axis from counts to a probability estimate.</li>
 </ul></li>
 <li><code>ggplot2::geom_hline()</code>
-*<code>geom_jitter()</code>
+-<code>geom_jitter()</code>
 <ul>
 <li>Useful with <code>ggplot2::geom_boxplot()</code>.</li>
 </ul></li>
@@ -389,6 +391,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>geom_violin()</code></li>
 <li><code>geom_vline()</code></li>
 <li><code>ggplot()</code></li>
+<li><code>ggplot_build()</code>
+<ul>
+<li>Access calculated values.</li>
+</ul></li>
 <li><code>ggtitle()</code></li>
 <li><code>group()</code>
 <ul>
@@ -514,20 +520,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>Graphs, Charts, and Plots - Statistics</h2>
 <p><code>{ggplot2}</code></p>
 <ul>
-<li><code>mean_cl_boot</code></li>
-<li><code>mean_cl_normal</code></li>
-<li><code>sdl</code></li>
-<li><code>median_hilow</code></li>
-<li><code>stat_function</code>
+<li><code>mean_cl_boot()</code></li>
+<li><code>mean_cl_normal()</code></li>
+<li><code>sdl()</code></li>
+<li><code>median_hilow()</code></li>
+<li><code>stat_function()</code>
 <ul>
 <li>Compute <code>y</code> values from a function of <code>x</code> values.</li>
 </ul></li>
-<li><code>qq</code>
+<li><code>qq()</code>
 <ul>
 <li>Perfrm calculations for a quantile-quantile plot.</li>
 </ul></li>
-<li><code>qq_line</code></li>
-<li><code>summary</code>
+<li><code>qq_line()</code></li>
+<li><code>summary()</code>
 <ul>
 <li>Summarize <code>y</code> values at distinct <code>x</code> values.</li>
 </ul></li>

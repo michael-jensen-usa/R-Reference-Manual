@@ -273,12 +273,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>if (cond) expr</code>
 <ul>
 <li>The key difference between <code>if (cond) expr</code> and <code>ifelse</code> is that <code>if (cond) expr</code> will evaluate only the first element of an object with <code>length &gt; 1</code>. See the documentation for each function and the ateucher’s GitHub example titled <a href="https://gist.github.com/ateucher/c7359f566eded9fcd4a255f4cbd4fe67">“R: if vs ifelse”</a> to learn more.</li>
+</ul></li>
 <li><code>for (var in seq) expr</code></li>
 <li><code>while (cond) expr</code></li>
 <li><code>repeat expr</code></li>
 <li><code>break</code></li>
 <li><code>next</code></li>
-</ul></li>
 </ul></li>
 <li><code>identical()</code>: Test objects for exact equality.
 <ul>
@@ -737,7 +737,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="optimization" class="section level2">
 <h2>Optimization</h2>
 <p><code>microbenchmark::microbenchmark()</code>: Sub-millisecond accurate timing of expression evaluations.
-+ A more accurate replacement of <code>system.time(replicate(1000, expr))</code>.</p>
+- A more accurate replacement of <code>system.time(replicate(1000, expr))</code>.</p>
 </div>
 <div id="pipes" class="section level2">
 <h2>Pipes</h2>
@@ -864,20 +864,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="git" class="section level4">
 <h4>Git</h4>
 <ul>
-<li><p><a href="https://nvie.com/posts/a-successful-git-branching-model/"><em>A successful Git branching model</em></a></p></li>
-<li><p><a href="https://git-scm.com/">git-scm.com</a></p></li>
-<li><p><a href="http://r-pkgs.had.co.nz/git.html#git-learning"><em>Git and GitHub</em></a> by Hadley Wickham</p></li>
-<li><p><a href="http://happygitwithr.com/"><em>Happy Git and GitHub for the useR</em></a> by Jenny Bryan</p></li>
-<li><p><a href="https://git-scm.com/book/en/v2"><em>Pro Git</em></a> by Scott Chacon and Ben Straub</p></li>
-<li><p><a href="https://guides.github.com/introduction/flow/"><em>Understanding the GitHub flow</em></a></p></li>
-<li><p><code>git branch</code>: List, create, or delete branches.</p>
+<li><a href="https://nvie.com/posts/a-successful-git-branching-model/"><em>A successful Git branching model</em></a></li>
+<li><a href="https://git-scm.com/">git-scm.com</a></li>
+<li><a href="http://r-pkgs.had.co.nz/git.html#git-learning"><em>Git and GitHub</em></a> by Hadley Wickham</li>
+<li><a href="http://happygitwithr.com/"><em>Happy Git and GitHub for the useR</em></a> by Jenny Bryan</li>
+<li><a href="https://git-scm.com/book/en/v2"><em>Pro Git</em></a> by Scott Chacon and Ben Straub</li>
+<li><a href="https://guides.github.com/introduction/flow/"><em>Understanding the GitHub flow</em></a></li>
+<li><code>git branch</code>: List, create, or delete branches.
 <ul>
 <li><code>git branch -d &lt;branch_name&gt;</code>: Delete a local branch.
 <ul>
 <li>See <a href="https://community.rstudio.com/t/delete-branch-in-rstudio-pop-up/15465">“Delete branch in RStudio pop-up”</a> for help removing branches in RStudio after removing them from Git.</li>
 </ul></li>
 </ul></li>
-<li><p>Git + R Projects</p>
+<li>Git and R Projects
 <ul>
 <li>R Projects (.Rproj files) should not be nested. Doing so causes problems with Git when tracking changes to a child .Rproj file.</li>
 </ul></li>

@@ -266,7 +266,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>attr(x, "names")</code> is the same as <code>base::names(x)</code>.</li>
 <li>Use <code>attr(x, "names") &lt;- value</code> to set attribute values.</li>
 </ul></li>
-<li><code>attribute()s</code></li>
+<li><code>attribute()</code></li>
 <li><code>class()</code></li>
 <li><code>colnames()</code></li>
 <li><code>dim()</code></li>
@@ -360,11 +360,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><code>remove_empty()</code></li>
 </ul>
+<p><code>{naniar}</code></p>
+<ul>
+<li><code>replace_with_na()</code>
+<ul>
+<li>Compliment to <code>tidyr::replace_na()</code>; consider also <code>stringr::str_replace(replacement = NA_character_)</code>.</li>
+</ul></li>
+</ul>
 <p><code>{purrr}</code></p>
 <ul>
 <li><code>transpose()</code>
 <ul>
 <li>Turn a list-of-lists inside-out.</li>
+</ul></li>
+</ul>
+<p><code>{reshape2}</code> (superseded by <code>{tidyr}</code>)</p>
+<ul>
+<li><code>cast()</code>
+<ul>
+<li>See <code>tidyr::pivot_wider()</code></li>
+</ul></li>
+<li><code>melt()</code>
+<ul>
+<li>See <code>tidyr::pivot_longer()</code></li>
 </ul></li>
 </ul>
 <p><code>{splitstackshape}</code></p>
@@ -416,7 +434,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>as.factor()</code></li>
 <li><code>as.list()</code></li>
 <li><code>as.matrix()</code></li>
-<li><code>as.POSIX*()</code></li>
+<li><code>as.POSIX-()</code></li>
 <li><code>factor()</code>
 <ul>
 <li>Rearrange the order of factors by using the <code>levels</code> argument. For example, rearrange the order of “Bad,”Good," and “Neutral” using `levels = c(“Bad,” “Neutral,” “Good”).</li>
