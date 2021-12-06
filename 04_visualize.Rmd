@@ -78,8 +78,11 @@
   - Create a histogram out of dots.
 - `geom_errorbar()`
   - Shortcut for `geom_bar(stat = "identity")`.
+- `geom_freqpoly()`
+  - See `ggplot2::geom_histogram()`.
 - `geom_histogram()`
   -  Use `y = stat(density)` to rescale the y-axis from counts to a probability estimate.
+  - See `ggplot2::geom_freqpoly()`.
 - `ggplot2::geom_hline()`
 -`geom_jitter()`
   - Useful with `ggplot2::geom_boxplot()`.
