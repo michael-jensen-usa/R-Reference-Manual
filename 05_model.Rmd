@@ -19,6 +19,10 @@
 - `tidy()`
   - Turn an object into a tidy tibble.
 
+`{caret}`
+
+
+
 `{class}`
 
 - `knn()`
@@ -31,6 +35,10 @@
 `{dplyr}`
 
 - `sample_n()`
+
+`{gbm}`
+
+
 
 `{mgcv}`
 
@@ -62,6 +70,10 @@
 `{rpart.plot}`
 
 - `rpart.plot()`
+
+`{rsample}`
+
+
 
 `{stats}`
 
