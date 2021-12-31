@@ -1,5 +1,54 @@
 # Python
 
+## Import
+
+Base Python
+
+- `import ... as ...`
+
+`Numpy`
+
+- `array()`
+
+## Tidy
+
+"Tidying your data means storing it in a consistent form that matches the semantics of the dataset with the way it is stored. In brief, when your data is tidy, each column is a variable and each row is an observation. Tidying data is important because the consistent structure lets you focus your struggle on questions about the data, not fighting to get the data into the right form for different functions."  
+- Garrett Grolemund & Hadley Wickham, *R for Data Science*
+
+Base Python
+
+- `shape`
+- `type()`
+
+`Numpy`
+
+- 
+
+## Transform
+
+"Transformation includes narrowing in on observations of interest (like all people in one city, or all data from the last year), creating new variables that are functions of existing variables (like computing velocity from speed and time), and calculating a set of summary statistics (like counts or means)."  
+- Garrett Grolemund & Hadley Wickham, *R for Data Science*
+
+## Visualize
+
+
+## Model
+
+
+## Communicate
+
+
+## Program
+
+"Surrounding [the tools for importing, tidying, transforming, visualising, modeling, and communicating data] is programming. Programming is a cross-cutting tool that you use in every part of a project. You don't need to be an expert programmer to be a data scientist, but learning more about programming pays off because becoming a better programmer allows you to automate common tasks, and solve new problems with greater ease." - Garrett Grolemund & Hadley Wickham, *R for Data Science*
+
+Base Python
+
+- `help()`
+- `len()`
+- `print()`
+- `type()`
+
 ## Reference
 
 - [*R to Python: Data Wrangling with dplyr and pandas*](https://gist.github.com/conormm/fd8b1980c28dd21cfaf6975c86c74d07)
