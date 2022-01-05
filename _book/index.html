@@ -234,6 +234,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="python.html"><a href="python.html"><i class="fa fa-check"></i>Python</a>
 <ul>
+<li class="chapter" data-level="" data-path="python.html"><a href="python.html#import"><i class="fa fa-check"></i>Import</a></li>
+<li class="chapter" data-level="" data-path="python.html"><a href="python.html#tidy-1"><i class="fa fa-check"></i>Tidy</a></li>
+<li class="chapter" data-level="" data-path="python.html"><a href="python.html#transform-1"><i class="fa fa-check"></i>Transform</a></li>
+<li class="chapter" data-level="" data-path="python.html"><a href="python.html#visualize-1"><i class="fa fa-check"></i>Visualize</a></li>
+<li class="chapter" data-level="" data-path="python.html"><a href="python.html#model-1"><i class="fa fa-check"></i>Model</a></li>
+<li class="chapter" data-level="" data-path="python.html"><a href="python.html#communicate-1"><i class="fa fa-check"></i>Communicate</a></li>
+<li class="chapter" data-level="" data-path="python.html"><a href="python.html#program-1"><i class="fa fa-check"></i>Program</a></li>
 <li class="chapter" data-level="" data-path="python.html"><a href="python.html#reference"><i class="fa fa-check"></i>Reference</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references-2.html"><a href="references-2.html"><i class="fa fa-check"></i>References</a></li>
@@ -272,8 +279,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Communicate</li>
 <li>Program</li>
 </ul>
-<div id="htmlwidget-c837f3055e77b5217e62" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c837f3055e77b5217e62">{"x":{"diagram":" \n\ndigraph {\n\ngraph [rankdir = LR;\n       compound = TRUE;\n       nodesep = 1]\n\nsubgraph cluster0 {\n  style = rounded;\n  label = Program;\n  labeljust = center;\n  node [color = white];\n\n  Import; Tidy; Communicate\n\n  subgraph cluster1 {\n    style = rounded;\n    bgcolor = lightgrey;\n    label = Understand;\n    labeljust = center;\n    node [color = lightgrey];\n\n    Transform -> Visualize -> Model -> Transform;\n\n    {rank = same; Model; Visualize}\n  }\n  \n  Import -> Tidy -> Transform;\n\n  edge [headport = w]\n  {Model; Visualize} -> Communicate [ltail = cluster1]\n}\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6dd137a11b8dfd8d0614" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6dd137a11b8dfd8d0614">{"x":{"diagram":" \n\ndigraph {\n\ngraph [rankdir = LR;\n       compound = TRUE;\n       nodesep = 1]\n\nsubgraph cluster0 {\n  style = rounded;\n  label = Program;\n  labeljust = center;\n  node [color = white];\n\n  Import; Tidy; Communicate\n\n  subgraph cluster1 {\n    style = rounded;\n    bgcolor = lightgrey;\n    label = Understand;\n    labeljust = center;\n    node [color = lightgrey];\n\n    Transform -> Visualize -> Model -> Transform;\n\n    {rank = same; Model; Visualize}\n  }\n  \n  Import -> Tidy -> Transform;\n\n  edge [headport = w]\n  {Model; Visualize} -> Communicate [ltail = cluster1]\n}\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <div id="references-resources" class="section level2">
 <h2>References &amp; Resources</h2>
 <ul>

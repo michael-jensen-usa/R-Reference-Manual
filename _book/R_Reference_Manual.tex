@@ -384,7 +384,7 @@ In \emph{R for Data Science}, Garrett Grolemund and Hadley Wickham outline the t
   \begin{itemize}
   \tightlist
   \item
-    Remove imported attributes using \texttt{\%\textgreater{}\%\ .{[}{]}} or \texttt{\%\textgreater{}\%\ unnest()}.
+    Remove imported attributes using \texttt{\%\textgreater{}\%\ .{[}{]}} or \texttt{attr(df,\ "spec")\ \textless{}-\ NULL}.
   \end{itemize}
 \item
   \texttt{read\_tsv()}
@@ -3040,6 +3040,14 @@ Parameterized query:
 \begin{itemize}
 \tightlist
 \item
+  \texttt{I()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Use when raising a variable to an exponent in order to evaluate the value as a mathematical expression rather than as an interaction variable.
+  \end{itemize}
+\item
   \texttt{sample()}
 \item
   \texttt{set.seed()}
@@ -4813,6 +4821,82 @@ References:
 
 \hypertarget{python}{%
 \chapter{Python}\label{python}}
+
+\hypertarget{import}{%
+\section{Import}\label{import}}
+
+Base Python
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{import\ ...\ as\ ...}
+\end{itemize}
+
+\texttt{Numpy}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{array()}
+\end{itemize}
+
+\hypertarget{tidy-1}{%
+\section{Tidy}\label{tidy-1}}
+
+``Tidying your data means storing it in a consistent form that matches the semantics of the dataset with the way it is stored. In brief, when your data is tidy, each column is a variable and each row is an observation. Tidying data is important because the consistent structure lets you focus your struggle on questions about the data, not fighting to get the data into the right form for different functions.''\\
+- Garrett Grolemund \& Hadley Wickham, \emph{R for Data Science}
+
+Base Python
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{shape}
+\item
+  \texttt{type()}
+\end{itemize}
+
+\texttt{Numpy}
+
+\begin{itemize}
+\tightlist
+\item
+\end{itemize}
+
+\hypertarget{transform-1}{%
+\section{Transform}\label{transform-1}}
+
+``Transformation includes narrowing in on observations of interest (like all people in one city, or all data from the last year), creating new variables that are functions of existing variables (like computing velocity from speed and time), and calculating a set of summary statistics (like counts or means).''\\
+- Garrett Grolemund \& Hadley Wickham, \emph{R for Data Science}
+
+\hypertarget{visualize-1}{%
+\section{Visualize}\label{visualize-1}}
+
+\hypertarget{model-1}{%
+\section{Model}\label{model-1}}
+
+\hypertarget{communicate-1}{%
+\section{Communicate}\label{communicate-1}}
+
+\hypertarget{program-1}{%
+\section{Program}\label{program-1}}
+
+``Surrounding {[}the tools for importing, tidying, transforming, visualising, modeling, and communicating data{]} is programming. Programming is a cross-cutting tool that you use in every part of a project. You don't need to be an expert programmer to be a data scientist, but learning more about programming pays off because becoming a better programmer allows you to automate common tasks, and solve new problems with greater ease.'' - Garrett Grolemund \& Hadley Wickham, \emph{R for Data Science}
+
+Base Python
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{help()}
+\item
+  \texttt{len()}
+\item
+  \texttt{print()}
+\item
+  \texttt{type()}
+\end{itemize}
 
 \hypertarget{reference}{%
 \section{Reference}\label{reference}}

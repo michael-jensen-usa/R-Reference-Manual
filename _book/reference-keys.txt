@@ -68,4 +68,11 @@ system-commands
 version-control
 git
 python
+import
+tidy-1
+transform-1
+visualize-1
+model-1
+communicate-1
+program-1
 reference
