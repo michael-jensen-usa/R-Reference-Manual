@@ -27,6 +27,10 @@ h1.title {
 - `saveRDS()`
   - See ["A better way of saving and loading objects in R"](https://www.fromthebottomoftheheap.net/2012/04/01/saving-and-loading-r-objects/) to understand the differences between `save()` and `saveRDS()`.
 
+`{ggplot2}`
+
+- `ggsave()`
+
 `{readr}`
 
 - `write_csv()`
