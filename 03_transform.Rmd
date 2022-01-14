@@ -276,6 +276,7 @@ df <-
 - `select()`
   - Use `?dplyr::select_helpers` to see the available helper functions.
 - `slice()`
+- `slice_min()`, `slice_max()`
 - `transmute()`
   - A combination of `dplyr::select()` and `dplyr::mutate()`.
 
