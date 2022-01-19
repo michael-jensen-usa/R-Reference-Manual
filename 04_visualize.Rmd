@@ -3,6 +3,10 @@
 "Visualisation is a fundamentally human activity. A good visualisation will show you things that you did not expect, or raise new questions about the data. A good visualisation might also hint that you're asking the wrong question, or you need to collect different data. Visualisations can surprise you, but don't scale particularly well because they require a human to interpret them."  
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*
 
+References:
+
+- [**A ggplot2 Tutorial for Beautiful Plotting in R](https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/?utm_campaign=Data_Elixir&utm_source=Data_Elixir_370/)
+
 ## Interfaces
 
 - `shiny`
