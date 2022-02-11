@@ -60,7 +60,7 @@
 - `read_csv()`
 - `read_csv2()`
 - `read_delim()`
-  - Remove imported attributes using `%>% .[]` or `attr(df, "spec") <- NULL`.
+  - Remove imported attributes using `%>% .[]`, `attr(df, "spec") <- NULL`, or `%>% data.frame()`.
 - `read_tsv()`
 
 `{readxl}`
