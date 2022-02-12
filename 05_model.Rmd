@@ -104,13 +104,14 @@
   - Principal Component Analysis.
 - `predict()`
   - Model predictions.
-  - Use with `lm` class objects and new data to predict new values (e.g., `predict(model, newdata)`).
+  - For `lm` class objects, predict new values using `predict(model, newdata)`.
+  - For `glm` class objects, predict new values using `predict(model, newdata, type = "response")`.
   - For GAM, `predict()` returns a matrix so use `as.numeric()` to convert the matrix to a vector if adding to a data set (such as for plotting the predictions versus the actual outcomes).
 - `residuals()`
   - Extract model residuals.
 - `step()`
   - Step-wise regression.
-- `var(libr
+
 `{tidyr}`
 
 - `nest()`
