@@ -52,6 +52,8 @@
 
 `{mixtools}`
 
+
+
 `{naivebayes}`
 
 - `naive_bayes()`
@@ -76,6 +78,12 @@
 `{rsample}`
 
 
+
+`{sigr}`
+
+- `wrapChiSqTest()`
+  - For Pseudo-R^2:
+    - On training data, use `wrapChiSqTest(model)`. For test data, use `wrapChiSqTest(prediction_column_name, outcome_column_name, target_value)`.
 
 `{stats}`
 
@@ -105,7 +113,7 @@
 - `predict()`
   - Model predictions.
   - For `lm` class objects, predict new values using `predict(model, newdata)`.
-  - For `glm` class objects, predict new values using `predict(model, newdata, type = "response")`.
+  - For `glm` class objects, predict new values using `predict(model, newdata, type = "response")` (`predict()` returns the log-odds of the event, instead of the probability, if `type = "response"` is not included).
   - For GAM, `predict()` returns a matrix so use `as.numeric()` to convert the matrix to a vector if adding to a data set (such as for plotting the predictions versus the actual outcomes).
 - `residuals()`
   - Extract model residuals.
@@ -127,3 +135,4 @@
 `{WVPlots}`
 
 - `GainCurvePlot()`
+  - Use to evaluate logistic regression models.
