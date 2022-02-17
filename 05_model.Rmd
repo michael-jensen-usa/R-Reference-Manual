@@ -49,6 +49,7 @@
   - Use `plot()` on a GAM object to view what the function learned from the data.
 - `s()`
   - Indicates which of the explanatory variables should be considered non-linearly.
+  - Use on continuous variables and avoid using on categorical variables.
 
 `{mixtools}`
 
@@ -115,6 +116,7 @@
   - For `lm` class objects, predict new values using `predict(model, newdata)`.
   - For `glm` class objects, predict new values using `predict(model, newdata, type = "response")` (`predict()` returns the log-odds of the event, instead of the probability, if `type = "response"` is not included).
   - For GAM, `predict()` returns a matrix so use `as.numeric()` to convert the matrix to a vector if adding to a data set (such as for plotting the predictions versus the actual outcomes).
+  - Access the y values of the model using `predict(model, type = "terms")`.
 - `residuals()`
   - Extract model residuals.
 - `step()`
