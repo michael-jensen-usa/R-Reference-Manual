@@ -98,6 +98,10 @@ h1.title {
 
 ## Plots
 
+`{cols4all}`
+
+
+
 `{ggplot2}`
 
 - `element_*()`
