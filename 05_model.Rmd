@@ -41,6 +41,9 @@
 `{gbm}`
 
 
+`{MatchIt}`
+
+- `match.data()`
 
 `{mgcv}`
 
