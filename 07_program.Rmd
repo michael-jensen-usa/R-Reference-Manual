@@ -317,19 +317,23 @@ c(vrsn, os, pkgs) %<-% session()
 
 ## Pipes
 
-- `magrittr::%<>%`: Compound assignment-pipe operator.
-- `magrittr::%>%`: Forward-pipe operator.
-- `magrittr::%$%`: Expositions-pipe operator.
-- `magrittr::add()`: `+`, for pipes.
-- `magrittr::and()`: `&`, for pipes.
-- `magrittr::extract()`:`[`, for pipes (see also `purrr::pluck()`).
-- `magrittr::extract2()`: `[[`, for pipes.
-- `magrittr::freduce()`: Apply a list of functions sequentially.
-- `magrittr::is_in()`: `%in%`, for pipes.
-- `magrittr::multiply_by()`: `*`, for pipes.
-- `magrittr::or()`: `|`, for pipes.
-- `magrittr::raise_to_power()`: `^`, for pipes.
-- `magrittr::subtract()`: `-`, for pipes.
+`{magrittr}`
+
+- `%<>%`
+- `%>%`
+- `%$%`
+- `add()`
+- `and()`
+- `extract()`
+  - See `purrr::pluck()`.
+- `extract2()`
+- `freduce()`
+- `is_in()`
+- `multiply_by()`
+- `or()`
+- `raise_to_power()`
+- `subtract()`
+- `use_series()`
 
 ## Popups
 
