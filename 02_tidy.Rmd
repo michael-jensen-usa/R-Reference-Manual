@@ -112,16 +112,24 @@
 
 `{tidyr}`
 
+- `fill()`
+  - See `{zoo}`'s `na.fill()` and `na.locf()`.
 - `nest()`
   - Nest repeated values in a list-variable.
   - Helpful when separating a data frame in preparation to model the data for each grouping.
 - `replace_na()`
-  - See also `dplyr::na_if()`.
+  - See `dplyr::na_if()`.
 - `separate()`
 - `pivot_longer()`
 - `pivot_wider()`
 - `unite()`
 - `unnest()`
+
+`{zoo}`
+
+- `na.fill()`
+- `na.locf()`
+  - See `tidyr::fill()`.
 
 ## Prepare Data for Analysis
 
