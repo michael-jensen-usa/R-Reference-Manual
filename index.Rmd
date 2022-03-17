@@ -10,7 +10,7 @@ always_allow_html: yes
 
 # Introduction
 
-In *R for Data Science*, Garrett Grolemund and Hadley Wickham outline the tools needed to tackle about 80% of the tasks required in a typical data science project ("[Introduction](https://r4ds.had.co.nz/introduction.html)"). Those tools, illustrated in the diagram below and the organizing template for this reference manual, are: 
+In *R for Data Science*, Garrett Grolemund and Hadley Wickham outline the tools needed to tackle about 80% of the tasks required in a typical data science project ("[Introduction](https://r4ds.had.co.nz/introduction.html)"). Those tools, which are illustrated in the diagram below and are the organizing template for this reference manual, are: 
 
 - Import
 - Tidy
@@ -24,36 +24,36 @@ In *R for Data Science*, Garrett Grolemund and Hadley Wickham outline the tools 
 DiagrammeR::grViz(" 
 
 digraph {
-
-graph [rankdir = LR;
-       compound = TRUE;
-       nodesep = 1]
-
-subgraph cluster0 {
-  style = rounded;
-  label = Program;
-  labeljust = center;
-  node [color = white];
-
-  Import; Tidy; Communicate
-
-  subgraph cluster1 {
-    style = rounded;
-    bgcolor = lightgrey;
-    label = Understand;
-    labeljust = center;
-    node [color = lightgrey];
-
-    Transform -> Visualize -> Model -> Transform;
-
-    {rank = same; Model; Visualize}
-  }
+  graph [rankdir = LR; compound = TRUE; nodesep = 1]
   
-  Import -> Tidy -> Transform;
-
-  edge [headport = w]
-  {Model; Visualize} -> Communicate [ltail = cluster1]
-}
+  subgraph cluster0 {
+    style = rounded;
+    label = Program;
+    labeljust = center;
+    node [color = white];
+  
+    Import; Tidy; Communicate
+  
+    subgraph cluster1 {
+      style = rounded;
+      bgcolor = lightgrey;
+      label = Understand;
+      labeljust = center;
+      node [color = lightgrey];
+  
+      Transform -> Visualize -> Model -> Transform;
+  
+      {rank = same; Model; Visualize};
+      
+    }
+    
+    
+    Import -> Tidy -> Transform
+    
+  
+    edge [headport = w]
+    {Model; Visualize} -> Communicate [ltail = cluster1]
+  }
 }")
 ```
 
