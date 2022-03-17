@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Import or Create Data | R Reference Manual</title>
   <meta name="description" content="Import or Create Data | R Reference Manual" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Import or Create Data | R Reference Manual" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -31,7 +30,6 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="tidy.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,12 +47,13 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+<script src="libs/grViz-binding-1.0.9/grViz.js"></script>
 
 
 <style type="text/css">
@@ -139,111 +138,111 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">R Reference Manual</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
+<li><a href="index.html#introduction">Introduction<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#references-resources"><i class="fa fa-check"></i>References &amp; Resources</a></li>
+<li><a href="index.html#references-resources">References &amp; Resources<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html"><i class="fa fa-check"></i>Import or Create Data</a>
+<li><a href="import-or-create-data.html#import-or-create-data">Import or Create Data<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#local-drive"><i class="fa fa-check"></i>Local Drive</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#internet"><i class="fa fa-check"></i>Internet</a>
+<li><a href="import-or-create-data.html#create-data">Create Data<span></span></a></li>
+<li><a href="import-or-create-data.html#local-drive">Local Drive<span></span></a></li>
+<li><a href="import-or-create-data.html#internet">Internet<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#examples"><i class="fa fa-check"></i>Examples</a></li>
+<li><a href="import-or-create-data.html#examples">Examples<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#database"><i class="fa fa-check"></i>Database</a>
+<li><a href="import-or-create-data.html#database">Database<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#examples-1"><i class="fa fa-check"></i>Examples</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#references"><i class="fa fa-check"></i>References</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#sql-and-r"><i class="fa fa-check"></i>SQL and R</a></li>
+<li><a href="import-or-create-data.html#examples-1">Examples<span></span></a></li>
+<li><a href="import-or-create-data.html#references">References<span></span></a></li>
+<li><a href="import-or-create-data.html#sql-and-r">SQL and R<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
+<li><a href="import-or-create-data.html#notes-references">Notes &amp; References<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i>Tidy</a>
+<li><a href="tidy.html#tidy">Tidy<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#tidy-data"><i class="fa fa-check"></i>Tidy Data</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#prepare-data-for-analysis"><i class="fa fa-check"></i>Prepare Data for Analysis</a>
+<li><a href="tidy.html#explore-raw-data">Explore Raw Data<span></span></a></li>
+<li><a href="tidy.html#tidy-data">Tidy Data<span></span></a></li>
+<li><a href="tidy.html#prepare-data-for-analysis">Prepare Data for Analysis<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#coerce"><i class="fa fa-check"></i>Coerce</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#dates-and-datetimes"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#filter"><i class="fa fa-check"></i>Filter</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#strings"><i class="fa fa-check"></i>Strings</a></li>
-<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li><a href="tidy.html#coerce">Coerce<span></span></a></li>
+<li><a href="tidy.html#dates-and-datetimes">Dates and Datetimes<span></span></a></li>
+<li><a href="tidy.html#filter">Filter<span></span></a></li>
+<li><a href="tidy.html#strings">Strings<span></span></a></li>
+<li><a href="tidy.html#test">Test<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>Transform</a>
+<li><a href="transform.html#transform">Transform<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#arithmetic-summary-statistics"><i class="fa fa-check"></i>Arithmetic &amp; Summary Statistics</a>
+<li><a href="transform.html#arithmetic-summary-statistics">Arithmetic &amp; Summary Statistics<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#examples-3"><i class="fa fa-check"></i>Examples</a></li>
+<li><a href="transform.html#examples-3">Examples<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#create-new-variables-or-modify-existing-ones"><i class="fa fa-check"></i>Create New Variables or Modify Existing Ones</a></li>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#dates-and-datetimes-1"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#factors"><i class="fa fa-check"></i>Factors</a></li>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#merge-or-append-data"><i class="fa fa-check"></i>Merge or Append Data</a></li>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#narrow-in-on-observations-of-interest"><i class="fa fa-check"></i>Narrow in on Observations of Interest</a>
+<li><a href="transform.html#create-new-variables-or-modify-existing-ones">Create New Variables or Modify Existing Ones<span></span></a></li>
+<li><a href="transform.html#dates-and-datetimes-1">Dates and Datetimes<span></span></a></li>
+<li><a href="transform.html#factors">Factors<span></span></a></li>
+<li><a href="transform.html#merge-or-append-data">Merge or Append Data<span></span></a></li>
+<li><a href="transform.html#narrow-in-on-observations-of-interest">Narrow in on Observations of Interest<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#examples-4"><i class="fa fa-check"></i>Examples</a></li>
+<li><a href="transform.html#examples-4">Examples<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test-1"><i class="fa fa-check"></i>Test</a></li>
+<li><a href="transform.html#test-1">Test<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i>Visualize</a>
+<li><a href="visualize.html#visualize">Visualize<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#interfaces"><i class="fa fa-check"></i>Interfaces</a></li>
-<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots"><i class="fa fa-check"></i>Graphs, Charts, and Plots</a>
+<li><a href="visualize.html#interfaces">Interfaces<span></span></a></li>
+<li><a href="visualize.html#graphs-charts-and-plots">Graphs, Charts, and Plots<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#examples-5"><i class="fa fa-check"></i>Examples</a></li>
+<li><a href="visualize.html#examples-5">Examples<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots---statistics"><i class="fa fa-check"></i>Graphs, Charts, and Plots - Statistics</a></li>
+<li><a href="visualize.html#graphs-charts-and-plots---statistics">Graphs, Charts, and Plots - Statistics<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a></li>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a>
+<li><a href="model.html#model">Model<span></span></a></li>
+<li><a href="communicate.html#communicate">Communicate<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#css"><i class="fa fa-check"></i>CSS</a></li>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#export"><i class="fa fa-check"></i>Export</a></li>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#format-output"><i class="fa fa-check"></i>Format Output</a></li>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#graphics"><i class="fa fa-check"></i>Graphics</a></li>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots"><i class="fa fa-check"></i>Plots</a>
+<li><a href="communicate.html#css">CSS<span></span></a></li>
+<li><a href="communicate.html#export">Export<span></span></a></li>
+<li><a href="communicate.html#format-output">Format Output<span></span></a></li>
+<li><a href="communicate.html#graphics">Graphics<span></span></a></li>
+<li><a href="communicate.html#plots">Plots<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#examples-6"><i class="fa fa-check"></i>Examples</a></li>
+<li><a href="communicate.html#examples-6">Examples<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rstudio-connect"><i class="fa fa-check"></i>RStudio Connect</a></li>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a></li>
+<li><a href="communicate.html#rstudio-connect">RStudio Connect<span></span></a></li>
+<li><a href="communicate.html#rmarkdown">RMarkdown<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html"><i class="fa fa-check"></i>Program</a>
+<li><a href="program.html#program">Program<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#characters"><i class="fa fa-check"></i>Characters</a></li>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#conditionals-control-flows"><i class="fa fa-check"></i>Conditionals &amp; Control Flows</a></li>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#environment-and-workspace"><i class="fa fa-check"></i>Environment and Workspace</a></li>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#evaluation-standard-and-non-standard"><i class="fa fa-check"></i>Evaluation (Standard and Non-standard)</a></li>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#functionals"><i class="fa fa-check"></i>Functionals</a></li>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#functions"><i class="fa fa-check"></i>Functions</a>
+<li><a href="program.html#characters">Characters<span></span></a></li>
+<li><a href="program.html#conditionals-control-flows">Conditionals &amp; Control Flows<span></span></a></li>
+<li><a href="program.html#environment-and-workspace">Environment and Workspace<span></span></a></li>
+<li><a href="program.html#evaluation-standard-and-non-standard">Evaluation (Standard and Non-standard)<span></span></a></li>
+<li><a href="program.html#functionals">Functionals<span></span></a></li>
+<li><a href="program.html#functions">Functions<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#examples-7"><i class="fa fa-check"></i>Examples</a></li>
+<li><a href="program.html#examples-7">Examples<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#learn-about-an-object"><i class="fa fa-check"></i>Learn About an Object</a></li>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#loops"><i class="fa fa-check"></i>Loops</a></li>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#optimization"><i class="fa fa-check"></i>Optimization</a></li>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#pipes"><i class="fa fa-check"></i>Pipes</a></li>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#popups"><i class="fa fa-check"></i>Popups</a></li>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#selecting-subsetting"><i class="fa fa-check"></i>Selecting &amp; Subsetting</a></li>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#style-guide"><i class="fa fa-check"></i>Style Guide</a></li>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#system-commands"><i class="fa fa-check"></i>System Commands</a></li>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#version-control"><i class="fa fa-check"></i>Version Control</a></li>
+<li><a href="program.html#learn-about-an-object">Learn About an Object<span></span></a></li>
+<li><a href="program.html#loops">Loops<span></span></a></li>
+<li><a href="program.html#optimization">Optimization<span></span></a></li>
+<li><a href="program.html#pipes">Pipes<span></span></a></li>
+<li><a href="program.html#popups">Popups<span></span></a></li>
+<li><a href="program.html#selecting-subsetting">Selecting &amp; Subsetting<span></span></a></li>
+<li><a href="program.html#style-guide">Style Guide<span></span></a></li>
+<li><a href="program.html#system-commands">System Commands<span></span></a></li>
+<li><a href="program.html#version-control">Version Control<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="python.html"><a href="python.html"><i class="fa fa-check"></i>Python</a>
+<li><a href="python.html#python">Python<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="python.html"><a href="python.html#import"><i class="fa fa-check"></i>Import</a></li>
-<li class="chapter" data-level="" data-path="python.html"><a href="python.html#tidy-1"><i class="fa fa-check"></i>Tidy</a></li>
-<li class="chapter" data-level="" data-path="python.html"><a href="python.html#transform-1"><i class="fa fa-check"></i>Transform</a></li>
-<li class="chapter" data-level="" data-path="python.html"><a href="python.html#visualize-1"><i class="fa fa-check"></i>Visualize</a></li>
-<li class="chapter" data-level="" data-path="python.html"><a href="python.html#model-1"><i class="fa fa-check"></i>Model</a></li>
-<li class="chapter" data-level="" data-path="python.html"><a href="python.html#communicate-1"><i class="fa fa-check"></i>Communicate</a></li>
-<li class="chapter" data-level="" data-path="python.html"><a href="python.html#program-1"><i class="fa fa-check"></i>Program</a></li>
-<li class="chapter" data-level="" data-path="python.html"><a href="python.html#reference"><i class="fa fa-check"></i>Reference</a></li>
+<li><a href="python.html#import">Import<span></span></a></li>
+<li><a href="python.html#tidy-1">Tidy<span></span></a></li>
+<li><a href="python.html#transform-1">Transform<span></span></a></li>
+<li><a href="python.html#visualize-1">Visualize<span></span></a></li>
+<li><a href="python.html#model-1">Model<span></span></a></li>
+<li><a href="python.html#communicate-1">Communicate<span></span></a></li>
+<li><a href="python.html#program-1">Program<span></span></a></li>
+<li><a href="python.html#reference">Reference<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references-2.html"><a href="references-2.html"><i class="fa fa-check"></i>References</a></li>
+<li><a href="references-2.html#references-2">References<span></span></a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -264,10 +263,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="import-or-create-data" class="section level1">
-<h1>Import or Create Data</h1>
-<div id="create-data" class="section level2">
-<h2>Create Data</h2>
+<div id="import-or-create-data" class="section level1 hasAnchor">
+<h1>Import or Create Data<a href="import-or-create-data.html#import-or-create-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="create-data" class="section level2 hasAnchor">
+<h2>Create Data<a href="import-or-create-data.html#create-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>{base}</code></p>
 <ul>
 <li><code>array()</code></li>
@@ -300,8 +299,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>tribble()</code></li>
 </ul>
 </div>
-<div id="local-drive" class="section level2">
-<h2>Local Drive</h2>
+<div id="local-drive" class="section level2 hasAnchor">
+<h2>Local Drive<a href="import-or-create-data.html#local-drive" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>{base}</code></p>
 <ul>
 <li><code>attach()</code>
@@ -340,7 +339,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>read_csv2()</code></li>
 <li><code>read_delim()</code>
 <ul>
-<li>Remove imported attributes using <code>%&gt;% .[]</code> or <code>attr(df, "spec") &lt;- NULL</code>.</li>
+<li>Remove imported attributes using <code>%&gt;% .[]</code>, <code>attr(df, "spec") &lt;- NULL</code>, or <code>%&gt;% data.frame()</code>.</li>
 </ul></li>
 <li><code>read_tsv()</code></li>
 </ul>
@@ -369,8 +368,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>readWorksheetFromFile()</code></li>
 </ul>
 </div>
-<div id="internet" class="section level2">
-<h2>Internet</h2>
+<div id="internet" class="section level2 hasAnchor">
+<h2>Internet<a href="import-or-create-data.html#internet" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>{httr}</code></p>
 <ul>
 <li><code>GET()</code>
@@ -407,8 +406,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>See example below.</li>
 </ul></li>
 </ul>
-<div id="examples" class="section level3">
-<h3>Examples</h3>
+<div id="examples" class="section level3 hasAnchor">
+<h3>Examples<a href="import-or-create-data.html#examples" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>utils::download.file()</code>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="import-or-create-data.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(</span>
 <span id="cb1-2"><a href="import-or-create-data.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/5028/datasets/a55843f83746968c7f118d82ed727db9c71e891f/snake_river_visits.rds&quot;</span>,</span>
@@ -451,8 +450,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-7"><a href="import-or-create-data.html#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(<span class="st">&quot;Data Sets/Countries&quot;</span>, <span class="at">exdir =</span> <span class="st">&quot;Data Sets&quot;</span>)</span></code></pre></div>
 </div>
 </div>
-<div id="database" class="section level2">
-<h2>Database</h2>
+<div id="database" class="section level2 hasAnchor">
+<h2>Database<a href="import-or-create-data.html#database" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>{DBI}</code></p>
 <ul>
 <li><code>dbAppendTable()</code></li>
@@ -495,8 +494,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>See example below for troubleshooting hang-ups.</li>
 </ul></li>
 </ul>
-<div id="examples-1" class="section level3">
-<h3>Examples</h3>
+<div id="examples-1" class="section level3 hasAnchor">
+<h3>Examples<a href="import-or-create-data.html#examples-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>DBI::Id()</code> vs <code>DBI::SQL()</code>:</p>
 <p>The following are comparable methods of accessing <code>&lt;database&gt;.&lt;schema_name&gt;.&lt;table_name&gt;</code>:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="import-or-create-data.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbCreateTable</span>(</span>
@@ -524,16 +523,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-10"><a href="import-or-create-data.html#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-11"><a href="import-or-create-data.html#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">connectionObserver =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 </div>
-<div id="references" class="section level3">
-<h3>References</h3>
+<div id="references" class="section level3 hasAnchor">
+<h3>References<a href="import-or-create-data.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><a href="db.rstudio.com">“Databases using R”</a></li>
 </ul>
 </div>
-<div id="sql-and-r" class="section level3">
-<h3>SQL and R</h3>
-<div id="tips-and-troubleshooting-hints" class="section level4">
-<h4>Tips and Troubleshooting Hints</h4>
+<div id="sql-and-r" class="section level3 hasAnchor">
+<h3>SQL and R<a href="import-or-create-data.html#sql-and-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="tips-and-troubleshooting-hints" class="section level4 hasAnchor">
+<h4>Tips and Troubleshooting Hints<a href="import-or-create-data.html#tips-and-troubleshooting-hints" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Temp Tables
 <ul>
@@ -566,8 +565,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </div>
-<div id="examples-2" class="section level4">
-<h4>Examples</h4>
+<div id="examples-2" class="section level4 hasAnchor">
+<h4>Examples<a href="import-or-create-data.html#examples-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Parameterized query:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="import-or-create-data.html#cb6-1" aria-hidden="true" tabindex="-1"></a>param_query <span class="ot">&lt;-</span> <span class="fu">dbSendQuery</span>(con, <span class="st">&quot;select * from table where column = ?&quot;</span>)</span>
 <span id="cb6-2"><a href="import-or-create-data.html#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -583,8 +582,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-12"><a href="import-or-create-data.html#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-13"><a href="import-or-create-data.html#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(<span class="fu">as.list</span>(df<span class="sc">$</span>input_column), query_data) <span class="sc">%&gt;%</span> <span class="fu">bind_rows</span>()</span></code></pre></div>
 </div>
-<div id="sql-references" class="section level4">
-<h4>SQL References</h4>
+<div id="sql-references" class="section level4 hasAnchor">
+<h4>SQL References<a href="import-or-create-data.html#sql-references" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><a href="https://blog.jooq.org/2016/03/17/10-easy-steps-to-a-complete-understanding-of-sql/">“10 Easy Steps to a Complete Understanding of SQL”</a></li>
 <li><a href="https://www.sqlite.org/queryplanner.html">“Query Planning”</a></li>
@@ -593,8 +592,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<div id="notes-references" class="section level2">
-<h2>Notes &amp; References</h2>
+<div id="notes-references" class="section level2 hasAnchor">
+<h2>Notes &amp; References<a href="import-or-create-data.html#notes-references" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><a href="http://adv-r.had.co.nz/Data-structures.html">“Data structures”</a> (Wickham, <a href="http://adv-r.had.co.nz/"><em>Advanced R</em></a>)</li>
 <li><code>{openintro}</code> contains data sets useful for practicing and teaching.</li>
