@@ -113,6 +113,8 @@ See `{randomForest}`.
 - `df.residual()`
   - Get the residual degrees of freedom.
 - `dist()`
+- `glm()`
+  - For `family = Gamma`, consider using `(link = "log")` rather than the default. Use `expm1()` on the coefficients to tranform them into a percentage, which is easier to interpret than a logged coefficient value.
 - `hclust()`
 - `kmeans()`
 - `lm()`
