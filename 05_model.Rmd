@@ -119,6 +119,7 @@ See `{randomForest}`.
   - Fit linear models.
 - `model.matrix()`
   - Use to create dummy variables from categorical data.
+  - See `{vtreat}` functions.
 - `p.adjust()`
   - Adjust p-values for multiple comparisons.
 - `prcomp()`
@@ -142,7 +143,11 @@ See `{randomForest}`.
   
 `{vtreat}`
 
+Compared to `stats::model.matrix()`, `{vtreat}` functions allow for handling new categorical variables in the test data not seen in the training data.
+
+- `designTreatmentsZ()`
 - `kWayCrossValidation()`
+- `prepare()`
 - `splitPlan()`
   - Use to create a cross-validation plan.
 
@@ -150,3 +155,8 @@ See `{randomForest}`.
 
 - `GainCurvePlot()`
   - Use to evaluate logistic regression models.
+
+`{xgboost}`
+
+- `xgb.cv()`
+  - Use `xgb.cv()$evaluation_log` to find the number of trees that minimizes RMSE (input that number as the `nrounds` argument in `xgboost()`).
