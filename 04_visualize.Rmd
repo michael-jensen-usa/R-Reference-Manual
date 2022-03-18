@@ -58,6 +58,7 @@ References:
   - Flip the x and y axes.
 - `coord_polar()`
   - Use to convert a stacked bar chart to a pie chart.
+- `coord_trans()`
 - `element_blank()`
 - `element_line()`
 - `element_rect()`
