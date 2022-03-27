@@ -18,10 +18,16 @@
 
 `{stats}`
 
-- `dnorm()`
-- `pnorm()`
-- `qnorm()`
-- `rnorm()`
+- Normal distribution:
+  - `dnorm()`
+  - `pnorm()`
+  - `qnorm()`
+  - `rnorm()`
+- Uniform distribution:
+  - `dunif()`
+  - `punif()`
+  - `qunif()`
+  - `runif()`
 
 `{tibble}`
 
