@@ -18,6 +18,11 @@
 
 `{stats}`
 
+- Binomial distribution:
+  - `dbinom()`
+  - `pbinom()`
+  - `qbinom()`
+  - `rbinom()`
 - Normal distribution:
   - `dnorm()`
   - `pnorm()`
