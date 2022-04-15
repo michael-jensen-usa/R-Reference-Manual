@@ -44,7 +44,7 @@ References:
 
 - `facet_wrap_paginate()`
 
-`{ggplot2}`
+[`{ggplot2}`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.5)
 
 - `aes()`
   - Arguments include `color`, `fill`, `size`, `labels`, `alpha`, `shape` (1-20 accept color attributes and 21-25 accept color and fill attributes), `linewidth`, `linetype`, and `group`.
@@ -58,17 +58,12 @@ References:
   - Flip the x and y axes.
 - `coord_polar()`
   - Use to convert a stacked bar chart to a pie chart.
-- `coord_trans()`
-- `element_blank()`
-- `element_line()`
-- `element_rect()`
-- `element_text()`
 - `facet_grid()`
   - Lay out panels in a grid.
   - `ROWS ~ COLS`: When using a tilde function, the variable on the left specifies the rows and the variable on the right specifies the columns. When faceting in only one direction (e.g., only on rows), use `.` to specify nothing for the unused direction.
 - `facet_wrap()`
-  - Wrap a 1D ribbon of panels into 2D (observe a variable, conditional on another variable).
-  - See `ggforce::facet_wrap_paginate()` when there are too many panels.
+  - Wrap long panel names using `stringr::str_wrap()`: `facet_wrap(~str_wrap(var, width = xx))`.
+  - Use `ggforce::facet_wrap_paginate()` when there are too many panels.
 - `geom_abline()`
   - Add reference lines to a plot.
 - `geom_bar()`
@@ -98,13 +93,8 @@ References:
   - Useful with `ggplot2::geom_density()`.
 - `geom_smooth()`
   - Smoothed conditional means; aids the eye in seeing patterns in the presence of overplotting.
-- `geom_text()`
 - `geom_tile()`
   - Heat maps.
-- `geom_violin()`
-- `geom_vline()`
-- `ggsave()`
-- `ggplot()`
 - `ggplot_build()`
   - Access calculated values.
 - `ggtitle()`
@@ -123,33 +113,10 @@ References:
   - Stack overlapping objects on top of each other, as counts.
 - `position_fill()`
   - Stack overlapping objects on top of each other, as densities.
-- `position_jitter()`
-- `position_jitterdodge()`
-- `scale_x_*()`
-- `scale_y_*()`
-- `scale_color_manual()`
-- `scale_fill_*()`
-- `scale_shape_*()`
-- `scale_size()`
-- `scale_linetype_*()`
-- `stat_bin()`
-- `stat_bin2d()`
-- `stat_bindot()`
-- `stat_binhex()`
-- `stat_boxplot()`
-- `stat_contour()`
-- `stat_quantile()`
-- `stat_smooth()`
-- `stat_sum()`
 - `theme()`
   - See example for `grid::unit()`.
-- `theme_get()`
-- `theme_set()`
 - `theme_update()`
   - "When you call 'theme_update' and assign it to an object (e.g., called `old`), that object stores the *current* default theme, and the arguments *update* the default theme. If you want to restore the previous default theme, you can get it back by using `theme_update` again." -DataCamp
-- `xlab()`
-- `xlim()`
-- `ylab()`
 
 `{ggridges}`
 

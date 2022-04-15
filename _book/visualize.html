@@ -313,7 +313,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><code>facet_wrap_paginate()</code></li>
 </ul>
-<p><code>{ggplot2}</code></p>
+<p><a href="https://www.rdocumentation.org/packages/ggplot2/versions/3.3.5"><code>{ggplot2}</code></a></p>
 <ul>
 <li><code>aes()</code>
 <ul>
@@ -335,10 +335,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Use to convert a stacked bar chart to a pie chart.</li>
 </ul></li>
-<li><code>element_blank()</code></li>
-<li><code>element_line()</code></li>
-<li><code>element_rect()</code></li>
-<li><code>element_text()</code></li>
 <li><code>facet_grid()</code>
 <ul>
 <li>Lay out panels in a grid.</li>
@@ -346,8 +342,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><code>facet_wrap()</code>
 <ul>
-<li>Wrap a 1D ribbon of panels into 2D (observe a variable, conditional on another variable).</li>
-<li>See <code>ggforce::facet_wrap_paginate()</code> when there are too many panels.</li>
+<li>Wrap long panel names using <code>stringr::str_wrap()</code>: <code>facet_wrap(~str_wrap(var, width = xx))</code>.</li>
+<li>Use <code>ggforce::facet_wrap_paginate()</code> when there are too many panels.</li>
 </ul></li>
 <li><code>geom_abline()</code>
 <ul>
@@ -402,15 +398,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Smoothed conditional means; aids the eye in seeing patterns in the presence of overplotting.</li>
 </ul></li>
-<li><code>geom_text()</code></li>
 <li><code>geom_tile()</code>
 <ul>
 <li>Heat maps.</li>
 </ul></li>
-<li><code>geom_violin()</code></li>
-<li><code>geom_vline()</code></li>
-<li><code>ggsave()</code></li>
-<li><code>ggplot()</code></li>
 <li><code>ggplot_build()</code>
 <ul>
 <li>Access calculated values.</li>
@@ -445,37 +436,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Stack overlapping objects on top of each other, as densities.</li>
 </ul></li>
-<li><code>position_jitter()</code></li>
-<li><code>position_jitterdodge()</code></li>
-<li><code>scale_x_*()</code></li>
-<li><code>scale_y_*()</code></li>
-<li><code>scale_color_manual()</code></li>
-<li><code>scale_fill_*()</code></li>
-<li><code>scale_shape_*()</code></li>
-<li><code>scale_size()</code></li>
-<li><code>scale_linetype_*()</code></li>
-<li><code>stat_bin()</code></li>
-<li><code>stat_bin2d()</code></li>
-<li><code>stat_bindot()</code></li>
-<li><code>stat_binhex()</code></li>
-<li><code>stat_boxplot()</code></li>
-<li><code>stat_contour()</code></li>
-<li><code>stat_quantile()</code></li>
-<li><code>stat_smooth()</code></li>
-<li><code>stat_sum()</code></li>
 <li><code>theme()</code>
 <ul>
 <li>See example for <code>grid::unit()</code>.</li>
 </ul></li>
-<li><code>theme_get()</code></li>
-<li><code>theme_set()</code></li>
 <li><code>theme_update()</code>
 <ul>
 <li>“When you call ‘theme_update’ and assign it to an object (e.g., called <code>old</code>), that object stores the <em>current</em> default theme, and the arguments <em>update</em> the default theme. If you want to restore the previous default theme, you can get it back by using <code>theme_update</code> again.” -DataCamp</li>
 </ul></li>
-<li><code>xlab()</code></li>
-<li><code>xlim()</code></li>
-<li><code>ylab()</code></li>
 </ul>
 <p><code>{ggridges}</code></p>
 <ul>

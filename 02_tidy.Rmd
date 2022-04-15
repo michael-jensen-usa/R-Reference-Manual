@@ -281,6 +281,8 @@
 - `str_to_title()`
 - `str_trim()`
 - `str_to_upper()`
+- `str_wrap()`
+  - Use with ggplot2::facet_wrap() to wrap long panel titles.
 
 ### Test
 
