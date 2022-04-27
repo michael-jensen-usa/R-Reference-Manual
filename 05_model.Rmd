@@ -67,6 +67,9 @@
 
 - `naive_bayes()`
 
+`{[performance](https://easystats.github.io/performance/?utm_campaign=Data_Elixir&utm_source=Data_Elixir_384)}`
+
+
 `{pROC}`
 
 - `auc()`
