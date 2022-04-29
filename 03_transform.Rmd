@@ -5,83 +5,43 @@
 
 ## Arithmetic & Summary Statistics
 
-`{assertive}`
+[`{base}`](https://rdocumentation.org/packages/base/versions/3.6.2)
 
-- `is_divisible_by()`
-
-`{base}`
-
-- `abs()`
-- `colMeans()`
-- `colSums()`
-- `diff()`
-- `IQR()`
-- `max()`
 - `mean()`
-  - Use `base::mean(variable == value)` to calculate percentage match (accuracy); see example below.
-- `median()`
-- `min()`
-- Mode: Use `table` to view the mode of a data set.
+  - Use `base::mean(variable == value)` to calculate proportion; see example below.
+- `table()`
+  - Use to view the mode of a data set.
 - Operators:
-  - Arithmetic Operators: `+`, `-`, `*`, `/`, `%%`
-  - Comparison Operators: `<`, `>`, `<=`, `>=`, `==`, `!=`.
-    - Use `identical()` and `(all.equal))` rather than `==` and `!=` in tests where a single `TRUE` or `FALSE` is required (such as `if` expressions).
+  - Comparison Operators (`<`, `>`, `<=`, `>=`, `==`, `!=`)
+    - Use `identical()` and `all.equal()` rather than `==` and `!=` in tests where a single `TRUE` or `FALSE` is required (such as `if` expressions).
 - `range()`
   - Use `diff(range())` to get the range as a measure of variability.
-- `round()`
-- `rowMeans()`
-- `rowSums()`
-- `scale()`
-- `sd()`
-- `signif()`
-  - Round values to a specified number of significant digits.
-- `sqrt()`
-- `sum()`
-- `summary()`
-- `var()`
 
-`{dplyr}`
+[`{dplyr}`](https://rdocumentation.org/packages/dplyr/versions/0.7.8)
 
-- `count()`
-- `group_by()`
-- `n()`
-  - Must be used within `summarize()`, `mutate()`, or `filter()`.
-- `n_distinct()`
+- `all_equal()`
+  - Compare data frames.
 - `near()`
   - Compare two numeric vectors (safer than using `==`).
-- `summarize()`
-  - See `dplyr::n_distinct()`.
-- `tally()`
-- `top_n()`
 
-`{dummies}`
+[`{dummies}`](https://rdocumentation.org/packages/dummies/versions/1.5.6)
 
 - `dummy.data.frame()`
-  - Dummify a data frame (useful when needing to calculate the Jaccard index for categorical data)
-  
-`{magrittr}`
+  - Useful when needing to calculate the Jaccard index for categorical data.
 
-- `extract()`
-  - `x %>% extract(y)` is equivalent to `x[y]`.
+[`{infer}`](https://rdocumentation.org/packages/infer/versions/1.0.0)
+
+[`{magrittr}`](https://rdocumentation.org/packages/magrittr/versions/2.0.3)
+
 - `extract2()`
-- `multiply_by()`
-  - `x %>% multiply_by(y)` is equivalent to `x * y`.
-- `raise_to_power()`
-  - `x %>% raise_to_power(y)` is equivalent to `x^y`.
+  - See `dplyr::pull()`.
 
-`{stats}`
+[`{stats}`](https://rdocumentation.org/packages/stats/versions/3.6.2)
 
-- `aggregate()`
-  - Compute summary statistics of data subsets.
-- `cor()`
-- `cov()`
+- See `{infer}` for easier-to-use alternatives to `{stats}`'s hypothesis testing functions, such as `prop.test()` and `t.test()`.
+
 - `cutree()`
   - Pair with `stats::hclust()`.
-- `dist()`
-- `hclust()`
-- `lag()`
-- `rnorm()`
-- `var()`
 
 ### Examples
 

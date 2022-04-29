@@ -40,6 +40,10 @@
 
 `{gbm}`
 
+`{infer}`
+
+- Useful for hypothesis (significance) testing.
+
 
 `{MatchIt}`
 
@@ -62,6 +66,9 @@
 `{naivebayes}`
 
 - `naive_bayes()`
+
+`{[performance](https://easystats.github.io/performance/?utm_campaign=Data_Elixir&utm_source=Data_Elixir_384)}`
+
 
 `{pROC}`
 
@@ -124,6 +131,7 @@ See `{randomForest}`.
   - See `{vtreat}` functions.
 - `p.adjust()`
   - Adjust p-values for multiple comparisons.
+- `pairwise.t.test()`
 - `prcomp()`
   - Principal Component Analysis.
 - `predict()`
@@ -132,10 +140,14 @@ See `{randomForest}`.
   - For `glm` class objects, predict new values using `predict(model, newdata, type = "response")` (`predict()` returns the log-odds of the event, instead of the probability, if `type = "response"` is not included).
   - For GAM, `predict()` returns a matrix so use `as.numeric()` to convert the matrix to a vector if adding to a data set (such as for plotting the predictions versus the actual outcomes).
   - Access the y values of the model using `predict(model, type = "terms")`.
+- `prop.test()`
+  - See `infer::prop_test()`.
 - `residuals()`
   - Extract model residuals.
 - `step()`
   - Step-wise regression.
+- `t.test()`
+  - See `infer::t_test()`.
 
 `{tidyr}`
 
