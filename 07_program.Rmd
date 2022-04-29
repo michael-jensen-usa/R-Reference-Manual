@@ -315,49 +315,31 @@ c(vrsn, os, pkgs) %<-% session()
 `microbenchmark::microbenchmark()`: Sub-millisecond accurate timing of expression evaluations.
   - A more accurate replacement of `system.time(replicate(1000, expr))`.
 
-## Pipes
-
-`{magrittr}`
-
-- `%<>%`
-- `%>%`
-- `%$%`
-- `add()`
-- `and()`
-- `extract()`
-  - See `purrr::pluck()`.
-- `extract2()`
-- `freduce()`
-- `is_in()`
-- `multiply_by()`
-- `or()`
-- `raise_to_power()`
-- `subtract()`
-- `use_series()`
-
 ## Popups
 
 - `svDialogs::dlg_message()`: Display a modal message box (works in Windows, MacOS, and Linux).
 - `tcltk::tk_messageBox()`: Display a generic message box using Tk (Windows-specific).
 
-## Selecting & Subsetting
+## Selecting, Subsetting, and Piping
+
+[`{base}`](https://rdocumentation.org/packages/base/versions/3.6.2)
 
 - `.$variable_name`: See example below.
 - `.[["variable_name"]]`: See example below.
-- `base::subset()`
-- `dplyr::first()`
-- `dplyr::las()t`
-- `dplyr::nth()`
-- `dplyr::rename()`
-- `dplyr::select()`: Helper functions include `contains()`, `ends_with()`, `matches()`, `num_range()`, `one_of()`, `starts_with()`.
-- `ggplot2::cut_number`
-- `magrittr::extract()`
-- `magrittr::extract2()`
-- `purrr:pluck()`: See also `magrittr::extract2()`.
 
-#### Examples
+[`{dplyr}`](https://rdocumentation.org/packages/dplyr/versions/0.7.8)
 
-- `.$variable_name`:
+- `pull()`
+  - See `magrittr::extract()`, `purrr::pluck()`.
+
+[`{magrittr}`](https://rdocumentation.org/packages/magrittr/versions/2.0.3)
+
+- `extract()`
+  - See `dplyr::pull()`, `purrr::pluck()`.
+
+### Examples
+
+- `base::.$variable_name`:
 
 ```{r, eval=FALSE}
 ui_summary_table <- 
@@ -368,7 +350,7 @@ ui_summary_table <-
   bind_rows()
 ```
 
-- `.[["variable_name"]]`:
+- `base::.[["variable_name"]]`:
 
 ```{r, eval=FALSE}
 odbc_aws %>% 
@@ -381,10 +363,10 @@ odbc_aws %>%
     )
   ) %>% 
   .[["id"]] %>% 
-as.double()
+  as.double()
 ```
 
-#### References
+### References
 
 - ["Indexing lists in #rstats. Inspired by Residence Inn"](https://twitter.com/hadleywickham/status/643381054758363136) (Hadley Wickham, Twitter, 14 September 2015)
 

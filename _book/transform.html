@@ -50,6 +50,10 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.9/grViz.js"></script>
 
 
 <style type="text/css">
@@ -169,7 +173,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>Transform</a>
 <ul>
-<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#arithmetic-summary-statistics"><i class="fa fa-check"></i>Arithmetic &amp; Summary Statistics</a>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#summary-statistics"><i class="fa fa-check"></i>Summary Statistics</a>
 <ul>
 <li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#examples-3"><i class="fa fa-check"></i>Examples</a></li>
 </ul></li>
@@ -192,7 +196,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots---statistics"><i class="fa fa-check"></i>Graphs, Charts, and Plots - Statistics</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a>
+<ul>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#examples-6"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a>
 <ul>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#css"><i class="fa fa-check"></i>CSS</a></li>
@@ -201,7 +208,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#graphics"><i class="fa fa-check"></i>Graphics</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots"><i class="fa fa-check"></i>Plots</a>
 <ul>
-<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#examples-6"><i class="fa fa-check"></i>Examples</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#examples-7"><i class="fa fa-check"></i>Examples</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rstudio-connect"><i class="fa fa-check"></i>RStudio Connect</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a></li>
@@ -215,14 +222,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#functionals"><i class="fa fa-check"></i>Functionals</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#functions"><i class="fa fa-check"></i>Functions</a>
 <ul>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#examples-7"><i class="fa fa-check"></i>Examples</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#examples-8"><i class="fa fa-check"></i>Examples</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#learn-about-an-object"><i class="fa fa-check"></i>Learn About an Object</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#loops"><i class="fa fa-check"></i>Loops</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#optimization"><i class="fa fa-check"></i>Optimization</a></li>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#pipes"><i class="fa fa-check"></i>Pipes</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#popups"><i class="fa fa-check"></i>Popups</a></li>
-<li class="chapter" data-level="" data-path="program.html"><a href="program.html#selecting-subsetting"><i class="fa fa-check"></i>Selecting &amp; Subsetting</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#selecting-subsetting-and-piping"><i class="fa fa-check"></i>Selecting, Subsetting, and Piping</a>
+<ul>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#examples-9"><i class="fa fa-check"></i>Examples</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#references-1"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#style-guide"><i class="fa fa-check"></i>Style Guide</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#system-commands"><i class="fa fa-check"></i>System Commands</a></li>
 <li class="chapter" data-level="" data-path="program.html"><a href="program.html#version-control"><i class="fa fa-check"></i>Version Control</a></li>
@@ -263,8 +273,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Transform<a href="transform.html#transform" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>“Transformation includes narrowing in on observations of interest (like all people in one city, or all data from the last year), creating new variables that are functions of existing variables (like computing velocity from speed and time), and calculating a set of summary statistics (like counts or means).”<br />
 - Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em></p>
-<div id="arithmetic-summary-statistics" class="section level2 hasAnchor">
-<h2>Arithmetic &amp; Summary Statistics<a href="transform.html#arithmetic-summary-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="summary-statistics" class="section level2 hasAnchor">
+<h2>Summary Statistics<a href="transform.html#summary-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="https://rdocumentation.org/packages/base/versions/3.6.2"><code>{base}</code></a></p>
 <ul>
 <li><code>mean()</code>
@@ -275,29 +285,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Use to view the mode of a data set.</li>
 </ul></li>
-<li>Operators:
-<ul>
-<li>Comparison Operators (<code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>==</code>, <code>!=</code>)
-<ul>
-<li>Use <code>identical()</code> and <code>all.equal()</code> rather than <code>==</code> and <code>!=</code> in tests where a single <code>TRUE</code> or <code>FALSE</code> is required (such as <code>if</code> expressions).</li>
-</ul></li>
-</ul></li>
 <li><code>range()</code>
 <ul>
 <li>Use <code>diff(range())</code> to get the range as a measure of variability.</li>
 </ul></li>
 </ul>
 <p><a href="https://rdocumentation.org/packages/dplyr/versions/0.7.8"><code>{dplyr}</code></a></p>
+<p><a href="https://rdocumentation.org/packages/stats/versions/3.6.2"><code>{stats}</code></a></p>
 <ul>
-<li><code>all_equal()</code>
+<li><code>quantile()</code>
 <ul>
-<li>Compare data frames.</li>
-</ul></li>
-<li><code>near()</code>
-<ul>
-<li>Compare two numeric vectors (safer than using <code>==</code>).</li>
+<li>Useful in calculating confidence intervals (from bootstrapped data); see example below.</li>
 </ul></li>
 </ul>
+<div id="examples-3" class="section level3 hasAnchor">
+<h3>Examples<a href="transform.html#examples-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>base::mean()</code></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="transform.html#cb7-1" aria-hidden="true" tabindex="-1"></a>by_country <span class="ot">&lt;-</span> </span>
+<span id="cb7-2"><a href="transform.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  votes <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="transform.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-4"><a href="transform.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb7-5"><a href="transform.html#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">total =</span> <span class="fu">n</span>(),</span>
+<span id="cb7-6"><a href="transform.html#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_yes =</span> <span class="fu">mean</span>(vote <span class="sc">==</span> <span class="dv">1</span>))</span></code></pre></div>
+<p><code>base::quantile()</code></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="transform.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 95% confidence interval:</span></span>
+<span id="cb8-2"><a href="transform.html#cb8-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb8-3"><a href="transform.html#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb8-4"><a href="transform.html#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">lower =</span> <span class="fu">quantile</span>(column_name, <span class="fl">0.025</span>),</span>
+<span id="cb8-5"><a href="transform.html#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">upper =</span> <span class="fu">quantile</span>(column_name, <span class="fl">0.975</span>)</span>
+<span id="cb8-6"><a href="transform.html#cb8-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+</div>
+</div>
+<div id="create-new-variables-or-modify-existing-ones" class="section level2 hasAnchor">
+<h2>Create New Variables or Modify Existing Ones<a href="transform.html#create-new-variables-or-modify-existing-ones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="https://rdocumentation.org/packages/dummies/versions/1.5.6"><code>{dummies}</code></a></p>
 <ul>
 <li><code>dummy.data.frame()</code>
@@ -305,62 +325,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Useful when needing to calculate the Jaccard index for categorical data.</li>
 </ul></li>
 </ul>
-<p><a href="https://rdocumentation.org/packages/infer/versions/1.0.0"><code>{infer}</code></a></p>
-<p><a href="https://rdocumentation.org/packages/magrittr/versions/2.0.3"><code>{magrittr}</code></a></p>
-<ul>
-<li><code>extract2()</code>
-<ul>
-<li>See <code>dplyr::pull()</code>.</li>
-</ul></li>
-</ul>
-<p><a href="https://rdocumentation.org/packages/stats/versions/3.6.2"><code>{stats}</code></a></p>
-<ul>
-<li><p>See <code>{infer}</code> for easier-to-use alternatives to <code>{stats}</code>’s hypothesis testing functions, such as <code>prop.test()</code> and <code>t.test()</code>.</p></li>
-<li><p><code>cutree()</code></p>
-<ul>
-<li>Pair with <code>stats::hclust()</code>.</li>
-</ul></li>
-</ul>
-<div id="examples-3" class="section level3 hasAnchor">
-<h3>Examples<a href="transform.html#examples-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><code>base::mean()</code></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="transform.html#cb1-1" aria-hidden="true" tabindex="-1"></a>by_country <span class="ot">&lt;-</span> </span>
-<span id="cb1-2"><a href="transform.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  votes <span class="sc">%&gt;%</span> </span>
-<span id="cb1-3"><a href="transform.html#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-4"><a href="transform.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb1-5"><a href="transform.html#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">total =</span> <span class="fu">n</span>(),</span>
-<span id="cb1-6"><a href="transform.html#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_yes =</span> <span class="fu">mean</span>(vote <span class="sc">==</span> <span class="dv">1</span>))</span>
-<span id="cb1-7"><a href="transform.html#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="transform.html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Classification Trees: Compute the accuracy on the test dataset:</span></span>
-<span id="cb1-9"><a href="transform.html#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(loans_test<span class="sc">$</span>outcome <span class="sc">==</span> loans_test<span class="sc">$</span>prediction)</span></code></pre></div>
-</div>
-</div>
-<div id="create-new-variables-or-modify-existing-ones" class="section level2 hasAnchor">
-<h2>Create New Variables or Modify Existing Ones<a href="transform.html#create-new-variables-or-modify-existing-ones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>countrycode</code></p>
 <ul>
 <li><code>countrycode()</code>: Convert country codes into country names.</li>
 </ul>
 <p><code>dplyr</code></p>
 <ul>
-<li><code>mutate()</code>: Add new variables.
-<ul>
-<li><code>mutate()</code> can also be used to modify existing variables. To change the case of a character variable, for example, do something like:</li>
-<li>Child function: <code>transmute()</code> (drops existing variables).</li>
-</ul></li>
 <li><code>recode()</code>: Recode values (the numeric alternative to using <code>if_else</code> or <code>case_when()</code>).</li>
 </ul>
 <p><strong>Example:</strong> <code>dplyr::mutate</code></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="transform.html#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span></span>
-<span id="cb2-2"><a href="transform.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">%&gt;%</span></span>
-<span id="cb2-3"><a href="transform.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">var_name =</span> <span class="fu">str_to_lower</span>(var_name))</span>
-<span id="cb2-4"><a href="transform.html#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="transform.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a T/F vector, which can then be referenced to highlight certain </span></span>
-<span id="cb2-6"><a href="transform.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># information in a plot:</span></span>
-<span id="cb2-7"><a href="transform.html#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="transform.html#cb2-8" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> </span>
-<span id="cb2-9"><a href="transform.html#cb2-9" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">%&gt;%</span> </span>
-<span id="cb2-10"><a href="transform.html#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">hilight =</span> <span class="at">attributed_provider_id =</span> <span class="dv">95597</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="transform.html#cb9-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span></span>
+<span id="cb9-2"><a href="transform.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="transform.html#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">var_name =</span> <span class="fu">str_to_lower</span>(var_name))</span>
+<span id="cb9-4"><a href="transform.html#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="transform.html#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a T/F vector, which can then be referenced to highlight certain </span></span>
+<span id="cb9-6"><a href="transform.html#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># information in a plot:</span></span>
+<span id="cb9-7"><a href="transform.html#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="transform.html#cb9-8" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> </span>
+<span id="cb9-9"><a href="transform.html#cb9-9" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">%&gt;%</span> </span>
+<span id="cb9-10"><a href="transform.html#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">hilight =</span> <span class="at">attributed_provider_id =</span> <span class="dv">95597</span>)</span></code></pre></div>
 </div>
 <div id="dates-and-datetimes-1" class="section level2 hasAnchor">
 <h2>Dates and Datetimes<a href="transform.html#dates-and-datetimes-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -593,17 +576,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="examples-4" class="section level3 hasAnchor">
 <h3>Examples<a href="transform.html#examples-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>dplyr::filter()</code></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="transform.html#cb3-1" aria-hidden="true" tabindex="-1"></a>ilo_data <span class="sc">%&gt;%</span> </span>
-<span id="cb3-2"><a href="transform.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Sweden&quot;</span>, <span class="st">&quot;Switzerland&quot;</span>))</span>
-<span id="cb3-3"><a href="transform.html#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="transform.html#cb3-4" aria-hidden="true" tabindex="-1"></a>ilo_data <span class="sc">%&gt;%</span> </span>
-<span id="cb3-5"><a href="transform.html#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">&quot;Sweden&quot;</span> <span class="sc">|</span> country <span class="sc">==</span> <span class="st">&quot;Switzerland&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="transform.html#cb10-1" aria-hidden="true" tabindex="-1"></a>ilo_data <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="transform.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Sweden&quot;</span>, <span class="st">&quot;Switzerland&quot;</span>))</span>
+<span id="cb10-3"><a href="transform.html#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="transform.html#cb10-4" aria-hidden="true" tabindex="-1"></a>ilo_data <span class="sc">%&gt;%</span> </span>
+<span id="cb10-5"><a href="transform.html#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">&quot;Sweden&quot;</span> <span class="sc">|</span> country <span class="sc">==</span> <span class="st">&quot;Switzerland&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="test-1" class="section level2 hasAnchor">
 <h2>Test<a href="transform.html#test-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://rdocumentation.org/packages/dplyr/versions/0.7.8"><code>{dplyr}</code></a></p>
+<ul>
+<li><code>all_equal()</code>
+<ul>
+<li>Compare data frames.</li>
+</ul></li>
+<li><code>near()</code>
+<ul>
+<li>Compare two numeric vectors (safer than using <code>==</code>).</li>
+</ul></li>
+</ul>
 <p><code>{base}</code></p>
 <ul>
+<li>Operators:
+<ul>
+<li>Comparison Operators (<code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>==</code>, <code>!=</code>)
+<ul>
+<li>Use <code>identical()</code> and <code>all.equal()</code> rather than <code>==</code> and <code>!=</code> in tests where a single <code>TRUE</code> or <code>FALSE</code> is required (such as <code>if</code> expressions).</li>
+</ul></li>
+</ul></li>
 <li><code>identical()</code>
 <ul>
 <li>See also <code>dplyr::all_equal()</code>, <code>dplyr::near()</code>.</li>
