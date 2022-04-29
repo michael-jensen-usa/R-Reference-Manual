@@ -10,7 +10,7 @@ always_allow_html: yes
 
 # Introduction
 
-In *R for Data Science*, Garrett Grolemund and Hadley Wickham outline the tools needed to tackle about 80% of the tasks required in a typical data science project ("[Introduction](https://r4ds.had.co.nz/introduction.html)"). Those tools, which are illustrated in the diagram below and are the organizing template for this reference manual, are: 
+In *R for Data Science*, Garrett Grolemund and Hadley Wickham outline the tools needed to tackle about 80% of the tasks required in a typical data science project ("[Introduction](https://r4ds.had.co.nz/introduction.html)"). Those tools,  illustrated in the diagram below and which are the organizing template for this reference manual, are: 
 
 - Import
 - Tidy
