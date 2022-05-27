@@ -47,7 +47,7 @@
 - `generate()`
   - Set `type = "permute"` when paired with `hypothesize(null = "independence")` and `type = "bootstrap"` or `type = "simulate"` when paired with `hypothesize(null = "point")`.
 
-`{MatchIt}`
+[`{MatchIt}`](https://www.rdocumentation.org/packages/MatchIt/versions/4.4.0)
 
 - `match.data()`
 - `matchit()`
