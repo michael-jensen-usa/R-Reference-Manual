@@ -40,10 +40,10 @@
 
 `{gbm}`
 
-`{infer}`
+[`{infer}`](https://infer.netlify.app)
 
-- Useful for hypothesis (significance) testing.
-
+- `generate()`
+  - Set `type = "permute"` when paired with `hypothesize(null = "independence")` and `type = "bootstrap"` or `type = "simulate"` when paired with `hypothesize(null = "point")`.
 
 `{MatchIt}`
 
@@ -67,7 +67,7 @@
 
 - `naive_bayes()`
 
-`{[performance](https://easystats.github.io/performance/?utm_campaign=Data_Elixir&utm_source=Data_Elixir_384)}`
+[`{performance}`](https://easystats.github.io/performance/?utm_campaign=Data_Elixir&utm_source=Data_Elixir_384)
 
 
 `{pROC}`
@@ -96,8 +96,6 @@ See `{randomForest}`.
 - `rpart.plot()`
 
 `{rsample}`
-
-
 
 `{sigr}`
 

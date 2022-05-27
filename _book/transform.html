@@ -50,6 +50,10 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.9/grViz.js"></script>
 
 
 <style type="text/css">
@@ -324,15 +328,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="examples-3" class="section level3 hasAnchor">
 <h3>Examples<a href="transform.html#examples-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>base::mean()</code></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="transform.html#cb1-1" aria-hidden="true" tabindex="-1"></a>by_country <span class="ot">&lt;-</span> </span>
-<span id="cb1-2"><a href="transform.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  votes <span class="sc">%&gt;%</span> </span>
-<span id="cb1-3"><a href="transform.html#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-4"><a href="transform.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb1-5"><a href="transform.html#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">total =</span> <span class="fu">n</span>(),</span>
-<span id="cb1-6"><a href="transform.html#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_yes =</span> <span class="fu">mean</span>(vote <span class="sc">==</span> <span class="dv">1</span>))</span>
-<span id="cb1-7"><a href="transform.html#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="transform.html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Classification Trees: Compute the accuracy on the test dataset:</span></span>
-<span id="cb1-9"><a href="transform.html#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(loans_test<span class="sc">$</span>outcome <span class="sc">==</span> loans_test<span class="sc">$</span>prediction)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="transform.html#cb7-1" aria-hidden="true" tabindex="-1"></a>by_country <span class="ot">&lt;-</span> </span>
+<span id="cb7-2"><a href="transform.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  votes <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="transform.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-4"><a href="transform.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb7-5"><a href="transform.html#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">total =</span> <span class="fu">n</span>(),</span>
+<span id="cb7-6"><a href="transform.html#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_yes =</span> <span class="fu">mean</span>(vote <span class="sc">==</span> <span class="dv">1</span>))</span>
+<span id="cb7-7"><a href="transform.html#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="transform.html#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Classification Trees: Compute the accuracy on the test dataset:</span></span>
+<span id="cb7-9"><a href="transform.html#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(loans_test<span class="sc">$</span>outcome <span class="sc">==</span> loans_test<span class="sc">$</span>prediction)</span></code></pre></div>
 </div>
 </div>
 <div id="create-new-variables-or-modify-existing-ones" class="section level2 hasAnchor">
@@ -351,16 +355,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>recode()</code>: Recode values (the numeric alternative to using <code>if_else</code> or <code>case_when()</code>).</li>
 </ul>
 <p><strong>Example:</strong> <code>dplyr::mutate</code></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="transform.html#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span></span>
-<span id="cb2-2"><a href="transform.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">%&gt;%</span></span>
-<span id="cb2-3"><a href="transform.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">var_name =</span> <span class="fu">str_to_lower</span>(var_name))</span>
-<span id="cb2-4"><a href="transform.html#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="transform.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a T/F vector, which can then be referenced to highlight certain </span></span>
-<span id="cb2-6"><a href="transform.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># information in a plot:</span></span>
-<span id="cb2-7"><a href="transform.html#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="transform.html#cb2-8" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> </span>
-<span id="cb2-9"><a href="transform.html#cb2-9" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">%&gt;%</span> </span>
-<span id="cb2-10"><a href="transform.html#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">hilight =</span> <span class="at">attributed_provider_id =</span> <span class="dv">95597</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="transform.html#cb8-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span></span>
+<span id="cb8-2"><a href="transform.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="transform.html#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">var_name =</span> <span class="fu">str_to_lower</span>(var_name))</span>
+<span id="cb8-4"><a href="transform.html#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="transform.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a T/F vector, which can then be referenced to highlight certain </span></span>
+<span id="cb8-6"><a href="transform.html#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># information in a plot:</span></span>
+<span id="cb8-7"><a href="transform.html#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="transform.html#cb8-8" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> </span>
+<span id="cb8-9"><a href="transform.html#cb8-9" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">%&gt;%</span> </span>
+<span id="cb8-10"><a href="transform.html#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">hilight =</span> <span class="at">attributed_provider_id =</span> <span class="dv">95597</span>)</span></code></pre></div>
 </div>
 <div id="dates-and-datetimes-1" class="section level2 hasAnchor">
 <h2>Dates and Datetimes<a href="transform.html#dates-and-datetimes-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -593,11 +597,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="examples-4" class="section level3 hasAnchor">
 <h3>Examples<a href="transform.html#examples-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>dplyr::filter()</code></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="transform.html#cb3-1" aria-hidden="true" tabindex="-1"></a>ilo_data <span class="sc">%&gt;%</span> </span>
-<span id="cb3-2"><a href="transform.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Sweden&quot;</span>, <span class="st">&quot;Switzerland&quot;</span>))</span>
-<span id="cb3-3"><a href="transform.html#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="transform.html#cb3-4" aria-hidden="true" tabindex="-1"></a>ilo_data <span class="sc">%&gt;%</span> </span>
-<span id="cb3-5"><a href="transform.html#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">&quot;Sweden&quot;</span> <span class="sc">|</span> country <span class="sc">==</span> <span class="st">&quot;Switzerland&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="transform.html#cb9-1" aria-hidden="true" tabindex="-1"></a>ilo_data <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="transform.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Sweden&quot;</span>, <span class="st">&quot;Switzerland&quot;</span>))</span>
+<span id="cb9-3"><a href="transform.html#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="transform.html#cb9-4" aria-hidden="true" tabindex="-1"></a>ilo_data <span class="sc">%&gt;%</span> </span>
+<span id="cb9-5"><a href="transform.html#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">&quot;Sweden&quot;</span> <span class="sc">|</span> country <span class="sc">==</span> <span class="st">&quot;Switzerland&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="test-1" class="section level2 hasAnchor">
