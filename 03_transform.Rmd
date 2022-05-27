@@ -3,7 +3,7 @@
 "Transformation includes narrowing in on observations of interest (like all people in one city, or all data from the last year), creating new variables that are functions of existing variables (like computing velocity from speed and time), and calculating a set of summary statistics (like counts or means)."  
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*
 
-## Arithmetic & Summary Statistics
+## Summary Statistics
 
 [`{base}`](https://rdocumentation.org/packages/base/versions/3.6.2)
 
@@ -11,37 +11,15 @@
   - Use `base::mean(variable == value)` to calculate proportion; see example below.
 - `table()`
   - Use to view the mode of a data set.
-- Operators:
-  - Comparison Operators (`<`, `>`, `<=`, `>=`, `==`, `!=`)
-    - Use `identical()` and `all.equal()` rather than `==` and `!=` in tests where a single `TRUE` or `FALSE` is required (such as `if` expressions).
 - `range()`
   - Use `diff(range())` to get the range as a measure of variability.
 
 [`{dplyr}`](https://rdocumentation.org/packages/dplyr/versions/0.7.8)
 
-- `all_equal()`
-  - Compare data frames.
-- `near()`
-  - Compare two numeric vectors (safer than using `==`).
-
-[`{dummies}`](https://rdocumentation.org/packages/dummies/versions/1.5.6)
-
-- `dummy.data.frame()`
-  - Useful when needing to calculate the Jaccard index for categorical data.
-
-[`{infer}`](https://rdocumentation.org/packages/infer/versions/1.0.0)
-
-[`{magrittr}`](https://rdocumentation.org/packages/magrittr/versions/2.0.3)
-
-- `extract2()`
-  - See `dplyr::pull()`.
-
 [`{stats}`](https://rdocumentation.org/packages/stats/versions/3.6.2)
 
-- See `{infer}` for easier-to-use alternatives to `{stats}`'s hypothesis testing functions, such as `prop.test()` and `t.test()`.
-
-- `cutree()`
-  - Pair with `stats::hclust()`.
+- `quantile()`
+  - Useful in calculating confidence intervals (from bootstrapped data); see example below.
 
 ### Examples
 
@@ -54,12 +32,28 @@ by_country <-
   summarize(
     total = n(),
     percent_yes = mean(vote == 1))
+```
 
-# Classification Trees: Compute the accuracy on the test dataset:
-mean(loans_test$outcome == loans_test$prediction)
+`base::quantile()`
+
+```{r, eval=FALSE}
+# 95% confidence interval:
+df %>% 
+  summarize(
+    lower = quantile(column_name, 0.025),
+    upper = quantile(column_name, 0.975)
+  )
 ```
 
 ## Create New Variables or Modify Existing Ones
+
+
+
+[`{dummies}`](https://rdocumentation.org/packages/dummies/versions/1.5.6)
+
+- `dummy.data.frame()`
+  - Useful when needing to calculate the Jaccard index for categorical data.
+
 
 `countrycode`
 
@@ -67,9 +61,6 @@ mean(loans_test$outcome == loans_test$prediction)
 
 `dplyr`
 
-- `mutate()`: Add new variables.
-  - `mutate()` can also be used to modify existing variables. To change the case of a character variable, for example, do something like:
-  - Child function: `transmute()` (drops existing variables).
 - `recode()`: Recode values (the numeric alternative to using `if_else` or `case_when()`).
     
 **Example:** `dplyr::mutate`
@@ -86,7 +77,6 @@ df <-
   df %>% 
   mutate(hilight = attributed_provider_id = 95597)
 ```
-
 
 ## Dates and Datetimes
 
@@ -254,7 +244,20 @@ ilo_data %>%
 
 ## Test
 
+
+[`{dplyr}`](https://rdocumentation.org/packages/dplyr/versions/0.7.8)
+
+- `all_equal()`
+  - Compare data frames.
+- `near()`
+  - Compare two numeric vectors (safer than using `==`).
+
 `{base}`
+
+
+- Operators:
+  - Comparison Operators (`<`, `>`, `<=`, `>=`, `==`, `!=`)
+    - Use `identical()` and `all.equal()` rather than `==` and `!=` in tests where a single `TRUE` or `FALSE` is required (such as `if` expressions).
 
 - `identical()`
   - See also `dplyr::all_equal()`, `dplyr::near()`.

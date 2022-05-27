@@ -3,10 +3,12 @@
 "Models are complementary tools to visualisation. Once you have made your questions sufficiently precise, you can use a model to answer them. Models are a fundamentally mathematical or computational tool, so they generally scale well. ... But every model makes assumptions, and by its very nature a model cannot question its own assumptions. That means a model cannot fundamentally surprise you. 
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*"
 
-`{base}`
+[`{base}`](https://rdocumentation.org/packages/base/versions/3.6.2)
 
 - `I()`
   - Use when raising a variable to an exponent in order to evaluate the value as a mathematical expression rather than as an interaction variable.
+- `mean()`
+  - Use in modeling, such as classification trees, to compute the accuracy of predicted values; see example below.
 - `sample()`
 - `set.seed()`
 - `summary()`
@@ -40,7 +42,7 @@
 
 `{gbm}`
 
-[`{infer}`](https://infer.netlify.app)
+[`{infer}`](https://rdocumentation.org/packages/infer/versions/1.0.0)
 
 - `generate()`
   - Set `type = "permute"` when paired with `hypothesize(null = "independence")` and `type = "bootstrap"` or `type = "simulate"` when paired with `hypothesize(null = "point")`.
@@ -103,7 +105,13 @@ See `{randomForest}`.
   - For Pseudo-R^2:
     - On training data, use `wrapChiSqTest(model)`. For test data, use `wrapChiSqTest(prediction_column_name, outcome_column_name, target_value)`.
 
-`{stats}`
+
+[`{stats}`](https://rdocumentation.org/packages/stats/versions/3.6.2)
+
+- See `{infer}` for easier-to-use hypothesis testing functions.
+
+- `cutree()`
+  - Pair with `stats::hclust()`.
 
 - `as.formula()`
   - Use to define an object to pass as a formula into a model (e.g., `fmla <- as.formula("unemployment ~ population"), lm(fmla, data)`)
@@ -172,3 +180,12 @@ Compared to `stats::model.matrix()`, `{vtreat}` functions allow for handling new
 
 - `xgb.cv()`
   - Use `xgb.cv()$evaluation_log` to find the number of trees that minimizes RMSE (input that number as the `nrounds` argument in `xgboost()`).
+
+### Examples
+
+`base::mean()`
+
+```{r, eval=FALSE}
+# Classification Trees: Compute accuracy of predictions on the test data set:
+mean(loans_test$outcome == loans_test$prediction)
+```
