@@ -42,12 +42,12 @@
 
 `{gbm}`
 
-[`{infer}`](https://rdocumentation.org/packages/infer/versions/1.0.0)
+[`{infer}`](https://rdocumentation.org/packages/infer)
 
 - `generate()`
   - Set `type = "permute"` when paired with `hypothesize(null = "independence")` and `type = "bootstrap"` or `type = "simulate"` when paired with `hypothesize(null = "point")`.
 
-[`{MatchIt}`](https://www.rdocumentation.org/packages/MatchIt/versions/4.4.0)
+[`{MatchIt}`](https://www.rdocumentation.org/packages/MatchIt)
 
 - `match.data()`
 - `matchit()`
