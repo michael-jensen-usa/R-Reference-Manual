@@ -3,7 +3,7 @@
 "Models are complementary tools to visualisation. Once you have made your questions sufficiently precise, you can use a model to answer them. Models are a fundamentally mathematical or computational tool, so they generally scale well. ... But every model makes assumptions, and by its very nature a model cannot question its own assumptions. That means a model cannot fundamentally surprise you. 
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*"
 
-[`{base}`](https://rdocumentation.org/packages/base/versions/3.6.2)
+[`{base}`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/base-package.html)
 
 - `I()`
   - Use when raising a variable to an exponent in order to evaluate the value as a mathematical expression rather than as an interaction variable.
@@ -42,12 +42,12 @@
 
 `{gbm}`
 
-[`{infer}`](https://rdocumentation.org/packages/infer)
+[`{infer}`](https://cran.r-project.org/package=infer)
 
 - `generate()`
   - Set `type = "permute"` when paired with `hypothesize(null = "independence")` and `type = "bootstrap"` or `type = "simulate"` when paired with `hypothesize(null = "point")`.
 
-[`{MatchIt}`](https://www.rdocumentation.org/packages/MatchIt)
+[`{MatchIt}`](https://cran.r-project.org/package=MatchIt)
 
 - `match.data()`
 - `matchit()`
@@ -69,7 +69,7 @@
 
 - `naive_bayes()`
 
-[`{performance}`](https://easystats.github.io/performance/?utm_campaign=Data_Elixir&utm_source=Data_Elixir_384)
+[`{performance}`](https://cran.r-project.org/package=performance)
 
 
 `{pROC}`
@@ -106,7 +106,7 @@ See `{randomForest}`.
     - On training data, use `wrapChiSqTest(model)`. For test data, use `wrapChiSqTest(prediction_column_name, outcome_column_name, target_value)`.
 
 
-[`{stats}`](https://rdocumentation.org/packages/stats/versions/3.6.2)
+[`{stats}`](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/stats-package.html)
 
 - See `{infer}` for easier-to-use hypothesis testing functions.
 
