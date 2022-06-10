@@ -112,7 +112,6 @@ See `{randomForest}`.
 
 - `cutree()`
   - Pair with `stats::hclust()`.
-
 - `as.formula()`
   - Use to define an object to pass as a formula into a model (e.g., `fmla <- as.formula("unemployment ~ population"), lm(fmla, data)`)
 - `coef()`
@@ -126,6 +125,14 @@ See `{randomForest}`.
 - `df.residual()`
   - Get the residual degrees of freedom.
 - `dist()`
+- Distributions
+  - Binomial (`dbinom()`)
+  - Exponential (`dexp()`)
+  - Gamma (`dgamma()`)
+  - Log-normal (`dlnorm()`)
+  - Normal (`dnorm()`)
+  - Poisson (`dpois()`)
+  - Uniform (`dunif()`)
 - `glm()`
   - For `family = Gamma`, consider using `(link = "log")` rather than the default. Use `expm1()` on the coefficients to tranform them into a percentage, which is easier to interpret than a logged coefficient value.
 - `hclust()`

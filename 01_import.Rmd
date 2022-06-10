@@ -16,24 +16,6 @@
 - `vector()`
   - Preferable to `base::c()` when creating an empty vector (["Five Tips to Improve Your R Code"](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve)).
 
-`{stats}`
-
-- Binomial distribution:
-  - `dbinom()`
-  - `pbinom()`
-  - `qbinom()`
-  - `rbinom()`
-- Normal distribution:
-  - `dnorm()`
-  - `pnorm()`
-  - `qnorm()`
-  - `rnorm()`
-- Uniform distribution:
-  - `dunif()`
-  - `punif()`
-  - `qunif()`
-  - `runif()`
-
 `{tibble}`
 
 - `add_row()`
