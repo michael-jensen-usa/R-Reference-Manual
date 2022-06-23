@@ -81,8 +81,7 @@ digraph {
 
 * Online Manuals
   - [*R for Data Science*](http://r4ds.had.co.nz/)
-  - [*Advanced R*](http://adv-r.had.co.nz/) by Hadley Wickham
-        + Hadley's second edition draft is available [here](https://adv-r.hadley.nz/).
+  - [*Advanced R*](https://adv-r.hadley.nz) by Hadley Wickham
   - [*R Packages*](http://r-pkgs.had.co.nz/) by Hadley Wickham
   - [*The R Inferno*](http://www.burns-stat.com/pages/Tutor/R_inferno.pdf) by Patrick Burns
   - [*The tidyverse style guide*](http://style.tidyverse.org/)
