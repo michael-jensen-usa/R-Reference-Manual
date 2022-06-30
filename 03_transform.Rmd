@@ -8,7 +8,7 @@
 [`{base}`](https://rdocumentation.org/packages/base/versions/3.6.2)
 
 - `mean()`
-  - Use `base::mean(variable == value)` to calculate proportion; see example below.
+  - Use `base::mean(variable == value)` to calculate proportion; see example below. This trick works because `mean()` treats TRUE as 1 and FALSE as 0.
 - `table()`
   - Use to view the mode of a data set.
 - `range()`
