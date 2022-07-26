@@ -273,7 +273,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Model<a href="model.html#model" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>“Models are complementary tools to visualisation. Once you have made your questions sufficiently precise, you can use a model to answer them. Models are a fundamentally mathematical or computational tool, so they generally scale well. … But every model makes assumptions, and by its very nature a model cannot question its own assumptions. That means a model cannot fundamentally surprise you.
 - Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em>”</p>
-<p><a href="https://rdocumentation.org/packages/base/versions/3.6.2"><code>{base}</code></a></p>
+<p><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/base-package.html"><code>{base}</code></a></p>
 <ul>
 <li><code>I()</code>
 <ul>
@@ -322,14 +322,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>sample_n()</code></li>
 </ul>
 <p><code>{gbm}</code></p>
-<p><a href="https://rdocumentation.org/packages/infer"><code>{infer}</code></a></p>
+<p><a href="https://cran.r-project.org/package=infer"><code>{infer}</code></a></p>
 <ul>
 <li><code>generate()</code>
 <ul>
 <li>Set <code>type = "permute"</code> when paired with <code>hypothesize(null = "independence")</code> and <code>type = "bootstrap"</code> or <code>type = "simulate"</code> when paired with <code>hypothesize(null = "point")</code>.</li>
 </ul></li>
 </ul>
-<p><a href="https://www.rdocumentation.org/packages/MatchIt"><code>{MatchIt}</code></a></p>
+<p><a href="https://cran.r-project.org/package=MatchIt"><code>{MatchIt}</code></a></p>
 <ul>
 <li><code>match.data()</code></li>
 <li><code>matchit()</code></li>
@@ -352,7 +352,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><code>naive_bayes()</code></li>
 </ul>
-<p><a href="https://easystats.github.io/performance/?utm_campaign=Data_Elixir&amp;utm_source=Data_Elixir_384"><code>{performance}</code></a></p>
+<p><a href="https://cran.r-project.org/package=performance"><code>{performance}</code></a></p>
 <p><code>{pROC}</code></p>
 <ul>
 <li><code>auc()</code></li>
@@ -387,7 +387,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 </ul>
-<p><a href="https://rdocumentation.org/packages/stats/versions/3.6.2"><code>{stats}</code></a></p>
+<p><a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/stats-package.html"><code>{stats}</code></a></p>
 <ul>
 <li><p>See <code>{infer}</code> for easier-to-use hypothesis testing functions.</p></li>
 <li><p><code>cutree()</code></p>
@@ -417,6 +417,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Get the residual degrees of freedom.</li>
 </ul></li>
 <li><p><code>dist()</code></p></li>
+<li><p>Distributions</p>
+<ul>
+<li>Binomial (<code>dbinom()</code>)</li>
+<li>Exponential (<code>dexp()</code>)</li>
+<li>Gamma (<code>dgamma()</code>)</li>
+<li>Log-normal (<code>dlnorm()</code>)</li>
+<li>Normal (<code>dnorm()</code>)</li>
+<li>Poisson (<code>dpois()</code>)</li>
+<li>Uniform (<code>dunif()</code>)</li>
+</ul></li>
 <li><p><code>glm()</code></p>
 <ul>
 <li>For <code>family = Gamma</code>, consider using <code>(link = "log")</code> rather than the default. Use <code>expm1()</code> on the coefficients to tranform them into a percentage, which is easier to interpret than a logged coefficient value.</li>
