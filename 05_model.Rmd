@@ -129,6 +129,7 @@ See `{randomForest}`.
   - Binomial (`dbinom()`)
   - Exponential (`dexp()`)
   - Gamma (`dgamma()`)
+  - Geometric (`dgeom()`)
   - Log-normal (`dlnorm()`)
   - Normal (`dnorm()`)
   - Poisson (`dpois()`)

@@ -184,7 +184,8 @@ References:
   - `mapply`
     - Apply a function to multiple list or vector arguments.
   - `rapply`
-    - Recursively apply a function to a list. 
+    - Recursively apply a function to a list.
+  - `replicate()`
   - `tapply`
     - Apply a function over a ragged array.
 
