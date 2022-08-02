@@ -48,7 +48,7 @@ References:
 
 - `aes()`
   - Arguments include `color`, `fill`, `size`, `labels`, `alpha`, `shape` (1-20 accept color attributes and 21-25 accept color and fill attributes), `linewidth`, `linetype`, and `group`.
-  - Use `?pch` to see options for `shape`.
+  - Use `?pch` to see options for `shape` and `?points` to see options for points.
   - Note that `aes` can be called within `geom_*` rather than prior to.
   - The default shape for points does not have a `fill` attribute, which means that mapping a categorical variable onto `fill` won't result in multiple colors.
   - Helper functions to include in the call when needing to modify the data include: `stats::reorder()`.
