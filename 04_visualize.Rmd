@@ -82,7 +82,8 @@ References:
 - `geom_freqpoly()`
   - See `ggplot2::geom_histogram()`.
 - `geom_histogram()`
-  -  Use `y = stat(density)` to rescale the y-axis from counts to a probability estimate.
+  - Use `aes(x, ..density..)` to rescale the y-axis from counts to frequency.
+  - Use `y = stat(density)` to rescale the y-axis from counts to a probability estimate.
   - See `ggplot2::geom_freqpoly()`.
 - `ggplot2::geom_hline()`
 -`geom_jitter()`
