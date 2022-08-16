@@ -58,7 +58,8 @@ References:
   - Flip the x and y axes.
 - `coord_polar()`
   - Use to convert a stacked bar chart to a pie chart.
-- `ggplot2::cut_number`
+- `cut_number()`
+- `element_*()`
 - `facet_grid()`
   - Lay out panels in a grid.
   - `ROWS ~ COLS`: When using a tilde function, the variable on the left specifies the rows and the variable on the right specifies the columns. When faceting in only one direction (e.g., only on rows), use `.` to specify nothing for the unused direction.
