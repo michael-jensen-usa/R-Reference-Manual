@@ -94,6 +94,7 @@ References:
 - `geom_point()`
 - `geom_rug()`
   - Useful with `ggplot2::geom_density()`.
+- `geom_segment()`
 - `geom_smooth()`
   - Smoothed conditional means; aids the eye in seeing patterns in the presence of overplotting.
 - `geom_tile()`
@@ -116,8 +117,9 @@ References:
   - Stack overlapping objects on top of each other, as counts.
 - `position_fill()`
   - Stack overlapping objects on top of each other, as densities.
-- `theme()`
+- `theme_*()`
   - See example for `grid::unit()`.
+  - See `ggthemes` package.
 - `theme_update()`
   - "When you call 'theme_update' and assign it to an object (e.g., called `old`), that object stores the *current* default theme, and the arguments *update* the default theme. If you want to restore the previous default theme, you can get it back by using `theme_update` again." -DataCamp
 
@@ -125,6 +127,8 @@ References:
 
 - `geom_density_ridges()`
   - Create a ridgeline plot.
+
+[`{ggthemes}`](https://www.rdocumentation.org/packages/ggthemes/versions/3.5.0)
 
 `{graphics}`
 
