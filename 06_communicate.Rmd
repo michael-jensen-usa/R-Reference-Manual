@@ -76,7 +76,10 @@ h1.title {
 
 `{knitr}`
 
+- Code chunk options:
+   - `collapse`
 - `kable()`
+- `opts_chunk$set()`
 
 `{lubridate}`
 
