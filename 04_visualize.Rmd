@@ -96,7 +96,7 @@ References:
   - Useful with `ggplot2::geom_density()`.
 - `geom_segment()`
 - `geom_smooth()`
-  - Smoothed conditional means; aids the eye in seeing patterns in the presence of overplotting.
+  - For LOESS smoothing, the `span` argument adjusts the data window used for smoothing.
 - `geom_tile()`
   - Heat maps.
 - `ggplot_build()`
