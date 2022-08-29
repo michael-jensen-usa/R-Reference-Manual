@@ -22,8 +22,6 @@ References:
 
 `{diagram}`
 
-
-
 `{DiagrammeR}`
 
 - `grViz()`
@@ -53,29 +51,28 @@ References:
   - The default shape for points does not have a `fill` attribute, which means that mapping a categorical variable onto `fill` won't result in multiple colors.
   - Helper functions to include in the call when needing to modify the data include: `stats::reorder()`.
 - `coord_cartesian()`
-  - Zoom a plot in or out without changing the underlying data.
 - `coord_flip()`
-  - Flip the x and y axes.
 - `coord_polar()`
   - Use to convert a stacked bar chart to a pie chart.
 - `cut_number()`
 - `element_*()`
 - `facet_grid()`
-  - Lay out panels in a grid.
   - `ROWS ~ COLS`: When using a tilde function, the variable on the left specifies the rows and the variable on the right specifies the columns. When faceting in only one direction (e.g., only on rows), use `.` to specify nothing for the unused direction.
 - `facet_wrap()`
   - Wrap long panel names using `stringr::str_wrap()`: `facet_wrap(~str_wrap(var, width = xx))`.
   - Use `ggforce::facet_wrap_paginate()` when there are too many panels.
 - `geom_abline()`
-  - Add reference lines to a plot.
 - `geom_bar()`
   - Create a bar chart, where the height of the bar is proportional to the number of cases in each group.
 - `geom_boxplot()`
 - `geom_col()`
   - Create a bar chart, where the height of the bar represents values in the data.
+- `geom_count()`/`stat_sum()`
+  - See `geom_jitter()` and `geom_point()`.
+  - Use `ggplot2::scale_size()` to adjust point diameters.
 - `geom_density()`
   - Create a kernal density estimate (a smoothed version of a histogram).
-  -  Consider using `ggplot2::geom_rug()` with `ggplot2::geom_density()` in order to be transparent about smoothed data.
+  - Consider using `ggplot2::geom_rug()` with `ggplot2::geom_density()` in order to be transparent about smoothed data.
 - `geom_dotplot()`
   - Create a histogram out of dots.
 - `geom_errorbar()`
@@ -89,14 +86,18 @@ References:
 - `ggplot2::geom_hline()`
 -`geom_jitter()`
   - Useful with `ggplot2::geom_boxplot()`.
+  - See `geom_count()` and `geom_point()`.
 - `geom_path()`
   - Connect observations in the order in which they appear.
 - `geom_point()`
+  - See `geom_count()` and `geom_jitter()`.
+- `geom_quantile()`
 - `geom_rug()`
   - Useful with `ggplot2::geom_density()`.
 - `geom_segment()`
-- `geom_smooth()`
-  - For LOESS smoothing, the `span` argument adjusts the data window used for smoothing.
+- `geom_smooth()`/`stat_smooth()`
+  - For LOESS smoothing, the `span` argument adjusts the data window used for smoothing (the default values is 0.9).
+  - Use a dummy group variable (e.g., `aes(group = 1))` or `aes(group = "All")`) to override groups specified in an earlier mapping layer and show the trend for the population.
 - `geom_tile()`
   - Heat maps.
 - `ggplot_build()`
@@ -107,6 +108,11 @@ References:
   - Note that `group` is usually unnecessary when specifying `color`, `shape`, `fill`, or `linetype` within `aes`, or when using facets. See ["Aesthetics: grouping"](https://ggplot2.tidyverse.org/reference/aes_group_order.html) for more information.
 - `labs()`
   - Modify axis, legend, and plot labels.
+- `mean_cl_boot()`
+- `mean_cl_normal()`
+- `mean_sdl()`
+  - Use with `ggplot2::stat_summary()` (e.g., `stat_summary(fun.data = mean_sdl, fun.args = list(mult = 1))`).
+- `median_hilow()`
 - `position_identity()`
   - Don't adjust position.
 - `position_dodge()`
@@ -117,6 +123,16 @@ References:
   - Stack overlapping objects on top of each other, as counts.
 - `position_fill()`
   - Stack overlapping objects on top of each other, as densities.
+- Special variables:
+  - `..prop..`: Calculates proportion of values (e.g., `stat_sum(aes(size = ..prop..))`).
+- `stat_function()`
+  - Compute `y` values from a function of `x` values.
+- `stat_qq()`
+  - Perform calculations for a quantile-quantile plot.
+- `stat_qq_line()`
+- `stat_summary()`
+  - Summarize `y` values at distinct `x` values.
+  - See `ggplot2::mean_*()`.
 - `theme_*()`
   - See example for `grid::unit()`.
   - See `ggthemes` package.
@@ -160,7 +176,11 @@ References:
 
 - `brewer.pal()`
   - Make the ColorBrewer color palettes available as R palettes.
-  
+
+[`{stats}`](https://www.rdocumentation.org/packages/stats/versions/3.6.2)
+
+- `biplot()`
+
 ### Examples
 
 `grid::unit()`
@@ -173,24 +193,3 @@ plot +
     panel.spacing.x = unit(2, "cm"),
     panel.margin = unit(c(1, 2, 1, 1), "cm"))
 ```
-
-## Graphs, Charts, and Plots - Statistics
-
-`{ggplot2}`
-
-
-- `mean_cl_boot()`
-- `mean_cl_normal()`
-- `sdl()`
-- `median_hilow()`
-- `stat_function()`
-  - Compute `y` values from a function of `x` values.
-- `qq()`
-  - Perfrm calculations for a quantile-quantile plot.
-- `qq_line()`
-- `summary()`
-  - Summarize `y` values at distinct `x` values.
-  
-`{stats}`
-
-- `biplot()`
