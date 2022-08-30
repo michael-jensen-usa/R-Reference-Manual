@@ -194,7 +194,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#examples-5"><i class="fa fa-check"></i>Examples</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots---statistics"><i class="fa fa-check"></i>Graphs, Charts, and Plots - Statistics</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a>
 <ul>
@@ -324,27 +323,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>aes()</code>
 <ul>
 <li>Arguments include <code>color</code>, <code>fill</code>, <code>size</code>, <code>labels</code>, <code>alpha</code>, <code>shape</code> (1-20 accept color attributes and 21-25 accept color and fill attributes), <code>linewidth</code>, <code>linetype</code>, and <code>group</code>.</li>
-<li>Use <code>?pch</code> to see options for <code>shape</code>.</li>
+<li>Use <code>?pch</code> to see options for <code>shape</code> and <code>?points</code> to see options for points.</li>
 <li>Note that <code>aes</code> can be called within <code>geom_*</code> rather than prior to.</li>
 <li>The default shape for points does not have a <code>fill</code> attribute, which means that mapping a categorical variable onto <code>fill</code> won’t result in multiple colors.</li>
 <li>Helper functions to include in the call when needing to modify the data include: <code>stats::reorder()</code>.</li>
 </ul></li>
-<li><code>coord_cartesian()</code>
-<ul>
-<li>Zoom a plot in or out without changing the underlying data.</li>
-</ul></li>
-<li><code>coord_flip()</code>
-<ul>
-<li>Flip the x and y axes.</li>
-</ul></li>
+<li><code>coord_cartesian()</code></li>
+<li><code>coord_flip()</code></li>
 <li><code>coord_polar()</code>
 <ul>
 <li>Use to convert a stacked bar chart to a pie chart.</li>
 </ul></li>
-<li><code>ggplot2::cut_number</code></li>
+<li><code>cut_number()</code></li>
+<li><code>element_*()</code></li>
 <li><code>facet_grid()</code>
 <ul>
-<li>Lay out panels in a grid.</li>
 <li><code>ROWS ~ COLS</code>: When using a tilde function, the variable on the left specifies the rows and the variable on the right specifies the columns. When faceting in only one direction (e.g., only on rows), use <code>.</code> to specify nothing for the unused direction.</li>
 </ul></li>
 <li><code>facet_wrap()</code>
@@ -352,10 +345,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Wrap long panel names using <code>stringr::str_wrap()</code>: <code>facet_wrap(~str_wrap(var, width = xx))</code>.</li>
 <li>Use <code>ggforce::facet_wrap_paginate()</code> when there are too many panels.</li>
 </ul></li>
-<li><code>geom_abline()</code>
-<ul>
-<li>Add reference lines to a plot.</li>
-</ul></li>
+<li><code>geom_abline()</code></li>
 <li><code>geom_bar()</code>
 <ul>
 <li>Create a bar chart, where the height of the bar is proportional to the number of cases in each group.</li>
@@ -364,6 +354,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>geom_col()</code>
 <ul>
 <li>Create a bar chart, where the height of the bar represents values in the data.</li>
+</ul></li>
+<li><code>geom_count()</code>/<code>stat_sum()</code>
+<ul>
+<li>See <code>geom_jitter()</code> and <code>geom_point()</code>.</li>
+<li>Use <code>ggplot2::scale_size()</code> to adjust point diameters.</li>
 </ul></li>
 <li><code>geom_density()</code>
 <ul>
@@ -384,6 +379,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><code>geom_histogram()</code>
 <ul>
+<li>Use <code>aes(x, ..density..)</code> to rescale the y-axis from counts to frequency.</li>
 <li>Use <code>y = stat(density)</code> to rescale the y-axis from counts to a probability estimate.</li>
 <li>See <code>ggplot2::geom_freqpoly()</code>.</li>
 </ul></li>
@@ -391,19 +387,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 -<code>geom_jitter()</code>
 <ul>
 <li>Useful with <code>ggplot2::geom_boxplot()</code>.</li>
+<li>See <code>geom_count()</code> and <code>geom_point()</code>.</li>
 </ul></li>
 <li><code>geom_path()</code>
 <ul>
 <li>Connect observations in the order in which they appear.</li>
 </ul></li>
-<li><code>geom_point()</code></li>
+<li><code>geom_point()</code>
+<ul>
+<li>See <code>geom_count()</code> and <code>geom_jitter()</code>.</li>
+</ul></li>
+<li><code>geom_quantile()</code></li>
 <li><code>geom_rug()</code>
 <ul>
 <li>Useful with <code>ggplot2::geom_density()</code>.</li>
 </ul></li>
-<li><code>geom_smooth()</code>
+<li><code>geom_segment()</code></li>
+<li><code>geom_smooth()</code>/<code>stat_smooth()</code>
 <ul>
-<li>Smoothed conditional means; aids the eye in seeing patterns in the presence of overplotting.</li>
+<li>For LOESS smoothing, the <code>span</code> argument adjusts the data window used for smoothing (the default values is 0.9).</li>
+<li>Use a dummy group variable (e.g., <code>aes(group = 1))</code> or <code>aes(group = "All")</code>) to override groups specified in an earlier mapping layer and show the trend for the population.</li>
 </ul></li>
 <li><code>geom_tile()</code>
 <ul>
@@ -420,9 +423,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Note that <code>group</code> is usually unnecessary when specifying <code>color</code>, <code>shape</code>, <code>fill</code>, or <code>linetype</code> within <code>aes</code>, or when using facets. See <a href="https://ggplot2.tidyverse.org/reference/aes_group_order.html">“Aesthetics: grouping”</a> for more information.</li>
 </ul></li>
 <li><code>labs()</code>
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 <ul>
-<li>Use the <code>color</code> argument to relabel the legend title.</li>
+<li><h1 id="use-the-color-argument-to-relabel-the-legend-title." class="hasAnchor">Use the <code>color</code> argument to relabel the legend title.<a href="visualize.html#use-the-color-argument-to-relabel-the-legend-title." class="anchor-section" aria-label="Anchor link to header"></a></h1></li>
+<li>Modify axis, legend, and plot labels.</li>
 </ul></li>
+<li><code>mean_cl_boot()</code></li>
+<li><code>mean_cl_normal()</code></li>
+<li><code>mean_sdl()</code>
+<ul>
+<li>Use with <code>ggplot2::stat_summary()</code> (e.g., <code>stat_summary(fun.data = mean_sdl, fun.args = list(mult = 1))</code>).</li>
+</ul></li>
+<li><code>median_hilow()</code>
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 8610ad64bf4202523419e146372d231df592aea0</li>
 <li><code>position_identity()</code>
 <ul>
 <li>Don’t adjust position.</li>
@@ -443,9 +456,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Stack overlapping objects on top of each other, as densities.</li>
 </ul></li>
-<li><code>theme()</code>
+<li>Special variables:
+<ul>
+<li><code>..prop..</code>: Calculates proportion of values (e.g., <code>stat_sum(aes(size = ..prop..))</code>).</li>
+</ul></li>
+<li><code>stat_function()</code>
+<ul>
+<li>Compute <code>y</code> values from a function of <code>x</code> values.</li>
+</ul></li>
+<li><code>stat_qq()</code>
+<ul>
+<li>Perform calculations for a quantile-quantile plot.</li>
+</ul></li>
+<li><code>stat_qq_line()</code></li>
+<li><code>stat_summary()</code>
+<ul>
+<li>Summarize <code>y</code> values at distinct <code>x</code> values.</li>
+<li>See <code>ggplot2::mean_*()</code>.</li>
+</ul></li>
+<li><code>theme_*()</code>
 <ul>
 <li>See example for <code>grid::unit()</code>.</li>
+<li>See <code>ggthemes</code> package.</li>
 </ul></li>
 <li><code>theme_update()</code>
 <ul>
@@ -459,6 +491,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Create a ridgeline plot.</li>
 </ul></li>
 </ul>
+<p><a href="https://www.rdocumentation.org/packages/ggthemes/versions/3.5.0"><code>{ggthemes}</code></a></p>
 <p><code>{graphics}</code></p>
 <ul>
 <li><code>boxplot()</code></li>
@@ -500,6 +533,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Make the ColorBrewer color palettes available as R palettes.</li>
 </ul></li>
 </ul>
+<p><a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2"><code>{stats}</code></a></p>
+<ul>
+<li><code>biplot()</code></li>
+</ul>
 <div id="examples-5" class="section level3 hasAnchor">
 <h3>Examples<a href="visualize.html#examples-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>grid::unit()</code></p>
@@ -509,35 +546,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-4"><a href="visualize.html#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
 <span id="cb11-5"><a href="visualize.html#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.spacing.x =</span> <span class="fu">unit</span>(<span class="dv">2</span>, <span class="st">&quot;cm&quot;</span>),</span>
 <span id="cb11-6"><a href="visualize.html#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.margin =</span> <span class="fu">unit</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>), <span class="st">&quot;cm&quot;</span>))</span></code></pre></div>
-</div>
-</div>
-<div id="graphs-charts-and-plots---statistics" class="section level2 hasAnchor">
-<h2>Graphs, Charts, and Plots - Statistics<a href="visualize.html#graphs-charts-and-plots---statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><code>{ggplot2}</code></p>
-<ul>
-<li><code>mean_cl_boot()</code></li>
-<li><code>mean_cl_normal()</code></li>
-<li><code>sdl()</code></li>
-<li><code>median_hilow()</code></li>
-<li><code>stat_function()</code>
-<ul>
-<li>Compute <code>y</code> values from a function of <code>x</code> values.</li>
-</ul></li>
-<li><code>qq()</code>
-<ul>
-<li>Perfrm calculations for a quantile-quantile plot.</li>
-</ul></li>
-<li><code>qq_line()</code></li>
-<li><code>summary()</code>
-<ul>
-<li>Summarize <code>y</code> values at distinct <code>x</code> values.</li>
-</ul></li>
-</ul>
-<p><code>{stats}</code></p>
-<ul>
-<li><code>biplot()</code></li>
-</ul>
 
+</div>
 </div>
 </div>
             </section>

@@ -36,7 +36,6 @@ visualize
 interfaces
 graphs-charts-and-plots
 examples-5
-graphs-charts-and-plots---statistics
 model
 examples-6
 communicate
