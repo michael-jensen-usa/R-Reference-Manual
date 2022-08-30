@@ -103,7 +103,7 @@ References:
   - Used within `aes()`. 
   - Note that `group` is usually unnecessary when specifying `color`, `shape`, `fill`, or `linetype` within `aes`, or when using facets. See ["Aesthetics: grouping"](https://ggplot2.tidyverse.org/reference/aes_group_order.html) for more information.
 - `labs()`
-  - Modify axis, legend, and plot labels.
+  - Use the `color` argument to relabel the legend title.
 - `position_identity()`
   - Don't adjust position.
 - `position_dodge()`
