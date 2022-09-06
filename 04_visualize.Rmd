@@ -16,7 +16,6 @@ References:
 `{base}`
 
 - `abline()`
-  - Add straight lines to a plot.
 - `plot()`
 - `points()`
 
@@ -34,13 +33,9 @@ References:
 - `ggparcoord()`
   - Parallel coordinate plots.
 
-`{ggbeeswarm}`
+[`{ggbeeswarm}`](https://www.rdocumentation.org/packages/ggbeeswarm/versions/0.5.3)
 
-- `geom_beeswarm()`
-
-`{ggforce}`
-
-- `facet_wrap_paginate()`
+[`{ggforce}`](https://www.rdocumentation.org/packages/ggforce/versions/0.3.4)
 
 [`{ggplot2}`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.5)
 
@@ -50,17 +45,13 @@ References:
   - Note that `aes` can be called within `geom_*` rather than prior to.
   - The default shape for points does not have a `fill` attribute, which means that mapping a categorical variable onto `fill` won't result in multiple colors.
   - Helper functions to include in the call when needing to modify the data include: `stats::reorder()`.
-- `coord_cartesian()`
-- `coord_flip()`
-- `coord_polar()`
-  - Use to convert a stacked bar chart to a pie chart.
 - `cut_number()`
 - `element_*()`
-- `facet_grid()`
-  - `ROWS ~ COLS`: When using a tilde function, the variable on the left specifies the rows and the variable on the right specifies the columns. When faceting in only one direction (e.g., only on rows), use `.` to specify nothing for the unused direction.
-- `facet_wrap()`
-  - Wrap long panel names using `stringr::str_wrap()`: `facet_wrap(~str_wrap(var, width = xx))`.
-  - Use `ggforce::facet_wrap_paginate()` when there are too many panels.
+- `facet_*()`
+  - `facets` argument:
+    - For the tilde interface, the variable on the left specifies the rows and the variable on the right specifies the columns. When faceting in only one direction (e.g., only on rows), use `.` to specify nothing for the unused direction.
+    - Wrap long panel names using `stringr::str_wrap()`: `facet_wrap(~str_wrap(var, width = xx))`.
+  - See `ggforce::facet_wrap_paginate()`.
 - `geom_abline()`
 - `geom_bar()`
   - Create a bar chart, where the height of the bar is proportional to the number of cases in each group.
@@ -83,8 +74,8 @@ References:
   - Use `aes(x, ..density..)` to rescale the y-axis from counts to frequency.
   - Use `y = stat(density)` to rescale the y-axis from counts to a probability estimate.
   - See `ggplot2::geom_freqpoly()`.
-- `ggplot2::geom_hline()`
--`geom_jitter()`
+- `geom_hline()`
+- `geom_jitter()`
   - Useful with `ggplot2::geom_boxplot()`.
   - See `geom_count()` and `geom_point()`.
 - `geom_path()`
@@ -117,6 +108,7 @@ References:
   - Don't adjust position.
 - `position_dodge()`
   - Dodge overlapping objects side-to-side.
+- `position_jitter()`
 - `position_nudge()`
   - Nudge points a fixed distance.
 - `position_stack()`
