@@ -3,6 +3,14 @@
 "The last step of data science is communication, an absolutely critical part of any data analysis project. It doesn't matter how well your models and visualisation have led you to understand the data unless you can also communicate your results to others."  
 - Garrett Grolemund & Hadley Wickham, *R for Data Science*
 
+## Color
+
+[`{colorblindr}`](https://www.rdocumentation.org/packages/colorblindr/versions/0.1.0)
+
+- colorblindr::`scale_color_OkabeIto()`
+  - Color blind-friendly palette.
+- palette.colors(palette = “Okabo.Ito”)
+
 ## CSS
 
 *Center Title*
@@ -15,6 +23,10 @@ h1.title {
 }
 </style>
 ```
+
+## Dashboards
+
+[`{flexdashboard}`](https://pkgs.rstudio.com/flexdashboard/)
 
 ## Export
 
