@@ -19,13 +19,13 @@ References:
 - `plot()`
 - `points()`
 
-`{diagram}`
+[`{diagram}`](https://www.rdocumentation.org/packages/diagram/versions/1.6.5)
 
-`{DiagrammeR}`
+[`{DiagrammeR}`](https://github.com/rich-iannone/DiagrammeR)
 
 - `grViz()`
 
-`{GGally}`
+[`{GGally}`](https://ggobi.github.io/ggally/)
 
 - `ggally_box()`
 - `ggpairs()`
@@ -33,11 +33,11 @@ References:
 - `ggparcoord()`
   - Parallel coordinate plots.
 
-[`{ggbeeswarm}`](https://www.rdocumentation.org/packages/ggbeeswarm/versions/0.5.3)
+[`{ggbeeswarm}`](https://github.com/eclarke/ggbeeswarm)
 
-[`{ggforce}`](https://www.rdocumentation.org/packages/ggforce/versions/0.3.4)
+[`{ggforce}`](https://ggforce.data-imaginist.com)
 
-[`{ggplot2}`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.5)
+[`{ggplot2}`](https://ggplot2.tidyverse.org)
 
 - `aes()`
   - Arguments include `color`, `fill`, `size`, `labels`, `alpha`, `shape` (1-20 accept color attributes and 21-25 accept color and fill attributes), `linewidth`, `linetype`, and `group`.
@@ -52,10 +52,8 @@ References:
     - For the tilde interface, the variable on the left specifies the rows and the variable on the right specifies the columns. When faceting in only one direction (e.g., only on rows), use `.` to specify nothing for the unused direction.
     - Wrap long panel names using `stringr::str_wrap()`: `facet_wrap(~str_wrap(var, width = xx))`.
   - See `ggforce::facet_wrap_paginate()`.
-- `geom_abline()`
 - `geom_bar()`
   - Create a bar chart, where the height of the bar is proportional to the number of cases in each group.
-- `geom_boxplot()`
 - `geom_col()`
   - Create a bar chart, where the height of the bar represents values in the data.
 - `geom_count()`/`stat_sum()`
@@ -63,7 +61,7 @@ References:
   - Use `ggplot2::scale_size()` to adjust point diameters.
 - `geom_density()`
   - Create a kernal density estimate (a smoothed version of a histogram).
-  - Consider using `ggplot2::geom_rug()` with `ggplot2::geom_density()` in order to be transparent about smoothed data.
+  - Pair with `ggplot2::geom_rug()` to be transparent about smoothed data.
 - `geom_dotplot()`
   - Create a histogram out of dots.
 - `geom_errorbar()`
@@ -74,7 +72,6 @@ References:
   - Use `aes(x, ..density..)` to rescale the y-axis from counts to frequency.
   - Use `y = stat(density)` to rescale the y-axis from counts to a probability estimate.
   - See `ggplot2::geom_freqpoly()`.
-- `geom_hline()`
 - `geom_jitter()`
   - Useful with `ggplot2::geom_boxplot()`.
   - See `geom_count()` and `geom_point()`.
@@ -82,10 +79,6 @@ References:
   - Connect observations in the order in which they appear.
 - `geom_point()`
   - See `geom_count()` and `geom_jitter()`.
-- `geom_quantile()`
-- `geom_rug()`
-  - Useful with `ggplot2::geom_density()`.
-- `geom_segment()`
 - `geom_smooth()`/`stat_smooth()`
   - For LOESS smoothing, the `span` argument adjusts the data window used for smoothing (the default values is 0.9).
   - Use a dummy group variable (e.g., `aes(group = 1))` or `aes(group = "All")`) to override groups specified in an earlier mapping layer and show the trend for the population.
@@ -117,6 +110,8 @@ References:
   - Stack overlapping objects on top of each other, as densities.
 - Special variables:
   - `..prop..`: Calculates proportion of values (e.g., `stat_sum(aes(size = ..prop..))`).
+- Scale Layer
+  - Setting x and y limits with scale layer functions, such as `scale_x_continuous()`, that depend on `ggplot2::lims()`, removes data that falls outside those limits and may therefore affect how people perceive the data. Use `coord_cartesian()` instead, which retains all data and uses x and y limits to zoom in.
 - `stat_function()`
   - Compute `y` values from a function of `x` values.
 - `stat_qq()`
@@ -131,12 +126,12 @@ References:
 - `theme_update()`
   - "When you call 'theme_update' and assign it to an object (e.g., called `old`), that object stores the *current* default theme, and the arguments *update* the default theme. If you want to restore the previous default theme, you can get it back by using `theme_update` again." -DataCamp
 
-`{ggridges}`
+[`{ggridges}`](https://wilkelab.org/ggridges/reference/index.html)
 
 - `geom_density_ridges()`
   - Create a ridgeline plot.
 
-[`{ggthemes}`](https://www.rdocumentation.org/packages/ggthemes/versions/3.5.0)
+[`{ggthemes}`](https://github.com/jrnold/ggthemes)
 
 `{graphics}`
 
