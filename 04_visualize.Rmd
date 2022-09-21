@@ -180,3 +180,9 @@ plot +
     panel.spacing.x = unit(2, "cm"),
     panel.margin = unit(c(1, 2, 1, 1), "cm"))
 ```
+
+## Maps
+
+Reference
+- [Geospatial Health Data](https://www.paulamoraga.com/book-geospatial/index.html)
+- [rspatialdata](https://rspatialdata.github.io/index.html)
