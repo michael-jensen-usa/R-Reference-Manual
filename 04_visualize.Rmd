@@ -39,6 +39,14 @@ References:
 
 [`{ggplot2}`](https://ggplot2.tidyverse.org)
 
+Layers
+
+- Coordinates Layer
+  - Unlike scale layer functions, coordinates layer functions do not truncate data. Coordinates layer functions are calculated after statistics layer functions, which means a trend line may not make sense (e.g., using `geom_smooth()` on data that is subsequently transformed into log10 coordinates using `coord_trans()`).
+  - Each plot accepts only one coordinates layer function.
+- Scale Layer
+  - Setting x and y limits with scale layer functions, such as `scale_x_continuous()`, that depend on `ggplot2::lims()`, removes data that falls outside those limits and may therefore affect how people perceive the data. Consider using `coord_cartesian()` instead, which retains all data and uses x and y limits to zoom in.
+  
 - `aes()`
   - Arguments include `color`, `fill`, `size`, `labels`, `alpha`, `shape` (1-20 accept color attributes and 21-25 accept color and fill attributes), `linewidth`, `linetype`, and `group`.
   - Use `?pch` to see options for `shape` and `?points` to see options for points.
@@ -110,8 +118,6 @@ References:
   - Stack overlapping objects on top of each other, as densities.
 - Special variables:
   - `..prop..`: Calculates proportion of values (e.g., `stat_sum(aes(size = ..prop..))`).
-- Scale Layer
-  - Setting x and y limits with scale layer functions, such as `scale_x_continuous()`, that depend on `ggplot2::lims()`, removes data that falls outside those limits and may therefore affect how people perceive the data. Use `coord_cartesian()` instead, which retains all data and uses x and y limits to zoom in.
 - `stat_function()`
   - Compute `y` values from a function of `x` values.
 - `stat_qq()`
