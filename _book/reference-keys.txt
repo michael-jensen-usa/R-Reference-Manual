@@ -36,10 +36,13 @@ visualize
 interfaces
 graphs-charts-and-plots
 examples-5
+maps
 model
 examples-6
 communicate
+color
 css
+dashboards-flowcharts
 export
 format-output
 graphics

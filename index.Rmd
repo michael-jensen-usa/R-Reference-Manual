@@ -10,18 +10,9 @@ always_allow_html: yes
 
 # Introduction
 
-A quick-reference guide, primarily to help me find what I need that isn't easily found by an internet search.
+A quick-reference guide to help me find what isn't easily found by an internet search. 
 
-
-In *R for Data Science*, Garrett Grolemund and Hadley Wickham outline the tools needed to tackle about 80% of the tasks required in a typical data science project ("[Introduction](https://r4ds.had.co.nz/introduction.html)"). Those tools, illustrated in the diagram below and which are the organizing template for this reference manual, are: 
-
-- Import
-- Tidy
-- Transform
-- Visualize
-- Model
-- Communicate
-- Program
+In *R for Data Science*, Garrett Grolemund and Hadley Wickham outline the tools needed to tackle about 80% of the tasks required in a typical data science project ("[Introduction](https://r4ds.had.co.nz/introduction.html)"). Those concepts, which I've used as an organizing guide for this manual, are:
 
 ```{r, echo=FALSE}
 DiagrammeR::grViz(" 
@@ -62,12 +53,6 @@ digraph {
 
 ## References & Resources
 
-- For an introduction to the R programming language, see the R Project for Statistical Computing's ["What is R?"](https://www.r-project.org/about.html) and Wikipedia's ["R (programming language)."](https://en.wikipedia.org/wiki/R_(programming_language))
-
-- To download R, go to [r-project.org](https://www.r-project.org/) and choose the cloud CRAN Mirror option.
-
-- To program in the R language on a user-friendly platform, download the [RStudio](https://www.rstudio.com/) IDE.
-
 - [The R Project for Statistical Computing](https://www.r-project.org/)
   - [Library of R Packages](https://cran.r-project.org/web/packages/)
   - [*Getting Help with R*](https://www.r-project.org/help.html)
@@ -75,23 +60,20 @@ digraph {
   - [*Frequently Asked Questions*](https://cran.r-project.org/faqs.html)
   - [*Books Related to R*](https://www.r-project.org/doc/bib/R-books.html)
   - [*Documentation*](https://www.r-project.org/other-docs.html)
-
-* [RStudio](https://www.rstudio.com/)
+- [RStudio](https://www.rstudio.com/)
   - [*RStudio Cheat Sheets*](https://www.rstudio.com/resources/cheatsheets/)
   - [*Webinars and Videos On Demand*](https://www.rstudio.com/resources/webinars/)
   - [*Online learning*](https://www.rstudio.com/online-learning/)
   - [*RStudio Blog*](https://blog.rstudio.com/)
-
-* Online Manuals
+- Online Manuals
   - [*R for Data Science*](http://r4ds.had.co.nz/)
-  - [*Advanced R*](https://adv-r.hadley.nz) by Hadley Wickham
-  - [*R Packages*](http://r-pkgs.had.co.nz/) by Hadley Wickham
-  - [*The R Inferno*](http://www.burns-stat.com/pages/Tutor/R_inferno.pdf) by Patrick Burns
+  - [*Advanced R*](https://adv-r.hadley.nz)
+  - [*R Packages*](http://r-pkgs.had.co.nz/)
+  - [*The R Inferno*](http://www.burns-stat.com/pages/Tutor/R_inferno.pdf)
   - [*The tidyverse style guide*](http://style.tidyverse.org/)
   - [*Efficient R Programming*](https://bookdown.org/csgillespie/efficientR/)
   - [*Free R Reading Material*](https://committedtotape.shinyapps.io/freeR/)
-  - [*What They Forgot to Teach You About R*](https://rstats.wtf/) by Jenny Bryan and Jim Hester
-
+  - [*What They Forgot to Teach You About R*](https://rstats.wtf/)
 - Other Online Resources
   - [DataCamp](https://www.datacamp.com/)
   - [RDocumentation](https://www.rdocumentation.org/)

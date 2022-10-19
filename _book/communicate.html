@@ -194,6 +194,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#examples-5"><i class="fa fa-check"></i>Examples</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#maps"><i class="fa fa-check"></i>Maps</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a>
 <ul>
@@ -201,7 +202,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a>
 <ul>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#color"><i class="fa fa-check"></i>Color</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#css"><i class="fa fa-check"></i>CSS</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#dashboards-flowcharts"><i class="fa fa-check"></i>Dashboards &amp; Flowcharts</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#export"><i class="fa fa-check"></i>Export</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#format-output"><i class="fa fa-check"></i>Format Output</a></li>
 <li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#graphics"><i class="fa fa-check"></i>Graphics</a></li>
@@ -272,6 +275,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Communicate<a href="communicate.html#communicate" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>“The last step of data science is communication, an absolutely critical part of any data analysis project. It doesn’t matter how well your models and visualisation have led you to understand the data unless you can also communicate your results to others.”<br />
 - Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em></p>
+<div id="color" class="section level2 hasAnchor">
+<h2>Color<a href="communicate.html#color" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://www.rdocumentation.org/packages/colorblindr/versions/0.1.0"><code>{colorblindr}</code></a></p>
+<ul>
+<li>colorblindr::<code>scale_color_OkabeIto()</code>
+<ul>
+<li>Color blind-friendly palette.</li>
+</ul></li>
+<li>palette.colors(palette = “Okabo.Ito”)</li>
+</ul>
+</div>
 <div id="css" class="section level2 hasAnchor">
 <h2>CSS<a href="communicate.html#css" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><em>Center Title</em></p>
@@ -281,6 +295,11 @@ h1.title {
   text-align: center;
 }
 &lt;/style&gt;</code></pre>
+</div>
+<div id="dashboards-flowcharts" class="section level2 hasAnchor">
+<h2>Dashboards &amp; Flowcharts<a href="communicate.html#dashboards-flowcharts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://pkgs.rstudio.com/flexdashboard/"><code>{flexdashboard}</code></a></p>
+<p><a href="https://nrennie.rbind.io/blog/2022-06-06-creating-flowcharts-with-ggplot2/?utm_campaign=Data_Elixir&amp;utm_source=Data_Elixir_392"><em>Creating flowcharts with {ggplot2}</em></a>.</p>
 </div>
 <div id="export" class="section level2 hasAnchor">
 <h2>Export<a href="communicate.html#export" class="anchor-section" aria-label="Anchor link to header"></a></h2>
