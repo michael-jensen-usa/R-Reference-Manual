@@ -14,6 +14,12 @@
 - `summary()`
   - Pass the model as the data argument.
 
+[`{bayesplot}`](https://mc-stan.org/bayesplot/)
+
+[`{brms}`](https://paul-buerkner.github.io/brms/index.html)
+
+- See also `{bayesplot}`, `{tidybayes}`.
+
 `{broom}`
 
 - `augment()`
@@ -63,14 +69,11 @@
 
 `{mixtools}`
 
-
-
 `{naivebayes}`
 
 - `naive_bayes()`
 
 [`{performance}`](https://cran.r-project.org/package=performance)
-
 
 `{pROC}`
 
@@ -162,6 +165,8 @@ See `{randomForest}`.
   - Step-wise regression.
 - `t.test()`
   - See `infer::t_test()`.
+
+[`{tidybayes}`](https://mjskay.github.io/tidybayes/)
 
 `{tidyr}`
 
