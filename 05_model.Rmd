@@ -9,6 +9,8 @@
   - Use when raising a variable to an exponent in order to evaluate the value as a mathematical expression rather than as an interaction variable.
 - `mean()`
   - Use in modeling, such as classification trees, to compute the accuracy of predicted values; see example below.
+- `plot()`
+  - When used on linear regression, `plot()` outputs diagnostic plots.
 - `sample()`
 - `set.seed()`
 - `summary()`
