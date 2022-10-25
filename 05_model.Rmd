@@ -29,9 +29,9 @@
 - `tidy()`
   - Turn an object into a tidy tibble.
 
+[`{car}`](https://cran.r-project.org/web/packages/car/index.html)
+
 `{caret}`
-
-
 
 `{class}`
 
