@@ -122,6 +122,7 @@ See `{randomForest}`.
 - `coef()`
   - Extract model coefficients.
 - `cor()`
+  - See `GGally::ggpairs()`.
 - `cov()`
 - `cov2cor()`
   - Scale a covariance matrix into a correlation matrix.
