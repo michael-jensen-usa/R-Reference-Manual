@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Model | R Reference Manual</title>
+  <meta name="description" content="Model | R Reference Manual" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Model | R Reference Manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Model | R Reference Manual" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="visualize.html"/>
+<link rel="next" href="communicate.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.9/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Reference Manual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#references-resources"><i class="fa fa-check"></i>References &amp; Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html"><i class="fa fa-check"></i>Import or Create Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#create-data"><i class="fa fa-check"></i>Create Data</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#local-drive"><i class="fa fa-check"></i>Local Drive</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#internet"><i class="fa fa-check"></i>Internet</a>
+<ul>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#examples"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#database"><i class="fa fa-check"></i>Database</a>
+<ul>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#examples-1"><i class="fa fa-check"></i>Examples</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#references"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#sql-and-r"><i class="fa fa-check"></i>SQL and R</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i>Tidy</a>
+<ul>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#explore-raw-data"><i class="fa fa-check"></i>Explore Raw Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#tidy-data"><i class="fa fa-check"></i>Tidy Data</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#prepare-data-for-analysis"><i class="fa fa-check"></i>Prepare Data for Analysis</a>
+<ul>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#coerce"><i class="fa fa-check"></i>Coerce</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#dates-and-datetimes"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#filter"><i class="fa fa-check"></i>Filter</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#strings"><i class="fa fa-check"></i>Strings</a></li>
+<li class="chapter" data-level="" data-path="tidy.html"><a href="tidy.html#test"><i class="fa fa-check"></i>Test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>Transform</a>
+<ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#summary-statistics"><i class="fa fa-check"></i>Summary Statistics</a>
+<ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#examples-3"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#create-new-variables-or-modify-existing-ones"><i class="fa fa-check"></i>Create New Variables or Modify Existing Ones</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#dates-and-datetimes-1"><i class="fa fa-check"></i>Dates and Datetimes</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#factors"><i class="fa fa-check"></i>Factors</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#merge-or-append-data"><i class="fa fa-check"></i>Merge or Append Data</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#narrow-in-on-observations-of-interest"><i class="fa fa-check"></i>Narrow in on Observations of Interest</a>
+<ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#examples-4"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#test-1"><i class="fa fa-check"></i>Test</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i>Visualize</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#interfaces"><i class="fa fa-check"></i>Interfaces</a></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#graphs-charts-and-plots"><i class="fa fa-check"></i>Graphs, Charts, and Plots</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#examples-5"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualize.html"><a href="visualize.html#maps"><i class="fa fa-check"></i>Maps</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i>Model</a>
+<ul>
+<li class="chapter" data-level="" data-path="model.html"><a href="model.html#examples-6"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i>Communicate</a>
+<ul>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#color"><i class="fa fa-check"></i>Color</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#css"><i class="fa fa-check"></i>CSS</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#dashboards-flowcharts"><i class="fa fa-check"></i>Dashboards &amp; Flowcharts</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#export"><i class="fa fa-check"></i>Export</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#format-output"><i class="fa fa-check"></i>Format Output</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#graphics"><i class="fa fa-check"></i>Graphics</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#plots"><i class="fa fa-check"></i>Plots</a>
+<ul>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#examples-7"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rstudio-connect"><i class="fa fa-check"></i>RStudio Connect</a></li>
+<li class="chapter" data-level="" data-path="communicate.html"><a href="communicate.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html"><i class="fa fa-check"></i>Program</a>
+<ul>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#characters"><i class="fa fa-check"></i>Characters</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#conditionals-control-flows"><i class="fa fa-check"></i>Conditionals &amp; Control Flows</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#environment-and-workspace"><i class="fa fa-check"></i>Environment and Workspace</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#evaluation-standard-and-non-standard"><i class="fa fa-check"></i>Evaluation (Standard and Non-standard)</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#functionals"><i class="fa fa-check"></i>Functionals</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#functions"><i class="fa fa-check"></i>Functions</a>
+<ul>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#examples-8"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#learn-about-an-object"><i class="fa fa-check"></i>Learn About an Object</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#loops"><i class="fa fa-check"></i>Loops</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#optimization"><i class="fa fa-check"></i>Optimization</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#popups"><i class="fa fa-check"></i>Popups</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#selecting-subsetting-and-piping"><i class="fa fa-check"></i>Selecting, Subsetting, and Piping</a>
+<ul>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#examples-9"><i class="fa fa-check"></i>Examples</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#references-1"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#style-guide"><i class="fa fa-check"></i>Style Guide</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#system-commands"><i class="fa fa-check"></i>System Commands</a></li>
+<li class="chapter" data-level="" data-path="program.html"><a href="program.html#version-control"><i class="fa fa-check"></i>Version Control</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="python.html"><a href="python.html"><i class="fa fa-check"></i>Python</a>
+<ul>
+<li class="chapter" data-level="" data-path="python.html"><a href="python.html#import"><i class="fa fa-check"></i>Import</a></li>
+<li class="chapter" data-level="" data-path="python.html"><a href="python.html#tidy-1"><i class="fa fa-check"></i>Tidy</a></li>
+<li class="chapter" data-level="" data-path="python.html"><a href="python.html#transform-1"><i class="fa fa-check"></i>Transform</a></li>
+<li class="chapter" data-level="" data-path="python.html"><a href="python.html#visualize-1"><i class="fa fa-check"></i>Visualize</a></li>
+<li class="chapter" data-level="" data-path="python.html"><a href="python.html#model-1"><i class="fa fa-check"></i>Model</a></li>
+<li class="chapter" data-level="" data-path="python.html"><a href="python.html#communicate-1"><i class="fa fa-check"></i>Communicate</a></li>
+<li class="chapter" data-level="" data-path="python.html"><a href="python.html#program-1"><i class="fa fa-check"></i>Program</a></li>
+<li class="chapter" data-level="" data-path="python.html"><a href="python.html#reference"><i class="fa fa-check"></i>Reference</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references-2.html"><a href="references-2.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Reference Manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="model" class="section level1 hasAnchor">
+<h1>Model<a href="model.html#model" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>“Models are complementary tools to visualisation. Once you have made your questions sufficiently precise, you can use a model to answer them. Models are a fundamentally mathematical or computational tool, so they generally scale well. … But every model makes assumptions, and by its very nature a model cannot question its own assumptions. That means a model cannot fundamentally surprise you.
+- Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em>”</p>
+<p><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/base-package.html"><code>{base}</code></a></p>
+<ul>
+<li><code>I()</code>: Use when raising a variable to an exponent in order to evaluate the value as a mathematical expression rather than as an interaction variable.</li>
+<li><code>mean()</code>: Use in modeling, such as classification trees, to compute the accuracy of predicted values; see example below.</li>
+<li><code>plot()</code>
+<ul>
+<li>When used on linear regression, <code>plot()</code> outputs diagnostic plots.</li>
+</ul></li>
+<li><code>sample()</code></li>
+<li><code>set.seed()</code></li>
+<li><code>summary()</code></li>
+</ul>
+<p><a href="https://mc-stan.org/bayesplot/"><code>{bayesplot}</code></a></p>
+<p><a href="https://CRAN.R-project.org/package=brms"><code>{brms}</code></a>: Bayesian Regression Models using ‘Stan’</p>
+<ul>
+<li>See also <code>{bayesplot}</code>, <code>{tidybayes}</code>.</li>
+</ul>
+<p><a href="https://CRAN.R-project.org/package=broom"><code>{broom}</code></a>: Convert Statistical Objects into Tidy Tibbles</p>
+<ul>
+<li><code>augment()</code>: Augment data with information from an object.</li>
+<li><code>glance()</code>: Construct a single row summary of a model, fit, or other object.</li>
+<li><code>tidy()</code>: Turn an object into a tidy tibble.</li>
+</ul>
+<p><a href="https://cran.r-project.org/web/packages/car/index.html"><code>{car}</code></a></p>
+<p><a href="https://CRAN.R-project.org/package=caret"><code>{caret}</code></a>: Classification and Regression Training</p>
+<p><a href="https://CRAN.R-project.org/package=class"><code>{class}</code></a>: Functions for Classification</p>
+<ul>
+<li><code>knn()</code></li>
+</ul>
+<p><a href="https://CRAN.R-project.org/package=cluster"><code>{cluster}</code></a>: “Finding Groups in Data”: Cluster Analysis Extended</p>
+<ul>
+<li><code>pam()</code>
+<ul>
+<li>Useful for silhouette analysis; similar but not identical to <code>stats::kmeans()</code>.</li>
+</ul></li>
+</ul>
+<p><a href="https://CRAN.R-project.org/package=dplyr"><code>{dplyr}</code></a>: A Grammar of Data Manipulation</p>
+<ul>
+<li><code>sample_n()</code></li>
+</ul>
+<p><a href="https://CRAN.R-project.org/package=gbm"><code>{gbm}</code></a>: Generalized Boosted Regression Models</p>
+<p><a href="https://cran.r-project.org/package=infer"><code>{infer}</code></a>: Tidy Statistical Inference</p>
+<ul>
+<li><code>generate()</code>
+<ul>
+<li>Set <code>type = "permute"</code> when paired with <code>hypothesize(null = "independence")</code> and <code>type = "bootstrap"</code> or <code>type = "simulate"</code> when paired with <code>hypothesize(null = "point")</code>.</li>
+</ul></li>
+</ul>
+<p><a href="https://CRAN.R-project.org/package=lme4"><code>{lme4</code>}</a>: Linear Mixed-Effects Models</p>
+<ul>
+<li><code>glmer()</code></li>
+<li><code>lmer()</code></li>
+<li>Additional reference: <a href="http://bbolker.github.io/mixedmodels-misc/glmmFAQ.html"><em>GLMM FAQ</em></a>.</li>
+</ul>
+<p><a href="https://cran.r-project.org/package=MatchIt"><code>{MatchIt}</code></a>: Nonparametric Preprocessing for Parametric Causal Inference</p>
+<ul>
+<li><code>match.data()</code></li>
+<li><code>matchit()</code></li>
+</ul>
+<p><code>{mgcv}</code></p>
+<ul>
+<li><code>gam()</code>
+<ul>
+<li>Generalized additive models (GAMs) with integrated smoothness estimation.</li>
+<li>Use <code>plot()</code> on a GAM object to view what the function learned from the data.</li>
+</ul></li>
+<li><code>s()</code>
+<ul>
+<li>Indicates which of the explanatory variables should be considered non-linearly.</li>
+<li>Use on continuous variables and avoid using on categorical variables.</li>
+</ul></li>
+</ul>
+<p><code>{mixtools}</code></p>
+<p><code>{naivebayes}</code></p>
+<ul>
+<li><code>naive_bayes()</code></li>
+</ul>
+<p><a href="https://cran.r-project.org/package=performance"><code>{performance}</code></a>: Assessment of Regression Models Performance</p>
+<p><code>{pROC}</code></p>
+<ul>
+<li><code>auc()</code></li>
+<li><code>roc()</code></li>
+</ul>
+<p><code>{randomForest}</code></p>
+<p>See <code>{ranger}</code>.</p>
+<ul>
+<li><code>randomForest()</code></li>
+</ul>
+<p><code>{ranger}</code></p>
+<p>See <code>{randomForest}</code>.</p>
+<ul>
+<li><code>ranger()</code></li>
+</ul>
+<p><code>{rpart}</code></p>
+<ul>
+<li><code>rpart()</code></li>
+</ul>
+<p><code>{rpart.plot}</code></p>
+<ul>
+<li><code>rpart.plot()</code></li>
+</ul>
+<p><code>{rsample}</code></p>
+<p><code>{sigr}</code></p>
+<ul>
+<li><code>wrapChiSqTest()</code>
+<ul>
+<li>For Pseudo-R^2:
+<ul>
+<li>On training data, use <code>wrapChiSqTest(model)</code>. For test data, use <code>wrapChiSqTest(prediction_column_name, outcome_column_name, target_value)</code>.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/stats-package.html"><code>{stats}</code></a></p>
+<ul>
+<li><p>See <code>{infer}</code> for easier-to-use hypothesis testing functions.</p></li>
+<li><p><code>cutree()</code></p>
+<ul>
+<li>Pair with <code>stats::hclust()</code>.</li>
+</ul></li>
+<li><p><code>as.formula()</code></p>
+<ul>
+<li>Use to define an object to pass as a formula into a model (e.g., <code>fmla &lt;- as.formula("unemployment ~ population"), lm(fmla, data)</code>)</li>
+</ul></li>
+<li><p><code>coef()</code></p>
+<ul>
+<li>Extract model coefficients.</li>
+</ul></li>
+<li><p><code>cor()</code></p>
+<ul>
+<li>See <code>GGally::ggpairs()</code>.</li>
+</ul></li>
+<li><p><code>cov()</code></p></li>
+<li><p><code>cov2cor()</code></p>
+<ul>
+<li>Scale a covariance matrix into a correlation matrix.</li>
+</ul></li>
+<li><p><code>cutree()</code></p>
+<ul>
+<li>Pair with <code>stats::hclust()</code>.</li>
+</ul></li>
+<li><p><code>df.residual()</code></p>
+<ul>
+<li>Get the residual degrees of freedom.</li>
+</ul></li>
+<li><p><code>dist()</code></p></li>
+<li><p>Distributions</p>
+<ul>
+<li>Binomial (<code>dbinom()</code>)</li>
+<li>Exponential (<code>dexp()</code>)</li>
+<li>Gamma (<code>dgamma()</code>)</li>
+<li>Geometric (<code>dgeom()</code>)</li>
+<li>Log-normal (<code>dlnorm()</code>)</li>
+<li>Normal (<code>dnorm()</code>)</li>
+<li>Poisson (<code>dpois()</code>)</li>
+<li>Uniform (<code>dunif()</code>)</li>
+</ul></li>
+<li><p><code>glm()</code></p>
+<ul>
+<li>For <code>family = Gamma</code>, consider using <code>(link = "log")</code> rather than the default. Use <code>expm1()</code> on the coefficients to tranform them into a percentage, which is easier to interpret than a logged coefficient value.</li>
+</ul></li>
+<li><p><code>hclust()</code></p></li>
+<li><p><code>kmeans()</code></p></li>
+<li><p><code>lm()</code></p>
+<ul>
+<li>Fit linear models.</li>
+</ul></li>
+<li><p><code>model.matrix()</code></p>
+<ul>
+<li>Use to create dummy variables from categorical data.</li>
+<li>See <code>{vtreat}</code> functions.</li>
+</ul></li>
+<li><p><code>p.adjust()</code></p>
+<ul>
+<li>Adjust p-values for multiple comparisons.</li>
+</ul></li>
+<li><p><code>pairwise.t.test()</code></p></li>
+<li><p><code>prcomp()</code></p>
+<ul>
+<li>Principal Component Analysis.</li>
+</ul></li>
+<li><p><code>predict()</code></p>
+<ul>
+<li>Model predictions.</li>
+<li>For <code>lm</code> class objects, predict new values using <code>predict(model, newdata)</code>.</li>
+<li>For <code>glm</code> class objects, predict new values using <code>predict(model, newdata, type = "response")</code> (<code>predict()</code> returns the log-odds of the event, instead of the probability, if <code>type = "response"</code> is not included).</li>
+<li>For GAM, <code>predict()</code> returns a matrix so use <code>as.numeric()</code> to convert the matrix to a vector if adding to a data set (such as for plotting the predictions versus the actual outcomes).</li>
+<li>Access the y values of the model using <code>predict(model, type = "terms")</code>.</li>
+</ul></li>
+<li><p><code>prop.test()</code></p>
+<ul>
+<li>See <code>infer::prop_test()</code>.</li>
+</ul></li>
+<li><p><code>residuals()</code></p>
+<ul>
+<li>Extract model residuals.</li>
+</ul></li>
+<li><p><code>step()</code></p>
+<ul>
+<li>Step-wise regression.</li>
+</ul></li>
+<li><p><code>t.test()</code></p>
+<ul>
+<li>See <code>infer::t_test()</code>.</li>
+</ul></li>
+</ul>
+<p><a href="https://mjskay.github.io/tidybayes/"><code>{tidybayes}</code></a></p>
+<p><code>{tidyr}</code></p>
+<ul>
+<li><code>nest()</code>
+<ul>
+<li>Nest repeated values in a list-variable.</li>
+<li>Helpful when separating a data frame in preparation to model the data for each grouping.</li>
+</ul></li>
+</ul>
+<p><code>{vtreat}</code></p>
+<p>Compared to <code>stats::model.matrix()</code>, <code>{vtreat}</code> functions allow for handling new categorical variables in the test data not seen in the training data.</p>
+<ul>
+<li><code>designTreatmentsZ()</code></li>
+<li><code>kWayCrossValidation()</code></li>
+<li><code>prepare()</code></li>
+<li><code>splitPlan()</code>
+<ul>
+<li>Use to create a cross-validation plan.</li>
+</ul></li>
+</ul>
+<p><code>{WVPlots}</code></p>
+<ul>
+<li><code>GainCurvePlot()</code>
+<ul>
+<li>Use to evaluate logistic regression models.</li>
+</ul></li>
+</ul>
+<p><code>{xgboost}</code></p>
+<ul>
+<li><code>xgb.cv()</code>
+<ul>
+<li>Use <code>xgb.cv()$evaluation_log</code> to find the number of trees that minimizes RMSE (input that number as the <code>nrounds</code> argument in <code>xgboost()</code>).</li>
+</ul></li>
+</ul>
+<div id="examples-6" class="section level3 hasAnchor">
+<h3>Examples<a href="model.html#examples-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>base::mean()</code></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="model.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Classification Trees: Compute accuracy of predictions on the test data set:</span></span>
+<span id="cb12-2"><a href="model.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(loans_test<span class="sc">$</span>outcome <span class="sc">==</span> loans_test<span class="sc">$</span>prediction)</span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="visualize.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="communicate.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["R_Reference_Manual.pdf", "R_Reference_Manual.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
