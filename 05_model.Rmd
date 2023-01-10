@@ -5,49 +5,51 @@
 
 [`{base}`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/base-package.html)
 
-- `I()`
-  - Use when raising a variable to an exponent in order to evaluate the value as a mathematical expression rather than as an interaction variable.
-- `mean()`
-  - Use in modeling, such as classification trees, to compute the accuracy of predicted values; see example below.
+- `I()`: Use when raising a variable to an exponent in order to evaluate the value as a mathematical expression rather than as an interaction variable.
+- `mean()`: Use in modeling, such as classification trees, to compute the accuracy of predicted values; see example below.
 - `sample()`
 - `set.seed()`
 - `summary()`
-  - Pass the model as the data argument.
 
-`{broom}`
+[`{brms}`](https://CRAN.R-project.org/package=brms): Bayesian Regression Models using 'Stan'
 
-- `augment()`
-  - Augment data with information from an object.
-- `glance()`
-  - Construct a single row summary of a model, fit, or other object.
-- `tidy()`
-  - Turn an object into a tidy tibble.
+- `brm()`
 
-`{caret}`
+[`{broom}`](https://CRAN.R-project.org/package=broom): Convert Statistical Objects into Tidy Tibbles
 
+- `augment()`: Augment data with information from an object.
+- `glance()`: Construct a single row summary of a model, fit, or other object.
+- `tidy()`: Turn an object into a tidy tibble.
 
+[`{caret}`](https://CRAN.R-project.org/package=caret): Classification and Regression Training
 
-`{class}`
+[`{class}`](https://CRAN.R-project.org/package=class): Functions for Classification
 
 - `knn()`
 
-`{cluster}`
+[`{cluster}`](https://CRAN.R-project.org/package=cluster): "Finding Groups in Data": Cluster Analysis Extended
 
 - `pam()`
   - Useful for silhouette analysis; similar but not identical to `stats::kmeans()`.
 
-`{dplyr}`
+[`{dplyr}`](https://CRAN.R-project.org/package=dplyr): A Grammar of Data Manipulation
 
 - `sample_n()`
 
-`{gbm}`
+[`{gbm}`](https://CRAN.R-project.org/package=gbm): Generalized Boosted Regression Models
 
-[`{infer}`](https://cran.r-project.org/package=infer)
+[`{infer}`](https://cran.r-project.org/package=infer): Tidy Statistical Inference
 
 - `generate()`
   - Set `type = "permute"` when paired with `hypothesize(null = "independence")` and `type = "bootstrap"` or `type = "simulate"` when paired with `hypothesize(null = "point")`.
 
-[`{MatchIt}`](https://cran.r-project.org/package=MatchIt)
+[`{lme4`}](https://CRAN.R-project.org/package=lme4): Linear Mixed-Effects Models
+
+- `glmer()`
+- `lmer()`
+- Additional reference: [*GLMM FAQ*](http://bbolker.github.io/mixedmodels-misc/glmmFAQ.html).
+
+[`{MatchIt}`](https://cran.r-project.org/package=MatchIt): Nonparametric Preprocessing for Parametric Causal Inference
 
 - `match.data()`
 - `matchit()`
@@ -63,13 +65,11 @@
 
 `{mixtools}`
 
-
-
 `{naivebayes}`
 
 - `naive_bayes()`
 
-[`{performance}`](https://cran.r-project.org/package=performance)
+[`{performance}`](https://cran.r-project.org/package=performance): Assessment of Regression Models Performance
 
 
 `{pROC}`

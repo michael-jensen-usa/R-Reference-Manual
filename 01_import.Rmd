@@ -164,35 +164,15 @@ unzip("Data Sets/Countries", exdir = "Data Sets")
 
 ## Database
 
-`{DBI}`
+[`{DBI}`](https://CRAN.R-project.org/package=DBI): R Database Interface
 
-- `dbAppendTable()`
-- `dbBind()`
-- `dbClearResult()`
-- `dbConnect()`
-- `dbCreateTable()`
-- `dbDataType()`
-- `dbDisconnect()`
-- `dbExecute()`
-- `dbFetch()`
-- `dbGetQuery()`
-- `dbListTables()`
-  - Specify schema with `dbListTables(conn, schema = "schema_name")`.
-- `dbReadTable()`
-- `dbRemoveTable()`
-- `dbSendQuery()`
-- `dbSendStatement()`
-- `Id()`
-  - See example below.
-- `SQL()`
-  - See example below.
+- `dbListTables()`: Specify schema with `dbListTables(conn, schema = "schema_name")`.
+- `Id()`: See example below.
+- `SQL()`: See example below.
 
-`{dbplyr}`
+[`{dbplyr}`](https://CRAN.R-project.org/package=dbplyr): A 'dplyr' Back End for Databases
 
-- `in_schema()`
-- `tbl()`
-
-`{odbc}`
+[`{odbc}`](https://CRAN.R-project.org/package=odbc): Connect to ODBC Compatible Databases
 
 - `dbConnect()`
   - See example below for specifying a database.
