@@ -7,19 +7,25 @@
 
 - `I()`: Use when raising a variable to an exponent in order to evaluate the value as a mathematical expression rather than as an interaction variable.
 - `mean()`: Use in modeling, such as classification trees, to compute the accuracy of predicted values; see example below.
+- `plot()`
+  - When used on linear regression, `plot()` outputs diagnostic plots.
 - `sample()`
 - `set.seed()`
 - `summary()`
 
+[`{bayesplot}`](https://mc-stan.org/bayesplot/)
+
 [`{brms}`](https://CRAN.R-project.org/package=brms): Bayesian Regression Models using 'Stan'
 
-- `brm()`
+- See also `{bayesplot}`, `{tidybayes}`.
 
 [`{broom}`](https://CRAN.R-project.org/package=broom): Convert Statistical Objects into Tidy Tibbles
 
 - `augment()`: Augment data with information from an object.
 - `glance()`: Construct a single row summary of a model, fit, or other object.
 - `tidy()`: Turn an object into a tidy tibble.
+
+[`{car}`](https://cran.r-project.org/web/packages/car/index.html)
 
 [`{caret}`](https://CRAN.R-project.org/package=caret): Classification and Regression Training
 
@@ -71,7 +77,6 @@
 
 [`{performance}`](https://cran.r-project.org/package=performance): Assessment of Regression Models Performance
 
-
 `{pROC}`
 
 - `auc()`
@@ -117,6 +122,7 @@ See `{randomForest}`.
 - `coef()`
   - Extract model coefficients.
 - `cor()`
+  - See `GGally::ggpairs()`.
 - `cov()`
 - `cov2cor()`
   - Scale a covariance matrix into a correlation matrix.
@@ -162,6 +168,8 @@ See `{randomForest}`.
   - Step-wise regression.
 - `t.test()`
   - See `infer::t_test()`.
+
+[`{tidybayes}`](https://mjskay.github.io/tidybayes/)
 
 `{tidyr}`
 

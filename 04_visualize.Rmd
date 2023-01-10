@@ -29,7 +29,7 @@ References:
 
 - `ggally_box()`
 - `ggpairs()`
-  - Scatter plot matrix (SPLOM).
+  - Scatter plot matrix (SPLOM); includes correlation coefficients.
 - `ggparcoord()`
   - Parallel coordinate plots.
 
