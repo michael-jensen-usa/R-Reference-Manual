@@ -25,6 +25,8 @@
 - `glance()`: Construct a single row summary of a model, fit, or other object.
 - `tidy()`: Turn an object into a tidy tibble.
 
+[`{broom.mixed}`](https://CRAN.R-project.org/package=broom.mixed): Tidying Methods for Mixed Models
+
 [`{car}`](https://cran.r-project.org/web/packages/car/index.html)
 
 [`{caret}`](https://CRAN.R-project.org/package=caret): Classification and Regression Training
@@ -53,7 +55,10 @@
 
 - `glmer()`
 - `lmer()`
+- See `{broom.mixed}`, `{lmerTest}`.
 - Additional reference: [*GLMM FAQ*](http://bbolker.github.io/mixedmodels-misc/glmmFAQ.html).
+
+[`{lmerTest}`](https://CRAN.R-project.org/package=lmerTest): Tests in Linear Mixed Effects Models
 
 [`{MatchIt}`](https://cran.r-project.org/package=MatchIt): Nonparametric Preprocessing for Parametric Causal Inference
 
