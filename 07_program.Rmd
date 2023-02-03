@@ -390,6 +390,8 @@ odbc_aws %>%
 - `system()`
 - `system2()`
 
+[`{cli}`](https://CRAN.R-project.org/package=cli): Helpers for Developing Command Line Interfaces
+
 `{sys}`
 
 - `exec()`
