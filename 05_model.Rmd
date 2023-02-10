@@ -82,10 +82,16 @@
 
 [`{performance}`](https://cran.r-project.org/package=performance): Assessment of Regression Models Performance
 
-`{pROC}`
+[`{pROC}`](https://CRAN.R-project.org/package=pROC): Display and Analyze ROC Curves
 
 - `auc()`
 - `roc()`
+- See `{ROCR}`.
+
+[`{pscl}`](https://CRAN.R-project.org/package=pscl): Political Science Computational Laboratory
+
+- `pR2()`: Pseudo-R^2.
+  - The McFadden value matches the manual pseudo-R^2 calculation: `1 - broom::glance(model_name)$deviance / broom::glance(model_name)$null.deviance`.
 
 `{randomForest}`
 
@@ -98,6 +104,10 @@ See `{ranger}`.
 See `{randomForest}`.
 
 - `ranger()`
+
+[`{ROCR}`](https://CRAN.R-project.org/package=ROCR): Visualizing the Performance of Scoring Classifiers
+
+- See `{pROC}`.
 
 `{rpart}`
 
