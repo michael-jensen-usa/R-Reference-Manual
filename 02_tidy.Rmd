@@ -69,10 +69,9 @@
 - `unique()`
   - See also `base::unique()`.
 
-`{dplyr}`
+[`{dplyr}`](https://CRAN.R-project.org/package=dplyr): A Grammar of Data Manipulation
 
-- `na_if()`
-  - See also `tidyr::replace_na()`.
+- `na_if()`: See also `tidyr::replace_na()`.
 
 `{janitor}`
 
@@ -83,8 +82,7 @@
 
 `{naniar}`
 
-- `replace_with_na()`
-  - Compliment to `tidyr::replace_na()`; consider also `stringr::str_replace(replacement = NA_character_)`.
+- `replace_with_na()`: Compliment to `tidyr::replace_na()`; consider also `stringr::str_replace(replacement = NA_character_)`.
 
 `{purrr}`
 
@@ -110,26 +108,17 @@
   - Useful when a separate ID is required to manipulate rows or columns, such as when using `tidyr::pivot_longe()r`
 - `rownames_to_column()`
 
-`{tidyr}`
+[`{tidyr}`](https://CRAN.R-project.org/package=tidyr): Tidy Messy Data
 
-- `fill()`
-  - See `{zoo}`'s `na.fill()` and `na.locf()`.
-- `nest()`
+- `fill()`: See `zoo::na.fill()` and `zoo::na.locf()`.
+- `nest()`:
   - Nest repeated values in a list-variable.
   - Helpful when separating a data frame in preparation to model the data for each grouping.
-- `replace_na()`
-  - See `dplyr::na_if()`.
-- `separate()`
-- `pivot_longer()`
-- `pivot_wider()`
-- `unite()`
-- `unnest()`
+- `replace_na()`: See `dplyr::na_if()`.
 
-`{zoo}`
+[`{zoo}`](https://CRAN.R-project.org/package=zoo): S3 Infrastructure for Regular and Irregular Time Series (Z's Ordered Observations)
 
-- `na.fill()`
-- `na.locf()`
-  - See `tidyr::fill()`.
+- `na.fill()` and `na.locf()`: See `tidyr::fill()`.
 
 ## Prepare Data for Analysis
 

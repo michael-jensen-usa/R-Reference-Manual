@@ -215,7 +215,7 @@ df <-
 - `table()`: Build a table of the counts at each combination of factor levels.
   - Use `base::prop.table()` to see the table entries expressed as proportions.
 
-`{dplyr}`
+[`{dplyr}`](https://CRAN.R-project.org/package=dplyr): A Grammar of Data Manipulation
 
 - `arrange()`
 - `distinct()`
