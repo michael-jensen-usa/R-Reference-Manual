@@ -73,6 +73,7 @@ digraph {
   - [*The tidyverse style guide*](http://style.tidyverse.org/)
   - [*Efficient R Programming*](https://bookdown.org/csgillespie/efficientR/)
   - [*Free R Reading Material*](https://committedtotape.shinyapps.io/freeR/)
+  - [*Tidy Modeling with R](https://www.tmwr.org)
   - [*What They Forgot to Teach You About R*](https://rstats.wtf/)
 - Other Online Resources
   - [DataCamp](https://www.datacamp.com/)

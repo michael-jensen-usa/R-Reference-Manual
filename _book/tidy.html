@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Tidy | R Reference Manual</title>
   <meta name="description" content="Tidy | R Reference Manual" />
-  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Tidy | R Reference Manual" />
   <meta property="og:type" content="book" />
@@ -50,7 +50,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.9/grViz.js"></script>
@@ -362,12 +362,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>See also <code>base::unique()</code>.</li>
 </ul></li>
 </ul>
-<p><code>{dplyr}</code></p>
+<p><a href="https://CRAN.R-project.org/package=dplyr"><code>{dplyr}</code></a>: A Grammar of Data Manipulation</p>
 <ul>
-<li><code>na_if()</code>
-<ul>
-<li>See also <code>tidyr::replace_na()</code>.</li>
-</ul></li>
+<li><code>na_if()</code>: See also <code>tidyr::replace_na()</code>.</li>
 </ul>
 <p><code>{janitor}</code></p>
 <ul>
@@ -380,10 +377,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><code>{naniar}</code></p>
 <ul>
-<li><code>replace_with_na()</code>
-<ul>
-<li>Compliment to <code>tidyr::replace_na()</code>; consider also <code>stringr::str_replace(replacement = NA_character_)</code>.</li>
-</ul></li>
+<li><code>replace_with_na()</code>: Compliment to <code>tidyr::replace_na()</code>; consider also <code>stringr::str_replace(replacement = NA_character_)</code>.</li>
 </ul>
 <p><code>{purrr}</code></p>
 <ul>
@@ -419,34 +413,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><code>rownames_to_column()</code></li>
 </ul>
-<p><code>{tidyr}</code></p>
+<p><a href="https://CRAN.R-project.org/package=tidyr"><code>{tidyr}</code></a>: Tidy Messy Data</p>
 <ul>
-<li><code>fill()</code>
-<ul>
-<li>See <code>{zoo}</code>’s <code>na.fill()</code> and <code>na.locf()</code>.</li>
-</ul></li>
-<li><code>nest()</code>
+<li><code>fill()</code>: See <code>zoo::na.fill()</code> and <code>zoo::na.locf()</code>.</li>
+<li><code>nest()</code>:
 <ul>
 <li>Nest repeated values in a list-variable.</li>
 <li>Helpful when separating a data frame in preparation to model the data for each grouping.</li>
 </ul></li>
-<li><code>replace_na()</code>
-<ul>
-<li>See <code>dplyr::na_if()</code>.</li>
-</ul></li>
-<li><code>separate()</code></li>
-<li><code>pivot_longer()</code></li>
-<li><code>pivot_wider()</code></li>
-<li><code>unite()</code></li>
-<li><code>unnest()</code></li>
+<li><code>replace_na()</code>: See <code>dplyr::na_if()</code>.</li>
 </ul>
-<p><code>{zoo}</code></p>
+<p><a href="https://CRAN.R-project.org/package=zoo"><code>{zoo}</code></a>: S3 Infrastructure for Regular and Irregular Time Series (Z’s Ordered Observations)</p>
 <ul>
-<li><code>na.fill()</code></li>
-<li><code>na.locf()</code>
-<ul>
-<li>See <code>tidyr::fill()</code>.</li>
-</ul></li>
+<li><code>na.fill()</code> and <code>na.locf()</code>: See <code>tidyr::fill()</code>.</li>
 </ul>
 </div>
 <div id="prepare-data-for-analysis" class="section level2 hasAnchor">
