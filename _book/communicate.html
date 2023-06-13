@@ -315,6 +315,7 @@ h1.title {
 <ul>
 <li>See <a href="https://www.fromthebottomoftheheap.net/2012/04/01/saving-and-loading-r-objects/">“A better way of saving and loading objects in R”</a> to understand the differences between <code>save()</code> and <code>saveRDS()</code>.</li>
 </ul></li>
+<li><code>sink()</code></li>
 </ul>
 <p><code>{ggplot2}</code></p>
 <ul>
@@ -428,13 +429,13 @@ h1.title {
 <div id="examples-7" class="section level3 hasAnchor">
 <h3>Examples<a href="communicate.html#examples-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>ggplot2::theme()</code></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="communicate.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot_data_2006) <span class="sc">+</span></span>
-<span id="cb14-2"><a href="communicate.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> working_hours)) <span class="sc">+</span></span>
-<span id="cb14-3"><a href="communicate.html#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb14-4"><a href="communicate.html#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Working hours per week&quot;</span>,</span>
-<span id="cb14-5"><a href="communicate.html#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Number of countries&quot;</span>) <span class="sc">+</span></span>
-<span id="cb14-6"><a href="communicate.html#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb14-7"><a href="communicate.html#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">&quot;Bookman&quot;</span>, <span class="at">color =</span> <span class="st">&quot;gray25&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="communicate.html#cb14-1" tabindex="-1"></a><span class="fu">ggplot</span>(plot_data_2006) <span class="sc">+</span></span>
+<span id="cb14-2"><a href="communicate.html#cb14-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> working_hours)) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="communicate.html#cb14-3" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb14-4"><a href="communicate.html#cb14-4" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Working hours per week&quot;</span>,</span>
+<span id="cb14-5"><a href="communicate.html#cb14-5" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Number of countries&quot;</span>) <span class="sc">+</span></span>
+<span id="cb14-6"><a href="communicate.html#cb14-6" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb14-7"><a href="communicate.html#cb14-7" tabindex="-1"></a>    <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">&quot;Bookman&quot;</span>, <span class="at">color =</span> <span class="st">&quot;gray25&quot;</span>))</span></code></pre></div>
 </div>
 </div>
 <div id="rstudio-connect" class="section level2 hasAnchor">

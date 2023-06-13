@@ -304,6 +304,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>ggpairs()</code>
 <ul>
 <li>Scatter plot matrix (SPLOM); includes correlation coefficients.</li>
+<li>See <code>base::plot()</code>.</li>
 </ul></li>
 <li><code>ggparcoord()</code>
 <ul>
@@ -527,12 +528,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="examples-5" class="section level3 hasAnchor">
 <h3>Examples<a href="visualize.html#examples-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>grid::unit()</code></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="visualize.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Increase spacing between facets in a `ggplot` object:</span></span>
-<span id="cb11-2"><a href="visualize.html#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="visualize.html#cb11-3" aria-hidden="true" tabindex="-1"></a>plot <span class="sc">+</span> </span>
-<span id="cb11-4"><a href="visualize.html#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb11-5"><a href="visualize.html#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.spacing.x =</span> <span class="fu">unit</span>(<span class="dv">2</span>, <span class="st">&quot;cm&quot;</span>),</span>
-<span id="cb11-6"><a href="visualize.html#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.margin =</span> <span class="fu">unit</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>), <span class="st">&quot;cm&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="visualize.html#cb11-1" tabindex="-1"></a><span class="co"># Increase spacing between facets in a `ggplot` object:</span></span>
+<span id="cb11-2"><a href="visualize.html#cb11-2" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="visualize.html#cb11-3" tabindex="-1"></a>plot <span class="sc">+</span> </span>
+<span id="cb11-4"><a href="visualize.html#cb11-4" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb11-5"><a href="visualize.html#cb11-5" tabindex="-1"></a>    <span class="at">panel.spacing.x =</span> <span class="fu">unit</span>(<span class="dv">2</span>, <span class="st">&quot;cm&quot;</span>),</span>
+<span id="cb11-6"><a href="visualize.html#cb11-6" tabindex="-1"></a>    <span class="at">panel.margin =</span> <span class="fu">unit</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>), <span class="st">&quot;cm&quot;</span>))</span></code></pre></div>
 </div>
 </div>
 <div id="maps" class="section level2 hasAnchor">

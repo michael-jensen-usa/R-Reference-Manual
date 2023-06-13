@@ -410,45 +410,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="examples" class="section level3 hasAnchor">
 <h3>Examples<a href="import-or-create-data.html#examples" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>utils::download.file()</code>:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="import-or-create-data.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(</span>
-<span id="cb1-2"><a href="import-or-create-data.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/5028/datasets/a55843f83746968c7f118d82ed727db9c71e891f/snake_river_visits.rds&quot;</span>,</span>
-<span id="cb1-3"><a href="import-or-create-data.html#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">destfile =</span> <span class="fu">paste0</span>(<span class="fu">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>)</span>
-<span id="cb1-4"><a href="import-or-create-data.html#cb1-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-5"><a href="import-or-create-data.html#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="import-or-create-data.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 1:</span></span>
-<span id="cb1-7"><a href="import-or-create-data.html#cb1-7" aria-hidden="true" tabindex="-1"></a>snake_river_visits <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">file.choose</span>())</span>
-<span id="cb1-8"><a href="import-or-create-data.html#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="import-or-create-data.html#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 2:</span></span>
-<span id="cb1-10"><a href="import-or-create-data.html#cb1-10" aria-hidden="true" tabindex="-1"></a>snake_river_path   <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>)</span>
-<span id="cb1-11"><a href="import-or-create-data.html#cb1-11" aria-hidden="true" tabindex="-1"></a>snake_river_visits <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(snake_river_path)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="import-or-create-data.html#cb1-1" tabindex="-1"></a><span class="fu">download.file</span>(</span>
+<span id="cb1-2"><a href="import-or-create-data.html#cb1-2" tabindex="-1"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/5028/datasets/a55843f83746968c7f118d82ed727db9c71e891f/snake_river_visits.rds&quot;</span>,</span>
+<span id="cb1-3"><a href="import-or-create-data.html#cb1-3" tabindex="-1"></a>  <span class="at">destfile =</span> <span class="fu">paste0</span>(<span class="fu">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>)</span>
+<span id="cb1-4"><a href="import-or-create-data.html#cb1-4" tabindex="-1"></a>)</span>
+<span id="cb1-5"><a href="import-or-create-data.html#cb1-5" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="import-or-create-data.html#cb1-6" tabindex="-1"></a><span class="co"># Option 1:</span></span>
+<span id="cb1-7"><a href="import-or-create-data.html#cb1-7" tabindex="-1"></a>snake_river_visits <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">file.choose</span>())</span>
+<span id="cb1-8"><a href="import-or-create-data.html#cb1-8" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="import-or-create-data.html#cb1-9" tabindex="-1"></a><span class="co"># Option 2:</span></span>
+<span id="cb1-10"><a href="import-or-create-data.html#cb1-10" tabindex="-1"></a>snake_river_path   <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">getwd</span>(), <span class="st">&quot;/Snake River Visits.rds&quot;</span>)</span>
+<span id="cb1-11"><a href="import-or-create-data.html#cb1-11" tabindex="-1"></a>snake_river_visits <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(snake_river_path)</span></code></pre></div>
 <p><code>utils::download.file()</code> for .Rdata files:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="import-or-create-data.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 1:</span></span>
-<span id="cb2-2"><a href="import-or-create-data.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(</span>
-<span id="cb2-3"><a href="import-or-create-data.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData&quot;</span>, </span>
-<span id="cb2-4"><a href="import-or-create-data.html#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">destfile =</span> <span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span></span>
-<span id="cb2-5"><a href="import-or-create-data.html#cb2-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-6"><a href="import-or-create-data.html#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="import-or-create-data.html#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span>)</span>
-<span id="cb2-8"><a href="import-or-create-data.html#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="import-or-create-data.html#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2:</span></span>
-<span id="cb2-10"><a href="import-or-create-data.html#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(</span>
-<span id="cb2-11"><a href="import-or-create-data.html#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/235/datasets/3b6fc2923b599058584b57d8c605c6bef454d273/CHIS2009_reduced_2.Rdata&quot;</span>,</span>
-<span id="cb2-12"><a href="import-or-create-data.html#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">destfile =</span> <span class="st">&quot;chis_2009.Rdata&quot;</span>,</span>
-<span id="cb2-13"><a href="import-or-create-data.html#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The documentation for `download.file` indicates that the function will</span></span>
-<span id="cb2-14"><a href="import-or-create-data.html#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># automatically include `mode = &quot;wb&quot;` for .Rdata files. That may have happened</span></span>
-<span id="cb2-15"><a href="import-or-create-data.html#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># in Example 1, but didn&#39;t happen in Example 2, which is why I&#39;ve included it.</span></span>
-<span id="cb2-16"><a href="import-or-create-data.html#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">mode =</span> <span class="st">&quot;wb&quot;</span></span>
-<span id="cb2-17"><a href="import-or-create-data.html#cb2-17" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-18"><a href="import-or-create-data.html#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="import-or-create-data.html#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;chis_2009.Rdata&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="import-or-create-data.html#cb2-1" tabindex="-1"></a><span class="co"># Example 1:</span></span>
+<span id="cb2-2"><a href="import-or-create-data.html#cb2-2" tabindex="-1"></a><span class="fu">download.file</span>(</span>
+<span id="cb2-3"><a href="import-or-create-data.html#cb2-3" tabindex="-1"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/236/datasets/7f714f993f1ad4c3d26412ae1e537ce6355b1b54/iris.RData&quot;</span>, </span>
+<span id="cb2-4"><a href="import-or-create-data.html#cb2-4" tabindex="-1"></a>  <span class="at">destfile =</span> <span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span></span>
+<span id="cb2-5"><a href="import-or-create-data.html#cb2-5" tabindex="-1"></a>)</span>
+<span id="cb2-6"><a href="import-or-create-data.html#cb2-6" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="import-or-create-data.html#cb2-7" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;datacamp_iris_dataset.Rdata&quot;</span>)</span>
+<span id="cb2-8"><a href="import-or-create-data.html#cb2-8" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="import-or-create-data.html#cb2-9" tabindex="-1"></a><span class="co"># Example 2:</span></span>
+<span id="cb2-10"><a href="import-or-create-data.html#cb2-10" tabindex="-1"></a><span class="fu">download.file</span>(</span>
+<span id="cb2-11"><a href="import-or-create-data.html#cb2-11" tabindex="-1"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/235/datasets/3b6fc2923b599058584b57d8c605c6bef454d273/CHIS2009_reduced_2.Rdata&quot;</span>,</span>
+<span id="cb2-12"><a href="import-or-create-data.html#cb2-12" tabindex="-1"></a>  <span class="at">destfile =</span> <span class="st">&quot;chis_2009.Rdata&quot;</span>,</span>
+<span id="cb2-13"><a href="import-or-create-data.html#cb2-13" tabindex="-1"></a>  <span class="co"># The documentation for `download.file` indicates that the function will</span></span>
+<span id="cb2-14"><a href="import-or-create-data.html#cb2-14" tabindex="-1"></a>  <span class="co"># automatically include `mode = &quot;wb&quot;` for .Rdata files. That may have happened</span></span>
+<span id="cb2-15"><a href="import-or-create-data.html#cb2-15" tabindex="-1"></a>  <span class="co"># in Example 1, but didn&#39;t happen in Example 2, which is why I&#39;ve included it.</span></span>
+<span id="cb2-16"><a href="import-or-create-data.html#cb2-16" tabindex="-1"></a>  <span class="at">mode =</span> <span class="st">&quot;wb&quot;</span></span>
+<span id="cb2-17"><a href="import-or-create-data.html#cb2-17" tabindex="-1"></a>)</span>
+<span id="cb2-18"><a href="import-or-create-data.html#cb2-18" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="import-or-create-data.html#cb2-19" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;chis_2009.Rdata&quot;</span>)</span></code></pre></div>
 <p><code>utils::unzip()</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="import-or-create-data.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(</span>
-<span id="cb3-2"><a href="import-or-create-data.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/1069/datasets/578834f5908e3b2fa575429a287586d1eaeb2e54/countries2.zip&quot;</span>,</span>
-<span id="cb3-3"><a href="import-or-create-data.html#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">destfile =</span> <span class="st">&quot;Data Sets/Countries&quot;</span>,</span>
-<span id="cb3-4"><a href="import-or-create-data.html#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">mode =</span> <span class="st">&quot;wb&quot;</span></span>
-<span id="cb3-5"><a href="import-or-create-data.html#cb3-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-6"><a href="import-or-create-data.html#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="import-or-create-data.html#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(<span class="st">&quot;Data Sets/Countries&quot;</span>, <span class="at">exdir =</span> <span class="st">&quot;Data Sets&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="import-or-create-data.html#cb3-1" tabindex="-1"></a><span class="fu">download.file</span>(</span>
+<span id="cb3-2"><a href="import-or-create-data.html#cb3-2" tabindex="-1"></a>  <span class="st">&quot;https://assets.datacamp.com/production/repositories/1069/datasets/578834f5908e3b2fa575429a287586d1eaeb2e54/countries2.zip&quot;</span>,</span>
+<span id="cb3-3"><a href="import-or-create-data.html#cb3-3" tabindex="-1"></a>  <span class="at">destfile =</span> <span class="st">&quot;Data Sets/Countries&quot;</span>,</span>
+<span id="cb3-4"><a href="import-or-create-data.html#cb3-4" tabindex="-1"></a>  <span class="at">mode =</span> <span class="st">&quot;wb&quot;</span></span>
+<span id="cb3-5"><a href="import-or-create-data.html#cb3-5" tabindex="-1"></a>)</span>
+<span id="cb3-6"><a href="import-or-create-data.html#cb3-6" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="import-or-create-data.html#cb3-7" tabindex="-1"></a><span class="fu">unzip</span>(<span class="st">&quot;Data Sets/Countries&quot;</span>, <span class="at">exdir =</span> <span class="st">&quot;Data Sets&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="database" class="section level2 hasAnchor">
@@ -472,30 +472,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3>Examples<a href="import-or-create-data.html#examples-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>DBI::Id()</code> vs <code>DBI::SQL()</code>:</p>
 <p>The following are comparable methods of accessing <code>&lt;database&gt;.&lt;schema_name&gt;.&lt;table_name&gt;</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="import-or-create-data.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbCreateTable</span>(</span>
-<span id="cb4-2"><a href="import-or-create-data.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  conn,</span>
-<span id="cb4-3"><a href="import-or-create-data.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> </span>
-<span id="cb4-4"><a href="import-or-create-data.html#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Id</span>(<span class="at">catalog =</span> <span class="st">&quot;database_name&quot;</span>, <span class="at">schema =</span> <span class="st">&quot;schema_name&quot;</span>, <span class="at">table =</span> <span class="st">&quot;table_name&quot;</span>),</span>
-<span id="cb4-5"><a href="import-or-create-data.html#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">fields =</span> sample_data_frame</span>
-<span id="cb4-6"><a href="import-or-create-data.html#cb4-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-7"><a href="import-or-create-data.html#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="import-or-create-data.html#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">dbCreateTable</span>(</span>
-<span id="cb4-9"><a href="import-or-create-data.html#cb4-9" aria-hidden="true" tabindex="-1"></a>  conn,</span>
-<span id="cb4-10"><a href="import-or-create-data.html#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">SQL</span>(<span class="st">&quot;database_name.schema_name.table_name&quot;</span>),</span>
-<span id="cb4-11"><a href="import-or-create-data.html#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">fields =</span> sample_data_frame</span>
-<span id="cb4-12"><a href="import-or-create-data.html#cb4-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="import-or-create-data.html#cb4-1" tabindex="-1"></a><span class="fu">dbCreateTable</span>(</span>
+<span id="cb4-2"><a href="import-or-create-data.html#cb4-2" tabindex="-1"></a>  conn,</span>
+<span id="cb4-3"><a href="import-or-create-data.html#cb4-3" tabindex="-1"></a>  <span class="at">name =</span> </span>
+<span id="cb4-4"><a href="import-or-create-data.html#cb4-4" tabindex="-1"></a>    <span class="fu">Id</span>(<span class="at">catalog =</span> <span class="st">&quot;database_name&quot;</span>, <span class="at">schema =</span> <span class="st">&quot;schema_name&quot;</span>, <span class="at">table =</span> <span class="st">&quot;table_name&quot;</span>),</span>
+<span id="cb4-5"><a href="import-or-create-data.html#cb4-5" tabindex="-1"></a>  <span class="at">fields =</span> sample_data_frame</span>
+<span id="cb4-6"><a href="import-or-create-data.html#cb4-6" tabindex="-1"></a>)</span>
+<span id="cb4-7"><a href="import-or-create-data.html#cb4-7" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="import-or-create-data.html#cb4-8" tabindex="-1"></a><span class="fu">dbCreateTable</span>(</span>
+<span id="cb4-9"><a href="import-or-create-data.html#cb4-9" tabindex="-1"></a>  conn,</span>
+<span id="cb4-10"><a href="import-or-create-data.html#cb4-10" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">SQL</span>(<span class="st">&quot;database_name.schema_name.table_name&quot;</span>),</span>
+<span id="cb4-11"><a href="import-or-create-data.html#cb4-11" tabindex="-1"></a>  <span class="at">fields =</span> sample_data_frame</span>
+<span id="cb4-12"><a href="import-or-create-data.html#cb4-12" tabindex="-1"></a>)</span></code></pre></div>
 <p><code>odbc::dbConnect()</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="import-or-create-data.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify database:</span></span>
-<span id="cb5-2"><a href="import-or-create-data.html#cb5-2" aria-hidden="true" tabindex="-1"></a>conn_1 <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(odbc<span class="sc">::</span><span class="fu">odbc</span>(), <span class="at">dsn =</span> <span class="st">&quot;sql&quot;</span>) <span class="co"># Default database: Actuary</span></span>
-<span id="cb5-3"><a href="import-or-create-data.html#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="import-or-create-data.html#cb5-4" aria-hidden="true" tabindex="-1"></a>conn_2 <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(odbc<span class="sc">::</span><span class="fu">odbc</span>(), <span class="at">dsn =</span> <span class="st">&quot;sql&quot;</span>, <span class="at">Database =</span> <span class="st">&quot;Staging&quot;</span>)</span>
-<span id="cb5-5"><a href="import-or-create-data.html#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="import-or-create-data.html#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Troubleshoot hang-ups</span></span>
-<span id="cb5-7"><a href="import-or-create-data.html#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># It appears that RStudio&#39;s attempt to load information into the Connection Pane,</span></span>
-<span id="cb5-8"><a href="import-or-create-data.html#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># via `odbc::dbConnect`, can sometimes cause the call to hang, indefinitely.</span></span>
-<span id="cb5-9"><a href="import-or-create-data.html#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the following code to access the database in such a situation:</span></span>
-<span id="cb5-10"><a href="import-or-create-data.html#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="import-or-create-data.html#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">connectionObserver =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="import-or-create-data.html#cb5-1" tabindex="-1"></a><span class="co"># Specify database:</span></span>
+<span id="cb5-2"><a href="import-or-create-data.html#cb5-2" tabindex="-1"></a>conn_1 <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(odbc<span class="sc">::</span><span class="fu">odbc</span>(), <span class="at">dsn =</span> <span class="st">&quot;sql&quot;</span>) <span class="co"># Default database: Actuary</span></span>
+<span id="cb5-3"><a href="import-or-create-data.html#cb5-3" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="import-or-create-data.html#cb5-4" tabindex="-1"></a>conn_2 <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(odbc<span class="sc">::</span><span class="fu">odbc</span>(), <span class="at">dsn =</span> <span class="st">&quot;sql&quot;</span>, <span class="at">Database =</span> <span class="st">&quot;Staging&quot;</span>)</span>
+<span id="cb5-5"><a href="import-or-create-data.html#cb5-5" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="import-or-create-data.html#cb5-6" tabindex="-1"></a><span class="co"># Troubleshoot hang-ups</span></span>
+<span id="cb5-7"><a href="import-or-create-data.html#cb5-7" tabindex="-1"></a><span class="co"># It appears that RStudio&#39;s attempt to load information into the Connection Pane,</span></span>
+<span id="cb5-8"><a href="import-or-create-data.html#cb5-8" tabindex="-1"></a><span class="co"># via `odbc::dbConnect`, can sometimes cause the call to hang, indefinitely.</span></span>
+<span id="cb5-9"><a href="import-or-create-data.html#cb5-9" tabindex="-1"></a><span class="co"># Use the following code to access the database in such a situation:</span></span>
+<span id="cb5-10"><a href="import-or-create-data.html#cb5-10" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="import-or-create-data.html#cb5-11" tabindex="-1"></a><span class="fu">options</span>(<span class="at">connectionObserver =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 </div>
 <div id="references" class="section level3 hasAnchor">
 <h3>References<a href="import-or-create-data.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -542,19 +542,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="examples-2" class="section level4 hasAnchor">
 <h4>Examples<a href="import-or-create-data.html#examples-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Parameterized query:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="import-or-create-data.html#cb6-1" aria-hidden="true" tabindex="-1"></a>param_query <span class="ot">&lt;-</span> <span class="fu">dbSendQuery</span>(con, <span class="st">&quot;select * from table where column = ?&quot;</span>)</span>
-<span id="cb6-2"><a href="import-or-create-data.html#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="import-or-create-data.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dbBind</span>(param_query, input)</span>
-<span id="cb6-4"><a href="import-or-create-data.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dbFetch</span>(param_query)</span>
-<span id="cb6-5"><a href="import-or-create-data.html#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="import-or-create-data.html#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># As a function:</span></span>
-<span id="cb6-7"><a href="import-or-create-data.html#cb6-7" aria-hidden="true" tabindex="-1"></a>query_data <span class="ot">&lt;-</span> <span class="cf">function</span>(input) {</span>
-<span id="cb6-8"><a href="import-or-create-data.html#cb6-8" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-9"><a href="import-or-create-data.html#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dbBind</span>(param_query, input)</span>
-<span id="cb6-10"><a href="import-or-create-data.html#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dbFetch</span>(param_query)</span>
-<span id="cb6-11"><a href="import-or-create-data.html#cb6-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-12"><a href="import-or-create-data.html#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="import-or-create-data.html#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(<span class="fu">as.list</span>(df<span class="sc">$</span>input_column), query_data) <span class="sc">%&gt;%</span> <span class="fu">bind_rows</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="import-or-create-data.html#cb6-1" tabindex="-1"></a>param_query <span class="ot">&lt;-</span> <span class="fu">dbSendQuery</span>(con, <span class="st">&quot;select * from table where column = ?&quot;</span>)</span>
+<span id="cb6-2"><a href="import-or-create-data.html#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="import-or-create-data.html#cb6-3" tabindex="-1"></a><span class="fu">dbBind</span>(param_query, input)</span>
+<span id="cb6-4"><a href="import-or-create-data.html#cb6-4" tabindex="-1"></a><span class="fu">dbFetch</span>(param_query)</span>
+<span id="cb6-5"><a href="import-or-create-data.html#cb6-5" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="import-or-create-data.html#cb6-6" tabindex="-1"></a><span class="co"># As a function:</span></span>
+<span id="cb6-7"><a href="import-or-create-data.html#cb6-7" tabindex="-1"></a>query_data <span class="ot">&lt;-</span> <span class="cf">function</span>(input) {</span>
+<span id="cb6-8"><a href="import-or-create-data.html#cb6-8" tabindex="-1"></a>  </span>
+<span id="cb6-9"><a href="import-or-create-data.html#cb6-9" tabindex="-1"></a>  <span class="fu">dbBind</span>(param_query, input)</span>
+<span id="cb6-10"><a href="import-or-create-data.html#cb6-10" tabindex="-1"></a>  <span class="fu">dbFetch</span>(param_query)</span>
+<span id="cb6-11"><a href="import-or-create-data.html#cb6-11" tabindex="-1"></a>}</span>
+<span id="cb6-12"><a href="import-or-create-data.html#cb6-12" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="import-or-create-data.html#cb6-13" tabindex="-1"></a><span class="fu">map</span>(<span class="fu">as.list</span>(df<span class="sc">$</span>input_column), query_data) <span class="sc">%&gt;%</span> <span class="fu">bind_rows</span>()</span></code></pre></div>
 </div>
 <div id="sql-references" class="section level4 hasAnchor">
 <h4>SQL References<a href="import-or-create-data.html#sql-references" class="anchor-section" aria-label="Anchor link to header"></a></h4>
