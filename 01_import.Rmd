@@ -217,7 +217,8 @@ options(connectionObserver = FALSE)
 
 ### References
 
-- ["Databases using R"](db.rstudio.com)
+- [*Databases using R*](db.rstudio.com)
+- [*Using SQL in RStudio*](https://irene.rbind.io/post/using-sql-in-rstudio/)
 
 ### SQL and R
 
