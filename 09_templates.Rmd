@@ -1,0 +1,185 @@
+# Templates
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+### Functions
+
+```{r}
+CalcAgeInYears <- function(StartDT, EndDT) {
+  require(lubridate)
+  require(magrittr)
+  
+  interval(StartDT, EndDT) %>% divide_by(years(1)) %>% floor()
+}
+
+
+# 
+# CalcMonthEndDT <- function(Date) {
+#   require(lubridate)
+#   
+#   # ceiling_date(Date, unit = "months") - 1
+#   rollforward(Date)
+# }
+
+
+ExportPlot <- function(PlotName, Width = 12, Height = 7) {
+  # 12 x 7 works well with Google Slides
+
+  ggsave(paste0("Viz-", PlotName, ".png"), width = Width, height = Height)
+}
+
+
+GenerateMonths <- function(MinDT, MaxDT, EDWPatientID) {
+  # Generate month values between two dates. Useful for claims data when months
+  # without claims are missing (due to no submitted claims). Note that the data
+  # warehouse has a calendar table.
+  #
+  # Arguments
+  # - MinDT (date)
+  # - MaxDT (date)
+  # - EDWPatientID (char)
+  #
+  # Value
+  # - Tibble.
+  #
+  # Details
+  # - seq.Date() works best with month start dates; it does not perform reliably
+  #   when the input dates are month end dates (possibly due to dates having a
+  #   non-uniform number of days).
+  # - Requires lubridate package.
+  
+  seq.Date(
+    floor_date(MinDT, unit = "months"),
+    floor_date(MaxDT, unit = "months"),
+    by = "month"
+  ) %>%
+    as_tibble_col(column_name = "MonthStartDT") %>%
+    mutate(
+      EDWPatientID = EDWPatientID,
+      MonthEndDT = CalcMonthEndDT(MonthStartDT)
+    ) %>%
+    select(EDWPatientID, MonthStartDT, MonthEndDT)
+}
+```
+
+### Scripts
+
+SQL
+
+```{sql}
+/*******************************************************************************
+
+
+Ticket: 
+Author: Michael Jensen
+*******************************************************************************/
+
+/*******************************************************************************
+Input
+*******************************************************************************/
+
+declare @MinDT date = ''
+declare @MaxDT date = dateadd(mm, -1, eomonth(getdate()))
+
+/*******************************************************************************
+Data Wrangling
+*******************************************************************************/
+
+
+
+/*******************************************************************************
+EDA
+*******************************************************************************/
+
+
+
+/*******************************************************************************
+Output
+
+Export files as <temp_table_name>.csv
+*******************************************************************************/
+
+
+
+```
+
+R - Data Wrangling
+
+```{r}
+# Packages & Data Sources ------------------------------------------------------
+
+library(cli)
+library(glue)
+# library(janitor)
+# library(lubridate)
+# library(magrittr)
+library(tidyverse)
+
+DataPath <- "~/Downloads/Data-"
+
+file.exists(DataPath) || cli_abort(glue(
+  "Data path not found. 
+    Place output files from 1Query.sql in {DataPath} and try again."
+))
+
+# Functions --------------------------------------------------------------------
+
+ExportPlot <- function(PlotName, Width = 12, Height = 7) {
+  # 12 x 7 works well with Google Slides
+  
+  ggsave(paste0("Viz-", PlotName, ".png"), width = Width, height = Height)
+}
+
+# Data Wrangling ---------------------------------------------------------------
+
+
+
+```
+
+R - EDA
+
+```{r}
+source("2DataWrangling.R")
+
+# Set ggplot2 theme
+theme_set(
+    theme_classic() +
+    theme(panel.grid.major = element_line(), panel.grid.minor = element_line())
+)
+```
+
+### Snippets
+
+```{r, eval=FALSE}
+# TODO: Consider turning into a function.
+
+AgeGroupDSC <- 
+  tibble(
+    AgeNBR = c(0:110)
+  ) %>% 
+  mutate(
+    AgeGroupDSC1 = case_when(
+      AgeNBR %in% c(0:2)   ~ "Infant (0-2)",
+      AgeNBR %in% c(3:6)   ~ "Child, Preschool (3, 6)",
+      AgeNBR %in% c(7:12)  ~ "Child (7, 12)",
+      AgeNBR %in% c(13:17) ~ "Adolescent (13, 17)",
+      AgeNBR %in% c(18:24) ~ "Young Adult (18, 24)",
+      AgeNBR %in% c(25:44) ~ "Adult (25, 44)",
+      AgeNBR %in% c(45:64) ~ "Middle-Aged (45, 64)",
+      AgeNBR %in% c(65:79) ~ "Aged (65, 79)",
+      AgeNBR > 79          ~ "Elderly (80+)",
+    ),
+    AgeGroupDSC2 = 
+      case_when(
+        AgeNBR %in% c(0:17)  ~ "Child",
+        AgeNBR %in% c(18:44) ~ "Adult (18-44)",
+        AgeNBR %in% c(45:64) ~ "Middle-Aged (45-64)",
+        AgeNBR > 64          ~ "Aged (65+)"
+      ) %>% 
+      factor(levels = c(
+        "Child", "Adult (18-44)", "Middle-Aged (45-64)", "Aged (65+)"
+      ))
+  )
+```

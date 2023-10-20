@@ -78,3 +78,7 @@ model-1
 communicate-1
 program-1
 reference
+templates
+functions-1
+scripts
+snippets
