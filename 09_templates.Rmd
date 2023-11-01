@@ -110,12 +110,25 @@ R - Data Wrangling
 ```{r}
 # Packages & Data Sources ------------------------------------------------------
 
-library(cli)
-library(glue)
-# library(janitor)
-# library(lubridate)
-# library(magrittr)
-library(tidyverse)
+packages <- c(
+  "cli",
+  "glue",
+  "janitor",
+  "lubridate",
+  "magrittr",
+  "tidyverse"
+)
+
+installed_packages <- packages %in% rownames(installed.packages())
+
+if (any(installed_packages == FALSE)) {
+  install.packages(packages[!installed_packages])
+}
+
+invisible(lapply(packages, library, character.only = TRUE))
+
+rm(installed_packages, packages)
+
 
 DataPath <- "~/Downloads/Data-"
 

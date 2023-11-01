@@ -378,29 +378,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>R - Data Wrangling</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="templates.html#cb23-1" tabindex="-1"></a><span class="co"># Packages &amp; Data Sources ------------------------------------------------------</span></span>
 <span id="cb23-2"><a href="templates.html#cb23-2" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="templates.html#cb23-3" tabindex="-1"></a><span class="fu">library</span>(cli)</span>
-<span id="cb23-4"><a href="templates.html#cb23-4" tabindex="-1"></a><span class="fu">library</span>(glue)</span>
-<span id="cb23-5"><a href="templates.html#cb23-5" tabindex="-1"></a><span class="co"># library(janitor)</span></span>
-<span id="cb23-6"><a href="templates.html#cb23-6" tabindex="-1"></a><span class="co"># library(lubridate)</span></span>
-<span id="cb23-7"><a href="templates.html#cb23-7" tabindex="-1"></a><span class="co"># library(magrittr)</span></span>
-<span id="cb23-8"><a href="templates.html#cb23-8" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb23-9"><a href="templates.html#cb23-9" tabindex="-1"></a></span>
-<span id="cb23-10"><a href="templates.html#cb23-10" tabindex="-1"></a>DataPath <span class="ot">&lt;-</span> <span class="st">&quot;~/Downloads/Data-&quot;</span></span>
+<span id="cb23-3"><a href="templates.html#cb23-3" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb23-4"><a href="templates.html#cb23-4" tabindex="-1"></a>  <span class="st">&quot;cli&quot;</span>,</span>
+<span id="cb23-5"><a href="templates.html#cb23-5" tabindex="-1"></a>  <span class="st">&quot;glue&quot;</span>,</span>
+<span id="cb23-6"><a href="templates.html#cb23-6" tabindex="-1"></a>  <span class="st">&quot;janitor&quot;</span>,</span>
+<span id="cb23-7"><a href="templates.html#cb23-7" tabindex="-1"></a>  <span class="st">&quot;lubridate&quot;</span>,</span>
+<span id="cb23-8"><a href="templates.html#cb23-8" tabindex="-1"></a>  <span class="st">&quot;magrittr&quot;</span>,</span>
+<span id="cb23-9"><a href="templates.html#cb23-9" tabindex="-1"></a>  <span class="st">&quot;tidyverse&quot;</span></span>
+<span id="cb23-10"><a href="templates.html#cb23-10" tabindex="-1"></a>)</span>
 <span id="cb23-11"><a href="templates.html#cb23-11" tabindex="-1"></a></span>
-<span id="cb23-12"><a href="templates.html#cb23-12" tabindex="-1"></a><span class="fu">file.exists</span>(DataPath) <span class="sc">||</span> <span class="fu">cli_abort</span>(<span class="fu">glue</span>(</span>
-<span id="cb23-13"><a href="templates.html#cb23-13" tabindex="-1"></a>  <span class="st">&quot;Data path not found. </span></span>
-<span id="cb23-14"><a href="templates.html#cb23-14" tabindex="-1"></a><span class="st">    Place output files from 1Query.sql in {DataPath} and try again.&quot;</span></span>
-<span id="cb23-15"><a href="templates.html#cb23-15" tabindex="-1"></a>))</span>
-<span id="cb23-16"><a href="templates.html#cb23-16" tabindex="-1"></a></span>
-<span id="cb23-17"><a href="templates.html#cb23-17" tabindex="-1"></a><span class="co"># Functions --------------------------------------------------------------------</span></span>
-<span id="cb23-18"><a href="templates.html#cb23-18" tabindex="-1"></a></span>
-<span id="cb23-19"><a href="templates.html#cb23-19" tabindex="-1"></a>ExportPlot <span class="ot">&lt;-</span> <span class="cf">function</span>(PlotName, <span class="at">Width =</span> <span class="dv">12</span>, <span class="at">Height =</span> <span class="dv">7</span>) {</span>
-<span id="cb23-20"><a href="templates.html#cb23-20" tabindex="-1"></a>  <span class="co"># 12 x 7 works well with Google Slides</span></span>
-<span id="cb23-21"><a href="templates.html#cb23-21" tabindex="-1"></a>  </span>
-<span id="cb23-22"><a href="templates.html#cb23-22" tabindex="-1"></a>  <span class="fu">ggsave</span>(<span class="fu">paste0</span>(<span class="st">&quot;Viz-&quot;</span>, PlotName, <span class="st">&quot;.png&quot;</span>), <span class="at">width =</span> Width, <span class="at">height =</span> Height)</span>
-<span id="cb23-23"><a href="templates.html#cb23-23" tabindex="-1"></a>}</span>
+<span id="cb23-12"><a href="templates.html#cb23-12" tabindex="-1"></a>installed_packages <span class="ot">&lt;-</span> packages <span class="sc">%in%</span> <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())</span>
+<span id="cb23-13"><a href="templates.html#cb23-13" tabindex="-1"></a></span>
+<span id="cb23-14"><a href="templates.html#cb23-14" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">any</span>(installed_packages <span class="sc">==</span> <span class="cn">FALSE</span>)) {</span>
+<span id="cb23-15"><a href="templates.html#cb23-15" tabindex="-1"></a>  <span class="fu">install.packages</span>(packages[<span class="sc">!</span>installed_packages])</span>
+<span id="cb23-16"><a href="templates.html#cb23-16" tabindex="-1"></a>}</span>
+<span id="cb23-17"><a href="templates.html#cb23-17" tabindex="-1"></a></span>
+<span id="cb23-18"><a href="templates.html#cb23-18" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">lapply</span>(packages, library, <span class="at">character.only =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb23-19"><a href="templates.html#cb23-19" tabindex="-1"></a></span>
+<span id="cb23-20"><a href="templates.html#cb23-20" tabindex="-1"></a><span class="fu">rm</span>(installed_packages, packages)</span>
+<span id="cb23-21"><a href="templates.html#cb23-21" tabindex="-1"></a></span>
+<span id="cb23-22"><a href="templates.html#cb23-22" tabindex="-1"></a></span>
+<span id="cb23-23"><a href="templates.html#cb23-23" tabindex="-1"></a>DataPath <span class="ot">&lt;-</span> <span class="st">&quot;~/Downloads/Data-&quot;</span></span>
 <span id="cb23-24"><a href="templates.html#cb23-24" tabindex="-1"></a></span>
-<span id="cb23-25"><a href="templates.html#cb23-25" tabindex="-1"></a><span class="co"># Data Wrangling ---------------------------------------------------------------</span></span></code></pre></div>
+<span id="cb23-25"><a href="templates.html#cb23-25" tabindex="-1"></a><span class="fu">file.exists</span>(DataPath) <span class="sc">||</span> <span class="fu">cli_abort</span>(<span class="fu">glue</span>(</span>
+<span id="cb23-26"><a href="templates.html#cb23-26" tabindex="-1"></a>  <span class="st">&quot;Data path not found. </span></span>
+<span id="cb23-27"><a href="templates.html#cb23-27" tabindex="-1"></a><span class="st">    Place output files from 1Query.sql in {DataPath} and try again.&quot;</span></span>
+<span id="cb23-28"><a href="templates.html#cb23-28" tabindex="-1"></a>))</span>
+<span id="cb23-29"><a href="templates.html#cb23-29" tabindex="-1"></a></span>
+<span id="cb23-30"><a href="templates.html#cb23-30" tabindex="-1"></a><span class="co"># Functions --------------------------------------------------------------------</span></span>
+<span id="cb23-31"><a href="templates.html#cb23-31" tabindex="-1"></a></span>
+<span id="cb23-32"><a href="templates.html#cb23-32" tabindex="-1"></a>ExportPlot <span class="ot">&lt;-</span> <span class="cf">function</span>(PlotName, <span class="at">Width =</span> <span class="dv">12</span>, <span class="at">Height =</span> <span class="dv">7</span>) {</span>
+<span id="cb23-33"><a href="templates.html#cb23-33" tabindex="-1"></a>  <span class="co"># 12 x 7 works well with Google Slides</span></span>
+<span id="cb23-34"><a href="templates.html#cb23-34" tabindex="-1"></a>  </span>
+<span id="cb23-35"><a href="templates.html#cb23-35" tabindex="-1"></a>  <span class="fu">ggsave</span>(<span class="fu">paste0</span>(<span class="st">&quot;Viz-&quot;</span>, PlotName, <span class="st">&quot;.png&quot;</span>), <span class="at">width =</span> Width, <span class="at">height =</span> Height)</span>
+<span id="cb23-36"><a href="templates.html#cb23-36" tabindex="-1"></a>}</span>
+<span id="cb23-37"><a href="templates.html#cb23-37" tabindex="-1"></a></span>
+<span id="cb23-38"><a href="templates.html#cb23-38" tabindex="-1"></a><span class="co"># Data Wrangling ---------------------------------------------------------------</span></span></code></pre></div>
 <p>R - EDA</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="templates.html#cb24-1" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;2DataWrangling.R&quot;</span>)</span>
 <span id="cb24-2"><a href="templates.html#cb24-2" tabindex="-1"></a></span>
