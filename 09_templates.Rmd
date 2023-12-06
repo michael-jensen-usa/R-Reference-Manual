@@ -157,6 +157,7 @@ R - EDA
 source("2DataWrangling.R")
 
 # Set ggplot2 theme
+# - Use theme_xo() from OutcomesLibrary.R for presentations
 theme_set(
     theme_classic() +
     theme(panel.grid.major = element_line(), panel.grid.minor = element_line())
