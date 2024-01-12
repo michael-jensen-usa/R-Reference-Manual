@@ -13,7 +13,9 @@
 - `set.seed()`
 - `summary()`
 
-[`{bayesplot}`](https://mc-stan.org/bayesplot/)
+[`{bayesplot}`](https://mc-stan.org/bayesplot/): Plotting Bayesian Models
+
+[`{betareg}`](https://CRAN.R-project.org/package=betareg): Beta Regression
 
 [`{brms}`](https://CRAN.R-project.org/package=brms): Bayesian Regression Models using 'Stan'
 
