@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Transform | R Reference Manual</title>
-  <meta name="description" content="Transform | R Reference Manual" />
+  <title>R Reference Manual</title>
+  <meta name="description" content="R Reference Manual" />
   <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Transform | R Reference Manual" />
+  <meta property="og:title" content="R Reference Manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Transform | R Reference Manual" />
+  <meta name="twitter:title" content="R Reference Manual" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="tidy.html"/>
-<link rel="next" href="visualize.html"/>
+
+<link rel="next" href="import-or-create-data.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -281,377 +281,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="transform" class="section level1 hasAnchor">
-<h1>Transform<a href="transform.html#transform" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>“Transformation includes narrowing in on observations of interest (like all people in one city, or all data from the last year), creating new variables that are functions of existing variables (like computing velocity from speed and time), and calculating a set of summary statistics (like counts or means).”<br />
-- Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em></p>
-<div id="summary-statistics" class="section level2 hasAnchor">
-<h2>Summary Statistics<a href="transform.html#summary-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><a href="https://rdocumentation.org/packages/base/versions/3.6.2"><code>{base}</code></a></p>
-<ul>
-<li><code>mean()</code>
-<ul>
-<li>Use <code>base::mean(variable == value)</code> to calculate proportion; see example below. This trick works because <code>mean()</code> treats TRUE as 1 and FALSE as 0.</li>
-</ul></li>
-<li><code>table()</code>
-<ul>
-<li>Use to view the mode of a data set.</li>
-</ul></li>
-<li><code>range()</code>
-<ul>
-<li>Use <code>diff(range())</code> to get the range as a measure of variability.</li>
-</ul></li>
-</ul>
-<p><a href="https://rdocumentation.org/packages/dplyr/versions/0.7.8"><code>{dplyr}</code></a></p>
-<p><a href="https://rdocumentation.org/packages/stats/versions/3.6.2"><code>{stats}</code></a></p>
-<ul>
-<li><code>quantile()</code>
-<ul>
-<li>Useful in calculating confidence intervals (from bootstrapped data); see example below.</li>
-</ul></li>
-</ul>
-<div id="examples-3" class="section level3 hasAnchor">
-<h3>Examples<a href="transform.html#examples-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><code>base::mean()</code></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="transform.html#cb7-1" tabindex="-1"></a>by_country <span class="ot">&lt;-</span> </span>
-<span id="cb7-2"><a href="transform.html#cb7-2" tabindex="-1"></a>  votes <span class="sc">%&gt;%</span> </span>
-<span id="cb7-3"><a href="transform.html#cb7-3" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-4"><a href="transform.html#cb7-4" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb7-5"><a href="transform.html#cb7-5" tabindex="-1"></a>    <span class="at">total =</span> <span class="fu">n</span>(),</span>
-<span id="cb7-6"><a href="transform.html#cb7-6" tabindex="-1"></a>    <span class="at">percent_yes =</span> <span class="fu">mean</span>(vote <span class="sc">==</span> <span class="dv">1</span>))</span></code></pre></div>
-<p><code>base::quantile()</code></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="transform.html#cb8-1" tabindex="-1"></a><span class="co"># 95% confidence interval:</span></span>
-<span id="cb8-2"><a href="transform.html#cb8-2" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb8-3"><a href="transform.html#cb8-3" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb8-4"><a href="transform.html#cb8-4" tabindex="-1"></a>    <span class="at">lower =</span> <span class="fu">quantile</span>(column_name, <span class="fl">0.025</span>),</span>
-<span id="cb8-5"><a href="transform.html#cb8-5" tabindex="-1"></a>    <span class="at">upper =</span> <span class="fu">quantile</span>(column_name, <span class="fl">0.975</span>)</span>
-<span id="cb8-6"><a href="transform.html#cb8-6" tabindex="-1"></a>  )</span></code></pre></div>
+<div id="header">
+<h1 class="title">R Reference Manual</h1>
 </div>
-</div>
-<div id="create-new-variables-or-modify-existing-ones" class="section level2 hasAnchor">
-<h2>Create New Variables or Modify Existing Ones<a href="transform.html#create-new-variables-or-modify-existing-ones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><a href="https://rdocumentation.org/packages/dummies/versions/1.5.6"><code>{dummies}</code></a></p>
+<div id="introduction" class="section level1 hasAnchor">
+<h1>Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>A quick-reference guide to help me find what isn’t easily found by an internet search.</p>
+<p>In <em>R for Data Science</em>, Garrett Grolemund and Hadley Wickham outline the tools needed to tackle about 80% of the tasks required in a typical data science project (“<a href="https://r4ds.had.co.nz/introduction.html">Introduction</a>”). Those concepts, which I’ve used as an organizing guide for this manual, are:</p>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1d46bd2a105faa52f567" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-1d46bd2a105faa52f567">{"x":{"diagram":" \n\ndigraph {\n  graph [rankdir = LR; compound = TRUE; nodesep = 1]\n  \n  subgraph cluster0 {\n    style = rounded;\n    label = Program;\n    labeljust = center;\n    node [color = white];\n  \n    Import; Tidy; Communicate\n  \n    subgraph cluster1 {\n      style = rounded;\n      bgcolor = lightgrey;\n      label = Understand;\n      labeljust = center;\n      node [color = lightgrey];\n  \n      Transform -> Visualize -> Model -> Transform;\n  \n      {rank = same; Model; Visualize};\n      \n    }\n    \n    \n    Import -> Tidy -> Transform\n    \n  \n    edge [headport = w]\n    {Model; Visualize} -> Communicate [ltail = cluster1]\n  }\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="references-resources" class="section level2 hasAnchor">
+<h2>References &amp; Resources<a href="index.html#references-resources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><code>dummy.data.frame()</code>
+<li><a href="https://www.r-project.org/">The R Project for Statistical Computing</a>
 <ul>
-<li>Useful when needing to calculate the Jaccard index for categorical data.</li>
+<li><a href="https://cran.r-project.org/web/packages/">Library of R Packages</a></li>
+<li><a href="https://www.r-project.org/help.html"><em>Getting Help with R</em></a></li>
+<li><a href="https://cran.r-project.org/manuals.html"><em>The R Manuals</em></a></li>
+<li><a href="https://cran.r-project.org/faqs.html"><em>Frequently Asked Questions</em></a></li>
+<li><a href="https://www.r-project.org/doc/bib/R-books.html"><em>Books Related to R</em></a></li>
+<li><a href="https://www.r-project.org/other-docs.html"><em>Documentation</em></a></li>
 </ul></li>
-</ul>
-<p><code>countrycode</code></p>
+<li><a href="https://www.rstudio.com/">RStudio</a>
 <ul>
-<li><code>countrycode()</code>: Convert country codes into country names.</li>
-</ul>
-<p><code>dplyr</code></p>
-<ul>
-<li><code>recode()</code>: Recode values (the numeric alternative to using <code>if_else</code> or <code>case_when()</code>).</li>
-</ul>
-<p><strong>Example:</strong> <code>dplyr::mutate</code></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="transform.html#cb9-1" tabindex="-1"></a>df <span class="ot">&lt;-</span></span>
-<span id="cb9-2"><a href="transform.html#cb9-2" tabindex="-1"></a>  df <span class="sc">%&gt;%</span></span>
-<span id="cb9-3"><a href="transform.html#cb9-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">var_name =</span> <span class="fu">str_to_lower</span>(var_name))</span>
-<span id="cb9-4"><a href="transform.html#cb9-4" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="transform.html#cb9-5" tabindex="-1"></a><span class="co"># Add a T/F vector, which can then be referenced to highlight certain </span></span>
-<span id="cb9-6"><a href="transform.html#cb9-6" tabindex="-1"></a><span class="co"># information in a plot:</span></span>
-<span id="cb9-7"><a href="transform.html#cb9-7" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="transform.html#cb9-8" tabindex="-1"></a>df <span class="ot">&lt;-</span> </span>
-<span id="cb9-9"><a href="transform.html#cb9-9" tabindex="-1"></a>  df <span class="sc">%&gt;%</span> </span>
-<span id="cb9-10"><a href="transform.html#cb9-10" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">hilight =</span> <span class="at">attributed_provider_id =</span> <span class="dv">95597</span>)</span></code></pre></div>
-</div>
-<div id="dates-and-datetimes-1" class="section level2 hasAnchor">
-<h2>Dates and Datetimes<a href="transform.html#dates-and-datetimes-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li><code>base::date</code>
-<ul>
-<li>Get the current system date and time.</li>
+<li><a href="https://www.rstudio.com/resources/cheatsheets/"><em>RStudio Cheat Sheets</em></a></li>
+<li><a href="https://www.rstudio.com/resources/webinars/"><em>Webinars and Videos On Demand</em></a></li>
+<li><a href="https://www.rstudio.com/online-learning/"><em>Online learning</em></a></li>
+<li><a href="https://blog.rstudio.com/"><em>RStudio Blog</em></a></li>
 </ul></li>
-<li><code>base::difftime</code>
+<li>Online Manuals
 <ul>
-<li>Time intervals and differences.</li>
-<li><code>base::difftime</code> is the function behind the <code>-</code> operator when used with dates and datetimes (e.g., <code>time_1 - time_2</code> is equivalent to <code>difftime(time_1, time_2)</code>). The advantage of using <code>difftime</code> over <code>-</code>, however, is the <code>units</code> argument because it allows you to specify the unit of time in which the difference is calculated.</li>
+<li><a href="http://r4ds.had.co.nz/"><em>R for Data Science</em></a></li>
+<li><a href="https://adv-r.hadley.nz"><em>Advanced R</em></a></li>
+<li><a href="http://r-pkgs.had.co.nz/"><em>R Packages</em></a></li>
+<li><a href="http://www.burns-stat.com/pages/Tutor/R_inferno.pdf"><em>The R Inferno</em></a></li>
+<li><a href="http://style.tidyverse.org/"><em>The tidyverse style guide</em></a></li>
+<li><a href="https://bookdown.org/csgillespie/efficientR/"><em>Efficient R Programming</em></a></li>
+<li><a href="https://committedtotape.shinyapps.io/freeR/"><em>Free R Reading Material</em></a></li>
+<li><a href="https://www.tmwr.org">*Tidy Modeling with R</a></li>
+<li><a href="https://rstats.wtf/"><em>What They Forgot to Teach You About R</em></a></li>
 </ul></li>
-<li><code>base::months</code>
+<li>Other Online Resources
 <ul>
-<li>Extract the month names.</li>
+<li><a href="https://www.datacamp.com/">DataCamp</a></li>
+<li><a href="https://www.rdocumentation.org/">RDocumentation</a></li>
+<li><a href="https://www.r-bloggers.com/how-to-learn-r-2/">R Bloggers</a>
+<ul>
+<li><a href="https://www.r-bloggers.com/how-to-learn-r-2/">“Tutorials for learning R”</a></li>
 </ul></li>
-<li><code>base::quarters</code>
-<ul>
-<li>Extract the calendar quarters.</li>
-</ul></li>
-<li><code>base::seq.Date</code></li>
-<li><code>base::Sys.Date</code>
-<ul>
-<li>Get the current date in the current time zone.</li>
-</ul></li>
-<li><code>base::Sys.time</code>
-<ul>
-<li>Get the absolute date-time value (which can be converted to various time zones and may return different days).</li>
-</ul></li>
-<li><code>base::weekdays</code>
-<ul>
-<li>Extract weekday names.</li>
-</ul></li>
-<li><code>lubridate::ceiling_date</code></li>
-<li><code>lubridate::date</code>
-<ul>
-<li>Get or set the date component of a date-time.</li>
-</ul></li>
-<li><code>lubridate::day</code>
-<ul>
-<li>Get or set the day component of a datetime.</li>
-</ul></li>
-<li><code>lubridate::floor_date</code></li>
-<li><code>lubridate::month</code>
-<ul>
-<li>Get or set the month component of a datetime.</li>
-</ul></li>
-<li><code>lubridate::now</code>
-<ul>
-<li>The current time (as a POSIXct object).</li>
-</ul></li>
-<li><code>lubridate::quarter</code>
-<ul>
-<li>Get or set the fiscal quarter or semester component of a datetime.</li>
-</ul></li>
-<li><code>lubridate::round_date</code></li>
-<li>Time spans: Duration
-<ul>
-<li>Use when you are interested in seconds elapsed.</li>
-<li><code>lubridate::ddays</code></li>
-<li><code>lubridate::dhours</code></li>
-<li><code>lubridate::dminutes</code></li>
-<li><code>lubridate::dseconds</code></li>
-<li><code>lubridate::dweeks</code></li>
-<li><code>lubridate::dyears</code></li>
-</ul></li>
-<li>Time spans: Interval
-<ul>
-<li>Use when you have a start and end.</li>
-<li><code>%--%</code></li>
-<li><code>int_aligns</code></li>
-<li><code>int_diff</code></li>
-<li><code>int_end</code></li>
-<li><code>int_flip</code></li>
-<li><code>int_length</code></li>
-<li><code>int_overlaps</code></li>
-<li><code>int_shift</code></li>
-<li><code>int_standardize</code></li>
-<li><code>int_start</code></li>
-<li><code>interval</code></li>
-<li><code>is.interval</code></li>
-</ul></li>
-<li>Time spans: Period
-<ul>
-<li>Use when you are interested in human units.</li>
-<li><code>lubridate::day</code></li>
-<li><code>lubridate::hour</code></li>
-<li><code>lubridate::minute</code></li>
-<li><code>lubridate::month</code></li>
-<li><code>lubridate::second</code></li>
-<li><code>lubridate::week</code></li>
-<li><code>lubridate::year</code></li>
-</ul></li>
-<li>Time zones:
-<ul>
-<li><code>lubridate::force_tz</code>
-<ul>
-<li>Change the time zone without changing the clock time.</li>
-</ul></li>
-<li><code>lubridate::tz</code>
-<ul>
-<li>Extract the time zone from a datetime.</li>
-</ul></li>
-<li><code>lubridate::with_tz</code>
-<ul>
-<li>View the same instant in a different time zone.</li>
-</ul></li>
-</ul></li>
-<li><code>lubridate::today</code></li>
-<li><code>lubridate::%m+%</code> &amp; <code>%m-%</code>
-<ul>
-<li>Add and subtract months to a date without exceeding the last day of the new month.</li>
-</ul></li>
-<li><code>lubridate::%within%</code>
-<ul>
-<li>Test whether a date or interval falls within an interval.</li>
-</ul></li>
-<li><code>lubridate::year</code>
-<ul>
-<li>Get or set the year component of a datetime.</li>
-</ul></li>
-</ul>
-</div>
-<div id="factors" class="section level2 hasAnchor">
-<h2>Factors<a href="transform.html#factors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><code>forcats</code></p>
-<ul>
-<li><code>fct_drop()</code>: Drop levels.</li>
-<li><code>fct_reorder()</code>: Reorder levels, based on the value of another variable.</li>
-<li><code>fct_rev()</code>: Reverse levels.</li>
-</ul>
-<p><code>stats</code></p>
-<ul>
-<li><code>reorder()</code>: Reorder levels of a factor.
-<ul>
-<li>Useful within the <code>aes()</code> argument in a <code>ggplot()</code> call.</li>
-</ul></li>
-</ul>
-</div>
-<div id="merge-or-append-data" class="section level2 hasAnchor">
-<h2>Merge or Append Data<a href="transform.html#merge-or-append-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><code>base</code></p>
-<ul>
-<li><code>append()</code>: Add elements to a vector.</li>
-<li><code>cbind()</code>: Combine objects by column.</li>
-<li><code>intersect()</code>: Combine data shared in common between two datasets.
-<ul>
-<li>Similar to <code>dplyr::semi_join()</code>.</li>
-</ul></li>
-<li><code>merge()</code>: Merge two data frames.
-<ul>
-<li><code>dplyr::join</code> functions are an alternative to <code>merge()</code>.</li>
-</ul></li>
-<li><code>rbind()</code>: Combine objects by row.</li>
-<li><code>setdiff()</code>: Find the difference between two vectors.
-<ul>
-<li>Similar to <code>dplyr::anti_join()</code>.</li>
-</ul></li>
-<li><code>union()</code>: Combine two datasets without duplicating values.</li>
-</ul>
-<p><code>dplyr</code></p>
-<ul>
-<li><code>bind()</code>: Bind multiple data frames by row and column.
-<ul>
-<li>Child functions: bind_rows(), bind_cols(), combine().</li>
-</ul></li>
-<li>Join Functions: Join two tables.
-<ul>
-<li>Filtering Joins:
-<ul>
-<li>anti_join(): Return all rows from <code>x</code> where there are not matching values in <code>y</code>, keeping just columns from <code>x</code>.</li>
-<li>semi_join(): Return all rows from <code>x</code> where there are matching values in <code>y</code>, keeping just columns from <code>x</code>. A semi join differs from an inner join because an inner join will return one row of <code>x</code> for each matching row of <code>y</code>, where a semi join will never duplicate rows of <code>x</code>.</li>
-<li>Mutating Joins:
-<ul>
-<li>full_join(): Return all rows and all columns from both <code>x</code> and <code>y</code>. Where there are not matching values, returns <code>NA</code> for the one missing.</li>
-<li>inner_join(): Return all rows from <code>x</code> where there are matching values in <code>y</code>, and all columns from <code>x</code> and <code>y</code>. If there are multiple matches between <code>x</code> and <code>y</code>, all combination of the matches are returned.</li>
-<li>left_join(): Return all rows from <code>x</code>, and all columns from <code>x</code> and <code>y</code>. Rows in <code>x</code> with no match in <code>y</code> will have <code>NA</code> values in the new columns. If there are multiple matches between <code>x</code> and <code>y</code>, all combinations of the matches are returned.</li>
-<li>right_join(): Return all rows from <code>y</code>, and all columns from <code>x</code> and <code>y</code>. Rows in <code>x</code> with no match in <code>y</code> will have <code>NA</code> values in the new columns. If there are multiple matches between <code>y</code> and <code>x</code>, all combinations of the matches are returned.</li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-<p><code>tibble</code></p>
-<ul>
-<li><code>add_column()</code>: Add columns to a data frame.</li>
-<li><code>add_row()</code>: Add rows to a data frame.</li>
-</ul>
-</div>
-<div id="narrow-in-on-observations-of-interest" class="section level2 hasAnchor">
-<h2>Narrow in on Observations of Interest<a href="transform.html#narrow-in-on-observations-of-interest" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><code>{base}</code></p>
-<ul>
-<li><code>order()</code>
-<ul>
-<li>See also: <code>dplyr::arrange()</code>.</li>
-</ul></li>
-<li><code>prop.table()</code>
-<ul>
-<li>Express table entries as proportions of the marginal table (thus, as the values are proportions of the whole, <code>sum(prop.table(table_name))</code> = 1.)</li>
-<li>The input is a table produced by <code>base::table()</code>.</li>
-<li>Specify conditional proportions on rows or columns by using the <code>margin</code> argument.</li>
-</ul></li>
-<li><code>table()</code>: Build a table of the counts at each combination of factor levels.
-<ul>
-<li>Use <code>base::prop.table()</code> to see the table entries expressed as proportions.</li>
-</ul></li>
-</ul>
-<p><a href="https://CRAN.R-project.org/package=dplyr"><code>{dplyr}</code></a>: A Grammar of Data Manipulation</p>
-<ul>
-<li><code>arrange()</code></li>
-<li><code>distinct()</code></li>
-<li><code>filter()</code>
-<ul>
-<li>When using multiple <code>|</code> conditions, use <code>%in%</code> to save space; see example below.</li>
-</ul></li>
-<li><code>rename()</code></li>
-<li><code>sample_n()</code></li>
-<li><code>select()</code>
-<ul>
-<li>Use <code>?dplyr::select_helpers</code> to see the available helper functions.</li>
-</ul></li>
-<li><code>slice()</code></li>
-<li><code>slice_min()</code>, <code>slice_max()</code></li>
-<li><code>transmute()</code>
-<ul>
-<li>A combination of <code>dplyr::select()</code> and <code>dplyr::mutate()</code>.</li>
-</ul></li>
-</ul>
-<div id="examples-4" class="section level3 hasAnchor">
-<h3>Examples<a href="transform.html#examples-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><code>dplyr::filter()</code></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="transform.html#cb10-1" tabindex="-1"></a>ilo_data <span class="sc">%&gt;%</span> </span>
-<span id="cb10-2"><a href="transform.html#cb10-2" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Sweden&quot;</span>, <span class="st">&quot;Switzerland&quot;</span>))</span>
-<span id="cb10-3"><a href="transform.html#cb10-3" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="transform.html#cb10-4" tabindex="-1"></a>ilo_data <span class="sc">%&gt;%</span> </span>
-<span id="cb10-5"><a href="transform.html#cb10-5" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">&quot;Sweden&quot;</span> <span class="sc">|</span> country <span class="sc">==</span> <span class="st">&quot;Switzerland&quot;</span>)</span></code></pre></div>
-</div>
-</div>
-<div id="test-1" class="section level2 hasAnchor">
-<h2>Test<a href="transform.html#test-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><a href="https://rdocumentation.org/packages/dplyr/versions/0.7.8"><code>{dplyr}</code></a></p>
-<ul>
-<li><code>all_equal()</code>
-<ul>
-<li>Compare data frames.</li>
-</ul></li>
-<li><code>near()</code>
-<ul>
-<li>Compare two numeric vectors (safer than using <code>==</code>).</li>
-</ul></li>
-</ul>
-<p><code>{base}</code></p>
-<ul>
-<li>Operators:
-<ul>
-<li>Comparison Operators (<code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>==</code>, <code>!=</code>)
-<ul>
-<li>Use <code>identical()</code> and <code>all.equal()</code> rather than <code>==</code> and <code>!=</code> in tests where a single <code>TRUE</code> or <code>FALSE</code> is required (such as <code>if</code> expressions).</li>
-</ul></li>
-</ul></li>
-<li><code>identical()</code>
-<ul>
-<li>See also <code>dplyr::all_equal()</code>, <code>dplyr::near()</code>.</li>
-</ul></li>
-<li><code>match()</code>
-<ul>
-<li><code>%in%</code> is the more intuitive binary operator.</li>
-</ul></li>
-<li><code>setequal()</code>
-<ul>
-<li>Check two vectors for equality.</li>
-<li>See also <code>dplyr::near()</code>.</li>
-</ul></li>
-<li><code>which()</code>
-<ul>
-<li>This function is often unnecessary, according to <a href="https://www.datacamp.com/community/tutorials/five-tips-r-code-improve">“Five Tips to Improve Your R Code”</a>.</li>
-</ul></li>
-<li><code>which.max()</code>
-<ul>
-<li>Use also to identify the first <code>TRUE</code>/<code>FALSE</code>.</li>
-</ul></li>
-<li><code>which.min()</code>
-<ul>
-<li>Use also to identify the first <code>TRUE</code>/<code>FALSE</code>.</li>
-</ul></li>
-</ul>
-<p><code>{dplyr}</code></p>
-<ul>
-<li><code>all_equal()</code>
-<ul>
-<li>Compare data frames.</li>
-</ul></li>
-<li><code>near()</code>
-<ul>
-<li>See also <code>base::identical()</code>.</li>
+<li><a href="https://regex101.com/">Regular Expressions 101</a></li>
 </ul></li>
 </ul>
 
@@ -662,8 +340,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="tidy.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="visualize.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
+<a href="import-or-create-data.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
