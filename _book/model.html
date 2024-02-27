@@ -414,38 +414,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/stats-package.html"><code>{stats}</code></a></p>
 <ul>
-<li><p>See <code>{infer}</code> for easier-to-use hypothesis testing functions.</p></li>
-<li><p><code>cutree()</code></p>
+<li>See <code>{infer}</code> for easier-to-use hypothesis testing functions.</li>
+<li><code>cutree()</code>
 <ul>
 <li>Pair with <code>stats::hclust()</code>.</li>
 </ul></li>
-<li><p><code>as.formula()</code></p>
+<li><code>as.formula()</code>
 <ul>
 <li>Use to define an object to pass as a formula into a model (e.g., <code>fmla &lt;- as.formula("unemployment ~ population"), lm(fmla, data)</code>)</li>
 </ul></li>
-<li><p><code>coef()</code></p>
+<li><code>coef()</code>
 <ul>
 <li>Extract model coefficients.</li>
 </ul></li>
-<li><p><code>cor()</code></p>
+<li><code>contrasts()</code>
+<ul>
+<li>Get and set contrast matrices. Useful in identifying model coding and therefore in understanding model coefficients (e.g., in <code>glm(y ~ x, family = binomial)</code>, use <code>contrasts(y)</code> to identify which factor value R coded as 1).</li>
+</ul></li>
+<li><code>cor()</code>
 <ul>
 <li>See <code>GGally::ggpairs()</code>.</li>
 </ul></li>
-<li><p><code>cov()</code></p></li>
-<li><p><code>cov2cor()</code></p>
+<li><code>cov()</code></li>
+<li><code>cov2cor()</code>
 <ul>
 <li>Scale a covariance matrix into a correlation matrix.</li>
 </ul></li>
-<li><p><code>cutree()</code></p>
+<li><code>cutree()</code>
 <ul>
 <li>Pair with <code>stats::hclust()</code>.</li>
 </ul></li>
-<li><p><code>df.residual()</code></p>
+<li><code>df.residual()</code>
 <ul>
 <li>Get the residual degrees of freedom.</li>
 </ul></li>
-<li><p><code>dist()</code></p></li>
-<li><p>Distributions</p>
+<li><code>dist()</code></li>
+<li>Distributions
 <ul>
 <li>Binomial (<code>dbinom()</code>)</li>
 <li>Exponential (<code>dexp()</code>)</li>
@@ -456,31 +460,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Poisson (<code>dpois()</code>)</li>
 <li>Uniform (<code>dunif()</code>)</li>
 </ul></li>
-<li><p><code>glm()</code></p>
+<li><code>glm()</code>
 <ul>
 <li>For <code>family = Gamma</code>, consider using <code>(link = "log")</code> rather than the default. Use <code>expm1()</code> on the coefficients to tranform them into a percentage, which is easier to interpret than a logged coefficient value.</li>
 </ul></li>
-<li><p><code>hclust()</code></p></li>
-<li><p><code>kmeans()</code></p></li>
-<li><p><code>lm()</code></p>
+<li><code>hclust()</code></li>
+<li><code>kmeans()</code></li>
+<li><code>lm()</code>
 <ul>
 <li>Fit linear models.</li>
 </ul></li>
-<li><p><code>model.matrix()</code></p>
+<li><code>model.matrix()</code>
 <ul>
 <li>Use to create dummy variables from categorical data.</li>
 <li>See <code>{vtreat}</code> functions.</li>
 </ul></li>
-<li><p><code>p.adjust()</code></p>
+<li><code>p.adjust()</code>
 <ul>
 <li>Adjust p-values for multiple comparisons.</li>
 </ul></li>
-<li><p><code>pairwise.t.test()</code></p></li>
-<li><p><code>prcomp()</code></p>
+<li><code>pairwise.t.test()</code></li>
+<li><code>prcomp()</code>
 <ul>
 <li>Principal Component Analysis.</li>
 </ul></li>
-<li><p><code>predict()</code></p>
+<li><code>predict()</code>
 <ul>
 <li>Model predictions.</li>
 <li>For <code>lm</code> class objects, predict new values using <code>predict(model, newdata)</code>.</li>
@@ -488,19 +492,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>For GAM, <code>predict()</code> returns a matrix so use <code>as.numeric()</code> to convert the matrix to a vector if adding to a data set (such as for plotting the predictions versus the actual outcomes).</li>
 <li>Access the y values of the model using <code>predict(model, type = "terms")</code>.</li>
 </ul></li>
-<li><p><code>prop.test()</code></p>
+<li><code>prop.test()</code>
 <ul>
 <li>See <code>infer::prop_test()</code>.</li>
 </ul></li>
-<li><p><code>residuals()</code></p>
+<li><code>residuals()</code>
 <ul>
 <li>Extract model residuals.</li>
 </ul></li>
-<li><p><code>step()</code></p>
+<li><code>step()</code>
 <ul>
 <li>Step-wise regression.</li>
 </ul></li>
-<li><p><code>t.test()</code></p>
+<li><code>t.test()</code>
 <ul>
 <li>See <code>infer::t_test()</code>.</li>
 </ul></li>
