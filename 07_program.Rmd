@@ -162,11 +162,28 @@ References:
 - Quosures
   - `enquo()`, `new_quosure()`, `quo()`.
     
+Tidyverse
+
+- `{{ }}`: Embracing. See reference section below and the PlotDensity example.
+    
 References:
 
 - ["Non-standard evaluation"](http://adv-r.had.co.nz/Computing-on-the-language.html) (Hadley Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
 - ["Non-standard evaluation"](https://cran.r-project.org/web/packages/lazyeval/vignettes/lazyeval.html) (Hadley Wickham, `lazyeval` package vignette)
 - ["Programming with dplyr"](https://dplyr.tidyverse.org/articles/programming.html) (dplyr.tidyverse.org)
+
+Examples:
+
+Tidyverse embracing
+
+```{r}
+PlotDensity <- function(ColName, DF = ModelDF) {
+  
+  ggplot(DF, aes({{ ColName }})) +
+    geom_density(fill = "steelblue") +
+    geom_rug()
+}
+```
 
 ## Functionals
 
