@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Model | R Reference Manual</title>
-  <meta name="description" content="Model | R Reference Manual" />
+  <title>R Reference Manual</title>
+  <meta name="description" content="R Reference Manual" />
   <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Model | R Reference Manual" />
+  <meta property="og:title" content="R Reference Manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Model | R Reference Manual" />
+  <meta name="twitter:title" content="R Reference Manual" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="visualize.html"/>
-<link rel="next" href="communicate.html"/>
+
+<link rel="next" href="import-or-create-data.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -281,278 +281,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="model" class="section level1 hasAnchor">
-<h1>Model<a href="model.html#model" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>“Models are complementary tools to visualisation. Once you have made your questions sufficiently precise, you can use a model to answer them. Models are a fundamentally mathematical or computational tool, so they generally scale well. … But every model makes assumptions, and by its very nature a model cannot question its own assumptions. That means a model cannot fundamentally surprise you.
-- Garrett Grolemund &amp; Hadley Wickham, <em>R for Data Science</em>”</p>
-<p><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/base-package.html"><code>{base}</code></a></p>
+<div id="header">
+<h1 class="title">R Reference Manual</h1>
+</div>
+<div id="introduction" class="section level1 hasAnchor">
+<h1>Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>A quick-reference guide to help me find what isn’t easily found by an internet search.</p>
+<p>In <em>R for Data Science</em>, Garrett Grolemund and Hadley Wickham outline the tools needed to tackle about 80% of the tasks required in a typical data science project (“<a href="https://r4ds.had.co.nz/introduction.html">Introduction</a>”). Those concepts, which I’ve used as an organizing guide for this manual, are:</p>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-47e9da97d668abc05f87" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-47e9da97d668abc05f87">{"x":{"diagram":" \n\ndigraph {\n  graph [rankdir = LR; compound = TRUE; nodesep = 1]\n  \n  subgraph cluster0 {\n    style = rounded;\n    label = Program;\n    labeljust = center;\n    node [color = white];\n  \n    Import; Tidy; Communicate\n  \n    subgraph cluster1 {\n      style = rounded;\n      bgcolor = lightgrey;\n      label = Understand;\n      labeljust = center;\n      node [color = lightgrey];\n  \n      Transform -> Visualize -> Model -> Transform;\n  \n      {rank = same; Model; Visualize};\n      \n    }\n    \n    \n    Import -> Tidy -> Transform\n    \n  \n    edge [headport = w]\n    {Model; Visualize} -> Communicate [ltail = cluster1]\n  }\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="references-resources" class="section level2 hasAnchor">
+<h2>References &amp; Resources<a href="index.html#references-resources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><code>I()</code>: Use when raising a variable to an exponent in order to evaluate the value as a mathematical expression rather than as an interaction variable.</li>
-<li><code>mean()</code>: Use in modeling, such as classification trees, to compute the accuracy of predicted values; see example below.</li>
-<li><code>plot()</code>
+<li><a href="https://www.r-project.org/">The R Project for Statistical Computing</a>
 <ul>
-<li>When used on linear regression, <code>plot()</code> outputs diagnostic plots.</li>
+<li><a href="https://cran.r-project.org/web/packages/">Library of R Packages</a></li>
+<li><a href="https://www.r-project.org/help.html"><em>Getting Help with R</em></a></li>
+<li><a href="https://cran.r-project.org/manuals.html"><em>The R Manuals</em></a></li>
+<li><a href="https://cran.r-project.org/faqs.html"><em>Frequently Asked Questions</em></a></li>
+<li><a href="https://www.r-project.org/doc/bib/R-books.html"><em>Books Related to R</em></a></li>
+<li><a href="https://www.r-project.org/other-docs.html"><em>Documentation</em></a></li>
 </ul></li>
-<li><code>sample()</code></li>
-<li><code>set.seed()</code></li>
-<li><code>summary()</code></li>
-</ul>
-<p><a href="https://mc-stan.org/bayesplot/"><code>{bayesplot}</code></a>: Plotting Bayesian Models</p>
-<p><a href="https://CRAN.R-project.org/package=betareg"><code>{betareg}</code></a>: Beta Regression</p>
-<p><a href="https://CRAN.R-project.org/package=brms"><code>{brms}</code></a>: Bayesian Regression Models using ‘Stan’</p>
+<li><a href="https://www.rstudio.com/">RStudio</a>
 <ul>
-<li>See also <code>{bayesplot}</code>, <code>{tidybayes}</code>.</li>
-</ul>
-<p><a href="https://CRAN.R-project.org/package=broom"><code>{broom}</code></a>: Convert Statistical Objects into Tidy Tibbles</p>
-<ul>
-<li><code>augment()</code>: Augment data with information from an object.</li>
-<li><code>glance()</code>: Construct a single row summary of a model, fit, or other object.</li>
-<li><code>tidy()</code>: Turn an object into a tidy tibble.</li>
-</ul>
-<p><a href="https://CRAN.R-project.org/package=broom.mixed"><code>{broom.mixed}</code></a>: Tidying Methods for Mixed Models</p>
-<p><a href="https://cran.r-project.org/web/packages/car/index.html"><code>{car}</code></a></p>
-<p><a href="https://CRAN.R-project.org/package=caret"><code>{caret}</code></a>: Classification and Regression Training</p>
-<p><a href="https://CRAN.R-project.org/package=class"><code>{class}</code></a>: Functions for Classification</p>
-<ul>
-<li><code>knn()</code></li>
-</ul>
-<p><a href="https://CRAN.R-project.org/package=cluster"><code>{cluster}</code></a>: “Finding Groups in Data”: Cluster Analysis Extended</p>
-<ul>
-<li><code>pam()</code>
-<ul>
-<li>Useful for silhouette analysis; similar but not identical to <code>stats::kmeans()</code>.</li>
+<li><a href="https://www.rstudio.com/resources/cheatsheets/"><em>RStudio Cheat Sheets</em></a></li>
+<li><a href="https://www.rstudio.com/resources/webinars/"><em>Webinars and Videos On Demand</em></a></li>
+<li><a href="https://www.rstudio.com/online-learning/"><em>Online learning</em></a></li>
+<li><a href="https://blog.rstudio.com/"><em>RStudio Blog</em></a></li>
 </ul></li>
-</ul>
-<p><a href="https://CRAN.R-project.org/package=dplyr"><code>{dplyr}</code></a>: A Grammar of Data Manipulation</p>
+<li>Online Manuals
 <ul>
-<li><code>sample_n()</code></li>
-</ul>
-<p><a href="https://CRAN.R-project.org/package=gbm"><code>{gbm}</code></a>: Generalized Boosted Regression Models</p>
-<p><a href="https://cran.r-project.org/package=infer"><code>{infer}</code></a>: Tidy Statistical Inference</p>
+<li><a href="http://r4ds.had.co.nz/"><em>R for Data Science</em></a></li>
+<li><a href="https://adv-r.hadley.nz"><em>Advanced R</em></a></li>
+<li><a href="http://r-pkgs.had.co.nz/"><em>R Packages</em></a></li>
+<li><a href="http://www.burns-stat.com/pages/Tutor/R_inferno.pdf"><em>The R Inferno</em></a></li>
+<li><a href="http://style.tidyverse.org/"><em>The tidyverse style guide</em></a></li>
+<li><a href="https://bookdown.org/csgillespie/efficientR/"><em>Efficient R Programming</em></a></li>
+<li><a href="https://committedtotape.shinyapps.io/freeR/"><em>Free R Reading Material</em></a></li>
+<li><a href="https://www.tmwr.org">*Tidy Modeling with R</a></li>
+<li><a href="https://rstats.wtf/"><em>What They Forgot to Teach You About R</em></a></li>
+</ul></li>
+<li>Other Online Resources
 <ul>
-<li><code>generate()</code>
+<li><a href="https://www.datacamp.com/">DataCamp</a></li>
+<li><a href="https://www.rdocumentation.org/">RDocumentation</a></li>
+<li><a href="https://www.r-bloggers.com/how-to-learn-r-2/">R Bloggers</a>
 <ul>
-<li>Set <code>type = "permute"</code> when paired with <code>hypothesize(null = "independence")</code> and <code>type = "bootstrap"</code> or <code>type = "simulate"</code> when paired with <code>hypothesize(null = "point")</code>.</li>
+<li><a href="https://www.r-bloggers.com/how-to-learn-r-2/">“Tutorials for learning R”</a></li>
+</ul></li>
+<li><a href="https://regex101.com/">Regular Expressions 101</a></li>
 </ul></li>
 </ul>
-<p><a href="https://CRAN.R-project.org/package=lme4"><code>{lme4</code>}</a>: Linear Mixed-Effects Models</p>
-<ul>
-<li><code>glmer()</code></li>
-<li><code>lmer()</code></li>
-<li>See <code>{broom.mixed}</code>, <code>{lmerTest}</code>.</li>
-<li>Additional reference: <a href="http://bbolker.github.io/mixedmodels-misc/glmmFAQ.html"><em>GLMM FAQ</em></a>.</li>
-</ul>
-<p><a href="https://CRAN.R-project.org/package=lmerTest"><code>{lmerTest}</code></a>: Tests in Linear Mixed Effects Models</p>
-<p><a href="https://CRAN.R-project.org/package=MASS"><code>{MASS}</code></a>: Support Functions and Datasets for Venables and Ripley’s MASS</p>
-<ul>
-<li><code>lda()</code></li>
-</ul>
-<p><a href="https://cran.r-project.org/package=MatchIt"><code>{MatchIt}</code></a>: Nonparametric Preprocessing for Parametric Causal Inference</p>
-<ul>
-<li><code>match.data()</code></li>
-<li><code>matchit()</code></li>
-</ul>
-<p><code>{mgcv}</code></p>
-<ul>
-<li><code>gam()</code>
-<ul>
-<li>Generalized additive models (GAMs) with integrated smoothness estimation.</li>
-<li>Use <code>plot()</code> on a GAM object to view what the function learned from the data.</li>
-</ul></li>
-<li><code>s()</code>
-<ul>
-<li>Indicates which of the explanatory variables should be considered non-linearly.</li>
-<li>Use on continuous variables and avoid using on categorical variables.</li>
-</ul></li>
-</ul>
-<p><code>{mixtools}</code></p>
-<p><code>{naivebayes}</code></p>
-<ul>
-<li><code>naive_bayes()</code></li>
-</ul>
-<p><a href="https://cran.r-project.org/package=performance"><code>{performance}</code></a>: Assessment of Regression Models Performance</p>
-<p><a href="https://CRAN.R-project.org/package=pROC"><code>{pROC}</code></a>: Display and Analyze ROC Curves</p>
-<ul>
-<li><code>auc()</code></li>
-<li><code>roc()</code></li>
-<li>See <code>{ROCR}</code>.</li>
-</ul>
-<p><a href="https://CRAN.R-project.org/package=pscl"><code>{pscl}</code></a>: Political Science Computational Laboratory</p>
-<ul>
-<li><code>pR2()</code>: Pseudo-R^2.
-<ul>
-<li>The McFadden value matches the manual pseudo-R^2 calculation: <code>1 - broom::glance(model_name)$deviance / broom::glance(model_name)$null.deviance</code>.</li>
-</ul></li>
-</ul>
-<p><code>{randomForest}</code></p>
-<p>See <code>{ranger}</code>.</p>
-<ul>
-<li><code>randomForest()</code></li>
-</ul>
-<p><code>{ranger}</code></p>
-<p>See <code>{randomForest}</code>.</p>
-<ul>
-<li><code>ranger()</code></li>
-</ul>
-<p><a href="https://CRAN.R-project.org/package=ROCR"><code>{ROCR}</code></a>: Visualizing the Performance of Scoring Classifiers</p>
-<ul>
-<li>See <code>{pROC}</code>.</li>
-</ul>
-<p><code>{rpart}</code></p>
-<ul>
-<li><code>rpart()</code></li>
-</ul>
-<p><code>{rpart.plot}</code></p>
-<ul>
-<li><code>rpart.plot()</code></li>
-</ul>
-<p><code>{rsample}</code></p>
-<p><code>{sigr}</code></p>
-<ul>
-<li><code>wrapChiSqTest()</code>
-<ul>
-<li>For Pseudo-R^2:
-<ul>
-<li>On training data, use <code>wrapChiSqTest(model)</code>. For test data, use <code>wrapChiSqTest(prediction_column_name, outcome_column_name, target_value)</code>.</li>
-</ul></li>
-</ul></li>
-</ul>
-<p><a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/stats-package.html"><code>{stats}</code></a></p>
-<ul>
-<li>See <code>{infer}</code> for easier-to-use hypothesis testing functions.</li>
-<li><code>cutree()</code>
-<ul>
-<li>Pair with <code>stats::hclust()</code>.</li>
-</ul></li>
-<li><code>as.formula()</code>
-<ul>
-<li>Use to define an object to pass as a formula into a model (e.g., <code>fmla &lt;- as.formula("unemployment ~ population"), lm(fmla, data)</code>)</li>
-</ul></li>
-<li><code>coef()</code>
-<ul>
-<li>Extract model coefficients.</li>
-</ul></li>
-<li><code>contrasts()</code>
-<ul>
-<li>Get and set contrast matrices. Useful in identifying model coding and therefore in understanding model coefficients (e.g., in <code>glm(y ~ x, family = binomial)</code>, use <code>contrasts(y)</code> to identify which factor value R coded as 1).</li>
-</ul></li>
-<li><code>cor()</code>
-<ul>
-<li>See <code>GGally::ggpairs()</code>.</li>
-</ul></li>
-<li><code>cov()</code></li>
-<li><code>cov2cor()</code>
-<ul>
-<li>Scale a covariance matrix into a correlation matrix.</li>
-</ul></li>
-<li><code>cutree()</code>
-<ul>
-<li>Pair with <code>stats::hclust()</code>.</li>
-</ul></li>
-<li><code>df.residual()</code>
-<ul>
-<li>Get the residual degrees of freedom.</li>
-</ul></li>
-<li><code>dist()</code></li>
-<li>Distributions
-<ul>
-<li>Binomial (<code>dbinom()</code>)</li>
-<li>Exponential (<code>dexp()</code>)</li>
-<li>Gamma (<code>dgamma()</code>)</li>
-<li>Geometric (<code>dgeom()</code>)</li>
-<li>Log-normal (<code>dlnorm()</code>)</li>
-<li>Normal (<code>dnorm()</code>)</li>
-<li>Poisson (<code>dpois()</code>)</li>
-<li>Uniform (<code>dunif()</code>)</li>
-</ul></li>
-<li><code>glm()</code>
-<ul>
-<li>For <code>family = Gamma</code>, consider using <code>(link = "log")</code> rather than the default. Use <code>expm1()</code> on the coefficients to tranform them into a percentage, which is easier to interpret than a logged coefficient value.</li>
-</ul></li>
-<li><code>hclust()</code></li>
-<li><code>kmeans()</code></li>
-<li><code>lm()</code>
-<ul>
-<li>Fit linear models.</li>
-</ul></li>
-<li><code>model.matrix()</code>
-<ul>
-<li>Use to create dummy variables from categorical data.</li>
-<li>See <code>{vtreat}</code> functions.</li>
-</ul></li>
-<li><code>p.adjust()</code>
-<ul>
-<li>Adjust p-values for multiple comparisons.</li>
-</ul></li>
-<li><code>pairwise.t.test()</code></li>
-<li><code>prcomp()</code>
-<ul>
-<li>Principal Component Analysis.</li>
-</ul></li>
-<li><code>predict()</code>
-<ul>
-<li>Model predictions.</li>
-<li>For <code>lm</code> class objects, predict new values using <code>predict(model, newdata)</code>.</li>
-<li>For <code>glm</code> class objects, predict new values using <code>predict(model, newdata, type = "response")</code> (<code>predict()</code> returns the log-odds of the event, instead of the probability, if <code>type = "response"</code> is not included).</li>
-<li>For GAM, <code>predict()</code> returns a matrix so use <code>as.numeric()</code> to convert the matrix to a vector if adding to a data set (such as for plotting the predictions versus the actual outcomes).</li>
-<li>Access the y values of the model using <code>predict(model, type = "terms")</code>.</li>
-</ul></li>
-<li><code>prop.test()</code>
-<ul>
-<li>See <code>infer::prop_test()</code>.</li>
-</ul></li>
-<li><code>residuals()</code>
-<ul>
-<li>Extract model residuals.</li>
-</ul></li>
-<li><code>step()</code>
-<ul>
-<li>Step-wise regression.</li>
-</ul></li>
-<li><code>t.test()</code>
-<ul>
-<li>See <code>infer::t_test()</code>.</li>
-</ul></li>
-</ul>
-<p><a href="https://mjskay.github.io/tidybayes/"><code>{tidybayes}</code></a></p>
-<p><code>{tidyr}</code></p>
-<ul>
-<li><code>nest()</code>
-<ul>
-<li>Nest repeated values in a list-variable.</li>
-<li>Helpful when separating a data frame in preparation to model the data for each grouping.</li>
-</ul></li>
-</ul>
-<p><code>{vtreat}</code></p>
-<p>Compared to <code>stats::model.matrix()</code>, <code>{vtreat}</code> functions allow for handling new categorical variables in the test data not seen in the training data.</p>
-<ul>
-<li><code>designTreatmentsZ()</code></li>
-<li><code>kWayCrossValidation()</code></li>
-<li><code>prepare()</code></li>
-<li><code>splitPlan()</code>
-<ul>
-<li>Use to create a cross-validation plan.</li>
-</ul></li>
-</ul>
-<p><code>{WVPlots}</code></p>
-<ul>
-<li><code>GainCurvePlot()</code>
-<ul>
-<li>Use to evaluate logistic regression models.</li>
-</ul></li>
-</ul>
-<p><code>{xgboost}</code></p>
-<ul>
-<li><code>xgb.cv()</code>
-<ul>
-<li>Use <code>xgb.cv()$evaluation_log</code> to find the number of trees that minimizes RMSE (input that number as the <code>nrounds</code> argument in <code>xgboost()</code>).</li>
-</ul></li>
-</ul>
-<div id="examples-6" class="section level3 hasAnchor">
-<h3>Examples<a href="model.html#examples-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><code>base::mean()</code></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="model.html#cb12-1" tabindex="-1"></a><span class="co"># Classification Trees: Compute accuracy of predictions on the test data set:</span></span>
-<span id="cb12-2"><a href="model.html#cb12-2" tabindex="-1"></a><span class="fu">mean</span>(loans_test<span class="sc">$</span>outcome <span class="sc">==</span> loans_test<span class="sc">$</span>prediction)</span></code></pre></div>
 
 </div>
 </div>
@@ -561,8 +340,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="visualize.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="communicate.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
+<a href="import-or-create-data.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
