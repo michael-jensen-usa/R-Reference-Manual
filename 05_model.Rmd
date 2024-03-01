@@ -62,6 +62,10 @@
 
 [`{lmerTest}`](https://CRAN.R-project.org/package=lmerTest): Tests in Linear Mixed Effects Models
 
+[`{MASS}`](https://CRAN.R-project.org/package=MASS): Support Functions and Datasets for Venables and Ripley's MASS
+
+- `lda()`
+
 [`{MatchIt}`](https://cran.r-project.org/package=MatchIt): Nonparametric Preprocessing for Parametric Causal Inference
 
 - `match.data()`
