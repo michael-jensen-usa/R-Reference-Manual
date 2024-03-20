@@ -220,9 +220,9 @@ options(connectionObserver = FALSE)
 - [*Databases using R*](db.rstudio.com)
 - [*Using SQL in RStudio*](https://irene.rbind.io/post/using-sql-in-rstudio/)
 
-### SQL and R
+## SQL and R
 
-#### Tips and Troubleshooting Hints
+### Tips and Troubleshooting Hints
 
 - Temp Tables
   - Use `SET NOCOUNT ON` in the SQL query to prevent R confusing the SQL rowcount return value with the temporary table.
@@ -242,7 +242,7 @@ options(connectionObserver = FALSE)
   - `WHERE EXISTS` and `WHERE NOT EXISTS` are generally more efficient than `=` and `<>`.
   - `=` is generally more efficient than `<>`.
   
-#### Examples
+### Examples
 
 Parameterized query:
 
@@ -262,14 +262,15 @@ query_data <- function(input) {
 map(as.list(df$input_column), query_data) %>% bind_rows()
 ```
 
-#### SQL References
+### SQL References
 
-- ["10 Easy Steps to a Complete Understanding of SQL"](https://blog.jooq.org/2016/03/17/10-easy-steps-to-a-complete-understanding-of-sql/)
-- ["Query Planning"](https://www.sqlite.org/queryplanner.html)
-- ["Using SQL in RStudio](https://irene.rbind.io/post/using-sql-in-rstudio/) by Irene Steves
+- [*10 Easy Steps to a Complete Understanding of SQL*](https://blog.jooq.org/2016/03/17/10-easy-steps-to-a-complete-understanding-of-sql/)
+- [*Modern SQL Style Guide*](https://gist.github.com/mattmc3/38a85e6a4ca1093816c08d4815fbebfb)
+- [*Query Planning*](https://www.sqlite.org/queryplanner.html)
+- [*Using SQL in RStudio*](https://irene.rbind.io/post/using-sql-in-rstudio/) by Irene Steves
 
 ## Notes & References
 
-- ["Data structures"](http://adv-r.had.co.nz/Data-structures.html) (Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
+- [*Data structures*](http://adv-r.had.co.nz/Data-structures.html) (Wickham, [*Advanced R*](http://adv-r.had.co.nz/))
 - `{openintro}` contains data sets useful for practicing and teaching.
-- ["Vectors"](https://r4ds.had.co.nz/vectors.html) (Grolemund & Wickham, [*R for Data Science*](https://r4ds.had.co.nz/))
+- [*Vectors*](https://r4ds.had.co.nz/vectors.html) (Grolemund & Wickham, [*R for Data Science*](https://r4ds.had.co.nz/))
