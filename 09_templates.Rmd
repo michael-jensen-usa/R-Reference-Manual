@@ -112,6 +112,7 @@ R - Data Wrangling
 
 packages <- c(
   "cli",
+  "conflicted",
   "glue",
   "janitor",
   "lubridate",
@@ -129,6 +130,9 @@ invisible(lapply(packages, library, character.only = TRUE))
 
 rm(installed_packages, packages)
 
+conflicts_prefer(
+  dplyr::filter()
+)
 
 DataPath <- "~/Downloads/Data-"
 

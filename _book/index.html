@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>R Reference Manual</title>
   <meta name="description" content="R Reference Manual" />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="R Reference Manual" />
   <meta property="og:type" content="book" />
@@ -50,15 +50,16 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.10/grViz.js"></script>
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -293,8 +294,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>A quick-reference guide to help me find what isn’t easily found by an internet search.</p>
 <p>In <em>R for Data Science</em>, Garrett Grolemund and Hadley Wickham outline the tools needed to tackle about 80% of the tasks required in a typical data science project (“<a href="https://r4ds.had.co.nz/introduction.html">Introduction</a>”). Those concepts, which I’ve used as an organizing guide for this manual, are:</p>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-0167e7e8a97388e52248" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-0167e7e8a97388e52248">{"x":{"diagram":" \n\ndigraph {\n  graph [rankdir = LR; compound = TRUE; nodesep = 1]\n  \n  subgraph cluster0 {\n    style = rounded;\n    label = Program;\n    labeljust = center;\n    node [color = white];\n  \n    Import; Tidy; Communicate\n  \n    subgraph cluster1 {\n      style = rounded;\n      bgcolor = lightgrey;\n      label = Understand;\n      labeljust = center;\n      node [color = lightgrey];\n  \n      Transform -> Visualize -> Model -> Transform;\n  \n      {rank = same; Model; Visualize};\n      \n    }\n    \n    \n    Import -> Tidy -> Transform\n    \n  \n    edge [headport = w]\n    {Model; Visualize} -> Communicate [ltail = cluster1]\n  }\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-2e6308de4240671140ae" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-2e6308de4240671140ae">{"x":{"diagram":" \n\ndigraph {\n  graph [rankdir = LR; compound = TRUE; nodesep = 1]\n  \n  subgraph cluster0 {\n    style = rounded;\n    label = Program;\n    labeljust = center;\n    node [color = white];\n  \n    Import; Tidy; Communicate\n  \n    subgraph cluster1 {\n      style = rounded;\n      bgcolor = lightgrey;\n      label = Understand;\n      labeljust = center;\n      node [color = lightgrey];\n  \n      Transform -> Visualize -> Model -> Transform;\n  \n      {rank = same; Model; Visualize};\n      \n    }\n    \n    \n    Import -> Tidy -> Transform\n    \n  \n    edge [headport = w]\n    {Model; Visualize} -> Communicate [ltail = cluster1]\n  }\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <div id="references-resources" class="section level2 hasAnchor">
 <h2>References &amp; Resources<a href="index.html#references-resources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
