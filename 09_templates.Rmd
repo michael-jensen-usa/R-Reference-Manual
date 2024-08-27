@@ -70,8 +70,6 @@ SQL - Snowflake
 
 ```{sql}
 /*******************************************************************************
-
-
 Ticket: 
 Author: Michael Jensen
 *******************************************************************************/
@@ -102,17 +100,12 @@ Output
 
 Export files as <temp_table_name>.csv
 *******************************************************************************/
-
-
-
 ```
 
 SQL - TSQL
 
 ```{sql}
 /*******************************************************************************
-
-
 Ticket: 
 Author: Michael Jensen
 *******************************************************************************/
@@ -141,9 +134,6 @@ Output
 
 Export files as <temp_table_name>.csv
 *******************************************************************************/
-
-
-
 ```
 
 R - Data Wrangling
@@ -175,19 +165,19 @@ conflicts_prefer(
   dplyr::filter()
 )
 
-DataPath <- "~/Downloads/Data-"
+data_path <- "~/Downloads/data-"
 
 file.exists(DataPath) || cli_abort(glue(
   "Data path not found. 
-    Place output files from 1Query.sql in {DataPath} and try again."
+    Place output files from 1Query.sql in {data_path} and try again."
 ))
 
 # Functions --------------------------------------------------------------------
 
-ExportPlot <- function(PlotName, Width = 12, Height = 7) {
+export_plot <- function(plot_name, width = 12, height = 7) {
   # 12 x 7 works well with Google Slides
   
-  ggsave(paste0("Viz-", PlotName, ".png"), width = Width, height = Height)
+  ggsave(paste0("Viz-", plot_name, ".png"), width = width, height = height)
 }
 
 # Data Wrangling ---------------------------------------------------------------
