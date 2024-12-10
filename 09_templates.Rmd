@@ -176,7 +176,7 @@ file.exists(data_path) || cli_abort(glue(
 export_plot <- function(plot_name, width = 12, height = 7) {
   # 12 x 7 works well with Google Slides
   
-  ggsave(paste0("Viz-", plot_name, ".png"), width = width, height = height)
+  ggsave(paste0("viz-", plot_name, ".png"), width = width, height = height)
 }
 
 # Data Wrangling ---------------------------------------------------------------

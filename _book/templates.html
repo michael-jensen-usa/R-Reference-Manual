@@ -449,10 +449,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb25-35"><a href="templates.html#cb25-35" tabindex="-1"></a>export_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(plot_name, <span class="at">width =</span> <span class="dv">12</span>, <span class="at">height =</span> <span class="dv">7</span>) {</span>
 <span id="cb25-36"><a href="templates.html#cb25-36" tabindex="-1"></a>  <span class="co"># 12 x 7 works well with Google Slides</span></span>
 <span id="cb25-37"><a href="templates.html#cb25-37" tabindex="-1"></a>  </span>
-<span id="cb25-38"><a href="templates.html#cb25-38" tabindex="-1"></a>  <span class="fu">ggsave</span>(<span class="fu">paste0</span>(<span class="st">&quot;Viz-&quot;</span>, plot_name, <span class="st">&quot;.png&quot;</span>), <span class="at">width =</span> width, <span class="at">height =</span> height)</span>
+<span id="cb25-38"><a href="templates.html#cb25-38" tabindex="-1"></a>  <span class="fu">ggsave</span>(<span class="fu">paste0</span>(<span class="st">&quot;viz-&quot;</span>, plot_name, <span class="st">&quot;.png&quot;</span>), <span class="at">width =</span> width, <span class="at">height =</span> height)</span>
 <span id="cb25-39"><a href="templates.html#cb25-39" tabindex="-1"></a>}</span>
 <span id="cb25-40"><a href="templates.html#cb25-40" tabindex="-1"></a></span>
-<span id="cb25-41"><a href="templates.html#cb25-41" tabindex="-1"></a><span class="co"># Data Wrangling ---------------------------------------------------------------</span></span></code></pre></div>
+<span id="cb25-41"><a href="templates.html#cb25-41" tabindex="-1"></a><span class="co"># Data Wrangling ---------------------------------------------------------------</span></span>
+<span id="cb25-42"><a href="templates.html#cb25-42" tabindex="-1"></a></span>
+<span id="cb25-43"><a href="templates.html#cb25-43" tabindex="-1"></a>df <span class="ot">&lt;-</span> </span>
+<span id="cb25-44"><a href="templates.html#cb25-44" tabindex="-1"></a>  <span class="fu">read_csv</span>(</span>
+<span id="cb25-45"><a href="templates.html#cb25-45" tabindex="-1"></a>    <span class="fu">glue</span>(<span class="st">&quot;{data_path}/.csv&quot;</span>)</span>
+<span id="cb25-46"><a href="templates.html#cb25-46" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb25-47"><a href="templates.html#cb25-47" tabindex="-1"></a>  <span class="fu">rename_with</span>(tolower)</span></code></pre></div>
 <p>R - EDA</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="templates.html#cb26-1" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;2DataWrangling.R&quot;</span>)</span>
 <span id="cb26-2"><a href="templates.html#cb26-2" tabindex="-1"></a></span>
