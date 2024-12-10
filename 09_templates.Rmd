@@ -167,9 +167,8 @@ conflicts_prefer(
 
 data_path <- "~/Downloads/data-"
 
-file.exists(DataPath) || cli_abort(glue(
-  "Data path not found. 
-    Place output files from 1Query.sql in {data_path} and try again."
+file.exists(data_path) || cli_abort(glue(
+  "data_path not found. Place data files in {data_path} and try again."
 ))
 
 # Functions --------------------------------------------------------------------
@@ -182,8 +181,11 @@ export_plot <- function(plot_name, width = 12, height = 7) {
 
 # Data Wrangling ---------------------------------------------------------------
 
-
-
+df <- 
+  read_csv(
+    glue("{data_path}/.csv")
+  ) |> 
+  rename_with(tolower)
 ```
 
 R - EDA

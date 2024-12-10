@@ -69,7 +69,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -440,20 +440,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb25-26"><a href="templates.html#cb25-26" tabindex="-1"></a></span>
 <span id="cb25-27"><a href="templates.html#cb25-27" tabindex="-1"></a>data_path <span class="ot">&lt;-</span> <span class="st">&quot;~/Downloads/data-&quot;</span></span>
 <span id="cb25-28"><a href="templates.html#cb25-28" tabindex="-1"></a></span>
-<span id="cb25-29"><a href="templates.html#cb25-29" tabindex="-1"></a><span class="fu">file.exists</span>(DataPath) <span class="sc">||</span> <span class="fu">cli_abort</span>(<span class="fu">glue</span>(</span>
-<span id="cb25-30"><a href="templates.html#cb25-30" tabindex="-1"></a>  <span class="st">&quot;Data path not found. </span></span>
-<span id="cb25-31"><a href="templates.html#cb25-31" tabindex="-1"></a><span class="st">    Place output files from 1Query.sql in {data_path} and try again.&quot;</span></span>
-<span id="cb25-32"><a href="templates.html#cb25-32" tabindex="-1"></a>))</span>
-<span id="cb25-33"><a href="templates.html#cb25-33" tabindex="-1"></a></span>
-<span id="cb25-34"><a href="templates.html#cb25-34" tabindex="-1"></a><span class="co"># Functions --------------------------------------------------------------------</span></span>
-<span id="cb25-35"><a href="templates.html#cb25-35" tabindex="-1"></a></span>
-<span id="cb25-36"><a href="templates.html#cb25-36" tabindex="-1"></a>export_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(plot_name, <span class="at">width =</span> <span class="dv">12</span>, <span class="at">height =</span> <span class="dv">7</span>) {</span>
-<span id="cb25-37"><a href="templates.html#cb25-37" tabindex="-1"></a>  <span class="co"># 12 x 7 works well with Google Slides</span></span>
-<span id="cb25-38"><a href="templates.html#cb25-38" tabindex="-1"></a>  </span>
-<span id="cb25-39"><a href="templates.html#cb25-39" tabindex="-1"></a>  <span class="fu">ggsave</span>(<span class="fu">paste0</span>(<span class="st">&quot;Viz-&quot;</span>, plot_name, <span class="st">&quot;.png&quot;</span>), <span class="at">width =</span> width, <span class="at">height =</span> height)</span>
-<span id="cb25-40"><a href="templates.html#cb25-40" tabindex="-1"></a>}</span>
-<span id="cb25-41"><a href="templates.html#cb25-41" tabindex="-1"></a></span>
-<span id="cb25-42"><a href="templates.html#cb25-42" tabindex="-1"></a><span class="co"># Data Wrangling ---------------------------------------------------------------</span></span></code></pre></div>
+<span id="cb25-29"><a href="templates.html#cb25-29" tabindex="-1"></a><span class="fu">file.exists</span>(data_path) <span class="sc">||</span> <span class="fu">cli_abort</span>(<span class="fu">glue</span>(</span>
+<span id="cb25-30"><a href="templates.html#cb25-30" tabindex="-1"></a>  <span class="st">&quot;data_path not found. Place data files in {data_path} and try again.&quot;</span></span>
+<span id="cb25-31"><a href="templates.html#cb25-31" tabindex="-1"></a>))</span>
+<span id="cb25-32"><a href="templates.html#cb25-32" tabindex="-1"></a></span>
+<span id="cb25-33"><a href="templates.html#cb25-33" tabindex="-1"></a><span class="co"># Functions --------------------------------------------------------------------</span></span>
+<span id="cb25-34"><a href="templates.html#cb25-34" tabindex="-1"></a></span>
+<span id="cb25-35"><a href="templates.html#cb25-35" tabindex="-1"></a>export_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(plot_name, <span class="at">width =</span> <span class="dv">12</span>, <span class="at">height =</span> <span class="dv">7</span>) {</span>
+<span id="cb25-36"><a href="templates.html#cb25-36" tabindex="-1"></a>  <span class="co"># 12 x 7 works well with Google Slides</span></span>
+<span id="cb25-37"><a href="templates.html#cb25-37" tabindex="-1"></a>  </span>
+<span id="cb25-38"><a href="templates.html#cb25-38" tabindex="-1"></a>  <span class="fu">ggsave</span>(<span class="fu">paste0</span>(<span class="st">&quot;Viz-&quot;</span>, plot_name, <span class="st">&quot;.png&quot;</span>), <span class="at">width =</span> width, <span class="at">height =</span> height)</span>
+<span id="cb25-39"><a href="templates.html#cb25-39" tabindex="-1"></a>}</span>
+<span id="cb25-40"><a href="templates.html#cb25-40" tabindex="-1"></a></span>
+<span id="cb25-41"><a href="templates.html#cb25-41" tabindex="-1"></a><span class="co"># Data Wrangling ---------------------------------------------------------------</span></span></code></pre></div>
 <p>R - EDA</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="templates.html#cb26-1" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;2DataWrangling.R&quot;</span>)</span>
 <span id="cb26-2"><a href="templates.html#cb26-2" tabindex="-1"></a></span>
