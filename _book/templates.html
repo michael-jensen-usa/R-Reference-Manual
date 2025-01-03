@@ -418,47 +418,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb25-4"><a href="templates.html#cb25-4" tabindex="-1"></a>  <span class="st">&quot;cli&quot;</span>,</span>
 <span id="cb25-5"><a href="templates.html#cb25-5" tabindex="-1"></a>  <span class="st">&quot;conflicted&quot;</span>,</span>
 <span id="cb25-6"><a href="templates.html#cb25-6" tabindex="-1"></a>  <span class="st">&quot;glue&quot;</span>,</span>
-<span id="cb25-7"><a href="templates.html#cb25-7" tabindex="-1"></a>  <span class="st">&quot;janitor&quot;</span>,</span>
-<span id="cb25-8"><a href="templates.html#cb25-8" tabindex="-1"></a>  <span class="st">&quot;lubridate&quot;</span>,</span>
-<span id="cb25-9"><a href="templates.html#cb25-9" tabindex="-1"></a>  <span class="st">&quot;magrittr&quot;</span>,</span>
-<span id="cb25-10"><a href="templates.html#cb25-10" tabindex="-1"></a>  <span class="st">&quot;tidyverse&quot;</span></span>
-<span id="cb25-11"><a href="templates.html#cb25-11" tabindex="-1"></a>)</span>
-<span id="cb25-12"><a href="templates.html#cb25-12" tabindex="-1"></a></span>
-<span id="cb25-13"><a href="templates.html#cb25-13" tabindex="-1"></a>installed_packages <span class="ot">&lt;-</span> packages <span class="sc">%in%</span> <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())</span>
-<span id="cb25-14"><a href="templates.html#cb25-14" tabindex="-1"></a></span>
-<span id="cb25-15"><a href="templates.html#cb25-15" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">any</span>(installed_packages <span class="sc">==</span> <span class="cn">FALSE</span>)) {</span>
-<span id="cb25-16"><a href="templates.html#cb25-16" tabindex="-1"></a>  <span class="fu">install.packages</span>(packages[<span class="sc">!</span>installed_packages])</span>
-<span id="cb25-17"><a href="templates.html#cb25-17" tabindex="-1"></a>}</span>
-<span id="cb25-18"><a href="templates.html#cb25-18" tabindex="-1"></a></span>
-<span id="cb25-19"><a href="templates.html#cb25-19" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">lapply</span>(packages, library, <span class="at">character.only =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb25-20"><a href="templates.html#cb25-20" tabindex="-1"></a></span>
-<span id="cb25-21"><a href="templates.html#cb25-21" tabindex="-1"></a><span class="fu">rm</span>(installed_packages, packages)</span>
-<span id="cb25-22"><a href="templates.html#cb25-22" tabindex="-1"></a></span>
-<span id="cb25-23"><a href="templates.html#cb25-23" tabindex="-1"></a><span class="fu">conflicts_prefer</span>(</span>
-<span id="cb25-24"><a href="templates.html#cb25-24" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>()</span>
-<span id="cb25-25"><a href="templates.html#cb25-25" tabindex="-1"></a>)</span>
-<span id="cb25-26"><a href="templates.html#cb25-26" tabindex="-1"></a></span>
-<span id="cb25-27"><a href="templates.html#cb25-27" tabindex="-1"></a>data_path <span class="ot">&lt;-</span> <span class="st">&quot;~/Downloads/data-&quot;</span></span>
+<span id="cb25-7"><a href="templates.html#cb25-7" tabindex="-1"></a>  <span class="st">&quot;here&quot;</span>,</span>
+<span id="cb25-8"><a href="templates.html#cb25-8" tabindex="-1"></a>  <span class="st">&quot;janitor&quot;</span>,</span>
+<span id="cb25-9"><a href="templates.html#cb25-9" tabindex="-1"></a>  <span class="st">&quot;lubridate&quot;</span>,</span>
+<span id="cb25-10"><a href="templates.html#cb25-10" tabindex="-1"></a>  <span class="st">&quot;magrittr&quot;</span>,</span>
+<span id="cb25-11"><a href="templates.html#cb25-11" tabindex="-1"></a>  <span class="st">&quot;tidyverse&quot;</span></span>
+<span id="cb25-12"><a href="templates.html#cb25-12" tabindex="-1"></a>)</span>
+<span id="cb25-13"><a href="templates.html#cb25-13" tabindex="-1"></a></span>
+<span id="cb25-14"><a href="templates.html#cb25-14" tabindex="-1"></a>installed_packages <span class="ot">&lt;-</span> packages <span class="sc">%in%</span> <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())</span>
+<span id="cb25-15"><a href="templates.html#cb25-15" tabindex="-1"></a></span>
+<span id="cb25-16"><a href="templates.html#cb25-16" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">any</span>(installed_packages <span class="sc">==</span> <span class="cn">FALSE</span>)) {</span>
+<span id="cb25-17"><a href="templates.html#cb25-17" tabindex="-1"></a>  <span class="fu">install.packages</span>(packages[<span class="sc">!</span>installed_packages])</span>
+<span id="cb25-18"><a href="templates.html#cb25-18" tabindex="-1"></a>}</span>
+<span id="cb25-19"><a href="templates.html#cb25-19" tabindex="-1"></a></span>
+<span id="cb25-20"><a href="templates.html#cb25-20" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">lapply</span>(packages, library, <span class="at">character.only =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb25-21"><a href="templates.html#cb25-21" tabindex="-1"></a></span>
+<span id="cb25-22"><a href="templates.html#cb25-22" tabindex="-1"></a><span class="fu">rm</span>(installed_packages, packages)</span>
+<span id="cb25-23"><a href="templates.html#cb25-23" tabindex="-1"></a></span>
+<span id="cb25-24"><a href="templates.html#cb25-24" tabindex="-1"></a><span class="fu">conflicts_prefer</span>(</span>
+<span id="cb25-25"><a href="templates.html#cb25-25" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>()</span>
+<span id="cb25-26"><a href="templates.html#cb25-26" tabindex="-1"></a>)</span>
+<span id="cb25-27"><a href="templates.html#cb25-27" tabindex="-1"></a></span>
 <span id="cb25-28"><a href="templates.html#cb25-28" tabindex="-1"></a></span>
-<span id="cb25-29"><a href="templates.html#cb25-29" tabindex="-1"></a><span class="fu">file.exists</span>(data_path) <span class="sc">||</span> <span class="fu">cli_abort</span>(<span class="fu">glue</span>(</span>
-<span id="cb25-30"><a href="templates.html#cb25-30" tabindex="-1"></a>  <span class="st">&quot;data_path not found. Place data files in {data_path} and try again.&quot;</span></span>
-<span id="cb25-31"><a href="templates.html#cb25-31" tabindex="-1"></a>))</span>
+<span id="cb25-29"><a href="templates.html#cb25-29" tabindex="-1"></a><span class="co"># The output of here::here() should be /Users/crossover/Documents/xo-outcomes</span></span>
+<span id="cb25-30"><a href="templates.html#cb25-30" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">glue</span>(<span class="fu">here</span>(), <span class="st">&quot;/OutcomesLibrary.R&quot;</span>))</span>
+<span id="cb25-31"><a href="templates.html#cb25-31" tabindex="-1"></a></span>
 <span id="cb25-32"><a href="templates.html#cb25-32" tabindex="-1"></a></span>
-<span id="cb25-33"><a href="templates.html#cb25-33" tabindex="-1"></a><span class="co"># Functions --------------------------------------------------------------------</span></span>
+<span id="cb25-33"><a href="templates.html#cb25-33" tabindex="-1"></a>data_path <span class="ot">&lt;-</span> <span class="st">&quot;~/Downloads/data-&quot;</span></span>
 <span id="cb25-34"><a href="templates.html#cb25-34" tabindex="-1"></a></span>
-<span id="cb25-35"><a href="templates.html#cb25-35" tabindex="-1"></a>export_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(plot_name, <span class="at">width =</span> <span class="dv">12</span>, <span class="at">height =</span> <span class="dv">7</span>) {</span>
-<span id="cb25-36"><a href="templates.html#cb25-36" tabindex="-1"></a>  <span class="co"># 12 x 7 works well with Google Slides</span></span>
-<span id="cb25-37"><a href="templates.html#cb25-37" tabindex="-1"></a>  </span>
-<span id="cb25-38"><a href="templates.html#cb25-38" tabindex="-1"></a>  <span class="fu">ggsave</span>(<span class="fu">paste0</span>(<span class="st">&quot;viz-&quot;</span>, plot_name, <span class="st">&quot;.png&quot;</span>), <span class="at">width =</span> width, <span class="at">height =</span> height)</span>
-<span id="cb25-39"><a href="templates.html#cb25-39" tabindex="-1"></a>}</span>
+<span id="cb25-35"><a href="templates.html#cb25-35" tabindex="-1"></a><span class="fu">file.exists</span>(data_path) <span class="sc">||</span> <span class="fu">cli_abort</span>(<span class="fu">glue</span>(</span>
+<span id="cb25-36"><a href="templates.html#cb25-36" tabindex="-1"></a>  <span class="st">&quot;data_path not found. Place data files in {data_path} and try again.&quot;</span></span>
+<span id="cb25-37"><a href="templates.html#cb25-37" tabindex="-1"></a>))</span>
+<span id="cb25-38"><a href="templates.html#cb25-38" tabindex="-1"></a></span>
+<span id="cb25-39"><a href="templates.html#cb25-39" tabindex="-1"></a><span class="co"># Functions --------------------------------------------------------------------</span></span>
 <span id="cb25-40"><a href="templates.html#cb25-40" tabindex="-1"></a></span>
-<span id="cb25-41"><a href="templates.html#cb25-41" tabindex="-1"></a><span class="co"># Data Wrangling ---------------------------------------------------------------</span></span>
-<span id="cb25-42"><a href="templates.html#cb25-42" tabindex="-1"></a></span>
-<span id="cb25-43"><a href="templates.html#cb25-43" tabindex="-1"></a>df <span class="ot">&lt;-</span> </span>
-<span id="cb25-44"><a href="templates.html#cb25-44" tabindex="-1"></a>  <span class="fu">read_csv</span>(</span>
-<span id="cb25-45"><a href="templates.html#cb25-45" tabindex="-1"></a>    <span class="fu">glue</span>(<span class="st">&quot;{data_path}/.csv&quot;</span>)</span>
-<span id="cb25-46"><a href="templates.html#cb25-46" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb25-47"><a href="templates.html#cb25-47" tabindex="-1"></a>  <span class="fu">rename_with</span>(tolower)</span></code></pre></div>
+<span id="cb25-41"><a href="templates.html#cb25-41" tabindex="-1"></a>export_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(plot_name, <span class="at">width =</span> <span class="dv">12</span>, <span class="at">height =</span> <span class="dv">7</span>) {</span>
+<span id="cb25-42"><a href="templates.html#cb25-42" tabindex="-1"></a>  <span class="co"># 12 x 7 works well with Google Slides</span></span>
+<span id="cb25-43"><a href="templates.html#cb25-43" tabindex="-1"></a>  </span>
+<span id="cb25-44"><a href="templates.html#cb25-44" tabindex="-1"></a>  <span class="fu">ggsave</span>(<span class="fu">paste0</span>(<span class="st">&quot;viz-&quot;</span>, plot_name, <span class="st">&quot;.png&quot;</span>), <span class="at">width =</span> width, <span class="at">height =</span> height)</span>
+<span id="cb25-45"><a href="templates.html#cb25-45" tabindex="-1"></a>}</span>
+<span id="cb25-46"><a href="templates.html#cb25-46" tabindex="-1"></a></span>
+<span id="cb25-47"><a href="templates.html#cb25-47" tabindex="-1"></a><span class="co"># Data Wrangling ---------------------------------------------------------------</span></span>
+<span id="cb25-48"><a href="templates.html#cb25-48" tabindex="-1"></a></span>
+<span id="cb25-49"><a href="templates.html#cb25-49" tabindex="-1"></a>df <span class="ot">&lt;-</span> </span>
+<span id="cb25-50"><a href="templates.html#cb25-50" tabindex="-1"></a>  <span class="fu">read_csv</span>(</span>
+<span id="cb25-51"><a href="templates.html#cb25-51" tabindex="-1"></a>    <span class="fu">glue</span>(<span class="st">&quot;{data_path}/.csv&quot;</span>)</span>
+<span id="cb25-52"><a href="templates.html#cb25-52" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb25-53"><a href="templates.html#cb25-53" tabindex="-1"></a>  <span class="fu">rename_with</span>(tolower)</span></code></pre></div>
 <p>R - EDA</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="templates.html#cb26-1" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;2DataWrangling.R&quot;</span>)</span>
 <span id="cb26-2"><a href="templates.html#cb26-2" tabindex="-1"></a></span>

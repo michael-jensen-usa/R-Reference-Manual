@@ -145,6 +145,7 @@ packages <- c(
   "cli",
   "conflicted",
   "glue",
+  "here",
   "janitor",
   "lubridate",
   "magrittr",
@@ -164,6 +165,11 @@ rm(installed_packages, packages)
 conflicts_prefer(
   dplyr::filter()
 )
+
+
+# The output of here::here() should be /Users/crossover/Documents/xo-outcomes
+source(glue(here(), "/OutcomesLibrary.R"))
+
 
 data_path <- "~/Downloads/data-"
 
