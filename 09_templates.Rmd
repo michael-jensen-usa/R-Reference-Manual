@@ -141,6 +141,19 @@ R - Data Wrangling
 ```{r}
 # Packages & Data Sources ------------------------------------------------------
 
+# install.packages("pacman")
+pacman::p_load(
+  cli,
+  conflicted,
+  glue,
+  here,
+  janitor,
+  # lubridate,
+  # magrittr,
+  tidyverse
+)
+
+
 packages <- c(
   "cli",
   "conflicted",
