@@ -139,6 +139,8 @@ Export files as <temp_table_name>.csv
 R - Data Wrangling
 
 ```{r}
+# #| label: setup
+
 # Packages & Data Sources ------------------------------------------------------
 
 # install.packages("pacman")
@@ -153,38 +155,15 @@ pacman::p_load(
   tidyverse
 )
 
-
-packages <- c(
-  "cli",
-  "conflicted",
-  "glue",
-  "here",
-  "janitor",
-  "lubridate",
-  "magrittr",
-  "tidyverse"
-)
-
-installed_packages <- packages %in% rownames(installed.packages())
-
-if (any(installed_packages == FALSE)) {
-  install.packages(packages[!installed_packages])
-}
-
-invisible(lapply(packages, library, character.only = TRUE))
-
-rm(installed_packages, packages)
-
 conflicts_prefer(
   dplyr::filter()
 )
 
-
 # The output of here::here() should be /Users/crossover/Documents/xo-outcomes
+# - Use theme_xo() from OutcomesLibrary.R for presentations
 source(glue(here(), "/OutcomesLibrary.R"))
 
-
-data_path <- "~/Downloads/data-"
+data_path <- "~/Downloads/Data-"
 
 file.exists(data_path) || cli_abort(glue(
   "data_path not found. Place data files in {data_path} and try again."
