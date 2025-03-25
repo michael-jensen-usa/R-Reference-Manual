@@ -70,7 +70,7 @@ SQL - Snowflake
 
 ```{sql}
 /*******************************************************************************
-Ticket: 
+Ticket:
 Author: Michael Jensen
 *******************************************************************************/
 
@@ -90,16 +90,17 @@ Data Wrangling
 
 
 /*******************************************************************************
-EDA
+Output
+
+Export files as <temp_table_name>.csv
 *******************************************************************************/
 
 
 
 /*******************************************************************************
-Output
-
-Export files as <temp_table_name>.csv
+EDA
 *******************************************************************************/
+
 ```
 
 SQL - TSQL
@@ -150,8 +151,6 @@ pacman::p_load(
   glue,
   here,
   janitor,
-  # lubridate,
-  # magrittr,
   tidyverse
 )
 
@@ -159,11 +158,7 @@ conflicts_prefer(
   dplyr::filter()
 )
 
-# The output of here::here() should be /Users/crossover/Documents/xo-outcomes
-# - Use theme_xo() from OutcomesLibrary.R for presentations
-source(glue(here(), "/OutcomesLibrary.R"))
-
-data_path <- "~/Downloads/Data-"
+data_path <- "~/Downloads/"
 
 file.exists(data_path) || cli_abort(glue(
   "data_path not found. Place data files in {data_path} and try again."
@@ -172,7 +167,7 @@ file.exists(data_path) || cli_abort(glue(
 # Functions --------------------------------------------------------------------
 
 export_plot <- function(plot_name, width = 12, height = 7) {
-  # 12 x 7 works well with Google Slides
+  # 12 x 7 works with Google Slides
   
   ggsave(paste0("viz-", plot_name, ".png"), width = width, height = height)
 }
