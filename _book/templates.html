@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Templates | R Reference Manual</title>
   <meta name="description" content="Templates | R Reference Manual" />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Templates | R Reference Manual" />
   <meta property="og:type" content="book" />
@@ -50,15 +50,11 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
-<script src="libs/viz-1.8.2/viz.js"></script>
-<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.10/grViz.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -68,7 +64,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -158,7 +154,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#examples-1"><i class="fa fa-check"></i>Examples</a></li>
 <li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#references"><i class="fa fa-check"></i>References</a></li>
-<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#sql-and-r"><i class="fa fa-check"></i>SQL and R</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#sql-and-r"><i class="fa fa-check"></i>SQL and R</a>
+<ul>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#tips-and-troubleshooting-hints"><i class="fa fa-check"></i>Tips and Troubleshooting Hints</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#examples-2"><i class="fa fa-check"></i>Examples</a></li>
+<li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#sql-references"><i class="fa fa-check"></i>SQL References</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="import-or-create-data.html"><a href="import-or-create-data.html#notes-references"><i class="fa fa-check"></i>Notes &amp; References</a></li>
 </ul></li>
@@ -285,176 +286,213 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Templates<a href="templates.html#templates" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="functions-1" class="section level3 hasAnchor">
 <h3>Functions<a href="templates.html#functions-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="templates.html#cb22-1" tabindex="-1"></a>CalcAgeInYears <span class="ot">&lt;-</span> <span class="cf">function</span>(StartDT, EndDT) {</span>
-<span id="cb22-2"><a href="templates.html#cb22-2" tabindex="-1"></a>  <span class="fu">require</span>(lubridate)</span>
-<span id="cb22-3"><a href="templates.html#cb22-3" tabindex="-1"></a>  <span class="fu">require</span>(magrittr)</span>
-<span id="cb22-4"><a href="templates.html#cb22-4" tabindex="-1"></a>  </span>
-<span id="cb22-5"><a href="templates.html#cb22-5" tabindex="-1"></a>  <span class="fu">interval</span>(StartDT, EndDT) <span class="sc">%&gt;%</span> <span class="fu">divide_by</span>(<span class="fu">years</span>(<span class="dv">1</span>)) <span class="sc">%&gt;%</span> <span class="fu">floor</span>()</span>
-<span id="cb22-6"><a href="templates.html#cb22-6" tabindex="-1"></a>}</span>
-<span id="cb22-7"><a href="templates.html#cb22-7" tabindex="-1"></a></span>
-<span id="cb22-8"><a href="templates.html#cb22-8" tabindex="-1"></a></span>
-<span id="cb22-9"><a href="templates.html#cb22-9" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb22-10"><a href="templates.html#cb22-10" tabindex="-1"></a><span class="co"># CalcMonthEndDT &lt;- function(Date) {</span></span>
-<span id="cb22-11"><a href="templates.html#cb22-11" tabindex="-1"></a><span class="co">#   require(lubridate)</span></span>
-<span id="cb22-12"><a href="templates.html#cb22-12" tabindex="-1"></a><span class="co">#   </span></span>
-<span id="cb22-13"><a href="templates.html#cb22-13" tabindex="-1"></a><span class="co">#   # ceiling_date(Date, unit = &quot;months&quot;) - 1</span></span>
-<span id="cb22-14"><a href="templates.html#cb22-14" tabindex="-1"></a><span class="co">#   rollforward(Date)</span></span>
-<span id="cb22-15"><a href="templates.html#cb22-15" tabindex="-1"></a><span class="co"># }</span></span>
-<span id="cb22-16"><a href="templates.html#cb22-16" tabindex="-1"></a></span>
-<span id="cb22-17"><a href="templates.html#cb22-17" tabindex="-1"></a></span>
-<span id="cb22-18"><a href="templates.html#cb22-18" tabindex="-1"></a>ExportPlot <span class="ot">&lt;-</span> <span class="cf">function</span>(PlotName, <span class="at">Width =</span> <span class="dv">12</span>, <span class="at">Height =</span> <span class="dv">7</span>) {</span>
-<span id="cb22-19"><a href="templates.html#cb22-19" tabindex="-1"></a>  <span class="co"># 12 x 7 works well with Google Slides</span></span>
-<span id="cb22-20"><a href="templates.html#cb22-20" tabindex="-1"></a></span>
-<span id="cb22-21"><a href="templates.html#cb22-21" tabindex="-1"></a>  <span class="fu">ggsave</span>(<span class="fu">paste0</span>(<span class="st">&quot;Viz-&quot;</span>, PlotName, <span class="st">&quot;.png&quot;</span>), <span class="at">width =</span> Width, <span class="at">height =</span> Height)</span>
-<span id="cb22-22"><a href="templates.html#cb22-22" tabindex="-1"></a>}</span>
-<span id="cb22-23"><a href="templates.html#cb22-23" tabindex="-1"></a></span>
-<span id="cb22-24"><a href="templates.html#cb22-24" tabindex="-1"></a></span>
-<span id="cb22-25"><a href="templates.html#cb22-25" tabindex="-1"></a>GenerateMonths <span class="ot">&lt;-</span> <span class="cf">function</span>(MinDT, MaxDT, EDWPatientID) {</span>
-<span id="cb22-26"><a href="templates.html#cb22-26" tabindex="-1"></a>  <span class="co"># Generate month values between two dates. Useful for claims data when months</span></span>
-<span id="cb22-27"><a href="templates.html#cb22-27" tabindex="-1"></a>  <span class="co"># without claims are missing (due to no submitted claims). Note that the data</span></span>
-<span id="cb22-28"><a href="templates.html#cb22-28" tabindex="-1"></a>  <span class="co"># warehouse has a calendar table.</span></span>
-<span id="cb22-29"><a href="templates.html#cb22-29" tabindex="-1"></a>  <span class="co">#</span></span>
-<span id="cb22-30"><a href="templates.html#cb22-30" tabindex="-1"></a>  <span class="co"># Arguments</span></span>
-<span id="cb22-31"><a href="templates.html#cb22-31" tabindex="-1"></a>  <span class="co"># - MinDT (date)</span></span>
-<span id="cb22-32"><a href="templates.html#cb22-32" tabindex="-1"></a>  <span class="co"># - MaxDT (date)</span></span>
-<span id="cb22-33"><a href="templates.html#cb22-33" tabindex="-1"></a>  <span class="co"># - EDWPatientID (char)</span></span>
-<span id="cb22-34"><a href="templates.html#cb22-34" tabindex="-1"></a>  <span class="co">#</span></span>
-<span id="cb22-35"><a href="templates.html#cb22-35" tabindex="-1"></a>  <span class="co"># Value</span></span>
-<span id="cb22-36"><a href="templates.html#cb22-36" tabindex="-1"></a>  <span class="co"># - Tibble.</span></span>
-<span id="cb22-37"><a href="templates.html#cb22-37" tabindex="-1"></a>  <span class="co">#</span></span>
-<span id="cb22-38"><a href="templates.html#cb22-38" tabindex="-1"></a>  <span class="co"># Details</span></span>
-<span id="cb22-39"><a href="templates.html#cb22-39" tabindex="-1"></a>  <span class="co"># - seq.Date() works best with month start dates; it does not perform reliably</span></span>
-<span id="cb22-40"><a href="templates.html#cb22-40" tabindex="-1"></a>  <span class="co">#   when the input dates are month end dates (possibly due to dates having a</span></span>
-<span id="cb22-41"><a href="templates.html#cb22-41" tabindex="-1"></a>  <span class="co">#   non-uniform number of days).</span></span>
-<span id="cb22-42"><a href="templates.html#cb22-42" tabindex="-1"></a>  <span class="co"># - Requires lubridate package.</span></span>
-<span id="cb22-43"><a href="templates.html#cb22-43" tabindex="-1"></a>  </span>
-<span id="cb22-44"><a href="templates.html#cb22-44" tabindex="-1"></a>  <span class="fu">seq.Date</span>(</span>
-<span id="cb22-45"><a href="templates.html#cb22-45" tabindex="-1"></a>    <span class="fu">floor_date</span>(MinDT, <span class="at">unit =</span> <span class="st">&quot;months&quot;</span>),</span>
-<span id="cb22-46"><a href="templates.html#cb22-46" tabindex="-1"></a>    <span class="fu">floor_date</span>(MaxDT, <span class="at">unit =</span> <span class="st">&quot;months&quot;</span>),</span>
-<span id="cb22-47"><a href="templates.html#cb22-47" tabindex="-1"></a>    <span class="at">by =</span> <span class="st">&quot;month&quot;</span></span>
-<span id="cb22-48"><a href="templates.html#cb22-48" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb22-49"><a href="templates.html#cb22-49" tabindex="-1"></a>    <span class="fu">as_tibble_col</span>(<span class="at">column_name =</span> <span class="st">&quot;MonthStartDT&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb22-50"><a href="templates.html#cb22-50" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
-<span id="cb22-51"><a href="templates.html#cb22-51" tabindex="-1"></a>      <span class="at">EDWPatientID =</span> EDWPatientID,</span>
-<span id="cb22-52"><a href="templates.html#cb22-52" tabindex="-1"></a>      <span class="at">MonthEndDT =</span> <span class="fu">CalcMonthEndDT</span>(MonthStartDT)</span>
-<span id="cb22-53"><a href="templates.html#cb22-53" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb22-54"><a href="templates.html#cb22-54" tabindex="-1"></a>    <span class="fu">select</span>(EDWPatientID, MonthStartDT, MonthEndDT)</span>
-<span id="cb22-55"><a href="templates.html#cb22-55" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="templates.html#cb1-1" tabindex="-1"></a>CalcAgeInYears <span class="ot">&lt;-</span> <span class="cf">function</span>(StartDT, EndDT) {</span>
+<span id="cb1-2"><a href="templates.html#cb1-2" tabindex="-1"></a>  <span class="fu">require</span>(lubridate)</span>
+<span id="cb1-3"><a href="templates.html#cb1-3" tabindex="-1"></a>  <span class="fu">require</span>(magrittr)</span>
+<span id="cb1-4"><a href="templates.html#cb1-4" tabindex="-1"></a>  </span>
+<span id="cb1-5"><a href="templates.html#cb1-5" tabindex="-1"></a>  <span class="fu">interval</span>(StartDT, EndDT) <span class="sc">%&gt;%</span> <span class="fu">divide_by</span>(<span class="fu">years</span>(<span class="dv">1</span>)) <span class="sc">%&gt;%</span> <span class="fu">floor</span>()</span>
+<span id="cb1-6"><a href="templates.html#cb1-6" tabindex="-1"></a>}</span>
+<span id="cb1-7"><a href="templates.html#cb1-7" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="templates.html#cb1-8" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="templates.html#cb1-9" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb1-10"><a href="templates.html#cb1-10" tabindex="-1"></a><span class="co"># CalcMonthEndDT &lt;- function(Date) {</span></span>
+<span id="cb1-11"><a href="templates.html#cb1-11" tabindex="-1"></a><span class="co">#   require(lubridate)</span></span>
+<span id="cb1-12"><a href="templates.html#cb1-12" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-13"><a href="templates.html#cb1-13" tabindex="-1"></a><span class="co">#   # ceiling_date(Date, unit = &quot;months&quot;) - 1</span></span>
+<span id="cb1-14"><a href="templates.html#cb1-14" tabindex="-1"></a><span class="co">#   rollforward(Date)</span></span>
+<span id="cb1-15"><a href="templates.html#cb1-15" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb1-16"><a href="templates.html#cb1-16" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="templates.html#cb1-17" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="templates.html#cb1-18" tabindex="-1"></a>ExportPlot <span class="ot">&lt;-</span> <span class="cf">function</span>(PlotName, <span class="at">Width =</span> <span class="dv">12</span>, <span class="at">Height =</span> <span class="dv">7</span>) {</span>
+<span id="cb1-19"><a href="templates.html#cb1-19" tabindex="-1"></a>  <span class="co"># 12 x 7 works well with Google Slides</span></span>
+<span id="cb1-20"><a href="templates.html#cb1-20" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="templates.html#cb1-21" tabindex="-1"></a>  <span class="fu">ggsave</span>(<span class="fu">paste0</span>(<span class="st">&quot;Viz-&quot;</span>, PlotName, <span class="st">&quot;.png&quot;</span>), <span class="at">width =</span> Width, <span class="at">height =</span> Height)</span>
+<span id="cb1-22"><a href="templates.html#cb1-22" tabindex="-1"></a>}</span>
+<span id="cb1-23"><a href="templates.html#cb1-23" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="templates.html#cb1-24" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="templates.html#cb1-25" tabindex="-1"></a>GenerateMonths <span class="ot">&lt;-</span> <span class="cf">function</span>(MinDT, MaxDT, EDWPatientID) {</span>
+<span id="cb1-26"><a href="templates.html#cb1-26" tabindex="-1"></a>  <span class="co"># Generate month values between two dates. Useful for claims data when months</span></span>
+<span id="cb1-27"><a href="templates.html#cb1-27" tabindex="-1"></a>  <span class="co"># without claims are missing (due to no submitted claims). Note that the data</span></span>
+<span id="cb1-28"><a href="templates.html#cb1-28" tabindex="-1"></a>  <span class="co"># warehouse has a calendar table.</span></span>
+<span id="cb1-29"><a href="templates.html#cb1-29" tabindex="-1"></a>  <span class="co">#</span></span>
+<span id="cb1-30"><a href="templates.html#cb1-30" tabindex="-1"></a>  <span class="co"># Arguments</span></span>
+<span id="cb1-31"><a href="templates.html#cb1-31" tabindex="-1"></a>  <span class="co"># - MinDT (date)</span></span>
+<span id="cb1-32"><a href="templates.html#cb1-32" tabindex="-1"></a>  <span class="co"># - MaxDT (date)</span></span>
+<span id="cb1-33"><a href="templates.html#cb1-33" tabindex="-1"></a>  <span class="co"># - EDWPatientID (char)</span></span>
+<span id="cb1-34"><a href="templates.html#cb1-34" tabindex="-1"></a>  <span class="co">#</span></span>
+<span id="cb1-35"><a href="templates.html#cb1-35" tabindex="-1"></a>  <span class="co"># Value</span></span>
+<span id="cb1-36"><a href="templates.html#cb1-36" tabindex="-1"></a>  <span class="co"># - Tibble.</span></span>
+<span id="cb1-37"><a href="templates.html#cb1-37" tabindex="-1"></a>  <span class="co">#</span></span>
+<span id="cb1-38"><a href="templates.html#cb1-38" tabindex="-1"></a>  <span class="co"># Details</span></span>
+<span id="cb1-39"><a href="templates.html#cb1-39" tabindex="-1"></a>  <span class="co"># - seq.Date() works best with month start dates; it does not perform reliably</span></span>
+<span id="cb1-40"><a href="templates.html#cb1-40" tabindex="-1"></a>  <span class="co">#   when the input dates are month end dates (possibly due to dates having a</span></span>
+<span id="cb1-41"><a href="templates.html#cb1-41" tabindex="-1"></a>  <span class="co">#   non-uniform number of days).</span></span>
+<span id="cb1-42"><a href="templates.html#cb1-42" tabindex="-1"></a>  <span class="co"># - Requires lubridate package.</span></span>
+<span id="cb1-43"><a href="templates.html#cb1-43" tabindex="-1"></a>  </span>
+<span id="cb1-44"><a href="templates.html#cb1-44" tabindex="-1"></a>  <span class="fu">seq.Date</span>(</span>
+<span id="cb1-45"><a href="templates.html#cb1-45" tabindex="-1"></a>    <span class="fu">floor_date</span>(MinDT, <span class="at">unit =</span> <span class="st">&quot;months&quot;</span>),</span>
+<span id="cb1-46"><a href="templates.html#cb1-46" tabindex="-1"></a>    <span class="fu">floor_date</span>(MaxDT, <span class="at">unit =</span> <span class="st">&quot;months&quot;</span>),</span>
+<span id="cb1-47"><a href="templates.html#cb1-47" tabindex="-1"></a>    <span class="at">by =</span> <span class="st">&quot;month&quot;</span></span>
+<span id="cb1-48"><a href="templates.html#cb1-48" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-49"><a href="templates.html#cb1-49" tabindex="-1"></a>    <span class="fu">as_tibble_col</span>(<span class="at">column_name =</span> <span class="st">&quot;MonthStartDT&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-50"><a href="templates.html#cb1-50" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb1-51"><a href="templates.html#cb1-51" tabindex="-1"></a>      <span class="at">EDWPatientID =</span> EDWPatientID,</span>
+<span id="cb1-52"><a href="templates.html#cb1-52" tabindex="-1"></a>      <span class="at">MonthEndDT =</span> <span class="fu">CalcMonthEndDT</span>(MonthStartDT)</span>
+<span id="cb1-53"><a href="templates.html#cb1-53" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-54"><a href="templates.html#cb1-54" tabindex="-1"></a>    <span class="fu">select</span>(EDWPatientID, MonthStartDT, MonthEndDT)</span>
+<span id="cb1-55"><a href="templates.html#cb1-55" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 <div id="scripts" class="section level3 hasAnchor">
 <h3>Scripts<a href="templates.html#scripts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>SQL</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb23-1"><a href="templates.html#cb23-1" tabindex="-1"></a><span class="co">/*******************************************************************************</span></span>
-<span id="cb23-2"><a href="templates.html#cb23-2" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="templates.html#cb23-3" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="templates.html#cb23-4" tabindex="-1"></a><span class="co">Ticket: </span></span>
-<span id="cb23-5"><a href="templates.html#cb23-5" tabindex="-1"></a><span class="co">Author: Michael Jensen</span></span>
-<span id="cb23-6"><a href="templates.html#cb23-6" tabindex="-1"></a><span class="co">*******************************************************************************/</span></span>
-<span id="cb23-7"><a href="templates.html#cb23-7" tabindex="-1"></a></span>
-<span id="cb23-8"><a href="templates.html#cb23-8" tabindex="-1"></a><span class="co">/*******************************************************************************</span></span>
-<span id="cb23-9"><a href="templates.html#cb23-9" tabindex="-1"></a><span class="co">Input</span></span>
-<span id="cb23-10"><a href="templates.html#cb23-10" tabindex="-1"></a><span class="co">*******************************************************************************/</span></span>
-<span id="cb23-11"><a href="templates.html#cb23-11" tabindex="-1"></a></span>
-<span id="cb23-12"><a href="templates.html#cb23-12" tabindex="-1"></a><span class="kw">declare</span> @MinDT <span class="dt">date</span> <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
-<span id="cb23-13"><a href="templates.html#cb23-13" tabindex="-1"></a><span class="kw">declare</span> @MaxDT <span class="dt">date</span> <span class="op">=</span> dateadd(mm, <span class="op">-</span><span class="dv">1</span>, eomonth(getdate()))</span>
-<span id="cb23-14"><a href="templates.html#cb23-14" tabindex="-1"></a></span>
-<span id="cb23-15"><a href="templates.html#cb23-15" tabindex="-1"></a><span class="co">/*******************************************************************************</span></span>
-<span id="cb23-16"><a href="templates.html#cb23-16" tabindex="-1"></a><span class="co">Data Wrangling</span></span>
-<span id="cb23-17"><a href="templates.html#cb23-17" tabindex="-1"></a><span class="co">*******************************************************************************/</span></span>
-<span id="cb23-18"><a href="templates.html#cb23-18" tabindex="-1"></a></span>
-<span id="cb23-19"><a href="templates.html#cb23-19" tabindex="-1"></a></span>
-<span id="cb23-20"><a href="templates.html#cb23-20" tabindex="-1"></a></span>
-<span id="cb23-21"><a href="templates.html#cb23-21" tabindex="-1"></a><span class="co">/*******************************************************************************</span></span>
-<span id="cb23-22"><a href="templates.html#cb23-22" tabindex="-1"></a><span class="co">EDA</span></span>
-<span id="cb23-23"><a href="templates.html#cb23-23" tabindex="-1"></a><span class="co">*******************************************************************************/</span></span>
-<span id="cb23-24"><a href="templates.html#cb23-24" tabindex="-1"></a></span>
-<span id="cb23-25"><a href="templates.html#cb23-25" tabindex="-1"></a></span>
-<span id="cb23-26"><a href="templates.html#cb23-26" tabindex="-1"></a></span>
-<span id="cb23-27"><a href="templates.html#cb23-27" tabindex="-1"></a><span class="co">/*******************************************************************************</span></span>
-<span id="cb23-28"><a href="templates.html#cb23-28" tabindex="-1"></a><span class="co">Output</span></span>
-<span id="cb23-29"><a href="templates.html#cb23-29" tabindex="-1"></a></span>
-<span id="cb23-30"><a href="templates.html#cb23-30" tabindex="-1"></a><span class="co">Export files as &lt;temp_table_name&gt;.csv</span></span>
-<span id="cb23-31"><a href="templates.html#cb23-31" tabindex="-1"></a><span class="co">*******************************************************************************/</span></span></code></pre></div>
+<p>SQL - Snowflake</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="templates.html#cb2-1" tabindex="-1"></a><span class="co">/*******************************************************************************</span></span>
+<span id="cb2-2"><a href="templates.html#cb2-2" tabindex="-1"></a><span class="co">Ticket: </span></span>
+<span id="cb2-3"><a href="templates.html#cb2-3" tabindex="-1"></a><span class="co">Author: Michael Jensen</span></span>
+<span id="cb2-4"><a href="templates.html#cb2-4" tabindex="-1"></a><span class="co">*******************************************************************************/</span></span>
+<span id="cb2-5"><a href="templates.html#cb2-5" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="templates.html#cb2-6" tabindex="-1"></a><span class="co">/*******************************************************************************</span></span>
+<span id="cb2-7"><a href="templates.html#cb2-7" tabindex="-1"></a><span class="co">Input</span></span>
+<span id="cb2-8"><a href="templates.html#cb2-8" tabindex="-1"></a><span class="co">*******************************************************************************/</span></span>
+<span id="cb2-9"><a href="templates.html#cb2-9" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="templates.html#cb2-10" tabindex="-1"></a><span class="kw">use</span> <span class="kw">database</span> stg_raw;</span>
+<span id="cb2-11"><a href="templates.html#cb2-11" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="templates.html#cb2-12" tabindex="-1"></a><span class="kw">set</span> min_date <span class="op">=</span> <span class="st">&#39;&#39;</span>:<span class="ch">:date</span>;</span>
+<span id="cb2-13"><a href="templates.html#cb2-13" tabindex="-1"></a><span class="kw">set</span> max_date <span class="op">=</span> dateadd(mm, <span class="op">-</span><span class="dv">1</span>, <span class="fu">last_day</span>(<span class="fu">current_date</span>())):<span class="ch">:date</span>;</span>
+<span id="cb2-14"><a href="templates.html#cb2-14" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="templates.html#cb2-15" tabindex="-1"></a><span class="co">/*******************************************************************************</span></span>
+<span id="cb2-16"><a href="templates.html#cb2-16" tabindex="-1"></a><span class="co">Data Wrangling</span></span>
+<span id="cb2-17"><a href="templates.html#cb2-17" tabindex="-1"></a><span class="co">*******************************************************************************/</span></span>
+<span id="cb2-18"><a href="templates.html#cb2-18" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="templates.html#cb2-19" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="templates.html#cb2-20" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="templates.html#cb2-21" tabindex="-1"></a><span class="co">/*******************************************************************************</span></span>
+<span id="cb2-22"><a href="templates.html#cb2-22" tabindex="-1"></a><span class="co">EDA</span></span>
+<span id="cb2-23"><a href="templates.html#cb2-23" tabindex="-1"></a><span class="co">*******************************************************************************/</span></span>
+<span id="cb2-24"><a href="templates.html#cb2-24" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="templates.html#cb2-25" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="templates.html#cb2-26" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="templates.html#cb2-27" tabindex="-1"></a><span class="co">/*******************************************************************************</span></span>
+<span id="cb2-28"><a href="templates.html#cb2-28" tabindex="-1"></a><span class="co">Output</span></span>
+<span id="cb2-29"><a href="templates.html#cb2-29" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="templates.html#cb2-30" tabindex="-1"></a><span class="co">Export files as &lt;temp_table_name&gt;.csv</span></span>
+<span id="cb2-31"><a href="templates.html#cb2-31" tabindex="-1"></a><span class="co">*******************************************************************************/</span></span></code></pre></div>
+<p>SQL - TSQL</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb3-1"><a href="templates.html#cb3-1" tabindex="-1"></a><span class="co">/*******************************************************************************</span></span>
+<span id="cb3-2"><a href="templates.html#cb3-2" tabindex="-1"></a><span class="co">Ticket: </span></span>
+<span id="cb3-3"><a href="templates.html#cb3-3" tabindex="-1"></a><span class="co">Author: Michael Jensen</span></span>
+<span id="cb3-4"><a href="templates.html#cb3-4" tabindex="-1"></a><span class="co">*******************************************************************************/</span></span>
+<span id="cb3-5"><a href="templates.html#cb3-5" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="templates.html#cb3-6" tabindex="-1"></a><span class="co">/*******************************************************************************</span></span>
+<span id="cb3-7"><a href="templates.html#cb3-7" tabindex="-1"></a><span class="co">Input</span></span>
+<span id="cb3-8"><a href="templates.html#cb3-8" tabindex="-1"></a><span class="co">*******************************************************************************/</span></span>
+<span id="cb3-9"><a href="templates.html#cb3-9" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="templates.html#cb3-10" tabindex="-1"></a><span class="kw">declare</span> @MinDT <span class="dt">date</span> <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
+<span id="cb3-11"><a href="templates.html#cb3-11" tabindex="-1"></a><span class="kw">declare</span> @MaxDT <span class="dt">date</span> <span class="op">=</span> dateadd(mm, <span class="op">-</span><span class="dv">1</span>, eomonth(getdate()))</span>
+<span id="cb3-12"><a href="templates.html#cb3-12" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="templates.html#cb3-13" tabindex="-1"></a><span class="co">/*******************************************************************************</span></span>
+<span id="cb3-14"><a href="templates.html#cb3-14" tabindex="-1"></a><span class="co">Data Wrangling</span></span>
+<span id="cb3-15"><a href="templates.html#cb3-15" tabindex="-1"></a><span class="co">*******************************************************************************/</span></span>
+<span id="cb3-16"><a href="templates.html#cb3-16" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="templates.html#cb3-17" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="templates.html#cb3-18" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="templates.html#cb3-19" tabindex="-1"></a><span class="co">/*******************************************************************************</span></span>
+<span id="cb3-20"><a href="templates.html#cb3-20" tabindex="-1"></a><span class="co">EDA</span></span>
+<span id="cb3-21"><a href="templates.html#cb3-21" tabindex="-1"></a><span class="co">*******************************************************************************/</span></span>
+<span id="cb3-22"><a href="templates.html#cb3-22" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="templates.html#cb3-23" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="templates.html#cb3-24" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="templates.html#cb3-25" tabindex="-1"></a><span class="co">/*******************************************************************************</span></span>
+<span id="cb3-26"><a href="templates.html#cb3-26" tabindex="-1"></a><span class="co">Output</span></span>
+<span id="cb3-27"><a href="templates.html#cb3-27" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="templates.html#cb3-28" tabindex="-1"></a><span class="co">Export files as &lt;temp_table_name&gt;.csv</span></span>
+<span id="cb3-29"><a href="templates.html#cb3-29" tabindex="-1"></a><span class="co">*******************************************************************************/</span></span></code></pre></div>
 <p>R - Data Wrangling</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="templates.html#cb24-1" tabindex="-1"></a><span class="co"># Packages &amp; Data Sources ------------------------------------------------------</span></span>
-<span id="cb24-2"><a href="templates.html#cb24-2" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="templates.html#cb24-3" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb24-4"><a href="templates.html#cb24-4" tabindex="-1"></a>  <span class="st">&quot;cli&quot;</span>,</span>
-<span id="cb24-5"><a href="templates.html#cb24-5" tabindex="-1"></a>  <span class="st">&quot;glue&quot;</span>,</span>
-<span id="cb24-6"><a href="templates.html#cb24-6" tabindex="-1"></a>  <span class="st">&quot;janitor&quot;</span>,</span>
-<span id="cb24-7"><a href="templates.html#cb24-7" tabindex="-1"></a>  <span class="st">&quot;lubridate&quot;</span>,</span>
-<span id="cb24-8"><a href="templates.html#cb24-8" tabindex="-1"></a>  <span class="st">&quot;magrittr&quot;</span>,</span>
-<span id="cb24-9"><a href="templates.html#cb24-9" tabindex="-1"></a>  <span class="st">&quot;tidyverse&quot;</span></span>
-<span id="cb24-10"><a href="templates.html#cb24-10" tabindex="-1"></a>)</span>
-<span id="cb24-11"><a href="templates.html#cb24-11" tabindex="-1"></a></span>
-<span id="cb24-12"><a href="templates.html#cb24-12" tabindex="-1"></a>installed_packages <span class="ot">&lt;-</span> packages <span class="sc">%in%</span> <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())</span>
-<span id="cb24-13"><a href="templates.html#cb24-13" tabindex="-1"></a></span>
-<span id="cb24-14"><a href="templates.html#cb24-14" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">any</span>(installed_packages <span class="sc">==</span> <span class="cn">FALSE</span>)) {</span>
-<span id="cb24-15"><a href="templates.html#cb24-15" tabindex="-1"></a>  <span class="fu">install.packages</span>(packages[<span class="sc">!</span>installed_packages])</span>
-<span id="cb24-16"><a href="templates.html#cb24-16" tabindex="-1"></a>}</span>
-<span id="cb24-17"><a href="templates.html#cb24-17" tabindex="-1"></a></span>
-<span id="cb24-18"><a href="templates.html#cb24-18" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">lapply</span>(packages, library, <span class="at">character.only =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb24-19"><a href="templates.html#cb24-19" tabindex="-1"></a></span>
-<span id="cb24-20"><a href="templates.html#cb24-20" tabindex="-1"></a><span class="fu">rm</span>(installed_packages, packages)</span>
-<span id="cb24-21"><a href="templates.html#cb24-21" tabindex="-1"></a></span>
-<span id="cb24-22"><a href="templates.html#cb24-22" tabindex="-1"></a></span>
-<span id="cb24-23"><a href="templates.html#cb24-23" tabindex="-1"></a>DataPath <span class="ot">&lt;-</span> <span class="st">&quot;~/Downloads/Data-&quot;</span></span>
-<span id="cb24-24"><a href="templates.html#cb24-24" tabindex="-1"></a></span>
-<span id="cb24-25"><a href="templates.html#cb24-25" tabindex="-1"></a><span class="fu">file.exists</span>(DataPath) <span class="sc">||</span> <span class="fu">cli_abort</span>(<span class="fu">glue</span>(</span>
-<span id="cb24-26"><a href="templates.html#cb24-26" tabindex="-1"></a>  <span class="st">&quot;Data path not found. </span></span>
-<span id="cb24-27"><a href="templates.html#cb24-27" tabindex="-1"></a><span class="st">    Place output files from 1Query.sql in {DataPath} and try again.&quot;</span></span>
-<span id="cb24-28"><a href="templates.html#cb24-28" tabindex="-1"></a>))</span>
-<span id="cb24-29"><a href="templates.html#cb24-29" tabindex="-1"></a></span>
-<span id="cb24-30"><a href="templates.html#cb24-30" tabindex="-1"></a><span class="co"># Functions --------------------------------------------------------------------</span></span>
-<span id="cb24-31"><a href="templates.html#cb24-31" tabindex="-1"></a></span>
-<span id="cb24-32"><a href="templates.html#cb24-32" tabindex="-1"></a>ExportPlot <span class="ot">&lt;-</span> <span class="cf">function</span>(PlotName, <span class="at">Width =</span> <span class="dv">12</span>, <span class="at">Height =</span> <span class="dv">7</span>) {</span>
-<span id="cb24-33"><a href="templates.html#cb24-33" tabindex="-1"></a>  <span class="co"># 12 x 7 works well with Google Slides</span></span>
-<span id="cb24-34"><a href="templates.html#cb24-34" tabindex="-1"></a>  </span>
-<span id="cb24-35"><a href="templates.html#cb24-35" tabindex="-1"></a>  <span class="fu">ggsave</span>(<span class="fu">paste0</span>(<span class="st">&quot;Viz-&quot;</span>, PlotName, <span class="st">&quot;.png&quot;</span>), <span class="at">width =</span> Width, <span class="at">height =</span> Height)</span>
-<span id="cb24-36"><a href="templates.html#cb24-36" tabindex="-1"></a>}</span>
-<span id="cb24-37"><a href="templates.html#cb24-37" tabindex="-1"></a></span>
-<span id="cb24-38"><a href="templates.html#cb24-38" tabindex="-1"></a><span class="co"># Data Wrangling ---------------------------------------------------------------</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="templates.html#cb4-1" tabindex="-1"></a><span class="co"># #| label: setup</span></span>
+<span id="cb4-2"><a href="templates.html#cb4-2" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="templates.html#cb4-3" tabindex="-1"></a><span class="co"># Packages &amp; Data Sources ------------------------------------------------------</span></span>
+<span id="cb4-4"><a href="templates.html#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="templates.html#cb4-5" tabindex="-1"></a><span class="co"># install.packages(&quot;pacman&quot;)</span></span>
+<span id="cb4-6"><a href="templates.html#cb4-6" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(</span>
+<span id="cb4-7"><a href="templates.html#cb4-7" tabindex="-1"></a>  cli,</span>
+<span id="cb4-8"><a href="templates.html#cb4-8" tabindex="-1"></a>  conflicted,</span>
+<span id="cb4-9"><a href="templates.html#cb4-9" tabindex="-1"></a>  glue,</span>
+<span id="cb4-10"><a href="templates.html#cb4-10" tabindex="-1"></a>  here,</span>
+<span id="cb4-11"><a href="templates.html#cb4-11" tabindex="-1"></a>  janitor,</span>
+<span id="cb4-12"><a href="templates.html#cb4-12" tabindex="-1"></a>  <span class="co"># lubridate,</span></span>
+<span id="cb4-13"><a href="templates.html#cb4-13" tabindex="-1"></a>  <span class="co"># magrittr,</span></span>
+<span id="cb4-14"><a href="templates.html#cb4-14" tabindex="-1"></a>  tidyverse</span>
+<span id="cb4-15"><a href="templates.html#cb4-15" tabindex="-1"></a>)</span>
+<span id="cb4-16"><a href="templates.html#cb4-16" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="templates.html#cb4-17" tabindex="-1"></a><span class="fu">conflicts_prefer</span>(</span>
+<span id="cb4-18"><a href="templates.html#cb4-18" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>()</span>
+<span id="cb4-19"><a href="templates.html#cb4-19" tabindex="-1"></a>)</span>
+<span id="cb4-20"><a href="templates.html#cb4-20" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="templates.html#cb4-21" tabindex="-1"></a><span class="co"># The output of here::here() should be /Users/crossover/Documents/xo-outcomes</span></span>
+<span id="cb4-22"><a href="templates.html#cb4-22" tabindex="-1"></a><span class="co"># - Use theme_xo() from OutcomesLibrary.R for presentations</span></span>
+<span id="cb4-23"><a href="templates.html#cb4-23" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">glue</span>(<span class="fu">here</span>(), <span class="st">&quot;/OutcomesLibrary.R&quot;</span>))</span>
+<span id="cb4-24"><a href="templates.html#cb4-24" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="templates.html#cb4-25" tabindex="-1"></a>data_path <span class="ot">&lt;-</span> <span class="st">&quot;~/Downloads/Data-&quot;</span></span>
+<span id="cb4-26"><a href="templates.html#cb4-26" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="templates.html#cb4-27" tabindex="-1"></a><span class="fu">file.exists</span>(data_path) <span class="sc">||</span> <span class="fu">cli_abort</span>(<span class="fu">glue</span>(</span>
+<span id="cb4-28"><a href="templates.html#cb4-28" tabindex="-1"></a>  <span class="st">&quot;data_path not found. Place data files in {data_path} and try again.&quot;</span></span>
+<span id="cb4-29"><a href="templates.html#cb4-29" tabindex="-1"></a>))</span>
+<span id="cb4-30"><a href="templates.html#cb4-30" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="templates.html#cb4-31" tabindex="-1"></a><span class="co"># Functions --------------------------------------------------------------------</span></span>
+<span id="cb4-32"><a href="templates.html#cb4-32" tabindex="-1"></a></span>
+<span id="cb4-33"><a href="templates.html#cb4-33" tabindex="-1"></a>export_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(plot_name, <span class="at">width =</span> <span class="dv">12</span>, <span class="at">height =</span> <span class="dv">7</span>) {</span>
+<span id="cb4-34"><a href="templates.html#cb4-34" tabindex="-1"></a>  <span class="co"># 12 x 7 works well with Google Slides</span></span>
+<span id="cb4-35"><a href="templates.html#cb4-35" tabindex="-1"></a>  </span>
+<span id="cb4-36"><a href="templates.html#cb4-36" tabindex="-1"></a>  <span class="fu">ggsave</span>(<span class="fu">paste0</span>(<span class="st">&quot;viz-&quot;</span>, plot_name, <span class="st">&quot;.png&quot;</span>), <span class="at">width =</span> width, <span class="at">height =</span> height)</span>
+<span id="cb4-37"><a href="templates.html#cb4-37" tabindex="-1"></a>}</span>
+<span id="cb4-38"><a href="templates.html#cb4-38" tabindex="-1"></a></span>
+<span id="cb4-39"><a href="templates.html#cb4-39" tabindex="-1"></a><span class="co"># Data Wrangling ---------------------------------------------------------------</span></span>
+<span id="cb4-40"><a href="templates.html#cb4-40" tabindex="-1"></a></span>
+<span id="cb4-41"><a href="templates.html#cb4-41" tabindex="-1"></a>df <span class="ot">&lt;-</span> </span>
+<span id="cb4-42"><a href="templates.html#cb4-42" tabindex="-1"></a>  <span class="fu">read_csv</span>(</span>
+<span id="cb4-43"><a href="templates.html#cb4-43" tabindex="-1"></a>    <span class="fu">glue</span>(<span class="st">&quot;{data_path}/.csv&quot;</span>)</span>
+<span id="cb4-44"><a href="templates.html#cb4-44" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb4-45"><a href="templates.html#cb4-45" tabindex="-1"></a>  <span class="fu">rename_with</span>(tolower)</span></code></pre></div>
 <p>R - EDA</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="templates.html#cb25-1" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;2DataWrangling.R&quot;</span>)</span>
-<span id="cb25-2"><a href="templates.html#cb25-2" tabindex="-1"></a></span>
-<span id="cb25-3"><a href="templates.html#cb25-3" tabindex="-1"></a><span class="co"># Set ggplot2 theme</span></span>
-<span id="cb25-4"><a href="templates.html#cb25-4" tabindex="-1"></a><span class="co"># - Use theme_xo() from OutcomesLibrary.R for presentations</span></span>
-<span id="cb25-5"><a href="templates.html#cb25-5" tabindex="-1"></a><span class="fu">theme_set</span>(</span>
-<span id="cb25-6"><a href="templates.html#cb25-6" tabindex="-1"></a>    <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb25-7"><a href="templates.html#cb25-7" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(), <span class="at">panel.grid.minor =</span> <span class="fu">element_line</span>())</span>
-<span id="cb25-8"><a href="templates.html#cb25-8" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="templates.html#cb5-1" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;2DataWrangling.R&quot;</span>)</span>
+<span id="cb5-2"><a href="templates.html#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="templates.html#cb5-3" tabindex="-1"></a><span class="co"># Set ggplot2 theme</span></span>
+<span id="cb5-4"><a href="templates.html#cb5-4" tabindex="-1"></a><span class="co"># - Use theme_xo() from OutcomesLibrary.R for presentations</span></span>
+<span id="cb5-5"><a href="templates.html#cb5-5" tabindex="-1"></a><span class="fu">theme_set</span>(</span>
+<span id="cb5-6"><a href="templates.html#cb5-6" tabindex="-1"></a>    <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb5-7"><a href="templates.html#cb5-7" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(), <span class="at">panel.grid.minor =</span> <span class="fu">element_line</span>())</span>
+<span id="cb5-8"><a href="templates.html#cb5-8" tabindex="-1"></a>)</span></code></pre></div>
 </div>
 <div id="snippets" class="section level3 hasAnchor">
 <h3>Snippets<a href="templates.html#snippets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="templates.html#cb26-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Consider turning into a function.</span></span>
-<span id="cb26-2"><a href="templates.html#cb26-2" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="templates.html#cb26-3" tabindex="-1"></a>AgeGroupDSC <span class="ot">&lt;-</span> </span>
-<span id="cb26-4"><a href="templates.html#cb26-4" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
-<span id="cb26-5"><a href="templates.html#cb26-5" tabindex="-1"></a>    <span class="at">AgeNBR =</span> <span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">110</span>)</span>
-<span id="cb26-6"><a href="templates.html#cb26-6" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-7"><a href="templates.html#cb26-7" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb26-8"><a href="templates.html#cb26-8" tabindex="-1"></a>    <span class="at">AgeGroupDSC1 =</span> <span class="fu">case_when</span>(</span>
-<span id="cb26-9"><a href="templates.html#cb26-9" tabindex="-1"></a>      AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">2</span>)   <span class="sc">~</span> <span class="st">&quot;Infant (0-2)&quot;</span>,</span>
-<span id="cb26-10"><a href="templates.html#cb26-10" tabindex="-1"></a>      AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">6</span>)   <span class="sc">~</span> <span class="st">&quot;Child, Preschool (3, 6)&quot;</span>,</span>
-<span id="cb26-11"><a href="templates.html#cb26-11" tabindex="-1"></a>      AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">7</span><span class="sc">:</span><span class="dv">12</span>)  <span class="sc">~</span> <span class="st">&quot;Child (7, 12)&quot;</span>,</span>
-<span id="cb26-12"><a href="templates.html#cb26-12" tabindex="-1"></a>      AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">13</span><span class="sc">:</span><span class="dv">17</span>) <span class="sc">~</span> <span class="st">&quot;Adolescent (13, 17)&quot;</span>,</span>
-<span id="cb26-13"><a href="templates.html#cb26-13" tabindex="-1"></a>      AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">18</span><span class="sc">:</span><span class="dv">24</span>) <span class="sc">~</span> <span class="st">&quot;Young Adult (18, 24)&quot;</span>,</span>
-<span id="cb26-14"><a href="templates.html#cb26-14" tabindex="-1"></a>      AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">25</span><span class="sc">:</span><span class="dv">44</span>) <span class="sc">~</span> <span class="st">&quot;Adult (25, 44)&quot;</span>,</span>
-<span id="cb26-15"><a href="templates.html#cb26-15" tabindex="-1"></a>      AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">45</span><span class="sc">:</span><span class="dv">64</span>) <span class="sc">~</span> <span class="st">&quot;Middle-Aged (45, 64)&quot;</span>,</span>
-<span id="cb26-16"><a href="templates.html#cb26-16" tabindex="-1"></a>      AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">65</span><span class="sc">:</span><span class="dv">79</span>) <span class="sc">~</span> <span class="st">&quot;Aged (65, 79)&quot;</span>,</span>
-<span id="cb26-17"><a href="templates.html#cb26-17" tabindex="-1"></a>      AgeNBR <span class="sc">&gt;</span> <span class="dv">79</span>          <span class="sc">~</span> <span class="st">&quot;Elderly (80+)&quot;</span>,</span>
-<span id="cb26-18"><a href="templates.html#cb26-18" tabindex="-1"></a>    ),</span>
-<span id="cb26-19"><a href="templates.html#cb26-19" tabindex="-1"></a>    <span class="at">AgeGroupDSC2 =</span> </span>
-<span id="cb26-20"><a href="templates.html#cb26-20" tabindex="-1"></a>      <span class="fu">case_when</span>(</span>
-<span id="cb26-21"><a href="templates.html#cb26-21" tabindex="-1"></a>        AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">17</span>)  <span class="sc">~</span> <span class="st">&quot;Child&quot;</span>,</span>
-<span id="cb26-22"><a href="templates.html#cb26-22" tabindex="-1"></a>        AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">18</span><span class="sc">:</span><span class="dv">44</span>) <span class="sc">~</span> <span class="st">&quot;Adult (18-44)&quot;</span>,</span>
-<span id="cb26-23"><a href="templates.html#cb26-23" tabindex="-1"></a>        AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">45</span><span class="sc">:</span><span class="dv">64</span>) <span class="sc">~</span> <span class="st">&quot;Middle-Aged (45-64)&quot;</span>,</span>
-<span id="cb26-24"><a href="templates.html#cb26-24" tabindex="-1"></a>        AgeNBR <span class="sc">&gt;</span> <span class="dv">64</span>          <span class="sc">~</span> <span class="st">&quot;Aged (65+)&quot;</span></span>
-<span id="cb26-25"><a href="templates.html#cb26-25" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-26"><a href="templates.html#cb26-26" tabindex="-1"></a>      <span class="fu">factor</span>(<span class="at">levels =</span> <span class="fu">c</span>(</span>
-<span id="cb26-27"><a href="templates.html#cb26-27" tabindex="-1"></a>        <span class="st">&quot;Child&quot;</span>, <span class="st">&quot;Adult (18-44)&quot;</span>, <span class="st">&quot;Middle-Aged (45-64)&quot;</span>, <span class="st">&quot;Aged (65+)&quot;</span></span>
-<span id="cb26-28"><a href="templates.html#cb26-28" tabindex="-1"></a>      ))</span>
-<span id="cb26-29"><a href="templates.html#cb26-29" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="templates.html#cb6-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Consider turning into a function.</span></span>
+<span id="cb6-2"><a href="templates.html#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="templates.html#cb6-3" tabindex="-1"></a>AgeGroupDSC <span class="ot">&lt;-</span> </span>
+<span id="cb6-4"><a href="templates.html#cb6-4" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
+<span id="cb6-5"><a href="templates.html#cb6-5" tabindex="-1"></a>    <span class="at">AgeNBR =</span> <span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">110</span>)</span>
+<span id="cb6-6"><a href="templates.html#cb6-6" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-7"><a href="templates.html#cb6-7" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb6-8"><a href="templates.html#cb6-8" tabindex="-1"></a>    <span class="at">AgeGroupDSC1 =</span> <span class="fu">case_when</span>(</span>
+<span id="cb6-9"><a href="templates.html#cb6-9" tabindex="-1"></a>      AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">2</span>)   <span class="sc">~</span> <span class="st">&quot;Infant (0-2)&quot;</span>,</span>
+<span id="cb6-10"><a href="templates.html#cb6-10" tabindex="-1"></a>      AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">6</span>)   <span class="sc">~</span> <span class="st">&quot;Child, Preschool (3, 6)&quot;</span>,</span>
+<span id="cb6-11"><a href="templates.html#cb6-11" tabindex="-1"></a>      AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">7</span><span class="sc">:</span><span class="dv">12</span>)  <span class="sc">~</span> <span class="st">&quot;Child (7, 12)&quot;</span>,</span>
+<span id="cb6-12"><a href="templates.html#cb6-12" tabindex="-1"></a>      AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">13</span><span class="sc">:</span><span class="dv">17</span>) <span class="sc">~</span> <span class="st">&quot;Adolescent (13, 17)&quot;</span>,</span>
+<span id="cb6-13"><a href="templates.html#cb6-13" tabindex="-1"></a>      AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">18</span><span class="sc">:</span><span class="dv">24</span>) <span class="sc">~</span> <span class="st">&quot;Young Adult (18, 24)&quot;</span>,</span>
+<span id="cb6-14"><a href="templates.html#cb6-14" tabindex="-1"></a>      AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">25</span><span class="sc">:</span><span class="dv">44</span>) <span class="sc">~</span> <span class="st">&quot;Adult (25, 44)&quot;</span>,</span>
+<span id="cb6-15"><a href="templates.html#cb6-15" tabindex="-1"></a>      AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">45</span><span class="sc">:</span><span class="dv">64</span>) <span class="sc">~</span> <span class="st">&quot;Middle-Aged (45, 64)&quot;</span>,</span>
+<span id="cb6-16"><a href="templates.html#cb6-16" tabindex="-1"></a>      AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">65</span><span class="sc">:</span><span class="dv">79</span>) <span class="sc">~</span> <span class="st">&quot;Aged (65, 79)&quot;</span>,</span>
+<span id="cb6-17"><a href="templates.html#cb6-17" tabindex="-1"></a>      AgeNBR <span class="sc">&gt;</span> <span class="dv">79</span>          <span class="sc">~</span> <span class="st">&quot;Elderly (80+)&quot;</span>,</span>
+<span id="cb6-18"><a href="templates.html#cb6-18" tabindex="-1"></a>    ),</span>
+<span id="cb6-19"><a href="templates.html#cb6-19" tabindex="-1"></a>    <span class="at">AgeGroupDSC2 =</span> </span>
+<span id="cb6-20"><a href="templates.html#cb6-20" tabindex="-1"></a>      <span class="fu">case_when</span>(</span>
+<span id="cb6-21"><a href="templates.html#cb6-21" tabindex="-1"></a>        AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">17</span>)  <span class="sc">~</span> <span class="st">&quot;Child&quot;</span>,</span>
+<span id="cb6-22"><a href="templates.html#cb6-22" tabindex="-1"></a>        AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">18</span><span class="sc">:</span><span class="dv">44</span>) <span class="sc">~</span> <span class="st">&quot;Adult (18-44)&quot;</span>,</span>
+<span id="cb6-23"><a href="templates.html#cb6-23" tabindex="-1"></a>        AgeNBR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">45</span><span class="sc">:</span><span class="dv">64</span>) <span class="sc">~</span> <span class="st">&quot;Middle-Aged (45-64)&quot;</span>,</span>
+<span id="cb6-24"><a href="templates.html#cb6-24" tabindex="-1"></a>        AgeNBR <span class="sc">&gt;</span> <span class="dv">64</span>          <span class="sc">~</span> <span class="st">&quot;Aged (65+)&quot;</span></span>
+<span id="cb6-25"><a href="templates.html#cb6-25" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-26"><a href="templates.html#cb6-26" tabindex="-1"></a>      <span class="fu">factor</span>(<span class="at">levels =</span> <span class="fu">c</span>(</span>
+<span id="cb6-27"><a href="templates.html#cb6-27" tabindex="-1"></a>        <span class="st">&quot;Child&quot;</span>, <span class="st">&quot;Adult (18-44)&quot;</span>, <span class="st">&quot;Middle-Aged (45-64)&quot;</span>, <span class="st">&quot;Aged (65+)&quot;</span></span>
+<span id="cb6-28"><a href="templates.html#cb6-28" tabindex="-1"></a>      ))</span>
+<span id="cb6-29"><a href="templates.html#cb6-29" tabindex="-1"></a>  )</span></code></pre></div>
 
 </div>
 </div>

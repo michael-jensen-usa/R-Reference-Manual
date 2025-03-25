@@ -66,12 +66,46 @@ GenerateMonths <- function(MinDT, MaxDT, EDWPatientID) {
 
 ### Scripts
 
-SQL
+SQL - Snowflake
 
 ```{sql}
 /*******************************************************************************
+Ticket: 
+Author: Michael Jensen
+*******************************************************************************/
+
+/*******************************************************************************
+Input
+*******************************************************************************/
+
+use database stg_raw;
+
+set min_date = ''::date;
+set max_date = dateadd(mm, -1, last_day(current_date()))::date;
+
+/*******************************************************************************
+Data Wrangling
+*******************************************************************************/
 
 
+
+/*******************************************************************************
+EDA
+*******************************************************************************/
+
+
+
+/*******************************************************************************
+Output
+
+Export files as <temp_table_name>.csv
+*******************************************************************************/
+```
+
+SQL - TSQL
+
+```{sql}
+/*******************************************************************************
 Ticket: 
 Author: Michael Jensen
 *******************************************************************************/
@@ -100,55 +134,56 @@ Output
 
 Export files as <temp_table_name>.csv
 *******************************************************************************/
-
-
-
 ```
 
 R - Data Wrangling
 
 ```{r}
+# #| label: setup
+
 # Packages & Data Sources ------------------------------------------------------
 
-packages <- c(
-  "cli",
-  "glue",
-  "janitor",
-  "lubridate",
-  "magrittr",
-  "tidyverse"
+# install.packages("pacman")
+pacman::p_load(
+  cli,
+  conflicted,
+  glue,
+  here,
+  janitor,
+  # lubridate,
+  # magrittr,
+  tidyverse
 )
 
-installed_packages <- packages %in% rownames(installed.packages())
+conflicts_prefer(
+  dplyr::filter()
+)
 
-if (any(installed_packages == FALSE)) {
-  install.packages(packages[!installed_packages])
-}
+# The output of here::here() should be /Users/crossover/Documents/xo-outcomes
+# - Use theme_xo() from OutcomesLibrary.R for presentations
+source(glue(here(), "/OutcomesLibrary.R"))
 
-invisible(lapply(packages, library, character.only = TRUE))
+data_path <- "~/Downloads/Data-"
 
-rm(installed_packages, packages)
-
-
-DataPath <- "~/Downloads/Data-"
-
-file.exists(DataPath) || cli_abort(glue(
-  "Data path not found. 
-    Place output files from 1Query.sql in {DataPath} and try again."
+file.exists(data_path) || cli_abort(glue(
+  "data_path not found. Place data files in {data_path} and try again."
 ))
 
 # Functions --------------------------------------------------------------------
 
-ExportPlot <- function(PlotName, Width = 12, Height = 7) {
+export_plot <- function(plot_name, width = 12, height = 7) {
   # 12 x 7 works well with Google Slides
   
-  ggsave(paste0("Viz-", PlotName, ".png"), width = Width, height = Height)
+  ggsave(paste0("viz-", plot_name, ".png"), width = width, height = height)
 }
 
 # Data Wrangling ---------------------------------------------------------------
 
-
-
+df <- 
+  read_csv(
+    glue("{data_path}/.csv")
+  ) |> 
+  rename_with(tolower)
 ```
 
 R - EDA
